@@ -1,3 +1,4 @@
-<div *ngFor="let image of images">
+<div *ngFor="let image of images; let i = index">
+        <div [style.backgroundColor]="image" class="topImage" *ngIf="i === middleIndex"></div>
 </div>
 
