@@ -1,10 +1,9 @@
-import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {AppComponent} from './app.component';
+
+import { AppComponent } from './app.component';
 import {PagesModule} from "./pages/pages/pages.module";
-import {RouterModule} from "@angular/router";
-import {routes} from "./main.routes";
-import {GlobalImportsModule} from "../shared/global-imports";
 
 
 @NgModule({
@@ -12,15 +11,10 @@ import {GlobalImportsModule} from "../shared/global-imports";
     AppComponent
   ],
   imports: [
-    PagesModule,
-    GlobalImportsModule,
-    RouterModule.forRoot(routes)
+    BrowserModule,
+    PagesModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
