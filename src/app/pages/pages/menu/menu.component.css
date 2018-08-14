@@ -1,0 +1,54 @@
+.header {
+  height: 10vh;
+  width: 80%;
+  margin: auto;
+}
+
+.nav a {
+  font-family: Roboto;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.bigNav {
+  width: 60%;
+}
+
+.nav {
+  width: 80%;
+  margin-right: 5%;
+}
+
+.langs {
+  width: 15%;
+}
+
+.langs a {
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5A5A5A;
+}
+
+.logo, .bigNav a {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
