@@ -11,8 +11,8 @@ import { ContactsComponent } from './pages/pages/contacts/contacts.component';
 import { RoomsComponent } from './pages/pages/rooms/rooms.component';
 import { SliderComponent } from './pages/pages/main/slider/slider.component';
 import { ArticleComponent } from './pages/pages/article/article.component';
-import { RoomComponent } from './pages/pages/main/rooms/room/room.component';
-import { RoomDescriptionComponent } from './pages/pages/main/rooms/room-description/room-description.component';
+import { RoomComponent } from './pages/pages/rooms/room/room.component';
+import { RoomDescriptionComponent } from './pages/pages/rooms/room-description/room-description.component';
 
 
 @NgModule({
