@@ -44,5 +44,16 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlloizCom/Palm-Front.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/AlloizCom/Palm-Front/issues"
+  },
+  "homepage": "https://github.com/AlloizCom/Palm-Front#readme"
 }
