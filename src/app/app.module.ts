@@ -8,6 +8,7 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {MenuComponent} from './pages/pages/menu/menu.component';
 import {FooterComponent} from './pages/pages/footer/footer.component';
+import { PipeModule } from './pages/shared/pipe/pipe.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {FooterComponent} from './pages/pages/footer/footer.component';
   imports: [
     BrowserModule,
     PagesModule,
+    PipeModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
