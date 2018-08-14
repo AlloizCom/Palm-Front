@@ -1,20 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 
 import { AppComponent } from './app.component';
 import {PagesModule} from "./pages/pages/pages.module";
+import {RouterModule} from "@angular/router";
+import {routes} from "./app.routes";
+import {MenuComponent} from './pages/pages/menu/menu.component';
+import {FooterComponent} from './pages/pages/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    PagesModule
+    PagesModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
