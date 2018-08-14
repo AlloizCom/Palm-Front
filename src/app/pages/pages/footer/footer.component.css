@@ -1,0 +1,38 @@
+.footer {
+  height: 27vh;
+  background: #C4C4C4;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.wraper {
+  width: 80%;
+  margin: auto;
+}
+
+.footNav {
+  padding-top: 3%;
+  padding-bottom: 2%;
+  margin: 0 4%;
+}
+
+.footNav a {
+  font-family: Roboto;
+  font-size: 17px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.info {
+  font-family: Roboto;
+  font-size: 14px;
+  color: #000000;
+  margin-left: 1.5%;
+}
+
+.info a {
+  padding-bottom: 1%;
+}
+
+.info img {
+  margin-right: 1.3%;
+}
