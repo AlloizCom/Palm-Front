@@ -8,11 +8,11 @@ import {RoomsComponent} from "./rooms/rooms.component";
 
 export const pagesRoutes: Routes = [
   {
+    path: '', component: MainComponent
+  },{
     path: 'article', component: ArticleComponent
   },{
     path: 'contacts', component: ContactsComponent
-  },{
-    path: 'main', component: MainComponent
   },{
     path: 'news', component: NewsComponent
   },{

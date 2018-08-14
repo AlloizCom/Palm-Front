@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  middleIndex: number;
+  images = ['red', 'green', 'indigo', 'yellow','teal']
 
-  images = [
-    ]
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.middleIndex = Math.round(this.images.length/2);
   }
 
 }

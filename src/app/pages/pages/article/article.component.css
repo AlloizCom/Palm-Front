@@ -1,8 +1,12 @@
 *{
   font-family: 'Roboto',sans-serif;
+  background-color: #f6f4f4;
+}
+body{
+
 }
 .content{
-  background-color: #f6f4f4;
+
 }
 
 .header-text h2{
@@ -22,3 +26,63 @@
   font-weight: 500;
 
 }
+.image{
+  margin-top: 5vh;
+}
+.image img{
+  width: 100vw;
+}
+.down-text{
+  width: 69%;
+  margin: auto;
+  display: flex;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+}
+.left-text-block{
+  display: block;
+}
+.title-paragraph {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.text-paragraph p{
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px;
+  font-size: 18px;
+  color: #5A5A5A;
+}
+.right-text-block{
+  margin-left: 10%;
+}
+.right-text-block p{
+   font-style: normal;
+   font-weight: 500;
+   line-height: 31px;
+   font-size: 18px;
+   text-align: justify;
+
+   color: #5A5A5A;
+ }
+.date-and-share{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5vh;
+}
+.date p {
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #5A5A5A;
+}
+
