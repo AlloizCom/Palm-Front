@@ -10,6 +10,7 @@
   text-transform: uppercase;
   color: #FFFFFF;
   margin-left: 9%;
+  user-select: none;
 }
 .first h3{
   font-family: Roboto;
@@ -20,6 +21,7 @@
   color: #FFFFFF;
   margin-left: 9%;
   margin-bottom:3vh;
+  user-select: none;
 }
 .second h2, .third h2{
   font-family: Raleway;
@@ -29,6 +31,7 @@
   text-transform: uppercase;
   color: #FFFFFF;
   margin-left: 3%;
+  user-select: none;
 }
 .second h3,.third h3{
   font-family: Roboto;
@@ -39,6 +42,7 @@
   color: #FFFFFF;
   margin-left:3%;
   margin-bottom: 3vh;
+  user-select: none;
 }
 .first{
   width: 50%;
@@ -66,12 +70,14 @@
 }
 .six{
   background-image:url("../../../../../src/assets/png/66.jpg");
+
 }
 .one,.two,.three,.four,.five,.six{
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 50%;
+  position: relative;
 }
 
 .back1{
@@ -178,4 +184,21 @@ button{
   height: 36px;
   margin:2% 0 5% 0;
   cursor: pointer;
+}
+
+.button{
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.one:hover,.two:hover,.three:hover,.four:hover,.five:hover,.six:hover{
+  opacity: 0.7;
+  transition: 0.3s ease-in ;
+}
+.one:hover .button, .two:hover .button , .three:hover .button , .four:hover .button , .five:hover .button  ,.six:hover .button  {display: block;}
+
+.one:hover h2, .one:hover h3,.two:hover h2, .two:hover h3,.three:hover h2, .three:hover h3,.four:hover h2, .four:hover h3,.five:hover h2, .five:hover h3,.six:hover h2, .six:hover h3{opacity: 0;
 }
