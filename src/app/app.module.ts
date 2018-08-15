@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import {PagesModule} from "./pages/pages/pages.module";
@@ -8,7 +8,8 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {MenuComponent} from './pages/pages/menu/menu.component';
 import {FooterComponent} from './pages/pages/footer/footer.component';
-import { PipeModule } from './pages/shared/pipe/pipe.module';
+import {FormsModule} from '@angular/forms';
+
 
 
 @NgModule({
@@ -20,10 +21,10 @@ import { PipeModule } from './pages/shared/pipe/pipe.module';
   imports: [
     BrowserModule,
     PagesModule,
-    PipeModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [FormsModule],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

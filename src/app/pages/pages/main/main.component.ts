@@ -7,12 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   middleIndex: number;
-  images = ['red', 'green', 'indigo', 'yellow','teal']
+  images = [{
+    image:'../../../../assets/png/Rectangle.png'
+  }, {
+    image:'../../../../assets/png/Rectangle.png'
+  },{
+    image: '../../../../assets/png/Rectangle.png'
+  },{
+    image:'../../../../assets/png/Rectangle.png'
+  },{
+    image:'../../../../assets/png/Rectangle.png'
+  }]
 
-  constructor() {}
+  constructor() {
+    this.middleIndex = Math.round(this.images.length/2);
+    console.log(this.middleIndex);
+  }
 
   ngOnInit() {
-    this.middleIndex = Math.round(this.images.length/2);
+
   }
 
 }
