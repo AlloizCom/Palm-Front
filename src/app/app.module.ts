@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
+import {FormsModule} from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import {PagesModule} from "./pages/pages/pages.module";
@@ -7,7 +8,8 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {MenuComponent} from './pages/pages/menu/menu.component';
 import {FooterComponent} from './pages/pages/footer/footer.component';
-import {FormsModule} from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -20,9 +22,11 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     PagesModule,
+    NgbModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [FormsModule],
+  providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

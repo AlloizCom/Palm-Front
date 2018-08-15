@@ -9,11 +9,15 @@ import {RoomComponent} from "./rooms/room/room.component";
 import {ContactsComponent} from "./contacts/contacts.component";
 import {SliderComponent} from "./main/slider/slider.component";
 import {PipeModule} from '../shared/pipe/pipe.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
-    PipeModule
+    PipeModule,
+    NgbModule,
+    FormsModule
   ],
   declarations: [
     NewsComponent,
@@ -24,6 +28,9 @@ import {PipeModule} from '../shared/pipe/pipe.module';
     RoomComponent,
     RoomDescriptionComponent,
     MainComponent
+  ],
+  exports:[
+    PipeModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

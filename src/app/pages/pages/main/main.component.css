@@ -6,7 +6,8 @@
   height: 60vh;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
+  background-color: black;
 }
 .sliderContent{
   position: absolute;
@@ -23,6 +24,12 @@
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
   margin-left: 8vw;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .swithContainer{
   display: flex;
@@ -36,6 +43,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.swith:hover{
+  background-color: #a5a5a5;
 }
 .search{
   display: flex;
@@ -71,6 +81,12 @@ width: 190px;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
   margin-left: 120px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .searchItem > div > .day{
   font-size: 14px;
@@ -79,4 +95,19 @@ width: 190px;
   font-weight: bold;
   color: black;
   margin-left: 44px;
+}
+.dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #5A5A5A;
+  margin: 1vh ;
+}
+.dotActive{
+  background-color: rgb(255, 255, 255);
+}
+.dotsContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
 }

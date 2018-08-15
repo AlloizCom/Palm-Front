@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-main',
@@ -7,16 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   middleIndex: number;
+  model;
   images = [{
-    image:'../../../../assets/png/Rectangle.png'
+    image:'../../../../assets/png/sld1.jpg'
   }, {
-    image:'../../../../assets/png/Rectangle.png'
+    image:'../../../../assets/png/sld2.jpg'
   },{
-    image: '../../../../assets/png/Rectangle.png'
-  },{
-    image:'../../../../assets/png/Rectangle.png'
+    image: '../../../../assets/png/sld3.jpg'
   },{
     image:'../../../../assets/png/Rectangle.png'
+  },{
+    image:'../../../../assets/png/sld5.jpg'
   }]
 
   constructor() {
@@ -26,6 +28,21 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  scroll(event) {
+    if (this.middleIndex > 0 && this.middleIndex != this.images.length - 1) {
+      event ? this.middleIndex -= 1 : this.middleIndex += 1;
+    } else if (this.middleIndex == 0 && event == false) {
+      this.middleIndex += 1
+    } else if (this.middleIndex == this.images.length - 1 && event == true) {
+      this.middleIndex -= 1
+    } else if (this.middleIndex == this.images.length - 1 && event == false) {
+      this.middleIndex = 0;
+    } else if (this.middleIndex == 0 && event == true) {
+      this.middleIndex = this.images.length - 1;
+    }
+    console.log(this.middleIndex);
   }
 
 }
