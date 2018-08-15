@@ -1,4 +1,81 @@
+.wraper{
+  position: relative;
+}
 .topImage{
   width: 100vw;
   height: 60vh;
+  background-position: center;
+  background-size: cover;
+}
+.sliderContent{
+  position: absolute;
+  top: 0px;
+  width: 84vw;
+  left: 9vw;
+}
+.palma{
+  font-size: 40px;
+  text-transform: uppercase;
+  line-height: 47px;
+  color: white;
+  margin-top: 26vh;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  margin-left: 8vw;
+}
+.swithContainer{
+  display: flex;
+  margin-top: 38px;
+  justify-content: space-between;
+}
+.swith{
+  width: 60px;
+  height: 60px;
+  background-color: #C4C4C4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search{
+  display: flex;
+  width: 982px;
+  height: 120px;
+  background-color: white;
+  margin-left: calc(50% - 491px);
+  margin-top: 11vh;
+}
+.searchItem{
+width: 190px;
+}
+.verticaleLine{
+  width: 1px;
+  height: 90px;
+  background-color: #C4C4C4;
+  margin-top: 15px;
+}
+.searchIcone{
+  height: 100%;
+  background-color: #53D7B7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+}
+.searchItem > p{
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 24px;
+  color: black;
+  margin-top: 19px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  margin-left: 120px;
+}
+.searchItem > div > .day{
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 24px;
+  font-weight: bold;
+  color: black;
+  margin-left: 44px;
 }

@@ -6,6 +6,7 @@ import { ImagePipePipe } from './pipe/image.pipe';
   imports: [
     CommonModule
   ],
-  declarations: [ImagePipePipe]
+  declarations: [ImagePipePipe],
+  exports:[ImagePipePipe]
 })
 export class PipeModule { }
