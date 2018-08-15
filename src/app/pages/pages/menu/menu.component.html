@@ -1,20 +1,38 @@
-<div class="header d-flex justify-content-between align-items-center"  >
+<div class="header d-flex justify-content-between align-items-center">
   <div routerLink="/" class="logo">
     <img src="../../../assets/svg/logo.svg" alt="Hotel Palma">
   </div>
   <div class="bigNav d-flex justify-content-center">
     <div class="nav d-flex justify-content-between">
-      <a >головна</a>
-      <a >номери</a>
-      <a >новини</a>
-      <a >послуги</a>
-      <a >контакти</a>
+      <a routerLink="/">головна</a>
+      <a routerLink="rooms">номери</a>
+      <a routerLink="news">новини</a>
+      <a class="dropdown">послуги
+        <div class="dropdown-content">
+          <a>поселення для груп</a>
+          <a>правила та умови бронювання</a>
+          <a>кухня</a>
+          <a>Парковка автомобіля</a>
+          <a>дисконтна картка “Gold”</a>
+          <a>правила проживання в готелі</a>
+          <a>додаткові послуги</a>
+        </div>
+      </a>
+      <a routerLink="contacts">контакти</a>
     </div>
     <div class="langs d-flex justify-content-between">
-      <a >ua</a>
-      <a >en</a>
-      <a >pl</a>
-      <a >ru</a>
+      <a [routerLinkActive]="['active']"
+         routerLink="/">ua
+      </a>
+      <a
+        routerLink="/">en
+      </a>
+      <a
+        routerLink="/">pl
+      </a>
+      <a
+        routerLink="/">ru
+      </a>
     </div>
   </div>
 </div>
