@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import {PagesModule} from "./pages/pages/pages.module";
@@ -21,6 +21,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     PagesModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [FormsModule],

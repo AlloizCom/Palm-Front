@@ -9,11 +9,13 @@ import {RoomComponent} from "./rooms/room/room.component";
 import {ContactsComponent} from "./contacts/contacts.component";
 import {SliderComponent} from "./main/slider/slider.component";
 import {PipeModule} from '../shared/pipe/pipe.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
     CommonModule,
-    PipeModule
+    PipeModule,
+    MatDatepickerModule
   ],
   declarations: [
     NewsComponent,
