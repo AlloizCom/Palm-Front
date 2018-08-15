@@ -229,7 +229,14 @@ button{
   width: 69%;
   margin: auto;
 }
+.location-images{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
 .images{
   width: 18%;
+  display: flex;
+  justify-content: center;
 }
 
