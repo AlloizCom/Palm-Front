@@ -1,3 +1,4 @@
+
 .topPhotos{
   height: 70vh;
   background: black;
@@ -132,6 +133,10 @@
   margin-bottom: 0!important;
 }
 
+
+.newsBack{
+  background: #F8F6F6;
+}
 
 .news h2{
   padding-top: 5%;
