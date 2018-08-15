@@ -8,10 +8,12 @@ import {NewsComponent} from "./news/news.component";
 import {RoomComponent} from "./rooms/room/room.component";
 import {ContactsComponent} from "./contacts/contacts.component";
 import {SliderComponent} from "./main/slider/slider.component";
+import {PipeModule} from '../shared/pipe/pipe.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PipeModule
   ],
   declarations: [
     NewsComponent,
