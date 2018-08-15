@@ -1,0 +1,28 @@
+.content{
+  width: 69%;
+  margin: auto;
+}
+.title h2{
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 36px;
+
+  color: #5A5A5A;
+}
+.info{
+  display: flex;
+}
+
+.address{
+  width: 33.3%;
+}
+.phone{
+  width: 33.3%;
+
+}
+.mail{
+  width: 33.3%;
+
+}
