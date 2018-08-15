@@ -6,10 +6,11 @@
   height: 60vh;
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat
 }
 .sliderContent{
   position: absolute;
-  top: 0px;
+  top: 91px;
   width: 84vw;
   left: 9vw;
 }
@@ -18,7 +19,7 @@
   text-transform: uppercase;
   line-height: 47px;
   color: white;
-  margin-top: 26vh;
+  margin-top: 14vh;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
   margin-left: 8vw;
@@ -42,7 +43,7 @@
   height: 120px;
   background-color: white;
   margin-left: calc(50% - 491px);
-  margin-top: 11vh;
+  margin-top: 8vh;
 }
 .searchItem{
 width: 190px;
