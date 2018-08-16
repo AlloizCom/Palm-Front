@@ -225,6 +225,7 @@ button{
 .down-image-wrapper{
   margin: auto;
   width: 100px;
+  height: 110px;
 }
 
 .location-content{
@@ -246,6 +247,33 @@ button{
   left: 30px;
   top: -70px;
 }
+.image2{
+  left: 31px;
+  top: -78px;
+}
+.image3{
+  left: 31px;
+  top: -78px;
+}
+.image4{
+  left: 26px;
+  top: -78px;
+}
+.image5{
+  left: 26px;
+  top: -78px;
+}
+.location-images p{
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 18px;
 
+  color: #C4C4C4;
+  border-bottom: 2px solid #53D7B7;
+
+
+}
 
 
