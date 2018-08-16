@@ -8,13 +8,19 @@ import {Component, OnInit} from '@angular/core';
 export class MainComponent implements OnInit{
   middleIndex: number;
 
+  //dataPicker
   model1: Date;
   model2: Date;
   enterDay;
   leaveDay;
   month: string[] =[
-    'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень','липень', 'серпень', 'вересень', 'жавтень', 'листопад', 'грудень'
+    'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень','липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'
   ]
+
+  //available
+  adultsNumber: number = 1;
+  childrenNumber: number = 1;
+  roomsNumber: number = 1;
 
   images = [{
     image:'../../../../assets/png/sld1.jpg'
@@ -49,7 +55,7 @@ export class MainComponent implements OnInit{
       this.middleIndex = this.images.length - 1;
     }
   }
-//data picker
+  //data picker
   get today() {
     return new Date();
   }
@@ -62,5 +68,33 @@ export class MainComponent implements OnInit{
     console.log(e);
   }
 
+  //dataPicker
+  roomsNumberFunc(bull){
+    console.log("work")
+    if(bull){
+      this.roomsNumber+=1;
+    }
+    if(!bull && this.roomsNumber!=1){
+      this.roomsNumber-=1;
+    }
+  }
+  adultsNumberFunc(bull){
+    console.log("work")
+    if(bull){
+      this.adultsNumber+=1;
+    }
+    if(!bull && this.adultsNumber!=1){
+      this.adultsNumber-=1;
+    }
+  }
+  childrenNumberFunc(bull){
+    console.log("work")
+    if(bull){
+      this.childrenNumber+=1;
+    }
+    if(!bull && this.childrenNumber!=1){
+      this.childrenNumber-=1;
+    }
+  }
 
 }

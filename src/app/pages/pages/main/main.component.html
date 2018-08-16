@@ -5,7 +5,7 @@
     </div>
   </div>
 
-  <!--top slider conernt-->
+<!--top slider conernt-->
   <div class="sliderContent">
     <p class="palma">пальма</p>
     <div class="swithContainer" >
@@ -20,12 +20,13 @@
         </svg>
       </div>
     </div>
+<!--search form    -->
     <div class="search">
       <div class="searchItem" (click)="d1.toggle()">
         <p>заїзд</p>
         <div class="d-flex w-100">
           <div class="day">{{enterDay?.day || 18}}</div>
-          <div class="month">{{month[enterDay?.month] || 'сісень'}}</div>
+          <div class="month">{{month[enterDay?.month] || 'січень'}}</div>
           <div class="year">{{enterDay?.year || 2018}}</div>
         </div>
       </div>
@@ -41,14 +42,53 @@
       <div class="verticaleLine"></div>
       <div class="searchItem">
         <p>номери</p>
+        <div class="d-flex">
+          <div class="w-15 h-15 p-1" (click)="roomsNumberFunc(false)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M7.49779 0.263441C7.84188 0.614696 7.84188 1.17384 7.49779 1.52509L2.52288 6.5L7.49779 11.4749C7.84188 11.8262 7.84188 12.3853 7.49779 12.7366C7.14654 13.0878 6.5874 13.0878 6.23615 12.7366L-0.000412941 6.5L6.23615 0.263441C6.58023 -0.0878134 7.14654 -0.0878134 7.49779 0.263441Z" fill="#5A5A5A"/>
+            </svg>
+          </div>
+          <div class="roomsNumber">{{roomsNumber|| 1}}</div>
+          <div class="w-15 h-15 p-1" (click)="roomsNumberFunc(true)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none" >
+              <path d="M0.258065 12.7366C-0.0860215 12.3853 -0.0860215 11.8262 0.258065 11.4749L5.23298 6.5L0.258065 1.52509C-0.0860215 1.17384 -0.0860215 0.614695 0.258065 0.263441C0.609319 -0.0878136 1.16846 -0.0878136 1.51971 0.263441L7.75627 6.5L1.51971 12.7366C1.17563 13.0878 0.609319 13.0878 0.258065 12.7366Z" fill="#5A5A5A"/>
+            </svg >
+          </div>
+        </div>
       </div>
       <div class="verticaleLine"></div>
       <div class="searchItem">
         <p>дорослі</p>
+        <div class="d-flex">
+          <div class="w-15 h-15 p-1" (click)="adultsNumberFunc(false)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M7.49779 0.263441C7.84188 0.614696 7.84188 1.17384 7.49779 1.52509L2.52288 6.5L7.49779 11.4749C7.84188 11.8262 7.84188 12.3853 7.49779 12.7366C7.14654 13.0878 6.5874 13.0878 6.23615 12.7366L-0.000412941 6.5L6.23615 0.263441C6.58023 -0.0878134 7.14654 -0.0878134 7.49779 0.263441Z" fill="#5A5A5A"/>
+            </svg>
+          </div>
+          <div class="roomsNumber">{{adultsNumber|| 1}}</div>
+          <div class="w-15 h-15 p-1" (click)="adultsNumberFunc(true)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M0.258065 12.7366C-0.0860215 12.3853 -0.0860215 11.8262 0.258065 11.4749L5.23298 6.5L0.258065 1.52509C-0.0860215 1.17384 -0.0860215 0.614695 0.258065 0.263441C0.609319 -0.0878136 1.16846 -0.0878136 1.51971 0.263441L7.75627 6.5L1.51971 12.7366C1.17563 13.0878 0.609319 13.0878 0.258065 12.7366Z" fill="#5A5A5A"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="verticaleLine"></div>
       <div class="searchItem">
         <p>діти</p>
+        <div class="d-flex">
+          <div class="w-15 h-15 p-1" (click)="childrenNumberFunc(false)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M7.49779 0.263441C7.84188 0.614696 7.84188 1.17384 7.49779 1.52509L2.52288 6.5L7.49779 11.4749C7.84188 11.8262 7.84188 12.3853 7.49779 12.7366C7.14654 13.0878 6.5874 13.0878 6.23615 12.7366L-0.000412941 6.5L6.23615 0.263441C6.58023 -0.0878134 7.14654 -0.0878134 7.49779 0.263441Z" fill="#5A5A5A"/>
+            </svg>
+          </div>
+          <div class="roomsNumber">{{childrenNumber|| 1}}</div>
+          <div class="w-15 h-15 p-1" (click)="childrenNumberFunc(true)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+              <path d="M0.258065 12.7366C-0.0860215 12.3853 -0.0860215 11.8262 0.258065 11.4749L5.23298 6.5L0.258065 1.52509C-0.0860215 1.17384 -0.0860215 0.614695 0.258065 0.263441C0.609319 -0.0878136 1.16846 -0.0878136 1.51971 0.263441L7.75627 6.5L1.51971 12.7366C1.17563 13.0878 0.609319 13.0878 0.258065 12.7366Z" fill="#5A5A5A"/>
+            </svg>
+          </div>
+        </div>
       </div>
       <div class="searchIcone">
         <svg width="20" height="21" viewBox="0 0 20 21" fill="none">
@@ -89,6 +129,13 @@
 
     </div>
   </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12">
+      <div  class="h-100 w-100">
+    </div>
+  </div>
+</div>
 
 
 
