@@ -263,3 +263,41 @@ button {
 .images{
   position: relative;
 }
+
+
+@media screen and (max-width: 1100px) {
+  .firsty,.secondy{
+    flex-direction: column!important;
+  }
+  .firsty{
+    margin-right: 5%;
+  }
+  .secondy{
+    margin-left:5%;
+  }
+  .blocks{
+    flex-direction: row!important;
+    justify-content: center;
+  }
+  .news h2{
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 790px) {
+  .firsty,.secondy{
+    flex-direction: column!important;
+    margin: auto!important;
+  }
+  .firsty{
+    margin-right: 0%;
+  }
+  .secondy{
+    margin-left:0%;
+  }
+  .blocks{
+    flex-direction: column!important;
+    justify-content: center;
+  }
+}
