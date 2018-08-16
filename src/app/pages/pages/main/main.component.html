@@ -21,29 +21,34 @@
       </div>
     </div>
     <div class="search">
-      <div class="searchItem ">
+      <div class="searchItem" (click)="d1.toggle()">
         <p>заїзд</p>
         <div class="d-flex w-100">
-          <div class="day">21</div>
-          <div class="month">jun</div>
-          <div class="year">2018</div>
+          <div class="day">{{enterDay?.day || 18}}</div>
+          <div class="month">{{month[enterDay?.month] || 'сісень'}}</div>
+          <div class="year">{{enterDay?.year || 2018}}</div>
+        </div>
+        <div class="dataPicker1">
+          <form class="form-inline">
+            <div class="form-group">
+              <div class="input-group">
+                <input class="form-control" placeholder="yyyy-mm-dd"
+                       name="d1" #c2="ngModel" [(ngModel)]="model1"  (dateSelect)="chang1($event)" ngbDatepicker #d1="ngbDatepicker">
+                <div class="input-group-append">
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
       <div class="verticaleLine"></div>
-      <div class="searchItem">
-            <!-- <form class="form-inline">
-                    <div class="form-group">
-                      <div class="input-group">
-                        <input class="form-control" placeholder="yyyy-mm-dd"
-                               name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
-                            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </form> -->
+      <div class="searchItem" (click)="d2.toggle()">
+        <p>виїзд</p>
+        <div class="d-flex w-100">
+          <div class="day">{{leaveDay?.day || 18}}</div>
+          <div class="month">{{month[leaveDay?.month] || 'січень'}}</div>
+          <div class="year">{{leaveDay?.year || 2018}}</div>
+        </div>
       </div>
       <div class="verticaleLine"></div>
       <div class="searchItem"></div>
@@ -56,6 +61,32 @@
           <path d="M19.827 18.9843L14.9656 14.1229C16.2697 12.6236 17.0592 10.6676 17.0592 8.52961C17.0592 3.82346 13.2313 0 8.52961 0C3.82346 0 0 3.8279 0 8.52961C0 13.2313 3.8279 17.0592 8.52961 17.0592C10.6676 17.0592 12.6236 16.2697 14.1229 14.9656L18.9843 19.827C19.0996 19.9423 19.2548 20.0044 19.4056 20.0044C19.5564 20.0044 19.7117 19.9468 19.827 19.827C20.0577 19.5964 20.0577 19.2149 19.827 18.9843ZM1.19317 8.52961C1.19317 4.48436 4.48436 1.1976 8.52517 1.1976C12.5704 1.1976 15.8572 4.4888 15.8572 8.52961C15.8572 12.5704 12.5704 15.866 8.52517 15.866C4.48436 15.866 1.19317 12.5749 1.19317 8.52961Z" fill="white"/>
         </svg>
       </div>
+    </div>
+
+    <!--data picker-->
+    <div class="dataPicker1">
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="d1" #c2="ngModel" [(ngModel)]="model1"  (dateSelect)="chang1($event)" ngbDatepicker #d1="ngbDatepicker">
+          <div class="input-group-append">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+    <div class="dataPicker2">
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                   name="d2" #c2="ngModel" [(ngModel)]="model2" (dateSelect)="chang2($event)" ngbDatepicker #d2="ngbDatepicker">
+            <div class="input-group-append">
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
     <div class="d-flex dotsContainer">
             <div class="dot" [ngClass]="{'dotActive':middleIndex==i}"

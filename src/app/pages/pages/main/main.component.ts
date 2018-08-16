@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import {FormsModule} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit{
   middleIndex: number;
-  model;
+
+  model1: Date;
+  model2: Date;
+  enterDay;
+  leaveDay;
+  month: string[] =[
+    'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень','липень', 'серпень', 'вересень', 'жавтень', 'листопад', 'грудень'
+  ]
+
   images = [{
     image:'../../../../assets/png/sld1.jpg'
   }, {
@@ -23,7 +30,6 @@ export class MainComponent implements OnInit {
 
   constructor() {
     this.middleIndex = Math.round(this.images.length/2);
-    console.log(this.middleIndex);
   }
 
   ngOnInit() {
@@ -42,7 +48,19 @@ export class MainComponent implements OnInit {
     } else if (this.middleIndex == 0 && event == true) {
       this.middleIndex = this.images.length - 1;
     }
-    console.log(this.middleIndex);
   }
+//data picker
+  get today() {
+    return new Date();
+  }
+  chang1(e){
+    this.enterDay = e;
+    console.log(e);
+  }
+  chang2(e){
+    this.leaveDay = e;
+    console.log(e);
+  }
+
 
 }

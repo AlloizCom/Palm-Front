@@ -11,8 +11,6 @@ import {FooterComponent} from './pages/pages/footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +20,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     PagesModule,
-    NgbModule,
+    NgbModule.forRoot(),
     FormsModule,
     RouterModule.forRoot(routes)
   ],
