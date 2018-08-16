@@ -23,30 +23,28 @@
 
 .address{
   width: 33.3%;
-  display: flex;
   justify-content: center;
+  display: block;
 }
 .phone{
   width: 33.3%;
-  height: 30vh;
-  display: flex;
   justify-content: center;
+  display: block;
+
 
 }
 .mail{
   width: 33.3%;
-  display: flex;
   justify-content: center;
+  display: block;
 }
 .image{
-  position: absolute;
   width: 100px;
+  margin: auto;
 }
 .wrapper-svg{
-  position: relative;
 }
 .svg{
-  position: relative;
   left: 30px;
   top: -67px;
 }
@@ -62,7 +60,7 @@
 .text{
   width: 80%;
   text-align: center;
-  margin-top: 110px;
+  margin:auto;
 }
 .normal-text{
   /*margin-top: 8%;*/
@@ -224,6 +222,10 @@ button{
 
 
 }
+.down-image-wrapper{
+  margin: auto;
+  width: 100px;
+}
 
 .location-content{
   width: 69%;
@@ -236,7 +238,14 @@ button{
 }
 .images{
   width: 18%;
-  display: flex;
+  display: block;
   justify-content: center;
 }
+.little-image{
+  position: relative;
+  left: 30px;
+  top: -70px;
+}
+
+
 

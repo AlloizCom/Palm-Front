@@ -20,6 +20,7 @@
   font-size: 17px;
   color: #000000;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .info {
