@@ -9,9 +9,9 @@ export class ContactsComponent implements OnInit {
 
   constructor() {
     console.log("hello");
-    document.getElementById('elem');
-  }
 
+
+  }
 
 
   ngOnInit() {

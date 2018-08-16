@@ -275,5 +275,16 @@ button{
 
 
 }
+.description{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.description p{
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 16px;
 
+  color: #5A5A5A;
+}
 
