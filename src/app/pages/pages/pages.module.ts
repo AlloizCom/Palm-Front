@@ -11,6 +11,7 @@ import {SliderComponent} from "./main/slider/slider.component";
 import {PipeModule} from '../shared/pipe/pipe.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
+import { MainRoomsComponent } from './main/main-rooms/main-rooms.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import {FormsModule} from "@angular/forms";
     ArticleComponent,
     RoomComponent,
     RoomDescriptionComponent,
-    MainComponent
+    MainComponent,
+    MainRoomsComponent
   ],
   exports:[
     PipeModule
