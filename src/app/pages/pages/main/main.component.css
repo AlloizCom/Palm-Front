@@ -80,7 +80,8 @@ width: 190px;
   margin-top: 19px;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
-  margin-left: 120px;
+  margin-right: 10px;
+  text-align: right;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -88,13 +89,39 @@ width: 190px;
   -ms-user-select: none;
   user-select: none;
 }
+.searchItem > div{
+  justify-content: center;
+  align-items: flex-end;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.searchItem> div>div{
+  margin: 0px 2px 0px 2px;
+}
 .searchItem > div > .day{
-  font-size: 14px;
+  font-size: 34px;
   text-transform: uppercase;
-  line-height: 24px;
+  line-height: 34px;
   font-weight: bold;
   color: black;
-  margin-left: 44px;
+}
+.searchItem > div > .month{
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 14px;
+  font-weight: bold;
+  color: black;
+}
+.searchItem > div > .year{
+  font-size: 17px;
+  text-transform: uppercase;
+  line-height: 17px;
+  font-weight: bold;
+  color: #C4C4C4;
 }
 .dot{
   width: 8px;
@@ -110,4 +137,17 @@ width: 190px;
   display: flex;
   justify-content: center;
   margin-top: 5px;
+}
+.dataPicker1{
+  position: absolute;
+  left: calc(50% - 491px);
+}
+.dataPicker2{
+  position: absolute;
+  left: calc(50% - 255px);
+}
+.form-control{
+  width: 0;
+  height: 0;
+  padding: 0;
 }
