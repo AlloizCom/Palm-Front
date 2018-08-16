@@ -5,9 +5,8 @@
   width: 100vw;
   height: 60vh;
   background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: black;
+  background-size: auto;
+  background-repeat: no-repeat!important;
 }
 .sliderContent{
   position: absolute;
@@ -122,6 +121,17 @@ width: 190px;
   line-height: 17px;
   font-weight: bold;
   color: #C4C4C4;
+}
+.searchItem > div > .roomsNumber{
+  font-size: 34px;
+  text-transform: uppercase;
+  line-height: 34px;
+  font-weight: bold;
+  color: black;
+  margin: 0 34px 0 34px;
+}
+.searchItem > div > svg{
+  margin-bottom: 9px;
 }
 .dot{
   width: 8px;
