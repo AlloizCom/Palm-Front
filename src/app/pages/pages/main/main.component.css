@@ -80,7 +80,8 @@ width: 190px;
   margin-top: 19px;
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
-  margin-left: 120px;
+  margin-right: 10px;
+  text-align: right;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -99,7 +100,7 @@ width: 190px;
   user-select: none;
 }
 .searchItem> div>div{
-  margin: 0px 1px 0px 1px;
+  margin: 0px 2px 0px 2px;
 }
 .searchItem > div > .day{
   font-size: 34px;
