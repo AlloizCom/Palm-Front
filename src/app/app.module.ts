@@ -9,23 +9,30 @@ import {routes} from "./app.routes";
 import {MenuComponent} from './pages/pages/menu/menu.component';
 import {FooterComponent} from './pages/pages/footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CabinetComponent } from './pages/cabinet/cabinet.component';
+import {CabinetModule} from './pages/cabinet/cabinet.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    CabinetComponent
   ],
   imports: [
     BrowserModule,
     PagesModule,
+    CabinetModule,
     NgbModule.forRoot(),
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
+
+
