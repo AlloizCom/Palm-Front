@@ -8,7 +8,7 @@ import {NewsComponent} from "./news/news.component";
 import {RoomComponent} from "./rooms/room/room.component";
 import {ContactsComponent} from "./contacts/contacts.component";
 import {SliderComponent} from "./main/slider/slider.component";
-import {PipeModule} from '../shared/pipe/pipe.module';
+import {PipeModule} from '../../../app/shared/pipe/pipe.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
 import { MainRoomsComponent } from './main/main-rooms/main-rooms.component';
@@ -37,3 +37,5 @@ import { MainRoomsComponent } from './main/main-rooms/main-rooms.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PagesModule { }
+
+
