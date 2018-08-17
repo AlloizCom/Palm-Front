@@ -168,3 +168,256 @@ button:hover {
     order: 2;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*!* About us *!*/
+/*.aboutUs1{*/
+  /*height: 150px;*/
+  /*width: 100%;*/
+/*}*/
+/*.left,.right{*/
+  /*width: 30%;*/
+  /*height: 30%;*/
+  /*background: white;*/
+/*}*/
+.bottomAll{
+  background: #E5E5E5;
+}
+.btmWrapper{
+  width: 84%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.photoMain {
+  order: 2;
+}
+
+.infosMain {
+  order: 1;
+}
+.kartinkaMain {
+  width: 100%;
+}
+.photoMain{
+  margin-left: 10%;
+  width: 51%;
+}
+
+.infosMain {
+  width: 45%;
+}
+
+.infosMain h2 {
+  font-family: Raleway;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000000;
+  /*padding: 3% 0 8% 0;*/
+  /*margin: 0;*/
+}
+.infosMain h4{
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #5A5A5A;
+  margin-bottom: 3%;
+}
+.infosMain p {
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 16px;
+  color: #000000;
+}
+.aboutHotel {
+  padding-bottom: 15vh;
+}
+
+.selected {
+  margin-bottom: 20%;
+}
+
+.selected span {
+  border-bottom: 7px solid #53D7B7;
+  padding-bottom: 4%;
+}
+.someShit{
+  margin-top: 13%;
+  margin-right: -4%;
+}
+.someShit h5{
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 27px;
+  font-size: 16px;
+  color: #53D7B7;
+  margin-right: 4%;
+  margin-top: -3px;
+  margin-bottom: 0!important;
+}
+
+
+
+
+
+
+.item {
+  width: 23.5%;
+  margin: 0 1%;
+  background: #FFFFFF;
+  border: 0.5px solid #E5E5E5;
+  box-sizing: border-box;
+}
+
+.item:first-child {
+  margin-left: 0;
+}
+
+.item:last-child {
+  margin-right: 0;
+}
+
+.back1, .back2, .back3, .back4 {
+  width: 100%;
+  height: 21vh;
+}
+
+
+.back1 {
+  background-image: url("../../../../../src/assets/png/mainFirst.png");
+}
+
+.back2 {
+  background-image: url("../../../../../src/assets/png/mainSecond.png");
+}
+
+.back3 {
+  background-image: url("../../../../../src/assets/png/mainThird.png");
+}
+
+.back4 {
+  background-image: url("../../../../../src/assets/png/mainFOurth.png");
+}
+
+
+.back1, .back2, .back3, .back4 {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.item h3 {
+font-family: Raleway;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: #000000;
+  padding-bottom: 1%;
+  text-align: center;
+  padding-top: 11%;
+}
+
+.item h4 {
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: 24px;
+  font-size: 14px;
+  color: #000000;
+  text-align: justify;
+  padding:2% 7%;
+  padding-bottom: 1%;
+}
+
+.someShit2{
+  /*margin-top: 13%;*/
+}
+.someShit2 h5{
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 27px;
+  font-size: 16px;
+  color: #C4C4C4;
+  margin-right: 4%;
+  margin-top: -3px;
+  margin-bottom: 0!important;
+  cursor: pointer;
+}
+
+.someShit2 h5:hover{
+  color: #53D7B7;
+}
+
+.someShit2 img{
+  cursor: pointer;
+}
+
+
+
+.greenShit{
+  display: none;
+  position: absolute;
+}
+.images:hover .greenShit{
+  display: block;
+}
+.images:hover .greyShit{
+  display: none;
+}
+.greyShit{
+  position: absolute;
+}
+.images{
+  position: relative;
+}
+
+
+
+.together{
+  border-left: 7px solid #53D7B7;
+  padding-left: 2.5%;
+  margin-bottom: 4%;
+}
+.together h3{
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #5A5A5A;
+  margin-top: -3px;
+  margin-bottom: 13px;
+}
+.together h2{
+  font-family: Raleway;
+  font-weight: 800;
+  font-size: 21px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: -4px;
+}
