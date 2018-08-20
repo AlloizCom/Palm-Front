@@ -85,4 +85,19 @@ body{
 
   color: #5A5A5A;
 }
+@media screen and (max-width:768px){
+  .main-text{
+  width: 95%;
+}
+  .down-text{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+  .right-text-block{
+    margin: inherit;
+  }
+}
 
