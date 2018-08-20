@@ -45,9 +45,10 @@ export class AmenityService {
   }
 
   updateImage(id: number, form:HTMLFormElement): Observable<Amenity>{
-    return this._httpClient.post<Amenity>(this.controller + '/update-image/' + id, new FormData(form),{
-      headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    return this._httpClient.post<Amenity>(this.controller + '/update-image/' + id,
+        new FormData(form),{
+        headers: new HttpHeaders().append('enctype', 'multipart/form-data')
+        }).catch(err => Observable.throw(err));
   }
 
   delete(id: number): Observable<any>{
