@@ -1,3 +1,5 @@
+body{
+}
 .contact-content{
   width: 69%;
   margin: auto;
@@ -271,7 +273,7 @@ button{
   font-size: 18px;
 
   color: #C4C4C4;
-  border-bottom: 2px solid #53D7B7;
+  /*border-bottom: 2px solid #53D7B7;*/
 
 
 }
@@ -287,4 +289,6 @@ button{
 
   color: #5A5A5A;
 }
-
+#airportWay{
+  display: block;
+}
