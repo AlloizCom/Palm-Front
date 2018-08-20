@@ -6,19 +6,14 @@ import { AppComponent } from './app.component';
 import {PagesModule} from "./pages/pages/pages.module";
 import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
-import {MenuComponent} from './pages/pages/menu/menu.component';
-import {FooterComponent} from './pages/pages/footer/footer.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { CabinetComponent } from './pages/cabinet/cabinet.component';
 import {CabinetModule} from './pages/cabinet/cabinet.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MenuComponent,
-    FooterComponent,
-    CabinetComponent
+    AppComponent
+
   ],
   imports: [
     BrowserModule,

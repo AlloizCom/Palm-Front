@@ -7,5 +7,4 @@ export const routes: Routes = [
 
       ...pagesRoutes,
       ...cabinetRoutes
-
-];
+]
