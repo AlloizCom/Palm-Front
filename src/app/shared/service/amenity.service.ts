@@ -1,7 +1,9 @@
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {Amenity} from "../models/amenity";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class AmenityService {
 
   controller = "/amenity";
