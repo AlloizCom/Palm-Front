@@ -10,7 +10,7 @@
 }
 
 .room {
-  padding-bottom: 15vh;
+  padding-bottom: 16vh;
 }
 
 .block, .block2 {
@@ -435,7 +435,7 @@ font-family: Raleway;
 .grnBlock{
   margin-left: 1.2%;
 }
-.ashkas h3{
+.ashkas h3,.ashkas2 h3{
   font-family: Raleway;
   font-weight: 300;
   font-size: 14px;
@@ -444,7 +444,7 @@ font-family: Raleway;
   color: #5A5A5A;
   margin-bottom: 0;
 }
-.ashkas h2{
+.ashkas h2,.ashkas2 h2{
   font-family: Raleway;
   font-weight: 800;
   font-size: 21px;
@@ -511,4 +511,31 @@ font-family: Raleway;
 .whiteBlock img{
   height: 5vh;
   margin-top: 2.5vh;
+}
+
+.ashkas2 p{
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: 24px;
+  font-size: 14px;
+  color: #000000;
+}
+.underFooterBlock{
+  margin-left: 1%;
+}
+.ashkas2{
+  width: 30%;
+}
+.ashkas2 h2{
+  margin-bottom: 11%;
+}
+.peshkas{
+  width: 70%;
+  margin-bottom: 10%;
+}
+.peshkas p{
+  margin-bottom: 8%;
+}
+.ashkas2 .grnBlock{
+  margin-left: 5%;
 }
