@@ -5,6 +5,7 @@ import {UpdateModule} from './update/update.module';
 import {AddModule} from './add/add.module';
 import {AddComponent} from './add/add.component';
 import {UpdateComponent} from './update/update.component';
+import {CabinetComponent} from './cabinet.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {UpdateComponent} from './update/update.component';
   ],
   declarations: [
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    CabinetComponent
   ]
 })
 export class CabinetModule { }

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cabinet.component.css']
 })
 export class CabinetComponent implements OnInit {
-
+  public isCollapsed = false;
   constructor() { }
 
   ngOnInit() {
