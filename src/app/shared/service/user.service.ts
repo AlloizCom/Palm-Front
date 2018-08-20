@@ -40,5 +40,4 @@ export class UserService {
     return this._httpClient.delete(this.controller + '/delete/' + id).catch(err => Observable.throw(err));
   }
 
-
 }
