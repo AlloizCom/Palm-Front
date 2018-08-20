@@ -56,6 +56,10 @@ export class RoomService{
       }).catch(err => Observable.throw(err));
   }
 
+  changeAmount(roomType: string, amount: number): Observable<any>{
+    return this._httpClient.get(this.controller + '/change-amount/' + roomType + '/amount/' + amount);
+  }
+
   deleteImage(roomId: number, imageId: number): Observable<any>{
     return this._httpClient.delete(this.controller + '/delete-image/' + roomId + '/image/' + imageId);
   }

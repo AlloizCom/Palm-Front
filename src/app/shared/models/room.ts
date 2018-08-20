@@ -10,6 +10,7 @@ export class Room {
   adultPlaces: number;
   kidsPlaces: number
   square: number
+  amount: number;
   descriptions: RoomDescription[] = [];
   anemities: Amenity[] = [];
   images: Image[] = [];
