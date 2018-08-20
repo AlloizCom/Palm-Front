@@ -292,3 +292,43 @@ button{
 #airportWay{
   display: block;
 }
+
+@media screen and (max-width:768px){
+    .info{
+      flex-direction: column;
+    }
+  .address{
+    width: 100%;
+  }
+  .phone{
+    width: 100%;
+  }
+  .mail{
+    width: 100%;
+
+  }
+  .contact-content{
+    width: 100%;
+  }
+  .feedback-content{
+    flex-direction: column;
+  }
+  .left-side{
+    width: 100%;
+  }
+  .feedback-content{
+    width: 100%;
+    padding-left: 2%;
+  }
+  .right-side{
+    width: 100%;
+    margin: inherit;
+  }
+  .location-content{
+    width: 100%;
+  }
+  .images{
+    transform: scale(0.6);
+    width: 21%;
+  }
+}
