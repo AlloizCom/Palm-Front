@@ -1,7 +1,9 @@
 import {Observable} from "rxjs/Observable";
 import {Callback} from "../models/callback";
 import {HttpClient} from "@angular/common/http";
+import {Injectable} from "@angular/core";
 
+@Injectable()
 export class CallbackService {
 
   controller = "/callback";
