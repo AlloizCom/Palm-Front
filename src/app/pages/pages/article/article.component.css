@@ -99,5 +99,11 @@ body{
   .right-text-block{
     margin: inherit;
   }
+.text-paragraph{
+  text-align: justify;
+}
+.main-text{
+  text-align: justify;
+}
 }
 

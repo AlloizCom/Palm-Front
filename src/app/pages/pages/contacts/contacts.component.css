@@ -302,9 +302,11 @@ button{
   }
   .phone{
     width: 100%;
+    padding-top: 8%;
   }
   .mail{
     width: 100%;
+    padding-top: 8%;
 
   }
   .contact-content{
@@ -328,7 +330,12 @@ button{
     width: 100%;
   }
   .images{
-    transform: scale(0.6);
-    width: 21%;
+    transform: scale(0.8);
+    width: 33%;
+    cursor: pointer;
   }
+  .location-images{
+    flex-wrap: wrap;
+  }
+
 }

@@ -1,4 +1,6 @@
-
+p{
+  text-align: justify;
+}
 .allBack {
   background: #F8F6F6;
 }
@@ -60,6 +62,7 @@
   color: #000000;
   padding: 3% 0 8% 0;
   margin: 0;
+  text-align: center;
 }
 
 .infos p, .infos2 p {
@@ -154,11 +157,12 @@ button:hover {
   }
 
   .infos, .infos2 {
-    width: 70%!important;
+    width: 100%!important;
     align-items: center;
     display: flex;
     flex-direction: column;
     margin: auto;
+
   }
   .photo2 {
     order: 1;
@@ -188,7 +192,7 @@ button:hover {
   }
 
   .infosMain{
-    width: 60%!important;
+    width: 100%!important;
     margin: auto;
     text-align: center;
   }
@@ -228,6 +232,17 @@ button:hover {
     margin-top: 0;
     margin-left: 0;
   }
+  .room{
+    padding-bottom: 8vh!important;
+  }
+  .imgs{
+    width: 70%!important;
+    margin-bottom: 10%!important;
+  }
+
+
+
+
 }
 
 
