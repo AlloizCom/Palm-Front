@@ -12,6 +12,7 @@ import {CallbackService} from './shared/service/callback.service';
 import {UserDetailsService} from './shared/service/user-details.service';
 import {MyInterceptor} from './shared/interceptors/my.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {PipeModule} from './shared/pipe/pipe.module';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     CabinetModule,
     NgbModule.forRoot(),
     FormsModule,
+    PipeModule,
     RouterModule.forRoot(routes)
   ],
   providers: [CallbackService,
