@@ -3,6 +3,8 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Amenity} from "../models/amenity";
 import {Observable} from "rxjs/Observable";
 import {Room} from "../models/room";
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class RoomService{

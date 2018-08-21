@@ -2,6 +2,8 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {Book} from "../models/book";
 import {Injectable} from "@angular/core";
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class BookService {

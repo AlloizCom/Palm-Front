@@ -8,6 +8,10 @@ import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {CabinetModule} from './pages/cabinet/cabinet.module';
+import {CallbackService} from './shared/service/callback.service';
+import {UserDetailsService} from './shared/service/user-details.service';
+import {MyInterceptor} from './shared/interceptors/my.interceptor';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +27,13 @@ import {CabinetModule} from './pages/cabinet/cabinet.module';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [
+  providers: [CallbackService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MyInterceptor,
+      multi: true
+    },
+    UserDetailsService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
