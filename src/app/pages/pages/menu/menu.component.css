@@ -176,7 +176,8 @@ a:hover {
   }
   .nav a{
     font-size: 19px;
-    height: 8vh;
+    /*height: 8vh;*/
+    margin: 2vh 0;
     text-decoration: underline;
   }
 .langs{
