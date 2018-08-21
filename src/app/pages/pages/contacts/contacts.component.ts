@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Callback} from '../../../shared/models/callback';
+import {CallbackService} from '../../../shared/service/callback.service';
 
 @Component({
   selector: 'app-contacts',
@@ -6,6 +9,9 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
+  //formcontroll
+  callbackForm: FormGroup;
+  callback: Callback = new Callback();
 
   airportWay: string = "";
   stationWay: string = "";
@@ -51,25 +57,33 @@ export class ContactsComponent implements OnInit {
   }
 
 
-  constructor() {
-
-    console.log("hello");
-
-    function myFunction() {
-      document.getElementById('airportWay').style.display='none';
-    };
-    console.log(document.getElementById('airportWay'));
-    // console.log(document.getElementById('airportWay').style);
-    // console.log(document.getElementById('airportWay').style.display);
-    // function addText(){
-    //   this.someText="dlvknsdkjgnsjdfgn;dsfng;ksdfng;dsfng;ksdfng";
-    // }
-
+  constructor(private  _callback: CallbackService) {
   }
-
 
   ngOnInit() {
-
+    this.callbackForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      message: new FormControl('', [Validators.required]),
+      phone: new FormControl('', [Validators.pattern(/\d{6,12}/)])
+    });
+    this.callbackForm.valueChanges.subscribe(value => {
+      this.callback = value;
+    });
   }
 
+  sendMessage() {
+
+    this._callback.save(this.callback).subscribe(next => {
+        console.log(next);
+        console.log(this.callback);
+      },
+      error => {
+        console.log(error);
+        console.log(this.callback);
+      }, () => {
+        this.callbackForm.reset();
+      }
+    );
+  }
 }

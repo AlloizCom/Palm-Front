@@ -2,6 +2,8 @@ import {Observable} from "rxjs/Observable";
 import {Callback} from "../models/callback";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class CallbackService {
@@ -22,13 +24,13 @@ export class CallbackService {
       .catch(err => Observable.throw(err));
   }
 
-  findOne(): Observable<Callback>{
-    return this._httpClient.get<Callback>(this.controller + '/find-one/ + id')
+  findOne(id: number): Observable<Callback>{
+    return this._httpClient.get<Callback>(this.controller + '/find-one/' + id)
       .catch(err => Observable.throw(err));
   }
 
-  findOneAvailable(): Observable<Callback>{
-    return this._httpClient.get<Callback>(this.controller + '/find-one-available/ + id')
+  findOneAvailable(id: number): Observable<Callback>{
+    return this._httpClient.get<Callback>(this.controller + '/find-one-available/' + id)
       .catch(err => Observable.throw(err));
   }
 
