@@ -166,9 +166,13 @@ a:hover {
     flex-direction: column;
     text-align: center;
     width: 50%;
-    height: 40vh;
+    /*height: 40vh;*/
     margin-right: 0!important;
-    padding-bottom: 0!important;
+    /*padding-bottom: 0!important;*/
+    border-right: 1px solid black;
+
+    padding-top: 5vh ;
+    padding-bottom: 2.5vh;
   }
   .nav a{
     font-size: 19px;
@@ -196,8 +200,8 @@ a:hover {
   flex-direction: row;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  padding-top: 5vh ;
-  padding-bottom: 2.5vh;
+  /*padding-top: 5vh ;*/
+  /*padding-bottom: 2.5vh;*/
 }
 .bigNav{
   width: 100%;
@@ -205,4 +209,5 @@ a:hover {
 .header{
   width: 100%;
 }
+
 }
