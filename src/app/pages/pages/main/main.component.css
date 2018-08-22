@@ -5,11 +5,12 @@
 .topImage {
   width: 100%;
   height: 100vh;
-  background-position: center!important;
-  background-size: cover!important;
+  background-position: center !important;
+  background-size: cover !important;
   background-repeat: no-repeat !important;
   position: relative;
 }
+
 .sliderContent {
   position: absolute;
   bottom: -7%;
@@ -197,91 +198,6 @@
 
 /*Vitalik*/
 
-@media screen and (max-width: 1020px) {
-  .aboutHotel {
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  /*.photoMain {*/
-  /*width: 80% !important;*/
-  /*margin: auto;*/
-  /*}*/
-  .btmWrapper {
-    width: 100% !important;
-  }
-
-  .infosMain {
-    width: 60% !important;
-    margin: auto;
-    text-align: center;
-  }
-
-  .photoMain {
-    width: 60% !important;
-    margin: 0 !important;
-  }
-
-  .someShit {
-    margin-bottom: 4%;
-    margin-top: 0 !important;
-    margin-right: 0 !important;
-  }
-
-  .selected {
-    margin-bottom: 15% !important;
-  }
-
-  .item {
-    width: 24% !important;
-    margin: 5% 13% !important;
-  }
-
-  .firsty {
-    flex-wrap: wrap;
-  }
-
-  .secondy {
-    align-items: center;
-    flex-direction: column !important;
-  }
-
-  .item2 {
-    width: 38% !important;
-  }
-
-  .ashkas {
-
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
-    margin-left: 0;
-  }
-
-  .underFooterBlock {
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  .map {
-    width: 70% !important;
-  }
-
-  .ashkas2 {
-    width: 70% !important;
-    text-align: center;
-  }
-
-  .divka {
-    justify-content: center;
-  }
-
-  .peshkas {
-    width: 100% !important;
-    align-content: center;
-  }
-}
-
 /*!* About us *!*/
 /*.aboutUs1{*/
 /*height: 150px;*/
@@ -355,7 +271,6 @@
 .aboutHotel {
   padding-bottom: 15vh;
 }
-
 
 .selected {
   margin-bottom: 20%;
@@ -654,4 +569,313 @@
   margin-left: 5%;
 }
 
+@media screen and (max-width: 1100px) {
+
+}
+
+@media screen and (max-width: 1020px) {
+
+  .dataPicker1 {
+    left: 15%;
+  }
+  .dataPicker2 {
+    right: 39%;
+    left: auto;
+  }
+
+  .kartinkaMain {
+    height: 100%;
+  }
+
+  .whiteBlock {
+    width: 9vw;
+
+  }
+
+  .search {
+    justify-content: space-between;
+    width: auto;
+    margin: 0 8%;
+  }
+
+  .searchItem {
+    width: auto;
+  }
+
+  .aboutHotel {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  /*.photoMain {*/
+  /*width: 80% !important;*/
+  /*margin: auto;*/
+  /*}*/
+  .btmWrapper {
+    width: 100% !important;
+  }
+
+  .infosMain {
+    width: 60% !important;
+    margin: auto;
+    text-align: center;
+  }
+
+  .photoMain {
+    width: 60% !important;
+    margin: 0 !important;
+  }
+
+  .someShit {
+    margin-bottom: 4%;
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .selected {
+    margin-bottom: 15% !important;
+  }
+
+  .item {
+    width: 35% !important;
+    margin: 5% 7% !important;
+  }
+
+  .firsty {
+    flex-wrap: wrap;
+  }
+
+  .secondy {
+    align-items: center;
+    flex-direction: column !important;
+  }
+
+  .item2 {
+    width: 38% !important;
+  }
+
+  .ashkas {
+
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .underFooterBlock {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  .map {
+    width: 70% !important;
+  }
+
+  .ashkas2 {
+    width: 70% !important;
+    text-align: center;
+  }
+
+  .divka {
+    justify-content: center;
+  }
+
+  .peshkas {
+    width: 100% !important;
+    align-content: center;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .dataPicker1{
+    left: 10%;
+    top: 17%;
+  }
+  .dataPicker2{
+    left: 52%;
+    top: 17%;
+  }
+
+  .topImage {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .swithContainer, .dotsContainer {
+    display: none !important;
+  }
+
+  .search {
+    border-bottom: 1px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto !important;
+    /*flex-direction: column;*/
+    /*width: 35%;*/
+    height: auto;
+    background-color: white;
+    /* margin-left: calc(50% - 491px); */
+    /* margin-top: 8vh; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .searchItem {
+    width: 25% !important;
+    border: 1px solid gainsboro;
+  }
+  .searchItem11{
+    width: 50%!important;
+  }
+  .verticaleLine {
+    display: none;
+  }
+
+  .searchIcone {
+    height: auto;
+    width: 25%;
+    border: 1px solid grey;
+    border-bottom: 0;
+  }
+
+  .sliderContent {
+    position: initial;
+  }
+
+  .palma {
+    display: none;
+  }
+
+  .item {
+    width: 40% !important;
+    margin: 5% 5% !important;
+  }
+
+  .back1, .back2, .back3, .back4 {
+    height: 31vh;
+  }
+
+  .btmWrapper {
+    padding-top: 10%;
+  }
+}
+
+@media screen and (max-width: 965px) {
+
+  .search {
+    margin: 0px 2%;
+  }
+}
+
+@media screen and (max-width: 645px) {
+  .item {
+    width: 51% !important;
+    margin: 5% auto !important;
+  }
+  .dataPicker1{
+    top: 69%;
+  }
+.dataPicker2{
+   top: 69%;
+ }
+  .photoMain, .infosMain {
+    width: 75% !important;
+  }
+
+  .whiteBlock {
+    width: 12vw;
+
+  }
+
+  .item2 {
+    width: 45% !important;
+  }
+}
+@media screen and (max-width:570px) {
+.dataPicker1{
+  left: 3%;
+  top: 69%;
+}
+.dataPicker2{
+  left: 3%;
+  top: 69%;
+}
+}
+@media screen and (max-width: 510px) {
+  .searchItem div .roomsNumber {
+    margin: 0px 14px 0 14px;
+  }
+  .searchItem p{
+    margin: 0 10px 0 0 ;
+  }
+  .dataPicker1{
+    left: 3%;
+    top: 69%;
+  }
+  .dataPicker2{
+    left: 3%;
+    top: 69%;
+  }
+  .item {
+    width: 70% !important;
+    margin: 5% auto !important;
+  }
+
+  .photoMain, .infosMain {
+
+    width: 90% !important;
+  }
+
+  .whiteBlock {
+    width: 18vw;
+
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+
+  .searchItem div .roomsNumber {
+    margin: 0px 1px 0 1px;
+  }
+
+  .infosMain h2{
+    font-size: 17px;
+  }
+  .ashkas h2{
+    font-size: 18px;
+  }
+  .item {
+    width: 90% !important;
+    margin: 5% auto !important;
+  }
+
+  .item2 {
+    width: 66% !important;
+  }
+
+  .kartinkaMain {
+    height: 40vh;
+  }
+
+  /*.numbers{*/
+    /*flex-direction: column;*/
+     /*align-items: flex-start!important;*/
+     /*margin-top: -20px;*/
+  /*}*/
+
+}
+
+@media screen and (max-width: 320px) {
+  .whiteBlock {
+    width: 20vw;
+  }
+
+  .kartinkaMain {
+    height: 34vh;
+
+  }
+}
 
