@@ -1,3 +1,335 @@
-<p>
-  news works!
-</p>
+<form action="" (submit)="addNews(form)" #form>
+  <div>
+    <div class="left-block">
+      <input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFile">
+    </div>
+    <div class="text">
+      <h3>English</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea type="text"
+                  (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)" #TitleEn class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)"
+          #HeaderTextareaEn class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)" #textEn
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+      <h3>Ukrainian</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)" #TitleUk class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)"
+          #HeaderTextareaUk class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)" #textUk
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+
+      <h3>Polish</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)" #TitlePl class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)"
+          #HeaderTextareaPl class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)" #textPl
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+
+      <h3>Russian</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)" #TitleRu class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)"
+          #HeaderTextareaRu class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)" #textRu
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf="img" class="image">
+    <img [src]="img" alt="" class="w-100">
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+      <label for="file" class="addImage">Add Image</label>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-3">
+      <button class="button" type="submit" class="w-100">Save news</button>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</form>
+
+
+
+<div *ngFor=" let news of allNews; let i =index">
+  <div *ngIf="news">
+    <form action="" (submit)="addNews(form)" #form>
+      <div>
+        <div class="left-block">
+          <input (change)="readUrl($event)" multiple id='"file"+i' type="file" class="d-none" name="multipartFile">
+        </div>
+        <div class="text">
+          <h4>{{news.dateTime| date:'medium'}}</h4>
+          <h3>English</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea type="text"
+                  class="w-100" style="height: 30px"
+        [(ngModel)]="news.newsDescriptions[0].title" [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[0].headerText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[0].mainText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+
+          <h3>Ukrainian</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 30px"
+          [(ngModel)]="news.newsDescriptions[1].title"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+           class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[1].headerText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[1].mainText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+
+
+          <h3>Polish</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 30px"
+          [(ngModel)]="news.newsDescriptions[2].title"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[2].headerText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[2].mainText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+
+
+          <h3>Russian</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 30px"
+          [(ngModel)]="news.newsDescriptions[3].title"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[3].headerText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[3].mainText"
+          [ngModelOptions]="{standalone:true}"
+        ></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div *ngIf="news.picturePath" class="image">
+        <img [src]="news.picturePath| imagePipe" alt="" class="w-100">
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+          <label for="file" class="addImage">Add Image</label>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+          <button class="button" type="submit" class="w-100">Update news</button>
+        </div>
+        <div class="col-lg-2"></div>
+      </div>
+    </form>
+  </div>
+</div>

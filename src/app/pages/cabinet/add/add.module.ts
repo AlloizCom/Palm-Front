@@ -10,7 +10,7 @@ import {GlobalImportsModule} from '../../../shared/config/global-imports/global-
 
 @NgModule({
   imports: [
-    CommonModule,
+    // CommonModule,
     GlobalImportsModule
   ],
   declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, CallbackComponent, TariffComponent],

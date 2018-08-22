@@ -5,7 +5,6 @@ import {OrderComponent} from './order/order.component';
 import {NewsComponent} from './news/news.component';
 import {OptionComponent} from './option/option.component';
 import {TariffComponent} from './tariff/tariff.component';
-import {CallbackComponent} from './callback/callback.component';
 import {GlobalImportsModule} from '../../../shared/config/global-imports/global-imports.module';
 
 
@@ -14,7 +13,7 @@ import {GlobalImportsModule} from '../../../shared/config/global-imports/global-
     CommonModule,
     GlobalImportsModule
   ],
-  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, CallbackComponent, TariffComponent]
+  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, TariffComponent]
 })
 export class UpdateModule { }
 

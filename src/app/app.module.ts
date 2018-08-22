@@ -13,6 +13,7 @@ import {UserDetailsService} from './shared/service/user-details.service';
 import {MyInterceptor} from './shared/interceptors/my.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {PipeModule} from './shared/pipe/pipe.module';
+import {NewsService} from './shared/service/news.service';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {PipeModule} from './shared/pipe/pipe.module';
     RouterModule.forRoot(routes)
   ],
   providers: [CallbackService,
+    NewsService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MyInterceptor,
