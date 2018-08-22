@@ -281,6 +281,7 @@
   padding-bottom: 4%;
 }
 
+
 .someShit {
   margin-top: 13%;
   margin-right: -4%;
@@ -551,6 +552,9 @@
 .ashkas2 {
   width: 30%;
 }
+.map{
+  width: 60%;
+}
 
 .ashkas2 h2 {
   margin-bottom: 11%;
@@ -569,9 +573,21 @@
   margin-left: 5%;
 }
 
-@media screen and (max-width: 1100px) {
-
+.invallid{
+  border: 1px solid red!important;
 }
+agm-map{
+  height: 400px;
+  background: black;
+}
+.map-wrapper{
+  margin: auto;
+  width: 100%;
+}
+.location-wrapper{
+  background-color:#F8F6F6;
+}
+
 
 @media screen and (max-width: 1020px) {
 
@@ -687,6 +703,9 @@
 }
 
 @media screen and (max-width: 765px) {
+  .underFooterBlock {
+     margin-left: 0;
+  }
   .dataPicker1{
     left: 10%;
     top: 17%;
@@ -694,6 +713,10 @@
   .dataPicker2{
     left: 52%;
     top: 17%;
+  }
+
+  .map{
+    width: 80%!important;
   }
 
   .topImage {
@@ -770,6 +793,9 @@
 }
 
 @media screen and (max-width: 645px) {
+  agm-map{
+    height: 45vh;
+  }
   .item {
     width: 51% !important;
     margin: 5% auto !important;
@@ -836,7 +862,12 @@
 }
 
 @media screen and (max-width: 425px) {
-
+  .map{
+    width: 90%!important;
+  }
+  agm-map {
+    height: 40vh;
+  }
   .searchItem div .roomsNumber {
     margin: 0px 1px 0 1px;
   }

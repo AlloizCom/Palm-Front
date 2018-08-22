@@ -282,7 +282,14 @@
           <p>All of this text is editable. Simply click anywhere in the paragrap</p>
         </div>
       </div>
-      <div class="map"></div>
+      <div class="map">
+        <div class="map-wrapper">
+          <agm-map [styles]="customStyle"  [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)"[zoom]="13" lang="" >
+            <agm-marker [iconUrl]="iconUrl" [latitude]="latitude" [longitude]="longitude">
+            </agm-marker>
+          </agm-map>
+        </div>
+      </div>
     </div>
 
 
