@@ -6,11 +6,13 @@ import {NewsComponent} from './news/news.component';
 import {OptionComponent} from './option/option.component';
 import {TariffComponent} from './tariff/tariff.component';
 import {CallbackComponent} from './callback/callback.component';
+import {GlobalImportsModule} from '../../../shared/config/global-imports/global-imports.module';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    GlobalImportsModule
   ],
   declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, CallbackComponent, TariffComponent]
 })

@@ -282,6 +282,9 @@ button {
   .news h2{
     text-align: center;
   }
+  .bigNav{
+    width: 75%;
+  }
 }
 
 
@@ -300,4 +303,63 @@ button {
     flex-direction: column!important;
     justify-content: center;
   }
+  .first,.third{
+    width: 33%;
+  }
+  .second{
+    width: 34%;
+  }
+
+  .first h2 {
+    font-family: Raleway;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-left: 3%;
+    user-select: none;
+  }
+
+  .first h3{
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-left: 3%;
+    margin-bottom: 3vh;
+    user-select: none;
+  }
+
+}
+
+@media screen and (max-width: 645px) {
+ .topPhotos{
+   flex-direction: column!important;
+ }
+  .first,.second,.third{
+    height: 30vh;
+    width: 100%;
+    flex-direction: row!important;
+  }
+  .one,.two,.three,.four,.five,.six{
+    height: 100%;
+    width: 100%;
+  }
+
+
+}
+
+@media screen and (max-width: 375px) {
+  .back1,.back2,.back3, .back4,.back5,.back6{
+    width: 100%;
+    height: 176px;
+  }
+  .item{
+    width: 100%;
+    text-align: center;
+  }
+
 }
