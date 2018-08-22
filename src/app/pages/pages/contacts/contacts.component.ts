@@ -11,9 +11,13 @@ import {CallbackService} from '../../../shared/service/callback.service';
 export class ContactsComponent implements OnInit {
   //formcontroll
 
-  latitude = 51.678418;
-  longitude =7.809007;
+  latitude =  49.856338332302016;
+  longitude =24.076377153396606;
 
+
+    onChoseLocation(event){
+      console.log(event)
+    }
   callbackForm: FormGroup;
   callback: Callback = new Callback();
 

@@ -158,10 +158,13 @@
       </div>
 
     </div>
+      <div class="map-wrapper">
+        <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)"[zoom]="13" lang="" >
+          <agm-marker [latitude]="latitude" [longitude]="longitude">
 
-        <agm-map [latitude]="latitude" [longitude]="longitude">
-
+          </agm-marker>
         </agm-map>
+      </div>
   </div>
 
 

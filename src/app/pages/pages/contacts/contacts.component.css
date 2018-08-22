@@ -280,6 +280,7 @@ button{
 .description{
   margin-top: 30px;
   margin-bottom: 30px;
+  padding-left: 2%;
 }
 .description p{
   font-style: normal;
@@ -298,7 +299,13 @@ button{
 agm-map{
   height: 400px;
 }
-
+.map-wrapper{
+  margin: auto;
+  width: 75%;
+}
+.location-wrapper{
+  background-color:#F8F6F6;
+}
 
 @media screen and (max-width:768px){
     .info{
@@ -343,6 +350,10 @@ agm-map{
   }
   .location-images{
     flex-wrap: wrap;
+  }
+  .map-wrapper{
+
+    width: 90%;
   }
 
 }
