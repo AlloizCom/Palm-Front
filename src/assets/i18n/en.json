@@ -1,5 +1,180 @@
 {
-  "test-value":"Some value",
-  "test-value2":"Some value"
 
+//          HEADER AND FOOTER
+
+  "header-main":"",
+  "header-rooms":"",
+  "header-news":"",
+  "header-services":"",
+  "header-contact":"",
+
+  "footer-contact":"",
+  "footer-services":"",
+  "footer-partners":"",
+  "footer-address":"",
+
+
+  //      MAIN PAGE
+
+
+  "hotel-name": "Palm",
+  "data-picker-first-column-word": "",
+  "data-picker-first-column-month": "",
+  "data-picker-second-column-word": "",
+  "data-picker-first-column-month": "",
+  "data-picker-third-column": "",
+  "data-picker-fourth-column": "",
+  "data-picker-fifth-column": "",
+  "about-us-first-title":"",
+  "about-us-second-title":"",
+  "about-us-text":"",
+  "review":"",
+
+  "special-offers-first-title":"",
+  "special-offers-second-title":"",
+  "special-offers-first-column-title":"",
+  "special-offers-second-column-title":"",
+  "special-offers-third-column-title":"",
+  "special-offers-fourth-column-title":"",
+  "special-offers-first-column-text":"",
+  "special-offers-second-column-text":"",
+  "special-offers-third-column-text":"",
+  "special-offers-fourth-column-text":"",
+
+  "rooms-first-title":"",
+  "rooms-second-title":"",
+  "rooms-standard":"",
+  "rooms-superior-standard":"",
+  "rooms-junior-suite":"",
+  "rooms-superior-junior-suite":"",
+  "rooms-suite":"",
+
+  "services-and-offers-first-title":"",
+  "services-and-offers-second-title":"",
+  "services-and-offers-text":"",
+  "services-and-offers-first-column-title":"",
+  "services-and-offers-second-column-title":"",
+  "services-and-offers-third-column-title":"",
+  "services-and-offers-first-column-text":"",
+  "services-and-offers-second-column-text":"",
+  "services-and-offers-third-column-text":"",
+
+  "advantages-first-title":"",
+  "advantages-second-title":"",
+  "advantages-first-column-text":"",
+  "advantages-second-column-text":"",
+  "advantages-third-column-text":"",
+
+  "contacts-first-title":"",
+  "contacts-second-title":"",
+  "contacts-first-article":"",
+  "contacts-second-article":"",
+  "contacts-third-article":"",
+
+
+  //    ROOMS PAGE
+
+
+  "suite-title":"",
+  "suite-description":"",
+  "suite-area":"",
+  "suite-price":"",
+
+  "junior-suite-title":"",
+  "junior-suite-description":"",
+  "junior-suite-area":"",
+  "junior-suite-price":"",
+
+  "superior-junior-suite-title":"",
+  "superior-junior-suite-description":"",
+  "superior-junior-suite-area":"",
+  "superior-junior-suite-price":"",
+
+  "standard-title":"",
+  "standard-description":"",
+  "standard-area":"",
+  "standard-price":"",
+
+  "superior-standard-title":"",
+  "superior-standard-description":"",
+  "superior-standard-area":"",
+  "superior-standard-price":"",
+
+
+  //   NEWS PAGE
+
+
+  "first-top-column-title":"",
+  "first-bottom-column-title":"",
+  "second-top-column-title":"",
+  "second-bottom-column-title":"",
+  "third-top-column-title":"",
+  "third-bottom-column-title":"",
+
+  "news":"",
+  "first-article-title":"",
+  "first-article-text":"",
+  "second-article-title":"",
+  "second-article-text":"",
+  "third-article-title":"",
+  "third-article-text":"",
+  "fourth-article-title":"",
+  "fourth-article-text":"",
+  "fifth-article-title":"",
+  "fifth-article-text":"",
+  "sixth-article-title":"",
+  "sixth-article-text":"",
+
+
+  // CONTACTS PAGE
+
+
+  "contacts-title":"",
+
+  "contacts-address-title":"",
+  "contacts-address-text":"",
+  "contacts-exactly-address":"",
+
+  "contacts-phone-title":"",
+  "contacts-phone-first-text":"",
+  "contacts-phone-second-text":"",
+  "contacts-phone-third-text":"",
+
+  "contacts-mail-title":"",
+  "contacts-mail-text":"",
+
+  "feedback-first-title":"",
+  "feedback-second-title":"",
+  "feedback-text":"",
+
+  "name-input-text":"",
+  "phone-input-text":"",
+  "mail-input-text":"",
+  "massage-input-text":"",
+  "send":"",
+
+  "hot-to-get":"",
+  "hot-to-get-airport":"",
+  "hot-to-get-airport-description":"",
+  "hot-to-get-station":"",
+  "hot-to-get-station-description":"",
+  "hot-to-get-bus":"",
+  "hot-to-get-bus-description":"",
+  "hot-to-get-square":"",
+  "hot-to-get-square-description":"",
+  "hot-to-get-castle":"",
+  "hot-to-get-castle-description":"",
+
+
+
+
+
+
+  "test-value": "Some value",
+  "test-value2": "Some value",
+  "contacts-way-airport": "airport",
+  "contacts-way-station": "station",
+  "contacts-way-bus": "bus",
+  "contacts-way-square": "square",
+  "contacts-way-castle": "castle"
 }
