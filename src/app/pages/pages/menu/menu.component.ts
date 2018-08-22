@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
 
     let browserLang= translate.getBrowserLang();
     console.log(browserLang);
-    translate.use(browserLang.match(/uk|en|pl|ru/) ? browserLang:"uk");
+    // translate.use(browserLang.match(/uk|en|pl|ru/) ? browserLang:"uk");
     // translate.use('en')
   }
 

@@ -15,6 +15,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {TranslateModule} from 'ng2-translate';
 import {GlobalImportsModule} from "./shared/config/global-imports/global-imports.module";
 import {PipeModule} from './shared/pipe/pipe.module';
+import{ AgmCoreModule} from "@agm/core";
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {PipeModule} from './shared/pipe/pipe.module';
     FormsModule,
     GlobalImportsModule,
     PipeModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+
   ],
   providers: [CallbackService,
     {
