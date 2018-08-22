@@ -1,18 +1,32 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {PipeModule} from '../../pipe/pipe.module';
+import {TranslateLoader, TranslateModule, TranslateStaticLoader} from 'ng2-translate';
+import {Http} from "@angular/http";
+
 // import {routes} from '../../../main.routes';
 
 // const _routes: Routes = [
 //   ...routes
 // ];
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, 'http://localhost:4200/assets/i18n', '.json');
+}
+
+
+
 @NgModule({
   imports: [
     // RouterModule.forRoot(_routes, {useHash: true})
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http],
+    }),
   ],
   declarations: [],
   exports: [
@@ -22,7 +36,8 @@ import {PipeModule} from '../../pipe/pipe.module';
     ReactiveFormsModule,
     RouterModule,
     PipeModule,
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
