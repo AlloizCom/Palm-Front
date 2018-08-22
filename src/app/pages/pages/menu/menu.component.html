@@ -22,17 +22,18 @@
             <a [routerLink]="['/','contacts']">контакти</a>
           </div>
           <div class="langs d-flex justify-content-between">
-            <a [routerLinkActive]="['active']"
-               routerLink="/">ua
+            <a (click)="changeLanguage('uk')" [routerLinkActive]="['active']"
+               >ua
             </a>
-            <a
-              routerLink="/">en
+            <a (click)="changeLanguage('en')"
+              >en
+
             </a>
-            <a
-              routerLink="/">pl
+            <a (click)="changeLanguage('pl')"
+              >pl
             </a>
-            <a
-              routerLink="/">ru
+            <a (click)="changeLanguage('ru')"
+              >ru
             </a>
           </div>
         </div>

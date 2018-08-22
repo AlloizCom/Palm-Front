@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from "ng2-translate";
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() {  }
+
+  constructor (private translate:TranslateService){
+    translate.addLangs(["uk","en","pl","ru"]);
+    translate.setDefaultLang("uk");
+
+    let browserLang= translate.getBrowserLang();
+    console.log(browserLang);
+    translate.use(browserLang.match(/uk|en|pl|ru/) ? browserLang:"uk");
+    // translate.use('en')
+  }
 
   ngOnInit() {
   }
-
+    changeLanguage(lang){
+    this.translate.use(lang);
+}
 }
