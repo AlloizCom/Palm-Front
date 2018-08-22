@@ -88,6 +88,7 @@
 }
 
 .one, .two, .three, .four, .five, .six {
+  opacity: 0.8;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -225,8 +226,8 @@ button {
 }
 
 .one:hover, .two:hover, .three:hover, .four:hover, .five:hover, .six:hover {
-  opacity: 0.9;
-  transition: 0.3s ease-in;
+  opacity: 1;
+  transition: 0.2s ease-in-out;
 }
 
 .one:hover .button, .two:hover .button, .three:hover .button, .four:hover .button, .five:hover .button, .six:hover .button {
