@@ -12,12 +12,9 @@ import {CallbackService} from './shared/service/callback.service';
 import {UserDetailsService} from './shared/service/user-details.service';
 import {MyInterceptor} from './shared/interceptors/my.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
-<<<<<<< HEAD
 import {TranslateModule} from 'ng2-translate';
 import {GlobalImportsModule} from "./shared/config/global-imports/global-imports.module";
-=======
 import {PipeModule} from './shared/pipe/pipe.module';
->>>>>>> e94c029bc78647e6e63eb27559d91c53434d0c86
 
 
 @NgModule({
@@ -31,13 +28,9 @@ import {PipeModule} from './shared/pipe/pipe.module';
     CabinetModule,
     NgbModule.forRoot(),
     FormsModule,
-<<<<<<< HEAD
-    RouterModule.forRoot(routes),
-    GlobalImportsModule
-=======
+    GlobalImportsModule,
     PipeModule,
     RouterModule.forRoot(routes)
->>>>>>> e94c029bc78647e6e63eb27559d91c53434d0c86
   ],
   providers: [CallbackService,
     {
