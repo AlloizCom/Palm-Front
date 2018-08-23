@@ -1,6 +1,5 @@
 {
 
-//          HEADER AND FOOTER
 
   "header-main":"",
   "header-rooms":"",
@@ -14,7 +13,6 @@
   "footer-address":"",
 
 
-  //      MAIN PAGE
 
 
   "hotel-name": "Palm",
@@ -72,7 +70,6 @@
   "contacts-third-article":"",
 
 
-  //    ROOMS PAGE
 
 
   "suite-title":"",
@@ -101,7 +98,6 @@
   "superior-standard-price":"",
 
 
-  //   NEWS PAGE
 
 
   "first-top-column-title":"",
@@ -126,7 +122,6 @@
   "sixth-article-text":"",
 
 
-  // CONTACTS PAGE
 
 
   "contacts-title":"",
@@ -171,7 +166,6 @@
 
 
   "test-value": "Some value",
-  "test-value2": "Some value",
   "contacts-way-airport": "airport",
   "contacts-way-station": "station",
   "contacts-way-bus": "bus",
