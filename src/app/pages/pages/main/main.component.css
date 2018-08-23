@@ -240,6 +240,11 @@
 }
 
 .infosMain h2 {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-family: Raleway;
   font-weight: 800;
   font-size: 21px;
@@ -251,6 +256,11 @@
 }
 
 .infosMain h4 {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-family: Raleway;
   font-weight: 300;
   font-size: 14px;
@@ -428,6 +438,11 @@
   color: #5A5A5A;
   margin-top: -3px;
   margin-bottom: 13px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .together h2 {
@@ -438,6 +453,11 @@
   text-transform: uppercase;
   color: #000000;
   margin-bottom: -4px;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .ashkas, .ashkas3 {
@@ -462,6 +482,11 @@
   text-transform: uppercase;
   color: #5A5A5A;
   margin-bottom: 0;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .ashkas h2, .ashkas2 h2, .ashkas3 h2 {
@@ -471,6 +496,11 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #000000;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .grnBlock {
