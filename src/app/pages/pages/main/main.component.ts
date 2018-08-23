@@ -12,6 +12,8 @@ export class MainComponent implements OnInit{
   //
   //   backgroundImage:'../../../../assets/svg/MainMarker.svg'
   // }
+
+  //grey map
 iconUrl:'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
 
   latitude =  49.856338332302016;
