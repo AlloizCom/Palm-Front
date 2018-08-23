@@ -1,0 +1,173 @@
+    <form action="" (submit)="update(form)" #form>
+      <div>
+        <div class="text">
+          <h4>{{news.dateTime| date:'medium'}}</h4>
+          <h3>English</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea type="text"
+                  class="w-100" style="height: 30px"
+                  [(ngModel)]="news.newsDescriptions[0].title"
+                  [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[0].headerText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[0].mainText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+
+          <h3>Ukrainian</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 30px"
+          [(ngModel)]="news.newsDescriptions[1].title"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[1].headerText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[1].mainText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+
+
+          <h3>Polish</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 30px"
+          [(ngModel)]="news.newsDescriptions[2].title"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[2].headerText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[2].mainText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+
+
+          <h3>Russian</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Title</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 30px"
+          [(ngModel)]="news.newsDescriptions[3].title"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Header Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 80px"
+          [(ngModel)]="news.newsDescriptions[3].headerText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Main Text</h5>
+            </div>
+            <div class="col-lg-11">
+        <textarea
+          class="w-100" style="height: 150px"
+          [(ngModel)]="news.newsDescriptions[3].mainText"
+          [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div *ngIf="news.picturePath" class="image">
+        <input (change)="readUrl($event)" id="file" type="file" class="d-none" name="multipartFile" >
+      </div>
+      <div class="image">
+        <img [src]="img" alt="" class="w-100">
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-2">
+          <label for="file" class="addImage">Add Image</label>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2">
+          <button class="button"  class="w-100" type="submit">Update news</button>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2">
+          <button class="button"  class="w-100" (click)="deleteNews()">Delete news</button>
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </form>
+
+

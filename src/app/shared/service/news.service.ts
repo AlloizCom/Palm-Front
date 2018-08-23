@@ -51,7 +51,7 @@ export class NewsService {
   }
 
   delete(id: number): Observable<any> {
-    return this._httpClient.delete(this.controller + '/delete')
+    return this._httpClient.delete(this.controller + '/delete/' + id)
       .catch(err => Observable.throw(err));
   }
 

@@ -5,12 +5,15 @@ import {OptionComponent} from './option/option.component';
 import {OrderComponent} from './order/order.component';
 import {RoomComponent} from './room/room.component';
 import {TariffComponent} from './tariff/tariff.component';
+import {OneNewsComponent} from './news/one-news/one-news.component';
 
 export const updateRoutes :Routes =[
   {
     path:'update',component:UpdateComponent ,children :[
       {
         path:'news',component:NewsComponent
+      },{
+        path:'news/:id',component:OneNewsComponent
       },
       {
         path:'option',component:OptionComponent

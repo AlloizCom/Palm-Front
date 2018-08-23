@@ -1,3 +1,11 @@
-<p>
-  news works!
-</p>
+<div *ngFor=" let news of allNews; let i = index">
+  <div *ngIf="news">
+    <hr>
+    <div class="row">
+      <div class="col-lg-3">Дота: {{news.dateTime}}</div>
+      <div class="col-lg-8">Дота: {{news.newsDescriptions[1].title}}</div>
+      <div class="col-lg-1"><button (click)="deleteNews(i)">Видалити</button></div>
+      <button routerLink="{{news.id}}">Оновити</button>
+    </div>
+  </div>
+</div>
