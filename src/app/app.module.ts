@@ -12,7 +12,6 @@ import {CallbackService} from './shared/service/callback.service';
 import {UserDetailsService} from './shared/service/user-details.service';
 import {MyInterceptor} from './shared/interceptors/my.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
-import {TranslateModule} from 'ng2-translate';
 import {GlobalImportsModule} from './shared/config/global-imports/global-imports.module';
 import {PipeModule} from './shared/pipe/pipe.module';
 import {NewsService} from './shared/service/news.service';
