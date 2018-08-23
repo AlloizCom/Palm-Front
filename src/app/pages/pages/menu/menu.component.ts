@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslateService} from "ng2-translate";
+import {Language} from "../../../shared/enum/language";
 
 @Component({
   selector: 'app-menu',
@@ -8,12 +9,13 @@ import {TranslateService} from "ng2-translate";
 })
 export class MenuComponent implements OnInit {
 
+  currentLang: Language = 'uk';
 
-  constructor (private translate:TranslateService){
-    translate.addLangs(["uk","en","pl","ru"]);
+  constructor(private translate: TranslateService) {
+    translate.addLangs(["uk", "en", "pl", "ru"]);
     translate.setDefaultLang("uk");
 
-    let browserLang= translate.getBrowserLang();
+    let browserLang = translate.getBrowserLang();
     console.log(browserLang);
     // translate.use(browserLang.match(/uk|en|pl|ru/) ? browserLang:"uk");
     // translate.use('en')
@@ -21,7 +23,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
-    changeLanguage(lang){
+
+  changeLanguage(lang:Language) {
+    this.currentLang = lang;
     this.translate.use(lang);
-}
+  }
 }

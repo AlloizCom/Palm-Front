@@ -36,6 +36,12 @@ a:hover {
   text-transform: uppercase;
   color: #5A5A5A;
 }
+.langs a:active{
+}
+.langs a:hover{
+  color:#53D7B7;
+}
+
 
 .logo, .bigNav a {
   cursor: pointer;
