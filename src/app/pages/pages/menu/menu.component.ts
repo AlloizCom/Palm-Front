@@ -21,6 +21,7 @@ export class MenuComponent implements OnInit {
     // translate.use('en')
   }
 
+
   ngOnInit() {
   }
 

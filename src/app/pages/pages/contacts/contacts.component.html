@@ -105,13 +105,13 @@
       </div>
       <div class="location-images-wrapper">
         <div class="location-images">
-          <div class=" images plain-image-block" (click)="changeWay('airport')">
-            <div class=" down-image-wrapper" id="elem">
-              <img src="../../../../assets/svg/green-ellipse.svg" alt="">
+          <div class=" images plain-image-block" (click)="changeWay('airport')" >
+            <div class=" down-image-wrapper"  id="elem">
+              <img src="../../../../assets/svg/green-ellipse.svg" alt="" >
               <img  class="little-image image1" src="../../../../assets/svg/airplane.svg" alt="">
             </div>
 
-            <p>Аеропорт</p>
+            <p [ngClass]="{'green-border':currentWay.includes('airport')}">Аеропорт</p>
           </div>
           <div class="images station-image-block" (click)="changeWay('station')">
             <div class=" down-image-wrapper">
@@ -119,7 +119,7 @@
               <img class="little-image image2" src="../../../../assets/svg/station.svg" alt="">
             </div>
 
-            <p>Головний Вокзал</p>
+            <p [ngClass]="{'green-border':currentWay.includes('station')}">Головний Вокзал</p>
           </div>
           <div class="images bus-image-block" (click)="changeWay('bus')">
             <div class=" down-image-wrapper">
@@ -127,7 +127,7 @@
               <img  class="little-image image3" src="../../../../assets/svg/bus.svg" alt="">
             </div>
 
-            <p>Автобус</p>
+            <p [ngClass]="{'green-border':currentWay.includes('bus')}">Автобус</p>
           </div>
           <div class=" images square-image-block" (click)="changeWay('square')">
             <div class=" down-image-wrapper">
@@ -135,29 +135,28 @@
               <img class="little-image image4" src="../../../../assets/svg/square.svg" alt="">
             </div>
 
-            <p>Площа Ринок</p>
+            <p [ngClass]="{'green-border':currentWay.includes('square')}">Площа Ринок</p>
           </div>
-          <div class=" images castle-image-block " (click)="changeWay('castle')">
+          <div class=" images castle-image-block "  (click)="changeWay('castle')">
             <div class=" down-image-wrapper">
               <img src="../../../../assets/svg/green-ellipse.svg" alt="">
               <img  class="little-image image5" src="../../../../assets/svg/castle.svg" alt="">
             </div>
 
-            <p>Станція “Підзамче”</p>
+            <p [ngClass]="{'green-border':currentWay.includes('castle')}">Станція “Підзамче”</p>
           </div>
         </div>
 
       </div>
       <div  class="description" >
         <p>How to dobratusya</p>
-        <p class="airportWay" id="airportWay">{{airportWay|translate}}</p>
+        <p class="airportWay" id="airportWay">{{currentWay|translate}}</p>
       </div>
 
     </div>
       <div class="map-wrapper">
         <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)"[zoom]="13" lang="" >
           <agm-marker [latitude]="latitude" [longitude]="longitude">
-
           </agm-marker>
         </agm-map>
       </div>

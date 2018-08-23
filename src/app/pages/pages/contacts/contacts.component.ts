@@ -9,10 +9,12 @@ import {CallbackService} from '../../../shared/service/callback.service';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-  //formcontroll
+
+  hui = true;
 
   latitude =  49.856338332302016;
   longitude =24.076377153396606;
+  private border: any;
 
 
     onChoseLocation(event){
@@ -21,10 +23,10 @@ export class ContactsComponent implements OnInit {
   callbackForm: FormGroup;
   callback: Callback = new Callback();
 
-  airportWay: any = "";
+  currentWay: any = "";
 
   changeWay(way:string){
-    this.airportWay=`contacts-way-${way}`;
+    this.currentWay=`contacts-way-${way}`;
   }
 
   constructor(private  _callback: CallbackService) {
@@ -56,4 +58,10 @@ export class ContactsComponent implements OnInit {
       }
     );
   }
+  myborder(){
+      return true;
+  }
+
+
+
 }
