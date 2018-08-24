@@ -32,5 +32,17 @@ export class NewsComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+  deleteNews(i){
+    this._newsService.delete(this.allNews[i].id).subscribe(next =>{
+      error=>{
+        console.log(error);
+      }
+      this._newsService.findAll().subscribe(value => {
+        this.allNews = value;
+        console.log(value);
+      });
+    })
+
+  }
 
 }

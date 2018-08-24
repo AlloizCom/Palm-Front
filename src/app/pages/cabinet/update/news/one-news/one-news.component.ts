@@ -59,13 +59,4 @@ export class OneNewsComponent implements OnInit {
     })
   }
 
-  deleteNews(){
-    console.log(this.id);
-    this._newsService.delete(this.id).subscribe(next =>{
-
-      error=>{
-        console.log(error);
-      }
-    })
-  }
 }
