@@ -1,3 +1,16 @@
-<p>
-  option works!
-</p>
+<form formGroup="optionsForm" (submit)="saveOptions(form)" #form>
+  <div>
+    <p>Тип номеру:</p>
+    <input type="text" (change)="changgeOptions(TypeRoomEn.value, HeaderTextareaEn.value, textEn.value ,0)" #TypeRoomEn>
+  </div>
+
+  <div *ngIf="news.picturePath" class="image">
+    <input (change)="readUrl($event)" id="file" type="file" class="d-none" name="multipartFile" >
+  </div>
+
+  <label for="file" class="addImage">Add Image</label>
+
+  <button class="button"  class="w-100" type="submit">Update news</button>
+
+</form>
+

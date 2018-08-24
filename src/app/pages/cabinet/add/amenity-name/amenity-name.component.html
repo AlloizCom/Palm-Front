@@ -1,0 +1,36 @@
+<form action="" (submit)="addAmenity(form)" #form [formGroup]="amenityForm">
+  <div>
+    <p>AmenityEn</p>
+    <input type="text"
+           (change)="addName(nameEn.value ,0)" #nameEn
+           class="w-100" style="height: 30px"
+    formControlName="nameEn">
+  </div>
+  <div>
+    <p>AmenityUk</p>
+    <input type="text"
+           (change)="addName(nameUk.value ,1)" #nameUk
+           class="w-100" style="height: 30px"
+           formControlName="nameUk">
+  </div>
+  <div>
+    <p>AmenityPl</p>
+    <input type="text"
+           (change)="addName(namePl.value ,2)" #namePl
+           class="w-100" style="height: 30px"
+           formControlName="namePl">
+  </div>
+  <div>
+    <p>AmenityRu</p>
+    <input type="text"
+           (change)="addName(nameRu.value ,3)" #nameRu
+           class="w-100" style="height: 30px"
+           formControlName="nameRu">
+  </div>
+  <input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFile">
+  <div *ngIf="image" class="image">
+    <img [src]="image" alt="" class="w-100">
+  </div>
+  <label for="file" class="addImage">Add Image</label>
+  <button class="button" type="submit" class="w-100">Save amenity</button>
+</form>

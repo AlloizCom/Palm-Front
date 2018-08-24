@@ -6,6 +6,7 @@ import {OrderComponent} from './order/order.component';
 import {RoomComponent} from './room/room.component';
 import {TariffComponent} from './tariff/tariff.component';
 import {AddComponent} from './add.component';
+import {AmenityNameComponent} from './amenity-name/amenity-name.component';
 
 export const addRoutes :Routes =[
   {
@@ -27,6 +28,9 @@ export const addRoutes :Routes =[
       },
       {
         path:'tariff',component:TariffComponent
+      },
+      {
+        path:'amenity',component: AmenityNameComponent
       }
     ]
   }
