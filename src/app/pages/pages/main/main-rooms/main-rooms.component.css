@@ -1,0 +1,139 @@
+.allIn h2{
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 13px;
+  color: #53D7B7;
+  margin-top: 7%;
+}
+.allIn h3{
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 21px;
+  font-size: 14px;
+  text-align: left;
+  color: #5A5A5A;
+}
+
+
+
+
+.wrapper {
+  /*position: relative;*/
+}
+
+.topImage {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+
+
+  border: 0.5px solid #E5E5E5;
+  box-sizing: border-box;
+}
+
+.allIn {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.relka{
+  position: relative;
+}
+.sliderBlock {
+  align-items: center;
+}
+
+.first {
+  width: 20.2vw;
+  height: 419px;
+
+
+}
+
+.second {
+  left: 50%;
+  top: 42%;
+  /*left: 36%;*/
+  /*top: -4.5%;*/
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  position: absolute;
+  width: 21vw;
+  margin: auto;
+  height: 31vh;
+  /*width: 312px;*/
+  height: 463px;
+}
+
+.lefty{
+  padding-left: 31%;
+}
+
+
+.swith:hover {
+  opacity: 0.95;
+  cursor: pointer;
+}
+
+.greenAbs {
+  left: 50%;
+  top: 42%;
+  /*left: 36%;*/
+  /*top: -4.5%;*/
+  transform: translate(-50%, -50%);
+  z-index:3;
+  position: absolute;
+  width: 21vw;
+  margin: auto;
+  height: 31vh;
+
+  /*width: 312px;*/
+  height: 463px;
+
+  backdrop-filter: blur(8px);
+  background: rgba(83, 215, 183, 0.74);
+}
+
+/*.volas{*/
+  /*width: 10%;*/
+/*}*/
+
+.greenAbs h2 {
+  position: absolute;
+  font-family: Raleway;
+  font-weight: 800;
+  font-size: 21px;
+  color: #FFFFFF;
+  text-align: center;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.greenAbs p {
+  position: absolute;
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: 25px;
+  font-size: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 1230px) {
+  .greenAbs p {
+    top: 60% !important;
+  }
+}
+
+@media screen and (max-width: 965px) {
+  .greenAbs p {
+    top: 65% !important;
+  }
+}

@@ -460,12 +460,14 @@
   user-select: none;
 }
 
-.ashkas, .ashkas3 {
+.ashkas, .ashkas3, .ashkas4 {
   margin-top: 10%;
   margin-left: 1%;
   margin-bottom: 2%;
 }
-
+.ashkas3{
+  margin-top: 2%;
+}
 .divka {
   margin-bottom: 2%;
 }
@@ -474,7 +476,7 @@
   margin-left: 1.2%;
 }
 
-.ashkas h3, .ashkas2 h3, .ashkas3 h3 {
+.ashkas h3, .ashkas2 h3, .ashkas3 h3, .ashkas4 h3 {
   font-family: Raleway;
   font-weight: 300;
   font-size: 14px;
@@ -489,7 +491,7 @@
   user-select: none;
 }
 
-.ashkas h2, .ashkas2 h2, .ashkas3 h2 {
+.ashkas h2, .ashkas2 h2, .ashkas3 h2, .ashkas4 h2 {
   font-family: Raleway;
   font-weight: 800;
   font-size: 21px;
@@ -501,6 +503,10 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.filks{
+  margin-left: 6%;
 }
 
 .grnBlock {
