@@ -22,12 +22,9 @@ export class AmenityNameComponent implements OnInit {
 
 
   constructor(private _amenityService: AmenityService) {
-    let amen = new AmenityName();
-    amen.language = '';
-    for(let i=0; i<4; i++){
-      this.amenity.amenityNames.push(amen);
-      console.log(this.amenity.amenityNames[i].language);
-    }
+    this.amenityNames= new Array(4);
+    this.amenityNames =[new AmenityName(), new AmenityName(),new AmenityName(),new AmenityName() ];
+    this.amenity.amenityNames = this.amenityNames;
   }
 
   ngOnInit() {
@@ -38,32 +35,15 @@ export class AmenityNameComponent implements OnInit {
       nameRu: new FormControl('', [Validators.required])
     });
     this.amenityForm.valueChanges.subscribe(value => {
-      console.log(value);
+      this.amenity.amenityNames[0].language = 'EN';
+      this.amenity.amenityNames[0].name = value.nameEn;
+      this.amenity.amenityNames[1].language = 'UK';
+      this.amenity.amenityNames[1].name = value.nameUk;
+      this.amenity.amenityNames[2].language = 'PL';
+      this.amenity.amenityNames[2].name = value.namePl;
+      this.amenity.amenityNames[3].language = 'RU';
+      this.amenity.amenityNames[3].name = value.nameRu;
     });
-  }
-  addName(name: string, index: number) {
-    switch (index) {
-      case 0: {
-        this.amenity.amenityNames[index].language = 'EN';
-        this.amenity.amenityNames[index].name = name;
-        break;
-      }
-      case 1: {
-        this.amenity.amenityNames[index].language = 'UK';
-        this.amenity.amenityNames[index].name = name;
-        break;
-      }
-      case 2: {
-        this.amenity.amenityNames[index].language = 'PL';
-        this.amenity.amenityNames[index].name = name;
-        break;
-      }
-      case 3: {
-        this.amenity.amenityNames[index].language = 'RU';
-        this.amenity.amenityNames[index].name = name;
-        break;
-      }
-    }
   }
 
   readUrl(event: any) {
@@ -92,7 +72,6 @@ export class AmenityNameComponent implements OnInit {
   getAmenity(){
       this._amenityService.findAll().subscribe(next=>{
         this.allAmenities=next;
-        console.log(next);
       })
 
 
