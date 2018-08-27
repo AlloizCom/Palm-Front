@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import { ImagePipePipe } from './pipe/image.pipe';
 import {ReversPipe} from './pipe/revers.pipe';
+import {DatePipePipe} from './pipe/date-pipe.pipe';
+import {LanguageDescPipe} from './pipe/language-desc.pipe';
 
 @NgModule({
   imports: [
@@ -9,9 +11,13 @@ import {ReversPipe} from './pipe/revers.pipe';
   ],
   declarations: [
     ImagePipePipe,
-    ReversPipe],
+    ReversPipe,
+    DatePipePipe,
+    LanguageDescPipe],
   exports:[
     ImagePipePipe,
-    ReversPipe]
+    ReversPipe,
+    DatePipePipe,
+    LanguageDescPipe]
 })
 export class PipeModule { }

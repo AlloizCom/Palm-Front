@@ -6,6 +6,6 @@ export class News {
   available: boolean;
   dateTime: string;
   picturePath: string;
-  amenityNames: NewsDescription[] = [];
+  newsDescriptions: NewsDescription[] = [];
 
 }

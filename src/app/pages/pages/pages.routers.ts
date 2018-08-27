@@ -13,11 +13,11 @@ export const pagesRoutes: Routes = [
       {
         path: '', component: MainComponent
       },{
-        path: 'article', component: ArticleComponent
-      },{
         path: 'contacts', component: ContactsComponent
       },{
         path: 'news', component: NewsComponent
+      },{
+        path: 'news/:id', component: ArticleComponent
       },{
         path: 'rooms', component: RoomsComponent
       }

@@ -18,16 +18,15 @@ export class OneNewsComponent implements OnInit {
   id: number;
 
   constructor(private _router: ActivatedRoute, private _newsService: NewsService, private _imagePipe: ImagePipePipe) {
-    this.news.amenityNames = [];
+    this.news.newsDescriptions = [];
     let descr = new NewsDescription();
     descr.title = '';
     for (let i = 0; i < 4; i++)
-      this.news.amenityNames.push(descr);
+      this.news.newsDescriptions.push(descr);
     _router.params.subscribe(next => {
       _newsService.findOne(next['id']).subscribe(next => {
         this.news = next;
         this.id = next['id'];
-
         this.img = this._imagePipe.transform(next.picturePath)
       },error=>{
         console.log(error);

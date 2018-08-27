@@ -21,7 +21,7 @@ export class NewsComponent implements OnInit {
 
   constructor(private _newsService: NewsService, private _imagePipe: ImagePipePipe) {
     this.description = [new NewsDescription(), new NewsDescription(), new NewsDescription(), new NewsDescription()];
-    this.news.amenityNames = this.description;
+    this.news.newsDescriptions = this.description;
   }
 
   ngOnInit() {
@@ -34,31 +34,31 @@ export class NewsComponent implements OnInit {
   addDescr(title: string, header: string, text: string, index: number) {
     switch (index) {
       case 0: {
-        this.news.amenityNames[index].language = 'EN';
-        this.news.amenityNames[index].title = title;
-        this.news.amenityNames[index].headerText = header;
-        this.news.amenityNames[index].mainText = text;
+        this.news.newsDescriptions[index].language = 'EN';
+        this.news.newsDescriptions[index].title = title;
+        this.news.newsDescriptions[index].headerText = header;
+        this.news.newsDescriptions[index].mainText = text;
         break;
       }
       case 1: {
-        this.news.amenityNames[index].language = 'UK';
-        this.news.amenityNames[index].title = title;
-        this.news.amenityNames[index].headerText = header;
-        this.news.amenityNames[index].mainText = text;
+        this.news.newsDescriptions[index].language = 'UK';
+        this.news.newsDescriptions[index].title = title;
+        this.news.newsDescriptions[index].headerText = header;
+        this.news.newsDescriptions[index].mainText = text;
         break;
       }
       case 2: {
-        this.news.amenityNames[index].language = 'PL';
-        this.news.amenityNames[index].title = title;
-        this.news.amenityNames[index].headerText = header;
-        this.news.amenityNames[index].mainText = text;
+        this.news.newsDescriptions[index].language = 'PL';
+        this.news.newsDescriptions[index].title = title;
+        this.news.newsDescriptions[index].headerText = header;
+        this.news.newsDescriptions[index].mainText = text;
         break;
       }
       case 3: {
-        this.news.amenityNames[index].language = 'RU';
-        this.news.amenityNames[index].title = title;
-        this.news.amenityNames[index].headerText = header;
-        this.news.amenityNames[index].mainText = text;
+        this.news.newsDescriptions[index].language = 'RU';
+        this.news.newsDescriptions[index].title = title;
+        this.news.newsDescriptions[index].headerText = header;
+        this.news.newsDescriptions[index].mainText = text;
         break;
       }
     }
@@ -86,6 +86,7 @@ export class NewsComponent implements OnInit {
       form.reset();
       this.getNews();
     });
+    console.log(this.news)
   }
 
   getNews() {
