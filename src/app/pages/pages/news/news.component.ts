@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {News} from '../../../shared/models/news';
 import {NewsService} from '../../../shared/service/news.service';
 import {isNullOrUndefined} from 'util';
-import {TranslateLoader, TranslateService} from 'ng2-translate';
 
 @Component({
   selector: 'app-news',
@@ -14,7 +13,7 @@ export class NewsComponent implements OnInit {
   news: News[] = [];
   language: string;
 
-  constructor(private _newsService: NewsService, private translate: TranslateService) {
+  constructor(private _newsService: NewsService) {
     this._newsService.findAllAvailable().subscribe(next => {
       for (let i of next) {
         if (typeof (i) != 'undefined' && i != null) {
@@ -24,9 +23,6 @@ export class NewsComponent implements OnInit {
       }
 
       this.news = next;
-      this.language = this.translate.currentLang;
-      console.log('current lang - ' + this.translate.currentLang);
-      console.log('langs - ' + this.translate.getLangs());
     }, err => {
       console.log(err);
     });

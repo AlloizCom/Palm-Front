@@ -57,8 +57,8 @@
 
         <div class="item" *ngFor="let one of news|revers" >
           <div class="back1"  [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" ></div>
-          <h3 routerLink="{{one.id}}" >{{one.newsDescriptions[language | languagePipe].title}}</h3>
-          <h4>{{one.newsDescriptions[language | languagePipe].headerText}}</h4>
+          <h3 routerLink="{{one.id}}" >{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
+          <h4>{{one.newsDescriptions['current-language-index' | translate].headerText}}</h4>
           <div class="bott d-flex justify-content-between"><h5>{{one.dateTime |datePipe}}</h5><div class="images">
             <img class="greyShit" src="../../../assets/svg/newsVector.svg" alt=""><img class="greenShit" src="../../../assets/svg/greenShit.svg" alt="">
           </div></div>
