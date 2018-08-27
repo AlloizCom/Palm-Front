@@ -106,7 +106,7 @@ export class NewsComponent implements OnInit {
       console.log(error);
     });
   }
-
+// dsad
   deleteNews(index){
     this._newsService.delete(index);
   }

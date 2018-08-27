@@ -1,16 +1,156 @@
-<form formGroup="optionsForm" (submit)="saveOptions(form)" #form>
+<form action="" (submit)="addservice(form)" #form>
   <div>
-    <p>Тип номеру:</p>
-    <input type="text" (change)="changgeOptions(TypeRoomEn.value, HeaderTextareaEn.value, textEn.value ,0)" #TypeRoomEn>
+    <div class="text">
+      <h3>English</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea type="text"
+                  (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)" #TitleEn class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)"
+          #HeaderTextareaEn class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)" #textEn
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+      <h3>Ukrainian</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)" #TitleUk class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)"
+          #HeaderTextareaUk class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)" #textUk
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+
+      <h3>Polish</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)" #TitlePl class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)"
+          #HeaderTextareaPl class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)" #textPl
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+
+      <h3>Russian</h3>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Title</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)" #TitleRu class="w-100" style="height: 30px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Header Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)"
+          #HeaderTextareaRu class="w-100" style="height: 80px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-1">
+          <h5>Main Text</h5>
+        </div>
+        <div class="col-lg-11">
+        <textarea
+          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)" #textRu
+          class="w-100" style="height: 150px"></textarea>
+        </div>
+      </div>
+
+    </div>
   </div>
-
-  <div *ngIf="news.picturePath" class="image">
-    <input (change)="readUrl($event)" id="file" type="file" class="d-none" name="multipartFile" >
+  <br>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-3">
+      <button class="button" type="submit" class="w-100">Save service</button>
+    </div>
+    <div class="col-lg-2"></div>
   </div>
-
-  <label for="file" class="addImage">Add Image</label>
-
-  <button class="button"  class="w-100" type="submit">Update news</button>
-
 </form>
+
+
+
+<div *ngFor=" let service of allservice; let i = index">
+  <div *ngIf="service">
+    <hr>
+    <div class="row">
+      <div class="col-lg-8">Дота: {{service.serviceDescription[0].title}}</div>
+      <!--<div class="col-lg-1"><button (click)="deleteservice(i)">Видалити</button></div>-->
+    </div>
+  </div>
+</div>
 
