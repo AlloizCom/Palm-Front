@@ -53,6 +53,13 @@
 
 }
 
+/*.first:hover{*/
+  /*margin-top: -1%;*/
+  /*-webkit-transition: .3s ease-in-out;*/
+  /*transition: .3s ease-in-out;*/
+  /*-webkit-box-shadow: 3px 14px 25px -4px rgba(0,0,0,0.65);*/
+  /*box-shadow: 3px 14px 25px -4px rgba(0,0,0,0.65);*/
+/*}*/
 .second {
   left: 50%;
   top: 42%;

@@ -6,12 +6,8 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit{
-  //formcontroll
 
-  // labelOptions = {
-  //
-  //   backgroundImage:'../../../../assets/svg/MainMarker.svg'
-  // }
+
 
   //grey map
 iconUrl:'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';

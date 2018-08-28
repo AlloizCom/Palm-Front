@@ -16,6 +16,7 @@ import {GlobalImportsModule} from './shared/config/global-imports/global-imports
 import {PipeModule} from './shared/pipe/pipe.module';
 import {NewsService} from './shared/service/news.service';
 import {ServiceService} from "./shared/service/service.service";
+import {MenuComponent} from "./pages/pages/menu/menu.component";
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {ServiceService} from "./shared/service/service.service";
   providers: [CallbackService,
     ServiceService,
     NewsService,
+    MenuComponent,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MyInterceptor,

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {TranslateService} from 'ng2-translate';
 import {Language} from '../../../shared/enum/language';
 import {ServiceService} from "../../../shared/service/service.service";
@@ -9,6 +9,7 @@ import {Service} from "../../../shared/models/service";
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
+@Injectable()
 export class MenuComponent implements OnInit {
 
   currentLang: Language = 'uk';
