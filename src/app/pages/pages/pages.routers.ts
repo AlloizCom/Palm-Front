@@ -6,6 +6,7 @@ import {NewsComponent} from "./news/news.component";
 import {RoomsComponent} from "./rooms/rooms.component";
 import {PagesComponent} from './pages.component';
 import {ServiceComponent} from "./service/service.component";
+import {RoomsBookingComponent} from "./rooms-booking/rooms-booking.component";
 
 
 export const pagesRoutes: Routes = [
@@ -23,6 +24,8 @@ export const pagesRoutes: Routes = [
         path: 'service/:id', component: ServiceComponent
       },{
         path: 'rooms', component: RoomsComponent
+      }, {
+        path: 'rooms-booking', component: RoomsBookingComponent
       }
     ]
   }
