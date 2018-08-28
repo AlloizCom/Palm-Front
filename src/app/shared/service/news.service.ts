@@ -34,6 +34,11 @@ export class NewsService {
       .catch(err => Observable.throw(err));
   }
 
+  getRandomArray(length: number): Observable<any>{
+    return this._httpClient.get<number[]>(this.controller + '/get-random-array/' + length)
+      .catch(err => Observable.throw(err));
+  }
+
   save(newsJson: News, form: HTMLFormElement): Observable<News> {
     let f = new FormData(form);
     f.append('newsJson', JSON.stringify(newsJson));
