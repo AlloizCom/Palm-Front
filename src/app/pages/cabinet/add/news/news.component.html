@@ -1,4 +1,4 @@
-<form action="" (submit)="addNews(form)" #form>
+<form action="" (submit)="addNews(form)" #form [formGroup]="newsForm">
   <div>
     <div class="left-block">
       <input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFile">
@@ -11,7 +11,8 @@
         </div>
         <div class="col-lg-11">
         <textarea type="text"
-                  (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)" #TitleEn class="w-100" style="height: 30px"></textarea>
+                  formControlName="TitleEn"
+                  class="w-100" style="height: 30px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -20,8 +21,8 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)"
-          #HeaderTextareaEn class="w-100" style="height: 80px"></textarea>
+          formControlName="HeaderTextareaEn"
+          class="w-100" style="height: 80px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -30,7 +31,7 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleEn.value, HeaderTextareaEn.value, textEn.value ,0)" #textEn
+          formControlName="textEn"
           class="w-100" style="height: 150px"></textarea>
         </div>
       </div>
@@ -42,7 +43,8 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)" #TitleUk class="w-100" style="height: 30px"></textarea>
+          formControlName="TitleUk"
+          class="w-100" style="height: 30px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -51,8 +53,8 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)"
-          #HeaderTextareaUk class="w-100" style="height: 80px"></textarea>
+          formControlName="HeaderTextareaUk"
+          class="w-100" style="height: 80px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -61,7 +63,7 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleUk.value, HeaderTextareaUk.value, textUk.value ,1)" #textUk
+          formControlName="textUk"
           class="w-100" style="height: 150px"></textarea>
         </div>
       </div>
@@ -74,7 +76,8 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)" #TitlePl class="w-100" style="height: 30px"></textarea>
+          formControlName="TitlePl"
+          class="w-100" style="height: 30px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -83,8 +86,8 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)"
-          #HeaderTextareaPl class="w-100" style="height: 80px"></textarea>
+          formControlName="HeaderTextareaPl"
+          class="w-100" style="height: 80px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -93,7 +96,7 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitlePl.value, HeaderTextareaPl.value, textPl.value ,2)" #textPl
+          formControlName="textPl"
           class="w-100" style="height: 150px"></textarea>
         </div>
       </div>
@@ -106,7 +109,8 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)" #TitleRu class="w-100" style="height: 30px"></textarea>
+          formControlName="TitleRu"
+          class="w-100" style="height: 30px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -115,8 +119,8 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)"
-          #HeaderTextareaRu class="w-100" style="height: 80px"></textarea>
+          formControlName="HeaderTextareaRu"
+          class="w-100" style="height: 80px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -125,7 +129,7 @@
         </div>
         <div class="col-lg-11">
         <textarea
-          (change)="addDescr(TitleRu.value, HeaderTextareaRu.value, textRu.value ,3)" #textRu
+          formControlName="textRu"
           class="w-100" style="height: 150px"></textarea>
         </div>
       </div>
@@ -151,13 +155,13 @@
 
 
 
-<div *ngFor=" let news of allNews; let i = index">
+<div *ngFor=" let news of allNews">
   <div *ngIf="news">
     <hr>
     <div class="row">
       <div class="col-lg-3">Дота: {{news.dateTime}}</div>
-      <!--<div class="col-lg-8">Дота: {{news.amenityNames[2].title}}</div>-->
-      <div class="col-lg-1"><button (click)="deleteNews(i)">Видалити</button></div>
+      <!--<div class="col-lg-8">Дата: {{news.amenityNames[2].title}}</div>-->
+      <div class="col-lg-1"><button (click)="deleteNews(news.id)">Видалити</button></div>
     </div>
   </div>
 </div>

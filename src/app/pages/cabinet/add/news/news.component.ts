@@ -3,6 +3,7 @@ import {NewsService} from '../../../../shared/service/news.service';
 import {News} from '../../../../shared/models/news';
 import {NewsDescription} from '../../../../shared/models/news-description';
 import {ImagePipePipe} from '../../../../shared/pipe/pipe/image.pipe';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-news',
@@ -12,6 +13,7 @@ import {ImagePipePipe} from '../../../../shared/pipe/pipe/image.pipe';
 })
 export class NewsComponent implements OnInit {
 
+  newsForm: FormGroup;
   news: News = new News();
   description: NewsDescription[] = [];
   allNews: News[] = [];
@@ -29,39 +31,39 @@ export class NewsComponent implements OnInit {
       this.allNews = value;
       console.log(value);
     });
-  }
 
-  addDescr(title: string, header: string, text: string, index: number) {
-    switch (index) {
-      case 0: {
-        this.news.newsDescriptions[index].language = 'EN';
-        this.news.newsDescriptions[index].title = title;
-        this.news.newsDescriptions[index].headerText = header;
-        this.news.newsDescriptions[index].mainText = text;
-        break;
-      }
-      case 1: {
-        this.news.newsDescriptions[index].language = 'UK';
-        this.news.newsDescriptions[index].title = title;
-        this.news.newsDescriptions[index].headerText = header;
-        this.news.newsDescriptions[index].mainText = text;
-        break;
-      }
-      case 2: {
-        this.news.newsDescriptions[index].language = 'PL';
-        this.news.newsDescriptions[index].title = title;
-        this.news.newsDescriptions[index].headerText = header;
-        this.news.newsDescriptions[index].mainText = text;
-        break;
-      }
-      case 3: {
-        this.news.newsDescriptions[index].language = 'RU';
-        this.news.newsDescriptions[index].title = title;
-        this.news.newsDescriptions[index].headerText = header;
-        this.news.newsDescriptions[index].mainText = text;
-        break;
-      }
-    }
+    this.newsForm = new FormGroup({
+      TitleEn: new FormControl('', [Validators.required]),
+      HeaderTextareaEn: new FormControl('', [Validators.required]),
+      textEn: new FormControl('', [Validators.required]),
+      TitleUk: new FormControl('', [Validators.required]),
+      HeaderTextareaUk: new FormControl('', [Validators.required]),
+      textUk: new FormControl('', [Validators.required]),
+      TitlePl: new FormControl('', [Validators.required]),
+      HeaderTextareaPl: new FormControl('', [Validators.required]),
+      textPl: new FormControl('', [Validators.required]),
+      TitleRu: new FormControl('', [Validators.required]),
+      HeaderTextareaRu: new FormControl('', [Validators.required]),
+      textRu: new FormControl('', [Validators.required]),
+    });
+    this.newsForm.valueChanges.subscribe(value => {
+      this.news.newsDescriptions[0].language = 'EN';
+      this.news.newsDescriptions[0].title = value.TitleEn;
+      this.news.newsDescriptions[0].headerText = value.HeaderTextareaEn;
+      this.news.newsDescriptions[0].mainText = value.textEn;
+      this.news.newsDescriptions[1].language = 'PL';
+      this.news.newsDescriptions[1].title = value.TitlePl;
+      this.news.newsDescriptions[1].headerText = value.HeaderTextareaPl;
+      this.news.newsDescriptions[1].mainText = value.textPl;
+      this.news.newsDescriptions[2].language = 'UK';
+      this.news.newsDescriptions[2].title = value.TitleUk;
+      this.news.newsDescriptions[2].headerText = value.HeaderTextareaUk;
+      this.news.newsDescriptions[2].mainText = value.textUk;
+      this.news.newsDescriptions[3].language = 'RU';
+      this.news.newsDescriptions[3].title = value.TitleRu;
+      this.news.newsDescriptions[3].headerText = value.HeaderTextareaRu;
+      this.news.newsDescriptions[3].mainText = value.textRu;
+    });
   }
 
   readUrl(event: any) {
@@ -92,7 +94,6 @@ export class NewsComponent implements OnInit {
   getNews() {
     this._newsService.findAll().subscribe(value => {
       this.allNews = value;
-      console.log(value);
     });
   }
 
@@ -106,9 +107,14 @@ export class NewsComponent implements OnInit {
       console.log(error);
     });
   }
-// dsad
-  deleteNews(index){
-    this._newsService.delete(index);
-  }
 
+  deleteNews(index){
+    this._newsService.delete(index).subscribe(next=>{
+      console.log(next);
+      this.getNews();
+    },
+      error =>
+    console.log(error)
+    );
+  }
 }

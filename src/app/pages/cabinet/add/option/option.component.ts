@@ -1,81 +1,89 @@
 import {Component, OnInit} from '@angular/core';
-import {ServiceDescription} from '../../../../shared/models/service-description';
 import {Service} from '../../../../shared/models/service';
 import {ServiceService} from '../../../../shared/service/service.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ServiceDescription} from '../../../../shared/models/service-description';
 
 @Component({
   selector: 'app-option',
   templateUrl: './option.component.html',
   styleUrls: ['./option.component.css'],
-  providers:[ServiceService]
+  providers: [ServiceService]
 })
 export class OptionComponent implements OnInit {
 
+  servicesForm: FormGroup;
   service: Service = new Service();
   description: ServiceDescription[] = [];
-  allService: Service[] = [];
+
+
+  appear = false;
+  image: string;
 
   constructor(private _serviceService: ServiceService) {
     this.description = [new ServiceDescription(), new ServiceDescription(), new ServiceDescription(), new ServiceDescription()];
-    this.service.serviceDescription = this.description;
+    this.service.serviceDescriptions = this.description;
   }
 
   ngOnInit() {
-    this._serviceService.findAll().subscribe(value => {
-      this.allService = value;
-      console.log(value);
+    this.servicesForm = new FormGroup({
+      servicesName: new FormControl('', [Validators.required]),
+      TitleEn: new FormControl('', [Validators.required]),
+      HeaderTextareaEn: new FormControl('', [Validators.required]),
+      textEn: new FormControl('', [Validators.required]),
+      TitleUk: new FormControl('', [Validators.required]),
+      HeaderTextareaUk: new FormControl('', [Validators.required]),
+      textUk: new FormControl('', [Validators.required]),
+      TitlePl: new FormControl('', [Validators.required]),
+      HeaderTextareaPl: new FormControl('', [Validators.required]),
+      textPl: new FormControl('', [Validators.required]),
+      TitleRu: new FormControl('', [Validators.required]),
+      HeaderTextareaRu: new FormControl('', [Validators.required]),
+      textRu: new FormControl('', [Validators.required]),
+    });
+    this.servicesForm.valueChanges.subscribe(value => {
+      this.service.name=value.servicesName;
+      this.service.serviceDescriptions[0].language = 'EN';
+      this.service.serviceDescriptions[0].title = value.TitleEn;
+      this.service.serviceDescriptions[0].headerText = value.HeaderTextareaEn;
+      this.service.serviceDescriptions[0].mainText = value.textEn;
+      this.service.serviceDescriptions[1].language = 'PL';
+      this.service.serviceDescriptions[1].title = value.TitlePl;
+      this.service.serviceDescriptions[1].headerText = value.HeaderTextareaPl;
+      this.service.serviceDescriptions[1].mainText = value.textPl;
+      this.service.serviceDescriptions[2].language = 'UK';
+      this.service.serviceDescriptions[2].title = value.TitleUk;
+      this.service.serviceDescriptions[2].headerText = value.HeaderTextareaUk;
+      this.service.serviceDescriptions[2].mainText = value.textUk;
+      this.service.serviceDescriptions[3].language = 'RU';
+      this.service.serviceDescriptions[3].title = value.TitleRu;
+      this.service.serviceDescriptions[3].headerText = value.HeaderTextareaRu;
+      this.service.serviceDescriptions[3].mainText = value.textRu;
     });
   }
 
-  addDescr(title: string, header: string, text: string, index: number) {
-    switch (index) {
-      case 0: {
-        this.service.serviceDescription[index].language = 'EN';
-        this.service.serviceDescription[index].title = title;
-        this.service.serviceDescription[index].headerText = header;
-        this.service.serviceDescription[index].mainText = text;
-        break;
-      }
-      case 1: {
-        this.service.serviceDescription[index].language = 'UK';
-        this.service.serviceDescription[index].title = title;
-        this.service.serviceDescription[index].headerText = header;
-        this.service.serviceDescription[index].mainText = text;
-        break;
-      }
-      case 2: {
-        this.service.serviceDescription[index].language = 'PL';
-        this.service.serviceDescription[index].title = title;
-        this.service.serviceDescription[index].headerText = header;
-        this.service.serviceDescription[index].mainText = text;
-        break;
-      }
-      case 3: {
-        this.service.serviceDescription[index].language = 'RU';
-        this.service.serviceDescription[index].title = title;
-        this.service.serviceDescription[index].headerText = header;
-        this.service.serviceDescription[index].mainText = text;
-        break;
-      }
-    }
-  }
-
-  addservice(form: HTMLFormElement) {
+  addServices(form: HTMLFormElement) {
+    console.log(this.service);
     this._serviceService.save(this.service, form).subscribe(next => {
       console.log(next);
     }, error => {
       console.log(error);
     }, () => {
+      this.image = null;
       form.reset();
-      this.getService();
     });
   }
 
-  getService() {
-    this._serviceService.findAll().subscribe(value => {
-      this.allService = value;
-      console.log(value);
-    });
+  readUrl(event: any) {
+    this.appear = false;
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (event: any) => {
+        this.image = event.target.result;
+        this.appear = true;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
 
 }
