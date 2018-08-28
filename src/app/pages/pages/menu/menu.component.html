@@ -10,13 +10,8 @@
             <a routerLink="/news">новини</a>
             <a class="dropdown">послуги
               <div class="dropdown-content">
-                <a>поселення для груп</a>
-                <a>правила та умови бронювання</a>
-                <a>кухня</a>
-                <a>Парковка автомобіля</a>
-                <a>дисконтна картка “Gold”</a>
-                <a>правила проживання в готелі</a>
-                <a>додаткові послуги</a>
+                <a *ngFor="let one of services" routerLink="/service/{{one.id}}">
+                  {{one.serviceDescriptions['current-language-index'| translate].title}}</a>
               </div>
             </a>
             <a [routerLink]="['/','contacts']">контакти</a>

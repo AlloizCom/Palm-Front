@@ -62,30 +62,30 @@
   width: 30%;
 }
 
-.one {
-  background-image: url("../../../../../src/assets/png/11.jpg");
-}
+/*.one {*/
+  /*background-image: url("../../../../../src/assets/png/11.jpg");*/
+/*}*/
 
-.two {
-  background-image: url("../../../../../src/assets/png/22.jpg");
-}
+/*.two {*/
+  /*background-image: url("../../../../../src/assets/png/22.jpg");*/
+/*}*/
 
-.three {
-  background-image: url("../../../../../src/assets/png/33.jpg");
-}
+/*.three {*/
+  /*background-image: url("../../../../../src/assets/png/33.jpg");*/
+/*}*/
 
-.four {
-  background-image: url("../../../../../src/assets/png/44.jpg");
-}
+/*.four {*/
+  /*background-image: url("../../../../../src/assets/png/44.jpg");*/
+/*}*/
 
-.five {
-  background-image: url("../../../../../src/assets/png/55.jpg");
-}
+/*.five {*/
+  /*background-image: url("../../../../../src/assets/png/55.jpg");*/
+/*}*/
 
-.six {
-  background-image: url("../../../../../src/assets/png/66.jpg");
+/*.six {*/
+  /*background-image: url("../../../../../src/assets/png/66.jpg");*/
 
-}
+/*}*/
 
 .one, .two, .three, .four, .five, .six {
   background-repeat: no-repeat;
@@ -95,29 +95,29 @@
   position: relative;
 }
 
-.back1 {
-  background-image: url("../../../../../src/assets/png/11.jpg");
-}
+/*.back1 {*/
+  /*background-image: url("../../../../../src/assets/png/11.jpg");*/
+/*}*/
 
-.back2 {
-  background-image: url("../../../../../src/assets/png/22.jpg");
-}
+/*.back2 {*/
+  /*background-image: url("../../../../../src/assets/png/22.jpg");*/
+/*}*/
 
-.back3 {
-  background-image: url("../../../../../src/assets/png/33.jpg");
-}
+/*.back3 {*/
+  /*background-image: url("../../../../../src/assets/png/33.jpg");*/
+/*}*/
 
-.back4 {
-  background-image: url("../../../../../src/assets/png/44.jpg");
-}
+/*.back4 {*/
+  /*background-image: url("../../../../../src/assets/png/44.jpg");*/
+/*}*/
 
-.back5 {
-  background-image: url("../../../../../src/assets/png/55.jpg");
-}
+/*.back5 {*/
+  /*background-image: url("../../../../../src/assets/png/55.jpg");*/
+/*}*/
 
-.back6 {
-  background-image: url("../../../../../src/assets/png/66.jpg");
-}
+/*.back6 {*/
+  /*background-image: url("../../../../../src/assets/png/66.jpg");*/
+/*}*/
 
 .back1, .back2, .back3, .back4, .back5, .back6 {
   background-repeat: no-repeat;

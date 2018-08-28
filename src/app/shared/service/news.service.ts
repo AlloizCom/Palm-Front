@@ -35,7 +35,7 @@ export class NewsService {
   }
 
   getRandomArray(length: number): Observable<any>{
-    return this._httpClient.get<number[]>(this.controller + '/get-random-array/' + length)
+    return this._httpClient.get<any>(this.controller + '/get-random-array/' + length)
       .catch(err => Observable.throw(err));
   }
 

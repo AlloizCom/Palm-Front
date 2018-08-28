@@ -1,0 +1,21 @@
+
+<div *ngIf="isNull(service)"  class="content">
+  <div class="header-text">
+    <h2>{{service.serviceDescriptions['current-language-index' |translate].title}}</h2>
+  </div>
+  <div class="main-text">
+    <p>{{service.serviceDescriptions['current-language-index' |translate].headerText}}</p>
+  </div>
+  <div class="image" [style.background-image]="'url(' + (service.image|imagePipe) + ')'">
+  </div>
+  <div class="down-text">
+    <div class="right-text-block">
+      <p>{{service.serviceDescriptions['current-language-index'|translate].mainText}}</p>
+      <div class="date-and-share">
+        <div class="share">
+          <img src="../../../../assets/svg/Vector.svg" >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

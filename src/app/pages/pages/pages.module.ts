@@ -13,6 +13,7 @@ import {MenuComponent} from './menu/menu.component';
 import {FooterComponent} from './footer/footer.component';
 import {GlobalImportsModule} from '../../shared/config/global-imports/global-imports.module';
 import {PagesComponent} from './pages.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import {PagesComponent} from './pages.component';
     MainRoomsComponent,
     MenuComponent,
     FooterComponent,
-    PagesComponent
+    PagesComponent,
+    ServiceComponent
   ],
   exports: [
 
