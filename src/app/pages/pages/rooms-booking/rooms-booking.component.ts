@@ -9,6 +9,7 @@ export class RoomsBookingComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
   }
 

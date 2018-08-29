@@ -1,0 +1,167 @@
+.wrapper {
+  background-color: #F8F6F6;
+}
+
+.content {
+  display: flex;
+  width: 78%;
+  margin: auto;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  justify-content: space-between;
+
+}
+
+.slider {
+  width: 57%;
+  height: 300px;
+  background-color: #fdcd00;
+}
+
+.data-picker {
+  width: 37%;
+  height: 300px;
+  background-color: #0947b1;
+}
+
+.top {
+
+}
+
+.bottom {
+  margin-top: 50px;
+  width: 50%;
+}
+
+.selected {
+  text-transform: uppercase;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 41px;
+  font-size: 24px;
+
+  color: #000000;
+}
+
+.selected span {
+  border-bottom: 7px solid #53D7B7;
+  padding-bottom: 1%;
+}
+
+.room-description-title {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #5A5A5A;
+}
+
+.room-description {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: justify;
+  color: #000000;
+
+}
+
+.price-title {
+  text-transform: uppercase;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 27px;
+  font-size: 16px;
+
+  color: #5A5A5A;
+
+}
+
+.price-description {
+
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: justify;
+
+  color: #000000;
+}
+
+.price {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 33px;
+  font-size: 19px;
+
+  color: #53D7B7;
+}
+
+.amenity {
+  text-transform: uppercase;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 27px;
+  font-size: 16px;
+  color: #5A5A5A;
+  margin-left: 5px;
+}
+
+.amenity-wrapper {
+  border-left: 3px solid #53D7B7;
+
+}
+
+.amenity-icons {
+
+}
+
+.imgs {
+  width: 250px;
+
+}
+
+.imgs h5 {
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  line-height: 19px;
+  font-size: 11px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+  position: absolute;
+  margin-top: 25px;
+  margin-left: -3px;
+}
+
+@media screen and (max-width: 768px) {
+  .top {
+    flex-direction: column;
+  }
+
+  .bottom {
+    width: 100%;
+  }
+  .imgs{
+    margin: auto;
+  }
+  .slider{
+    width: 100%;
+  }
+  .data-picker{
+    width: 100%;
+  }
+}
