@@ -25,16 +25,74 @@ export class RoomComponent implements OnInit {
   appear: boolean = true;
   roomType: string;
 
-
   constructor(private _amenityService: AmenityService, private _roomService: RoomService) {
-    this.roomDescriptions = [new RoomDescription(), new RoomDescription(), new RoomDescription(), new RoomDescription()];
+    this.room.amenities = [];
     this._amenityService.findAll().subscribe(next => {
       this.amenity = next;
+      // console.log('amenity : ', next);
     });
+    this.roomDescriptions = [new RoomDescription(), new RoomDescription(), new RoomDescription(), new RoomDescription()];
     this.roomType = 'none';
   }
 
   ngOnInit() {
+    this.createRoomForm();
+  }
+
+  readUrl(event: any) {
+    if (event.target.files) {
+      this.image = [];
+      for (let i = 0; i < event.target.files.length; i++) {
+        if (event.target.files[i]) {
+          let reader = new FileReader();
+          reader.onload = (event: any) => {
+            this.image.push(event.target.result);
+          };
+          reader.readAsDataURL(event.target.files[i]);
+        }
+      }
+    }
+  }
+
+  toggle() {
+    this.appear = false;
+  }
+
+  isNull(object: any): Boolean {
+    if (Array.isArray(object)) {
+      return !isNullOrUndefined(object[0]);
+    } else {
+      return !isNullOrUndefined(object);
+    }
+  }
+
+  changeAmen(value) {
+    this.roomType = value;
+  }
+
+  addRoom(form: HTMLFormElement) {
+    console.log((<HTMLInputElement>form.elements.item(19)).files);
+    this._roomService.save(this.room, form).subscribe(next => {
+        console.log(next);
+        this.roomForm.reset();
+        this.image=[];
+      },
+      error => {
+        console.log(error);
+      });
+  }
+
+  addAmenity(amenity: Amenity) {
+    let amenities = (<Room>this.roomForm.getRawValue()).amenities;
+    if (amenities.find(value => value.id == amenity.id)) {
+      amenities = amenities.filter(value => value.id != amenity.id);
+    } else {
+      amenities.push(amenity);
+    }
+    this.roomForm.patchValue({amenities: amenities});
+  }
+
+  private createRoomForm() {
     this.roomDescriptionForm = new FormArray([
       new FormGroup({
         language: new FormControl('EN'),
@@ -58,52 +116,13 @@ export class RoomComponent implements OnInit {
       adultPlaces: new FormControl(0, [Validators.min(1), Validators.max(9)]),
       square: new FormControl(0, [Validators.min(10), Validators.max(150)]),
       amount: new FormControl(1, [Validators.min(1), Validators.max(100)]),
+      amenities: new FormControl([]),
       descriptions: this.roomDescriptionForm
     });
     this.roomForm.valueChanges.subscribe(value => {
-      console.log(value);
       this.room = value;
       this.room.roomType = this.roomType;
       console.log('room : ', this.room);
     });
-  };
-
-
-  readUrl(event: any) {
-    for (let i = 0; i < event.target.files.length; i++) {
-      if (event.target.files && event.target.files[i]) {
-        let reader = new FileReader();
-        reader.onload = (event: any) => {
-          this.image.push(event.target.result);
-        };
-        reader.readAsDataURL(event.target.files[i]);
-      }
-    }
   }
-
-  toggle() {
-    this.appear = false;
-  }
-
-  isNull(object: any): Boolean {
-    if (Array.isArray(object)) {
-      return !isNullOrUndefined(object[0]);
-    } else {
-      return !isNullOrUndefined(object);
-    }
-  }
-
-  changeAmen(value) {
-    this.roomType = value;
-  }
-
-  addRoom(form: HTMLFormElement) {
-    this._roomService.save(this.room, form).subscribe(next => {
-        console.log(next);
-      },
-      error => {
-        console.log(error);
-      });
-  }
-
 }

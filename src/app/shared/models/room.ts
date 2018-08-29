@@ -12,7 +12,7 @@ export class Room {
   square: number
   amount: number;
   descriptions: RoomDescription[] = [];
-  anemities: Amenity[] = [];
+  amenities: Amenity[] = [];
   images: Image[] = [];
 
 }

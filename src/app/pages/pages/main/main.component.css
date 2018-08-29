@@ -2,6 +2,14 @@
   /*position: relative;*/
 }
 
+.someShit h5{
+  cursor: pointer;
+}
+
+.searchIcone{
+  cursor: pointer;
+}
+
 .topImage {
   width: 100%;
   height: 100vh;
