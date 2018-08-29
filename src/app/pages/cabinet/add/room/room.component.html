@@ -1,38 +1,38 @@
 <form action="" (submit)="addRoom(form)" #form [formGroup]="roomForm">
   <h3>Тип номера:</h3>
-  <select (change)="changeAmen($event.target.value)" >
+  <select (change)="changeAmen($event.target.value)">
     <option value="standard">standard</option>
     <option value="superior">superior</option>
     <option value="deluxe">deluxe</option>
+    <option value="standard_improved">standard improved</option>
+    <option value="superior_improved">superior improved</option>
     <option value="none" selected>none</option>
   </select>
   <h3>кількість дитячих місць:</h3>
-  <input type="number" formControlName="childrenPlaces" min="1">
+  <input type="number" formControlName="childrenPlaces" min="0">
   <h3>кількість дорослих місць:</h3>
-  <input type="number" formControlName="adultPlaces">
+  <input type="number" formControlName="adultPlaces" min="1">
   <h3>Площа номера:</h3>
-  <input type="number" formControlName="square">
+  <input type="number" formControlName="square" min="10">
   <h3>Кількість номерів:</h3>
-  <input type="number" formControlName="amount">
+  <input type="number" formControlName="amount" min="0">
 
-  <h3>English</h3>
-  <textarea cols="30" rows="10"
-            formControlName="descriptionEn"></textarea>
-  <h3>Ukrainian</h3>
-  <textarea cols="30" rows="10"
-            formControlName="descriptionUk"></textarea>
-  <h3>Polish</h3>
-  <textarea cols="30" rows="10"
-            formControlName="descriptionPl"></textarea>
-  <h3>Russian</h3>
-  <textarea cols="30" rows="10"
-            formControlName="descriptionRu"></textarea>
+
+  <ul formArrayName="descriptions">
+    <li *ngFor="let one of roomDescriptionForm.controls; let i = index">
+      <form formGroupName="{{i}}">
+        <input type="text" disabled formControlName="language">
+        <textarea cols="30" rows="10" formControlName="description"></textarea>
+      </form>
+    </li>
+  </ul>
+
   <h3>ЗручностіЖ</h3>
 
-  <div *ngFor="let ame of amenity" >
-   <div *ngIf="isNull(ame.amenityNames)"  >
-   <input  type="checkbox" value="{{ame.id}}">{{ame.amenityNames[0].name}}<br>
-   </div>
+  <div *ngFor="let ame of amenity">
+    <div *ngIf="isNull(ame.amenityNames)">
+      <input type="checkbox" value="{{ame.id}}">{{ame.amenityNames[0].name}}<br>
+    </div>
   </div>
   <br>
   <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
@@ -42,5 +42,6 @@
   <br>
   <input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFiles">
   <label (click)="toggle()" for="file">AddImage</label>
+  <button class="button" type="submit" class="w-100">Save Room</button>
 
 </form>
