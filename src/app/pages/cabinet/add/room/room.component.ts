@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Amenity} from '../../../../shared/models/amenity';
 import {RoomDescription} from '../../../../shared/models/room-description';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Room} from '../../../../shared/models/room';
 import {AmenityService} from '../../../../shared/service/amenity.service';
 import {RoomService} from '../../../../shared/service/room.service';
-import {isNullOrUndefined} from "util";
+import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-room',
@@ -16,38 +16,56 @@ import {isNullOrUndefined} from "util";
 export class RoomComponent implements OnInit {
 
 
-  room: Room;
+  room: Room = new Room();
   amenity: Amenity[];
-  roomDescriptions: RoomDescription[]=[];
-  image: string[] =[];
+  roomDescriptions: RoomDescription[] = [];
+  image: string[] = [];
   roomForm: FormGroup;
+  roomDescriptionForm: FormArray;
   appear: boolean = true;
+  roomType: string;
 
 
-  constructor( private _amenityService: AmenityService, private _roomService: RoomService) {
-    this.roomDescriptions = [ new RoomDescription(),new RoomDescription(),new RoomDescription(),new RoomDescription()];
-    this._amenityService.findAll().subscribe(next=>{
-    this.amenity = next;
-
-})
+  constructor(private _amenityService: AmenityService, private _roomService: RoomService) {
+    this.roomDescriptions = [new RoomDescription(), new RoomDescription(), new RoomDescription(), new RoomDescription()];
+    this._amenityService.findAll().subscribe(next => {
+      this.amenity = next;
+    });
+    this.roomType = 'none';
   }
 
   ngOnInit() {
-    this.roomForm =new FormGroup({
-      childrenPlaces: new FormControl(0, [Validators.min(0), Validators.max(9)] ),
+    this.roomDescriptionForm = new FormArray([
+      new FormGroup({
+        language: new FormControl('EN'),
+        description: new FormControl('')
+      }),
+      new FormGroup({
+        language: new FormControl('UK'),
+        description: new FormControl('')
+      }),
+      new FormGroup({
+        language: new FormControl('PL'),
+        description: new FormControl('')
+      }),
+      new FormGroup({
+        language: new FormControl('RU'),
+        description: new FormControl('')
+      }),
+    ]);
+    this.roomForm = new FormGroup({
+      childrenPlaces: new FormControl(0, [Validators.min(0), Validators.max(9)]),
       adultPlaces: new FormControl(0, [Validators.min(1), Validators.max(9)]),
-      square: new FormControl( 0, [Validators.min(10), Validators.max(150)]),
+      square: new FormControl(0, [Validators.min(10), Validators.max(150)]),
       amount: new FormControl(1, [Validators.min(1), Validators.max(100)]),
-      descriptionEn: new FormControl('', Validators.required),
-      descriptionUk: new FormControl('', Validators.required),
-      descriptionPl: new FormControl('', Validators.required),
-      descriptionRu: new FormControl('', Validators.required)
-    })
+      descriptions: this.roomDescriptionForm
+    });
     this.roomForm.valueChanges.subscribe(value => {
-
-
-
-    })
+      console.log(value);
+      this.room = value;
+      this.room.roomType = this.roomType;
+      console.log('room : ', this.room);
+    });
   };
 
 
@@ -62,6 +80,7 @@ export class RoomComponent implements OnInit {
       }
     }
   }
+
   toggle() {
     this.appear = false;
   }
@@ -73,8 +92,18 @@ export class RoomComponent implements OnInit {
       return !isNullOrUndefined(object);
     }
   }
-  changeAmen(value){
-    console.log(value);
+
+  changeAmen(value) {
+    this.roomType = value;
+  }
+
+  addRoom(form: HTMLFormElement) {
+    this._roomService.save(this.room, form).subscribe(next => {
+        console.log(next);
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }

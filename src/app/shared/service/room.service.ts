@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class RoomService{
 
-  controller = "/tariff";
+  controller = "/room";
 
   constructor(private _httpClient: HttpClient){
 
