@@ -3,6 +3,26 @@
         <div routerLink="/" class="logo">
           <img src="../../../assets/svg/logo.svg" alt="Hotel Palma">
         </div>
+        <div class="wrapper">
+          <input type="checkbox" id="check-menu">
+          <label for= "check-menu">MENU</label>
+          <div class="burger-line first"></div>
+          <div class="burger-line second"></div>
+          <div class="burger-line third"></div>
+          <div class="burger-line fourth"></div>
+          <nav class="main-menu">
+            <a routerLink="/">головна</a>
+            <a routerLink="/rooms">номери</a>
+            <a routerLink="/news">новини</a>
+            <a class="dropdown">послуги
+              <div class="dropdown-content">
+                <a *ngFor="let one of services" routerLink="/service/{{one.id}}">
+                  {{one.serviceDescriptions['current-language-index'| translate].title}}</a>
+              </div>
+            </a>
+
+          </nav>
+        </div>
         <div class="bigNav d-flex justify-content-center">
           <div class="nav d-flex justify-content-between">
             <a routerLink="/">головна</a>
