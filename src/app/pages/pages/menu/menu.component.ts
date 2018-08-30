@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
 
       }
       this.services = next;
-      console.log(this.services);
+      // console.log(this.services);
 
     },err=>{
       console.log(err);

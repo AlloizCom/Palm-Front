@@ -1,11 +1,74 @@
 import {Component, OnInit} from '@angular/core';
+import {MainPage} from "../../../shared/models/main-page";
+import {MenuComponent} from "../menu/menu.component";
+import {isNullOrUndefined} from "util";
+import {News} from "../../../shared/models/news";
+import {NewsService} from "../../../shared/service/news.service";
+import {MainPageSevice} from "../../../shared/service/main-page.sevice";
+import {Image} from "../../../shared/models/image";
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
+  providers:[MainPageSevice]
 })
 export class MainComponent implements OnInit{
+
+
+
+  mainPage: MainPage [] = [];
+  Images: Image[]=[];
+  middleIndex:number;
+  allPathes: string [] = [];
+
+  constructor(private _mainPageService: MainPageSevice) {
+
+    this._mainPageService.findAllAvailable().subscribe(next => {
+      for (let i of next) {
+        if (typeof (i) != 'undefined' && i != null) {
+          this.mainPage.push(i);
+        }
+      }
+      this.mainPage = next;
+        for(let i = 0;i<this.mainPage.length;i++){
+          for (let j = 0; j<this.mainPage[i].images.length; j++){
+            this.Images = this.mainPage[i].images;
+            this.allPathes.push(this.mainPage[i].images[j].path);
+          }
+          // this.Images.push(this.mainPage[i].images[i].path)
+        }
+        console.log(this.allPathes);
+      // console.log(this.Images);
+      this.middleIndex = Math.round(this.Images.length / 2);
+      console.log(this.middleIndex)
+
+    }, err => {
+      console.log(err);
+    });
+  }
+
+  scroll(event) {
+    if (this.middleIndex > 0 && this.middleIndex != this.allPathes.length - 1) {
+      event ? this.middleIndex -= 1 : this.middleIndex += 1;
+    } else if (this.middleIndex == 0 && event == false) {
+      this.middleIndex += 1
+    } else if (this.middleIndex == this.allPathes.length - 1 && event == true) {
+      this.middleIndex -= 1
+    } else if (this.middleIndex == this.allPathes.length - 1 && event == false) {
+      this.middleIndex = 0;
+    } else if (this.middleIndex == 0 && event == true) {
+      this.middleIndex = this.allPathes.length - 1;
+    }
+  }
+
+  isNull(object: any): Boolean {
+    if (Array.isArray(object)) {
+      return !isNullOrUndefined(object[0]);
+    } else {
+      return !isNullOrUndefined(object);
+    }
+  }
 
 
 
@@ -197,7 +260,6 @@ iconUrl:'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
     console.log(event)
   }
 
-  middleIndex: number;
 
   //dataPicker
   model1: Date;
@@ -213,39 +275,13 @@ iconUrl:'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
   childrenNumber: number = 1;
   roomsNumber: number = 1;
 
-  images = [{
-    image:'../../../../assets/png/sld1.jpg'
-  }, {
-    image:'../../../../assets/png/sld2.jpg'
-  },{
-    image: '../../../../assets/png/sld3.jpg'
-  },{
-    image:'../../../../assets/png/Rectangle.png'
-  },{
-    image:'../../../../assets/png/sld5.jpg'
-  }]
-
-  constructor() {
-    this.middleIndex = Math.round(this.images.length/2);
-  }
 
   ngOnInit() {
 
   }
 
-  scroll(event) {
-    if (this.middleIndex > 0 && this.middleIndex != this.images.length - 1) {
-      event ? this.middleIndex -= 1 : this.middleIndex += 1;
-    } else if (this.middleIndex == 0 && event == false) {
-      this.middleIndex += 1
-    } else if (this.middleIndex == this.images.length - 1 && event == true) {
-      this.middleIndex -= 1
-    } else if (this.middleIndex == this.images.length - 1 && event == false) {
-      this.middleIndex = 0;
-    } else if (this.middleIndex == 0 && event == true) {
-      this.middleIndex = this.images.length - 1;
-    }
-  }
+
+
   //data picker
   get today() {
     return new Date();

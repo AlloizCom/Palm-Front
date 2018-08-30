@@ -6,7 +6,7 @@ export class Room {
 
   id: number;
   available: boolean;
-  roomType: string;
+  type: string;
   adultPlaces: number;
   kidsPlaces: number
   square: number

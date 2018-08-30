@@ -7,12 +7,13 @@ import {TariffComponent} from './tariff/tariff.component';
 import {OrderComponent} from './order/order.component';
 import {GlobalImportsModule} from '../../../shared/config/global-imports/global-imports.module';
 import {AmenityNameComponent} from './amenity-name/amenity-name.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   imports: [
     GlobalImportsModule
   ],
-  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, CallbackComponent, TariffComponent, AmenityNameComponent],
+  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, CallbackComponent, TariffComponent, AmenityNameComponent, MainPageComponent],
 })
 export class AddModule {
 }

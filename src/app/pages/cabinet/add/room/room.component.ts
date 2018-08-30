@@ -23,7 +23,7 @@ export class RoomComponent implements OnInit {
   roomForm: FormGroup;
   roomDescriptionForm: FormArray;
   appear: boolean = true;
-  roomType: string;
+  type: string;
 
   constructor(private _amenityService: AmenityService, private _roomService: RoomService) {
     this.room.amenities = [];
@@ -32,7 +32,7 @@ export class RoomComponent implements OnInit {
       // console.log('amenity : ', next);
     });
     this.roomDescriptions = [new RoomDescription(), new RoomDescription(), new RoomDescription(), new RoomDescription()];
-    this.roomType = 'none';
+    this.type = 'none';
   }
 
   ngOnInit() {
@@ -67,11 +67,11 @@ export class RoomComponent implements OnInit {
   }
 
   changeAmen(value) {
-    this.roomType = value;
+    this.type = value;
   }
 
   addRoom(form: HTMLFormElement) {
-    console.log((<HTMLInputElement>form.elements.item(19)).files);
+    // console.log((<HTMLInputElement>form.elements.item(19)).files);
     this._roomService.save(this.room, form).subscribe(next => {
         console.log(next);
         this.roomForm.reset();
@@ -112,7 +112,7 @@ export class RoomComponent implements OnInit {
       }),
     ]);
     this.roomForm = new FormGroup({
-      childrenPlaces: new FormControl(0, [Validators.min(0), Validators.max(9)]),
+      kidsPlaces: new FormControl(0, [Validators.min(0), Validators.max(9)]),
       adultPlaces: new FormControl(0, [Validators.min(1), Validators.max(9)]),
       square: new FormControl(0, [Validators.min(10), Validators.max(150)]),
       amount: new FormControl(1, [Validators.min(1), Validators.max(100)]),
@@ -121,7 +121,7 @@ export class RoomComponent implements OnInit {
     });
     this.roomForm.valueChanges.subscribe(value => {
       this.room = value;
-      this.room.roomType = this.roomType;
+      this.room.type = this.type;
       console.log('room : ', this.room);
     });
   }

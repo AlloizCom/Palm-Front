@@ -1,15 +1,15 @@
 <form action="" (submit)="addRoom(form)" #form [formGroup]="roomForm">
   <h3>Тип номера:</h3>
   <select (change)="changeAmen($event.target.value)">
-    <option value="standard">standard</option>
-    <option value="superior">superior</option>
-    <option value="deluxe">deluxe</option>
-    <option value="standard_improved">standard improved</option>
-    <option value="superior_improved">superior improved</option>
-    <option value="none" selected>none</option>
+    <option value="STANDARD">STANDART</option>
+    <option value="SUPERIOR">SUPERIOR</option>
+    <option value="DELUXE">DELUXE</option>
+    <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
+    <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+    <option value="NONE" selected>NONE</option>
   </select>
   <h3>кількість дитячих місць:</h3>
-  <input type="number" formControlName="childrenPlaces" min="0">
+  <input type="number" formControlName="kidsPlaces" min="0">
   <h3>кількість дорослих місць:</h3>
   <input type="number" formControlName="adultPlaces" min="1">
   <h3>Площа номера:</h3>
@@ -35,7 +35,7 @@
     <!--</div>-->
   <!--</div>-->
 
-  <div class="d-flex flex-column">
+  <div (click)="isNull($event)" class="d-flex flex-column">
     <label *ngFor="let one of amenity">
       <span *ngIf="!one.amenityNames||!one.amenityNames[0]||!one.amenityNames[0].name">SOME SUKA NULL</span>
       <span *ngIf="one.amenityNames&&one.amenityNames[0]&&one.amenityNames[0].name">{{one.amenityNames[0].name}}</span>

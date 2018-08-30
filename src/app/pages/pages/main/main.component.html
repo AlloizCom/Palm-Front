@@ -1,10 +1,9 @@
 <div class="wrapper">
   <!--top slider-->
-  <div *ngFor="let image of images; let i = index">
-    <div [style.background]="'url(' + (image.image) + ')'" class="topImage" *ngIf="i === middleIndex">
+  <div *ngFor="let one of allPathes; let i = index" (click)="isNull($event)">
+    <div  [style.background-image]="'url(' + (one|imagePipe) + ')'"  class="topImage" *ngIf="i === middleIndex">
     </div>
   </div>
-
   <!--top slider conernt-->
   <div class="sliderContent">
     <p class="palma">пальма</p>
@@ -149,45 +148,6 @@
   </div>
 </div>
 
-
-<!--<div class="container">-->
-<!--<div class="row ">-->
-<!--&lt;!&ndash; about us &ndash;&gt;-->
-<!--<div class="col-xl-6 col-md-12 ">-->
-<!--<div class="aboutUs1 bg-dark">-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-xl-6 col-md-12">-->
-<!--<div class="aboutUs1 bg-dark">-->
-<!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash; offers &ndash;&gt;-->
-<!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-<!--<div class="aboutUs1 bg-dark">-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-<!--<div class="aboutUs1 bg-dark">-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-<!--<div class="aboutUs1 bg-dark">-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-<!--<div class="aboutUs1 bg-dark">-->
-<!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash; rooms &ndash;&gt;-->
-<!--<app-main-rooms></app-main-rooms>-->
-<!--&lt;!&ndash; slider &ndash;&gt;-->
-<!--<app-slider></app-slider>-->
-<!--</div>-->
-<!---->
-<!--</div>-->
-
-
-<!--Віталік-->
 <div class="bottomAll">
   <div class="btmWrapper">
     <div class="aboutHotel d-flex justify-content-between">

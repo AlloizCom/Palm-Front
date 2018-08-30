@@ -11,6 +11,7 @@ export class SliderComponent implements OnInit {
   middleIndex: number;
   middleIndex2: number;
   middleIndex3: number;
+
   services: Service[] = [];
 
   constructor(private _menuComponent:MenuComponent) {

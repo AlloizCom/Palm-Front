@@ -1,6 +1,8 @@
 export const RoomTariff = {
-  'STANDARD' : 'Standard',
-  'SUPERIOR' : 'Superior',
-  'DELUXE' : 'Deluxe',
-  'NONE' : 'None'
+  'STANDARD' : 'STANDARD',
+  'SUPERIOR' : 'SUPERIOR',
+  'DELUXE' : 'DELUXE',
+  'SUPERIOR_IMPROVED' : 'SUPERIOR_IMPROVED',
+  'STANDARD_IMPROVED' : 'STANDARD_IMPROVED',
+  'NONE' : 'NONE'
 }
