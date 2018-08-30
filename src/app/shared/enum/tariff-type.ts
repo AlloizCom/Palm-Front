@@ -1,7 +1,7 @@
 export const TariffType =  {
 
-  'REGULAR' : 'Regular',
-  'SPECIAL' : 'Special',
-  'NONE' : 'None'
+  'REGULAR' : 'REGULAR',
+  'SPECIAL' : 'SPECIAL',
+  'NONE' : 'NONE'
 
 }

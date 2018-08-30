@@ -2,7 +2,7 @@
   <div class="first d-flex flex-column">
     <div  [style.background-image]="'url(' + (news[randomIndex[0]].picturePath|imagePipe) + ')'" class="one d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
-        <button routerLink="{{news[randomIndex[0]].id}}" class="button">Переглянути</button>
+        <button- routerLink="{{news[randomIndex[0]].id}}" class="button">Переглянути</button->
       </div>
       <h2>{{news[randomIndex[0]].newsDescriptions['current-language-index' | translate].title}}</h2>
       <h3>{{news[randomIndex[0]].dateTime|datePipe}}</h3>
