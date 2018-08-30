@@ -1,9 +1,9 @@
 <div class="allBack">
   <div class="rooms">
-    <div class="room d-flex justify-content-between">
+    <div *ngFor="let one of rooms" class="room d-flex justify-content-between">
       <div class="photo d-flex">
-        <img class="kartinka" src="{{rooms[0].images[0].path|imagePipe}}" alt="room ">
-        <div class="block d-flex justify-content-center align-items-center">{{rooms[0].descriptions['current-language-index' | translate].description}}</div>
+        <img class="kartinka" src="{{one.images[0].path|imagePipe}}" alt="room ">
+        <div class="block d-flex justify-content-center align-items-center">{{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' | translate].description:''}}</div>
       </div>
       <div class="infos ">
         <h2>Люкс</h2>
@@ -19,226 +19,96 @@
         <button>Переглянути</button>
       </div>
     </div>
-    <div class="room d-flex justify-content-between">
-      <div class="photo2 d-flex">
-        <img class="kartinka2" src="../../../assets/png/room2.png" alt="room ">
-        <div class="block2 d-flex justify-content-center align-items-center">800 грн</div>
-      </div>
-      <div class="infos2">
-        <h2>НАПІВЛЮКС</h2>
-        <p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You
-          can copy and paste your own content in to see what it looks like with these font combinations.</p>
-        <div class="imgs d-flex justify-content-between">
-          <img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">
-          <div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>
-          <img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"
-                                                                             alt="fan sign"><img
-          src="../../../assets/svg/slippers.svg" alt="slippers sign">
-        </div>
-        <button>Переглянути</button>
-      </div>
-    </div>
-    <div class="room d-flex justify-content-between">
-      <div class="photo d-flex">
-        <img class="kartinka" src="../../../assets/png/room3.png" alt="room ">
-        <div class="block d-flex justify-content-center align-items-center">800 грн</div>
-      </div>
-      <div class="infos">
-        <h2>ПОКРАЩЕННИЙ НАПІВЛЮКС</h2>
-        <p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You
-          can copy and paste your own content in to see what it looks like with these font combinations.</p>
-        <div class="imgs d-flex justify-content-between">
-          <img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">
-          <div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>
-          <img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"
-                                                                             alt="fan sign"><img
-          src="../../../assets/svg/slippers.svg" alt="slippers sign">
-        </div>
-        <button>Переглянути</button>
-      </div>
-    </div>
-    <div class="room d-flex justify-content-between">
-      <div class="photo2 d-flex">
-        <img class="kartinka2" src="../../../assets/png/room4.png" alt="room ">
-        <div class="block2 d-flex justify-content-center align-items-center">800 грн</div>
-      </div>
-      <div class="infos2">
-        <h2>СТАНДАРТ</h2>
-        <p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You
-          can copy and paste your own content in to see what it looks like with these font combinations.</p>
-        <div class="imgs d-flex justify-content-between">
-          <img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">
-          <div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>
-          <img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"
-                                                                             alt="fan sign"><img
-          src="../../../assets/svg/slippers.svg" alt="slippers sign">
-        </div>
-        <button>Переглянути</button>
-      </div>
-    </div>
-    <div class="room d-flex justify-content-between">
-      <div class="photo d-flex">
-        <img class="kartinka" src="../../../assets/png/room5.png" alt="room ">
-        <div class="block d-flex justify-content-center align-items-center">800 грн</div>
-      </div>
-      <div class="infos">
-        <h2>ПОКРАЩЕНИЙ СТАНДАРТ</h2>
-        <p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You
-          can copy and paste your own content in to see what it looks like with these font combinations.</p>
-        <div class="imgs d-flex justify-content-between">
-          <img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">
-          <div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>
-          <img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"
-                                                                             alt="fan sign"><img
-          src="../../../assets/svg/slippers.svg" alt="slippers sign">
-        </div>
-        <button>Переглянути</button>
-      </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<div class="room d-flex justify-content-between">-->
+      <!--<div class="photo2 d-flex">-->
+        <!--<img class="kartinka2" src="../../../assets/png/room2.png" alt="room ">-->
+        <!--<div class="block2 d-flex justify-content-center align-items-center">800 грн</div>-->
+      <!--</div>-->
+      <!--<div class="infos2">-->
+        <!--<h2>НАПІВЛЮКС</h2>-->
+        <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You-->
+          <!--can copy and paste your own content in to see what it looks like with these font combinations.</p>-->
+        <!--<div class="imgs d-flex justify-content-between">-->
+          <!--<img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">-->
+          <!--<div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>-->
+          <!--<img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"-->
+                                                                             <!--alt="fan sign"><img-->
+          <!--src="../../../assets/svg/slippers.svg" alt="slippers sign">-->
+        <!--</div>-->
+        <!--<button>Переглянути</button>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="room d-flex justify-content-between">-->
+      <!--<div class="photo d-flex">-->
+        <!--<img class="kartinka" src="../../../assets/png/room3.png" alt="room ">-->
+        <!--<div class="block d-flex justify-content-center align-items-center">800 грн</div>-->
+      <!--</div>-->
+      <!--<div class="infos">-->
+        <!--<h2>ПОКРАЩЕННИЙ НАПІВЛЮКС</h2>-->
+        <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You-->
+          <!--can copy and paste your own content in to see what it looks like with these font combinations.</p>-->
+        <!--<div class="imgs d-flex justify-content-between">-->
+          <!--<img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">-->
+          <!--<div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>-->
+          <!--<img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"-->
+                                                                             <!--alt="fan sign"><img-->
+          <!--src="../../../assets/svg/slippers.svg" alt="slippers sign">-->
+        <!--</div>-->
+        <!--<button>Переглянути</button>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="room d-flex justify-content-between">-->
+      <!--<div class="photo2 d-flex">-->
+        <!--<img class="kartinka2" src="../../../assets/png/room4.png" alt="room ">-->
+        <!--<div class="block2 d-flex justify-content-center align-items-center">800 грн</div>-->
+      <!--</div>-->
+      <!--<div class="infos2">-->
+        <!--<h2>СТАНДАРТ</h2>-->
+        <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You-->
+          <!--can copy and paste your own content in to see what it looks like with these font combinations.</p>-->
+        <!--<div class="imgs d-flex justify-content-between">-->
+          <!--<img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">-->
+          <!--<div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>-->
+          <!--<img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"-->
+                                                                             <!--alt="fan sign"><img-->
+          <!--src="../../../assets/svg/slippers.svg" alt="slippers sign">-->
+        <!--</div>-->
+        <!--<button>Переглянути</button>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="room d-flex justify-content-between">-->
+      <!--<div class="photo d-flex">-->
+        <!--<img class="kartinka" src="../../../assets/png/room5.png" alt="room ">-->
+        <!--<div class="block d-flex justify-content-center align-items-center">800 грн</div>-->
+      <!--</div>-->
+      <!--<div class="infos">-->
+        <!--<h2>ПОКРАЩЕНИЙ СТАНДАРТ</h2>-->
+        <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You-->
+          <!--can copy and paste your own content in to see what it looks like with these font combinations.</p>-->
+        <!--<div class="imgs d-flex justify-content-between">-->
+          <!--<img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">-->
+          <!--<div><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>-->
+          <!--<img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"-->
+                                                                             <!--alt="fan sign"><img-->
+          <!--src="../../../assets/svg/slippers.svg" alt="slippers sign">-->
+        <!--</div>-->
+        <!--<button>Переглянути</button>-->
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </div>
-
-
-
-
-<!--<div class="container">-->
-  <!--<div class="row ">-->
-    <!--&lt;!&ndash; about us &ndash;&gt;-->
-    <!--<div class="col-xl-6 col-md-12 ">-->
-      <!--<div class="aboutUs1 bg-dark">-->
-        <!--<div class="left"></div>-->
-        <!--<div class="right"></div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xl-6 col-md-12">-->
-      <!--<div class="aboutUs1 bg-dark">-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash; offers &ndash;&gt;-->
-    <!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-      <!--<div class="aboutUs1 bg-dark">-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-      <!--<div class="aboutUs1 bg-dark">-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-      <!--<div class="aboutUs1 bg-dark">-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xl-3 col-md-6 col-sm-12">-->
-      <!--<div class="aboutUs1 bg-dark">-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--&lt;!&ndash; rooms &ndash;&gt;-->
-    <!--&lt;!&ndash;<app-main-rooms></app-main-rooms>&ndash;&gt;-->
-    <!--&lt;!&ndash;&lt;!&ndash; slider &ndash;&gt;&ndash;&gt;-->
-    <!--&lt;!&ndash;<app-slider></app-slider>&ndash;&gt;-->
-  <!--</div>-->
-<!--</div>-->
-<!--<div class="bottomAll">-->
-  <!--<div class="btmWrapper">-->
-    <!--<div class="aboutHotel d-flex justify-content-between">-->
-        <!--<div class="photoMain d-flex">-->
-          <!--<img class="kartinkaMain" src="../../../assets/png/room4.png" alt="room ">-->
-        <!--</div>-->
-        <!--<div class="infosMain">-->
-          <!--<h4>про нас</h4>-->
-          <!--<h2 class="selected"><span>Lorem ipsum dolor sit amet</span></h2>-->
-          <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You can copy and paste your own content in to see what it looks like with these font combinations.</p>-->
-          <!--<div class="someShit d-flex justify-content-end">-->
-            <!--<h5>переглянути</h5>-->
-            <!--<img src="../../../assets/svg/strilkaMain.svg" alt="">-->
-          <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
-    <!--<div class="d-flex justify-content-center w-100">-->
-      <!--<div class="together">-->
-        <!--<h3>спеціальні пропозиції</h3>-->
-        <!--<h2>Lorem ipsum dolor sit amet</h2>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="firsty d-flex flex-row justify-content-between">-->
-      <!--<div class="item">-->
-        <!--<div class="back1"></div>-->
-        <!--<h3 >Lorem ipsum dolor </h3>-->
-        <!--<h4>All of this text is editable. Simply click anywhere in the paragrap</h4>-->
-        <!--<div class="someShit2 d-flex justify-content-end">-->
-          <!--<h5>переглянути</h5>-->
-          <!--<div class="images">-->
-            <!--<img class="greyShit" src="../../../assets/svg/strilochkaSira.svg"  alt=""><img class="greenShit" src="../../../assets/svg/strilkaMain.svg" alt="">-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="item">-->
-        <!--<div class="back2"></div>-->
-        <!--<h3 >Lorem ipsum dolor </h3>-->
-        <!--<h4>All of this text is editable. Simply click anywhere in the paragrap</h4>-->
-        <!--<div class="someShit2 d-flex justify-content-end">-->
-          <!--<h5>переглянути</h5>-->
-          <!--<img src="../../../assets/svg/strilkaMain.svg" alt="">-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="item">-->
-        <!--<div class="back3"></div>-->
-        <!--<h3 >Lorem ipsum dolor </h3>-->
-        <!--<h4>All of this text is editable. Simply click anywhere in the paragrap</h4>-->
-        <!--<div class="someShit2 d-flex justify-content-end">-->
-          <!--<h5>переглянути</h5>-->
-          <!--<img src="../../../assets/svg/strilkaMain.svg" alt="">-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="item">-->
-        <!--<div class="back4"></div>-->
-        <!--<h3 >Lorem ipsum dolor </h3>-->
-        <!--<h4>All of this text is editable. Simply click anywhere in the paragrap</h4>-->
-        <!--<div class="someShit2 d-flex justify-content-end">-->
-          <!--<h5>переглянути</h5>-->
-          <!--<img src="../../../assets/svg/strilkaMain.svg" alt="">-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
-
-    <!--<div class="ashkas d-flex flex-column">-->
-      <!--<div class="divka d-flex flex-row align-items-center"><h3>НАШІ ПЕРЕВАГИ</h3><div class="grnBlock"></div></div>-->
-      <!--<h2>Lorem ipsum dolor sit amet</h2>-->
-    <!--</div>-->
-    <!--<div class="secondy d-flex flex-row justify-content-between">-->
-      <!--<div class="item2 d-flex align-items-center flex-column">-->
-        <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. </p>-->
-        <!--<div class="whiteBlock d-flex justify-content-center">-->
-          <!--<img src="../../../assets/svg/mainwireless-signal.svg" alt="">-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="item2 d-flex align-items-center flex-column">-->
-        <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. </p>-->
-        <!--<div class="whiteBlock d-flex justify-content-center">-->
-          <!--<img src="../../../assets/svg/maindelivery.svg" alt="">-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="item2 d-flex align-items-center flex-column">-->
-        <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. </p>-->
-        <!--<div class="whiteBlock d-flex justify-content-center">-->
-          <!--<img src="../../../assets/svg/mainparking-sign 2.svg" alt="">-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="underFooterBlock d-flex justify-content-between">-->
-      <!--<div class="ashkas2 d-flex flex-column">-->
-        <!--<div class="divka d-flex flex-row align-items-center"><h3>КОНТАКТИ</h3><div class="grnBlock"></div></div>-->
-        <!--<h2>Lorem ipsum dolor sit amet</h2>-->
-        <!--<div class="peshkas">-->
-          <!--<p>All of this text is editable. Simply click anywhere in the paragrap</p>-->
-          <!--<p>All of this text is editable. Simply click anywhere in the paragrap</p>-->
-          <!--<p>All of this text is editable. Simply click anywhere in the paragrap</p>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="map"></div>-->
-    <!--</div>-->
-
-
-  <!--</div>-->
-<!--</div>-->
