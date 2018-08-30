@@ -10,9 +10,9 @@
   <input type="number" formControlName="price" min="1">
 
   <h3>Початок тарифу(дата)</h3>
-  <input type="date" formControlName="dateFrom">
+  <input type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" formControlName="dateFrom" useValueAsDate>
   <h3>Кінець тарифу(дата)</h3>
-  <input type="date" formControlName="dateTo">
+  <input type="date" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" formControlName="dateTo" useValueAsDate>
 
   <h3>Тип номера:</h3>
   <select (change)="changeRoom($event.target.value)">

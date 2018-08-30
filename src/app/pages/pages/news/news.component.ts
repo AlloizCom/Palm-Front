@@ -22,7 +22,7 @@ export class NewsComponent implements OnInit {
       }
 
       this.news = next;
-      console.log(this.news);
+      console.log('news',this.news);
     }, err => {
       console.log(err);
     });
@@ -30,13 +30,14 @@ export class NewsComponent implements OnInit {
     this._newsService.getRandomArray(6).subscribe(value => {
       for (let i of value){
         // console.log(i)
-        if (typeof (i) != undefined && i != null) {
+        if (i) {
           // console.log(i)
           this.randomIndex.push(i);
         }
       }
-      console.log(this.randomIndex)
+      console.log(this.randomIndex);
       this.randomIndex = value;
+      console.log('value ',value)
     }, err =>{
       console.log(err);
     });

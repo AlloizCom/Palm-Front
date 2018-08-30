@@ -1,13 +1,15 @@
-<div *ngIf="isNull(news)"  class="topPhotos d-flex ">
+<div *ngIf="news && news.length>0 && randomIndex && randomIndex.length>0" class="topPhotos d-flex ">
   <div class="first d-flex flex-column">
-    <div  [style.background-image]="'url(' + (news[randomIndex[0]].picturePath|imagePipe) + ')'" class="one d-flex justify-content-end flex-column">
+    <div [style.background-image]="'url(' + (news[randomIndex[0]].picturePath|imagePipe) + ')'"
+         class="one d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
-        <button- routerLink="{{news[randomIndex[0]].id}}" class="button">Переглянути</button->
+        <button routerLink="{{news[randomIndex[0]].id}}" class="button">Переглянути</button>
       </div>
       <h2>{{news[randomIndex[0]].newsDescriptions['current-language-index' | translate].title}}</h2>
       <h3>{{news[randomIndex[0]].dateTime|datePipe}}</h3>
     </div>
-    <div class="two d-flex justify-content-end flex-column" [style.background-image]="'url(' + (news[randomIndex[1]].picturePath|imagePipe) + ')'">
+    <div class="two d-flex justify-content-end flex-column"
+         [style.background-image]="'url(' + (news[randomIndex[1]].picturePath|imagePipe) + ')'">
       <div class="d-flex justify-content-center">
         <button routerLink="{{news[randomIndex[1]].id}}" class="button">Переглянути</button>
       </div>
@@ -16,14 +18,16 @@
     </div>
   </div>
   <div class="second d-flex flex-column ">
-    <div [style.background-image]="'url(' + (news[randomIndex[2]].picturePath|imagePipe) + ')'" class="three d-flex justify-content-end flex-column" >
+    <div [style.background-image]="'url(' + (news[randomIndex[2]].picturePath|imagePipe) + ')'"
+         class="three d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
         <button routerLink="{{news[randomIndex[2]].id}}" class="button">Переглянути</button>
       </div>
       <h2>{{news[randomIndex[2]].newsDescriptions['current-language-index' | translate].title}}</h2>
       <h3>{{news[randomIndex[2]].dateTime|datePipe}}</h3>
     </div>
-    <div [style.background-image]="'url(' + (news[randomIndex[3]].picturePath|imagePipe) + ')'" class="four d-flex justify-content-end flex-column">
+    <div [style.background-image]="'url(' + (news[randomIndex[3]].picturePath|imagePipe) + ')'"
+         class="four d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
         <button routerLink="{{news[randomIndex[3]].id}}" class="button">Переглянути</button>
       </div>
@@ -32,14 +36,16 @@
     </div>
   </div>
   <div class="third d-flex flex-column">
-    <div [style.background-image]="'url(' + (news[randomIndex[4]].picturePath|imagePipe) + ')'" class="five d-flex justify-content-end flex-column">
+    <div [style.background-image]="'url(' + (news[randomIndex[4]].picturePath|imagePipe) + ')'"
+         class="five d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
         <button routerLink="{{news[randomIndex[4]].id}}" class="button">Переглянути</button>
       </div>
       <h2>{{news[randomIndex[4]].newsDescriptions['current-language-index' | translate].title}}</h2>
       <h3>{{news[randomIndex[4]].dateTime|datePipe}}</h3>
     </div>
-    <div [style.background-image]="'url(' + (news[randomIndex[5]].picturePath|imagePipe) + ')'" class="six d-flex justify-content-end flex-column">
+    <div [style.background-image]="'url(' + (news[randomIndex[5]].picturePath|imagePipe) + ')'"
+         class="six d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
         <button routerLink="{{news[randomIndex[5]].id}}" class="button">Переглянути</button>
       </div>
@@ -53,13 +59,17 @@
     <h2>Новини</h2>
     <div class="blocks d-flex flex-column">
       <div *ngIf="isNull(news)" class="firsty flex-wrap d-flex flex-row justify-content-between">
-        <div class="item" *ngFor="let one of news|revers" >
-          <div class="back1"  [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" ></div>
-          <h3 routerLink="{{one.id}}" >{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
+        <div class="item" *ngFor="let one of news|revers">
+          <div class="back1" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"></div>
+          <h3 routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
           <h4>{{one.newsDescriptions['current-language-index' | translate].headerText}}</h4>
-          <div class="bott d-flex justify-content-between"><h5>{{one.dateTime |datePipe}}</h5><div class="images">
-            <img class="greyShit" src="../../../assets/svg/newsVector.svg" alt=""><img class="greenShit" src="../../../assets/svg/greenShit.svg" alt="">
-          </div></div>
+          <div class="bott d-flex justify-content-between"><h5>{{one.dateTime |datePipe}}</h5>
+            <div class="images">
+              <img class="greyShit" src="../../../assets/svg/newsVector.svg" alt=""><img class="greenShit"
+                                                                                         src="../../../assets/svg/greenShit.svg"
+                                                                                         alt="">
+            </div>
+          </div>
         </div>
       </div>
       <div class="center d-flex justify-content-center">

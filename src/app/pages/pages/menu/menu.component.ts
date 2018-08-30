@@ -27,11 +27,9 @@ export class MenuComponent implements OnInit {
         if (typeof (i) != undefined && i != null) {
           this.services.push(i);
         }
-
-
       }
       this.services = next;
-      // console.log(this.services);
+      console.log('services ',this.services);
 
     },err=>{
       console.log(err);

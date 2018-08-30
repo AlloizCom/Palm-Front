@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormControl, FormGroup} from "@angular/forms";
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {isNullOrUndefined} from "util";
 import {TariffService} from "../../../../shared/service/tariff.service";
 import {Tariff} from "../../../../shared/models/tariff";
@@ -68,6 +68,7 @@ export class TariffComponent implements OnInit {
       this.tariff = value;
       this.tariff.roomType = this.roomType;
       this.tariff.tariffType = this.tariffType;
+      console.log(this.tariffForm.valid);
       console.log('tariff : ', this.tariff);
     });
   }
