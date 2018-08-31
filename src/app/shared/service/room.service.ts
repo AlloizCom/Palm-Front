@@ -25,6 +25,16 @@ export class RoomService{
           .catch(err => Observable.throw(err));
   }
 
+  findAllOnlyWithImages(): Observable<Room[]>{
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-only-with-images')
+      .catch(err => Observable.throw(err));
+  }
+
+  findAllAvailableOnlyWithImages(): Observable<Room[]>{
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-available-only-with-images')
+      .catch(err => Observable.throw(err));
+  }
+
   findOne(id: number): Observable<Room>{
     return this._httpClient.get<Room>(this.controller + '/find-one/' + id)
           .catch(err => Observable.throw(err));
