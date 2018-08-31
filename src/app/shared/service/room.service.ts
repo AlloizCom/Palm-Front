@@ -52,7 +52,7 @@ export class RoomService{
   }
 
   addImage(roomId: number,form: HTMLFormElement): Observable<any>{
-    return this._httpClient.post(this.controller + '/add-image/' +roomId,
+    return this._httpClient.post(this.controller + '/add-images/' +roomId,
         new FormData(form),{
         headers: new HttpHeaders().append('enctype','multipart/form-data')
       }).catch(err => Observable.throw(err));
