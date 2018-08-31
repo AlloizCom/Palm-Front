@@ -24,6 +24,7 @@ export class NewsService {
       .catch(err => Observable.throw(err));
   }
 
+
   findOne(id: number): Observable<News> {
     return this._httpClient.get<News>(this.controller + '/find-one/' + id)
       .catch(err => Observable.throw(err));
@@ -36,6 +37,12 @@ export class NewsService {
 
   getRandomArray(length: number): Observable<any>{
     return this._httpClient.get<any>(this.controller + '/get-random-array/' + length)
+      .catch(err => Observable.throw(err));
+  }
+
+  // List of random News
+  getRandomNews(amount: number): Observable<News[]> {
+    return this._httpClient.get<News[]>(this.controller + '/get-list-of-random-news/' + amount)
       .catch(err => Observable.throw(err));
   }
 
