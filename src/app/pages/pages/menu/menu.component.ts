@@ -13,7 +13,7 @@ import {Service} from "../../../shared/models/service";
 export class MenuComponent implements OnInit {
 
   currentLang: Language = 'uk';
-
+  isIn: boolean= true;
   services:Service[]=[];
 
   constructor(private translate: TranslateService,
@@ -43,5 +43,8 @@ export class MenuComponent implements OnInit {
   changeLanguage(lang: Language) {
     this.currentLang = lang;
     this.translate.use(lang);
+  }
+  toggleState(){
+    this.isIn = !this.isIn;
   }
 }
