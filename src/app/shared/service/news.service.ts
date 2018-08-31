@@ -24,6 +24,18 @@ export class NewsService {
       .catch(err => Observable.throw(err));
   }
 
+  //Pageble
+  findAllNewsByPage(page: number, count: number): Observable<News[]> {
+    return this._httpClient.get<News[]>
+    (this.controller + '/find-all-news-by-page/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
+
+  findAllAvailableNewsByPage(page: number, count: number): Observable<News[]> {
+    return this._httpClient.get<News[]>
+    (this.controller + 'find-all-news-by-page-available/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
 
   findOne(id: number): Observable<News> {
     return this._httpClient.get<News>(this.controller + '/find-one/' + id)
