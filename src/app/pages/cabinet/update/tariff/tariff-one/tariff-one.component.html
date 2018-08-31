@@ -1,0 +1,26 @@
+<div>
+  <h3>Тип тарифу:</h3>
+  <select [(ngModel)]="tariff.tariffType" >
+    <option value="REGULAR">REGULAR</option>
+    <option value="SPECIAL">SPECIAL</option>
+  </select>
+
+  <h3>Ціна:</h3>
+  <input type="number" [(ngModel)]="tariff.price" min="1">
+
+  <h3>Початок тарифу(дата)</h3>
+  <input type="date"  [(ngModel)]="tariff.dateFrom">
+  <h3>Кінець тарифу(дата)</h3>
+  <input type="date" [(ngModel)]="tariff.dateTo">
+
+  <h3>Тип номера:</h3>
+  <select  [(ngModel)]="tariff.roomType">
+    <option value="STANDARD">STANDARD</option>
+    <option value="SUPERIOR">SUPERIOR</option>
+    <option value="DELUXE">DELUXE</option>
+    <option value="STANDARD_IMPROVED">STANDARD IMPROVED</option>
+    <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+  </select>
+
+  <button (click)="update(tariff)">update tariff</button>
+</div>
