@@ -15,6 +15,7 @@ import {GlobalImportsModule} from '../../shared/config/global-imports/global-imp
 import {PagesComponent} from './pages.component';
 import { ServiceComponent } from './service/service.component';
 import{RoomsBookingComponent} from "./rooms-booking/rooms-booking.component";
+import { MainSliderComponent } from './main/main-slider/main-slider.component';
 
 @NgModule({
   imports: [
@@ -35,7 +36,8 @@ import{RoomsBookingComponent} from "./rooms-booking/rooms-booking.component";
     FooterComponent,
     PagesComponent,
     ServiceComponent,
-    RoomsBookingComponent
+    RoomsBookingComponent,
+    MainSliderComponent
   ],
   exports: [
 

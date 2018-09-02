@@ -1,0 +1,9 @@
+<ngb-carousel *ngIf="images" >
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div  [style.background-image]="'url(' + (image) + ')'"  class="topImage"  alt="Random slide"></div>
+    <!-- <div  [style.background-image]="'url(' + (one|imagePipe) + ')'"  class="topImage" *ngIf="i === middleIndex"></div> -->
+    <div class="carousel-caption">
+      <h2>пальма</h2>
+    </div>    
+  </ng-template>
+</ngb-carousel>

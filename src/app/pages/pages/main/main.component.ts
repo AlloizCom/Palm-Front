@@ -3,16 +3,14 @@ import {MainPage} from '../../../shared/models/main-page';
 import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../shared/service/main-page.sevice';
 import {Image} from '../../../shared/models/image';
-
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
+
   providers: [MainPageSevice]
 })
 export class MainComponent implements OnInit {
-
-
   mainPage: MainPage [] = [];
   Images: Image[] = [];
   middleIndex: number;
@@ -200,17 +198,20 @@ export class MainComponent implements OnInit {
   //dataPicker
   model1: Date;
   model2: Date;
-  enterDay;
-  leaveDay;
+  enterDay: number;
+  leaveDay: number;
   month: string[] = [
     'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'
   ];
   //available
   adultsNumber: number = 1;
-  childrenNumber: number = 1;
+  childrenNumber: number = 0;
   roomsNumber: number = 1;
 
   constructor(private _mainPageService: MainPageSevice) {
+    
+
+
 
     this._mainPageService.findAllAvailable().subscribe(next => {
       for (let i of next) {
@@ -236,25 +237,6 @@ export class MainComponent implements OnInit {
     });
   }
 
-  //data picker
-  get today() {
-    return new Date();
-  }
-
-  scroll(event) {
-    if (this.middleIndex > 0 && this.middleIndex != this.allPathes.length - 1) {
-      event ? this.middleIndex -= 1 : this.middleIndex += 1;
-    } else if (this.middleIndex == 0 && event == false) {
-      this.middleIndex += 1;
-    } else if (this.middleIndex == this.allPathes.length - 1 && event == true) {
-      this.middleIndex -= 1;
-    } else if (this.middleIndex == this.allPathes.length - 1 && event == false) {
-      this.middleIndex = 0;
-    } else if (this.middleIndex == 0 && event == true) {
-      this.middleIndex = this.allPathes.length - 1;
-    }
-  }
-
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {
       return !isNullOrUndefined(object[0]);
@@ -270,6 +252,10 @@ export class MainComponent implements OnInit {
   ngOnInit() {
 
   }
+//dataPicker
+get today() {
+  return new Date();
+}
 
   chang1(e) {
     this.enterDay = e;
@@ -281,9 +267,7 @@ export class MainComponent implements OnInit {
     console.log(e);
   }
 
-  //dataPicker
   roomsNumberFunc(bull) {
-    console.log('work');
     if (bull) {
       this.roomsNumber += 1;
     }
@@ -293,7 +277,6 @@ export class MainComponent implements OnInit {
   }
 
   adultsNumberFunc(bull) {
-    console.log('work');
     if (bull) {
       this.adultsNumber += 1;
     }
@@ -303,11 +286,10 @@ export class MainComponent implements OnInit {
   }
 
   childrenNumberFunc(bull) {
-    console.log('work');
     if (bull) {
       this.childrenNumber += 1;
     }
-    if (!bull && this.childrenNumber != 1) {
+    if (!bull && this.childrenNumber != 0) {
       this.childrenNumber -= 1;
     }
   }

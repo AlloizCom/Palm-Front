@@ -1,77 +1,18 @@
-.wrapper {
-  /*position: relative;*/
+/* data picker */
+.wrapper{
+  position: absolute;
+  left:calc(50% - 491px);
+  z-index: 1000!important;
+  top: 576px;
 }
-
-.someShit h5{
-  cursor: pointer;
-}
-
 .searchIcone{
   cursor: pointer;
 }
-
-.topImage {
-  width: 100%;
-  height: 100vh;
-  background-position: center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-  position: relative;
-}
-
-.sliderContent {
-  position: absolute;
-  bottom: -7%;
-  width: 100%;
-}
-
-.palma {
-  font-size: 40px;
-  text-transform: uppercase;
-  line-height: 47px;
-  color: white;
-  margin-top: 14vh;
-  font-family: 'Raleway', sans-serif;
-  font-weight: bold;
-  margin-left: 8vw;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.swithContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 98%;
-  margin: auto;
-  margin-top: 38px;
-  margin-bottom: 28vh;
-}
-
-.swith {
-  width: 5vw;
-  height: 8vh;
-  background-color: #5A5A5A;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.swith:hover {
-  opacity: 0.95;
-}
-
 .search {
   display: flex;
   width: 982px;
   height: 120px;
-  background-color: white;
-  margin-left: calc(50% - 491px);
-  margin-top: 8vh;
+  background-color: white;  
 }
 
 .searchItem {
@@ -163,7 +104,24 @@
 .searchItem > div > svg {
   margin-bottom: 9px;
 }
+.dataPicker1 {
+  position: absolute;
+  left: calc(50% - 491px);
+  top: -110px;
+}
 
+.dataPicker2 {
+  position: absolute;
+  left: calc(50% - 255px);
+  top: -110px;
+}
+
+.form-control {
+  width: 0;
+  height: 0;
+  padding: 0;
+  border:none!important;
+}
 .dot {
   width: 8px;
   height: 8px;
@@ -182,20 +140,10 @@
   margin-top: 5px;
 }
 
-.dataPicker1 {
-  position: absolute;
-  left: calc(50% - 491px);
-}
+/* end data picker */
 
-.dataPicker2 {
-  position: absolute;
-  left: calc(50% - 255px);
-}
-
-.form-control {
-  width: 0;
-  height: 0;
-  padding: 0;
+.someShit h5{
+  cursor: pointer;
 }
 
 /* About us */
@@ -662,7 +610,7 @@ agm-map {
     margin-left: auto;
     margin-right: auto;
   }
-
+/* data picker */
   .dataPicker1 {
     left: 15%;
   }
@@ -672,23 +620,26 @@ agm-map {
     left: auto;
   }
 
-  .kartinkaMain {
-    height: 100%;
+  
+  .wrapper{
+    left: calc(50% - 475px);
   }
+  .search{
+    width: 950px;
+  }
+
+  .searchItem {
+  }
+
+  /* end data picker */
 
   .whiteBlock {
     width: 9vw;
 
   }
 
-  .search {
-    justify-content: space-between;
-    width: auto;
-    margin: 0 8%;
-  }
-
-  .searchItem {
-    width: auto;
+  .kartinkaMain {
+    height: 100%;
   }
 
   .aboutHotel {
@@ -773,6 +724,41 @@ agm-map {
     width: 100% !important;
     align-content: center;
   }
+}
+
+@media screen and (max-width: 1020px) {
+/* data picker */
+.dataPicker1 {
+  left: 1%;
+}
+
+.dataPicker2 {
+  right: 65%;
+  left: auto;
+}
+.wrapper{
+  left: calc(50% - 384px);
+}
+.search{
+  width: 732px;
+}
+
+.searchItem {
+  width: 140px;
+}
+.searchItem>div{
+  align-items:flex-end;
+}
+.searchItem > div> .day{
+  font-size: 25px!important;
+}
+.searchItem > div > .month{
+font-size: 12px;
+}
+
+/* end data picker */
+
+
 }
 
 @media screen and (max-width: 765px) {
