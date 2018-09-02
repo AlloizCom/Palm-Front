@@ -30,12 +30,16 @@
                  routerLink="/news" (click)="toggleState()">новини</a>
             </li>
             <li ngbDropdown class="d-inline-block">
-              <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</a>
+              <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>послуги</a>
               <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item"
                    (click)="toggleState()">
                   {{one.serviceDescriptions['current-language-index'| translate].title}}</a>
               </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" [routerLinkActive]="['active']"
+                 routerLink="/contacts" (click)="toggleState()">контакти</a>
             </li>
           </ul>
           <div class="langs d-flex justify-content-between">
