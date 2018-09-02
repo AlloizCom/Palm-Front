@@ -40,4 +40,20 @@
   text-transform: uppercase;
   line-height: 47px !important;
 }
+@media screen and (max-width: 765px) {
+
+  .topImage {
+    height: 500px;
+  }
+  /deep/ .carousel-caption{
+    top: 100px !important;
+  }
+  /deep/ .carousel-control-prev {
+    top: 190px !important;
+  }
+  
+  /deep/ .carousel-control-next {
+    top: 190px !important;
+  }
+}
 

@@ -87,6 +87,7 @@ a:hover {
   }
 }
 
+
 @media screen and (max-width: 990px) {
   .navbar-toggler {
     margin: 8px;
@@ -98,6 +99,8 @@ a:hover {
   
   .logo img{
     margin-right: 10px;
+    margin-top: 8px;
+
 
   }
   .logo{
@@ -111,8 +114,10 @@ a:hover {
     position: absolute !important;
     top: 65px !important;
     width: 100% !important;
+    z-index: 1000!important;
     border-bottom: 1px solid #5A5A5A;
     background-color: #F8F6F6;
+
   }
 
   .navbar-collapse>ul>li>a {

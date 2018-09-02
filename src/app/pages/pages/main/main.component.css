@@ -751,14 +751,23 @@ agm-map {
 }
 .searchItem > div> .day{
   font-size: 25px!important;
+  vertical-align: bottom!important;
+  line-height: 23px;
 }
 .searchItem > div > .month{
 font-size: 12px;
 }
 
 /* end data picker */
+}
+@media screen and (max-width: 965px) {
+  .ashkas3 p {
+    width: 35vw;
+  }
 
-
+  .search {
+    margin: 0px 2%;
+  }
 }
 
 @media screen and (max-width: 765px) {
@@ -848,60 +857,59 @@ font-size: 12px;
   }
 }
 
-@media screen and (max-width: 965px) {
-  .ashkas3 p {
-    width: 35vw;
+@media screen and (max-width: 765px) {
+  app-slider, .ashkas3 {
+    display: none !important;
+  }
+  .wrapper[_ngcontent-c4]{
+    top: 340px!important;
+    width: 100%!important;
+    left: 0!important;
+  }
+  .dataPicker1{
+    top: -23%!important;
+  }
+  .dataPicker2{
+    top: -23%!important;
+  }
+  .searchItem> p{
+    margin-bottom: 0%!important;
+  }
+  .searchItem{
+    padding-bottom: 10px!important;
   }
 
-  .search {
-    margin: 0px 2%;
-  }
 }
+
 
 @media screen and (max-width: 645px) {
   agm-map {
     height: 45vh;
   }
 
-  .item {
-    width: 51% !important;
-    margin: 5% auto !important;
-  }
-
-  .dataPicker1 {
-    top: 69%;
-  }
-
-  .dataPicker2 {
-    top: 69%;
-  }
-
   .photoMain, .infosMain {
     width: 75% !important;
   }
 
-  .whiteBlock {
-    width: 12vw;
-
+   .wrapper[_ngcontent-c4]{
+    top: 515px;
+    width: 100%!important;
+    left: 0!important;
+  }
+  .dataPicker1{
+    top: -23%!important;
+  }
+  .dataPicker2{
+    top: -23%!important;
+  }
+  .searchItem> p{
+    margin-bottom: 0%!important;
+  }
+  .searchItem{
+    padding-bottom: 10px!important;
   }
 
-  .item2 {
-    width: 45% !important;
-  }
 }
-
-@media screen and (max-width: 570px) {
-  .dataPicker1 {
-    left: 3%;
-    top: 69%;
-  }
-
-  .dataPicker2 {
-    left: 3%;
-    top: 69%;
-  }
-}
-
 @media screen and (max-width: 510px) {
   .searchItem div .roomsNumber {
     margin: 0px 14px 0 14px;
@@ -936,13 +944,10 @@ font-size: 12px;
 
   }
 
+
 }
 
-@media screen and (max-width: 765px) {
-  app-slider, .ashkas3 {
-    display: none !important;
-  }
-}
+
 
 @media screen and (max-width: 425px) {
   .map {
