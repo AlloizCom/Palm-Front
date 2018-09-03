@@ -45,3 +45,5 @@ textarea.ng-invalid{
 textarea{
   resize: none
 }
+button:disabled{
+}

@@ -40,6 +40,7 @@ export class OptionComponent implements OnInit {
       TitleRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
       HeaderTextareaRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
       textRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      multipartFiles: new FormControl(null,[this.validateImages]),
     });
     this.servicesForm.valueChanges.subscribe(value => {
       this.service.name=value.servicesName;
@@ -85,8 +86,8 @@ export class OptionComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
-  // validateImages(c: FormControl): {[key: string]: any} {
-  //   return c.value == null || c.value.length == 0 ? { "required" : true} : null;
-  // }
+  validateImages(c: FormControl): {[key: string]: any} {
+    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
+  }
 
 }

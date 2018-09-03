@@ -18,14 +18,15 @@
   <input type="number" formControlName="amount" min="0">
 
 
-  <ul formArrayName="descriptions">
-    <li *ngFor="let one of roomDescriptionForm.controls; let i = index">
+  <div formArrayName="descriptions">
+    <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
       <form formGroupName="{{i}}">
-        <input type="text" disabled formControlName="language">
+        <p>{{one.get('language').value}}</p>
+        <!--<input type="text" disabled formControlName="language">-->
         <textarea cols="30" rows="10" formControlName="description"></textarea>
       </form>
-    </li>
-  </ul>
+    </div>
+  </div>
 
   <!--<h3>Зручності:</h3>-->
 
