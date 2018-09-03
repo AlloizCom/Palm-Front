@@ -1,4 +1,4 @@
-<div *ngIf="news && news.length>0 && randomIndex && randomIndex.length>0" class="topPhotos d-flex ">
+<div *ngIf="news && news.length>0" class="topPhotos d-flex ">
   <div class="first d-flex flex-row flex-wrap">
     <div  *ngFor="let one of news" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" class="one d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
@@ -13,8 +13,8 @@
   <div class="news">
     <h2>Новини</h2>
     <div class="blocks d-flex flex-column">
-      <div *ngIf="isNull(news)" class="firsty flex-wrap d-flex flex-row justify-content-between">
-        <div class="item" *ngFor="let one of news|revers">
+      <div *ngIf="isNull(news2)" class="firsty flex-wrap d-flex flex-row justify-content-between">
+        <div class="item" *ngFor="let one of news2|revers">
           <div class="back1" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"></div>
           <h3 routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
           <h4>{{one.newsDescriptions['current-language-index' | translate].headerText}}</h4>

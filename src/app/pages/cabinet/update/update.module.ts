@@ -8,6 +8,7 @@ import {TariffComponent} from './tariff/tariff.component';
 import {GlobalImportsModule} from '../../../shared/config/global-imports/global-imports.module';
 import { OneNewsComponent } from './news/one-news/one-news.component';
 import { TariffOneComponent } from './tariff/tariff-one/tariff-one.component';
+import { RoomOneComponent } from './room/room-one/room-one.component';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { TariffOneComponent } from './tariff/tariff-one/tariff-one.component';
     CommonModule,
     GlobalImportsModule
   ],
-  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, TariffComponent, OneNewsComponent, TariffOneComponent]
+  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, TariffComponent, OneNewsComponent, TariffOneComponent, RoomOneComponent]
 })
 export class UpdateModule { }
 

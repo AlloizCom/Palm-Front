@@ -7,6 +7,7 @@ import {RoomComponent} from './room/room.component';
 import {TariffComponent} from './tariff/tariff.component';
 import {OneNewsComponent} from './news/one-news/one-news.component';
 import {TariffOneComponent} from "./tariff/tariff-one/tariff-one.component";
+import {RoomOneComponent} from "./room/room-one/room-one.component";
 
 export const updateRoutes :Routes =[
   {
@@ -22,8 +23,14 @@ export const updateRoutes :Routes =[
       {
         path:'order',component:OrderComponent
       },
+      // {
+      //   path:'option/:id',component:TariffOneComponent
+      // },
       {
         path:'room',component:RoomComponent
+      },
+      {
+        path:'room/:id',component:RoomOneComponent
       },
       {
         path:'tariff',component:TariffComponent
