@@ -1,21 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {MainPage} from '../../../shared/models/main-page';
 import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../shared/service/main-page.sevice';
-import {Image} from '../../../shared/models/image';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-
   providers: [MainPageSevice]
 })
+
 export class MainComponent implements OnInit {
-  mainPage: MainPage [] = [];
-  Images: Image[] = [];
-  middleIndex: number;
-  allPathes: string [] = [];
+
   //grey map
+
   iconUrl: 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
   latitude = 49.856338332302016;
   longitude = 24.076377153396606;
@@ -195,6 +192,7 @@ export class MainComponent implements OnInit {
       ]
     }
   ];
+
   //dataPicker
   model1: Date;
   model2: Date;
@@ -203,38 +201,14 @@ export class MainComponent implements OnInit {
   month: string[] = [
     'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'
   ];
+
   //available
   adultsNumber: number = 1;
   childrenNumber: number = 0;
   roomsNumber: number = 1;
 
-  constructor(private _mainPageService: MainPageSevice) {
-    
+  constructor() {
 
-
-
-    this._mainPageService.findAllAvailable().subscribe(next => {
-      for (let i of next) {
-        if (typeof (i) != 'undefined' && i != null) {
-          this.mainPage.push(i);
-        }
-      }
-      this.mainPage = next;
-      for (let i = 0; i < this.mainPage.length; i++) {
-        for (let j = 0; j < this.mainPage[i].images.length; j++) {
-          this.Images = this.mainPage[i].images;
-          this.allPathes.push(this.mainPage[i].images[j].path);
-        }
-        // this.Images.push(this.mainPage[i].images[i].path)
-      }
-      console.log(this.allPathes);
-      // console.log(this.Images);
-      this.middleIndex = Math.round(this.Images.length / 2);
-      console.log(this.middleIndex);
-
-    }, err => {
-      console.log(err);
-    });
   }
 
   isNull(object: any): Boolean {

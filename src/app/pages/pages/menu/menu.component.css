@@ -96,7 +96,7 @@ a:hover {
   .navbar{
     height: 56px;
   }
-  
+
   .logo img{
     margin-right: 10px;
     margin-top: 8px;
@@ -181,4 +181,9 @@ svg{
     margin: 0;
     box-sizing: border-box;
   }
+}
+
+
+.back{
+  background: #f8f9fa;
 }
