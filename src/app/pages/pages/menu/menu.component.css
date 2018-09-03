@@ -43,7 +43,7 @@ a:hover {
   border-bottom: 1px solid #53D7B7!important;
 }
 
-.logo,{
+.logo{
   cursor: pointer;
 }
 
@@ -183,7 +183,3 @@ svg{
   }
 }
 
-
-.back{
-  background: #f8f9fa;
-}
