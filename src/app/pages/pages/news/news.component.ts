@@ -11,6 +11,7 @@ import {isNullOrUndefined} from 'util';
 export class NewsComponent implements OnInit {
 
   news: News[] = [];
+  news2:News[]=[];
   randomIndex:number[]=[];
 
   constructor(private _newsService: NewsService) {
@@ -22,6 +23,18 @@ export class NewsComponent implements OnInit {
       }
       this.news = next;
       console.log('news',this.news);
+    }, err => {
+      console.log(err);
+    });
+
+    this._newsService.findAllAvailable().subscribe(next => {
+      for (let i of next) {
+        if (typeof (i) != undefined && i != null) {
+          this.news2.push(i);
+        }
+      }
+      this.news2 = next;
+      console.log('news2',this.news2);
     }, err => {
       console.log(err);
     });

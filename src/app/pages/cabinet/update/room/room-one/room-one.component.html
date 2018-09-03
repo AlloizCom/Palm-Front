@@ -1,0 +1,58 @@
+<div>
+  <h3>Тип номера:</h3>
+  <select [(ngModel)]="room.type">
+    <option value="STANDARD">STANDART</option>
+    <option value="SUPERIOR">SUPERIOR</option>
+    <option value="DELUXE">DELUXE</option>
+    <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
+    <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+  </select>
+  <h3>кількість дитячих місць:</h3>
+  <input type="number" [(ngModel)]="room.kidsPlaces" min="0">
+  <h3>кількість дорослих місць:</h3>
+  <input type="number" [(ngModel)]="room.adultPlaces" min="1">
+  <h3>Площа номера:</h3>
+  <input type="number" [(ngModel)]="room.square" min="10">
+  <h3>Кількість номерів:</h3>
+  <input type="number" [(ngModel)]="room.amount" min="0">
+
+  <ul>
+    <li *ngFor="let one of room.descriptions">
+      <div>
+        <input [(ngModel)]="one.language" type="text" disabled>
+        <textarea [(ngModel)]="one.description" cols="30" rows="10"></textarea>
+      </div>
+    </li>
+  </ul>
+  <div class="d-flex flex-column">
+    <h2>Зручності:</h2>
+    <div *ngFor="let one of room.amenities">
+      <div>{{one.amenityNames[1].name}}</div>
+      <div class="back" [style.background]="'url(' + (one.imagePath|imagePipe) + ')'"></div>
+    </div>
+  </div>
+  <br>
+  <div class="image-wrapper flex-column d-flex">
+    <div *ngFor="let one of room.images" class="image-one d-flex align-items-end justify-content-center"
+         [style.background]="'url(' + (one.path|imagePipe) + ')'">
+      <button (click)="delete(room.id, one.id)">delete</button>
+    </div>
+    <!--<form action="" #form class="d-flex justify-content-center">-->
+    <!--<input (change)="addImage(form)" id="file" type="file" class="d-none" name="multipartFile">-->
+    <!--<label for="file">AddImage</label>-->
+    <!--</form>-->
+    <!--</div>-->
+
+    <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
+      <img [src]="one" alt="">
+    </div>
+    <br>
+    <form action="" #form class="d-flex justify-content-center">
+      <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
+             name="multipartFiles">
+      <label (click)="toggle()" for="file">AddImage</label>
+      <button (click)="update(form)">update room</button>
+    </form>
+  </div>
+</div>
+
