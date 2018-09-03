@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cabinet.component.css']
 })
 export class CabinetComponent implements OnInit {
-  public isCollapsed = false;
+  isIn = true;
   constructor() { }
 
   ngOnInit() {
   }
-
+  toggleState() { // click handler
+    this.isIn = !this.isIn;
+  }
 }

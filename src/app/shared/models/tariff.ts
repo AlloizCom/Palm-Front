@@ -2,7 +2,7 @@ export class Tariff {
 
   id: number;
   available: boolean;
-  tariifType: string;
+  tariffType: string;
   price: number;
   dateFrom: string;
   dateTo: string;

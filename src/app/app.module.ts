@@ -17,7 +17,7 @@ import {PipeModule} from './shared/pipe/pipe.module';
 import {NewsService} from './shared/service/news.service';
 import {ServiceService} from "./shared/service/service.service";
 import {MenuComponent} from "./pages/pages/menu/menu.component";
-
+import { DateValueAccessorModule } from 'angular-date-value-accessor';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import {MenuComponent} from "./pages/pages/menu/menu.component";
     GlobalImportsModule,
     PipeModule,
     RouterModule.forRoot(routes),
+    DateValueAccessorModule
 
   ],
   providers: [CallbackService,

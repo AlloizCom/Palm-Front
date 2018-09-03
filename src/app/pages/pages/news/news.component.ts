@@ -14,33 +14,33 @@ export class NewsComponent implements OnInit {
   randomIndex:number[]=[];
 
   constructor(private _newsService: NewsService) {
-    this._newsService.findAllAvailable().subscribe(next => {
+    this._newsService.getRandomNews(6).subscribe(next => {
       for (let i of next) {
-        if (typeof (i) != 'undefined' && i != null) {
+        if (typeof (i) != undefined && i != null) {
           this.news.push(i);
         }
       }
-
       this.news = next;
-      console.log(this.news);
+      console.log('news',this.news);
     }, err => {
       console.log(err);
     });
 
-    this._newsService.getRandomArray(6).subscribe(value => {
-      for (let i of value){
-        // console.log(i)
-        if (typeof (i) != undefined && i != null) {
-          // console.log(i)
-          this.randomIndex.push(i);
-        }
-      }
-      console.log(this.randomIndex)
-      this.randomIndex = value;
-    }, err =>{
-      console.log(err);
-    });
-    console.log(this.randomIndex);
+    // this._newsService.getRandomArray(6).subscribe(value => {
+    //   for (let i of value){
+    //     // console.log(i)
+    //     if (i) {
+    //       // console.log(i)
+    //       this.randomIndex.push(i);
+    //     }
+    //   }
+    //   console.log(this.randomIndex);
+    //   this.randomIndex = value;
+    //   console.log('value ',value)
+    // }, err =>{
+    //   console.log(err);
+    // });
+    // console.log(this.randomIndex);
 
   }
 

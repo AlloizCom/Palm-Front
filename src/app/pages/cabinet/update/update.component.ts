@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
-
+  isIn = true;
   constructor() { }
 
   ngOnInit() {
   }
-
+  toggleState() { // click handler
+    this.isIn = !this.isIn;
+  }
 }

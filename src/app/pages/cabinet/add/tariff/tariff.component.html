@@ -1,3 +1,28 @@
-<p>
-  tariff works!
-</p>
+<form action="" (submit)="addTariff(form)" #form [formGroup]="tariffForm">
+  <h3>Тип тарифу:</h3>
+  <select (change)="changeTariff($event.target.value)">
+    <option value="REGULAR">REGULAR</option>
+    <option value="SPECIAL">SPECIAL</option>
+    <option value="NONE" selected>NONE</option>
+  </select>
+
+  <h3>Ціна:</h3>
+  <input type="number" formControlName="price" min="1">
+
+  <h3>Початок тарифу(дата)</h3>
+  <input type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" formControlName="dateFrom" useValueAsDate>
+  <h3>Кінець тарифу(дата)</h3>
+  <input type="date" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" formControlName="dateTo" useValueAsDate>
+
+  <h3>Тип номера:</h3>
+  <select (change)="changeRoom($event.target.value)">
+    <option value="STANDARD">STANDARD</option>
+    <option value="SUPERIOR">SUPERIOR</option>
+    <option value="DELUXE">DELUXE</option>
+    <option value="STANDARD_IMPROVED">STANDARD IMPROVED</option>
+    <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+    <option value="NONE" selected>NONE</option>
+  </select>
+
+  <button class="button" type="submit" class="w-100">Save Tariff</button>
+</form>

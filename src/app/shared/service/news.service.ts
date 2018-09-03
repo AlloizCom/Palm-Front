@@ -24,6 +24,19 @@ export class NewsService {
       .catch(err => Observable.throw(err));
   }
 
+  //Pageble
+  findAllNewsByPage(page: number, count: number): Observable<News[]> {
+    return this._httpClient.get<News[]>
+    (this.controller + '/find-all-news-by-page/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
+
+  findAllAvailableNewsByPage(page: number, count: number): Observable<News[]> {
+    return this._httpClient.get<News[]>
+    (this.controller + 'find-all-news-by-page-available/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
+
   findOne(id: number): Observable<News> {
     return this._httpClient.get<News>(this.controller + '/find-one/' + id)
       .catch(err => Observable.throw(err));
@@ -36,6 +49,12 @@ export class NewsService {
 
   getRandomArray(length: number): Observable<any>{
     return this._httpClient.get<any>(this.controller + '/get-random-array/' + length)
+      .catch(err => Observable.throw(err));
+  }
+
+  // List of random News
+  getRandomNews(amount: number): Observable<News[]> {
+    return this._httpClient.get<News[]>(this.controller + '/get-list-of-random-news/' + amount)
       .catch(err => Observable.throw(err));
   }
 

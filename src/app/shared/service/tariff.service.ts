@@ -25,13 +25,13 @@ export class TariffService {
       .catch(err => Observable.throw(err));
   }
 
-  findOne(): Observable<Tariff>{
-    return this._httpClient.get<Tariff>(this.controller + '/find-one/ + id')
+  findOne(id: number): Observable<Tariff>{
+    return this._httpClient.get<Tariff>(this.controller + '/find-one/' + id)
       .catch(err => Observable.throw(err));
   }
 
-  findOneAvailable(): Observable<Tariff>{
-    return this._httpClient.get<Tariff>(this.controller + '/find-one-available/ + id')
+  findOneAvailable(id: number): Observable<Tariff>{
+    return this._httpClient.get<Tariff>(this.controller + '/find-one-available/' + id)
       .catch(err => Observable.throw(err));
   }
 
