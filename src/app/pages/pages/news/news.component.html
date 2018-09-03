@@ -4,8 +4,10 @@
       <div class="d-flex justify-content-center">
         <button routerLink="{{one.id}}"  class="button">Переглянути</button>
       </div>
-      <h2>{{one.newsDescriptions['current-language-index' | translate].title}}</h2>
-      <h3>{{one.dateTime|datePipe}}</h3>
+      <div class="razom">
+        <h2>{{one.newsDescriptions['current-language-index' | translate].title}}</h2>
+        <h3>{{one.dateTime|datePipe}}</h3>
+      </div>
     </div>
   </div>
 </div>
@@ -26,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="center d-flex justify-content-center">
+      <div class="butt center d-flex justify-content-center">
         <button>Більше</button>
       </div>
     </div>
