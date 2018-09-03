@@ -15,6 +15,20 @@ import {isNullOrUndefined} from 'util';
 })
 export class RoomComponent implements OnInit {
 
+  defaultFormValue = {descriptions: [
+      {language:'EN',description:''},
+      {language:'UK',description:''},
+      {language:'PL',description:''},
+      {language:'RU',description:''}
+    ],
+    kidsPlaces: 0,
+    adultPlaces: 1,
+    square: 20,
+    amount: 1,
+    amenities: [],
+    type: 'NONE',
+    multipartFiles: null,
+  };
 
   room: Room = new Room();
   amenity: Amenity[];
@@ -72,9 +86,12 @@ export class RoomComponent implements OnInit {
 
   addRoom(form: HTMLFormElement) {
     // console.log((<HTMLInputElement>form.elements.item(19)).files);
+    // this.room.type = this.type;
     this._roomService.save(this.room, form).subscribe(next => {
         console.log(next);
-        this.roomForm.reset();
+        // form.reset();
+        this.roomForm.reset(this.defaultFormValue);
+        this.createFormArray();
         this.image=[];
       },
       error => {
@@ -93,36 +110,50 @@ export class RoomComponent implements OnInit {
   }
 
   private createRoomForm() {
-    this.roomDescriptionForm = new FormArray([
-      new FormGroup({
-        language: new FormControl('EN'),
-        description: new FormControl('',[Validators.min(3),Validators.required])
-      }),
-      new FormGroup({
-        language: new FormControl('UK'),
-        description: new FormControl('',[Validators.min(3)])
-      }),
-      new FormGroup({
-        language: new FormControl('PL'),
-        description: new FormControl('',[Validators.min(3)])
-      }),
-      new FormGroup({
-        language: new FormControl('RU'),
-        description: new FormControl('',[Validators.min(3)])
-      }),
-    ]);
+    this.createFormArray();
     this.roomForm = new FormGroup({
       kidsPlaces: new FormControl(0, [Validators.min(0), Validators.max(9)]),
-      adultPlaces: new FormControl(0, [Validators.min(1), Validators.max(9)]),
-      square: new FormControl(0, [Validators.min(10), Validators.max(150)]),
+      adultPlaces: new FormControl(1, [Validators.min(1), Validators.max(9)]),
+      square: new FormControl(20, [Validators.min(10), Validators.max(150)]),
       amount: new FormControl(1, [Validators.min(1), Validators.max(100)]),
       amenities: new FormControl([]),
+      type: new FormControl('NONE',[Validators.required,this.validateType]),
+      multipartFiles: new FormControl(null,[this.validateImages]),
       descriptions: this.roomDescriptionForm
     });
     this.roomForm.valueChanges.subscribe(value => {
       this.room = value;
-      this.room.type = this.type;
+      // this.room.type = this.type;
       console.log('room : ', this.room);
     });
+  }
+
+  private createFormArray() {
+    this.roomDescriptionForm = new FormArray([
+      new FormGroup({
+        language: new FormControl('EN'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+      new FormGroup({
+        language: new FormControl('UK'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+      new FormGroup({
+        language: new FormControl('PL'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+      new FormGroup({
+        language: new FormControl('RU'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+    ]);
+  }
+
+  validateImages(c: FormControl): {[key: string]: any} {
+    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
+  }
+
+  validateType(c: FormControl): {[key: string]: any} {
+    return c.value == 'NONE' || c.value == '' ? { "required" : true} : null;
   }
 }

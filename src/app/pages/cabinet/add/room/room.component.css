@@ -11,4 +11,6 @@ textarea.ng-valid{
 textarea.ng-invalid{
   border-left: 5px solid red;
 }
-
+button:disabled {
+  border-bottom: 3px solid red;
+}

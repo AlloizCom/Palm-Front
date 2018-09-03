@@ -7,5 +7,5 @@
   <br>
   <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
   <label (click)="toggle()" for="file">AddImage</label>
-  <button class="button" type="submit" class="w-100">Save Room</button>
+  <button class="button" [disabled]="" type="submit" class="w-100">Save Room</button>
 </form>
