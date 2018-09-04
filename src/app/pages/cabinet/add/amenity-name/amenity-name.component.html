@@ -31,6 +31,7 @@
   <div *ngIf="image" class="image">
     <img [src]="image" alt="" class="w-100">
   </div>
-  <label for="file" class="addImage">Add Image</label>
+  <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file1" type="file" class="d-none" name="multipartFiles">
+  <label for="file1" class="addImage">Add Image</label>
   <button class="button" type="submit" class="w-100" [disabled]="amenityForm.invalid">Save amenity</button>
 </form>

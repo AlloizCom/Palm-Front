@@ -1,12 +1,12 @@
 <form action="" (submit)="addRoom(form)" #form [formGroup]="roomForm">
   <h3>Тип номера:</h3>
-  <select (change)="changeAmen($event.target.value)">
+  <select formControlName="type">
     <option value="STANDARD">STANDART</option>
     <option value="SUPERIOR">SUPERIOR</option>
     <option value="DELUXE">DELUXE</option>
     <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
     <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
-    <option value="NONE" selected>NONE</option>
+    <option value="NONE" selected disabled>NONE</option>
   </select>
   <h3>кількість дитячих місць:</h3>
   <input type="number" formControlName="kidsPlaces" min="0">
@@ -18,14 +18,15 @@
   <input type="number" formControlName="amount" min="0">
 
 
-  <ul formArrayName="descriptions">
-    <li *ngFor="let one of roomDescriptionForm.controls; let i = index">
+  <div formArrayName="descriptions">
+    <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
       <form formGroupName="{{i}}">
-        <input type="text" disabled formControlName="language">
+        <p>{{one.get('language').value}}</p>
+        <!--<input type="text" disabled formControlName="language">-->
         <textarea cols="30" rows="10" formControlName="description"></textarea>
       </form>
-    </li>
-  </ul>
+    </div>
+  </div>
 
   <!--<h3>Зручності:</h3>-->
 
@@ -47,10 +48,9 @@
   <br>
   <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
     <img [src]="one" alt="">
-
   </div>
   <br>
-  <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
-  <label (click)="toggle()" for="file">AddImage</label>
-  <button class="button" type="submit" class="w-100">Save Room</button>
+  <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
+  <label (click)="toggle()" for="file" >AddImage</label>
+  <button class="button" [disabled]="!roomForm.valid" type="submit" class="w-100">Save Room</button>
 </form>

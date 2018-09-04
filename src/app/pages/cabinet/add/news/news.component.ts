@@ -33,18 +33,20 @@ export class NewsComponent implements OnInit {
     });
 
     this.newsForm = new FormGroup({
-      TitleEn: new FormControl('', [Validators.required]),
-      HeaderTextareaEn: new FormControl('', [Validators.required]),
-      textEn: new FormControl('', [Validators.required]),
-      TitleUk: new FormControl('', [Validators.required]),
-      HeaderTextareaUk: new FormControl('', [Validators.required]),
-      textUk: new FormControl('', [Validators.required]),
-      TitlePl: new FormControl('', [Validators.required]),
-      HeaderTextareaPl: new FormControl('', [Validators.required]),
-      textPl: new FormControl('', [Validators.required]),
-      TitleRu: new FormControl('', [Validators.required]),
-      HeaderTextareaRu: new FormControl('', [Validators.required]),
-      textRu: new FormControl('', [Validators.required]),
+      TitleEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      HeaderTextareaEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      textEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      TitleUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      HeaderTextareaUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      textUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      TitlePl: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      HeaderTextareaPl: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      textPl: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      TitleRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      HeaderTextareaRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      textRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      multipartFiles: new FormControl(null,[this.validateImages]),
+
     });
     this.newsForm.valueChanges.subscribe(value => {
       this.news.newsDescriptions[0].language = 'EN';
@@ -116,5 +118,8 @@ export class NewsComponent implements OnInit {
       error =>
     console.log(error)
     );
+  }
+  validateImages(c: FormControl): {[key: string]: any} {
+    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
   }
 }

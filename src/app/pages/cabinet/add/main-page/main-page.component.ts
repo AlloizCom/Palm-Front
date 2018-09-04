@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {isNullOrUndefined} from "util";
 import {MainPage} from "../../../../shared/models/main-page";
 import {MainPageSevice} from "../../../../shared/service/main-page.sevice";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-main-page',
@@ -14,14 +15,21 @@ export class MainPageComponent implements OnInit {
   mainPage: MainPage = new MainPage();
   image: string[] = [];
   appear: boolean = true;
+  mainPageForm:FormGroup;
 
   constructor(private _mainPageService: MainPageSevice) {
   }
 
   ngOnInit() {
-
+    this.createmainPageForm();
   }
 
+
+  private   createmainPageForm(){
+    this.mainPageForm = new FormGroup({
+      multipartFiles: new FormControl(null,[this.validateImages]),
+    })
+  }
   readUrl(event: any) {
     if (event.target.files) {
       this.image = [];
@@ -59,5 +67,10 @@ export class MainPageComponent implements OnInit {
         console.log(error);
       });
   }
+
+  validateImages(c: FormControl): {[key: string]: any} {
+    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
+  }
+
 }
 

@@ -29,10 +29,12 @@ export class AmenityNameComponent implements OnInit {
 
   ngOnInit() {
     this.amenityForm = new FormGroup({
-      nameEn: new FormControl('', [Validators.required]),
-      nameUk: new FormControl('', [Validators.required]),
-      namePl: new FormControl('', [Validators.required]),
-      nameRu: new FormControl('', [Validators.required])
+      nameEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      nameUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      namePl: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      nameRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      multipartFiles: new FormControl(null,[this.validateImages]),
+
     });
     this.amenityForm.valueChanges.subscribe(value => {
       this.amenity.amenityNames[0].language = 'EN';
@@ -75,6 +77,9 @@ export class AmenityNameComponent implements OnInit {
       })
 
 
+  }
+  validateImages(c: FormControl): {[key: string]: any} {
+    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
   }
 
 }

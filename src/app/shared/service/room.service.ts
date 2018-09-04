@@ -25,6 +25,23 @@ export class RoomService{
           .catch(err => Observable.throw(err));
   }
 
+  findAllByAdultPlacesAndKidsPlacesAndAvailable(kidsPlaces: number,
+                                                adultPlaces: number):
+    Observable<Room[]>{
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult/'
+      + kidsPlaces + '/' + adultPlaces)
+      .catch(err => Observable.throw(err));
+  }
+
+  findAllByAdultPlacesAndKidsPlacesAndAmountAndAvailable(kidsPlaces: number,
+                                                         adultPlaces: number,
+                                                         amount: number):
+    Observable<Room[]>{
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult-amount/'
+      + kidsPlaces + '/' + adultPlaces + '/' + amount)
+      .catch(err => Observable.throw(err));
+  }
+
   findAllOnlyWithImages(): Observable<Room[]>{
     return this._httpClient.get<Room[]>(this.controller + '/find-all-only-with-images')
       .catch(err => Observable.throw(err));
