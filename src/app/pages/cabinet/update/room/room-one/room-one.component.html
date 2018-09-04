@@ -20,7 +20,7 @@
     <li *ngFor="let one of room.descriptions">
       <div>
         <input [(ngModel)]="one.language" type="text" disabled>
-        <textarea [(ngModel)]="one.description" cols="30" rows="10"></textarea>
+        <textarea [(ngModel)]="one.description" rows="5"></textarea>
       </div>
     </li>
   </ul>
@@ -32,28 +32,21 @@
     </div>
   </div>
   <br>
-  <div class="image-wrapper flex-column d-flex" >
+  <div class="image-wrapper d-flex  flex-wrap">
     <div *ngFor="let one of room.images" class="image-one d-flex align-items-end justify-content-center"
          [style.background]="'url(' + (one.path|imagePipe) + ')'">
-      <button (click)="delete(room.id, one.id, one)">delete</button>
+      <button (click)="delete(room.id, one.id, one)">Видалити</button>
     </div>
-    <!--<form action="" #form class="d-flex justify-content-center">-->
-    <!--<input (change)="addImage(form)" id="file" type="file" class="d-none" name="multipartFile">-->
-    <!--<label for="file">AddImage</label>-->
-    <!--</form>-->
-    <!--</div>-->
-
-    <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
-      <img [src]="one" alt="" *ngIf="(isNull(one))">
-    </div>
+      <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
+        <img [src]="one" alt="" *ngIf="(isNull(one))">
+      </div>
     <br>
-    <form action="" #form class="d-flex justify-content-center">
-      <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
-             name="multipartFiles" [(ngModel)]="fileField" >
-      <label (click)="toggle()" for="file">AddImage</label>
-      <button (click)="update(form)">Оновити кімнату</button>
-    </form>
-
   </div>
+  <form action="" #form class="d-flex justify-content-center">
+    <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
+           name="multipartFiles" [(ngModel)]="fileField">
+    <label (click)="toggle()" for="file">AddImage</label>
+    <button (click)="update(form)">Оновити кімнату</button>
+  </form>
 </div>
 
