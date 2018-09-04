@@ -10,11 +10,10 @@ import {CallbackService} from '../../../shared/service/callback.service';
 })
 export class ContactsComponent implements OnInit {
 
-  hui = true;
+
 
   latitude =  49.856338332302016;
   longitude =24.076377153396606;
-  private border: any;
 
 
     onChoseLocation(event){
@@ -57,11 +56,43 @@ export class ContactsComponent implements OnInit {
         this.callbackForm.reset();
       }
     );
+
+
+    }
+  public lat = 24.799448;
+  public lng = 120.979021;
+  public origin = { lat: 49.856338332302016, lng: 24.076377153396606 };
+  public destination = { lat: 49.8457735, lng: 24.0223995 };
+
+  getAirportDirection() {
+    this.origin = { lat: 49.856338332302016, lng: 24.076377153396606 }
+    this.destination = { lat: 49.8134465, lng: 23.9573617 }
   }
-  myborder(){
-      return true;
+ getStationDirection() {
+    this.origin = { lat: 49.856338332302016, lng: 24.076377153396606 }
+    this.destination = { lat:  49.8399353, lng: 23.9915774 }
+  }
+ getBusDirection() {
+    this.origin = { lat: 49.856338332302016, lng: 24.076377153396606 }
+    this.destination = { lat:  49.8642614, lng: 24.0491102 }
+  }
+ getSquareDirection() {
+    this.origin = { lat: 49.856338332302016, lng: 24.076377153396606 }
+    this.destination = { lat:  49.8413523, lng: 24.0303229 }
+  }
+ getCastleDirection() {
+    this.origin = { lat: 49.856338332302016, lng: 24.076377153396606 }
+    this.destination = { lat:  49.8514224, lng: 24.0316346 }
   }
 
 
-
+//   mapRoutes(){
+//     let directionServices = new google.maps.DirectionsService;
+//     let directionDisplay = new google.maps.DirectionsRenderer;
+//
+//     let map = new google.maps()
+// }
+//
+//
+//
 }

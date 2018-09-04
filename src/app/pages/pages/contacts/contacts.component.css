@@ -361,3 +361,13 @@ agm-map{
 .green-border{
   border-bottom: 2px solid #53D7B7;
 }
+
+/*TESTING MAP*/
+agm-map {
+  height: 400px;
+
+}
+.test-map{
+  margin: auto;
+  width: 75%;
+}

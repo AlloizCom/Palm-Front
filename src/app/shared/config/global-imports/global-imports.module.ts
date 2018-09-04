@@ -8,6 +8,7 @@ import {PipeModule} from '../../pipe/pipe.module';
 import {TranslateLoader, TranslateModule, TranslateStaticLoader} from 'ng2-translate';
 import {Http} from "@angular/http";
 import {AgmCoreModule} from "@agm/core";
+import { AgmDirectionModule } from 'agm-direction';
 
 // import {routes} from '../../../main.routes';
 
@@ -30,7 +31,8 @@ export function createTranslateLoader(http: Http) {
     }),
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyC9oymho0KGOZ41bxj7fW_1qSqjvuVwodY'
-    })
+    }),
+    AgmDirectionModule
   ],
   declarations: [],
   exports: [
@@ -42,7 +44,8 @@ export function createTranslateLoader(http: Http) {
     PipeModule,
     CommonModule,
     TranslateModule,
-    AgmCoreModule
+    AgmCoreModule,
+    AgmDirectionModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
