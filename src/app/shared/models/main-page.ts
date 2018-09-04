@@ -2,8 +2,8 @@ import {Image} from "./image";
 
 export class MainPage {
 
-  id: number;
-  available: boolean;
-  images: Image[] = [];
+  public id: number;
+  public available: boolean;
+  public images: Image[] = [];
 
 }
