@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Room} from "../../../../../shared/models/room";
 import {RoomService} from "../../../../../shared/service/room.service";
 import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
@@ -25,7 +25,8 @@ export class RoomOneComponent implements OnInit {
 
   constructor(private _router: ActivatedRoute,
               private _amenityService:AmenityService,
-              private _roomService: RoomService) {
+              private _roomService: RoomService,
+              private _route: Router) {
     _router.params.subscribe(next => {
       _roomService.findOne(next['id']).subscribe(next => {
         this.room = next;
@@ -63,6 +64,7 @@ export class RoomOneComponent implements OnInit {
       //   this.image.push(this._imagePipe.transform(one.path));
       // }
       this.fileField = null;
+      this._route.navigateByUrl("/cabinet/update/room");
     }, error => {
       console.log(error);
     });

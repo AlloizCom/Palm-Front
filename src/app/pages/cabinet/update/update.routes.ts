@@ -1,7 +1,6 @@
 import {Routes} from '@angular/router';
 import {UpdateComponent} from './update.component';
 import {NewsComponent} from './news/news.component';
-import {OptionComponent} from './option/option.component';
 import {OrderComponent} from './order/order.component';
 import {RoomComponent} from './room/room.component';
 import {TariffComponent} from './tariff/tariff.component';
@@ -12,6 +11,7 @@ import {ServicesOneComponent} from "./services/services-one/services-one.compone
 import {ServicesComponent} from "./services/services.component";
 import {AmenityComponent} from "./amenity/amenity.component";
 import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
+import {MainUpdateComponent} from "./main-update/main-update.component";
 
 export const updateRoutes: Routes = [
   {
@@ -20,9 +20,6 @@ export const updateRoutes: Routes = [
         path: 'news', component: NewsComponent
       }, {
         path: 'news/:id', component: OneNewsComponent
-      },
-      {
-        path: 'option', component: OptionComponent
       },
       {
         path: 'order', component: OrderComponent
@@ -61,7 +58,11 @@ export const updateRoutes: Routes = [
       },
       {
         path: 'amenity/:id', component: AmenityOneComponent
+      },
+      {
+        path:'main-update',component:MainUpdateComponent
       }
+
     ]
   }
 ]
