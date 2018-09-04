@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+h2,h3{
+  cursor: pointer;
+}
+
+.hundred{
+  padding: 2% 0;
+  width: 30%;
+  height: 200px;
+  margin: 10px;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

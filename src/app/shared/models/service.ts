@@ -4,7 +4,7 @@ export class Service {
 
   id: number;
   available: boolean;
-  image: string;
+  picturePath: string;
   name: string;
   serviceDescriptions: ServiceDescription[] = [];
 

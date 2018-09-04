@@ -17,6 +17,7 @@ export class ServiceComponent implements OnInit {
   id: number;
   img: string = '';
 
+
   constructor(private _serviceService: ServiceService,
               private _imagePipe: ImagePipePipe,
               private _router: ActivatedRoute) {
@@ -25,7 +26,7 @@ export class ServiceComponent implements OnInit {
       this._serviceService.findOneAvailable(next['id']).subscribe(next => {
         this.service = next;
         this.id = next['id'];
-        this.img= this._imagePipe.transform(next.image);
+        this.img= this._imagePipe.transform(next.picturePath);
         console.log(this.service) ;
       }, err => {
         console.log(err);
