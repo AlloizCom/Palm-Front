@@ -1,8 +1,10 @@
+
+
 <div class="allBack">
   <div class="rooms">
     <div *ngFor="let one of rooms" class="room d-flex justify-content-between">
       <div class="photo d-flex">
-        <img class="kartinka" src="{{one.images[0].path|imagePipe}}" alt="room ">
+        <!--<img class="kartinka" src="{{one.images[0].path|imagePipe}}" alt="room ">-->
         <div class="block d-flex justify-content-center align-items-center">{{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' | translate].description:''}}</div>
       </div>
       <div class="infos ">
@@ -19,8 +21,6 @@
         <button>Переглянути</button>
       </div>
     </div>
-
-
 
 
 

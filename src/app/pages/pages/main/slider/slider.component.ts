@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {MenuComponent} from "../../menu/menu.component";
-import {Service} from "../../../../shared/models/service";
+import {MenuComponent} from '../../menu/menu.component';
+import {Service} from '../../../../shared/models/service';
 
 @Component({
   selector: 'app-slider',
@@ -14,7 +14,7 @@ export class SliderComponent implements OnInit {
 
   services: Service[] = [];
 
-  constructor(private _menuComponent:MenuComponent) {
+  constructor(private _menuComponent: MenuComponent) {
     this.services = _menuComponent.services;
 
 
