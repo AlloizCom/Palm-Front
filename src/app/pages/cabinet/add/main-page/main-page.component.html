@@ -1,11 +1,11 @@
-<form action="" (submit)="addImages(form)" #form>
+<form action="" (submit)="addImages(form)" #form [formGroup]="mainPageForm">
   <br>
   <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
     <img [src]="one" alt="">
 
   </div>
   <br>
-  <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
+  <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
   <label (click)="toggle()" for="file">AddImage</label>
-  <button class="button" [disabled]="" type="submit" class="w-100">Save Room</button>
+  <button class="button" [disabled]="!mainPageForm.valid" type="submit" class="w-100">Save Room</button>
 </form>

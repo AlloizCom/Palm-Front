@@ -45,6 +45,8 @@ export class NewsComponent implements OnInit {
       TitleRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
       HeaderTextareaRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
       textRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
+      multipartFiles: new FormControl(null,[this.validateImages]),
+
     });
     this.newsForm.valueChanges.subscribe(value => {
       this.news.newsDescriptions[0].language = 'EN';
@@ -116,5 +118,8 @@ export class NewsComponent implements OnInit {
       error =>
     console.log(error)
     );
+  }
+  validateImages(c: FormControl): {[key: string]: any} {
+    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
   }
 }
