@@ -17,9 +17,14 @@ export const updateRoutes: Routes = [
   {
     path: 'update', component: UpdateComponent, children: [
       {
-        path: 'news', component: NewsComponent
-      }, {
-        path: 'news/:id', component: OneNewsComponent
+        path: 'news', children: [
+          {
+            path: ':id', component: OneNewsComponent
+          },
+          {
+            path: '', component: NewsComponent
+          },
+        ]
       },
       {
         path: 'order', component: OrderComponent
@@ -55,9 +60,6 @@ export const updateRoutes: Routes = [
             path: ':id', component: AmenityOneComponent
           }
         ]
-      },
-      {
-        path: 'amenity/:id', component: AmenityOneComponent
       },
       {
         path:'main-update',component:MainUpdateComponent

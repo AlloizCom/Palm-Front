@@ -4,6 +4,8 @@ import {ActivatedRoute} from '@angular/router';
 import {NewsService} from '../../../../../shared/service/news.service';
 import {ImagePipePipe} from '../../../../../shared/pipe/pipe/image.pipe';
 import {NewsDescription} from '../../../../../shared/models/news-description';
+import {Service} from "../../../../../shared/models/service";
+import {ServiceService} from "../../../../../shared/service/service.service";
 
 @Component({
   selector: 'app-one-news',
@@ -12,33 +14,29 @@ import {NewsDescription} from '../../../../../shared/models/news-description';
   providers: [ImagePipePipe]
 })
 export class OneNewsComponent implements OnInit {
-
   news: News = new News();
   img: string = '';
-  id: number;
+  appear: boolean = true;
 
   constructor(private _router: ActivatedRoute, private _newsService: NewsService, private _imagePipe: ImagePipePipe) {
-    this.news.newsDescriptions = [];
-    let descr = new NewsDescription();
-    descr.title = '';
-    for (let i = 0; i < 4; i++)
-      this.news.newsDescriptions.push(descr);
     _router.params.subscribe(next => {
       _newsService.findOne(next['id']).subscribe(next => {
         this.news = next;
-        this.id = next['id'];
-        this.img = this._imagePipe.transform(next.picturePath)
-      },error=>{
-        console.log(error);
+        console.log(next);
+        this.img = this._imagePipe.transform(next.picturePath);
+        console.log("tyt1" + this.img)
       })
-    });
+    })
   }
 
+
   readUrl(event: any) {
+    this.appear = false;
     if (event.target.files && event.target.files[0]) {
       let reader = new FileReader();
       reader.onload = (event: any) => {
-        this.img= event.target.result;
+        this.img = event.target.result;
+        this.appear = true;
       };
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -47,14 +45,11 @@ export class OneNewsComponent implements OnInit {
   ngOnInit() {
   }
 
-  update(form){
-    console.log(form);
+  update(form) {
     console.log(this.news);
-    this._newsService.update(this.news,form).subscribe(next=>{
-      this.news=next;
-
-      this.img=this._imagePipe.transform(next.picturePath);
-    },error=>{
+    this._newsService.update(this.news, form).subscribe(next => {
+      this.news = next;
+    }, error => {
       console.log(error);
     })
   }

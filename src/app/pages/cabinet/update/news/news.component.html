@@ -1,11 +1,10 @@
-<div *ngFor=" let news of allNews; let i = index">
-  <div *ngIf="news">
-    <hr>
-    <div class="row">
-      <div class="col-lg-3">Дата: {{news.dateTime}}</div>
-      <div class="col-lg-8">Заголовок: {{news.amenityNames[1].title}}</div>
-      <div class="col-lg-1"><button (click)="deleteNews(i)">Видалити</button></div>
-      <button routerLink="{{news.id}}">Оновити</button>
+<div class="back">
+  <div class="d-flex flex-row flex-wrap">
+    <div class="hundred align-items-center col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex flex-column " *ngFor="let one of news">
+      <div class="img"  [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" routerLink="{{one.id}}"></div>
+      <h2 routerLink="{{one.id}}">{{one.name}}</h2>
+      <h3 routerLink="{{one.id}}">{{one.id}}</h3>
+      <h3 routerLink="{{one.id}}">{{one.dateTime}}</h3>
     </div>
   </div>
 </div>
