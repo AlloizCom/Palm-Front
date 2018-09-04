@@ -55,22 +55,26 @@ export class TariffComponent implements OnInit {
       });
   }
 
-
-
-
   private createTariffForm() {
     this.tariffForm = new FormGroup({
-      price: new FormControl(0, []),
-      dateTo: new FormControl(0, []),
-      dateFrom: new FormControl(0, [])
+      price: new FormControl(0, [Validators.required,Validators.min(0),Validators.max(1000000)]),
+      dateTo: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/),Validators.required]),
+      dateFrom: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/),Validators.required]),
+      tariffType: new FormControl('NONE',[Validators.required,this.validateType]),
+      roomType: new FormControl('NONE',[Validators.required,this.validateType])
     });
     this.tariffForm.valueChanges.subscribe(value => {
       this.tariff = value;
       this.tariff.roomType = this.roomType;
       this.tariff.tariffType = this.tariffType;
+      console.log('dateTo value : ',this.tariffForm.get('dateTo').value);
+      console.log('dateTo valid : ',this.tariffForm.get('dateTo').errors);
       console.log(this.tariffForm.valid);
       console.log('tariff : ', this.tariff);
     });
+  }
+  validateType(c: FormControl): {[key: string]: any} {
+    return c.value == 'NONE' || c.value == '' ? { "required" : true} : null;
   }
 
 }

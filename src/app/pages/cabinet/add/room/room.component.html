@@ -21,7 +21,7 @@
   <div formArrayName="descriptions">
     <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
       <form formGroupName="{{i}}">
-        <p>{{one.get('language').value}}</p>
+        <p>{{one.get('languageO').value}}</p>
         <!--<input type="text" disabled formControlName="language">-->
         <textarea cols="30" rows="10" formControlName="description"></textarea>
       </form>

@@ -16,10 +16,10 @@ import {isNullOrUndefined} from 'util';
 export class RoomComponent implements OnInit {
 
   defaultFormValue = {descriptions: [
-      {language:'EN',description:''},
-      {language:'UK',description:''},
-      {language:'PL',description:''},
-      {language:'RU',description:''}
+      {language:'EN',languageO:'English',description:''},
+      {language:'UK',languageO:'Ukrainian',description:''},
+      {language:'PL',languageO:'Polish',description:''},
+      {language:'RU',languageO:'Russian',description:''}
     ],
     kidsPlaces: 0,
     adultPlaces: 1,
@@ -132,18 +132,22 @@ export class RoomComponent implements OnInit {
     this.roomDescriptionForm = new FormArray([
       new FormGroup({
         language: new FormControl('EN'),
+        languageO: new FormControl('English'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
       new FormGroup({
         language: new FormControl('UK'),
+        languageO: new FormControl('Ukrainian'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
       new FormGroup({
         language: new FormControl('PL'),
+        languageO: new FormControl('Polish'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
       new FormGroup({
         language: new FormControl('RU'),
+        languageO: new FormControl('Russian'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
     ]);
