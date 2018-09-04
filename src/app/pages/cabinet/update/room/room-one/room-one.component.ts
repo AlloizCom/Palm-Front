@@ -23,7 +23,9 @@ export class RoomOneComponent implements OnInit {
   appear: boolean = true;
   fileField : ElementRef;
 
-  constructor(private _router: ActivatedRoute,private _amenityService:AmenityService, private _roomService: RoomService, private _imagePipe: ImagePipePipe) {
+  constructor(private _router: ActivatedRoute,
+              private _amenityService:AmenityService,
+              private _roomService: RoomService) {
     _router.params.subscribe(next => {
       _roomService.findOne(next['id']).subscribe(next => {
         this.room = next;

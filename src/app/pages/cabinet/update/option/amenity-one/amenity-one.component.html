@@ -1,0 +1,20 @@
+<div>
+  <ul>
+    <li *ngFor="let one of amenity.amenityNames">
+      <div>
+        <span>{{one.language}}</span><br>
+        <textarea [(ngModel)]="one.name"  rows="1"></textarea>
+      </div>
+    </li>
+  </ul>
+  <div [ngClass]="{'appear' :appear}"  class="amenityImage">
+    <img [src]="image" alt="">
+  </div>
+
+  <form action="" #form class="">
+      <label for="file">Змінити картинку</label>
+      <input (change)="readUrl($event)" id="file" type="file" class="d-none"  name="multipartFile" >
+      <button (click)="update(form)">Оновити зручність</button>
+  </form>
+
+</div>

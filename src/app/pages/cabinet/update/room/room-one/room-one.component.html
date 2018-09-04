@@ -32,7 +32,7 @@
     </div>
   </div>
   <br>
-  <div class="image-wrapper flex-column d-flex" *ngIf="isNull(room.images)">
+  <div class="image-wrapper flex-column d-flex" >
     <div *ngFor="let one of room.images" class="image-one d-flex align-items-end justify-content-center"
          [style.background]="'url(' + (one.path|imagePipe) + ')'">
       <button (click)="delete(room.id, one.id, one)">delete</button>
@@ -44,7 +44,7 @@
     <!--</div>-->
 
     <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
-      <img [src]="one" alt="">
+      <img [src]="one" alt="" *ngIf="(isNull(one))">
     </div>
     <br>
     <form action="" #form class="d-flex justify-content-center">
@@ -53,6 +53,7 @@
       <label (click)="toggle()" for="file">AddImage</label>
       <button (click)="update(form)" routerLink="/cabinet/update/room" >update room</button>
     </form>
+
   </div>
 </div>
 

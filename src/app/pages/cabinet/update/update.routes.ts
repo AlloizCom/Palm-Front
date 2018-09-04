@@ -8,45 +8,59 @@ import {TariffComponent} from './tariff/tariff.component';
 import {OneNewsComponent} from './news/one-news/one-news.component';
 import {TariffOneComponent} from "./tariff/tariff-one/tariff-one.component";
 import {RoomOneComponent} from "./room/room-one/room-one.component";
-import {ServiceComponent} from "../../pages/service/service.component";
 import {ServicesOneComponent} from "./services/services-one/services-one.component";
 import {ServicesComponent} from "./services/services.component";
+import {AmenityComponent} from "./amenity/amenity.component";
+import {AmenityOneComponent} from "./option/amenity-one/amenity-one.component";
 
-export const updateRoutes :Routes =[
+export const updateRoutes: Routes = [
   {
-    path:'update',component:UpdateComponent ,children :[
+    path: 'update', component: UpdateComponent, children: [
       {
-        path:'news',component:NewsComponent
-      },{
-        path:'news/:id',component:OneNewsComponent
+        path: 'news', component: NewsComponent
+      }, {
+        path: 'news/:id', component: OneNewsComponent
       },
       {
-        path:'option',component:OptionComponent
+        path: 'option', component: OptionComponent
       },
       {
-        path:'order',component:OrderComponent
+        path: 'order', component: OrderComponent
       },
       {
-        path:'services',children:[
+        path: 'services', children: [
           {
-            path:':id',component:ServicesOneComponent
+            path: ':id', component: ServicesOneComponent
           },
           {
-            path:'',component:ServicesComponent
+            path: '', component: ServicesComponent
           },
         ]
       },
       {
-        path:'room',component:RoomComponent
+        path: 'room', component: RoomComponent
       },
       {
-        path:'room/:id',component:RoomOneComponent
+        path: 'room/:id', component: RoomOneComponent
       },
       {
-        path:'tariff',component:TariffComponent
+        path: 'tariff', component: TariffComponent
       },
       {
-        path:'tariff/:id',component:TariffOneComponent
+        path: 'tariff/:id', component: TariffOneComponent
+      },
+      {
+        path: 'amenity',children: [
+          {
+          path: '' , component: AmenityComponent
+          },
+          {
+            path: ':id', component: AmenityOneComponent
+          }
+        ]
+      },
+      {
+        path: 'amenity/:id', component: AmenityOneComponent
       }
     ]
   }

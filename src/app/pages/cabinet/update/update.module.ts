@@ -11,6 +11,8 @@ import { TariffOneComponent } from './tariff/tariff-one/tariff-one.component';
 import { RoomOneComponent } from './room/room-one/room-one.component';
 import { ServicesComponent } from './services/services.component';
 import { ServicesOneComponent } from './services/services-one/services-one.component';
+import {AmenityComponent} from "./amenity/amenity.component";
+import {AmenityOneComponent} from "./option/amenity-one/amenity-one.component";
 
 
 @NgModule({
@@ -18,7 +20,7 @@ import { ServicesOneComponent } from './services/services-one/services-one.compo
     CommonModule,
     GlobalImportsModule
   ],
-  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, TariffComponent, OneNewsComponent, TariffOneComponent, RoomOneComponent, ServicesComponent, ServicesOneComponent]
+  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, TariffComponent, OneNewsComponent, TariffOneComponent, RoomOneComponent, ServicesComponent, ServicesOneComponent,AmenityComponent,AmenityOneComponent]
 })
 export class UpdateModule { }
 
