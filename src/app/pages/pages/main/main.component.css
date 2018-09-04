@@ -12,7 +12,7 @@
   display: flex;
   width: 982px;
   height: 120px;
-  background-color: white;  
+  background-color: white;
 }
 
 .searchItem {
@@ -620,7 +620,7 @@ agm-map {
     left: auto;
   }
 
-  
+
   .wrapper{
     left: calc(50% - 475px);
   }
