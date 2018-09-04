@@ -8,6 +8,9 @@ import {TariffComponent} from './tariff/tariff.component';
 import {OneNewsComponent} from './news/one-news/one-news.component';
 import {TariffOneComponent} from "./tariff/tariff-one/tariff-one.component";
 import {RoomOneComponent} from "./room/room-one/room-one.component";
+import {ServiceComponent} from "../../pages/service/service.component";
+import {ServicesOneComponent} from "./services/services-one/services-one.component";
+import {ServicesComponent} from "./services/services.component";
 
 export const updateRoutes :Routes =[
   {
@@ -23,9 +26,16 @@ export const updateRoutes :Routes =[
       {
         path:'order',component:OrderComponent
       },
-      // {
-      //   path:'option/:id',component:TariffOneComponent
-      // },
+      {
+        path:'services',children:[
+          {
+            path:':id',component:ServicesOneComponent
+          },
+          {
+            path:'',component:ServicesComponent
+          },
+        ]
+      },
       {
         path:'room',component:RoomComponent
       },

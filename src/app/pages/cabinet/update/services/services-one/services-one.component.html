@@ -1,0 +1,33 @@
+<div>
+  <input type="text" [(ngModel)]="services.name">
+  <ul>
+    <li *ngFor="let one of services.serviceDescriptions">
+      <div>
+        <h3>language</h3>
+        <input [(ngModel)]="one.language" type="text" disabled>
+        <h3>Title</h3>
+        <input type="text" [(ngModel)]="one.title">
+        <h3>HeaderText</h3>
+        <input type="text" [(ngModel)]="one.headerText">
+        <h3>mainTExt</h3>
+        <textarea name="" id="" cols="30" rows="10" [(ngModel)]="one.mainText"></textarea>
+      </div>
+    </li>
+  </ul>
+
+  <div [ngClass]="{'appear' :appear}"  class="image">
+    <img [src]="img" alt="">
+  </div>
+  <br>
+
+  <form action="" #form class="">
+    <div>
+      <input (change)="readUrl($event)" id="file" type="file" class="d-none"  name="multipartFile" >
+    </div>
+
+    <label for="file">AddImage</label>
+    <button (click)="update(form)" >Оновити сервіси</button>
+  </form>
+
+</div>
+
