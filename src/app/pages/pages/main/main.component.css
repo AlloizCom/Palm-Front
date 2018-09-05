@@ -858,9 +858,6 @@ font-size: 12px;
 }
 
 @media screen and (max-width: 765px) {
-  app-slider, .ashkas3 {
-    display: none !important;
-  }
   .wrapper[_ngcontent-c4]{
     top: 340px!important;
     width: 100%!important;

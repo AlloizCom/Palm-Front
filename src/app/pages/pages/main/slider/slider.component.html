@@ -7,18 +7,19 @@
     </svg>
   </div>
   <div class="allIn d-flex flex-row">
-    <div *ngFor="let one of services; let i = index">
+    <div *ngFor="let one of services; let i = index" >
       <div [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" class="topImage first"  *ngIf="i === middleIndex3">
       </div>
     </div>
-    <div class="greenAbs">
-      <div *ngFor="let one of services; let i = index">
-        <h2 routerLink="/service/{{one.id}}" *ngIf="i === middleIndex2">{{one.serviceDescriptions['current-language-index'|translate].title}}</h2>
-        <p *ngIf="i === middleIndex2"> {{one.serviceDescriptions['current-language-index'|translate].headerText}}</p>
-      </div>
-    </div>
     <div *ngFor="let one of services; let i = index">
-      <div class="topImage second" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" *ngIf="i === middleIndex2">
+      <div class="greenAbs" *ngIf="i === middleIndex2">
+        <div>
+          <h2 >{{one.serviceDescriptions['current-language-index'|translate].title}}</h2>
+          <p > {{one.serviceDescriptions['current-language-index'|translate].headerText}}</p>
+        </div>
+      </div>
+      <div class="topImage second" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" *ngIf="i === middleIndex2"
+           (click)="greenBlock(one.id)">
       </div>
     </div>
     <div *ngFor="let one of services; let i = index">
@@ -34,10 +35,3 @@
     </svg>
   </div>
 </div>
-<!--&lt;!&ndash;top slider conesrnt&ndash;&gt;-->
-<!--<div class="sliderContent">-->
-<!--<div class="swithContainer">-->
-<!---->
-<!---->
-<!--</div>-->
-<!--</div>-->

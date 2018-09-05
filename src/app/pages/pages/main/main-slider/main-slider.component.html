@@ -1,6 +1,5 @@
 <ngb-carousel *ngIf="images" >
   <ng-template ngbSlide *ngFor="let one of allPathes">
-    <!--<div  [style.background-image]="'url(' + (image) + ')'"  class="topImage"  alt="Random slide"></div>-->
      <div  [style.background-image]="'url(' + (one|imagePipe) + ')'"  class="topImage" ></div>
     <div class="carousel-caption">
       пальма
