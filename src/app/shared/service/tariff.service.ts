@@ -53,6 +53,18 @@ export class TariffService {
       .catch(err => Observable.throw(err));
   }
 
+  findRelative(tariffType: string): Observable<Tariff>{
+    return this._httpClient.get<Tariff>(this.controller +
+      '/find-relative/'
+      + tariffType)
+      .catch(err => Observable.throw(err));
+  }
+
+  findAllRelative(): Observable<Tariff[]>{
+    return this._httpClient.get<Tariff[]>(this.controller + '/find-all-relative')
+      .catch(err => Observable.throw(err));
+  }
+
   save(tariff: Tariff): Observable<Tariff>{
     return this._httpClient.post<Tariff>(this.controller + '/save', JSON.stringify(tariff))
       .catch(err => Observable.throw(err));
