@@ -35,6 +35,24 @@ export class TariffService {
       .catch(err => Observable.throw(err));
   }
 
+  findByRoomType(roomType: string): Observable<Tariff[]>{
+    return this._httpClient.get<Tariff[]>(this.controller +
+      '/find-one-by-room-type/' + roomType)
+      .catch(err => Observable.throw(err));
+  }
+
+  findByTariffType(tariffType: string): Observable<Tariff[]>{
+    return this._httpClient.get<Tariff[]>(this.controller +
+      '/find-one-by-tariff-type/' + tariffType)
+      .catch(err => Observable.throw(err));
+  }
+
+  findByTariffTypeAndRoomType(roomType: string ,tariffType: string): Observable<Tariff[]>{
+    return this._httpClient.get<Tariff[]>(this.controller +
+      '/find-one-by-tariff-type-and-room-type/'+ roomType + '/room/' + tariffType)
+      .catch(err => Observable.throw(err));
+  }
+
   save(tariff: Tariff): Observable<Tariff>{
     return this._httpClient.post<Tariff>(this.controller + '/save', JSON.stringify(tariff))
       .catch(err => Observable.throw(err));
