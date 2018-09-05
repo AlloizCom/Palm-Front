@@ -43,7 +43,6 @@ export class MenuComponent implements OnInit {
   changeLanguage(lang: Language) {
     this.currentLang = lang;
     this.translate.use(lang);
-    alert('kurva mat ' + lang);
   }
 
   toggleState() {

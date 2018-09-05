@@ -132,22 +132,22 @@ export class RoomComponent implements OnInit {
     this.roomDescriptionForm = new FormArray([
       new FormGroup({
         language: new FormControl('EN'),
-        languageO: new FormControl('English'),
+        languageO: new FormControl('Англійська'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
       new FormGroup({
         language: new FormControl('UK'),
-        languageO: new FormControl('Ukrainian'),
+        languageO: new FormControl('Українська'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
       new FormGroup({
         language: new FormControl('PL'),
-        languageO: new FormControl('Polish'),
+        languageO: new FormControl('Польська'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
       new FormGroup({
         language: new FormControl('RU'),
-        languageO: new FormControl('Russian'),
+        languageO: new FormControl('Російська'),
         description: new FormControl('', [Validators.minLength(3), Validators.required])
       }),
     ]);

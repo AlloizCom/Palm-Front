@@ -1,34 +1,35 @@
 <form action="" (submit)="addRoom(form)" #form [formGroup]="roomForm">
   <div class="content">
-    <div class="room-type block">
-      <h3>Тип номера:</h3>
-      <select formControlName="type">
-        <option value="STANDARD">STANDART</option>
-        <option value="SUPERIOR">SUPERIOR</option>
-        <option value="DELUXE">DELUXE</option>
-        <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
-        <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
-        <option value="NONE" selected disabled>NONE</option>
-      </select>
-    </div>
-    <div class="child-places-block">
-      <h3>кількість дитячих місць:</h3>
-      <input type="number" formControlName="kidsPlaces" min="0">
-    </div>
-    <div class="adult-places-block">
-      <h3>кількість дорослих місць:</h3>
-      <input type="number" formControlName="adultPlaces" min="1">
-    </div>
-    <div class="square-block">
-      <h3>Площа номера:</h3>
-      <input type="number" formControlName="square" min="10">
-    </div>
-    <div class="room-amount-block">
-      <h3>Кількість номерів:</h3>
-      <input type="number" formControlName="amount" min="0">
-    </div>
+    <div class="content">
+      <div class="room-type block">
+        <h3>Тип номера:</h3>
+        <select formControlName="type">
+          <option value="STANDARD">STANDART</option>
+          <option value="SUPERIOR">SUPERIOR</option>
+          <option value="DELUXE">DELUXE</option>
+          <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
+          <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+          <option value="NONE" selected disabled>NONE</option>
+        </select>
+      </div>
+      <div class="child-places-block">
+        <h3>Кількість дитячих місць:</h3>
+        <input type="number" formControlName="kidsPlaces" min="0">
+      </div>
+      <div class="adult-places-block">
+        <h3>Кількість дорослих місць:</h3>
+        <input type="number" formControlName="adultPlaces" min="1">
+      </div>
+      <div class="square-block">
+        <h3>Площа номера:</h3>
+        <input type="number" formControlName="square" min="10">
+      </div>
+      <div class="room-amount-block">
+        <h3>Кількість номерів:</h3>
+        <input type="number" formControlName="amount" min="0">
+      </div>
 
-  </div>
+    </div>
 
     <div formArrayName="descriptions">
       <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
@@ -42,14 +43,15 @@
 
 
 
-    <div (click)="isNull($event)" class="d-flex flex-column">
-      <label *ngFor="let one of amenity">
-        <span *ngIf="!one.amenityNames||!one.amenityNames[0]||!one.amenityNames[0].name">SOME SUKA NULL</span>
-        <span *ngIf="one.amenityNames&&one.amenityNames[0]&&one.amenityNames[0].name">{{one.amenityNames[0].name}}</span>
-        <!--<pre>{{one|json}}</pre>-->
-        <input type="checkbox" (click)="addAmenity(one)">
-      </label>
-    </div>
+      <div (click)="isNull($event)" class="d-flex flex-column">
+        <label *ngFor="let one of amenity">
+          <span *ngIf="!one.amenityNames||!one.amenityNames[0]||!one.amenityNames[0].name">SOME SUKA NULL</span>
+          <span *ngIf="one.amenityNames&&one.amenityNames[0]&&one.amenityNames[0].name">{{one.amenityNames[0].name}}</span>
+          <!--<pre>{{one|json}}</pre>-->
+          <input type="checkbox" (click)="addAmenity(one)">
+        </label>
+      </div>
+
 
     <br>
     <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
@@ -57,8 +59,9 @@
     </div>
 
 
-  <br>
-  <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
-  <label (click)="toggle()" for="file" >Добавити картинку</label>
-  <button class="button" [disabled]="!roomForm.valid" type="submit" class="w-100">Зберегти кімнату</button>
+    <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
+    <label (click)="toggle()" for="file" class="image-button" >Добавити картинку</label>
+    <button class="button" [disabled]="!roomForm.valid" type="submit" >Зберегти кімнату</button>
+  </div>
+
 </form>
