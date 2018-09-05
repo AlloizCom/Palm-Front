@@ -1,8 +1,5 @@
 <form action="" (submit)="addServices(form)" #form [formGroup]="servicesForm">
   <div>
-    <div class="left-block">
-      <input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFile">
-    </div>
     <div class="text">
       <h3>Назва сервісу:</h3>
       <input type="text" formControlName="servicesName">
@@ -147,27 +144,15 @@
   <div class="row">
     <div class="col-lg-3"></div>
     <div class="col-lg-3" >
-      <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file2" type="file" class="d-none" name="multipartFiles">
-      <label for="file2"  class="addImage">Add Image</label>
+      <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*"  id="file2" type="file" class="d-none" name="multipartFile">
+      <label for="file2"  class="addImage">Додати картинку</label>
     </div>
     <div class="col-lg-1"></div>
     <div class="col-lg-3">
-      <button class="button" [disabled]="servicesForm.invalid" type="submit" class="w-100">Save news</button>
+      <button class="button" [disabled]="servicesForm.invalid" type="submit" class="w-100">Зберегти сервіс</button>
     </div>
     <div class="col-lg-2"></div>
   </div>
 </form>
 
-
-<div *ngFor=" let news of allNews; let i = index">
-  <div *ngIf="news">
-    <hr>
-    <div class="row">
-      <div class="col-lg-3">Дота: {{news.dateTime}}</div>
-      <div class="col-lg-1">
-        <button (click)="deleteNews(i)">Видалити</button>
-      </div>
-    </div>
-  </div>
-</div>
 

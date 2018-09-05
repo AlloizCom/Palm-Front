@@ -27,15 +27,6 @@
       </form>
     </div>
   </div>
-
-  <!--<h3>Зручності:</h3>-->
-
-  <!--<div *ngFor="let ame of amenity">-->
-    <!--<div *ngIf="isNull(ame.amenityNames)">-->
-      <!--<input formControlName="checkboxic"  class="amenityCheckBox" type="checkbox" value="{{ame.id}}">{{ame.amenityNames[0].name}}<br>-->
-    <!--</div>-->
-  <!--</div>-->
-
   <div (click)="isNull($event)" class="d-flex flex-column">
     <label *ngFor="let one of amenity">
       <span *ngIf="!one.amenityNames||!one.amenityNames[0]||!one.amenityNames[0].name">SOME SUKA NULL</span>
@@ -51,6 +42,6 @@
   </div>
   <br>
   <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
-  <label (click)="toggle()" for="file" >AddImage</label>
-  <button class="button" [disabled]="!roomForm.valid" type="submit" class="w-100">Save Room</button>
+  <label (click)="toggle()" for="file" >Добавити картинку</label>
+  <button class="button" [disabled]="!roomForm.valid" type="submit" class="w-100">Зберегти кімнату</button>
 </form>

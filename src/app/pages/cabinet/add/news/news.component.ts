@@ -45,7 +45,7 @@ export class NewsComponent implements OnInit {
       TitleRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
       HeaderTextareaRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
       textRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      multipartFiles: new FormControl(null,[this.validateImages]),
+      multipartFile: new FormControl(null,[this.validateImages]),
 
     });
     this.newsForm.valueChanges.subscribe(value => {
