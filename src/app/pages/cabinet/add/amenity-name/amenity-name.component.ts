@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Amenity} from '../../../../shared/models/amenity';
 import {AmenityName} from '../../../../shared/models/amenity-name';
 import {AmenityService} from '../../../../shared/service/amenity.service';
@@ -14,26 +14,26 @@ export class AmenityNameComponent implements OnInit {
 
   amenityForm: FormGroup;
   amenity: Amenity = new Amenity();
-  amenityNames: AmenityName[] =[];
-  image: string ='';
-  available: boolean =true;
+  amenityNames: AmenityName[] = [];
+  image: string = '';
+  available: boolean = true;
   appear: boolean = false;
-  allAmenities: Amenity[] =[];
+  allAmenities: Amenity[] = [];
 
 
   constructor(private _amenityService: AmenityService) {
-    this.amenityNames= new Array(4);
-    this.amenityNames =[new AmenityName(), new AmenityName(),new AmenityName(),new AmenityName() ];
+    this.amenityNames = new Array(4);
+    this.amenityNames = [new AmenityName(), new AmenityName(), new AmenityName(), new AmenityName()];
     this.amenity.amenityNames = this.amenityNames;
   }
 
   ngOnInit() {
     this.amenityForm = new FormGroup({
-      nameEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      nameUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      namePl: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      nameRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      multipartFiles: new FormControl(null,[this.validateImages]),
+      nameEn: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      nameUk: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      namePl: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      nameRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      multipartFile: new FormControl(null, [this.validateImages]),
 
     });
     this.amenityForm.valueChanges.subscribe(value => {
@@ -59,27 +59,30 @@ export class AmenityNameComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+
   addAmenity(form: HTMLFormElement) {
-          this._amenityService.save(this.amenity, form).subscribe(next => {
-            console.log(next);
-          }, error => {
-            console.log(error);
-          }, () => {
-            this.image = null;
-            form.reset();
-            this.getAmenity();
-          });
+    this._amenityService.save(this.amenity, form).subscribe(next => {
+      console.log(next);
+    }, error => {
+      console.log(error);
+    }, () => {
+      this.image = null;
+      form.reset();
+      // this.getAmenity();
+    });
   }
 
-  getAmenity(){
-      this._amenityService.findAll().subscribe(next=>{
-        this.allAmenities=next;
-      })
+  getAmenity() {
+    this._amenityService.findAll().subscribe(next => {
+      this.allAmenities = next;
+    })
 
 
   }
-  validateImages(c: FormControl): {[key: string]: any} {
-    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
+
+  validateImages(c: FormControl): { [key: string]: any } {
+    console.log(c.value);
+    return c.value == null || c.value.length == 0 ? {"required": true} : null;
   }
 
 }
