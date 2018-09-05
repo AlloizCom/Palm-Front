@@ -4,6 +4,7 @@
       <div class="img"  [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" routerLink="{{one.id}}"></div>
       <h2 routerLink="{{one.id}}">{{one.name}}</h2>
       <h3 routerLink="{{one.id}}">{{one.id}}</h3>
+      <button (click)="deleteService(one.id)"> Видалив будь ласка!</button>
     </div>
   </div>
 </div>

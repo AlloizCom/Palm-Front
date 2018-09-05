@@ -10,3 +10,7 @@ h2,h3{
   padding: 2% 0;
   width: 25%;
 }
+
+button{
+  height: 60px;
+}

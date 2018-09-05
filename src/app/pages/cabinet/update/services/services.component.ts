@@ -22,6 +22,18 @@ export class ServicesComponent implements OnInit {
     }
   }
 
+  deleteService(i){
+    this._serviceService.delete(i).subscribe(next =>{
+      this._serviceService.findAll().subscribe(value => {
+        this.service = value;
+        console.log(value);
+      });
+    }), error => {
+      console.log(error);
+    }
+  }
+
+
   ngOnInit() {
   }
 
