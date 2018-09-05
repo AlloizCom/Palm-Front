@@ -112,10 +112,10 @@ export class RoomComponent implements OnInit {
   private createRoomForm() {
     this.createFormArray();
     this.roomForm = new FormGroup({
-      kidsPlaces: new FormControl(0, [Validators.min(0), Validators.max(9)]),
-      adultPlaces: new FormControl(1, [Validators.min(1), Validators.max(9)]),
-      square: new FormControl(20, [Validators.min(10), Validators.max(150)]),
-      amount: new FormControl(1, [Validators.min(1), Validators.max(100)]),
+      kidsPlaces: new FormControl(0, [Validators.min(0), Validators.max(9),Validators.required]),
+      adultPlaces: new FormControl(1, [Validators.min(1), Validators.max(9),Validators.required]),
+      square: new FormControl(20, [Validators.min(10), Validators.max(150),Validators.required]),
+      amount: new FormControl(1, [Validators.min(1), Validators.max(100),Validators.required]),
       amenities: new FormControl([]),
       type: new FormControl('NONE',[Validators.required,this.validateType]),
       multipartFiles: new FormControl(null,[this.validateImages]),
