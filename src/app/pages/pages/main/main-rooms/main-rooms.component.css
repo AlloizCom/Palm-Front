@@ -75,12 +75,6 @@
   height: 463px;
 }
 
-.first:hover{;
-  border: 10px solid;
-  border-color: transparent;
-  opacity: .95;
-}
-
 .lefty{
   padding-left: 31%;
 }

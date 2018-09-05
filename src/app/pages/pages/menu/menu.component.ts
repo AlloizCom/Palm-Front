@@ -47,6 +47,5 @@ export class MenuComponent implements OnInit {
 
   toggleState() {
     this.isIn = !this.isIn;
-    alert('isIn : ' + this.isIn);
   }
 }
