@@ -1,3 +1,43 @@
 button:disabled {
   border-bottom: 3px solid red;
 }
+.image{
+  margin: auto;
+}
+.image img{
+  max-width: 900px;
+  min-width: 500px;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+label{
+  margin: auto;
+  background: #53D7B7;
+  border: 1px solid #53D7B7;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Raleway sa;
+  font-weight: bold;
+  line-height: 35px;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  width: 30%;
+  height: 36px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+button{
+  /*width: 30%;*/
+  height: 50px;
+  margin: 5% 0 0 0 ;
+}
+.buttonBlock{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
