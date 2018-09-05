@@ -20,3 +20,7 @@ h2,h3{
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+button{
+  height: 60px;
+}

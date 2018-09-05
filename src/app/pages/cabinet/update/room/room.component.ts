@@ -27,6 +27,17 @@ export class RoomComponent implements OnInit {
   ngOnInit() {
   }
 
+  deleteRoom(i){
+    this._roomService.delete(i).subscribe(next =>{
+      this._roomService.findAll().subscribe(value => {
+        this.room = value;
+        console.log(value);
+      });
+    }), error => {
+      console.log(error);
+    }
+  }
+
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {
       return !isNullOrUndefined(object[0]);

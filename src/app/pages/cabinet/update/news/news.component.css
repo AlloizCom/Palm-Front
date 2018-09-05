@@ -5,7 +5,9 @@
 h2,h3{
   cursor: pointer;
 }
-
+button{
+  height: 20vh;
+}
 .hundred{
   padding: 2% 0;
   width: 30%;

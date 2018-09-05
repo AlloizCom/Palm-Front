@@ -34,4 +34,15 @@ export class AmenityComponent implements OnInit {
       return !isNullOrUndefined(object);
     }
   }
+
+  deleteAmenity(i){
+    this._amenityService.delete(i).subscribe(next =>{
+      this._amenityService.findAll().subscribe(value => {
+        this.amenities = value;
+        console.log(value);
+      });
+    }), error => {
+      console.log(error);
+    }
+  }
 }

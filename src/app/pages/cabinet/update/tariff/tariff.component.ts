@@ -17,6 +17,18 @@ export class TariffComponent implements OnInit {
     )
   }
 
+  deleteTariff(i){
+    this._tariffService.delete(i).subscribe(next =>{
+      this._tariffService.findAll().subscribe(value => {
+        this.tariff = value;
+        console.log(value);
+      });
+    }), error => {
+      console.log(error);
+    }
+  }
+
+
   ngOnInit() {
   }
 

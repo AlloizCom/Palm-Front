@@ -27,17 +27,14 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
   }
 
-  // deleteNews(i){
-  //   this._newsService.delete(this.allNews[i].id).subscribe(next =>{
-  //     error=>{
-  //       console.log(error);
-  //     }
-  //     this._newsService.findAll().subscribe(value => {
-  //       this.allNews = value;
-  //       console.log(value);
-  //     });
-  //   })
-  //
-  // }
-
+  deleteNews(i){
+    this._newsService.delete(i).subscribe(next =>{
+      this._newsService.findAll().subscribe(value => {
+        this.news = value;
+        console.log(value);
+      });
+    }), error => {
+      console.log(error);
+    }
+  }
 }

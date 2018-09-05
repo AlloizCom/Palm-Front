@@ -3,6 +3,7 @@
     <div  class="hundred align-items-center col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex flex-column " *ngFor="let one of room">
       <img *ngIf="(isNull(one.images[0]))" routerLink="{{one.id}}" src="{{one.images[0].path|imagePipe}}">
       <h2 routerLink="{{one.id}}">{{one.type}}</h2>
+      <button (click)="deleteRoom(one.id)"> Видалив будь ласка!</button>
     </div>
   </div>
 </div>
