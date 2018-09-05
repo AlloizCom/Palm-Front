@@ -7,3 +7,25 @@ input.ng-invalid{
 button:disabled{
   border-bottom: 3px solid red;
 }
+button{
+  height: 50px;
+  width: 30%;
+  margin: auto;
+}
+.content{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+input,select{
+  width: 30%;
+  margin: auto;
+}
+div:nth-child(even){
+  margin-bottom: 4%;
+}
+
+.button-block{
+  margin:2% 0;
+}

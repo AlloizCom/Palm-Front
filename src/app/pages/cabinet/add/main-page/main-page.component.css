@@ -18,7 +18,7 @@ label{
   border: 1px solid #53D7B7;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: Raleway sa;
+  font-family: Raleway sans-serif;
   font-weight: bold;
   line-height: 35px;
   font-size: 14px;
@@ -29,11 +29,13 @@ label{
   height: 36px;
   cursor: pointer;
   vertical-align: middle;
+  margin-bottom: 2%;
 }
 button{
   /*width: 30%;*/
   height: 50px;
-  margin: 5% 0 0 0 ;
+  width: 30%;
+  margin: auto;
 }
 .buttonBlock{
   justify-content: center;

@@ -7,8 +7,8 @@
   <br>
   <div class="buttonBlock">
     <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
-    <label (click)="toggle()" for="file">AddImage</label>
-    <button class="button" [disabled]="!mainPageForm.valid" type="submit" >Save Room</button>
+    <label (click)="toggle()" for="file">Додати фото</label>
+    <button class="button" [disabled]="!mainPageForm.valid" type="submit" >Зберегти фото</button>
 </div>
 
 </form>
