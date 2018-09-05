@@ -14,10 +14,8 @@ export class MyInterceptor implements HttpInterceptor {
   }
 
   intercept<T>(req: HttpRequest<T>, next: HttpHandler): Observable<HttpEvent<T>> {
-    console.log('SUKABLIAT');
     req = req.clone({url: url + req.url});
     if (isPlatformBrowser(this.platformId)) {
-      console.log('SUKABLIAT IF');
       req = req.clone({headers: this.getHeaders(req)});
     }
     return next.handle(req);
