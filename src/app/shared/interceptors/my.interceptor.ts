@@ -8,14 +8,16 @@ import {UserDetailsService} from '../service/user-details.service';
 
 @Injectable()
 
-export class MyInterceptor  implements HttpInterceptor{
+export class MyInterceptor implements HttpInterceptor {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private _userService: UserDetailsService) {
   }
 
   intercept<T>(req: HttpRequest<T>, next: HttpHandler): Observable<HttpEvent<T>> {
+    console.log('SUKABLIAT');
     req = req.clone({url: url + req.url});
     if (isPlatformBrowser(this.platformId)) {
+      console.log('SUKABLIAT IF');
       req = req.clone({headers: this.getHeaders(req)});
     }
     return next.handle(req);
@@ -35,19 +37,23 @@ export class MyInterceptor  implements HttpInterceptor{
       headers = headers.append('content-type', 'application/x-www-form-urlencoded');
       headers = headers.append('authorization', 'Basic Y2xpZW50X2d1aWxkX29mX3RlYWNoZXJzLmNvbTpzZWNyZXRfMDEwc2VydmVyLmNvbQ==');
     } else {
-      if (this._userService.checkAuth()) {
-        headers = headers.append('authorization', `Bearer ${this._userService.getAccessToken()}`);
-        if (temp.headers.keys().indexOf('enctype') != -1) {
-          // headers = headers.set('Content-type', 'application/x-www-form-urlencoded');
-          headers = headers.set('enctype', 'form-data/multipart');
-        } else {
-          if (temp.headers.keys().indexOf('Content-Type') != -1) {
-            if (temp.headers.get('Content-Type').indexOf('application/json') == -1) {
-              headers = headers.set('Content-Type', temp.headers.get('Content-Type') + ';application/json');
-            }
-          } else {
-            headers = headers.append('Content-Type', 'application/json');
+      console.log('this._userService.checkAuth() : ', this._userService.checkAuth());
+      if (temp.headers.keys().indexOf('enctype') != -1) {
+        // headers = headers.set('Content-type', 'application/x-www-form-urlencoded');
+        console.log('headers.set(\'enctype\')');
+        headers = headers.set('enctype', 'form-data/multipart');
+      } else {
+        if (this._userService.checkAuth()) {
+          headers = headers.append('authorization', `Bearer ${this._userService.getAccessToken()}`);
+        }
+        if (temp.headers.keys().indexOf('Content-Type') != -1) {
+          if (temp.headers.get('Content-Type').indexOf('application/json') == -1) {
+            console.log('headers.set(\'Content-Type\', temp.headers.get(\'Content-Type\') + \';application/json\')');
+            headers = headers.set('Content-Type', temp.headers.get('Content-Type') + ';application/json');
           }
+        } else {
+          console.log('headers.append(\'Content-Type\', \'application/json\')');
+          headers = headers.append('Content-Type', 'application/json');
         }
       }
     }

@@ -27,20 +27,8 @@
       <h3>Кількість номерів:</h3>
       <input type="number" formControlName="amount" min="0">
     </div>
-<<<<<<< HEAD
 
-=======
   </div>
-  <div (click)="isNull($event)" class="d-flex flex-column">
-    <label *ngFor="let one of amenity">
-      <span *ngIf="!one.amenityNames||!one.amenityNames[0]||!one.amenityNames[0].name">SOME SUKA NULL</span>
-      <span *ngIf="one.amenityNames&&one.amenityNames[0]&&one.amenityNames[0].name">{{one.amenityNames[0].name}}</span>
-      <!--<pre>{{one|json}}</pre>-->
-      <input type="checkbox" (click)="addAmenity(one)">
-    </label>
-  </div>
->>>>>>> 65978dca93145a8e43890d756da0497b2cf76d94
-
 
     <div formArrayName="descriptions">
       <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
@@ -67,17 +55,10 @@
     <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
       <img [src]="one" alt="">
     </div>
-    <br>
-    <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
-    <label (click)="toggle()" for="file" >AddImage</label>
-    <button class="button" [disabled]="!roomForm.valid" type="submit" class="w-100">Save Room</button>
-  </div>
-<<<<<<< HEAD
 
-=======
+
   <br>
   <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
   <label (click)="toggle()" for="file" >Добавити картинку</label>
   <button class="button" [disabled]="!roomForm.valid" type="submit" class="w-100">Зберегти кімнату</button>
->>>>>>> 65978dca93145a8e43890d756da0497b2cf76d94
 </form>

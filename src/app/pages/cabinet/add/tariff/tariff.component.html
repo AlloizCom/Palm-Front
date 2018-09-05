@@ -1,48 +1,28 @@
 <form action="" (submit)="addTariff(form)" #form [formGroup]="tariffForm">
-  <div class="content">
-    <div class="tariff-type-block">
-      <h3>Тип тарифу:</h3>
-      <select (change)="changeTariff($event.target.value)" formControlName="tariffType">
-        <option value="REGULAR">REGULAR</option>
-        <option value="SPECIAL">SPECIAL</option>
-        <option value="NONE" selected>NONE</option>
-      </select>
-    </div>
+  <h3>Тип тарифу:</h3>
+  <select (change)="changeTariff($event.target.value)" formControlName="tariffType">
+    <option value="REGULAR">REGULAR</option>
+    <option value="SPECIAL">SPECIAL</option>
+    <option value="NONE" selected>NONE</option>
+  </select>
 
-    <div class="price-block">
-      <h3>Ціна:</h3>
-      <input type="number" formControlName="price" min="1">
-    </div>
+  <h3>Ціна:</h3>
+  <input type="number" formControlName="price" min="1">
 
-    <div class="tariff-start-block">
-      <h3>Початок тарифу(дата)</h3>
-      <input type="date" formControlName="dateFrom" useValueAsDate>
-    </div>
-    <div class="tariff-end-block">
-      <h3>Кінець тарифу(дата)</h3>
-      <input type="date" formControlName="dateTo" useValueAsDate>
+  <h3>Початок тарифу(дата)</h3>
+  <input type="date"  formControlName="dateFrom" useValueAsDate>
+  <h3>Кінець тарифу(дата)</h3>
+  <input type="date"  formControlName="dateTo" useValueAsDate>
 
-    </div>
-    <div class="room-type-block">
-      <h3>Тип номера:</h3>
-      <select (change)="changeRoom($event.target.value)" formControlName="roomType">
-        <option value="STANDARD">STANDARD</option>
-        <option value="SUPERIOR">SUPERIOR</option>
-        <option value="DELUXE">DELUXE</option>
-        <option value="STANDARD_IMPROVED">STANDARD IMPROVED</option>
-        <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
-        <option value="NONE" selected>NONE</option>
-      </select>
-      </div>
+  <h3>Тип номера:</h3>
+  <select (change)="changeRoom($event.target.value)" formControlName="roomType">
+    <option value="STANDARD">STANDARD</option>
+    <option value="SUPERIOR">SUPERIOR</option>
+    <option value="DELUXE">DELUXE</option>
+    <option value="STANDARD_IMPROVED">STANDARD IMPROVED</option>
+    <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+    <option value="NONE" selected>NONE</option>
+  </select>
 
-    <div class="button-block">
-      <button class="button" type="submit" [disabled]="!tariffForm.valid">Зберегти тариф</button>
-    </div>
-
-  </div>
-
-<<<<<<< HEAD
-=======
   <button class="button" type="submit" [disabled]="!tariffForm.valid" class="w-100">Зберегти тариф</button>
->>>>>>> 65978dca93145a8e43890d756da0497b2cf76d94
 </form>

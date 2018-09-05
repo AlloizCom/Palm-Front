@@ -14,3 +14,6 @@ textarea.ng-invalid{
 button:disabled {
   border-bottom: 3px solid red;
 }
+div:nth-child(n){
+
+}
