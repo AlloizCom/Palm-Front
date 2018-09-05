@@ -25,6 +25,37 @@
   right: 5% !important;
 }
 
+
+/deep/ .carousel-indicators li {
+  position: relative;
+  -ms-flex: 0 1 auto;
+  -webkit-box-flex: 0;
+  flex: 0 1 auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+   margin: 0 6px;
+  background-color: rgba(255,255,255,.5);
+}
+
+/deep/ .carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  left: 0;
+  z-index: 15;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-left: 0;
+  margin-right: 15%;
+  margin-left: 15%;
+  list-style: none;
+}
+
 /deep/ .carousel-caption {
   top: 212px !important;
   left: 10% !important;
