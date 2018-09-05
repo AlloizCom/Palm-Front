@@ -57,7 +57,7 @@ export class TariffComponent implements OnInit {
 
   private createTariffForm() {
     this.tariffForm = new FormGroup({
-      price: new FormControl(0, [Validators.required,Validators.min(0),Validators.max(1000000)]),
+      price: new FormControl(0, [Validators.required,Validators.min(1),Validators.max(1000000)]),
       dateTo: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/),Validators.required]),
       dateFrom: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/),Validators.required]),
       tariffType: new FormControl('NONE',[Validators.required,this.validateType]),
