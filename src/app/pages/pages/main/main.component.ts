@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../shared/service/main-page.sevice';
 
@@ -198,6 +198,7 @@ export class MainComponent implements OnInit {
   model2: Date;
   enterDay: number;
   leaveDay: number;
+  screenWidth: number =0;
   month: string[] = [
     'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'
   ];
@@ -266,6 +267,10 @@ get today() {
     if (!bull && this.childrenNumber != 0) {
       this.childrenNumber -= 1;
     }
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.screenWidth = window.innerWidth;
   }
 
 }

@@ -29,3 +29,9 @@ div:nth-child(even){
 .button-block{
   margin:2% 0;
 }
+button{
+  height: 50px;
+  width: 30%;
+  margin: auto;
+  background-color: #fff;
+}

@@ -2,6 +2,26 @@
   height: 8vh;
   margin: auto;
 }
+.navbar{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.nav-link{
+  padding-top: 0;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: Roboto;
+  font-style: normal;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin-right: 25px;
+}
+
+.navbar-collapse{
+  padding-top:20px;
+  padding-bottom: 16px;
+}
 
 .nav a {
   font-family: Roboto;
@@ -37,6 +57,7 @@ a:hover {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #5A5A5A;
+  cursor: pointer;
 }
 
 .langs a:hover,  .langs .active{
@@ -131,6 +152,7 @@ svg{
 .langs a{
   padding: 10px;
   margin: 5px!important;
+
 }
 }
 
