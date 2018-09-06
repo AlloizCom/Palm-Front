@@ -1,5 +1,6 @@
 p {
   text-align: justify;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -182,6 +183,12 @@ button:hover {
     width: 70% !important;
     margin-bottom: 10% !important;
   }
+}
+
+@media screen and (max-width: 990px){
+  .rooms{
+     width: 70%;
+   }
 }
 
 @media screen and (max-width: 425px) {
