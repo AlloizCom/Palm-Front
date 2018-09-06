@@ -2,26 +2,26 @@
   <div class="content">
     <h3>Тип тарифу:</h3>
     <select (change)="changeTariff($event.target.value)" formControlName="tariffType">
-      <option value="REGULAR">REGULAR</option>
-      <option value="SPECIAL">SPECIAL</option>
+      <option value="REGULAR">Регулярний</option>
+      <option value="SPECIAL">Спецільна пропозиція</option>
       <option value="NONE" selected>NONE</option>
     </select>
 
     <h3>Ціна:</h3>
     <input type="number" formControlName="price" min="1">
 
-    <h3>Початок тарифу(дата)</h3>
+    <h3>Початок тарифу(дата):</h3>
     <input type="date"  formControlName="dateFrom" useValueAsDate>
-    <h3>Кінець тарифу(дата)</h3>
+    <h3>Кінець тарифу(дата):</h3>
     <input type="date"  formControlName="dateTo" useValueAsDate>
 
     <h3>Тип номера:</h3>
     <select (change)="changeRoom($event.target.value)" formControlName="roomType">
-      <option value="STANDARD">STANDARD</option>
-      <option value="SUPERIOR">SUPERIOR</option>
-      <option value="DELUXE">DELUXE</option>
-      <option value="STANDARD_IMPROVED">STANDARD IMPROVED</option>
-      <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+      <option value="STANDARD">Стандарт</option>
+      <option value="SUPERIOR">Напівлюкс</option>
+      <option value="DELUXE">Люкс</option>
+      <option value="STANDARD_IMPROVED">Покращений Стандарт</option>
+      <option value="SUPERIOR_IMPROVED">Покращений Напівлюкс</option>
       <option value="NONE" selected>NONE</option>
     </select>
 <div class="button-block">

@@ -1,37 +1,41 @@
 <form action="" (submit)="addAmenity(form)" #form [formGroup]="amenityForm">
-  <div>
-    <p>AmenityEn</p>
-    <input type="text" #nameEn
-           class="w-100" style="height: 30px"
-           formControlName="nameEn"
-           [ngClass]="{'invalid':amenityForm.get('nameEn').invalid && amenityForm.get('nameEn').dirty}">
+  <div class="content">
+    <div>
+      <p>Англійська</p>
+      <input type="text" #nameEn
+             class="w-100" style="height: 30px"
+             formControlName="nameEn"
+             [ngClass]="{'invalid':amenityForm.get('nameEn').invalid && amenityForm.get('nameEn').dirty}">
+    </div>
+    <div>
+      <p>Українська</p>
+      <input type="text"#nameUk
+             class="w-100" style="height: 30px"
+             formControlName="nameUk"
+             [ngClass]="{'invalid':amenityForm.get('nameUk').invalid && amenityForm.get('nameUk').dirty}">
+    </div>
+    <div>
+      <p>Польська</p>
+      <input type="text" #namePl
+             class="w-100" style="height: 30px"
+             formControlName="namePl"
+             [ngClass]="{'invalid':amenityForm.get('namePl').invalid && amenityForm.get('namePl').dirty}">
+    </div>
+    <div>
+      <p>Російська</p>
+      <input type="text" #nameRu
+             class="w-100" style="height: 30px"
+             formControlName="nameRu"
+             [ngClass]="{'invalid':amenityForm.get('nameRu').invalid && amenityForm.get('nameRu').dirty}">
+    </div>
+    <!--<input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFile">-->
+
+    <div *ngIf="image" class="image">
+      <img [src]="image" alt="" class="w-100">
+    </div>
+    <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*" multiple id="file1" type="file" class="d-none" name="multipartFile">
+    <label for="file1" class="addImage">Add Image</label>
+    <button class="button" type="submit" [disabled]="amenityForm.invalid">Зберегти зручності</button>
   </div>
-  <div>
-    <p>AmenityUk</p>
-    <input type="text"#nameUk
-           class="w-100" style="height: 30px"
-           formControlName="nameUk"
-           [ngClass]="{'invalid':amenityForm.get('nameUk').invalid && amenityForm.get('nameUk').dirty}">
-  </div>
-  <div>
-    <p>AmenityPl</p>
-    <input type="text" #namePl
-           class="w-100" style="height: 30px"
-           formControlName="namePl"
-           [ngClass]="{'invalid':amenityForm.get('namePl').invalid && amenityForm.get('namePl').dirty}">
-  </div>
-  <div>
-    <p>AmenityRu</p>
-    <input type="text" #nameRu
-           class="w-100" style="height: 30px"
-           formControlName="nameRu"
-           [ngClass]="{'invalid':amenityForm.get('nameRu').invalid && amenityForm.get('nameRu').dirty}">
-  </div>
-  <!--<input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFile">-->
-  <div *ngIf="image" class="image">
-    <img [src]="image" alt="" class="w-100">
-  </div>
-  <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*" multiple id="file1" type="file" class="d-none" name="multipartFile">
-  <label for="file1" class="addImage">Add Image</label>
-  <button class="button" type="submit" class="w-100" [disabled]="amenityForm.invalid">Зберегти зручності</button>
+
 </form>

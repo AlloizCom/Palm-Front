@@ -27,7 +27,6 @@ export class OptionComponent implements OnInit {
 
   ngOnInit() {
     this.servicesForm = new FormGroup({
-      servicesName: new FormControl('', [Validators.required,Validators.minLength(3)]),
       TitleEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
       HeaderTextareaEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
       textEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
@@ -43,19 +42,18 @@ export class OptionComponent implements OnInit {
       multipartFile: new FormControl(null,[this.validateImages]),
     });
     this.servicesForm.valueChanges.subscribe(value => {
-      this.service.name=value.servicesName;
       this.service.serviceDescriptions[0].language = 'EN';
       this.service.serviceDescriptions[0].title = value.TitleEn;
       this.service.serviceDescriptions[0].headerText = value.HeaderTextareaEn;
       this.service.serviceDescriptions[0].mainText = value.textEn;
-      this.service.serviceDescriptions[1].language = 'PL';
-      this.service.serviceDescriptions[1].title = value.TitlePl;
-      this.service.serviceDescriptions[1].headerText = value.HeaderTextareaPl;
-      this.service.serviceDescriptions[1].mainText = value.textPl;
-      this.service.serviceDescriptions[2].language = 'UK';
-      this.service.serviceDescriptions[2].title = value.TitleUk;
-      this.service.serviceDescriptions[2].headerText = value.HeaderTextareaUk;
-      this.service.serviceDescriptions[2].mainText = value.textUk;
+      this.service.serviceDescriptions[1].language = 'UK';
+      this.service.serviceDescriptions[1].title = value.TitleUk;
+      this.service.serviceDescriptions[1].headerText = value.HeaderTextareaUk;
+      this.service.serviceDescriptions[1].mainText = value.textUk;
+      this.service.serviceDescriptions[2].language = 'PL';
+      this.service.serviceDescriptions[2].title = value.TitlePl;
+      this.service.serviceDescriptions[2].headerText = value.HeaderTextareaPl;
+      this.service.serviceDescriptions[2].mainText = value.textPl;
       this.service.serviceDescriptions[3].language = 'RU';
       this.service.serviceDescriptions[3].title = value.TitleRu;
       this.service.serviceDescriptions[3].headerText = value.HeaderTextareaRu;
