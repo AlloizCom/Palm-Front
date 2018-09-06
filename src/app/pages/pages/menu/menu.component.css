@@ -157,7 +157,8 @@ a:hover {
   }
 
   svg {
-    margin-bottom: 2px !important;
+    margin-bottom: 4px !important;
+    margin-top: 4px !important;
   }
 
   .langs {

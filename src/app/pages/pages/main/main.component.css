@@ -768,7 +768,9 @@ font-size: 12px;
   .ashkas3 p {
     width: 35vw;
   }
-
+  .ashkas3>h3 {
+    width: 35vw;
+  }
   .search {
     margin: 0px 2%;
   }
