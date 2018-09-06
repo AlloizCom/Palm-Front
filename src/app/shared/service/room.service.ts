@@ -98,7 +98,7 @@ export class RoomService{
     return this._httpClient.delete(this.controller + '/delete/' + id);
   }
 
-  findAllRoomWithPrice(): Observable<Room[]>{
+  findAllRoomWithPrice(): Observable<RoomWithPrice[]>{
     return this._httpClient.get<RoomWithPrice[]>(this.controller + '/find-room-with-price')
       .catch(err => Observable.throw(err));
   }
