@@ -4,11 +4,11 @@
       <div class="room-type block">
         <h3>Тип номера:</h3>
         <select formControlName="type">
-          <option value="STANDARD">STANDART</option>
-          <option value="SUPERIOR">SUPERIOR</option>
-          <option value="DELUXE">DELUXE</option>
-          <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
-          <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+          <option value="STANDARD">Стандарт</option>
+          <option value="SUPERIOR">Напівлюкс</option>
+          <option value="DELUXE">Люкс</option>
+          <option value="STANDARD_IMPROVED">Покращений Стандарт</option>
+          <option value="SUPERIOR_IMPROVED">Покращений Напівлюкс</option>
           <option value="NONE" selected disabled>NONE</option>
         </select>
       </div>
@@ -60,7 +60,7 @@
 
 
     <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
-    <label (click)="toggle()" for="file" class="image-button" >Добавити картинку</label>
+    <label (click)="toggle()" for="file" class="image-button" >Додати зображення</label>
     <button class="button" [disabled]="!roomForm.valid" type="submit" >Зберегти кімнату</button>
   </div>
 
