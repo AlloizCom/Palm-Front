@@ -19,8 +19,7 @@
 }
 
 .navbar-collapse{
-  padding-top:20px;
-  padding-bottom: 16px;
+  padding:20px 0px 16px 0px;
 }
 
 .nav a {
@@ -121,8 +120,10 @@ a:hover {
   .logo img{
     margin-right: 10px;
     margin-top: 8px;
+  }
 
-
+  .nav-link{
+    margin-left: 25px;
   }
   .logo{
     align-self: flex-start!important;
@@ -134,7 +135,7 @@ a:hover {
   .navbar-collapse {
     position: absolute !important;
     top: 65px !important;
-    width: 100% !important;
+    width: calc(100% - 45px) !important;
     z-index: 1000!important;
     border-bottom: 1px solid #5A5A5A;
     background-color: #F8F6F6;
@@ -149,10 +150,25 @@ a:hover {
 svg{
   margin-bottom: 2px!important;
 }
+
+.langs{
+  margin-left: 20px;
+}
+
 .langs a{
   padding: 10px;
   margin: 5px!important;
 
+}
+
+  .dropdown-menu>div{
+    border: none;
+  }
+
+.dropdown-menu>div>a{
+  font-size: 20px;
+  padding: 5px 0 10px 45px;
+  background-color: #F8F6F6;
 }
 }
 
