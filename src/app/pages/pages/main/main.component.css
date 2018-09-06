@@ -772,6 +772,9 @@ font-size: 12px;
   .search {
     margin: 0px 2%;
   }
+  .ashkas3> p{
+    width: 60vh;
+  }
 }
 
 @media screen and (max-width: 765px) {
@@ -970,6 +973,7 @@ font-size: 12px;
   .ashkas h2 {
     font-size: 18px;
   }
+
 
   .item {
     width: 90% !important;

@@ -44,14 +44,15 @@
 @media screen and (max-width: 645px) {
 
   .footNav {
-    padding-top: 7%;
-    padding-bottom: 6%;
+    padding-top: 3%;
+    padding-bottom: 3%;
   }
   .footer{
     height: auto;
+    padding-bottom: 2vh;
   }
   .info a{
-    padding-bottom: 5%!important;
+    padding-bottom: 1%!important;
     padding-left: 3%;
   }
   .wraper{

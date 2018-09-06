@@ -274,6 +274,9 @@ button {
 
 .one:hover .button{
   display: block;
+  filter: none;
+  filter: none;
+
 }
 
 .one:hover h2, .one:hover h3{

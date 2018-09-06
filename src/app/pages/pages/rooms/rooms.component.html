@@ -3,8 +3,6 @@
     <div *ngFor="let one of rooms"  class="room d-flex justify-content-between">
       <div class="photo d-flex">
         <div class="kartinka" [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'" ></div>
-        <!--<img class="kartinka" src="{{one.images[0].path|imagePipe}}" alt="room ">-->
-        <!--<div class="block d-flex justify-content-center align-items-center">{{tariffx[0].price}}</div>-->
         <div class="block d-flex justify-content-center align-items-center">{{one.price}}</div>
       </div>
       <div class="infos ">
