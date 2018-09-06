@@ -225,6 +225,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.screenWidth = window.innerWidth;
   }
 //dataPicker
 get today() {

@@ -46,16 +46,25 @@
               </li>
             </ul>
             <div class="langs d-flex justify-content-between">
-              <a (click)="changeLanguage('uk')" [ngClass]="{'active':currentLang=='uk'}"  [routerLinkActive]="['active']"
+              <a (click)="changeLanguage('uk')"
+                 [ngClass]="{'active':currentLang=='uk'}"
+                 (click)="toggleState()"
+                 [routerLinkActive]="['active']"
               >ua
               </a>
-              <a (click)="changeLanguage('en')" [ngClass]="{'active':currentLang=='en'}"
+              <a (click)="changeLanguage('en')"
+                 [ngClass]="{'active':currentLang=='en'}"
+                 (click)="toggleState()"
               >en
               </a>
-              <a (click)="changeLanguage('pl')" [ngClass]="{'active':currentLang=='pl'}"
+              <a (click)="changeLanguage('pl')"
+                 [ngClass]="{'active':currentLang=='pl'}"
+                 (click)="toggleState()"
               >pl
               </a>
-              <a (click)="changeLanguage('ru')" [ngClass]="{'active':currentLang=='ru'}"
+              <a (click)="changeLanguage('ru')"
+                 [ngClass]="{'active':currentLang=='ru'}"
+                 (click)="toggleState()"
               >ru
               </a>
             </div>
