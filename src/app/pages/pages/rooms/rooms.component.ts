@@ -5,6 +5,7 @@ import {Room} from "../../../shared/models/room";
 import {TariffService} from "../../../shared/service/tariff.service";
 import {RoomTariff} from "../../../shared/enum/room-tariff";
 import {Tariff} from "../../../shared/models/tariff";
+import {RoomWithPrice} from '../../../shared/models/room-with-price';
 
 @Component({
   selector: 'app-rooms',
@@ -15,12 +16,14 @@ import {Tariff} from "../../../shared/models/tariff";
 export class RoomsComponent implements OnInit {
 
   roomTariff: any;
-  rooms: Room[] = [];
-  tariffx:Tariff[]=[];
+  // rooms: Room[] = [];
+  // tariffx:Tariff[]=[];
+  rooms: RoomWithPrice[]=[];
 
   constructor(private _roomService: RoomService,
-              private _tariffService:TariffService) {
-    this._roomService.findAllAvailable().subscribe(next => {
+              private _tariffService:TariffService
+  ) {
+    this._roomService.findAllRoomWithPrice().subscribe(next => {
       this.roomTariff = RoomTariff;
       for (let i of next) {
         if (typeof (i) != 'undefined' && i != null) {
@@ -28,19 +31,16 @@ export class RoomsComponent implements OnInit {
         }
       }
 
-        this._tariffService.findByRoomType("STANDARD").subscribe(val => {
-          this.tariffx = val;
-          console.log(this.tariffx)
-        });
+        // this._tariffService.findByRoomType("STANDARD").subscribe(val => {
+        //   this.tariffx = val;
+        //   console.log(this.tariffx)
+        // });
 
 
       console.log(this.rooms);
     }, err => {
       console.log(err);
     });
-
-
-
   }
 
   ngOnInit() {

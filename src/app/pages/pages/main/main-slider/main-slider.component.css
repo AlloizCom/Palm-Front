@@ -14,6 +14,7 @@
   opacity: 1 !important;
   top: 290px !important;
   left: 5% !important;
+  cursor: pointer;
 }
 
 /deep/ .carousel-control-next {
@@ -23,6 +24,7 @@
   opacity: 1 !important;
   top: 290px !important;
   right: 5% !important;
+  cursor: pointer;
 }
 
 /deep/ .carousel-indicators li {
