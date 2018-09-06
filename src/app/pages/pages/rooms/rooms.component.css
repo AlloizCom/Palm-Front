@@ -1,6 +1,13 @@
-p{
+p {
   text-align: justify;
 }
+
+.imgs img {
+  width: 25px;
+  height: 25px;
+  margin-right: 5%;
+}
+
 .allBack {
   background: #F8F6F6;
 }
@@ -11,33 +18,39 @@ p{
   padding-top: 15vh;
 }
 
-
-.room:nth-child(even) .photo{
-  order: 2;
-  margin-left: 3.5%;
-  width: 51.5%;
+.photo {
+  position: relative;
+  width: 50%;
+  margin-right: 3.5%;
+  height: 30vh;
 }
 
-.room:nth-child(even) .infos{
+.room:nth-child(even) .photo {
+  position: relative;
+  order: 2;
+  margin-left: 3.5%;
+  width: 50%;
+}
+
+.room:nth-child(even) .infos {
   order: 1;
 }
 
-.room:nth-child(even) .block{
+.room:nth-child(even) .block {
   left: 0;
 }
 
 .room {
-
-  height: 55vh;
-  padding-bottom: 16vh;
+  /*height: 55vh;*/
+  padding-bottom: 72px;
 }
 
-.block, .block2 {
+.block {
   height: 30%;
-  width: 16%;
+  width: 100px;
   background: #53D7B7;
   position: absolute;
-  left:100%;
+  left: 100%;
   top: 50%;
   transform: translate(-50%, -50%);
   font-family: Roboto;
@@ -48,30 +61,12 @@ p{
   color: #FFFFFF;
 }
 
-.block2 {
-  left: 0;
-}
-
-.photo, .photo2 {
-  /*width: 60%;*/
-  position: relative;
-}
-
-.photo{
-  width: 51.5%;
-  margin-right: 3.5%;
-}
-.photo2{
-  margin-left: 3.5%;
-  width: 51.5%;
-}
-
-.infos, .infos2 {
+.infos {
   width: 40%;
   height: 100%;
 }
 
-.infos h2, .infos2 h2 {
+.infos h2 {
   font-family: Raleway;
   font-weight: 800;
   font-size: 24px;
@@ -84,7 +79,7 @@ p{
 
 }
 
-.infos p, .infos2 p {
+.infos p {
   font-family: Roboto;
   font-weight: 500;
   line-height: 24px;
@@ -96,13 +91,11 @@ p{
   position: relative;
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.kartinka2 {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
 button {
   cursor: pointer;
   width: 110px;
@@ -152,123 +145,50 @@ button:hover {
   margin-left: -3px;
 }
 
-.anton {
-  position: relative;
-  margin-top: -3px;
-}
-
-.photo2 {
-  order: 2;
-}
-
-.infos2 {
-  order: 1;
-}
-
-
-
-@media screen and (max-width: 425px) {
-  .photo, .photo2 {
-    width: 100% !important;
-  }
-}
 @media screen and (max-width: 1100px) {
 
-  .room{
-    flex-direction: column!important;
+  .room {
+    flex-direction: column !important;
   }
-  .photo, .photo2 {
+
+  .photo {
     width: 80% !important;
     margin: auto;
   }
 
-  .infos, .infos2 {
-    width: 100%!important;
+  .infos {
+    width: 100% !important;
     align-items: center;
     display: flex;
     flex-direction: column;
     margin: auto;
 
   }
-  .photo2 {
+
+  .room:nth-child(even) .photo {
     order: 1;
   }
 
-  .infos2 {
+  .room:nth-child(even) .infos {
     order: 2;
   }
-
-
-
-  /*main*/
-
 }
+
 @media screen and (max-width: 1020px) {
-  .aboutHotel{
-    flex-direction: column!important;
-    align-items: center;
-  }
-  /*.photoMain {*/
-    /*width: 80% !important;*/
-    /*margin: auto;*/
-  /*}*/
-
-  .btmWrapper{
-    width: 100%!important;
+  .room {
+    padding-bottom: 8vh !important;
   }
 
-  .infosMain{
-    width: 100%!important;
-    margin: auto;
-    text-align: center;
+  .imgs {
+    width: 70% !important;
+    margin-bottom: 10% !important;
   }
-  .photoMain{
-    width: 60%!important;
-    margin: 0!important;
-  }
+}
 
-  .someShit{
-   margin-bottom: 4%;
-    margin-top: 0!important;
-    margin-right: 0!important;
+@media screen and (max-width: 425px) {
+  .photo {
+    width: 100% !important;
   }
-
-  .selected{
-    margin-bottom: 15%!important;
-  }
-
-  .item{
-    width: 40%!important;
-    margin: 5%!important;
-  }
-  .firsty {
-    flex-wrap: wrap;
-  }
-  .secondy{
-    align-items: center;
-    flex-direction: column!important;
-  }
-  .item2{
-    width: 38%!important;
-  }
-  .ashkas{
-
-    justify-content: center;
-    align-items: center;
-    margin-top: 0;
-    margin-left: 0;
-  }
-  .room{
-    padding-bottom: 8vh!important;
-  }
-  .imgs{
-    width: 70%!important;
-    margin-bottom: 10%!important;
-  }
-
-
-
-
 }
 
 
@@ -291,354 +211,10 @@ button:hover {
 
 
 
-/*!*!* About us *!*!*/
-/*!*.aboutUs1{*!*/
-  /*!*height: 150px;*!*/
-  /*!*width: 100%;*!*/
-/*!*}*!*/
-/*!*.left,.right{*!*/
-  /*!*width: 30%;*!*/
-  /*!*height: 30%;*!*/
-  /*!*background: white;*!*/
-/*!*}*!*/
-/*.bottomAll{*/
-  /*background: #E5E5E5;*/
-/*}*/
-/*.btmWrapper{*/
-  /*width: 84%;*/
-  /*margin: auto;*/
-  /*padding-top: 5%;*/
-/*}*/
-
-/*.photoMain {*/
-  /*order: 2;*/
-/*}*/
-
-/*.infosMain {*/
-  /*order: 1;*/
-/*}*/
-/*.kartinkaMain {*/
-  /*width: 100%;*/
-/*}*/
-/*.photoMain{*/
-  /*margin-left: 10%;*/
-  /*width: 51%;*/
-/*}*/
-
-/*.infosMain {*/
-  /*width: 45%;*/
-/*}*/
-
-/*.infosMain h2 {*/
-  /*font-family: Raleway;*/
-  /*font-weight: 800;*/
-  /*font-size: 21px;*/
-  /*letter-spacing: 0.03em;*/
-  /*text-transform: uppercase;*/
-  /*color: #000000;*/
-  /*!*padding: 3% 0 8% 0;*!*/
-  /*!*margin: 0;*!*/
-/*}*/
-/*.infosMain h4{*/
-  /*font-family: Raleway;*/
-  /*font-weight: 300;*/
-  /*font-size: 14px;*/
-  /*letter-spacing: 0.5em;*/
-  /*text-transform: uppercase;*/
-  /*color: #5A5A5A;*/
-  /*margin-bottom: 3%;*/
-/*}*/
-/*.infosMain p {*/
-  /*font-family: Roboto;*/
-  /*font-weight: 300;*/
-  /*line-height: 27px;*/
-  /*font-size: 16px;*/
-  /*color: #000000;*/
-/*}*/
-/*.aboutHotel {*/
-  /*padding-bottom: 15vh;*/
-/*}*/
-
-/*.selected {*/
-  /*margin-bottom: 20%;*/
-/*}*/
-
-/*.selected span {*/
-  /*border-bottom: 7px solid #53D7B7;*/
-  /*padding-bottom: 4%;*/
-/*}*/
-/*.someShit{*/
-  /*margin-top: 13%;*/
-  /*margin-right: -4%;*/
-/*}*/
-/*.someShit h5{*/
-  /*font-family: Roboto;*/
-  /*font-weight: 500;*/
-  /*line-height: 27px;*/
-  /*font-size: 16px;*/
-  /*color: #53D7B7;*/
-  /*margin-right: 4%;*/
-  /*margin-top: -3px;*/
-  /*margin-bottom: 0!important;*/
-/*}*/
 
 
 
 
 
-
-/*.item {*/
-  /*width: 23.5%;*/
-  /*margin: 0 1%;*/
-  /*background: #FFFFFF;*/
-  /*border: 0.5px solid #E5E5E5;*/
-  /*box-sizing: border-box;*/
-/*}*/
-
-/*.item:first-child {*/
-  /*margin-left: 0;*/
-/*}*/
-
-/*.item:last-child {*/
-  /*margin-right: 0;*/
-/*}*/
-
-/*.back1, .back2, .back3, .back4 {*/
-  /*width: 100%;*/
-  /*height: 21vh;*/
-/*}*/
-
-
-/*.back1 {*/
-  /*background-image: url("../../../../../src/assets/png/mainFirst.png");*/
-/*}*/
-
-/*.back2 {*/
-  /*background-image: url("../../../../../src/assets/png/mainSecond.png");*/
-/*}*/
-
-/*.back3 {*/
-  /*background-image: url("../../../../../src/assets/png/mainThird.png");*/
-/*}*/
-
-/*.back4 {*/
-  /*background-image: url("../../../../../src/assets/png/mainFOurth.png");*/
-/*}*/
-
-
-/*.back1, .back2, .back3, .back4 {*/
-  /*background-repeat: no-repeat;*/
-  /*background-position: center;*/
-  /*background-size: cover;*/
-/*}*/
-
-/*.item h3 {*/
-/*font-family: Raleway;*/
-  /*font-weight: bold;*/
-  /*font-size: 16px;*/
-  /*letter-spacing: 0.03em;*/
-  /*color: #000000;*/
-  /*padding-bottom: 1%;*/
-  /*text-align: center;*/
-  /*padding-top: 11%;*/
-/*}*/
-
-/*.item h4 {*/
-  /*font-family: Roboto;*/
-  /*font-weight: 300;*/
-  /*line-height: 24px;*/
-  /*font-size: 14px;*/
-  /*color: #000000;*/
-  /*text-align: justify;*/
-  /*padding:2% 7%;*/
-  /*padding-bottom: 1%;*/
-/*}*/
-
-/*.someShit2{*/
-  /*!*margin-top: 13%;*!*/
-/*}*/
-/*.someShit2 h5{*/
-  /*font-family: Roboto;*/
-  /*font-weight: 500;*/
-  /*line-height: 27px;*/
-  /*font-size: 16px;*/
-  /*color: #C4C4C4;*/
-  /*margin-right: 4%;*/
-  /*margin-top: -3px;*/
-  /*margin-bottom: 0!important;*/
-  /*cursor: pointer;*/
-/*}*/
-
-/*.someShit2 h5:hover{*/
-  /*color: #53D7B7;*/
-/*}*/
-
-/*.someShit2 img{*/
-  /*cursor: pointer;*/
-/*}*/
-
-
-
-/*.greenShit{*/
-  /*display: none;*/
-  /*position: absolute;*/
-/*}*/
-/*.images:hover .greenShit{*/
-  /*display: block;*/
-/*}*/
-/*.images:hover .greyShit{*/
-  /*display: none;*/
-/*}*/
-/*.greyShit{*/
-  /*position: absolute;*/
-/*}*/
-/*.images{*/
-  /*position: relative;*/
-/*}*/
-
-
-
-/*.together{*/
-  /*border-left: 7px solid #53D7B7;*/
-  /*padding-left: 2.5%;*/
-  /*margin-bottom: 4%;*/
-/*}*/
-/*.together h3{*/
-  /*font-family: Raleway;*/
-  /*font-weight: 300;*/
-  /*font-size: 14px;*/
-  /*letter-spacing: 0.5em;*/
-  /*text-transform: uppercase;*/
-  /*color: #5A5A5A;*/
-  /*margin-top: -3px;*/
-  /*margin-bottom: 13px;*/
-/*}*/
-/*.together h2{*/
-  /*font-family: Raleway;*/
-  /*font-weight: 800;*/
-  /*font-size: 21px;*/
-  /*letter-spacing: 0.03em;*/
-  /*text-transform: uppercase;*/
-  /*color: #000000;*/
-  /*margin-bottom: -4px;*/
-/*}*/
-
-
-
-/*.ashkas{*/
-  /*margin-top: 10%;*/
-  /*margin-left: 1%;*/
-  /*margin-bottom: 2%;*/
-/*}*/
-/*.divka {*/
-  /*margin-bottom: 2%;*/
-/*}*/
-/*.grnBlock{*/
-  /*margin-left: 1.2%;*/
-/*}*/
-/*.ashkas h3,.ashkas2 h3{*/
-  /*font-family: Raleway;*/
-  /*font-weight: 300;*/
-  /*font-size: 14px;*/
-  /*letter-spacing: 0.5em;*/
-  /*text-transform: uppercase;*/
-  /*color: #5A5A5A;*/
-  /*margin-bottom: 0;*/
-/*}*/
-/*.ashkas h2,.ashkas2 h2{*/
-  /*font-family: Raleway;*/
-  /*font-weight: 800;*/
-  /*font-size: 21px;*/
-  /*letter-spacing: 0.03em;*/
-  /*text-transform: uppercase;*/
-  /*color: #000000;*/
-/*}*/
-/*.grnBlock{*/
-  /*width: 62px;*/
-  /*height: 7px;*/
-  /*background: #53D7B7;*/
-/*}*/
-
-/*.secondy{*/
-  /*padding-bottom: 10px;*/
-/*}*/
-/*.item2 {*/
-  /*width: 32%;*/
-  /*!*margin: 0 1%;*!*/
-  /*border: 0.5px solid #E5E5E5;*/
-  /*box-sizing: border-box;*/
-  /*padding: 2%;*/
-/*}*/
-
-/*.item2:first-child {*/
-  /*margin-left: 0;*/
-/*}*/
-
-/*.item2:last-child {*/
-  /*margin-right: 0;*/
-/*}*/
-
-/*.item2 p{*/
-  /*font-family: Roboto;*/
-  /*font-weight: 300;*/
-  /*line-height: 27px;*/
-  /*font-size: 16px;*/
-  /*text-align: center;*/
-  /*color: #000000;*/
-  /*margin-bottom: 4vh;*/
-/*}*/
-/*.item2{*/
-  /*border: 1px solid #35D1D1;*/
-  /*box-sizing: border-box;*/
-  /*position: relative;*/
-  /*margin-bottom: 15vh;*/
-/*}*/
-
-
-/*.whiteBlock{*/
-
-  /*!*width: 79px;*!*/
-  /*!*height: 79px;*!*/
-  /*position: absolute;*/
-  /*!*width: 25%;*!*/
-  /*!*height: 50%;*!*/
-  /*!*bottom: -23%;*!*/
-  /*background: #FFFFFF;*/
-  /*box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.05);*/
-  /*width: 6vw;*/
-  /*height: 10vh;*/
-  /*bottom: -5vh;*/
-/*}*/
-/*.whiteBlock img{*/
-  /*height: 5vh;*/
-  /*margin-top: 2.5vh;*/
-/*}*/
-
-/*.ashkas2 p{*/
-  /*font-family: Roboto;*/
-  /*font-weight: 300;*/
-  /*line-height: 24px;*/
-  /*font-size: 14px;*/
-  /*color: #000000;*/
-/*}*/
-/*.underFooterBlock{*/
-  /*margin-left: 1%;*/
-/*}*/
-/*.ashkas2{*/
-  /*width: 30%;*/
-/*}*/
-/*.ashkas2 h2{*/
-  /*margin-bottom: 11%;*/
-/*}*/
-/*.peshkas{*/
-  /*width: 70%;*/
-  /*margin-bottom: 10%;*/
-/*}*/
-/*.peshkas p{*/
-  /*margin-bottom: 8%;*/
-/*}*/
-/*.ashkas2 .grnBlock{*/
-  /*margin-left: 5%;*/
-/*}*/
 
 

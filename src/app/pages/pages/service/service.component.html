@@ -6,7 +6,7 @@
   <div class="main-text">
     <p>{{service.serviceDescriptions['current-language-index' |translate].headerText}}</p>
   </div>
-  <div class="image" [style.background-image]="'url(' + (service.image|imagePipe) + ')'">
+  <div class="image" [style.background-image]="'url(' + (service.picturePath|imagePipe) + ')'">
   </div>
   <div class="down-text">
     <div class="right-text-block">

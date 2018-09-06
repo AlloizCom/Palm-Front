@@ -2,7 +2,7 @@
 .wrapper{
   position: absolute;
   left:calc(50% - 491px);
-  z-index: 1000!important;
+  z-index: 100!important;
   top: 576px;
 }
 .searchIcone{

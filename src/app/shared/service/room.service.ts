@@ -5,6 +5,7 @@ import {Observable} from "rxjs/Observable";
 import {Room} from "../models/room";
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
+import {RoomWithPrice} from "../models/room-with-price";
 
 @Injectable()
 export class RoomService{
@@ -95,5 +96,10 @@ export class RoomService{
 
   delete(id: number): Observable<any>{
     return this._httpClient.delete(this.controller + '/delete/' + id);
+  }
+
+  findAllRoomWithPrice(): Observable<RoomWithPrice[]>{
+    return this._httpClient.get<RoomWithPrice[]>(this.controller + '/find-room-with-price')
+      .catch(err => Observable.throw(err));
   }
 }

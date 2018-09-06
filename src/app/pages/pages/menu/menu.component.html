@@ -33,9 +33,11 @@
               <li ngbDropdown class="d-inline-block">
                 <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>послуги</a>
                 <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item"
-                     (click)="toggleState()">
-                    {{one.serviceDescriptions['current-language-index'| translate].title}}</a>
+                  <div>
+                    <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item"
+                       (click)="toggleState()">
+                      {{one.serviceDescriptions['current-language-index'| translate].title}}</a>
+                  </div>
                 </div>
               </li>
               <li class="nav-item">
