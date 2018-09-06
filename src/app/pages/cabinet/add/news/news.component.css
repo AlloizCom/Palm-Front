@@ -52,3 +52,6 @@ button:disabled{
   display: flex;
   flex-direction: column;
 }
+.col-lg-11{
+  max-width: 100%;
+}
