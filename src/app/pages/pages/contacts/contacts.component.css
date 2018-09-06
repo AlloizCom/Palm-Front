@@ -308,7 +308,7 @@ agm-map{
   background-color:#F8F6F6;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:990px){
     .info{
       flex-direction: column;
     }
@@ -360,6 +360,23 @@ agm-map{
 }
 .green-border{
   border-bottom: 2px solid #53D7B7;
+}
+
+@media screen and (max-width:645px){
+  .image{
+    width: 80px;
+    height: 80px;
+  }
+  .wrapper-svg{
+    width: 80px;
+    height: 80px;
+  }
+  .address-title{
+    padding-bottom: 2%;
+  }
+  .phone, .mail{
+    padding-top: 4%;
+  }
 }
 
 /*TESTING MAP*/

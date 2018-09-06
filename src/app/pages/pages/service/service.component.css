@@ -18,6 +18,10 @@ body{
   font-size: 36px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  overflow: hidden;
+  width: 80%;
+  display: block;
+  margin: auto;
 }
 .main-text{
   width: 69%;
