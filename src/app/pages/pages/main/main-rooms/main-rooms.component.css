@@ -1,4 +1,6 @@
 .allIn h2{
+  user-select: none;
+  text-transform: uppercase;
   font-family: Roboto;
   font-weight: 500;
   line-height: 20px;
@@ -7,6 +9,8 @@
   margin-top: 7%;
 }
 .allIn h3{
+  user-select: none;
+  text-transform: uppercase;
   font-family: Roboto;
   font-weight: bold;
   line-height: 21px;
@@ -109,6 +113,9 @@
 /*}*/
 
 .greenAbs h2 {
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
   position: absolute;
   font-family: Raleway;
   font-weight: 800;
@@ -121,6 +128,8 @@
 }
 
 .greenAbs p {
+  user-select: none;
+
   position: absolute;
   font-family: Roboto;
   font-weight: 300;
@@ -133,6 +142,20 @@
   transform: translate(-50%, -50%);
 }
 
+.greenAbs:first-letter {
+
+  font-size: 200%; /* Размер шрифта первого символа */
+
+}
+
+.greenAbs img{
+  user-select: none;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
 @media screen and (max-width: 1230px) {
   .greenAbs p {
     top: 60% !important;

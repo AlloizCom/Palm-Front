@@ -1,80 +1,113 @@
 import {Component, OnInit} from '@angular/core';
+import {RoomService} from "../../../../shared/service/room.service";
+import {Room} from "../../../../shared/models/room";
+import {RoomWithPrice} from "../../../../shared/models/room-with-price";
+import {RoomTariff} from "../../../../shared/enum/room-tariff";
+import {TariffService} from "../../../../shared/service/tariff.service";
+import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'app-main-rooms',
   templateUrl: './main-rooms.component.html',
-  styleUrls: ['./main-rooms.component.css']
+  styleUrls: ['./main-rooms.component.css'],
+  providers:[RoomService]
 })
 export class MainRoomsComponent implements OnInit {
+  first1;
+  second1;
+  third1;
+  first2;
+  second2;
+  third2
+  first3;
+  second3;
+  third3
+  first4;
+  second4;
+  third4;
 
 
-  images = [
-    {
-      image: '../../../../assets/png/room.png',
-      text2: "Dco harum ut est. Cetero aliquam pro ad.9",
-      text3: "НАПІВЛЮКС",
-      text4: "500 grn"
-    }, {
-      image: '../../../../assets/png/room2.png',
-      text: "10",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.10",
-      text3: "СТАНДАРТ",
-      text4: "400 grn"
-    }, {
-      image: '../../../../assets/png/room3.png',
-      text: "11",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.11",
-      text3: "ПОКРАЩЕННИЙ СТАНДАРТ",
-      text4: "700 grn"
-    }, {
-      image: '../../../../assets/png/22.jpg',
-      text: "12",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.12",
-      text3: "ПОКРАЩЕННИЙ НАПІВЛЮКС",
-      text4: "600 grn"
-    }, {
-      image: '../../../../assets/png/11.jpg',
-      text: "13",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.13",
-      text3: "ЛЮКС",
-      text4: "4400 grn"
-    }]
 
-  anton;
-  vitalik;
-  nazar;
-  andriy;
   scroll(){
-    this.anton = this.images[0];
-    this.images[0]=this.images[1];
-    this.images[1]= this.anton;
+    this.first1 = this.rooms[0].images[0].path;
+    this.second1 = this.roomTariff[this.rooms[0].type];
+    this.third1 = this.rooms[0].price;
+
+    this.rooms[0].images[0].path=this.rooms[1].images[0].path;
+    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[1].type];
+    this.rooms[0].price=this.rooms[1].price;
+
+    this.rooms[1].images[0].path= this.first1;
+    this.roomTariff[this.rooms[1].type]= this.second1;
+    this.rooms[1].price= this.third1;
   }
   scroll2(){
-    this.vitalik = this.images[0];
-    this.images[0]=this.images[2];
-    this.images[2]= this.vitalik;
+    this.first2 = this.rooms[0].images[0].path;
+    this.second2 = this.roomTariff[this.rooms[0].type];
+    this.third2 = this.rooms[0].price;
+
+    this.rooms[0].images[0].path=this.rooms[2].images[0].path;
+    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[2].type];
+    this.rooms[0].price=this.rooms[2].price;
+
+    this.rooms[2].images[0].path= this.first2;
+    this.roomTariff[this.rooms[2].type]= this.second2;
+    this.rooms[2].price= this.third2;
   }
   scroll3(){
-    this.nazar = this.images[0];
-    this.images[0]=this.images[3];
-    this.images[3]= this.nazar;
+    this.first3 = this.rooms[0].images[0].path;
+    this.second3 = this.roomTariff[this.rooms[0].type];
+    this.third3 = this.rooms[0].price;
+
+    this.rooms[0].images[0].path=this.rooms[3].images[0].path;
+    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[3].type];
+    this.rooms[0].price=this.rooms[3].price;
+
+    this.rooms[3].images[0].path= this.first3;
+    this.roomTariff[this.rooms[3].type]= this.second3;
+    this.rooms[3].price= this.third3;
   }
   scroll4(){
-    this.andriy = this.images[0];
-    this.images[0]=this.images[4];
-    this.images[4]= this.andriy;
+    this.first4 = this.rooms[0].images[0].path;
+    this.second4 = this.roomTariff[this.rooms[0].type];
+    this.third4 = this.rooms[0].price;
+
+    this.rooms[0].images[0].path=this.rooms[4].images[0].path;
+    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[4].type];
+    this.rooms[0].price=this.rooms[4].price;
+
+    this.rooms[4].images[0].path= this.first4;
+    this.roomTariff[this.rooms[4].type]= this.second4;
+    this.rooms[4].price= this.third4;
   }
 
+  roomTariff: any;
+  rooms: RoomWithPrice[]=[];
 
-
-  constructor() {
-
+  constructor(private _roomService: RoomService) {
+    this._roomService.findAllRoomWithPrice().subscribe(next => {
+      this.roomTariff = RoomTariff;
+      for (let i of next) {
+        if (typeof (i) != undefined && i != null) {
+          this.rooms.push(i);
+        }
+      }
+      console.log(this.rooms);
+    }, err => {
+      console.log(err);
+    });
   }
-
 
   ngOnInit() {
   }
 
+  isNull(object: any): Boolean {
+    if (Array.isArray(object)) {
+      return !isNullOrUndefined(object[0]);
+    } else {
+      return !isNullOrUndefined(object);
+    }
+  }
 
   // slider
   // middleIndex: number;
