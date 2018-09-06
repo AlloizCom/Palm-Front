@@ -1,5 +1,6 @@
 p {
   text-align: justify;
+  overflow: hidden;
 }
 
 .imgs img {
@@ -13,7 +14,7 @@ p {
 }
 
 .rooms {
-  width: 75%;
+  width: 55%;
   margin: auto;
   padding-top: 15vh;
 }
@@ -21,8 +22,6 @@ p {
 .photo {
   position: relative;
   width: 50%;
-  margin-right: 3.5%;
-  height: 30vh;
 }
 
 .room:nth-child(even) .photo {
@@ -90,7 +89,7 @@ p {
 .kartinka {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 288px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

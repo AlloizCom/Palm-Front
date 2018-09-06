@@ -198,7 +198,7 @@ export class MainComponent implements OnInit {
   model2: Date;
   enterDay: number;
   leaveDay: number;
-  screenWidth: number =0;
+  screenWidth: number =1024;
   month: string[] = [
     'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'
   ];
@@ -225,7 +225,6 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 //dataPicker
 get today() {
@@ -268,6 +267,8 @@ get today() {
       this.childrenNumber -= 1;
     }
   }
+
+
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     this.screenWidth = window.innerWidth;

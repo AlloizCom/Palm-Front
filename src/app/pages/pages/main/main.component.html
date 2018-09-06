@@ -6,7 +6,8 @@
   <div class="search">
     <div class="searchItem searchItem11" (click)="d1.toggle()">
       <p>заїзд</p>
-      <div class="numbers d-flex w-100">
+      <div class="numbers d-flex w-100" style="
+    cursor: pointer">
         <div class="day">{{enterDay?.day || 18}}</div>
         <div class="month">{{month[enterDay?.month] || 'січень'}}</div>
         <div class="year">{{enterDay?.year || 2018}}</div>
@@ -15,7 +16,8 @@
     <div class="verticaleLine"></div>
     <div class="searchItem searchItem11" (click)="d2.toggle()">
       <p>виїзд</p>
-      <div class="numbers d-flex w-100">
+      <div class="numbers d-flex w-100" style="
+    cursor: pointer">
         <div class="day">{{leaveDay?.day || 18}}</div>
         <div class="month">{{month[leaveDay?.month] || 'січень'}}</div>
         <div class="year">{{leaveDay?.year || 2018}}</div>

@@ -18,6 +18,9 @@
 .searchItem {
   width: 190px;
 }
+.searchItem>div>div{
+  cursor: pointer;
+}
 
 .verticaleLine {
   width: 1px;
@@ -980,6 +983,9 @@ font-size: 12px;
     height: 40vh;
   }
 
+  .numbers{
+    cursor: pointer!important;
+  }
   /*.numbers{*/
   /*flex-direction: column;*/
   /*align-items: flex-start!important;*/
