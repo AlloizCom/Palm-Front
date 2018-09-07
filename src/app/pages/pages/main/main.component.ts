@@ -205,7 +205,6 @@ export class MainComponent implements OnInit {
   leaveDay: number;
   screenWidth: number =1024;
 
-
   //available
   adultsNumber: number = 1;
   childrenNumber: number = 0;
@@ -253,9 +252,6 @@ export class MainComponent implements OnInit {
 //dataPicker
   chang1(e) {
     this.enterDay = e;
-    // this.model1.setFullYear(e.year,e.month,e.day);
-    //     console.log(this.model1.getUTCDate());
-    //     console.log(this.model1.getDate());
         console.log(e);
     this.mounth1 = this.model1?this.model1.month :'MM';
   }
@@ -292,7 +288,6 @@ export class MainComponent implements OnInit {
       this.childrenNumber -= 1;
     }
   }
-
 
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
