@@ -6,21 +6,19 @@
   <div class="search">
     <div class="searchItem searchItem11" (click)="d1.toggle()">
       <p>заїзд</p>
-      <div class="numbers d-flex w-100" style="
-    cursor: pointer">
-        <div class="day">{{model1| date: 'dd'}}</div>
-        <div class="month">{{model1.getMonth() | mounth}}</div>
-        <div class="year">{{model1 | date: 'yy'}}</div>
+      <div class="numbers d-flex w-100" style="cursor: pointer">
+        <div class="day">{{model1?(model1.day): model1| date: 'dd'}}</div>
+        <div class="month">{{mounth1 | mounth}}</div>
+        <div class="year">{{model1?model1.year : 'yy'}}</div>
       </div>
     </div>
     <div class="verticaleLine"></div>
     <div class="searchItem searchItem11" (click)="d2.toggle()">
       <p>виїзд</p>
-      <div class="numbers d-flex w-100" style="
-    cursor: pointer">
-        <div class="day">{{model2| date: 'dd'}}</div>
-        <div class="month">{{model2.getMonth() | mounth}}</div>
-        <div class="year">{{model2 | date: 'yy'}}</div>
+      <div class="numbers d-flex w-100" style="cursor: pointer">
+        <div class="day">{{model2?(model2.day): model2| date: 'dd'}}</div>
+        <div class="month">{{mounth2 | mounth}}</div>
+        <div class="year">{{model2?model2.year : 'yy'}}</div>
       </div>
     </div>
     <div class="verticaleLine"></div>

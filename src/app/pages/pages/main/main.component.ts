@@ -3,13 +3,12 @@ import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../shared/service/main-page.sevice';
 import {RoomParamsService} from "../../../shared/service/room-params.serive";
 import {RoomsParams} from "../../../shared/models/rooms-params";
-import {MounthPipe} from '../../../shared/pipe/pipe/mounth.pipe';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-  providers: [MainPageSevice,RoomParamsService]
+  providers: [MainPageSevice]
 })
 
 export class MainComponent implements OnInit {
@@ -197,12 +196,13 @@ export class MainComponent implements OnInit {
   ];
 
   //dataPicker
-  model1: Date = new Date();
-  model2: Date = new Date();
+  model1={day:0,year:0,month:0};
+  model2={day:0,year:0,month:0};
+  mounth1: any;
+  mounth2: any;
   enterDay: number;
   leaveDay: number;
   screenWidth: number =1024;
-
 
   //available
   adultsNumber: number = 1;
@@ -210,20 +210,30 @@ export class MainComponent implements OnInit {
   roomsNumber: number = 1;
 
   constructor(private _roomsParamService: RoomParamsService) {
-
+    this.model1.day = new Date().getUTCDate();
+    this.model1.month = new Date().getUTCMonth();
+    this.model1.year = new Date().getUTCFullYear();
+    this.model2.day = new Date().getUTCDate();
+    this.model2.month = new Date().getUTCMonth();
+    this.model2.year = new Date().getUTCFullYear();
+    this.mounth1 = this.model1?this.model1.month :'MM';
+    this.mounth2 = this.model2?this.model2.month :'MM';
   }
 
   findRoomByParams(){
     console.log(this.model1);
     console.log(this.model2);
     let roomsParams = new RoomsParams();
-    roomsParams.dateFrom = this.model1.toString();
-    roomsParams.dateTo = this.model2.toString();
+    roomsParams.dateFrom = this.objectDateToString(this.model1).toString();
+    roomsParams.dateTo = this.objectDateToString(this.model2).toString();
     roomsParams.numbersOfRooms = this.roomsNumber;
     roomsParams.adults = this.adultsNumber;
     roomsParams.childrens = this.childrenNumber;
-    console.log(roomsParams);
     this._roomsParamService.setRoomsParams(roomsParams);
+  }
+
+  objectDateToString(date){
+    return new Date(date.year, date.month, date.day);
   }
 
   isNull(object: any): Boolean {
@@ -242,18 +252,16 @@ export class MainComponent implements OnInit {
     this.screenWidth = window.innerWidth;
   }
 //dataPicker
-get today() {
-  return new Date();
-}
-
   chang1(e) {
     this.enterDay = e;
-    console.log(e);
+        console.log(e);
+    this.mounth1 = this.model1?this.model1.month :'MM';
   }
 
   chang2(e) {
     this.leaveDay = e;
     console.log(e);
+    this.mounth2 = this.model2?this.model2.month :'MM';
   }
 
   roomsNumberFunc(bull) {
@@ -282,7 +290,6 @@ get today() {
       this.childrenNumber -= 1;
     }
   }
-
 
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
