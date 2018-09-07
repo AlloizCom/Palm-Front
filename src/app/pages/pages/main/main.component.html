@@ -9,7 +9,7 @@
       <div class="numbers d-flex w-100" style="
     cursor: pointer">
         <div class="day">{{model1| date: 'dd'}}</div>
-        <div class="month">{{model1 | date: 'mm'}}</div>
+        <div class="month">{{model1.getMonth() | mounth}}</div>
         <div class="year">{{model1 | date: 'yy'}}</div>
       </div>
     </div>
@@ -19,7 +19,7 @@
       <div class="numbers d-flex w-100" style="
     cursor: pointer">
         <div class="day">{{model2| date: 'dd'}}</div>
-        <div class="month">{{month[model2 | date: 'mm']}}</div>
+        <div class="month">{{model2.getMonth() | mounth}}</div>
         <div class="year">{{model2 | date: 'yy'}}</div>
       </div>
     </div>

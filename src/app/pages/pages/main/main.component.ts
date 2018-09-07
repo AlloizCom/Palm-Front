@@ -3,6 +3,7 @@ import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../shared/service/main-page.sevice';
 import {RoomParamsService} from "../../../shared/service/room-params.serive";
 import {RoomsParams} from "../../../shared/models/rooms-params";
+import {MounthPipe} from '../../../shared/pipe/pipe/mounth.pipe';
 
 @Component({
   selector: 'app-main',
@@ -201,9 +202,7 @@ export class MainComponent implements OnInit {
   enterDay: number;
   leaveDay: number;
   screenWidth: number =1024;
-  month: string[] = [
-    'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень'
-  ];
+
 
   //available
   adultsNumber: number = 1;
