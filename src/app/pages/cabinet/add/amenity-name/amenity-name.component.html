@@ -1,28 +1,28 @@
 <form action="" (submit)="addAmenity(form)" #form [formGroup]="amenityForm">
   <div class="content">
     <div>
-      <p>Англійська</p>
+      <h3>Англійська</h3>
       <input type="text" #nameEn
              class="w-100" style="height: 30px"
              formControlName="nameEn"
              [ngClass]="{'invalid':amenityForm.get('nameEn').invalid && amenityForm.get('nameEn').dirty}">
     </div>
     <div>
-      <p>Українська</p>
+      <h3>Українська</h3>
       <input type="text"#nameUk
              class="w-100" style="height: 30px"
              formControlName="nameUk"
              [ngClass]="{'invalid':amenityForm.get('nameUk').invalid && amenityForm.get('nameUk').dirty}">
     </div>
     <div>
-      <p>Польська</p>
+      <h3>Польська</h3>
       <input type="text" #namePl
              class="w-100" style="height: 30px"
              formControlName="namePl"
              [ngClass]="{'invalid':amenityForm.get('namePl').invalid && amenityForm.get('namePl').dirty}">
     </div>
     <div>
-      <p>Російська</p>
+      <h3>Російська</h3>
       <input type="text" #nameRu
              class="w-100" style="height: 30px"
              formControlName="nameRu"

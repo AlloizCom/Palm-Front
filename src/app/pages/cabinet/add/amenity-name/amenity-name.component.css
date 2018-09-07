@@ -16,7 +16,7 @@ p{
   text-align: center;
 }
 label{
-  margin: 2% auto 2% auto;
+  margin: 2% auto;
   background: #53D7B7;
   border: 1px solid #53D7B7;
   -webkit-box-sizing: border-box;
@@ -32,6 +32,7 @@ label{
   height: 36px;
   cursor: pointer;
   vertical-align: middle;
+  margin-bottom: 2%;
 
 }
 button{
@@ -46,4 +47,14 @@ button{
   justify-content: center;
   flex-direction: column;
 }
+.image{
+  margin-top: 2%;
+}
+.image img{
+  max-width: 900px;
+  min-width: 500px;
+  display: flex;
+  margin: auto;
+}
+
 
