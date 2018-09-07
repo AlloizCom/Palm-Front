@@ -4,7 +4,7 @@
   font-family: Roboto;
   font-weight: 500;
   line-height: 20px;
-  font-size: 13px;
+  font-size: 12px;
   color: #53D7B7;
   margin-top: 7%;
 }
@@ -18,9 +18,6 @@
   text-align: left;
   color: #5A5A5A;
 }
-
-
-
 
 .wrapper {
   /*position: relative;*/
@@ -57,13 +54,6 @@
 
 }
 
-/*.first:hover{*/
-  /*margin-top: -1%;*/
-  /*-webkit-transition: .3s ease-in-out;*/
-  /*transition: .3s ease-in-out;*/
-  /*-webkit-box-shadow: 3px 14px 25px -4px rgba(0,0,0,0.65);*/
-  /*box-shadow: 3px 14px 25px -4px rgba(0,0,0,0.65);*/
-/*}*/
 .second {
   left: 50%;
   top: 42%;
@@ -74,7 +64,6 @@
   position: absolute;
   width: 21vw;
   margin: auto;
-  height: 31vh;
   /*width: 312px;*/
   height: 463px;
 }
@@ -99,12 +88,7 @@
   position: absolute;
   width: 21vw;
   margin: auto;
-  height: 31vh;
-
-  /*width: 312px;*/
   height: 463px;
-
-  backdrop-filter: blur(8px);
   background: rgba(83, 215, 183, 0.74);
 }
 
@@ -129,7 +113,6 @@
 
 .greenAbs p {
   user-select: none;
-
   position: absolute;
   font-family: Roboto;
   font-weight: 300;
@@ -143,9 +126,7 @@
 }
 
 .greenAbs:first-letter {
-
   font-size: 200%; /* Размер шрифта первого символа */
-
 }
 
 .greenAbs img{

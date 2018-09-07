@@ -1,88 +1,21 @@
 import {Component, OnInit} from '@angular/core';
-import {RoomService} from "../../../../shared/service/room.service";
-import {Room} from "../../../../shared/models/room";
-import {RoomWithPrice} from "../../../../shared/models/room-with-price";
-import {RoomTariff} from "../../../../shared/enum/room-tariff";
-import {TariffService} from "../../../../shared/service/tariff.service";
-import {isNullOrUndefined} from "util";
+import {RoomService} from '../../../../shared/service/room.service';
+import {RoomWithPrice} from '../../../../shared/models/room-with-price';
+import {RoomTariff} from '../../../../shared/enum/room-tariff';
+import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-main-rooms',
   templateUrl: './main-rooms.component.html',
   styleUrls: ['./main-rooms.component.css'],
-  providers:[RoomService]
+  providers: [RoomService]
 })
 export class MainRoomsComponent implements OnInit {
-  first1;
-  second1;
-  third1;
-  first2;
-  second2;
-  third2
-  first3;
-  second3;
-  third3
-  first4;
-  second4;
-  third4;
-
-
-
-  scroll(){
-    this.first1 = this.rooms[0].images[0].path;
-    this.second1 = this.roomTariff[this.rooms[0].type];
-    this.third1 = this.rooms[0].price;
-
-    this.rooms[0].images[0].path=this.rooms[1].images[0].path;
-    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[1].type];
-    this.rooms[0].price=this.rooms[1].price;
-
-    this.rooms[1].images[0].path= this.first1;
-    this.roomTariff[this.rooms[1].type]= this.second1;
-    this.rooms[1].price= this.third1;
-  }
-  scroll2(){
-    this.first2 = this.rooms[0].images[0].path;
-    this.second2 = this.roomTariff[this.rooms[0].type];
-    this.third2 = this.rooms[0].price;
-
-    this.rooms[0].images[0].path=this.rooms[2].images[0].path;
-    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[2].type];
-    this.rooms[0].price=this.rooms[2].price;
-
-    this.rooms[2].images[0].path= this.first2;
-    this.roomTariff[this.rooms[2].type]= this.second2;
-    this.rooms[2].price= this.third2;
-  }
-  scroll3(){
-    this.first3 = this.rooms[0].images[0].path;
-    this.second3 = this.roomTariff[this.rooms[0].type];
-    this.third3 = this.rooms[0].price;
-
-    this.rooms[0].images[0].path=this.rooms[3].images[0].path;
-    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[3].type];
-    this.rooms[0].price=this.rooms[3].price;
-
-    this.rooms[3].images[0].path= this.first3;
-    this.roomTariff[this.rooms[3].type]= this.second3;
-    this.rooms[3].price= this.third3;
-  }
-  scroll4(){
-    this.first4 = this.rooms[0].images[0].path;
-    this.second4 = this.roomTariff[this.rooms[0].type];
-    this.third4 = this.rooms[0].price;
-
-    this.rooms[0].images[0].path=this.rooms[4].images[0].path;
-    this.roomTariff[this.rooms[0].type]=this.roomTariff[this.rooms[4].type];
-    this.rooms[0].price=this.rooms[4].price;
-
-    this.rooms[4].images[0].path= this.first4;
-    this.roomTariff[this.rooms[4].type]= this.second4;
-    this.rooms[4].price= this.third4;
-  }
-
+  first;
+  second;
+  third;
   roomTariff: any;
-  rooms: RoomWithPrice[]=[];
+  rooms: RoomWithPrice[] = [];
 
   constructor(private _roomService: RoomService) {
     this._roomService.findAllRoomWithPrice().subscribe(next => {
@@ -92,10 +25,23 @@ export class MainRoomsComponent implements OnInit {
           this.rooms.push(i);
         }
       }
-      console.log(this.rooms);
     }, err => {
       console.log(err);
     });
+  }
+
+  scroll(x: number) {
+    this.first = this.rooms[0].images[0].path;
+    this.second = this.roomTariff[this.rooms[0].type];
+    this.third = this.rooms[0].price;
+
+    this.rooms[0].images[0].path = this.rooms[x].images[0].path;
+    this.roomTariff[this.rooms[0].type] = this.roomTariff[this.rooms[x].type];
+    this.rooms[0].price = this.rooms[x].price;
+
+    this.rooms[x].images[0].path = this.first;
+    this.roomTariff[this.rooms[x].type] = this.second;
+    this.rooms[x].price = this.third;
   }
 
   ngOnInit() {
