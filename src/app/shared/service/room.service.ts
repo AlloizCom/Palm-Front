@@ -34,11 +34,21 @@ export class RoomService{
       .catch(err => Observable.throw(err));
   }
 
+  // findAllByAdultPlacesAndKidsPlacesAndAmountAndAvailable(kidsPlaces: number,
+  //                                                        adultPlaces: number,
+  //                                                        amount: number):
+  //   Observable<Room[]>{
+  //   return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult-amount/'
+  //     + kidsPlaces + '/' + adultPlaces + '/' + amount)
+  //     .catch(err => Observable.throw(err));
+  // }
+
   findAllByAdultPlacesAndKidsPlacesAndAmountAndAvailable(kidsPlaces: number,
                                                          adultPlaces: number,
                                                          amount: number):
     Observable<Room[]>{
-    return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult-amount/'
+    return this._httpClient.get<RoomWithPrice[]>
+    (this.controller + '/find-all-available-kids-adult-amount/'
       + kidsPlaces + '/' + adultPlaces + '/' + amount)
       .catch(err => Observable.throw(err));
   }
