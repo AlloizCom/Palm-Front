@@ -197,8 +197,10 @@ export class MainComponent implements OnInit {
   ];
 
   //dataPicker
-  model1: Date = new Date();
-  model2: Date = new Date();
+  model1={day:0,year:0,month:0};
+  model2={day:0,year:0,month:0};
+  mounth1: any;
+  mounth2: any;
   enterDay: number;
   leaveDay: number;
   screenWidth: number =1024;
@@ -210,7 +212,14 @@ export class MainComponent implements OnInit {
   roomsNumber: number = 1;
 
   constructor(private _roomsParamService: RoomParamsService) {
-
+    this.model1.day = new Date().getUTCDate();
+    this.model1.month = new Date().getUTCMonth();
+    this.model1.year = new Date().getUTCFullYear();
+    this.model2.day = new Date().getUTCDate();
+    this.model2.month = new Date().getUTCMonth();
+    this.model2.year = new Date().getUTCFullYear();
+    this.mounth1 = this.model1?this.model1.month :'MM';
+    this.mounth2 = this.model2?this.model2.month :'MM';
   }
 
   findRoomByParams(){
@@ -242,18 +251,19 @@ export class MainComponent implements OnInit {
     this.screenWidth = window.innerWidth;
   }
 //dataPicker
-get today() {
-  return new Date();
-}
-
   chang1(e) {
     this.enterDay = e;
-    console.log(e);
+    // this.model1.setFullYear(e.year,e.month,e.day);
+    //     console.log(this.model1.getUTCDate());
+    //     console.log(this.model1.getDate());
+        console.log(e);
+    this.mounth1 = this.model1?this.model1.month :'MM';
   }
 
   chang2(e) {
     this.leaveDay = e;
     console.log(e);
+    this.mounth2 = this.model2?this.model2.month :'MM';
   }
 
   roomsNumberFunc(bull) {
