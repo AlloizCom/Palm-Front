@@ -3,13 +3,12 @@ import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../shared/service/main-page.sevice';
 import {RoomParamsService} from "../../../shared/service/room-params.serive";
 import {RoomsParams} from "../../../shared/models/rooms-params";
-import {MounthPipe} from '../../../shared/pipe/pipe/mounth.pipe';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-  providers: [MainPageSevice,RoomParamsService]
+  providers: [MainPageSevice]
 })
 
 export class MainComponent implements OnInit {
@@ -225,13 +224,16 @@ export class MainComponent implements OnInit {
     console.log(this.model1);
     console.log(this.model2);
     let roomsParams = new RoomsParams();
-    roomsParams.dateFrom = this.model1.toString();
-    roomsParams.dateTo = this.model2.toString();
+    roomsParams.dateFrom = this.objectDateToString(this.model1).toString();
+    roomsParams.dateTo = this.objectDateToString(this.model2).toString();
     roomsParams.numbersOfRooms = this.roomsNumber;
     roomsParams.adults = this.adultsNumber;
     roomsParams.childrens = this.childrenNumber;
-    console.log(roomsParams);
     this._roomsParamService.setRoomsParams(roomsParams);
+  }
+
+  objectDateToString(date){
+    return new Date(date.year, date.month, date.day);
   }
 
   isNull(object: any): Boolean {
