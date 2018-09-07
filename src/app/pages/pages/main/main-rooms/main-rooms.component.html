@@ -1,43 +1,42 @@
-<div class="relka">
+<div class="relka" *ngIf="rooms.length>=5">
   <div class="greenAbs">
     <div >
-      <h2>{{images[0].text3}}</h2>
-      <p> {{images[0].text2}}</p>
+      <h2>{{roomTariff[rooms[0].type]['current-language-index' | translate]}}</h2>
+      <p>look more soooqa</p>
+      <img src="../../../../../assets/svg/krujki.svg" alt="">
     </div>
   </div>
   <div >
-    <div  class="topImage second" [style.background]="'url(' + (images[0].image) + ')'" >
+    <div class="topImage second"  [style.background-image]="'url(' + (rooms[0].images[0].path|imagePipe) + ')'" >
     </div>
   </div>
-
 <div class="sliderBlock d-flex flex-row justify-content-around">
   <div class="allIn d-flex flex-row justify-content-between">
     <div >
-      <div  (click)="scroll()" class="topImage first" [style.background]="'url(' + (images[1].image) + ')'" >
+      <div  (click)="scroll(1)" class="topImage first" [style.background-image]="'url(' + (rooms[1].images[0].path|imagePipe) + ')'">
       </div>
-      <h2>{{images[1].text3}}</h2>
-      <h3>{{images[1].text4}}</h3>
+      <h2>{{roomTariff[rooms[1].type]['current-language-index' | translate]}}</h2>
+      <h3>{{rooms[1].price}}</h3>
     </div>
     <div  >
-      <div (click)="scroll2()" class="topImage first" [style.background]="'url(' + (images[2].image) + ')'" >
+      <div (click)="scroll(2)" class="topImage first"  [style.background-image]="'url(' + (rooms[2].images[0].path|imagePipe) + ')'">
       </div>
-      <h2>{{images[2].text3}}</h2>
-      <h3>{{images[2].text4}}</h3>
+      <h2>{{roomTariff[rooms[2].type]['current-language-index' | translate]}}</h2>
+      <h3>{{rooms[2].price}}</h3>
     </div>
     <div  >
-      <div (click)="scroll3()" class="topImage first" [style.background]="'url(' + (images[3].image) + ')'" >
+      <div (click)="scroll(3)" class="topImage first"  [style.background-image]="'url(' + (rooms[3].images[0].path|imagePipe) + ')'">
       </div>
-      <h2 class="lefty">{{images[3].text3}}</h2>
-      <h3 class="lefty">{{images[3].text4}}</h3>
+      <h2 class="lefty">{{roomTariff[rooms[3].type]['current-language-index' | translate]}}</h2>
+      <h3 class="lefty">{{rooms[3].price}}</h3>
     </div>
     <div >
-      <div (click)="scroll4()" class="topImage first" [style.background]="'url(' + (images[4].image) + ')'" >
+      <div (click)="scroll(4)" class="topImage first" [style.background-image]="'url(' + (rooms[4].images[0].path|imagePipe) + ')'">
       </div>
-      <h2>{{images[4].text3}}</h2>
-      <h3>{{images[4].text4}}</h3>
+      <h2>{{roomTariff[rooms[4].type]['current-language-index' | translate]}}</h2>
+      <h3>{{rooms[4].price}}</h3>
     </div>
   </div>
-
 </div>
 </div>
 

@@ -206,7 +206,7 @@
     </div>
 
 
-    <div class="ashkas4 d-flex flex-column align-items-center">
+    <div *ngIf="screenWidth>=990" class="ashkas4 d-flex flex-column align-items-center">
       <div class="divka filks d-flex flex-row align-items-center"><h3>номери</h3>
         <div class="grnBlock"></div>
       </div>
@@ -215,7 +215,7 @@
 
      <app-main-rooms *ngIf="screenWidth>=990"></app-main-rooms>
 
-    <div class="ashkas3 d-flex flex-column">
+    <div *ngIf="screenWidth>=990" class="ashkas3 d-flex flex-column">
       <div class="divka d-flex flex-row align-items-center"><h3>послуги та пропозиції</h3>
         <div class="grnBlock"></div>
       </div>

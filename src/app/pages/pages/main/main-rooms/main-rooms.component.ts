@@ -1,80 +1,59 @@
 import {Component, OnInit} from '@angular/core';
+import {RoomService} from '../../../../shared/service/room.service';
+import {RoomWithPrice} from '../../../../shared/models/room-with-price';
+import {RoomTariff} from '../../../../shared/enum/room-tariff';
+import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-main-rooms',
   templateUrl: './main-rooms.component.html',
-  styleUrls: ['./main-rooms.component.css']
+  styleUrls: ['./main-rooms.component.css'],
+  providers: [RoomService]
 })
 export class MainRoomsComponent implements OnInit {
+  first;
+  second;
+  third;
+  roomTariff: any;
+  rooms: RoomWithPrice[] = [];
 
-
-  images = [
-    {
-      image: '../../../../assets/png/room.png',
-      text2: "Dco harum ut est. Cetero aliquam pro ad.9",
-      text3: "НАПІВЛЮКС",
-      text4: "500 grn"
-    }, {
-      image: '../../../../assets/png/room2.png',
-      text: "10",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.10",
-      text3: "СТАНДАРТ",
-      text4: "400 grn"
-    }, {
-      image: '../../../../assets/png/room3.png',
-      text: "11",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.11",
-      text3: "ПОКРАЩЕННИЙ СТАНДАРТ",
-      text4: "700 grn"
-    }, {
-      image: '../../../../assets/png/22.jpg',
-      text: "12",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.12",
-      text3: "ПОКРАЩЕННИЙ НАПІВЛЮКС",
-      text4: "600 grn"
-    }, {
-      image: '../../../../assets/png/11.jpg',
-      text: "13",
-      text2: "Dco harum ut est. Cetero aliquam pro ad.13",
-      text3: "ЛЮКС",
-      text4: "4400 grn"
-    }]
-
-  anton;
-  vitalik;
-  nazar;
-  andriy;
-  scroll(){
-    this.anton = this.images[0];
-    this.images[0]=this.images[1];
-    this.images[1]= this.anton;
-  }
-  scroll2(){
-    this.vitalik = this.images[0];
-    this.images[0]=this.images[2];
-    this.images[2]= this.vitalik;
-  }
-  scroll3(){
-    this.nazar = this.images[0];
-    this.images[0]=this.images[3];
-    this.images[3]= this.nazar;
-  }
-  scroll4(){
-    this.andriy = this.images[0];
-    this.images[0]=this.images[4];
-    this.images[4]= this.andriy;
+  constructor(private _roomService: RoomService) {
+    this._roomService.findAllRoomWithPrice().subscribe(next => {
+      this.roomTariff = RoomTariff;
+      for (let i of next) {
+        if (typeof (i) != undefined && i != null) {
+          this.rooms.push(i);
+        }
+      }
+    }, err => {
+      console.log(err);
+    });
   }
 
+  scroll(x: number) {
+    this.first = this.rooms[0].images[0].path;
+    this.second = this.roomTariff[this.rooms[0].type];
+    this.third = this.rooms[0].price;
 
+    this.rooms[0].images[0].path = this.rooms[x].images[0].path;
+    this.roomTariff[this.rooms[0].type] = this.roomTariff[this.rooms[x].type];
+    this.rooms[0].price = this.rooms[x].price;
 
-  constructor() {
-
+    this.rooms[x].images[0].path = this.first;
+    this.roomTariff[this.rooms[x].type] = this.second;
+    this.rooms[x].price = this.third;
   }
-
 
   ngOnInit() {
   }
 
+  isNull(object: any): Boolean {
+    if (Array.isArray(object)) {
+      return !isNullOrUndefined(object[0]);
+    } else {
+      return !isNullOrUndefined(object);
+    }
+  }
 
   // slider
   // middleIndex: number;
