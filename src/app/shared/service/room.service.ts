@@ -79,6 +79,7 @@ export class RoomService{
    * @returns {Observable<Room>}
    */
   findOneAvailableWithPrice(id: number): Observable<Room>{
+    console.log(id);
     return this._httpClient.get<RoomWithPrice>
     (this.controller + '/find-one-with-price/' + id)
       .catch(err => Observable.throw(err));

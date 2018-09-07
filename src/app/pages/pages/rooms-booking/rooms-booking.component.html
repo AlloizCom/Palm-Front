@@ -2,21 +2,28 @@
   <div class="content" >
     <div class="top">
       <div class="slider">
+        <ngb-carousel *ngIf="images" >
+          <ng-template ngbSlide *ngFor="let one of room.images">
+            <div  [style.background-image]="'url(' + (one.path|imagePipe) + ')'"  class="topImage" ></div>
+          </ng-template>
+        </ngb-carousel>
       </div>
       <div class="data-picker">
       </div>
     </div>
     <div class="bottom">
       <h2 class="selected"><span>{{roomTariff[room.type]['current-language-index' | translate]}}</span></h2>
+      <p class="roomDesc">опис номеру</p>
       <p class="room-description-title">{{room.descriptions['current-language-index' |
         translate]?room.descriptions['current-language-index' |
         translate].description:''}}</p>
       <p class="price-title">Ціна</p>
       <p class="price">{{room.price}}</p>
       <p class="price-description">SOSITE</p>
-      <p class="amenity">зручності</p>
     </div>
-    <div class="amenity-icons">
+    <div *ngIf="isNull(room.amenities)" class="amenity-icons">
+
+      <p class="amenity">зручності</p>
       <div class="imgs d-flex justify-content-start">
         <img *ngFor="let oneImage of room.amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
         <h5>{{room.square}}</h5>
