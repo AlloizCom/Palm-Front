@@ -1,0 +1,36 @@
+input.ng-valid{
+  border-left: 5px solid green;
+}
+input.ng-invalid{
+  border-left: 5px solid red;
+
+}
+button:disabled{
+  border-bottom: 3px solid red;
+}
+
+
+
+/*input.ng-dirty{*/
+/*border-top:4px solid blue;*/
+/*}*/
+/*input.ng-pristine{*/
+/*border-top:4px solid yellow;*/
+/*}*/
+
+/*Tooltips*/
+.wrapper {
+  position: relative;
+}
+.wrapper:hover::after {
+  transition-delay: 2s;
+  content: attr(data-title);
+  position: absolute;
+  z-index: 1;
+  background: rgba(255,255,230,0.9);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+}
+

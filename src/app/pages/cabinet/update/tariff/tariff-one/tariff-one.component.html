@@ -1,20 +1,24 @@
 <div>
+  <form [formGroup]="tariffForm" (submit)="update()">
+
+
+
   <h3>Тип тарифу:</h3>
-  <select [(ngModel)]="tariff.tariffType" >
+  <select formControlName="tariffType" >
     <option value="REGULAR">REGULAR</option>
     <option value="SPECIAL">SPECIAL</option>
   </select>
 
   <h3>Ціна:</h3>
-  <input type="number" [(ngModel)]="tariff.price" min="1">
+  <input type="number" formControlName="price" min="1">
 
   <h3>Початок тарифу(дата)</h3>
-  <input type="date"  [(ngModel)]="tariff.dateFrom">
+  <input type="date"  formControlName="dateFrom">
   <h3>Кінець тарифу(дата)</h3>
-  <input type="date" [(ngModel)]="tariff.dateTo">
+  <input type="date" formControlName="dateTo">
 
   <h3>Тип номера:</h3>
-  <select  [(ngModel)]="tariff.roomType">
+  <select  formControlName="roomType">
     <option value="STANDARD">STANDARD</option>
     <option value="SUPERIOR">SUPERIOR</option>
     <option value="DELUXE">DELUXE</option>
@@ -22,5 +26,12 @@
     <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
   </select>
 
-  <button (click)="update(tariff)">update tariff</button>
+
+    <div class="wrapper" data-title="Заповніть всі поля">
+      <button type="submit" [disabled]="!tariffForm.valid ">update tariff</button>
+    </div>
+
+  </form>
+
+
 </div>

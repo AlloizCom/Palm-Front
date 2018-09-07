@@ -138,16 +138,19 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-3">
-      <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*" multiple id="file3" type="file" class="d-none" name="multipartFile">
-      <label for="file3" class="addImage">Додати зображення</label>
-    </div>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-3">
+    <div class="button-block">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-3">
+        <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*" multiple id="file3" type="file" class="d-none" name="multipartFile">
+        <label for="file3" class="addImage">Додати зображення</label>
+      </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-3">
 
-      <button class="button" type="submit" [disabled]="newsForm.invalid" class="w-100">Зберегти новини</button>
+        <button class="button" type="submit" [disabled]="newsForm.invalid" class="w-100">Зберегти новини</button>
+      </div>
+      <div class="col-lg-2"></div>
     </div>
-    <div class="col-lg-2"></div>
+
   </div>
 </form>
