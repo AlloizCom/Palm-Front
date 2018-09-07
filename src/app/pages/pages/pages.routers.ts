@@ -14,7 +14,8 @@ export const pagesRoutes: Routes = [
     path: '', component: PagesComponent, children: [
       {
         path: '', component: MainComponent
-      },{
+      }
+      ,{
         path: 'contacts', component: ContactsComponent
       },{
         path: 'news', component: NewsComponent
@@ -26,6 +27,8 @@ export const pagesRoutes: Routes = [
         path: 'rooms', component: RoomsComponent
       }, {
         path: 'rooms-booking', component: RoomsBookingComponent
+      },{
+        path: 'rooms-booking/:id', component: RoomsBookingComponent
       }
     ]
   }

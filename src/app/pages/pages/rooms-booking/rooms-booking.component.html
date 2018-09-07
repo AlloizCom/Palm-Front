@@ -1,34 +1,28 @@
 <div class="wrapper">
-  <div class="content">
+  <div class="content" >
     <div class="top">
       <div class="slider">
-
       </div>
       <div class="data-picker">
-
       </div>
     </div>
     <div class="bottom">
-      <h2 class="selected"><span>Lorem ipsum dolor  </span></h2>
-      <p class="room-description-title">Опис номеру</p>
-      <p class="room-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur explicabo hic itaque molestiae, nihil officia praesentium qui quidem? Consequuntur cupiditate laudantium magni modi officiis perferendis quod sapiente soluta voluptate.</p>
+      <h2 class="selected"><span>{{roomTariff[room.type]['current-language-index' | translate]}}</span></h2>
+      <p class="room-description-title">{{room.descriptions['current-language-index' |
+        translate]?room.descriptions['current-language-index' |
+        translate].description:''}}</p>
       <p class="price-title">Ціна</p>
-      <p class="price">500-600 грн</p>
-      <p class="price-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi aspernatur consectetur, consequuntur ea facilis fugiat fugit impedit in libero neque nihil non omnis quos similique voluptas voluptate! Cumque, dolorem.</p>
-      <div class="amenity-wrapper">
-        <p class="amenity">зручності</p>
+      <p class="price">{{room.price}}</p>
+      <p class="price-description">SOSITE</p>
+      <p class="amenity">зручності</p>
+    </div>
+    <div class="amenity-icons">
+      <div class="imgs d-flex justify-content-start">
+        <img *ngFor="let oneImage of room.amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
+        <h5>{{room.square}}</h5>
       </div>
-      <div class="amenity-icons">
-        <div class="imgs d-flex justify-content-between">
-          <img src="../../../assets/svg/parking-sign 2.3.svg" alt="parking sign">
-          <div class="square-wrapper"><h5>21 кв.м</h5><img class="anton" src="../../../assets/svg/home.svg" alt="home sign"></div>
-          <img src="../../../assets/svg/minibar.svg" alt="minibar sign"><img src="../../../assets/svg/fan.svg"
-                                                                             alt="fan sign"><img
-          src="../../../assets/svg/slippers.svg" alt="slippers sign">
-        </div>
-      </div>
-
-      <p></p>
     </div>
   </div>
 </div>
+
+

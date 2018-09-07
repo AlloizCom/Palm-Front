@@ -1,6 +1,6 @@
 <div class="relka" *ngIf="rooms.length>=5">
-  <div class="greenAbs">
-    <div >
+  <div  [routerLink]="['/rooms-booking', rooms[0].id]"  class="greenAbs">
+    <div>
       <h2>{{roomTariff[rooms[0].type]['current-language-index' | translate]}}</h2>
       <p>look more soooqa</p>
       <img src="../../../../../assets/svg/krujki.svg" alt="">

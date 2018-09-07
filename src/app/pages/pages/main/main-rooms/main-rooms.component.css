@@ -50,7 +50,7 @@
 .first {
   width: 20.2vw;
   height: 419px;
-
+  transition: 0.3s ease-in-out;
 
 }
 
