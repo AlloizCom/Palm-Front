@@ -8,8 +8,8 @@ export class Room {
   available: boolean;
   type: string;
   adultPlaces: number;
-  kidsPlaces: number
-  square: number
+  kidsPlaces: number;
+  square: number;
   amount: number;
   descriptions: RoomDescription[] = [];
   amenities: Amenity[] = [];

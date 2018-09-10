@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Room} from "../../../../../shared/models/room";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {RoomService} from "../../../../../shared/service/room.service";
 import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
 import {AmenityService} from "../../../../../shared/service/amenity.service";
@@ -24,6 +24,7 @@ export class RoomOneComponent implements OnInit {
   appear: boolean = true;
   fileField: ElementRef;
   id: number = 0;
+  roomDescriptionForm: FormArray;
 
   constructor(private _router: ActivatedRoute,
               private _amenityService: AmenityService,
@@ -35,16 +36,38 @@ export class RoomOneComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.roomDescriptionForm = new FormArray([
+      new FormGroup({
+        language: new FormControl('EN'),
+        languageO: new FormControl('Англійська'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+      new FormGroup({
+        language: new FormControl('UK'),
+        languageO: new FormControl('Українська'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+      new FormGroup({
+        language: new FormControl('PL'),
+        languageO: new FormControl('Польська'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+      new FormGroup({
+        language: new FormControl('RU'),
+        languageO: new FormControl('Російська'),
+        description: new FormControl('', [Validators.minLength(3), Validators.required])
+      }),
+    ]);
     console.log(this.fileField);
     this.roomForm = new FormGroup({
       id: new FormControl(),
       type: new FormControl('', [Validators.required]),
       amount: new FormControl('', [Validators.required]),
       square: new FormControl('', [Validators.required]),
-      text: new FormControl('', [Validators.required]),
       available: new FormControl(),
-      adultPlaces: new FormControl(),
-      kidsPlaces: new FormControl()
+      adultPlaces: new FormControl('', [Validators.required]),
+      kidsPlaces: new FormControl('', [Validators.required]),
+      descriptions: this.roomDescriptionForm
     });
     this._roomService.findOne(this.id).subscribe(next => {
       console.log(next);

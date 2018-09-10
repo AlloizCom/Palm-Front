@@ -17,14 +17,15 @@
   <h3>Кількість номерів:</h3>
   <input type="number" formControlName="amount" min="0">
 
-  <ul>
-    <li *ngFor="let one of room.descriptions">
-      <div>
-        <input  type="text" disabled [placeholder]="one.language">
-        <textarea  rows="5"  formControlName="text"></textarea>
+    <div formArrayName="descriptions">
+      <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
+        <form formGroupName="{{i}}">
+          <p>{{one.get('languageO').value}}</p>
+          <!--<input type="text" disabled formControlName="language">-->
+          <textarea cols="30" rows="10" formControlName="description"></textarea>
+        </form>
       </div>
-    </li>
-  </ul>
+    </div>
   <div class="d-flex flex-column">
     <h2>Зручності:</h2>
     <div *ngFor="let one of room.amenities">
@@ -47,7 +48,7 @@
     <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
            name="multipartFiles">
     <label  for="file">AddImage</label>
-    <button (click)="update(form)">Оновити кімнату</button>
+    <button (click)="update(form)" [disabled]="!roomForm.valid" >Оновити кімнату</button>
   </form>
   </form>
 </div>
