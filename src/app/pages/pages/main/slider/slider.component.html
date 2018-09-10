@@ -14,7 +14,7 @@
       <div *ngFor="let one of services; let i = index">
         <div class="greenAbs" *ngIf="i === middleIndex2">
           <div>
-            <h2 >{{one.serviceDescriptions['current-language-index'|translate].title}}</h2>
+            <h2 [routerLink]="['/service', one.id]" >{{one.serviceDescriptions['current-language-index'|translate].title}}</h2>
             <p > {{one.serviceDescriptions['current-language-index'|translate].headerText}}</p>
           </div>
         </div>
