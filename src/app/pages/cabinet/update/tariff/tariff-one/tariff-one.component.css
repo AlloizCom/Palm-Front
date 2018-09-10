@@ -9,6 +9,27 @@ button:disabled{
   border-bottom: 3px solid red;
 }
 
+button {
+  background: #53D7B7;
+  border: 1px solid #53D7B7;
+  box-sizing: border-box;
+  font-family: Raleway;
+  font-weight: bold;
+  line-height: 24px;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  width: 30%;
+  height: 50px;
+  margin: 2% 0 5% 0;
+  cursor: pointer;
+}
+button:active{
+  background: #2ebd9a;
+}
+
+
 
 
 /*input.ng-dirty{*/

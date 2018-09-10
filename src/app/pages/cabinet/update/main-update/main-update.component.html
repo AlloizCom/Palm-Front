@@ -1,9 +1,11 @@
-<div class="d-flex flex-row flex-wrap">
-  <div *ngFor="let one of mainPage" >
+<div>
+  <div *ngFor="let one of mainPage">
     <span>{{one.id}}</span>
-    <div class="topImage"  *ngFor="let two of one.images"
+    <div class="img"  *ngFor="let two of one.images"
          [style.background-image]="'url(' + (two.path|imagePipe) + ')'" >
       <button (click)="delete(one.id, two.id)">DELETE!!!</button>
+      <br>
     </div>
+    <br>
   </div>
 </div>

@@ -1,6 +1,6 @@
 <div class="back">
   <div class="d-flex flex-row flex-wrap">
-    <div class="hundred align-items-center col-xl-2 col-lg-3 col-md-4 col-sm-6 d-flex flex-column " *ngFor="let one of tariff">
+    <div class="hundred align-items-center col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex flex-column " *ngFor="let one of tariff">
       <h2 routerLink="{{one.id}}">{{one.tariffType}}</h2>
       <h3 routerLink="{{one.id}}">{{one.id}}</h3>
       <button (click)="deleteTariff(one.id)"> Видалив будь ласка!</button>
