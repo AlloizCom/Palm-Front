@@ -93,9 +93,9 @@ export class RoomService{
     }).catch(err => Observable.throw(err));
   }
 
-  update(roomJson: Room,form: HTMLFormElement): Observable<Room>{
-    let f = new FormData(form);
-    f.append('roomJson',JSON.stringify(roomJson));
+  update(roomJson: Room,form?: HTMLFormElement): Observable<Room>{
+    let f = new FormData(form?form:null);
+      f.append('roomJson', JSON.stringify(roomJson));
     return this._httpClient.post<Room>(this.controller + '/update',f,{
       headers: new HttpHeaders().append('enctype','multipart/form-data')
     }).catch(err => Observable.throw(err));

@@ -96,7 +96,7 @@ export class RoomOneComponent implements OnInit {
 
   update(form) {
     console.log('form ; ', this.roomForm.getRawValue());
-    this._roomService.update(this.roomForm.getRawValue(), form).subscribe(next => {
+    this._roomService.update(this.roomForm.getRawValue(), this.image.length>0? form:null).subscribe(next => {
       this.room = next;
       this.roomForm.patchValue(<any>next);
       console.log(next);
