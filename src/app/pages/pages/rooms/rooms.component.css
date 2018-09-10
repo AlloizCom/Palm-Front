@@ -85,6 +85,8 @@ p {
   line-height: 24px;
   font-size: 14px;
   color: #5A5A5A;
+  height: 90px;
+  overflow: hidden;
 }
 
 .kartinka {
