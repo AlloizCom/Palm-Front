@@ -2,7 +2,16 @@
   background-color: #F8F6F6;
 }
 
-
+.dataPicker1{
+  position: absolute;
+  left: -3%;
+  top: 137px!important;
+}
+.dataPicker2{
+  position: absolute;
+  left: -53%;
+  top: 137px!important;
+}
 .imgs img {
   width: 25px;
   height: 25px;
@@ -37,30 +46,28 @@
 .top {
   display: flex;
   width: 100%;
+  height: 400px;
   margin: 0 auto 0 auto;
   justify-content: space-between;
-
+  margin-top: 40px;
 }
 
 .slider {
   width: 57%;
-  height: 361px;
+  height: 400px;
   background-color: #fdcd00;
 }
 
 .data-picker {
-  width: 37%;
-  height: 361px;
+  position: relative;
+  width: 41%;
+  height: 400px;
   background-color: #0947b1;
-}
-
-.top {
-
 }
 
 .bottom {
   margin-top: 50px;
-  width: 50%;
+  width: 47%;
 }
 
 .selected {
@@ -165,14 +172,10 @@
 
 }
 
-.amenity-icons {
-
-}
 
 .imgs {
   width: 250px;
   margin-left: -0.4%;
-
 }
 
 .imgs h5 {
@@ -189,13 +192,10 @@
 }
 
 
-
-
-
 /*SLIDER!!!*/
 .topImage {
   width: 100%;
-  height: 361px;
+  height: 400px;
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -268,6 +268,189 @@
   text-transform: uppercase;
   line-height: 47px !important;
 }
+
+
+
+
+
+/*datapicker  */
+
+
+.searchIcone{
+  cursor: pointer;
+}
+.search {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.searchItem {
+  width: 50%;
+  height: 37%;
+}
+.searchItem>div>div{
+  cursor: pointer;
+}
+.searchIcone {
+  height: 71px;
+  background-color: #53D7B7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+}
+
+.searchItem p {
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: end;
+  color: #000000;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.searchItem > div {
+  justify-content: center;
+  align-items: flex-end;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.searchItem .day {
+  font-size: 34px;
+  text-transform: uppercase;
+  line-height: 34px;
+  font-weight: bold;
+  color: black;
+}
+
+.searchItem .month {
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 14px;
+
+}
+
+.searchItem .year {
+  font-size: 17px;
+  text-transform: uppercase;
+  line-height: 17px;
+  font-weight: bold;
+  color: #C4C4C4;
+}
+.searchItem:nth-child(1) .year {
+  margin-right: 10px;
+}
+.searchItem:nth-child(2) .day {
+  margin-left: 10px;
+}
+
+
+.searchItem:nth-child(3),.searchItem:nth-child(4),.searchItem:nth-child(5){
+  width: 30%;
+  height: 45%;
+  text-align: center;
+}
+
+.searchItem:nth-child(1) .numbers{
+  margin-left: 8%;
+}
+
+.searchItem:nth-child(1) p,.searchItem:nth-child(2) p{
+  margin-top: 22px;
+  margin-right: 32%;
+}
+
+.searchItem:nth-child(1) .numbers,.searchItem:nth-child(2) .numbers{
+  width: 71%!important;
+  display: flex;
+  justify-content: space-around;
+}
+.searchItem:nth-child(3) p ,.searchItem:nth-child(4) p,.searchItem:nth-child(5) p{
+  text-align: center;
+}
+
+.searchItem:nth-child(3) div,.searchItem:nth-child(4) div,.searchItem:nth-child(5) div{
+  display: flex;
+  align-items: center;
+}
+
+.searchItem:nth-child(6){
+  align-items: center;
+  width: 80%;
+  height: 71px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.searchItem:nth-child(6) p{
+  font-family: Raleway;
+  margin: 0;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+
+.searchItem .roomsNumber {
+  font-family: Raleway;
+  font-weight: 800;
+  font-size: 35px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0 23px 0 23px;
+}
+
+.searchItem > div > svg {
+  margin-bottom: 9px;
+}
+
+.form-control {
+  width: 0;
+  height: 0;
+  padding: 0;
+  border:none!important;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #5A5A5A;
+  margin: 1vh;
+}
+
+.dotActive {
+  background-color: rgb(255, 255, 255);
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+
+/*enddatapicker*/
+
+
+
 @media screen and (max-width: 765px) {
 
   .topImage {
