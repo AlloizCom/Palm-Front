@@ -1,50 +1,65 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Room} from "../../../../../shared/models/room";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RoomService} from "../../../../../shared/service/room.service";
 import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
 import {AmenityService} from "../../../../../shared/service/amenity.service";
-import {Amenity} from "../../../../../shared/models/amenity";
 import {isNullOrUndefined} from "util";
 
 @Component({
   selector: 'app-room-one',
   templateUrl: './room-one.component.html',
   styleUrls: ['./room-one.component.css'],
-  providers:[RoomService, ImagePipePipe, AmenityService]
+  providers: [RoomService, ImagePipePipe, AmenityService]
 })
 export class RoomOneComponent implements OnInit {
 
 
+  roomForm: FormGroup;
   room: Room = new Room();
-  img: string[] =[];
+  img: string[] = [];
   start: boolean = false;
-  image:string[] = [];
+  image: string[] = [];
   appear: boolean = true;
-  fileField : ElementRef;
+  fileField: ElementRef;
+  id: number = 0;
 
   constructor(private _router: ActivatedRoute,
-              private _amenityService:AmenityService,
+              private _amenityService: AmenityService,
               private _roomService: RoomService,
               private _route: Router) {
     _router.params.subscribe(next => {
-      _roomService.findOne(next['id']).subscribe(next => {
-        this.room = next;
-        console.log(this.room);
-        this.start = true;
-      });
+      this.id = next['id'];
     });
   }
 
   ngOnInit() {
     console.log(this.fileField);
+    this.roomForm = new FormGroup({
+      id: new FormControl(),
+      type: new FormControl('', [Validators.required]),
+      amount: new FormControl('', [Validators.required]),
+      square: new FormControl('', [Validators.required]),
+      text: new FormControl('', [Validators.required]),
+      available: new FormControl(),
+      adultPlaces: new FormControl(),
+      kidsPlaces: new FormControl()
+    });
+    this._roomService.findOne(this.id).subscribe(next => {
+      console.log(next);
+      this.room = next;
+      this.roomForm.patchValue(<any>next);
+    }, err => {
+      console.error(err);
+    });
   }
 
-  delete(roomId,imageId,image) {
+  delete(roomId, imageId, image) {
     console.log(this.room);
     console.log('roomId - ' + roomId);
     console.log('imageId - ' + imageId);
-    this._roomService.deleteImage(roomId,imageId).subscribe(next => {
+    this._roomService.deleteImage(roomId, imageId).subscribe(next => {
       console.log(next);
 
       this.room.images.splice(this.room.images.indexOf(image), 1);
@@ -57,8 +72,10 @@ export class RoomOneComponent implements OnInit {
   }
 
   update(form) {
-    this._roomService.update(this.room, form).subscribe(next => {
+    console.log('form ; ', this.roomForm.getRawValue());
+    this._roomService.update(this.roomForm.getRawValue(), form).subscribe(next => {
       this.room = next;
+      this.roomForm.patchValue(<any>next);
       console.log(next);
       // for (let one of next.images){
       //   this.image.push(this._imagePipe.transform(one.path));
@@ -85,9 +102,9 @@ export class RoomOneComponent implements OnInit {
     }
   }
 
-  toggle() {
-    this.appear = false;
-  }
+  // toggle() {
+  //   this.appear = false;
+  // }
 
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {

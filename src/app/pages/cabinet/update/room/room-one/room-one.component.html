@@ -1,6 +1,7 @@
 <div>
+  <form action="" [formGroup]="roomForm" >
   <h3>Тип номера:</h3>
-  <select [(ngModel)]="room.type">
+  <select formControlName="type">
     <option value="STANDARD">STANDART</option>
     <option value="SUPERIOR">SUPERIOR</option>
     <option value="DELUXE">DELUXE</option>
@@ -8,19 +9,19 @@
     <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
   </select>
   <h3>кількість дитячих місць:</h3>
-  <input type="number" [(ngModel)]="room.kidsPlaces" min="0">
+  <input type="number"  formControlName="kidsPlaces" min="0">
   <h3>кількість дорослих місць:</h3>
-  <input type="number" [(ngModel)]="room.adultPlaces" min="1">
+  <input type="number"  formControlName="adultPlaces" min="1">
   <h3>Площа номера:</h3>
-  <input type="number" [(ngModel)]="room.square" min="10">
+  <input type="number"  formControlName="square" min="10">
   <h3>Кількість номерів:</h3>
-  <input type="number" [(ngModel)]="room.amount" min="0">
+  <input type="number" formControlName="amount" min="0">
 
   <ul>
     <li *ngFor="let one of room.descriptions">
       <div>
-        <input [(ngModel)]="one.language" type="text" disabled>
-        <textarea [(ngModel)]="one.description" rows="5"></textarea>
+        <input  type="text" disabled>
+        <textarea  rows="5"  formControlName="text"></textarea>
       </div>
     </li>
   </ul>
@@ -44,9 +45,10 @@
   </div>
   <form action="" #form class="d-flex justify-content-center">
     <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
-           name="multipartFiles" [(ngModel)]="fileField">
-    <label (click)="toggle()" for="file">AddImage</label>
+           name="multipartFiles">
+    <label  for="file">AddImage</label>
     <button (click)="update(form)">Оновити кімнату</button>
+  </form>
   </form>
 </div>
 
