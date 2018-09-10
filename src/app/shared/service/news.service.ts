@@ -4,6 +4,7 @@ import {News} from "../models/news";
 import {Injectable} from "@angular/core";
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
+import {NewsByPage} from "../models/news-by-page";
 
 @Injectable()
 export class NewsService {
@@ -31,9 +32,9 @@ export class NewsService {
       .catch(err => Observable.throw(err));
   }
 
-  findAllAvailableNewsByPage(page: number, count: number): Observable<News[]> {
-    return this._httpClient.get<News[]>
-    (this.controller + 'find-all-news-by-page-available/' + page + '/' + count)
+  findAllAvailableNewsByPage(page: number, count: number): Observable<NewsByPage> {
+    return this._httpClient.get<NewsByPage>
+    (this.controller + '/find-all-news-by-page-available/' + page + '/' + count)
       .catch(err => Observable.throw(err));
   }
 
