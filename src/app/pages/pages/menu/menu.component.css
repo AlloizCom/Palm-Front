@@ -181,7 +181,9 @@ a:hover {
     background-color: #F8F6F6;
   }
 }
-
+#dropdownBasic1{
+  cursor: pointer;
+}
 @media screen and (max-width: 765px) {
   .navbar {
     padding-left: 0px;
