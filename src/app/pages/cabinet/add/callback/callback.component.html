@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row" *ngFor="let callback of callbacks| revers; let i = index">
       <div class="col-lg-2">
-        <p>{{callback.dateTime | date:'short'}}</p>
+        <p>{{callback.dateTime | datePipe}}</p>
         <p>Переглянуто:</p>
         <input type="checkbox" [attr.checked]=" callbacks[i].available ? null : 'checked'" (click)="changStatus(i)" >
       </div>
