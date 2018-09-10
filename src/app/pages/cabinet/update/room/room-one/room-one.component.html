@@ -20,7 +20,7 @@
   <ul>
     <li *ngFor="let one of room.descriptions">
       <div>
-        <input  type="text" disabled>
+        <input  type="text" disabled [placeholder]="one.language">
         <textarea  rows="5"  formControlName="text"></textarea>
       </div>
     </li>
