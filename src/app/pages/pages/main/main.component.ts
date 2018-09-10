@@ -224,8 +224,8 @@ export class MainComponent implements OnInit {
     console.log(this.model1);
     console.log(this.model2);
     let roomsParams = new RoomsParams();
-    roomsParams.dateFrom = this.objectDateToString(this.model1).toString();
-    roomsParams.dateTo = this.objectDateToString(this.model2).toString();
+    roomsParams.dateFrom = this.objectDateToString(this.model1).toISOString().replace(/T.*/,'');
+    roomsParams.dateTo = this.objectDateToString(this.model2).toISOString().replace(/T.*/,'');
     roomsParams.numbersOfRooms = this.roomsNumber;
     roomsParams.adults = this.adultsNumber;
     roomsParams.childrens = this.childrenNumber;
@@ -233,6 +233,7 @@ export class MainComponent implements OnInit {
   }
 
   objectDateToString(date){
+
     return new Date(date.year, date.month, date.day);
   }
 
