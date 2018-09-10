@@ -31,17 +31,15 @@ export class MainRoomsComponent implements OnInit {
   }
 
   scroll(x: number) {
-    this.first = this.rooms[0].images[0].path;
-    this.second = this.roomTariff[this.rooms[0].type];
-    this.third = this.rooms[0].price;
-
-    this.rooms[0].images[0].path = this.rooms[x].images[0].path;
-    this.roomTariff[this.rooms[0].type] = this.roomTariff[this.rooms[x].type];
-    this.rooms[0].price = this.rooms[x].price;
-
-    this.rooms[x].images[0].path = this.first;
-    this.roomTariff[this.rooms[x].type] = this.second;
-    this.rooms[x].price = this.third;
+    let old = new RoomWithPrice();
+    let _new = new RoomWithPrice();
+    Object.assign(old,this.rooms[0]);
+    Object.assign(_new,this.rooms[x]);
+    this.first = old;
+    this.second = this.roomTariff[old.type];
+    this.third = old.price;
+    this.rooms[0] = _new;
+    this.rooms[x] = old;
   }
 
   ngOnInit() {

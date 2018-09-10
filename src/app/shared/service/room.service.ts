@@ -73,6 +73,18 @@ export class RoomService{
           .catch(err => Observable.throw(err));
   }
 
+  /**
+   *
+   * @param {number} id
+   * @returns {Observable<Room>}
+   */
+  findOneAvailableWithPrice(id: number): Observable<Room>{
+    console.log(id);
+    return this._httpClient.get<RoomWithPrice>
+    (this.controller + '/find-one-with-price/' + id)
+      .catch(err => Observable.throw(err));
+  }
+
   save(roomJson: Room,form: HTMLFormElement): Observable<Room>{
     let f = new FormData(form);
     f.append('roomJson',JSON.stringify(roomJson));

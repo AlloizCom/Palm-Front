@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ImagePipePipe} from './pipe/image.pipe';
 import {ReversPipe} from './pipe/revers.pipe';
 import {DatePipePipe} from './pipe/date-pipe.pipe';
+import { MounthPipe } from './pipe/mounth.pipe';
 
 @NgModule({
   imports: [
@@ -11,11 +12,13 @@ import {DatePipePipe} from './pipe/date-pipe.pipe';
   declarations: [
     ImagePipePipe,
     ReversPipe,
-    DatePipePipe],
+    DatePipePipe,
+    MounthPipe],
   exports: [
     ImagePipePipe,
     ReversPipe,
-    DatePipePipe]
+    DatePipePipe,
+    MounthPipe]
 })
 export class PipeModule {
 }
