@@ -19,10 +19,6 @@ export class MenuComponent implements OnInit {
 
   constructor(private translate: TranslateService,
               private _serviceService: ServiceService) {
-
-    translate.addLangs(['uk', 'en', 'pl', 'ru']);
-    translate.setDefaultLang('uk');
-
     this._serviceService.findAllAvailable().subscribe(next => {
       for (let i of next) {
         if (typeof (i) != undefined && i != null) {
@@ -42,6 +38,7 @@ export class MenuComponent implements OnInit {
 
   changeLanguage(lang: Language) {
     this.currentLang = lang;
+    console.log('now lang is : ', lang);
     this.translate.use(lang);
   }
 

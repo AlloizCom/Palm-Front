@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-center">
         <button routerLink="{{one.id}}"  class="button">Переглянути</button>
       </div>
-      <h2>{{one.newsDescriptions['current-language-index' | translate].title}}</h2><!-- comment-->
+      <h2>{{(one.newsDescriptions|customtranslate).title}}</h2><!-- comment-->
       <h3>{{one.dateTime|datePipe}}</h3>  <!-- comment-->
     </div>
   </div>

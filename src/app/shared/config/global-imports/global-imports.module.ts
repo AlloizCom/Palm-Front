@@ -5,7 +5,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {PipeModule} from '../../pipe/pipe.module';
-import {TranslateLoader, TranslateModule, TranslateStaticLoader} from 'ng2-translate';
+import {TranslateLoader, TranslateModule, TranslateService, TranslateStaticLoader} from 'ng2-translate';
 import {Http} from "@angular/http";
 import {AgmCoreModule} from "@agm/core";
 import { AgmDirectionModule } from 'agm-direction';
@@ -51,6 +51,7 @@ export function createTranslateLoader(http: Http) {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers:[
     RoomParamsService,
+    TranslateService
   ]
 })
 export class GlobalImportsModule { }

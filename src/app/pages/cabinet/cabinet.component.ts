@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from "ng2-translate";
 
 @Component({
   selector: 'app-cabinet',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CabinetComponent implements OnInit {
   isIn = true;
-  constructor() { }
+  constructor(private _translate:TranslateService) {
+    this._translate.use('uk');
+  }
 
   ngOnInit() {
   }
