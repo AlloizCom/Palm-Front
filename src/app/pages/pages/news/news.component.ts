@@ -12,7 +12,7 @@ import {NewsByPage} from "../../../shared/models/news-by-page";
 export class NewsComponent implements OnInit {
 
   news: News[] = [];
-  news2:NewsByPage;
+  news2:NewsByPage [] = [];
   nuberOfNews: number = 6;
   page: number = 0;
 
@@ -32,7 +32,7 @@ export class NewsComponent implements OnInit {
     this._newsService.findAllAvailableNewsByPage(
       this.page,this.nuberOfNews).subscribe(next => {
 
-      this.news2 = next;
+      this.news2.push(next);
       console.log('news2',this.news2);
     }, err => {
       console.log(err);
@@ -43,11 +43,12 @@ export class NewsComponent implements OnInit {
   }
 
   showMore(){
-    this.nuberOfNews += 6;
+    // this.nuberOfNews += 6;
+    this.page++;
     this._newsService.findAllAvailableNewsByPage(
       this.page,this.nuberOfNews).subscribe(next => {
 
-      this.news2 = next;
+      this.news2.push(next);
       console.log('news2',this.news2);
     }, err => {
       console.log(err);

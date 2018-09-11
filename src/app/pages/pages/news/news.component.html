@@ -14,7 +14,8 @@
     <h2>Новини</h2>
     <div class="blocks d-flex flex-column">
       <div *ngIf="isNull(news2)" class="row">
-        <div class="item" *ngFor="let one of news2.news" class="content col-lg-3 col-xl-4 col-md-6">
+        <div class="item" *ngFor="let two of news2" class="content col-lg-3 col-xl-4 col-md-6">
+        <div *ngFor="let one of two.news" >
           <div class="back1" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"></div>
           <h3 routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
           <p>{{one.newsDescriptions['current-language-index' | translate].headerText}}</p>
@@ -26,6 +27,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
       <div class="butt center d-flex justify-content-center">
         <button (click)="showMore()">Більше</button>
