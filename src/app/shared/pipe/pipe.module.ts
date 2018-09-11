@@ -22,7 +22,8 @@ import {TranslatePipe} from "./pipe/translate.pipe";
     ReversPipe,
     DatePipePipe,
     MounthPipe,
-    TranslatePipe,]
+    TranslatePipe,
+  ]
 })
 export class PipeModule {
 }
