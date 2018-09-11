@@ -1,4 +1,4 @@
-<div>
+<div class="align-items-center col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex flex-column">
   <form action="" [formGroup]="roomForm" >
   <h3>Тип номера:</h3>
   <select formControlName="type">
@@ -34,21 +34,25 @@
     </div>
   </div>
   <br>
+
+
   <div class="image-wrapper d-flex  flex-wrap">
     <div *ngFor="let one of room.images" class="image-one d-flex align-items-end justify-content-center"
          [style.background]="'url(' + (one.path|imagePipe) + ')'">
-      <button (click)="delete(room.id, one.id, one)">Видалити</button>
+      <button (click)="delete(room.id, one.id, one)" class="image-button">Видалити</button>
     </div>
       <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
         <img [src]="one" alt="" *ngIf="(isNull(one))">
       </div>
     <br>
   </div>
+
+
   <form action="" #form class="d-flex justify-content-center">
     <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
            name="multipartFiles">
-    <label  for="file">AddImage</label>
-    <button (click)="update(form)" [disabled]="!roomForm.valid" >Оновити кімнату</button>
+    <label  for="file" class="image-button"> AddImage</label>
+    <button class="image-button" (click)="update(form)" [disabled]="!roomForm.valid" >Оновити кімнату</button>
   </form>
   </form>
 </div>
