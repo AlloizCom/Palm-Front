@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {News} from '../../../shared/models/news';
 import {NewsService} from '../../../shared/service/news.service';
 import {isNullOrUndefined} from 'util';
-import {NewsByPage} from "../../../shared/models/news-by-page";
+import {NewsByPage} from '../../../shared/models/news-by-page';
 
 @Component({
   selector: 'app-news',
@@ -12,9 +12,10 @@ import {NewsByPage} from "../../../shared/models/news-by-page";
 export class NewsComponent implements OnInit {
 
   news: News[] = [];
-  news2:NewsByPage [] = [];
+  news3: News[] = [];
   nuberOfNews: number = 6;
   page: number = 0;
+
 
   constructor(private _newsService: NewsService) {
     this._newsService.getRandomNews(6).subscribe(next => {
@@ -24,36 +25,31 @@ export class NewsComponent implements OnInit {
         }
       }
       this.news = next;
-      console.log('news',this.news);
+      console.log('news', this.news);
     }, err => {
       console.log(err);
     });
 
     this._newsService.findAllAvailableNewsByPage(
-      this.page,this.nuberOfNews).subscribe(next => {
-
-      this.news2.push(next);
-      console.log('news2',this.news2);
+      this.page, this.nuberOfNews).subscribe(next => {
+      next.news.forEach(data => this.news3.push(data));
     }, err => {
       console.log(err);
     });
   }
 
   ngOnInit() {
+    console.log(this.news3);
   }
 
-  showMore(){
-    // this.nuberOfNews += 6;
+  showMore() {
     this.page++;
     this._newsService.findAllAvailableNewsByPage(
-      this.page,this.nuberOfNews).subscribe(next => {
-
-      this.news2.push(next);
-      console.log('news2',this.news2);
+      this.page, this.nuberOfNews).subscribe(next => {
+      next.news.forEach(data => this.news3.push(data));
     }, err => {
       console.log(err);
     });
-
   }
 
   isNull(object: any): Boolean {
