@@ -7,6 +7,7 @@ import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
 import {AmenityService} from "../../../../../shared/service/amenity.service";
 import {isNullOrUndefined} from "util";
 
+
 @Component({
   selector: 'app-room-one',
   templateUrl: './room-one.component.html',

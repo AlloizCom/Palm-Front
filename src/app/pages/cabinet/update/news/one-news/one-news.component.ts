@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {News} from '../../../../../shared/models/news';
 import {ActivatedRoute} from '@angular/router';
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NewsService} from '../../../../../shared/service/news.service';
 import {ImagePipePipe} from '../../../../../shared/pipe/pipe/image.pipe';
-import {NewsDescription} from '../../../../../shared/models/news-description';
-import {Service} from "../../../../../shared/models/service";
-import {ServiceService} from "../../../../../shared/service/service.service";
 
 @Component({
   selector: 'app-one-news',
@@ -14,44 +12,77 @@ import {ServiceService} from "../../../../../shared/service/service.service";
   providers: [ImagePipePipe]
 })
 export class OneNewsComponent implements OnInit {
+  newsUpdateForm: FormGroup;
   news: News = new News();
   img: string = '';
-  appear: boolean = true;
+  descriptions: FormArray;
 
   constructor(private _router: ActivatedRoute, private _newsService: NewsService, private _imagePipe: ImagePipePipe) {
-    _router.params.subscribe(next => {
-      _newsService.findOne(next['id']).subscribe(next => {
-        this.news = next;
-        console.log(next);
-        this.img = this._imagePipe.transform(next.picturePath);
-        console.log("tyt1" + this.img)
-      })
-    })
   }
 
 
   readUrl(event: any) {
-    this.appear = false;
     if (event.target.files && event.target.files[0]) {
       let reader = new FileReader();
       reader.onload = (event: any) => {
         this.img = event.target.result;
-        this.appear = true;
       };
       reader.readAsDataURL(event.target.files[0]);
     }
   }
 
   ngOnInit() {
+    // this.newsDescriptionForm = new FormArray([
+    //
+    // ]);
+
+    this._router.params.subscribe(next => {
+      this.descriptions = new FormArray([
+        this.getFormGroupDescription(''),
+        this.getFormGroupDescription(''),
+        this.getFormGroupDescription(''),
+        this.getFormGroupDescription(''),
+      ]);
+
+      this.newsUpdateForm = new FormGroup({
+        id: new FormControl(),
+        newsDescriptions: this.descriptions,
+        available: new FormControl(null),
+        dateTime: new FormControl(''),
+        picturePath: new FormControl('')
+        // multipartFile:new FormControl('',Validators.required),
+      });
+      this.newsUpdateForm.valueChanges.subscribe(next=>{
+        this.news = next;
+      });
+      this._newsService.findOne(next['id']).subscribe(next => {
+        console.log(next);
+        this.news = next;
+        this.newsUpdateForm.patchValue(<any>next);
+      }, err => {
+        console.error(err);
+      });
+    })
+
   }
 
   update(form) {
     console.log(this.news);
     this._newsService.update(this.news, form).subscribe(next => {
       this.news = next;
+      this.newsUpdateForm.patchValue(<any>next);
     }, error => {
       console.log(error);
     })
+  }
+
+  private getFormGroupDescription(val: string) {
+    return new FormGroup({
+      language0: new FormControl(val),
+      title: new FormControl('', Validators.required),
+      headerText: new FormControl('', Validators.required),
+      mainText: new FormControl('', Validators.required),
+    });
   }
 
 }

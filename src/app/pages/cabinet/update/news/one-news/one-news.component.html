@@ -1,33 +1,50 @@
+
 <div>
+  <form action="" [formGroup]="newsUpdateForm">
+  <!--<ul>-->
+    <!--<li *ngFor="let one of news.newsDescriptions">-->
+      <!--<div>-->
+        <!--<h3>language</h3>-->
+        <!--<input [(ngModel)]="one.language" type="text" disabled formControlName="title">-->
+        <!--<h3>Title</h3>-->
+        <!--<input type="text"  formControlName="headerText">-->
+        <!--<h3>HeaderText</h3>-->
+        <!--<input type="text"  formControlName="mainText">-->
+        <!--<h3>mainTExt</h3>-->
+        <!--<textarea name="" id="" cols="30" rows="10" formControlName="description"></textarea>-->
+      <!--</div>-->
+    <!--</li>-->
+  <!--</ul>-->
 
-  <ul>
-    <li *ngFor="let one of news.newsDescriptions">
-      <div>
-        <h3>language</h3>
-        <input [(ngModel)]="one.language" type="text" disabled>
-        <h3>Title</h3>
-        <input type="text" [(ngModel)]="one.title">
-        <h3>HeaderText</h3>
-        <input type="text" [(ngModel)]="one.headerText">
-        <h3>mainTExt</h3>
-        <textarea name="" id="" cols="30" rows="10" [(ngModel)]="one.mainText"></textarea>
+    <div formArrayName="newsDescriptions">
+      <div *ngFor="let one of descriptions.controls; let i = index">
+        <form formGroupName="{{i}}">
+          <p>{{one.get('language0').value}}</p>
+          <h3>Title</h3>
+          <input type="text"  formControlName="title">
+          <h3>HeaderText</h3>
+          <input type="text"  formControlName="headerText">
+          <h3>mainTExt</h3>
+          <textarea cols="30" rows="10" formControlName="mainText"></textarea>
+        </form>
       </div>
-    </li>
-  </ul>
-
-  <div [ngClass]="{'appear' :appear}"  class="image">
+    </div>
+  <div *ngIf="img.length==0"  class="image appear">
+    <img [src]="news.picturePath|imagePipe" alt="">
+  </div>
+  <div *ngIf="img.length!=0"  class="image appear">
     <img [src]="img" alt="">
   </div>
   <br>
 
   <form action="" #form class="">
     <div>
-      <input (change)="readUrl($event)" id="file" type="file" class="d-none"  name="multipartFile" >
+      <input (change)="readUrl($event)"  id="file" type="file" class="d-none"  name="multipartFile" >
     </div>
 
     <label for="file">AddImage</label>
-    <button (click)="update(form)" >Оновити news</button>
+    <button (click)="update(form)" [disabled]="!newsUpdateForm.valid" >Оновити news</button>
   </form>
-
+  </form>
 </div>
 
