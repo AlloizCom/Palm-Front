@@ -34,7 +34,7 @@ export class NewsComponent implements OnInit {
     });
     this._newsService.findAllAvailableNewsByPage(
       this.page, this.nuberOfNews).subscribe(next => {
-      next.news.forEach(data => this.news3.push(data));
+      next.news.reverse().forEach(data => this.news3.push(data));
     }, err => {
       console.log(err);
     });
@@ -48,7 +48,7 @@ export class NewsComponent implements OnInit {
     this.page++;
     this._newsService.findAllAvailableNewsByPage(
       this.page, this.nuberOfNews).subscribe(next => {
-      next.news.forEach(data => this.news3.push(data));
+      next.news.reverse().forEach(data => this.news3.push(data));
     }, err => {
       console.log(err);
     });

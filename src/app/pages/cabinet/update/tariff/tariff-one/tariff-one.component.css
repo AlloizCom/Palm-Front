@@ -28,8 +28,13 @@ button {
 button:active{
   background: #2ebd9a;
 }
+.hundred>form{
+  width: 100%!important;
+}
 
-
+input{
+  width: 100%;
+}
 
 
 /*input.ng-dirty{*/

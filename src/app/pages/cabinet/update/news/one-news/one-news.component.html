@@ -1,5 +1,4 @@
-
-<div>
+<div class="align-items-center col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex flex-column">
   <form action="" [formGroup]="newsUpdateForm">
   <!--<ul>-->
     <!--<li *ngFor="let one of news.newsDescriptions">-->
@@ -30,7 +29,8 @@
       </div>
     </div>
   <div *ngIf="img.length==0"  class="image appear">
-    <img [src]="news.picturePath|imagePipe" alt="">
+    <!--<img [src]="news.picturePath|imagePipe" alt="">-->
+    <div class="img" [style.background-image]=" 'url('+ (news.picturePath|imagePipe)+ ')'"></div>
   </div>
   <div *ngIf="img.length!=0"  class="image appear">
     <img [src]="img" alt="">
@@ -42,8 +42,8 @@
       <input (change)="readUrl($event)"  id="file" type="file" class="d-none"  name="multipartFile" >
     </div>
 
-    <label for="file">AddImage</label>
-    <button (click)="update(form)" [disabled]="!newsUpdateForm.valid" >Оновити news</button>
+    <label class="image-button" for="file">AddImage</label>
+    <button class="image-button" (click)="update(form)" [disabled]="!newsUpdateForm.valid" >Оновити news</button>
   </form>
   </form>
 </div>
