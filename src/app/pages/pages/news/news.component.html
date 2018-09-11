@@ -13,12 +13,13 @@
   <div class="news">
     <h2>Новини</h2>
     <div class="blocks d-flex flex-column">
-      <div *ngIf="isNull(news2)" class="firsty flex-wrap d-flex flex-row justify-content-between">
-        <div class="item" *ngFor="let one of news2|revers">
+      <div *ngIf="isNull(news3)" class="row">
+        <div class="item" *ngFor="let one of news3" class="content col-lg-3 col-xl-4 col-md-6">
           <div class="back1" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"></div>
           <h3 routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
-          <h4>{{one.newsDescriptions['current-language-index' | translate].headerText}}</h4>
-          <div class="bott d-flex justify-content-between"><h5>{{one.dateTime |datePipe}}</h5>
+          <p>{{one.newsDescriptions['current-language-index' | translate].headerText}}</p>
+          <div class="bott d-flex justify-content-between">
+            <h5>{{one.dateTime |datePipe}}</h5>
             <div class="images">
               <img class="greyShit" src="../../../assets/svg/newsVector.svg" alt="">
               <img class="greenShit" src="../../../assets/svg/greenShit.svg" alt="">
@@ -27,7 +28,7 @@
         </div>
       </div>
       <div class="butt center d-flex justify-content-center">
-        <button>Більше</button>
+        <button (click)="showMore()">Більше</button>
       </div>
     </div>
   </div>

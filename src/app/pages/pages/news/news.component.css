@@ -182,7 +182,7 @@
   background-size: cover;
 }
 
-.item h3 {
+.content>h3 {
   font-family: Roboto;
   font-weight: bold;
   line-height: 26px;
@@ -192,7 +192,7 @@
   padding-bottom: 1%;
 }
 
-.item h4 {
+.content>p {
   font-family: Roboto;
   font-weight: 300;
   line-height: 22px;
@@ -202,7 +202,7 @@
   padding-bottom: 1%;
 }
 
-.item h5 {
+.bott>h5 {
   font-family: Roboto;
   font-weight: 900;
   font-size: 10px;
@@ -236,10 +236,12 @@
   width: 290px;
   margin: 0 2%;
 }
+.content{
+  padding: 0 40px;
+}
 
 .back1 {
-  width: 290px;
-  height: 180px;
+  height: 250px;
 }
 
 .bott {
@@ -282,7 +284,7 @@ button {
   opacity: 0;
 }
 
-.firsty .item h3:hover {
+.content h3:hover {
   color: #53D7B7;
   cursor: pointer;
 }
@@ -325,10 +327,6 @@ button {
 
   .one:nth-child(1), .one:nth-child(4), .one:nth-child(3), .one:nth-child(6) {
     width: 33%;
-  }
-
-  .item, .back1 {
-    width: 230px;
   }
 
   .blocks {

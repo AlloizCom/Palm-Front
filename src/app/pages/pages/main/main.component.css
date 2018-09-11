@@ -85,6 +85,7 @@
   line-height: 14px;
   font-weight: bold;
   color: black;
+  margin-bottom: 4px;
 }
 
 .searchItem > div > .year {
@@ -93,6 +94,7 @@
   line-height: 17px;
   font-weight: bold;
   color: #C4C4C4;
+  margin-bottom: 3px;
 }
 
 .searchItem > div > .roomsNumber {

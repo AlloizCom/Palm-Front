@@ -28,22 +28,34 @@ export class RoomsComponent implements OnInit {
     if(this.roomsParams){
       console.log("Params for rooms");
       console.log(this.roomsParams);
+      _roomService.findRoomByParams(this.roomsParams).subscribe(next => {
+        this.roomTariff = RoomTariff;
+        for (let j of next) {
+          if (typeof (j) != 'undefined' && j != null) {
+            this.rooms.push(j);
+          }
+        }
+        console.log(this.rooms);
+      }, err => {
+        console.log(err);
+      });
     }else{
       console.log("No params for room");
+      this._roomService.findAllRoomWithPrice().subscribe(next => {
+        this.roomTariff = RoomTariff;
+        for (let i of next) {
+          if (typeof (i) != 'undefined' && i != null) {
+            this.rooms.push(i);
+          }
+        }
+
+        console.log(this.rooms);
+      }, err => {
+        console.log(err);
+      });
     }
 
-    this._roomService.findAllRoomWithPrice().subscribe(next => {
-      this.roomTariff = RoomTariff;
-      for (let i of next) {
-        if (typeof (i) != 'undefined' && i != null) {
-          this.rooms.push(i);
-        }
-      }
 
-      console.log(this.rooms);
-    }, err => {
-      console.log(err);
-    });
 
 
   }

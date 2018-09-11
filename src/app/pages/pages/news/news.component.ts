@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {News} from '../../../shared/models/news';
 import {NewsService} from '../../../shared/service/news.service';
 import {isNullOrUndefined} from 'util';
+import {NewsByPage} from '../../../shared/models/news-by-page';
 
 @Component({
   selector: 'app-news',
@@ -11,8 +12,10 @@ import {isNullOrUndefined} from 'util';
 export class NewsComponent implements OnInit {
 
   news: News[] = [];
-  news2:News[]=[];
-  randomIndex:number[]=[];
+  news3: News[] = [];
+  nuberOfNews: number = 6;
+  page: number = 0;
+
 
   constructor(private _newsService: NewsService) {
     this._newsService.getRandomNews(6).subscribe(next => {
@@ -22,42 +25,31 @@ export class NewsComponent implements OnInit {
         }
       }
       this.news = next;
-      console.log('news',this.news);
+      console.log('news', this.news);
     }, err => {
       console.log(err);
     });
 
-    this._newsService.findAllAvailable().subscribe(next => {
-      for (let i of next) {
-        if (typeof (i) != undefined && i != null) {
-          this.news2.push(i);
-        }
-      }
-      this.news2 = next;
-      console.log('news2',this.news2);
+    this._newsService.findAllAvailableNewsByPage(
+      this.page, this.nuberOfNews).subscribe(next => {
+      next.news.forEach(data => this.news3.push(data));
     }, err => {
       console.log(err);
     });
-
-    // this._newsService.getRandomArray(6).subscribe(value => {
-    //   for (let i of value){
-    //     // console.log(i)
-    //     if (i) {
-    //       // console.log(i)
-    //       this.randomIndex.push(i);
-    //     }
-    //   }
-    //   console.log(this.randomIndex);
-    //   this.randomIndex = value;
-    //   console.log('value ',value)
-    // }, err =>{
-    //   console.log(err);
-    // });
-    // console.log(this.randomIndex);
-
   }
 
   ngOnInit() {
+    console.log(this.news3);
+  }
+
+  showMore() {
+    this.page++;
+    this._newsService.findAllAvailableNewsByPage(
+      this.page, this.nuberOfNews).subscribe(next => {
+      next.news.forEach(data => this.news3.push(data));
+    }, err => {
+      console.log(err);
+    });
   }
 
   isNull(object: any): Boolean {

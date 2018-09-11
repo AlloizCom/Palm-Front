@@ -1,4 +1,4 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, HostListener, Injectable, OnInit} from '@angular/core';
 import {TranslateService} from 'ng2-translate';
 import {Language} from '../../../shared/enum/language';
 import {ServiceService} from '../../../shared/service/service.service';
@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   currentLang: Language = 'uk';
   isIn: boolean = true;
   services: Service[] = [];
+  dropdownHoverShow:boolean =false;
 
   constructor(private translate: TranslateService,
               private _serviceService: ServiceService) {
@@ -46,5 +47,9 @@ export class MenuComponent implements OnInit {
 
   toggleState() {
     this.isIn = !this.isIn;
+  }
+
+  mouseHover(){
+    console.log('hover');
   }
 }
