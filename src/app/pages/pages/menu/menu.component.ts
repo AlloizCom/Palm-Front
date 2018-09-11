@@ -1,4 +1,4 @@
-import {Component, Injectable, OnInit} from '@angular/core';
+import {Component, HostListener, Injectable, OnInit} from '@angular/core';
 import {TranslateService} from 'ng2-translate';
 import {Language} from '../../../shared/enum/language';
 import {ServiceService} from '../../../shared/service/service.service';
@@ -48,7 +48,8 @@ export class MenuComponent implements OnInit {
   toggleState() {
     this.isIn = !this.isIn;
   }
-  dropdownHover(){
-    this.dropdownHoverShow = !this.dropdownHoverShow;
+
+  mouseHover(){
+    console.log('hover');
   }
 }

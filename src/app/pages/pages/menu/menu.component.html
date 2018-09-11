@@ -30,16 +30,15 @@
                 <a class="nav-link" href="#" [routerLinkActive]="['active']"
                    routerLink="/news" (click)="toggleState()">новини</a>
               </li>
-              <li ngbDropdown class="d-inline-block">
-                <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>послуги</a>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <div>
-                    <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item"
-                       (click)="toggleState()">
-                      {{one.serviceDescriptions['current-language-index'| translate].title}}</a>
-                  </div>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  послуги
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item"
+                     (click)="toggleState()">
+                    {{one.serviceDescriptions['current-language-index'| translate].title}}</a>
                 </div>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" [routerLinkActive]="['active']"
                    routerLink="/contacts" (click)="toggleState()">контакти</a>
