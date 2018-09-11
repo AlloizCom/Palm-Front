@@ -341,6 +341,7 @@
   font-size: 12px;
   text-transform: uppercase;
   line-height: 14px;
+  margin:0 5px 2px 5px;
 
 }
 
@@ -350,6 +351,7 @@
   line-height: 17px;
   font-weight: bold;
   color: #C4C4C4;
+  margin-bottom: 2px;
 }
 .searchItem:nth-child(1) .year {
   margin-right: 10px;
@@ -444,6 +446,9 @@
   display: flex;
   justify-content: center;
   margin-top: 5px;
+}
+.book{
+  cursor: pointer;
 }
 
 
