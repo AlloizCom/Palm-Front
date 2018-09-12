@@ -21,7 +21,9 @@
   width: 75%;
   margin-bottom: 7%;
 }
-
+.main{
+  position: absolute;
+}
 .imgs h5 {
   font-family: Raleway;
   font-weight: bold;
@@ -55,7 +57,40 @@
 .slider {
   width: 57%;
   height: 400px;
-  background-color: #fdcd00;
+  position: relative;
+}
+.show {
+  opacity: 1;
+  transition: 0.6s;
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.swith {
+  position: absolute;
+  z-index: 10;
+  background-color: #5A5A5A;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 25px);
+}
+.swith:hover, .swith:active {
+  background-color: #424242;
+}
+
+.left {
+  left: 7%;
+}
+
+.right {
+  right: 7%;
 }
 
 .data-picker {
@@ -200,77 +235,11 @@
   background-size: cover !important;
   background-repeat: no-repeat !important;
   position: relative;
+  opacity: 0;
 }
-
-/deep/ .carousel-control-prev {
-  height: 60px !important;
-  width: 60px !important;
-  background-color: #5A5A5A;
-  opacity: 1 !important;
-  top: 40% !important;
-  left: 5% !important;
-  cursor: pointer;
-
+.show{
+  opacity: 1;
 }
-
-/deep/ .carousel-control-next {
-  height: 60px !important;
-  width: 60px !important;
-  background-color: #5A5A5A;
-  opacity: 1 !important;
-  top: 40% !important;
-  right: 5% !important;
-  cursor: pointer;
-}
-
-/deep/ .carousel-indicators li {
-  position: relative;
-  -ms-flex: 0 1 auto;
-  -webkit-box-flex: 0;
-  flex: 0 1 auto;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  margin: 0 6px;
-  background-color: rgba(255,255,255,.5);
-}
-
-/deep/ .carousel-indicators {
-  position: absolute;
-  right: 0;
-  bottom: 0px;
-  left: 0;
-  z-index: 15;
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-pack: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-left: 0;
-  margin-right: 15%;
-  margin-left: 15%;
-  list-style: none;
-}
-
-/deep/ .carousel-caption {
-  top: 212px !important;
-  left: 10% !important;
-  width: 190px !important;
-  padding: 0 !important;
-}
-
-/deep/ .carousel-caption {
-  color: white;
-  font-family: 'Raleway', sans-serif !important;
-  font-weight: bold !important;
-  font-size: 40px !important;
-  text-transform: uppercase;
-  line-height: 47px !important;
-}
-
-
-
 
 
 /*datapicker  */
