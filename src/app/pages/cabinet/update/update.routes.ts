@@ -12,6 +12,8 @@ import {ServicesComponent} from "./services/services.component";
 import {AmenityComponent} from "./amenity/amenity.component";
 import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
+import {ScheduleComponent} from "./schedule/schedule.component";
+import {ScheduleOneComponent} from "./schedule/schedule-one/schedule-one.component";
 
 export const updateRoutes: Routes = [
   {
@@ -52,9 +54,9 @@ export const updateRoutes: Routes = [
         path: 'tariff/:id', component: TariffOneComponent
       },
       {
-        path: 'amenity',children: [
+        path: 'amenity', children: [
           {
-          path: '' , component: AmenityComponent
+            path: '', component: AmenityComponent
           },
           {
             path: ':id', component: AmenityOneComponent
@@ -62,9 +64,17 @@ export const updateRoutes: Routes = [
         ]
       },
       {
-        path:'main-update',component:MainUpdateComponent
+        path: 'main-update', component: MainUpdateComponent
+      }, {
+        path: 'schedule', children: [
+          {
+            path: '', component: ScheduleComponent
+          },
+          {
+            path: ':id', component: ScheduleOneComponent
+          }
+        ]
       }
-
     ]
   }
-]
+];

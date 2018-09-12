@@ -1,0 +1,20 @@
+<div class="allInfo">
+  <table class="first">
+    <tr>
+      <th>Дата</th>
+      <th>Тип номера</th>
+      <th>Доступні</th>
+      <th>Заброньовані</th>
+      <th>Вільні</th>
+    </tr>
+  </table>
+  <table class="second">
+    <tr *ngFor="let one of schedule">
+      <td>{{one.today|datePipe}}</td>
+      <td>{{one.roomType}}</td>
+      <td>{{one.forSale}}</td>
+      <td>{{one.active}}</td>
+      <td>{{one.free}} <button routerLink="{{one.id}}">Змінити</button></td>
+    </tr>
+  </table>
+</div>
