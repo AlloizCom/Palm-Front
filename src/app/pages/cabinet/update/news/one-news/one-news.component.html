@@ -18,7 +18,7 @@
     <div formArrayName="newsDescriptions">
       <div *ngFor="let one of descriptions.controls; let i = index">
         <form formGroupName="{{i}}">
-          <p>{{one.get('language0').value}}</p>
+          <p>{{one.get('language').value|translate}}</p>
           <h3>Title</h3>
           <input type="text"  formControlName="title">
           <h3>HeaderText</h3>

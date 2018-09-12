@@ -1,10 +1,10 @@
 
 <div *ngIf="isNull(news)"  class="content">
   <div class="header-text">
-    <h2>{{news.newsDescriptions['current-language-index' |translate].title}}</h2>
+    <h2>{{(news.newsDescriptions['current-language-index'|translate]).title}}</h2>
   </div>
   <div class="main-text">
-    <p>{{news.newsDescriptions['current-language-index' |translate].headerText}}</p>
+    <p>{{(news.newsDescriptions['current-language-index'|translate]).headerText}}</p>
   </div>
   <div class="image" [style.background-image]="'url(' + (news.picturePath|imagePipe) + ')'">
   </div>

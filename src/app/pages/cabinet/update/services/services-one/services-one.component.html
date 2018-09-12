@@ -6,11 +6,11 @@
     <li *ngFor="let one of services.serviceDescriptions">
       <div>
         <input [(ngModel)]="one.language" type="text" disabled>
-        <h3>Title</h3>
+        <h3>Заголовок</h3>
         <input type="text" [(ngModel)]="one.title">
-        <h3>HeaderText</h3>
+        <h3>Заголовочний текст</h3>
         <input type="text" [(ngModel)]="one.headerText">
-        <h3>mainTExt</h3>
+        <h3>Основний текст</h3>
         <textarea name="" id="" cols="30" rows="10" [(ngModel)]="one.mainText"></textarea>
       </div>
       <br>

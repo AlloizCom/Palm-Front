@@ -38,10 +38,10 @@ export class OneNewsComponent implements OnInit {
 
     this._router.params.subscribe(next => {
       this.descriptions = new FormArray([
-        this.getFormGroupDescription(''),
-        this.getFormGroupDescription(''),
-        this.getFormGroupDescription(''),
-        this.getFormGroupDescription(''),
+        this.getFormGroupDescription(),
+        this.getFormGroupDescription(),
+        this.getFormGroupDescription(),
+        this.getFormGroupDescription(),
       ]);
 
       this.newsUpdateForm = new FormGroup({
@@ -52,8 +52,9 @@ export class OneNewsComponent implements OnInit {
         picturePath: new FormControl('')
         // multipartFile:new FormControl('',Validators.required),
       });
-      this.newsUpdateForm.valueChanges.subscribe(next=>{
+      this.newsUpdateForm.valueChanges.subscribe(next => {
         this.news = next;
+        console.log('Value ', next)
       });
       this._newsService.findOne(next['id']).subscribe(next => {
         console.log(next);
@@ -76,9 +77,9 @@ export class OneNewsComponent implements OnInit {
     })
   }
 
-  private getFormGroupDescription(val: string) {
+  private getFormGroupDescription() {
     return new FormGroup({
-      language0: new FormControl(val),
+      language: new FormControl(''),
       title: new FormControl('', Validators.required),
       headerText: new FormControl('', Validators.required),
       mainText: new FormControl('', Validators.required),
