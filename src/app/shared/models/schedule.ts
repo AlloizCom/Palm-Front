@@ -8,5 +8,4 @@ export class Schedule {
   active: number;
   free: number;
 
-
 }
