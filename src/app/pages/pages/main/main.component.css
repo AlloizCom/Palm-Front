@@ -8,6 +8,9 @@
 .searchIcone{
   cursor: pointer;
 }
+app-top-slider{
+  position: relative;
+}
 .search {
   display: flex;
   width: 982px;
@@ -171,6 +174,7 @@
 /*}*/
 .bottomAll {
   background: #F8F6F6;
+  margin-top: 680px;
 }
 
 .btmWrapper {
@@ -866,6 +870,57 @@ font-size: 12px;
   .btmWrapper {
     padding-top: 10%;
   }
+  .wrapper[_ngcontent-c4]{
+    top: 515px;
+    width: 100%!important;
+    left: 0!important;
+  }
+  .dataPicker1{
+    top: -23%!important;
+  }
+  .dataPicker2{
+    top: -23%!important;
+  }
+  .searchItem> p{
+    margin-bottom: 0%!important;
+  }
+  .searchItem{
+    padding-bottom: 10px!important;
+  }
+  .searchItem div .roomsNumber {
+    margin: 0px 14px 0 14px;
+  }
+
+  .searchItem p {
+    margin: 0 10px 0 0;
+  }
+
+  .dataPicker1 {
+    left: 3%;
+    top: 69%;
+  }
+
+  .dataPicker2 {
+    left: 3%;
+    top: 69%;
+  }
+
+  .item {
+    width: 70% !important;
+    margin: 5% auto !important;
+  }
+
+  .photoMain, .infosMain {
+
+    width: 90% !important;
+  }
+
+  .whiteBlock {
+    width: 18vw;
+  }
+  .bottomAll{
+    margin-top: 450px;
+  }
 }
 
 @media screen and (max-width: 765px) {
@@ -886,20 +941,7 @@ font-size: 12px;
   .searchItem{
     padding-bottom: 10px!important;
   }
-
-}
-
-
-@media screen and (max-width: 645px) {
-  agm-map {
-    height: 45vh;
-  }
-
-  .photoMain, .infosMain {
-    width: 75% !important;
-  }
-
-   .wrapper[_ngcontent-c4]{
+  .wrapper[_ngcontent-c4]{
     top: 515px;
     width: 100%!important;
     left: 0!important;
@@ -916,9 +958,6 @@ font-size: 12px;
   .searchItem{
     padding-bottom: 10px!important;
   }
-
-}
-@media screen and (max-width: 510px) {
   .searchItem div .roomsNumber {
     margin: 0px 14px 0 14px;
   }
@@ -951,6 +990,20 @@ font-size: 12px;
     width: 18vw;
 
   }
+}
+
+
+@media screen and (max-width: 645px) {
+  agm-map {
+    height: 45vh;
+  }
+
+  .photoMain, .infosMain {
+    width: 75% !important;
+  }
+
+}
+@media screen and (max-width: 510px) {
 
 
 }

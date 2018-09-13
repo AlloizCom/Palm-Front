@@ -13,7 +13,7 @@ import {GlobalImportsModule} from '../../shared/config/global-imports/global-imp
 import {PagesComponent} from './pages.component';
 import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
-import {MainSliderComponent} from './main/main-slider/main-slider.component';
+import {TopSliderComponent} from './main/top-slider/top-slider.component';
 
 @NgModule({
   imports: [
@@ -33,7 +33,7 @@ import {MainSliderComponent} from './main/main-slider/main-slider.component';
     PagesComponent,
     ServiceComponent,
     RoomsBookingComponent,
-    MainSliderComponent
+    TopSliderComponent
   ],
   exports: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
