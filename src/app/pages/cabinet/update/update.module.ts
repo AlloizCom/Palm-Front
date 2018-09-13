@@ -13,6 +13,8 @@ import { ServicesOneComponent } from './services/services-one/services-one.compo
 import {AmenityComponent} from "./amenity/amenity.component";
 import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
+import { ScheduleComponent } from './schedule/schedule.component';
+import { ScheduleOneComponent } from './schedule/schedule-one/schedule-one.component';
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import {MainUpdateComponent} from "./main-update/main-update.component";
     CommonModule,
     GlobalImportsModule
   ],
-  declarations: [OrderComponent, RoomComponent, NewsComponent, TariffComponent, OneNewsComponent, TariffOneComponent, RoomOneComponent, ServicesComponent, ServicesOneComponent,AmenityComponent,AmenityOneComponent, MainUpdateComponent]
+  declarations: [OrderComponent, RoomComponent, NewsComponent, TariffComponent, OneNewsComponent, TariffOneComponent, RoomOneComponent, ServicesComponent, ServicesOneComponent,AmenityComponent,AmenityOneComponent, MainUpdateComponent, ScheduleComponent, ScheduleOneComponent]
 })
 export class UpdateModule { }
 
