@@ -83,6 +83,8 @@ export class OneNewsComponent implements OnInit {
       title: new FormControl('', Validators.required),
       headerText: new FormControl('', Validators.required),
       mainText: new FormControl('', Validators.required),
+      id:new FormControl(),
+      available:new FormControl()
     });
   }
 

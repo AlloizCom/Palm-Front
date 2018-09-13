@@ -1,21 +1,34 @@
 <br>
+<form action="" [formGroup]="serviceUpdateForm">
 <div>
-  <input type="text" [(ngModel)]="services.name">
-  <br><br>
-  <ul>
-    <li *ngFor="let one of services.serviceDescriptions">
-      <div>
-        <input [(ngModel)]="one.language" type="text" disabled>
-        <h3>Заголовок</h3>
-        <input type="text" [(ngModel)]="one.title">
-        <h3>Заголовочний текст</h3>
-        <input type="text" [(ngModel)]="one.headerText">
-        <h3>Основний текст</h3>
-        <textarea name="" id="" cols="30" rows="10" [(ngModel)]="one.mainText"></textarea>
+  <!--<input type="text" [(ngModel)]="services.name">-->
+  <!--<ul>-->
+    <!--<li *ngFor="let one of services.serviceDescriptions">-->
+      <!--<div>-->
+        <!--<input formControlName="language" type="text" disabled>-->
+        <!--<h3>Заголовок</h3>-->
+        <!--<input type="text" formControlName="title">-->
+        <!--<h3>Заголовочний текст</h3>-->
+        <!--<input type="text" formControlName="headerText">-->
+        <!--<h3>Основний текст</h3>-->
+        <!--<textarea name="" id="" cols="30" rows="10" formControlName="mainText"></textarea>-->
+      <!--</div>-->
+      <!--<br>-->
+    <!--</li>-->
+  <!--</ul>-->
+    <div formArrayName="serviceDescriptions">
+      <div *ngFor="let one of descriptions.controls; let i = index">
+        <form formGroupName="{{i}}">
+          <h2>{{one.get('language').value|translate}}</h2>
+          <h3>Title</h3>
+          <input type="text"  formControlName="title">
+          <h3>HeaderText</h3>
+          <input type="text"  formControlName="headerText">
+          <h3>MainText</h3>
+          <textarea cols="30" rows="10" formControlName="mainText"></textarea>
+        </form>
       </div>
-      <br>
-    </li>
-  </ul>
+    </div>
 
   <div [ngClass]="{'appear' :appear}"  class="image">
     <img [src]="img" alt="">
@@ -29,9 +42,10 @@
 
     <div>
       <label for="file">AddImage</label>
-      <button (click)="update(form)" >Оновити сервіси</button>
+      <button (click)="update(form)"[disabled]="!serviceUpdateForm.valid"  >Оновити сервіси</button>
     </div>
   </form>
 
 </div>
 
+</form>

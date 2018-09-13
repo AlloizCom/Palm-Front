@@ -1,10 +1,10 @@
-input.ng-valid{
+textarea.ng-valid,input.ng-valid{
   border-left: 3px solid green;
 }
-input.ng-invalid{
+textarea.ng-invalid,input.ng-invalid {
   border-left: 3px solid red;
-
 }
+
 button:disabled{
   border-bottom: 3px solid red;
 }

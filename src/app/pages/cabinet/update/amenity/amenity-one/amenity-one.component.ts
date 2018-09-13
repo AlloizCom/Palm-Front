@@ -4,6 +4,7 @@ import {AmenityService} from "../../../../../shared/service/amenity.service";
 import {Amenity} from "../../../../../shared/models/amenity";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-amenity-one',
@@ -16,6 +17,8 @@ export class AmenityOneComponent implements OnInit {
   amenity: Amenity = new Amenity();
   image: string = '';
   appear: boolean = true;
+  amenityUpdateForm: FormGroup;
+  descriptions:FormArray;
 
 
   constructor(private _amenityService: AmenityService,
@@ -32,6 +35,34 @@ export class AmenityOneComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this._router.params.subscribe(next => {
+      this.descriptions = new FormArray([
+        this.getFormGroupDescription(),
+        this.getFormGroupDescription(),
+        this.getFormGroupDescription(),
+        this.getFormGroupDescription(),
+      ]);
+
+      this.amenityUpdateForm = new FormGroup({
+        id: new FormControl(),
+        amenityNames: this.descriptions,
+        available: new FormControl(null),
+        imagePath: new FormControl('')
+      });
+
+      this.amenityUpdateForm.valueChanges.subscribe(next => {
+        this.amenity = next;
+        console.log('Value ', next)
+      });
+      this._amenityService.findOne(next['id']).subscribe(next => {
+        console.log(next);
+        this.amenity = next;
+        this.amenityUpdateForm.patchValue(<any>next);
+      }, err => {
+        console.error(err);
+      });
+    })
   }
 
   readUrl(event: any) {
@@ -50,7 +81,8 @@ export class AmenityOneComponent implements OnInit {
     this._amenityService.update(this.amenity, form).subscribe(next => {
       this.amenity = next;
       console.log(next);
-      this._route.navigateByUrl('/cabinet/update/amenity');
+      this.amenityUpdateForm.patchValue(<any>next);
+      // this._route.navigateByUrl('/cabinet/update/amenity');
     }, error => {
       console.log(error);
     });
@@ -62,6 +94,12 @@ export class AmenityOneComponent implements OnInit {
     } else {
       return !isNullOrUndefined(object);
     }
+  }
+  private getFormGroupDescription() {
+    return new FormGroup({
+      language: new FormControl(''),
+      name:new FormControl('', Validators.required)
+    });
   }
 
 }

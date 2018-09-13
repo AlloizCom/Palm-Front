@@ -1,3 +1,11 @@
-<p>
-  schedule-one works!
-</p>
+<form action="" [formGroup]="scheduleForm">
+<section>
+  <div class="input-wrapper">
+    <h4>Доступні:</h4>
+    <input type="text" formControlName="forSale" placeholder="Type here">
+    <h4>Заброньовані:</h4>
+    <input type="text" formControlName="active" placeholder="Type here">
+  </div>
+ <button  (click)="update(form)" [disabled]="!scheduleForm.valid">Оновити</button>
+</section>
+</form>
