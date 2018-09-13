@@ -16,8 +16,8 @@ export class ScheduleService {
       .catch(err => Observable.throw(err));
   }
 
-  findOne(): Observable<Schedule> {
-    return this._httpClient.get<Schedule>(this.controller + '/find-one')
+  findOne(id:number): Observable<Schedule> {
+    return this._httpClient.get<Schedule>(this.controller + '/find-one/'+ id )
       .catch(err => Observable.throw(err));
   }
 
@@ -26,8 +26,8 @@ export class ScheduleService {
       .catch(err => Observable.throw(err));
   }
 
-  findOneAvailable(): Observable<Schedule> {
-    return this._httpClient.get<Schedule>(this.controller + '/find-one-available');
+  findOneAvailable(id:number): Observable<Schedule> {
+    return this._httpClient.get<Schedule>(this.controller + '/find-one-available/'+ id);
   }
 
   save(schedule: Schedule): Observable<Schedule> {

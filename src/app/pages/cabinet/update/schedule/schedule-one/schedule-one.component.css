@@ -1,0 +1,56 @@
+section{
+  margin: auto;
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.input-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+button{
+  margin: 20px auto;
+  height: 50px;
+  width: 30%;
+  background: #53D7B7;
+  border: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Raleway sans-serif;
+  font-weight: bold;
+  line-height: 35px;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  vertical-align: middle;
+  outline: none;
+}
+button:active{
+  transform: scale(1.1);
+  transition: 0.4s;
+}
+input{
+outline: none;
+}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+input.ng-valid{
+  border-left: 3px solid green;
+}
+input.ng-invalid{
+  border-left: 3px solid red;
+}
+button:disabled{
+  border-bottom: 3px solid red;
+}
+h4{
+  text-align: center;
+}
+
