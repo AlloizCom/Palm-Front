@@ -89,7 +89,7 @@ export class MainComponent implements OnInit {
         {
           'color': '#ffffff'
         },
-        {
+      {
           'lightness': 16
         }
       ]
@@ -233,8 +233,7 @@ export class MainComponent implements OnInit {
   }
 
   objectDateToString(date){
-
-    return new Date(date.year, date.month, date.day);
+    return new Date(date.year, date.month, date.day + 1);
   }
 
   isNull(object: any): Boolean {

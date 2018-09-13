@@ -24,7 +24,9 @@ export class RoomsComponent implements OnInit {
               private _roomsParamsService: RoomParamsService
   ) {
     this.getRoomsParams();
+
     //   NEED TO COMPLETE
+
     if(this.roomsParams){
       console.log("Params for rooms");
       console.log(this.roomsParams);
