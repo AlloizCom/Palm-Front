@@ -48,7 +48,6 @@
 .top {
   display: flex;
   width: 100%;
-  height: 400px;
   margin: 0 auto 0 auto;
   justify-content: space-between;
   margin-top: 40px;
@@ -423,28 +422,30 @@
 
 /*enddatapicker*/
 
-
-
-@media screen and (max-width: 765px) {
-
-  .topImage {
-    height: 500px;
+@media screen and (max-width: 1140px) {
+  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4]{
+    justify-content: space-around;
+    width: 90%;
   }
-  /deep/ .carousel-caption{
-    top: 100px !important;
+  .content{
+    width: 90%;
   }
-  /deep/ .carousel-control-prev {
-    top: 190px !important;
+  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4]{
+    width: 100%!important;
+  }
+  .bottom{
+    width: 90%;
   }
 
-  /deep/ .carousel-control-next {
-    top: 190px !important;
-  }
 }
 
-
-
 @media screen and (max-width: 768px) {
+
+  .topImage {
+    height: 400px!important;
+  }
+  .swith{
+  }
   .top {
     flex-direction: column;
   }
@@ -452,13 +453,16 @@
   .bottom {
     width: 100%;
   }
-  .imgs{
-    margin: auto;
-  }
   .slider{
     width: 100%;
   }
   .data-picker{
     width: 100%;
+    height: 350px;
+    margin-top: 20px;
+
   }
+
 }
+
+
