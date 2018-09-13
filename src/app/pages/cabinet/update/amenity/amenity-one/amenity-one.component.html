@@ -1,9 +1,10 @@
 <div>
-  <ul>
-    <li *ngFor="let one of amenity.amenityNames">
-      <div>
+  <form action="" [formGroup]="amenityUpdateForm">
+  <ul formArrayName="amenityNames">
+    <li *ngFor="let one of descriptions.controls; let i = index">
+      <div formGroupName="{{i}}" >
         <span>{{one.language}}</span><br>
-        <textarea [(ngModel)]="one.name"  rows="1"></textarea>
+        <textarea formControlName="name"  rows="1"></textarea>
       </div>
     </li>
   </ul>
@@ -14,7 +15,7 @@
   <form action="" #form class="">
       <label for="file">Змінити картинку</label>
       <input (change)="readUrl($event)" id="file" type="file" class="d-none"  name="multipartFile" >
-      <button (click)="update(form)">Оновити зручність</button>
+      <button (click)="update(form)" [disabled]="!amenityUpdateForm.valid" >Оновити зручність</button>
   </form>
-
+  </form>
 </div>

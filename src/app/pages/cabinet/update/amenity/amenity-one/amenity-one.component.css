@@ -52,3 +52,14 @@ button{
   font-size: 22px;
 }
 
+
+textarea.ng-valid{
+  border-left: 3px solid green;
+}
+
+textarea.ng-invalid{
+  border-left: 3px solid red;
+}
+button:disabled{
+  border-bottom: 3px solid red;
+}
