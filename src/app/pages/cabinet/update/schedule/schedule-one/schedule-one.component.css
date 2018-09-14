@@ -1,6 +1,6 @@
 section{
   margin: auto;
-  width: 50%;
+  width: 60%;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,7 @@ button{
   cursor: pointer;
   vertical-align: middle;
   outline: none;
+  font-size: 18px;
 }
 button:active{
   transform: scale(1.1);
@@ -52,5 +53,9 @@ button:disabled{
 }
 h4{
   text-align: center;
+}
+input{
+  width: 50%;
+  margin: auto;
 }
 
