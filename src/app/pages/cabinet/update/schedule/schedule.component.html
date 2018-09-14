@@ -1,27 +1,16 @@
+<div class="header d-flex flex-row justify-content-around">
+  <div>Дата</div>
+  <div>Тип номера</div>
+  <div>Заброньовані</div>
+  <div>Вільні</div>
+  <div>Змінити</div>
+</div>
 <div>
-  <table class="table">
-    <thead class="thead-dark">
-    <tr>
-      <th scope="col">Дата</th>
-      <th scope="col">Тип номера</th>
-      <th scope="col">Доступні</th>
-      <th scope="col">Заброньовані</th>
-      <th scope="col">Вільні</th>
-      <th scope="col">Змінити</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let one of schedule" class="mt-3">
-      <td scope="row">{{one.today|datePipe}}</td>
-      <td>{{one.roomType}}</td>
-      <td>{{one.forSale}}</td>
-      <td>{{one.active}}</td>
-      <td>{{one.free}}</td>
-      <td>
-        <button type="button" class="btn btn-info" routerLink="{{one.id}}">Змінити</button>
-      </td>
-    </tr>
-    <br>
-    </tbody>
-  </table>
+  <div *ngFor="let one of schedule" class="items d-flex ">
+      <div class="itemChild">{{one.today|datePipe}}</div>
+      <div class="itemChild">{{one.roomType}}</div>
+      <div class="itemChild">{{one.forSale}}</div>
+      <div class="itemChild">{{one.active}}</div>
+      <div class="itemChild">{{one.free}} <button type="button" class="btn btn-info" routerLink="{{one.id}}">Змінити</button></div>
+  </div>
 </div>
