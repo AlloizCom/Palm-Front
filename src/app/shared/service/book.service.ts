@@ -49,4 +49,15 @@ export class BookService {
       .catch(err => Observable.throw(err));
   }
 
+
+  /**
+   * pay
+   * @param {Book} book
+   * @returns {Observable<Book>}
+   */
+  pay(book: Book): Observable<Book> {
+    return this._httpClient.post<Book>(this.controller + '/pay', JSON.stringify(book))
+      .catch(err => Observable.throw(err));
+  }
+
 }
