@@ -13,12 +13,16 @@ export class ScheduleComponent implements OnInit {
 
   schedule:Schedule[]=[];
   roomTariff: any;
+  page: number = 0;
+  numberOfRows: number = 70;
 
   constructor(private _scheduleService:ScheduleService) {
     this.roomTariff = RoomTariff;
-    this._scheduleService.findAllAvailable().subscribe(next=>{
-      this.schedule = next;
-      console.log("schedule", next);
+    this._scheduleService.findAllAvailableScheduleByPage(this.page, this.numberOfRows).subscribe(next=>{
+      for (let one of next.shedules){
+        this.schedule.push(one);
+      }
+      console.log("schedule", next.shedules);
     });
   }
 
@@ -34,5 +38,16 @@ export class ScheduleComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  showMore(){
+      this.page++;
+      this._scheduleService.findAllAvailableScheduleByPage(this.page,this.numberOfRows).subscribe(next =>{
+        for(let one of next.shedules){
+          this.schedule.push(one);
+        }
+      }, err =>
+        {console.log(err)}
+        );
+    }
 
 }
