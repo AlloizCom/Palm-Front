@@ -249,10 +249,12 @@ app-top-slider{
 
 .selected {
   margin-bottom: 20%;
+  border-bottom: 7px solid #53D7B7;
+  padding-bottom: 15px;
+  display: block;
 }
 
 .selected span {
-  border-bottom: 7px solid #53D7B7;
   padding-bottom: 4%;
 }
 
@@ -666,7 +668,7 @@ agm-map {
   }
 
   .infosMain {
-    width: 60% !important;
+    width: 80% !important;
     margin: auto;
     text-align: center;
   }
@@ -786,6 +788,13 @@ font-size: 12px;
 }
 
 @media screen and (max-width: 765px) {
+  .selected span{
+    border: none;
+  }
+  .selected{
+    border-bottom: 7px solid #53D7B7;
+    padding-bottom: 5px;
+  }
   .underFooterBlock {
     margin-left: 0;
   }

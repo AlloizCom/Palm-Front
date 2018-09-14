@@ -137,6 +137,7 @@ a:hover {
   .navbar-toggler {
     margin: 8px;
     outline: none !important;
+    border-radius: 0;
   }
 
   .navbar {
