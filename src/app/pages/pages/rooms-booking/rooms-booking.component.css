@@ -418,7 +418,9 @@
 .book{
   cursor: pointer;
 }
-
+.searchIcone{
+  outline-color: transparent;
+}
 
 /*enddatapicker*/
 
@@ -442,12 +444,13 @@
 @media screen and (max-width: 768px) {
 
   .topImage {
-    height: 400px!important;
+    height: 300px!important;
   }
   .swith{
   }
   .top {
     flex-direction: column;
+    margin-top: 10px;
   }
 
   .bottom {
@@ -455,12 +458,63 @@
   }
   .slider{
     width: 100%;
+    height: 300px!important;
+  }
+  .main{
+    height: 300px;
   }
   .data-picker{
     width: 100%;
-    height: 350px;
-    margin-top: 20px;
+    height: 240px;
+    margin-top: 10px;
 
+  }
+
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 576px)  {
+
+  .topImage {
+    height: 300px!important;
+  }
+  .swith{
+  }
+  .top {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .bottom {
+    width: 100%;
+  }
+  .slider{
+    width: 100%;
+    height: 300px!important;
+  }
+  .main{
+    height: 300px;
+  }
+  .data-picker{
+    width: 100%;
+    height: 240px;
+    margin-top: 10px;
+
+  }
+  .searchItem{
+    height: 30%;
+  }
+  .searchItem[_ngcontent-c4]:nth-child(1) p[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) p[_ngcontent-c4]{
+    margin-top: 8px;
+    margin-bottom: 0;: 8px;
+  }
+  .searchItem[_ngcontent-c4]:nth-child(3), .searchItem[_ngcontent-c4]:nth-child(4), .searchItem[_ngcontent-c4]:nth-child(5){
+    height: 40%;
+    width: 33%;
+  }
+  p{
+    margin-bottom: 0;
+  }
+  .searchItem[_ngcontent-c4] .month[_ngcontent-c4]{
+    margin: 0;
   }
 
 }
