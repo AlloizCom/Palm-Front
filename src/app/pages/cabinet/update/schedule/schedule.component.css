@@ -105,8 +105,9 @@
 
 .header,.items{
   width: 100%;
-  height: 5vh;
+  height: 40px;
 }
+
 
 .itemChild,.header div{
   width: 20vw;
@@ -116,3 +117,57 @@
 .items:nth-child(5n){
   margin-bottom: 20px;
 }
+
+.header{
+  font-size: 19px;
+  margin: 20px 0 0 0;
+  background-color: rgb(244, 250, 248);
+  padding-bottom: 5px;
+}
+
+.items{
+  border-top: 1px groove rgb(244, 250, 248);
+  box-sizing: border-box;
+}
+
+.items:nth-of-type(5n){
+  border-bottom: 1px groove rgb(244, 250, 248);
+
+}
+
+.header .date, .items .date{
+  width: 20%;
+  font-weight: 600;
+}
+
+.header .type, .items .type{
+  width: 27%;
+}
+
+.header .forSale, .items .forSale{
+  width: 13%;
+}
+
+.header .booked, .items .booked{
+  width: 13%;
+}
+
+.header .free, .items .free{
+  width: 13%;
+}
+
+.header .change, .items .change{
+  width: 14%;
+}
+
+.items .type{
+  font-size: 15px;
+}
+
+.items .change button{
+  height: 50%;
+  font-size: 15px;
+  padding: 4px 10px;
+}
+
+

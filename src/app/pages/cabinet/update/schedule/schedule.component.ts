@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ScheduleService} from "../../../../shared/service/schedule.service";
 import {Schedule} from "../../../../shared/models/schedule";
+import {RoomTariff} from "../../../../shared/enum/room-tariff";
 
 @Component({
   selector: 'app-schedule',
@@ -11,8 +12,10 @@ import {Schedule} from "../../../../shared/models/schedule";
 export class ScheduleComponent implements OnInit {
 
   schedule:Schedule[]=[];
+  roomTariff: any;
 
   constructor(private _scheduleService:ScheduleService) {
+    this.roomTariff = RoomTariff;
     this._scheduleService.findAllAvailable().subscribe(next=>{
       this.schedule = next;
       console.log("schedule", next);
