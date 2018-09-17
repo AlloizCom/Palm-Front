@@ -1,7 +1,6 @@
 import {Routes} from '@angular/router';
 import {UpdateComponent} from './update.component';
 import {NewsComponent} from './news/news.component';
-import {OrderComponent} from './order/order.component';
 import {RoomComponent} from './room/room.component';
 import {TariffComponent} from './tariff/tariff.component';
 import {OneNewsComponent} from './news/one-news/one-news.component';
@@ -14,6 +13,7 @@ import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
 import {ScheduleComponent} from "./schedule/schedule.component";
 import {ScheduleOneComponent} from "./schedule/schedule-one/schedule-one.component";
+import {BookingComponent} from "./booking/booking.component";
 
 export const updateRoutes: Routes = [
   {
@@ -27,9 +27,6 @@ export const updateRoutes: Routes = [
             path: '', component: NewsComponent
           },
         ]
-      },
-      {
-        path: 'order', component: OrderComponent
       },
       {
         path: 'services', children: [
@@ -74,6 +71,9 @@ export const updateRoutes: Routes = [
             path: ':id', component: ScheduleOneComponent
           }
         ]
+      },
+      {
+        path: 'booking', component: BookingComponent
       }
     ]
   }
