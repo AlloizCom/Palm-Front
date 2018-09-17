@@ -32,14 +32,18 @@ textarea{
 }
 
 img {
-  max-height: 17vw;
-  min-height: 17vw;
+  max-height: 5vw;
+  min-height: 5vw;
 }
 
 .image-wrapper {
   width: 40%;
 }
 
+ul{
+  list-style: none;
+  padding: 0;
+}
 .amenityImage{
   width: 100%;
   display: flex;
@@ -47,9 +51,23 @@ img {
   margin-bottom: 20px;
 }
 
-button{
+button {
   margin-top: 10px;
-  font-size: 22px;
+  background: #53D7B7;
+  border: 1px solid #53D7B7;
+  box-sizing: border-box;
+  font-family: Raleway;
+  font-weight: bold;
+  line-height: 24px;
+  font-size: 14px;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  height: 5vh;
+}
+button:active{
+  background: #2ebd9a;
 }
 
 

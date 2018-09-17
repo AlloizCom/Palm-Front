@@ -3,7 +3,7 @@
   <ul formArrayName="amenityNames">
     <li *ngFor="let one of descriptions.controls; let i = index">
       <div formGroupName="{{i}}" >
-        <span>{{one.language}}</span><br>
+        <h2>{{one.get('language').value|translate}}</h2>
         <textarea formControlName="name"  rows="1"></textarea>
       </div>
     </li>
