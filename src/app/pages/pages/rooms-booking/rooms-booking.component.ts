@@ -8,6 +8,7 @@ import {Image} from '../../../shared/models/image';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {RoomParamsService} from '../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../shared/models/rooms-params';
+import {Amenity} from '../../../shared/models/amenity';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -22,6 +23,8 @@ export class RoomsBookingComponent implements OnInit {
   roomTariff: any;
   room: Room;
   images: Image[] = [];
+  amenities: Amenity[]=[];
+  roomType: string = '';
   //dataPicker
   model1 = {day: 0, year: 0, month: 0};
   model2 = {day: 0, year: 0, month: 0};
@@ -46,6 +49,9 @@ export class RoomsBookingComponent implements OnInit {
       _roomService.findOneAvailableWithPrice(next['id']).subscribe(next => {
         this.roomTariff = RoomTariff;
         this.room = next;
+        this.images = next.images;
+        this.amenities =next.amenities
+        this.roomType =next.type;
         this.id = next['id'];
         console.log(this.room);
         console.log(next);
