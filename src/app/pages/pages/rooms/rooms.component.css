@@ -99,22 +99,6 @@ p {
 }
 
 button {
-  cursor: pointer;
-  width: 110px;
-  height: 30px;
-  background: #FFFFFF;
-  border: 1px solid #53D7B7;
-  box-sizing: border-box;
-  font-family: Raleway;
-  font-weight: bold;
-  line-height: 19px;
-  font-size: 11px;
-  text-align: center;
-  color: #000000;
-  text-transform: uppercase;
-}
-
-button:hover {
   background: #53D7B7;
   border: 1px solid #53D7B7;
   box-sizing: border-box;
@@ -127,6 +111,15 @@ button:hover {
   text-transform: uppercase;
   width: 110px;
   height: 30px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #6eddc1;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-box-shadow: 0px 7px 48px -14px rgba(0,0,0,0.76);
+  box-shadow: 0px 7px 48px -14px rgba(0,0,0,0.76);
 }
 
 .imgs {
