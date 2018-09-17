@@ -3,7 +3,7 @@
     <div  class="hundred align-items-center col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex flex-column " *ngFor="let one of room">
       <div class="img" [style.background-image]="'url(' + (one.images[0].path|imagePipe) +')'"
            *ngIf="(isNull(one.images[0]))" routerLink="{{one.id}}"></div>
-      <h2 routerLink="{{one.id}}">{{one.type}}</h2>
+      <h2 routerLink="{{one.id}}">{{one.type | roomTypePipe}}</h2>
       <button (click)="deleteRoom(one.id)"> Видалив будь ласка!</button>
       <br>
     </div>
