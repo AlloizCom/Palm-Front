@@ -388,3 +388,12 @@ agm-map {
   margin: auto;
   width: 75%;
 }
+
+.inputCallback{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.inputCallbackText{
+  padding: 10px 10px 10px 10px;
+}
