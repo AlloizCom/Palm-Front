@@ -13,13 +13,17 @@ export class ContactsComponent implements OnInit {
 
   latitude = 49.856338332302016;
   longitude = 24.076377153396606;
+  defaultLatitude = 49.843645;
+  defaultLongitude = 24.026503;
   callbackForm: FormGroup;
   callback: Callback = new Callback();
   currentWay: any = "";
   public lat = 24.799448;
   public lng = 120.979021;
   public destination = {lat: 49.856338332302016, lng: 24.076377153396606};
-  public origin = {lat: 49.8457735, lng: 24.0223995};
+  //public origin = {lat: 49.8457735, lng: 24.0223995};
+  public origin = {lat: this.defaultLatitude, lng: this.defaultLongitude};
+
 
   constructor(private  _callback: CallbackService) {
   }
