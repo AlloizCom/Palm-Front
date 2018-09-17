@@ -5,7 +5,8 @@ import {Book} from "../../../../shared/models/book";
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css']
+  styleUrls: ['./booking.component.css'],
+  providers:[BookService]
 })
 export class BookingComponent implements OnInit {
 
