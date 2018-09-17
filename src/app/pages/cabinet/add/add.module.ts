@@ -4,7 +4,6 @@ import {NewsComponent} from './news/news.component';
 import {OptionComponent} from './option/option.component';
 import {CallbackComponent} from './callback/callback.component';
 import {TariffComponent} from './tariff/tariff.component';
-import {OrderComponent} from './order/order.component';
 import {GlobalImportsModule} from '../../../shared/config/global-imports/global-imports.module';
 import {AmenityNameComponent} from './amenity-name/amenity-name.component';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -13,7 +12,7 @@ import { MainPageComponent } from './main-page/main-page.component';
   imports: [
     GlobalImportsModule
   ],
-  declarations: [OrderComponent, RoomComponent, NewsComponent, OptionComponent, CallbackComponent, TariffComponent, AmenityNameComponent, MainPageComponent],
+  declarations: [RoomComponent, NewsComponent, OptionComponent, CallbackComponent, TariffComponent, AmenityNameComponent, MainPageComponent],
 })
 export class AddModule {
 }
