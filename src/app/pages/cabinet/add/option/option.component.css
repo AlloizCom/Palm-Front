@@ -58,3 +58,7 @@ button{
 .col-lg-3{
   min-width: 31%;
 }
+.image img{
+  max-width: 900px;
+  min-width: 500px;
+}
