@@ -1,5 +1,4 @@
 import {Routes} from '@angular/router';
-import {CallbackComponent} from './callback/callback.component';
 import {NewsComponent} from './news/news.component';
 import {OptionComponent} from './option/option.component';
 import {RoomComponent} from './room/room.component';
@@ -11,9 +10,6 @@ import {MainPageComponent} from "./main-page/main-page.component";
 export const addRoutes :Routes =[
   {
     path:'add',component:AddComponent ,children :[
-      {
-        path:'callback',component:CallbackComponent
-      },
       {
         path:'news',component:NewsComponent
       },

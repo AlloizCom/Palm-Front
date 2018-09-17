@@ -2,6 +2,7 @@ import {updateRoutes} from './update/update.routes';
 import {addRoutes} from './add/add.routes';
 import {CabinetComponent} from './cabinet.component';
 import {Routes} from '@angular/router';
+import {CallbackComponent} from './callback/callback.component';
 
 export const cabinetRoutes: Routes = [
   {
@@ -9,7 +10,9 @@ export const cabinetRoutes: Routes = [
     component: CabinetComponent,
     children: [
       ...addRoutes,
-      ...updateRoutes
+      ...updateRoutes,
+      {path: 'callback', component: CallbackComponent}
+
     ]
   }
 ]
