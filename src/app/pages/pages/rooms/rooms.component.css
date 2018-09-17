@@ -5,8 +5,8 @@ p {
 }
 
 .imgs img {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   margin-right: 5%;
 }
 
@@ -138,13 +138,14 @@ button:hover {
   font-family: Raleway;
   font-weight: bold;
   line-height: 19px;
-  font-size: 11px;
+  font-size: 10px;
   text-align: center;
   color: #000000;
-  margin: 0;
+  margin: -1.8px;
   position: absolute;
-  margin-top: 25px;
+  margin-top: 29px;
 }
+
 
 @media screen and (max-width: 1100px) {
 
