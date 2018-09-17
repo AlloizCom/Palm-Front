@@ -80,6 +80,10 @@ export class RoomsBookingComponent implements OnInit {
     return new Date(date.year, date.month, date.day);
   }
 
+  pay(){
+
+  }
+
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {
       return !isNullOrUndefined(object[0]);
