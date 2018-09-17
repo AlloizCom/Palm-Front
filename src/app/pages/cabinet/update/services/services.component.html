@@ -1,9 +1,8 @@
-<div class="back">
+<div class="back ">
   <div class="d-flex flex-row flex-wrap">
     <div class="hundred align-items-center col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex flex-column " *ngFor="let one of service">
       <div class="img"  [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" routerLink="{{one.id}}"></div>
-      <h2 routerLink="{{one.id}}">{{one.name}}</h2>
-      <h3 routerLink="{{one.id}}">{{one.id}}</h3>
+      <h2 routerLink="{{one.id}}">{{one.serviceDescriptions['current-language-index' | translate].title}}</h2>
       <button (click)="deleteService(one.id)"> Видалив будь ласка!</button>
     </div>
   </div>
