@@ -212,8 +212,15 @@ button{
   font-weight: normal;
   line-height: normal;
   font-size: 11px;
-
   color: #FFFFFF;
+}
+button:hover{
+  cursor: pointer;
+  background-color: #6eddc1;
+  transition: .5s;
+  -webkit-box-shadow: 0px 7px 48px -14px rgba(0,0,0,0.76);
+  -moz-box-shadow: 0px 7px 48px -14px rgba(0,0,0,0.76);
+  box-shadow: 0px 7px 48px -14px rgba(0,0,0,0.76);
 }
 .location-title{
   text-align: center;
