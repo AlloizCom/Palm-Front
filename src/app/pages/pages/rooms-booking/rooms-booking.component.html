@@ -1,8 +1,8 @@
 <div class="wrapper">
   <div class="content" >
     <div class="top">
-      <div class="slider">
-        <div class="main" *ngFor="let one of room.images; let i = index">
+      <div class="slider" *ngIf="images.length!=0">
+        <div class="main" *ngFor="let one of images; let i = index">
           <div  [style.background-image]="'url(' + (one.path|imagePipe) + ')'"
                 class="topImage"
                 [ngClass]="{ 'show' : i == index}"></div>
@@ -143,8 +143,8 @@
         </div>
       </div>
     </div>
-    <div class="bottom">
-      <h2 class="selected"><span>{{roomTariff[room.type]['current-language-index' | translate]}}</span></h2>
+    <div class="bottom" *ngIf="roomType">
+      <h2 class="selected"><span>{{roomTariff[roomType]['current-language-index' | translate]}}</span></h2>
       <p class="roomDesc">опис номеру</p>
       <p class="room-description-title">{{room.descriptions['current-language-index' |
         translate]?room.descriptions['current-language-index' |
@@ -152,11 +152,11 @@
       <p class="price-title">Ціна</p>
       <p class="price">{{room.price}} &#8372;</p>
     </div>
-    <div *ngIf="isNull(room.amenities)" class="amenity-icons">
+    <div *ngIf="amenities.length!=0" class="amenity-icons">
 
       <p class="amenity">зручності</p>
       <div class="imgs d-flex justify-content-start">
-        <img *ngFor="let oneImage of room.amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
+        <img *ngFor="let oneImage of amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
         <h5>{{room.square}}</h5>
       </div>
     </div>
