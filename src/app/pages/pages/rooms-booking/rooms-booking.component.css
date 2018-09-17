@@ -2,28 +2,33 @@
   background-color: #F8F6F6;
 }
 
-.dataPicker1{
+.dataPicker1 {
   position: absolute;
   left: -3%;
-  top: 137px!important;
+  top: 137px !important;
 }
-.dataPicker2{
+
+.dataPicker2 {
   position: absolute;
   left: -53%;
-  top: 137px!important;
+  top: 137px !important;
 }
+
 .imgs img {
   width: 25px;
   height: 25px;
   margin-right: 5%;
 }
+
 .imgs {
   width: 75%;
   margin-bottom: 7%;
 }
-.main{
+
+.main {
   position: absolute;
 }
+
 .imgs h5 {
   font-family: Raleway;
   font-weight: bold;
@@ -36,7 +41,6 @@
   margin-top: 25px;
   margin-left: -3px;
 }
-
 
 .content {
   display: flex;
@@ -58,6 +62,7 @@
   height: 400px;
   position: relative;
 }
+
 .show {
   opacity: 1;
   transition: 0.6s;
@@ -80,6 +85,7 @@
   align-items: center;
   top: calc(50% - 25px);
 }
+
 .swith:hover, .swith:active {
   background-color: #424242;
 }
@@ -115,7 +121,7 @@
   color: #000000;
 }
 
-.roomDesc{
+.roomDesc {
   padding-top: 3%;
   text-transform: uppercase;
   font-family: Raleway;
@@ -156,14 +162,14 @@
 
 }
 
-.price-title {
+.price-title[_ngcontent-c4] {
   text-transform: uppercase;
   font-family: Raleway, sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: 27px;
   font-size: 16px;
-
+  margin: 0 !important;
   color: #5A5A5A;
 
 }
@@ -179,14 +185,14 @@
   margin-left: -1%;
 }
 
-.price{
+.price {
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
   line-height: 33px;
   font-size: 19px;
   color: #53D7B7;
-  margin-left: -1%;
+  margine: 0;
 }
 
 .amenity {
@@ -206,7 +212,6 @@
 
 }
 
-
 .imgs {
   width: 250px;
   margin-left: -0.4%;
@@ -225,7 +230,6 @@
   margin-left: 5px;
 }
 
-
 /*SLIDER!!!*/
 .topImage {
   width: 100%;
@@ -236,17 +240,17 @@
   position: relative;
   opacity: 0;
 }
-.show{
+
+.show {
   opacity: 1;
 }
 
-
 /*datapicker  */
 
-
-.searchIcone{
+.searchIcone {
   cursor: pointer;
 }
+
 .search {
   display: flex;
   flex-wrap: wrap;
@@ -259,9 +263,11 @@
   width: 50%;
   height: 37%;
 }
-.searchItem>div>div{
+
+.searchItem > div > div {
   cursor: pointer;
 }
+
 .searchIcone {
   height: 71px;
   background-color: #53D7B7;
@@ -309,7 +315,7 @@
   font-size: 12px;
   text-transform: uppercase;
   line-height: 14px;
-  margin:0 5px 2px 5px;
+  margin: 0 5px 2px 5px;
 
 }
 
@@ -321,44 +327,46 @@
   color: #C4C4C4;
   margin-bottom: 2px;
 }
+
 .searchItem:nth-child(1) .year {
   margin-right: 10px;
 }
+
 .searchItem:nth-child(2) .day {
   margin-left: 10px;
 }
 
-
-.searchItem:nth-child(3),.searchItem:nth-child(4),.searchItem:nth-child(5){
-  width: 30%;
+.searchItem:nth-child(3), .searchItem:nth-child(4), .searchItem:nth-child(5) {
+  width: 31%;
   height: 45%;
   text-align: center;
 }
 
-.searchItem:nth-child(1) .numbers{
+.searchItem:nth-child(1) .numbers {
   margin-left: 8%;
 }
 
-.searchItem:nth-child(1) p,.searchItem:nth-child(2) p{
+.searchItem:nth-child(1) p, .searchItem:nth-child(2) p {
   margin-top: 22px;
-  margin-right: 32%;
+  margin-right: 27%;
 }
 
-.searchItem:nth-child(1) .numbers,.searchItem:nth-child(2) .numbers{
-  width: 71%!important;
+.searchItem:nth-child(1) .numbers, .searchItem:nth-child(2) .numbers {
+  width: 71% !important;
   display: flex;
   justify-content: space-around;
 }
-.searchItem:nth-child(3) p ,.searchItem:nth-child(4) p,.searchItem:nth-child(5) p{
+
+.searchItem:nth-child(3) p, .searchItem:nth-child(4) p, .searchItem:nth-child(5) p {
   text-align: center;
 }
 
-.searchItem:nth-child(3) div,.searchItem:nth-child(4) div,.searchItem:nth-child(5) div{
+.searchItem:nth-child(3) div, .searchItem:nth-child(4) div, .searchItem:nth-child(5) div {
   display: flex;
   align-items: center;
 }
 
-.searchItem:nth-child(6){
+.searchItem:nth-child(6) {
   align-items: center;
   width: 80%;
   height: 71px;
@@ -367,7 +375,7 @@
 
 }
 
-.searchItem:nth-child(6) p{
+.searchItem:nth-child(6) p {
   font-family: Raleway;
   margin: 0;
   font-weight: 800;
@@ -376,7 +384,6 @@
   text-transform: uppercase;
   color: #000000;
 }
-
 
 .searchItem .roomsNumber {
   font-family: Raleway;
@@ -396,8 +403,9 @@
   width: 0;
   height: 0;
   padding: 0;
-  border:none!important;
+  border: none !important;
 }
+
 .dot {
   width: 8px;
   height: 8px;
@@ -415,27 +423,32 @@
   justify-content: center;
   margin-top: 5px;
 }
-.book{
+
+.book {
   cursor: pointer;
 }
-.searchIcone{
+
+.searchIcone {
   outline-color: transparent;
 }
 
 /*enddatapicker*/
 
 @media screen and (max-width: 1140px) {
-  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4]{
+  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4] {
     justify-content: space-around;
     width: 90%;
   }
-  .content{
+
+  .content {
     width: 90%;
   }
-  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4]{
-    width: 100%!important;
+
+  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4] {
+    width: 100% !important;
   }
-  .bottom{
+
+  .bottom {
     width: 90%;
   }
 
@@ -444,10 +457,12 @@
 @media screen and (max-width: 768px) {
 
   .topImage {
-    height: 300px!important;
+    height: 300px !important;
   }
-  .swith{
+
+  .swith {
   }
+
   .top {
     flex-direction: column;
     margin-top: 10px;
@@ -456,14 +471,17 @@
   .bottom {
     width: 100%;
   }
-  .slider{
+
+  .slider {
     width: 100%;
-    height: 300px!important;
+    height: 300px !important;
   }
-  .main{
+
+  .main {
     height: 300px;
   }
-  .data-picker{
+
+  .data-picker {
     width: 100%;
     height: 240px;
     margin-top: 10px;
@@ -471,52 +489,79 @@
   }
 
 }
-@media only screen and (min-device-width : 320px) and (max-device-width : 576px)  {
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 576px) {
 
   .topImage {
-    height: 300px!important;
+    height: 300px !important;
   }
-  .swith{
-  }
+
   .top {
-    flex-direction: column;
-    margin-top: 10px;
+    flex-direction: column !important;
+    margin-top: 10px !important;
   }
 
   .bottom {
-    width: 100%;
-  }
-  .slider{
-    width: 100%;
-    height: 300px!important;
-  }
-  .main{
-    height: 300px;
-  }
-  .data-picker{
-    width: 100%;
-    height: 240px;
-    margin-top: 10px;
-
-  }
-  .searchItem{
-    height: 30%;
-  }
-  .searchItem[_ngcontent-c4]:nth-child(1) p[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) p[_ngcontent-c4]{
-    margin-top: 8px;
-    margin-bottom: 0;: 8px;
-  }
-  .searchItem[_ngcontent-c4]:nth-child(3), .searchItem[_ngcontent-c4]:nth-child(4), .searchItem[_ngcontent-c4]:nth-child(5){
-    height: 40%;
-    width: 33%;
-  }
-  p{
-    margin-bottom: 0;
-  }
-  .searchItem[_ngcontent-c4] .month[_ngcontent-c4]{
-    margin: 0;
+    width: 100% !important;
   }
 
+  .slider {
+    width: 100% !important;
+    height: 300px !important;
+  }
+
+  .main {
+    height: 300px !important;
+  }
+
+  .data-picker {
+    width: 100% !important;
+    height: 240px !important;
+    margin-top: 10px !important;
+
+  }
+
+  .searchItem {
+    height: 30% !important;
+  }
+
+  .searchItem[_ngcontent-c10]:nth-child(1) p[_ngcontent-c10], .searchItem[_ngcontent-c10]:nth-child(2) p[_ngcontent-c10] {
+    margin-top: 3px !important;
+  }
+
+  .searchItem[_ngcontent-c4]:nth-child(3), .searchItem[_ngcontent-c4]:nth-child(4), .searchItem[_ngcontent-c4]:nth-child(5) {
+    height: 28% !important;
+    width: 33% !important;
+  }
+
+  p {
+    margin-bottom: 0 !important;
+  }
+
+  .searchItem[_ngcontent-c4] .month[_ngcontent-c4] {
+    margin: 0 !important;
+  }
+
+  .searchItem[_ngcontent-c10]:nth-child(1) .numbers[_ngcontent-c10], .searchItem[_ngcontent-c10]:nth-child(2) .numbers[_ngcontent-c10] {
+    width: 93% !important;
+  }
+
+  .searchItem[_ngcontent-c4] .roomsNumber[_ngcontent-c4] {
+    margin: 0 15px 0 15px !important;
+  }
+
+  .searchItem[_ngcontent-c4] .year[_ngcontent-c4] {
+    margin-bottom: 0px !important;
+    margin-left: 3px !important;
+  }
+
+  .searchItem[_ngcontent-c4] .day[_ngcontent-c4] {
+    font-size: 25px !important;
+  }
+
+  .search[_ngcontent-c10] {
+    align-items: flex-end !important;
+  }
 }
 
 
