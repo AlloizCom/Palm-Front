@@ -77,21 +77,21 @@
         <div class="first-inputs-block">
           <div class="left-input">
             <p>Ім'я</p>
-            <input type="text" formControlName="name">
+            <input type="text" formControlName="name" class="inputCallback">
           </div>
           <div class="right-input">
             <p>Телефон</p>
-            <input type="text" formControlName="phone" [ngClass]="{'invallid':callbackForm.get('phone').invalid && callbackForm.get('phone').dirty}">
+            <input type="text" formControlName="phone" class="inputCallback" [ngClass]="{'invallid':callbackForm.get('phone').invalid && callbackForm.get('phone').dirty}">
           </div>
         </div>
         <div class="second-inputs-block">
           <p>E-mail</p>
-          <input type="text" formControlName="email" [ngClass]="{'invallid':callbackForm.get('email').invalid && callbackForm.get('email').dirty}" >
+          <input type="text" formControlName="email" class="inputCallback" [ngClass]="{'invallid':callbackForm.get('email').invalid && callbackForm.get('email').dirty}" >
 
         </div>
         <div class="textarea-block">
           <p>Повідомлення</p>
-          <textarea name="" id="" cols="30" rows="10" formControlName="message"></textarea>
+          <textarea name="" id="" cols="30" rows="10" class="inputCallbackText" formControlName="message"></textarea>
         </div>
 
         <button [disabled]="callbackForm.invalid" type="submit">Надіслати</button>
