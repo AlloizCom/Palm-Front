@@ -11,7 +11,7 @@
           translate].description:''}}</p>
         <div class="imgs d-flex justify-content-start">
           <img *ngFor="let oneImage of one.amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
-          <h5>{{one.square}}</h5>
+          <h5>{{one.square}} кв.м</h5>
         </div>
         <button [routerLink]="['/rooms-booking', one.id]">Переглянути</button>
       </div>
