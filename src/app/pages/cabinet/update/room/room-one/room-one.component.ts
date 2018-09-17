@@ -68,7 +68,10 @@ export class RoomOneComponent implements OnInit {
       available: new FormControl(),
       adultPlaces: new FormControl('', [Validators.required]),
       kidsPlaces: new FormControl('', [Validators.required]),
-      descriptions: this.roomDescriptionForm
+      amenities:new FormControl(''),
+      descriptions: this.roomDescriptionForm,
+
+
     });
     this._roomService.findOne(this.id).subscribe(next => {
       console.log(next);
