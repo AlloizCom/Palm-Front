@@ -1,23 +1,25 @@
-<div class="header d-flex flex-row justify-content-around align-items-center">
-  <div class="date">Дата</div>
-  <div class="type">Тип номера</div>
-  <div class="forSale">Для продажу</div>
-  <div class="booked">Заброньовані</div>
-  <div class="free">Вільні</div>
-  <div class="change">Змінити</div>
-</div>
-<div>
-  <div *ngFor="let one of schedule" class="items d-flex align-items-center">
-    <div class="itemChild date">{{one.today | datePipe}}</div>
-    <div class="itemChild type">{{one.roomType | roomTypePipe}}</div>
-    <div class="itemChild forSale">{{one.forSale}}</div>
-    <div class="itemChild booked">{{one.active}}</div>
-    <div class="itemChild free">{{one.free}}</div>
-    <div class="change d-flex justify-content-center">
-      <button type="button" class="btn btn-info" routerLink="{{one.id}}">Змінити</button>
-    </div>
+<div class="scheduleAll">
+  <div class="header d-flex flex-row justify-content-around align-items-center">
+    <div class="date">Дата</div>
+    <div class="type">Тип номера</div>
+    <div class="forSale">Для продажу</div>
+    <div class="booked">Заброньовані</div>
+    <div class="free">Вільні</div>
+    <div class="change">Змінити</div>
   </div>
-  <div class="butt center d-flex justify-content-center">
-    <button class="btn btn-success" (click)="showMore()">Показати більше</button>
+  <div>
+    <div *ngFor="let one of schedule" class="items d-flex align-items-center">
+      <div class="itemChild date">{{one.today | datePipe}}</div>
+      <div class="itemChild type">{{one.roomType | roomTypePipe}}</div>
+      <div class="itemChild forSale">{{one.forSale}}</div>
+      <div class="itemChild booked">{{one.active}}</div>
+      <div class="itemChild free">{{one.free}}</div>
+      <div class="change d-flex justify-content-center">
+        <button type="button" class="btn btn-info" routerLink="{{one.id}}">Змінити</button>
+      </div>
+    </div>
+    <div class="butt center d-flex justify-content-center">
+      <button class="btn btn-success" (click)="showMore()">Показати більше</button>
+    </div>
   </div>
 </div>
