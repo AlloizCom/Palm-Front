@@ -1,10 +1,9 @@
-<div>
+<div class="d-flex flex-wrap justify-content-around" >
   <div *ngFor="let one of mainPage">
-    <span>{{one.id}}</span>
-    <div class="img"  *ngFor="let two of one.images"
-         [style.background-image]="'url(' + (two.path|imagePipe) + ')'" >
-      <button (click)="delete(one.id, two.id)">DELETE!!!</button>
-      <br>
+    <div class="oneImg" *ngFor="let two of one.images">
+         <img src="{{two.path|imagePipe}}">
+         <!--[style.background-image]="'url(' + (two.path|imagePipe) + ')'" -->
+        <button (click)="delete(one.id, two.id)">DELETE!!!</button>
     </div>
     <br>
   </div>

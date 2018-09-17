@@ -16,26 +16,27 @@ button {
   text-align: center;
   color: #FFFFFF;
   text-transform: uppercase;
-  width: 100%;
-  height: 50px;
+  padding: 3px 18px;
   cursor: pointer;
-  margin-top: 250px;
+  margin: 7px 67px;
 }
 button:active{
   background: #2ebd9a;
 }
 
 .hundred{
-  width: 30%;
+  width: 100%;
   height: 300px;
   margin: 5px;
 }
 
-.img{
-  width: 60%;
-  height: 300px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+img{
+  width: 100%;
+  height: 80%;
+}
+
+.oneImg{
+  width: 250px;
+  height: 250px;
   margin: 20px;
 }

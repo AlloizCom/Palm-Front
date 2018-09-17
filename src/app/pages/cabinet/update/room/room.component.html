@@ -4,7 +4,7 @@
       <div class="img" [style.background-image]="'url(' + (one.images[0].path|imagePipe) +')'"
            *ngIf="(isNull(one.images[0]))" routerLink="{{one.id}}"></div>
       <h2 routerLink="{{one.id}}">{{one.type | roomTypePipe}}</h2>
-      <button (click)="deleteRoom(one.id)"> Видалив будь ласка!</button>
+      <button (click)="deleteRoom(one.id)"> Видалити</button>
       <br>
     </div>
   </div>
