@@ -169,7 +169,7 @@ a:hover {
   .navbar-collapse {
     position: absolute !important;
     top: 65px !important;
-    width: calc(100% - 45px) !important;
+    width: 100%;
     z-index: 1000 !important;
     border-bottom: 1px solid #5A5A5A;
     background-color: #F8F6F6;
@@ -207,6 +207,9 @@ a:hover {
 
   }
 
+  .dropdown-manu{
+    width: 100%;
+  }
   .dropdown-menu > div {
     border: none;
   }
