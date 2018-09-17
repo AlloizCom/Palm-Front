@@ -162,6 +162,7 @@ button:hover{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  margin:0;
 }
 
 .one:hover .button {
