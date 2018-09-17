@@ -1,30 +1,30 @@
-<table class="table w-75 mx-auto mt-3 border border-secondary text-center">
+<table class="table table-hover w-75 mx-auto mt-3 text-center">
   <thead>
   <tr>
-    <th class="border-right border-secondary" scope="col">Ім'я</th>
-    <th class="border-right border-secondary" scope="col">Прізвище</th>
-    <th class="border-right border-secondary" scope="col">Номер телефону</th>
-    <th class="border-right border-secondary" scope="col">Email</th>
-    <th class="border-right border-secondary" scope="col">День в'їзду</th>
-    <th class="border-right border-secondary" scope="col">День від'їзду</th>
-    <th class="border-right border-secondary" scope="col">Повідомлення</th>
-    <th class="border-right border-secondary" scope="col">К-сть дорослих</th>
-    <th class="border-right border-secondary" scope="col">К-сть дітей</th>
-    <th class="border-right border-secondary" scope="col">Статус замовлення</th>
+    <th scope="col">Ім'я</th>
+    <th scope="col">Прізвище</th>
+    <th scope="col">Номер телефону</th>
+    <th scope="col">Email</th>
+    <th scope="col">День в'їзду</th>
+    <th scope="col">День від'їзду</th>
+    <th scope="col">Повідомлення</th>
+    <th scope="col">К-сть дорослих</th>
+    <th scope="col">К-сть дітей</th>
+    <th scope="col">Статус замовлення</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let one of booking">
-    <td class="border-right border-secondary">{{one.firstName}}</td>
-    <td class="border-right border-secondary">{{one.lastName}}</td>
-    <td class="border-right border-secondary">{{one.phoneNumber}}</td>
-    <td class="border-right border-secondary">{{one.email}}</td>
-    <td class="border-right border-secondary">{{one.deteIn}}</td>
-    <td class="border-right border-secondary">{{one.deteOut}}</td>
-    <td class="border-right border-secondary">{{one.message}}</td>
-    <td class="border-right border-secondary">{{one.adults}}</td>
-    <td class="border-right border-secondary">{{one.kids}}</td>
-    <td class="border-right border-secondary">{{one.orderStatus}}</td>
+    <td>{{one.firstName}}</td>
+    <td>{{one.lastName}}</td>
+    <td>{{one.phoneNumber}}</td>
+    <td>{{one.email}}</td>
+    <td>{{one.deteIn}}</td>
+    <td>{{one.deteOut}}</td>
+    <td>{{one.message}}</td>
+    <td>{{one.adults}}</td>
+    <td>{{one.kids}}</td>
+    <td>{{one.orderStatus}}</td>
   </tr>
   </tbody>
 </table>
