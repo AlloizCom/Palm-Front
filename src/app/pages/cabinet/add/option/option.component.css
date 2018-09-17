@@ -61,4 +61,6 @@ button{
 .image img{
   max-width: 900px;
   min-width: 500px;
+  margin: auto;
+  display: flex;
 }
