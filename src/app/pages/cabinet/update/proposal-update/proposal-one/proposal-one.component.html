@@ -1,0 +1,38 @@
+<br>
+<form action="" [formGroup]="proposalUpdateForm">
+  <div>
+    <div formArrayName="proposalDescriptions">
+      <div *ngFor="let one of descriptions.controls; let i = index">
+        <form formGroupName="{{i}}">
+          <h2>{{one.get('language').value|translate}}</h2>
+          <h3>Title</h3>
+          <input type="text"  formControlName="title">
+          <h3>HeaderText</h3>
+          <input type="text"  formControlName="headerText">
+          <h3>MainText</h3>
+          <textarea cols="30" rows="10" formControlName="mainText"></textarea>
+        </form>
+      </div>
+    </div>
+
+    <div [ngClass]="{'appear' :appear}"  class="image">
+      <img [src]="img" alt="">
+    </div>
+    <br>
+
+    <form action="" #form class="">
+      <div>
+        <input (change)="readUrl($event)" id="file" type="file" class="d-none"  name="multipartFile" >
+      </div>
+
+      <div>
+        <label for="file">AddImage</label>
+        <button (click)="update(form)"[disabled]="!proposalUpdateForm.valid"  >Оновити сервіси</button>
+      </div>
+    </form>
+
+  </div>
+
+</form>
+
+

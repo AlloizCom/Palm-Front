@@ -12,6 +12,8 @@ import {ServicesOneComponent} from './services/services-one/services-one.compone
 import {AmenityComponent} from "./amenity/amenity.component";
 import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
+import { ProposalUpdateComponent } from './proposal-update/proposal-update.component';
+import { ProposalOneComponent } from './proposal-update/proposal-one/proposal-one.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import {MainUpdateComponent} from "./main-update/main-update.component";
     ServicesOneComponent,
     AmenityComponent,
     AmenityOneComponent,
-    MainUpdateComponent]
+    MainUpdateComponent,
+    ProposalUpdateComponent,
+    ProposalOneComponent]
 })
 export class UpdateModule {
 }
