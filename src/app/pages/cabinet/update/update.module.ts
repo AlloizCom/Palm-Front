@@ -12,9 +12,6 @@ import {ServicesOneComponent} from './services/services-one/services-one.compone
 import {AmenityComponent} from "./amenity/amenity.component";
 import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
-import {ScheduleComponent} from './schedule/schedule.component';
-import {ScheduleOneComponent} from './schedule/schedule-one/schedule-one.component';
-import {BookingComponent} from './booking/booking.component';
 
 
 @NgModule({
@@ -32,10 +29,7 @@ import {BookingComponent} from './booking/booking.component';
     ServicesOneComponent,
     AmenityComponent,
     AmenityOneComponent,
-    MainUpdateComponent,
-    ScheduleComponent,
-    ScheduleOneComponent,
-    BookingComponent]
+    MainUpdateComponent]
 })
 export class UpdateModule {
 }

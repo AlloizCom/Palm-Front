@@ -11,9 +11,6 @@ import {ServicesComponent} from "./services/services.component";
 import {AmenityComponent} from "./amenity/amenity.component";
 import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
-import {ScheduleComponent} from "./schedule/schedule.component";
-import {ScheduleOneComponent} from "./schedule/schedule-one/schedule-one.component";
-import {BookingComponent} from "./booking/booking.component";
 
 export const updateRoutes: Routes = [
   {
@@ -62,18 +59,6 @@ export const updateRoutes: Routes = [
       },
       {
         path: 'main-update', component: MainUpdateComponent
-      }, {
-        path: 'schedule', children: [
-          {
-            path: '', component: ScheduleComponent
-          },
-          {
-            path: ':id', component: ScheduleOneComponent
-          }
-        ]
-      },
-      {
-        path: 'booking', component: BookingComponent
       }
     ]
   }

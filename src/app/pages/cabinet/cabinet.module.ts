@@ -6,6 +6,9 @@ import {AddModule} from './add/add.module';
 import {AddComponent} from './add/add.component';
 import {UpdateComponent} from './update/update.component';
 import {CabinetComponent} from './cabinet.component';
+import {BookingComponent} from './booking/booking.component';
+import {ScheduleComponent} from './schedule/schedule.component';
+import {ScheduleOneComponent} from './schedule/schedule-one/schedule-one.component';
 
 
 @NgModule({
@@ -18,7 +21,10 @@ import {CabinetComponent} from './cabinet.component';
   declarations: [
     AddComponent,
     UpdateComponent,
-    CabinetComponent
+    CabinetComponent,
+    BookingComponent,
+    ScheduleOneComponent,
+    ScheduleComponent
   ]
 })
 export class CabinetModule { }
