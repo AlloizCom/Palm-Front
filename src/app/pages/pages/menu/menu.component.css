@@ -277,5 +277,7 @@ a:hover {
 
 .back {
   background-color: #f8f9fa !important;
-
+  position: fixed;
+  z-index: 100000000000000;
+  width: 100%;
 }

@@ -1,9 +1,10 @@
 /* data picker */
 .wrapper{
-  position: absolute;
-  left:calc(50% - 491px);
+  position: relative;
   z-index: 100!important;
-  top: 576px;
+  top: 518px;
+  display: flex;
+  justify-content: center;
 }
 .searchIcone{
   cursor: pointer;
@@ -174,7 +175,7 @@ app-top-slider{
 /*}*/
 .bottomAll {
   background: #F8F6F6;
-  margin-top: 680px;
+  margin-top: 560px;
 }
 
 .btmWrapper {
@@ -635,10 +636,6 @@ agm-map {
     left: auto;
   }
 
-
-  .wrapper{
-    left: calc(50% - 475px);
-  }
   .search{
     width: 950px;
   }
@@ -751,9 +748,7 @@ agm-map {
   right: 65%;
   left: auto;
 }
-.wrapper{
-  left: calc(50% - 384px);
-}
+
 .search{
   width: 732px;
 }
@@ -931,8 +926,9 @@ font-size: 12px;
     width: 18vw;
   }
   .bottomAll{
-    margin-top: 450px;
+    margin-top: 339px;
   }
+
 }
 
 @media screen and (max-width: 765px) {
