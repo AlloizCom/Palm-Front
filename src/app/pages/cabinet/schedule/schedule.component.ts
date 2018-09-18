@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ScheduleService} from "../../../../shared/service/schedule.service";
-import {Schedule} from "../../../../shared/models/schedule";
-import {RoomTariff} from "../../../../shared/enum/room-tariff";
+import {ScheduleService} from "../../../shared/service/schedule.service";
+import {Schedule} from "../../../shared/models/schedule";
+import {RoomTariff} from "../../../shared/enum/room-tariff";
 
 @Component({
   selector: 'app-schedule',
