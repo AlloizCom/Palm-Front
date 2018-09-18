@@ -33,6 +33,7 @@ export class ProposalService {
   }
 
  save(proposalJson: Proposal, form: HTMLFormElement): Observable<Proposal>{
+    console.log(proposalJson);
     let f = new FormData(form);
     f.append('proposalJson', JSON.stringify(proposalJson));
     return this._httpClient.post<Proposal>(this.controller + '/save', f,{

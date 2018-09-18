@@ -5,6 +5,6 @@ export class Proposal {
   id: number;
   available: boolean;
   picturePath: string;
-  proposalDescription: ProposalDescription[] = [];
+  proposalDescriptions: ProposalDescription[] = [];
 
 }
