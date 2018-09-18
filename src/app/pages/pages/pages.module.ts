@@ -14,6 +14,7 @@ import {PagesComponent} from './pages.component';
 import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
 import {TopSliderComponent} from './main/top-slider/top-slider.component';
+import { ProposalItemComponent } from './main/proposal-item/proposal-item.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import {TopSliderComponent} from './main/top-slider/top-slider.component';
     PagesComponent,
     ServiceComponent,
     RoomsBookingComponent,
-    TopSliderComponent
+    TopSliderComponent,
+    ProposalItemComponent
   ],
   exports: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
