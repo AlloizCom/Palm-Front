@@ -11,9 +11,8 @@ import {ServicesComponent} from "./services/services.component";
 import {AmenityComponent} from "./amenity/amenity.component";
 import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
-import {ScheduleComponent} from "./schedule/schedule.component";
-import {ScheduleOneComponent} from "./schedule/schedule-one/schedule-one.component";
-import {BookingComponent} from "./booking/booking.component";
+import {ProposalUpdateComponent} from "./proposal-update/proposal-update.component";
+import {ProposalOneComponent} from "./proposal-update/proposal-one/proposal-one.component";
 
 export const updateRoutes: Routes = [
   {
@@ -62,19 +61,18 @@ export const updateRoutes: Routes = [
       },
       {
         path: 'main-update', component: MainUpdateComponent
-      }, {
-        path: 'schedule', children: [
+      },
+      {
+        path: 'proposal-update', children: [
           {
-            path: '', component: ScheduleComponent
+            path: '', component: ProposalUpdateComponent
           },
           {
-            path: ':id', component: ScheduleOneComponent
+            path: ':id', component: ProposalOneComponent
           }
         ]
       },
-      {
-        path: 'booking', component: BookingComponent
-      }
+
     ]
   }
 ];

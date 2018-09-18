@@ -6,6 +6,7 @@ import {TariffComponent} from './tariff/tariff.component';
 import {AddComponent} from './add.component';
 import {AmenityNameComponent} from './amenity-name/amenity-name.component';
 import {MainPageComponent} from "./main-page/main-page.component";
+import {ProposalComponent} from "./proposal/proposal.component";
 
 export const addRoutes :Routes =[
   {
@@ -27,6 +28,9 @@ export const addRoutes :Routes =[
       },
       {
         path:'main-page',component: MainPageComponent
+      },
+      {
+        path: 'proposal',component: ProposalComponent
       }
     ]
   }

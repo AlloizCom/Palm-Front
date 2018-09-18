@@ -1,21 +1,6 @@
 ﻿<br>
 <form action="" [formGroup]="serviceUpdateForm">
 <div>
-  <!--<input type="text" [(ngModel)]="services.name">-->
-  <!--<ul>-->
-    <!--<li *ngFor="let one of services.serviceDescriptions">-->
-      <!--<div>-->
-        <!--<input formControlName="language" type="text" disabled>-->
-        <!--<h3>Заголовок</h3>-->
-        <!--<input type="text" formControlName="title">-->
-        <!--<h3>Заголовочний текст</h3>-->
-        <!--<input type="text" formControlName="headerText">-->
-        <!--<h3>Основний текст</h3>-->
-        <!--<textarea name="" id="" cols="30" rows="10" formControlName="mainText"></textarea>-->
-      <!--</div>-->
-      <!--<br>-->
-    <!--</li>-->
-  <!--</ul>-->
     <div formArrayName="serviceDescriptions">
       <div *ngFor="let one of descriptions.controls; let i = index">
         <form formGroupName="{{i}}">

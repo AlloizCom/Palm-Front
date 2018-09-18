@@ -88,6 +88,7 @@
 
 .swith:hover, .swith:active {
   background-color: #424242;
+  cursor: pointer;
 }
 
 .left {
@@ -368,11 +369,10 @@
 
 .searchItem:nth-child(6) {
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: 71px;
   display: flex;
   justify-content: center;
-
 }
 
 .searchItem:nth-child(6) p {
@@ -435,6 +435,18 @@
 /*enddatapicker*/
 
 @media screen and (max-width: 1140px) {
+
+  .slider {
+    height: 330px;
+  }
+  .topImage{
+    height: 330px;
+  }
+
+  .data-picker {
+    height: 330px;
+  }
+
   .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4] {
     justify-content: space-around;
     width: 90%;
@@ -483,14 +495,23 @@
 
   .data-picker {
     width: 100%;
-    height: 240px;
+    height: auto;
     margin-top: 10px;
 
   }
 
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 576px) {
+@media screen and (min-width: 320px) and (max-width: 576px) {
+
+  .content{
+    width: 100%!important;
+  }
+  .bottom,.amenity-icons{
+    width: 90% !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
   .topImage {
     height: 300px !important;
@@ -499,10 +520,6 @@
   .top {
     flex-direction: column !important;
     margin-top: 10px !important;
-  }
-
-  .bottom {
-    width: 100% !important;
   }
 
   .slider {

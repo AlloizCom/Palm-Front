@@ -1,0 +1,9 @@
+<div class="back ">
+  <div class="d-flex flex-row flex-wrap justify-content-around">
+    <div class="hundred align-items-center col-xl-3 col-lg-4 col-md-4 col-sm-6 d-flex flex-column " *ngFor="let one of proposal">
+      <div class="img"  [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" routerLink="{{one.id}}"></div>
+      <h2 routerLink="{{one.id}}">{{one.proposalDescriptions['current-language-index' | translate].title}}</h2>
+      <button (click)="deleteService(one.id)"> Видалити</button>
+    </div>
+  </div>
+</div>
