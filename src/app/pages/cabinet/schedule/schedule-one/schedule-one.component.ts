@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Schedule} from "../../../../shared/models/schedule";
-import {ScheduleService} from "../../../../shared/service/schedule.service";
+import {Schedule} from "../../../../../shared/models/schedule";
+import {ScheduleService} from "../../../../../shared/service/schedule.service";
 import {isNullOrUndefined} from "util";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 

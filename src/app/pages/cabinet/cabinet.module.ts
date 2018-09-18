@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {GlobalImportsModule} from '../../shared/config/global-imports/global-imports.module';
+import {GlobalImportsModule} from '../../../shared/config/global-imports/global-imports.module';
 import {UpdateModule} from './update/update.module';
 import {AddModule} from './add/add.module';
 import {AddComponent} from './add/add.component';

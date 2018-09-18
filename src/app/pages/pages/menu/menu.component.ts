@@ -1,8 +1,8 @@
 import {Component, HostListener, Injectable, OnInit} from '@angular/core';
 import {TranslateService} from 'ng2-translate';
-import {Language} from '../../../shared/enum/language';
-import {ServiceService} from '../../../shared/service/service.service';
-import {Service} from '../../../shared/models/service';
+import {Language} from '../../../../shared/enum/language';
+import {ServiceService} from '../../../../shared/service/service.service';
+import {Service} from '../../../../shared/models/service';
 
 @Component({
   selector: 'app-menu',

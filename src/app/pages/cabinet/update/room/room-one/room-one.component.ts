@@ -1,10 +1,10 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Room} from "../../../../../shared/models/room";
+import {Room} from "../../../../../../shared/models/room";
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {RoomService} from "../../../../../shared/service/room.service";
-import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
-import {AmenityService} from "../../../../../shared/service/amenity.service";
+import {RoomService} from "../../../../../../shared/service/room.service";
+import {ImagePipePipe} from "../../../../../../shared/pipe/pipe/image.pipe";
+import {AmenityService} from "../../../../../../shared/service/amenity.service";
 import {isNullOrUndefined} from "util";
 
 

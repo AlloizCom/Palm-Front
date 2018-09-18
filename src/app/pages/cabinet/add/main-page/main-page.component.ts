@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {isNullOrUndefined} from "util";
-import {MainPage} from "../../../../shared/models/main-page";
-import {MainPageSevice} from "../../../../shared/service/main-page.sevice";
+import {MainPage} from "../../../../../shared/models/main-page";
+import {MainPageSevice} from "../../../../../shared/service/main-page.sevice";
 import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({

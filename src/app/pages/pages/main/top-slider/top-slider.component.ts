@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
+import {MainPageSevice} from '../../../../../shared/service/main-page.sevice';
 import {isNullOrUndefined} from 'util';
-import {Image} from '../../../../shared/models/image';
+import {Image} from '../../../../../shared/models/image';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import {MainPage} from '../../../../shared/models/main-page';
+import {MainPage} from '../../../../../shared/models/main-page';
 
 @Component({
   selector: 'app-top-slider',

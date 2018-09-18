@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Amenity} from '../../../../shared/models/amenity';
-import {RoomDescription} from '../../../../shared/models/room-description';
+import {Amenity} from '../../../../../shared/models/amenity';
+import {RoomDescription} from '../../../../../shared/models/room-description';
 import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
-import {Room} from '../../../../shared/models/room';
-import {AmenityService} from '../../../../shared/service/amenity.service';
-import {RoomService} from '../../../../shared/service/room.service';
+import {Room} from '../../../../../shared/models/room';
+import {AmenityService} from '../../../../../shared/service/amenity.service';
+import {RoomService} from '../../../../../shared/service/room.service';
 import {isNullOrUndefined} from 'util';
 
 @Component({

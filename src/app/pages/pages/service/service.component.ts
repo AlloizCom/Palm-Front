@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ImagePipePipe} from "../../../shared/pipe/pipe/image.pipe";
-import {Service} from "../../../shared/models/service";
-import {ServiceService} from "../../../shared/service/service.service";
+import {ImagePipePipe} from "../../../../shared/pipe/pipe/image.pipe";
+import {Service} from "../../../../shared/models/service";
+import {ServiceService} from "../../../../shared/service/service.service";
 import {ActivatedRoute} from "@angular/router";
 import {isNullOrUndefined} from "util";
 

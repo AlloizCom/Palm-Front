@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {RoomService} from '../../../shared/service/room.service';
-import {Room} from '../../../shared/models/room';
-import {RoomTariff} from '../../../shared/enum/room-tariff';
+import {RoomService} from '../../../../shared/service/room.service';
+import {Room} from '../../../../shared/models/room';
+import {RoomTariff} from '../../../../shared/enum/room-tariff';
 import {isNullOrUndefined} from 'util';
-import {Image} from '../../../shared/models/image';
+import {Image} from '../../../../shared/models/image';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import {RoomParamsService} from '../../../shared/service/room-params.serive';
-import {RoomsParams} from '../../../shared/models/rooms-params';
-import {Amenity} from '../../../shared/models/amenity';
+import {RoomParamsService} from '../../../../shared/service/room-params.serive';
+import {RoomsParams} from '../../../../shared/models/rooms-params';
+import {Amenity} from '../../../../shared/models/amenity';
 
 @Component({
   selector: 'app-rooms-booking',

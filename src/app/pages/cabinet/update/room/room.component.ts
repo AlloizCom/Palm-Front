@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {RoomService} from "../../../../shared/service/room.service";
-import {Room} from "../../../../shared/models/room";
+import {RoomService} from "../../../../../shared/service/room.service";
+import {Room} from "../../../../../shared/models/room";
 import {isNullOrUndefined, isUndefined} from "util";
-import {Image} from "../../../../shared/models/image";
+import {Image} from "../../../../../shared/models/image";
 
 @Component({
   selector: 'app-room',

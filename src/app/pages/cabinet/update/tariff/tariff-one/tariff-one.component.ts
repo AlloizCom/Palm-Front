@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {TariffService} from "../../../../../shared/service/tariff.service";
+import {TariffService} from "../../../../../../shared/service/tariff.service";
 import {FormControl, FormGroup,Validators} from "@angular/forms";
 
 @Component({

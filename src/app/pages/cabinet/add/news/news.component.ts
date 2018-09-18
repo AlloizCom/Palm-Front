@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {NewsService} from '../../../../shared/service/news.service';
-import {News} from '../../../../shared/models/news';
-import {NewsDescription} from '../../../../shared/models/news-description';
-import {ImagePipePipe} from '../../../../shared/pipe/pipe/image.pipe';
+import {NewsService} from '../../../../../shared/service/news.service';
+import {News} from '../../../../../shared/models/news';
+import {NewsDescription} from '../../../../../shared/models/news-description';
+import {ImagePipePipe} from '../../../../../shared/pipe/pipe/image.pipe';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({

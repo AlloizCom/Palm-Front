@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {isNullOrUndefined} from "util";
-import {TariffService} from "../../../../shared/service/tariff.service";
-import {Tariff} from "../../../../shared/models/tariff";
+import {TariffService} from "../../../../../shared/service/tariff.service";
+import {Tariff} from "../../../../../shared/models/tariff";
 
 @Component({
   selector: 'app-tariff',

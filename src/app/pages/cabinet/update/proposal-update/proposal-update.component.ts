@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Proposal} from "../../../../shared/models/proposal";
-import {ProposalService} from "../../../../shared/service/proposal.service";
+import {Proposal} from "../../../../../shared/models/proposal";
+import {ProposalService} from "../../../../../shared/service/proposal.service";
 
 @Component({
   selector: 'app-proposal-update',

@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from "util";
-import {AmenityService} from "../../../../../shared/service/amenity.service";
-import {Amenity} from "../../../../../shared/models/amenity";
+import {AmenityService} from "../../../../../../shared/service/amenity.service";
+import {Amenity} from "../../../../../../shared/models/amenity";
 import {ActivatedRoute, Router} from "@angular/router";
-import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
+import {ImagePipePipe} from "../../../../../../shared/pipe/pipe/image.pipe";
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({

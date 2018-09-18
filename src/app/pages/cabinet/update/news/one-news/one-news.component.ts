@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {News} from '../../../../../shared/models/news';
+import {News} from '../../../../../../shared/models/news';
 import {ActivatedRoute} from '@angular/router';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {NewsService} from '../../../../../shared/service/news.service';
-import {ImagePipePipe} from '../../../../../shared/pipe/pipe/image.pipe';
+import {NewsService} from '../../../../../../shared/service/news.service';
+import {ImagePipePipe} from '../../../../../../shared/pipe/pipe/image.pipe';
 
 @Component({
   selector: 'app-one-news',

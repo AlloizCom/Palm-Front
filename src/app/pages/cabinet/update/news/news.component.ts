@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NewsService} from '../../../../shared/service/news.service';
-import {News} from '../../../../shared/models/news';
-import {Service} from "../../../../shared/models/service";
-import {ServiceService} from "../../../../shared/service/service.service";
+import {NewsService} from '../../../../../shared/service/news.service';
+import {News} from '../../../../../shared/models/news';
+import {Service} from "../../../../../shared/models/service";
+import {ServiceService} from "../../../../../shared/service/service.service";
 
 @Component({
   selector: 'app-news',

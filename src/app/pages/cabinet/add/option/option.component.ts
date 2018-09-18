@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Service} from '../../../../shared/models/service';
-import {ServiceService} from '../../../../shared/service/service.service';
+import {Service} from '../../../../../shared/models/service';
+import {ServiceService} from '../../../../../shared/service/service.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ServiceDescription} from '../../../../shared/models/service-description';
+import {ServiceDescription} from '../../../../../shared/models/service-description';
 
 @Component({
   selector: 'app-option',

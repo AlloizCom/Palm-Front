@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuComponent} from '../../menu/menu.component';
-import {Service} from '../../../../shared/models/service';
+import {Service} from '../../../../../shared/models/service';
 
 @Component({
   selector: 'app-slider',

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Service} from "../../../../../shared/models/service";
-import {ServiceService} from "../../../../../shared/service/service.service";
-import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
+import {Service} from "../../../../../../shared/models/service";
+import {ServiceService} from "../../../../../../shared/service/service.service";
+import {ImagePipePipe} from "../../../../../../shared/pipe/pipe/image.pipe";
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 @Component({
   selector: 'app-services-one',
