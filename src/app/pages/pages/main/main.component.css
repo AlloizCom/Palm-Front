@@ -2,7 +2,7 @@
 .wrapper {
   position: relative;
   z-index: 100 !important;
-  top: 518px;
+  top: 578px;
   display: flex;
   justify-content: center;
 }
@@ -187,7 +187,7 @@ app-top-slider {
 .btmWrapper {
   width: 84%;
   margin: auto;
-  padding-top: 5%;
+  padding-top: 10%;
 }
 
 .photoMain {
@@ -536,6 +536,7 @@ agm-map {
 
   .btmWrapper {
     width: 100% !important;
+    padding-top: 12%;
   }
 
   .infosMain {
@@ -901,8 +902,16 @@ agm-map {
 
 }
 
+@media screen and (max-width: 560px) {
+  .btmWrapper{
+    padding-top: 15%;
+  }
+}
 
 @media screen and (max-width: 425px) {
+  .btmWrapper{
+    padding-top: 20%;
+  }
   .map {
     width: 90% !important;
   }

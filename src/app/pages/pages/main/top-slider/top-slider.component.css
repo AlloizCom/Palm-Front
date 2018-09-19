@@ -1,4 +1,5 @@
 .topImage {
+  margin-top: 6.2vh;
   width: 100%;
   height: 680px;
   background-position: center !important;
@@ -15,7 +16,7 @@
   position: absolute;
   color: white;
   z-index: 100;
-  top: 215px;
+  top: 248px;
   left: 15%;
   font-size: 40px;
   font-family: 'Raleway', sans-serif;
@@ -36,7 +37,7 @@
 }
 
 .dots {
-  margin-top: 653px;
+  margin-top: 713px;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -57,7 +58,7 @@
   cursor: pointer;
   position: absolute;
   z-index: 10;
-  top: 300px;
+  top: 342px;
   background-color: #5A5A5A;
   width: 60px;
   height: 60px;
@@ -89,12 +90,12 @@
     height: 50px;
   }
 
-  .dots {
-    margin-top: 427px;
-  }
-
   .caption {
     top: 121px;
     font-size: 30px;
+  }
+
+  .dots{
+    margin-top: 483px;
   }
 }
