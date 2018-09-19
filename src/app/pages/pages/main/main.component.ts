@@ -203,6 +203,7 @@ export class MainComponent implements OnInit {
   enterDay: number;
   leaveDay: number;
   screenWidth: number =1024;
+  minDate = new Date();
 
   //available
   adultsNumber: number = 1;
@@ -213,7 +214,7 @@ export class MainComponent implements OnInit {
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
-    this.model2.day = new Date().getUTCDate();
+    this.model2.day = new Date().getUTCDate()+1;
     this.model2.month = new Date().getUTCMonth();
     this.model2.year = new Date().getUTCFullYear();
     this.mounth1 = this.model1?this.model1.month :'MM';
@@ -252,16 +253,13 @@ export class MainComponent implements OnInit {
     this.screenWidth = window.innerWidth;
   }
 //dataPicker
-  chang1(e) {
-    this.enterDay = e;
-        console.log(e);
-    this.mounth1 = this.model1?this.model1.month :'MM';
-  }
-
-  chang2(e) {
-    this.leaveDay = e;
-    console.log(e);
-    this.mounth2 = this.model2?this.model2.month :'MM';
+  onValueChange(e){
+    this.model1.day = e[0].getUTCDate();
+    this.model1.month = e[0].getUTCMonth();
+    this.model1.year = e[0].getUTCFullYear();
+    this.model2.day = e[1].getUTCDate();
+    this.model2.month = e[1].getUTCMonth();
+    this.model2.year = e[1].getUTCFullYear();
   }
 
   roomsNumberFunc(bull) {

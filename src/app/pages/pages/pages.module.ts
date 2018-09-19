@@ -15,12 +15,17 @@ import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
 import {TopSliderComponent} from './main/top-slider/top-slider.component';
 import { ProposalItemComponent } from './main/proposal-item/proposal-item.component';
+<<<<<<< HEAD
 import { ProposalComponent } from './proposal/proposal.component';
+=======
+import {BsDatepickerModule} from 'ngx-bootstrap';
+>>>>>>> f14f23e1628047ef81d673f985571266df8624b3
 
 @NgModule({
   imports: [
     NgbModule,
-    GlobalImportsModule
+    GlobalImportsModule,
+    BsDatepickerModule
   ],
   declarations: [
     NewsComponent,

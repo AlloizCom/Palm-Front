@@ -5,7 +5,7 @@
 <div class="wrapper">
 
   <div class="search">
-    <div class="searchItem searchItem11" (click)="d1.toggle()">
+    <div class="searchItem searchItem11" (click)="dp.toggle()">
       <p>заїзд</p>
       <div class="numbers d-flex w-100" style="cursor: pointer">
         <div class="day">{{model1?(model1.day): model1| date: 'dd'}}</div>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="verticaleLine"></div>
-    <div class="searchItem searchItem11" (click)="d2.toggle()">
+    <div class="searchItem searchItem11" (click)="dp.toggle()">
       <p>виїзд</p>
       <div class="numbers d-flex w-100" style="cursor: pointer">
         <div class="day">{{model2?(model2.day): model2| date: 'dd'}}</div>
@@ -93,34 +93,13 @@
       </svg>
     </div>
   </div>
-
-
-  <div class="dataPicker1">
-    <form class="form-inline">
-      <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd" name="d1" #c2="ngModel" [(ngModel)]="model1"
-                 (dateSelect)="chang1($event)"
-                 ngbDatepicker #d1="ngbDatepicker">
-          <div class="input-group-append">
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="dataPicker2">
-    <form class="form-inline">
-      <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd" name="d2" #c2="ngModel" [(ngModel)]="model2"
-                 (dateSelect)="chang2($event)"
-                 ngbDatepicker #d2="ngbDatepicker">
-          <div class="input-group-append">
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+  <input type="text"
+         placeholder="Daterangepicker"
+         class="form-control"
+         bsDaterangepicker
+         #dp="bsDaterangepicker"
+         [minDate]="minDate"
+         (bsValueChange)="onValueChange($event)" >
 </div>
 
 

@@ -18,6 +18,7 @@ import {NewsService} from '../shared/service/news.service';
 import {ServiceService} from "../shared/service/service.service";
 import {MenuComponent} from "./pages/pages/menu/menu.component";
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
+import {BsDatepickerModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DateValueAccessorModule } from 'angular-date-value-accessor';
     PagesModule,
     CabinetModule,
     NgbModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     FormsModule,
     GlobalImportsModule,
     PipeModule,

@@ -2,7 +2,7 @@
 .wrapper {
   position: relative;
   z-index: 100 !important;
-  top: 518px;
+  top: 578px;
   display: flex;
   justify-content: center;
 }
@@ -131,12 +131,20 @@ app-top-slider {
 }
 
 .form-control {
+  position: absolute;
   width: 0;
   height: 0;
   padding: 0;
   border: none !important;
+  left: 40%;
+  top: -155px;
 }
-
+/deep/ .theme-green .bs-datepicker-head{
+  background-color: #53D7B7;
+}
+/deep/ .theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after{
+  background-color: #53D7B7;
+}
 .dot {
   width: 8px;
   height: 8px;
@@ -187,7 +195,7 @@ app-top-slider {
 .btmWrapper {
   width: 84%;
   margin: auto;
-  padding-top: 5%;
+  padding-top: 10%;
 }
 
 .photoMain {
@@ -536,6 +544,7 @@ agm-map {
 
   .btmWrapper {
     width: 100% !important;
+    padding-top: 12%;
   }
 
   .infosMain {
@@ -901,8 +910,16 @@ agm-map {
 
 }
 
+@media screen and (max-width: 560px) {
+  .btmWrapper{
+    padding-top: 15%;
+  }
+}
 
 @media screen and (max-width: 425px) {
+  .btmWrapper{
+    padding-top: 20%;
+  }
   .map {
     width: 90% !important;
   }
@@ -938,7 +955,7 @@ agm-map {
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 319px) {
   .whiteBlock {
     width: 20vw;
   }
