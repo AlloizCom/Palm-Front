@@ -938,7 +938,7 @@ agm-map {
 
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 319px) {
   .whiteBlock {
     width: 20vw;
   }
