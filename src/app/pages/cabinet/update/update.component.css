@@ -1,3 +1,21 @@
 svg{
   transform: rotate(180deg);
 }
+.nav-item img{
+  width: 30px;
+  height: 30px;
+  margin: auto;
+}
+li {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+ul{
+  margin: auto;
+}
+a{
+  display: flex;
+  flex-direction: column;
+}
+
