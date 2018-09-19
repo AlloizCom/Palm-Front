@@ -4,6 +4,9 @@ import {Book} from "../models/book";
 import {Injectable} from "@angular/core";
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
+import {Schedule} from "../models/schedule";
+import {ScheduleByPage} from "../models/schedule-by-page";
+import {BookByPage} from "../models/book-by-page";
 
 @Injectable()
 export class BookService {
@@ -46,6 +49,30 @@ export class BookService {
 
   delete(id: number): Observable<any> {
     return this._httpClient.delete(this.controller + '/delete/' + id)
+      .catch(err => Observable.throw(err));
+  }
+
+  /**
+   *
+   * @param {number} page
+   * @param {number} count
+   * @returns {Observable<Book[]>}
+   */
+  findAllBookByPage(page: number, count: number): Observable<Book[]> {
+    return this._httpClient.get<Book[]>
+    (this.controller + '/find-all-book-by-page/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
+
+  /**
+   *
+   * @param {number} page
+   * @param {number} count
+   * @returns {Observable<BookByPage>}
+   */
+  findAllAvailableBookByPage(page: number, count: number): Observable<BookByPage> {
+    return this._httpClient.get<BookByPage>
+    (this.controller + '/find-all-book-by-page-available/' + page + '/' + count)
       .catch(err => Observable.throw(err));
   }
 
