@@ -1,19 +1,19 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ScheduleService } from '../../../../shared/service/schedule.service';
-import { Schedule } from '../../../../shared/models/schedule';
+import {Schedule} from "../../../../../shared/models/schedule";
+import {ScheduleService} from "../../../../../shared/service/schedule.service";
 
 @Component({
   selector: 'app-schedule-type',
   templateUrl: './schedule-type.component.html',
   styleUrls: ['./schedule-type.component.css']
 })
-export class ScheduleTypeComponent implements OnInit {  
+export class ScheduleTypeComponent implements OnInit {
   @Input() datefrom: string;
   @Input() roomType: string;
 
   schedule:Schedule[] = [];
   status:string[] = [];
-  constructor(private _scheduleService:ScheduleService) { 
+  constructor(private _scheduleService:ScheduleService) {
   }
 
   ngOnInit() {
