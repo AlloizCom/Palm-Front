@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ImagePipePipe} from "../../../../../../shared/pipe/pipe/image.pipe";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Proposal} from "../../../../../../shared/models/proposal";
 import {ProposalService} from "../../../../../../shared/service/proposal.service";
 
@@ -18,7 +18,10 @@ export class ProposalOneComponent implements OnInit {
   img: string = '';
   descriptions:FormArray;
 
-  constructor(private _router: ActivatedRoute, private _proposalService: ProposalService, private _imagePipe: ImagePipePipe) {
+  constructor(private _router: ActivatedRoute,
+              private _proposalService: ProposalService,
+              private _imagePipe: ImagePipePipe,
+              private _route: Router) {
     _router.params.subscribe(next => {
       _proposalService.findOne(next['id']).subscribe(next => {
         this.proposal = next;
@@ -73,7 +76,7 @@ export class ProposalOneComponent implements OnInit {
     console.log(this.proposal);
     this._proposalService.update(this.proposal, form).subscribe(next => {
       this.proposal = next;
-      this.proposalUpdateForm.patchValue(<any>next);
+      this._route.navigateByUrl('/cabinet/update/proposal-update');
     }, error => {
       console.log(error);
     })
