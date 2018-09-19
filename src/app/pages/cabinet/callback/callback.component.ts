@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Callback} from '../../../shared/models/callback';
-import {CallbackService} from '../../../shared/service/callback.service';
+import {Callback} from '../../../../shared/models/callback';
+import {CallbackService} from '../../../../shared/service/callback.service';
 
 @Component({
   selector: 'app-callback',

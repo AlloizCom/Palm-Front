@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Proposal} from "../../../../shared/models/proposal";
-import {ProposalDescription} from "../../../../shared/models/proposal-description";
-import {ProposalService} from "../../../../shared/service/proposal.service";
+import {Proposal} from "../../../../../shared/models/proposal";
+import {ProposalDescription} from "../../../../../shared/models/proposal-description";
+import {ProposalService} from "../../../../../shared/service/proposal.service";
 
 @Component({
   selector: 'app-proposal',

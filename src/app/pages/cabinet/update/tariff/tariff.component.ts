@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Tariff} from "../../../../shared/models/tariff";
-import {TariffService} from "../../../../shared/service/tariff.service";
+import {Tariff} from "../../../../../shared/models/tariff";
+import {TariffService} from "../../../../../shared/service/tariff.service";
 
 @Component({
   selector: 'app-tariff',

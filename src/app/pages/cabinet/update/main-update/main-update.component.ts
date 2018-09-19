@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Image} from "../../../../shared/models/image";
-import {MainPage} from "../../../../shared/models/main-page";
-import {MainPageSevice} from "../../../../shared/service/main-page.sevice";
+import {Image} from "../../../../../shared/models/image";
+import {MainPage} from "../../../../../shared/models/main-page";
+import {MainPageSevice} from "../../../../../shared/service/main-page.sevice";
 import {NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";
 import {isNullOrUndefined} from "util";
 

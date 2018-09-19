@@ -9,7 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MainRoomsComponent} from './main/main-rooms/main-rooms.component';
 import {MenuComponent} from './menu/menu.component';
 import {FooterComponent} from './footer/footer.component';
-import {GlobalImportsModule} from '../../shared/config/global-imports/global-imports.module';
+import {GlobalImportsModule} from '../../../shared/config/global-imports/global-imports.module';
 import {PagesComponent} from './pages.component';
 import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';

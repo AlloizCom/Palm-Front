@@ -1,8 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
-import {MainPageSevice} from '../../../shared/service/main-page.sevice';
-import {RoomParamsService} from "../../../shared/service/room-params.serive";
-import {RoomsParams} from "../../../shared/models/rooms-params";
+import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
+import {RoomParamsService} from "../../../../shared/service/room-params.serive";
+import {RoomsParams} from "../../../../shared/models/rooms-params";
 
 @Component({
   selector: 'app-main',

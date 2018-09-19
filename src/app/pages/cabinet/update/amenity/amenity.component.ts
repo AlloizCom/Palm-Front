@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Amenity} from "../../../../shared/models/amenity";
-import {Image} from "../../../../shared/models/image";
-import {AmenityService} from "../../../../shared/service/amenity.service";
+import {Amenity} from "../../../../../shared/models/amenity";
+import {Image} from "../../../../../shared/models/image";
+import {AmenityService} from "../../../../../shared/service/amenity.service";
 import {isNullOrUndefined} from "util";
 
 @Component({

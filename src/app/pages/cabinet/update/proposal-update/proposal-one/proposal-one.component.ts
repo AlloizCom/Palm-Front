@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {ImagePipePipe} from "../../../../../shared/pipe/pipe/image.pipe";
+import {ImagePipePipe} from "../../../../../../shared/pipe/pipe/image.pipe";
 import {ActivatedRoute} from "@angular/router";
-import {Proposal} from "../../../../../shared/models/proposal";
-import {ProposalService} from "../../../../../shared/service/proposal.service";
+import {Proposal} from "../../../../../../shared/models/proposal";
+import {ProposalService} from "../../../../../../shared/service/proposal.service";
 
 @Component({
   selector: 'app-proposal-one',

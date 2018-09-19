@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
-import {RoomService} from '../../../shared/service/room.service';
-import {TariffService} from '../../../shared/service/tariff.service';
-import {RoomTariff} from '../../../shared/enum/room-tariff';
-import {RoomWithPrice} from '../../../shared/models/room-with-price';
-import {RoomParamsService} from "../../../shared/service/room-params.serive";
-import {RoomsParams} from "../../../shared/models/rooms-params";
+import {RoomService} from '../../../../shared/service/room.service';
+import {TariffService} from '../../../../shared/service/tariff.service';
+import {RoomTariff} from '../../../../shared/enum/room-tariff';
+import {RoomWithPrice} from '../../../../shared/models/room-with-price';
+import {RoomParamsService} from "../../../../shared/service/room-params.serive";
+import {RoomsParams} from "../../../../shared/models/rooms-params";
 
 @Component({
   selector: 'app-rooms',

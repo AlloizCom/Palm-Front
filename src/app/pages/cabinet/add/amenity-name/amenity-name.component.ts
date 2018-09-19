@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Amenity} from '../../../../shared/models/amenity';
-import {AmenityName} from '../../../../shared/models/amenity-name';
-import {AmenityService} from '../../../../shared/service/amenity.service';
+import {Amenity} from '../../../../../shared/models/amenity';
+import {AmenityName} from '../../../../../shared/models/amenity-name';
+import {AmenityService} from '../../../../../shared/service/amenity.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {NewsService} from '../../../shared/service/news.service';
-import {News} from '../../../shared/models/news';
+import {NewsService} from '../../../../shared/service/news.service';
+import {News} from '../../../../shared/models/news';
 import {ActivatedRoute} from '@angular/router';
-import {ImagePipePipe} from '../../../shared/pipe/pipe/image.pipe';
+import {ImagePipePipe} from '../../../../shared/pipe/pipe/image.pipe';
 import {isNullOrUndefined} from "util";
 import {TranslateService} from "ng2-translate";
-import {LangSort} from '../../../shared/models/utils/lang-sort';
+import {LangSort} from '../../../../shared/models/utils/lang-sort';
 
 @Component({
   selector: 'app-article',
