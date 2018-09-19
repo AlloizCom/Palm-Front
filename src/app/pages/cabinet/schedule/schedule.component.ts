@@ -14,15 +14,19 @@ export class ScheduleComponent implements OnInit {
   schedule:Schedule[]=[];
   roomTariff: any;
   page: number = 0;
-  numberOfRows: number = 70;
+  roomTypes: any;
+  numberOfRows: number = 150;
 
   constructor(private _scheduleService:ScheduleService) {
     this.roomTariff = RoomTariff;
+    this.roomTypes = Object.keys(RoomTariff).filter((element, index, array) => {
+      return (element != 'NONE');
+    });
     this._scheduleService.findAllAvailableScheduleByPage(this.page, this.numberOfRows).subscribe(next=>{
       for (let one of next.shedules){
         this.schedule.push(one);
       }
-      console.log("schedule", next.shedules);
+      // console.log("schedule", next.shedules);
     });
   }
 

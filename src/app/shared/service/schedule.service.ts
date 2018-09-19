@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {Schedule} from "../models/schedule";
 import {NewsByPage} from "../models/news-by-page";
@@ -42,6 +42,12 @@ export class ScheduleService {
   findAllScheduleByPage(page: number, count: number): Observable<Schedule[]> {
     return this._httpClient.get<Schedule[]>
     (this.controller + '/find-all-schedule-by-page/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
+  
+  findAllScheduleByTypeFromDate(date: string, type: string): Observable<Schedule[]> {
+    return this._httpClient.get<Schedule[]>
+    (this.controller + '/find-all-schedule-by-date-type', { params: new HttpParams().set("date", date).set("type", type)})
       .catch(err => Observable.throw(err));
   }
 

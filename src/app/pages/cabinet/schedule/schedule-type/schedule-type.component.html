@@ -1,0 +1,26 @@
+<div class="room-type">
+</div>  <div class="type-name">Номер {{roomType | roomTypePipe}}</div>
+  <div class="schedule-table">
+    <div class="schedule-table-left-head">
+      <div>date</div>
+      <div>Статус номера</div>
+      <div>Номери на продаж</div>
+      <div>Активні бронювання</div>
+    </div>
+    <div class="schedule-table-body">
+        <div *ngFor="let day of schedule; let i = index" class="day-in-schedule">
+          <div class="schedule-date">
+            {{day.today | date: 'd E'}}
+          </div>
+          <div class="schedule-status">
+            {{}}
+          </div>
+          <div class="schedule-for-sale">
+            {{day.forSale}}
+          </div>
+          <div class="schedule-booked">
+            {{day.active}}
+          </div>
+        </div>
+    </div>
+  </div>

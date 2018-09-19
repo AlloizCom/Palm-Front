@@ -6,5 +6,3 @@ export const RoomTariff = {
   'STANDARD_IMPROVED' : ['Standart improved','Покращений стандарт','Flashowanie standardowe','Улучшеный стандарт'],
   'NONE' : 'NONE'
 }
-
-

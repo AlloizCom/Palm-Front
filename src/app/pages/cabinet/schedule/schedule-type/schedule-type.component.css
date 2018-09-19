@@ -1,0 +1,27 @@
+.schedule-table {
+    font-size: 11px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.schedule-table-body div {
+    margin-left: -1px;
+    border: 1px solid #c4c4c4;
+}
+
+.schedule-table-left-head {
+    width: 200px;
+}
+
+.schedule-table-left-head > div {
+    margin-left: -1px;
+    border: 1px solid #c4c4c4;
+}
+
+.schedule-table-body {
+    text-align: center;
+    display: flex;
+    flex-direction:row; 
+}
+
