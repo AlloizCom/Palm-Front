@@ -1,0 +1,21 @@
+.nav-item img{
+  width: 30px;
+  height: 30px;
+  margin: auto;
+}
+li {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+a{
+  display: flex;
+  flex-direction: column;
+}
+.navbar{
+  border-bottom: 3px groove whitesmoke;
+}
+.logo img{
+  transform: scale(1.5);
+  margin-left: 25%;
+}
