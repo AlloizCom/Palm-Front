@@ -10,6 +10,7 @@ import {Http} from "@angular/http";
 import {AgmCoreModule} from "@agm/core";
 import { AgmDirectionModule } from 'agm-direction';
 import {RoomParamsService} from "../../service/room-params.serive";
+import {NotificationService} from "../../service/notification.service";
 
 // import {routes} from '../../../main.routes';
 
@@ -51,7 +52,8 @@ export function createTranslateLoader(http: Http) {
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers:[
     RoomParamsService,
-    TranslateService
+    TranslateService,
+    NotificationService
   ]
 })
 export class GlobalImportsModule { }
