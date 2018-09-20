@@ -6,11 +6,23 @@ import {BookCounter} from "../models/book-counter";
 @Injectable()
 export class NotificationService {
 
+  controller = "/counter";
+
   constructor(private _httpClient: HttpClient){
   }
 
   getCount(): Observable<BookCounter>{
     return this._httpClient.get<BookCounter>("/notify")
+      .catch(err => Observable.throw(err));
+  }
+
+  resetCounter(): Observable<BookCounter>{
+    return this._httpClient.get<BookCounter>("/reset")
+      .catch(err => Observable.throw(err));
+  }
+
+  incrementCounter(): Observable<BookCounter>{
+    return this._httpClient.get<BookCounter>("/increment")
       .catch(err => Observable.throw(err));
   }
 
