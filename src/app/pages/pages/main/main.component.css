@@ -668,7 +668,7 @@ agm-map {
   }
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-device-width: 765px) {
   .selected span {
     border: none;
   }
@@ -895,7 +895,7 @@ agm-map {
   }
 }
 
-@media screen and (max-width: 645px) {
+@media screen and (max-device-width: 645px) {
   agm-map {
     height: 45vh;
   }
@@ -906,15 +906,15 @@ agm-map {
 
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-device-width: 560px) {
   .btmWrapper{
     padding-top: 15%;
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-device-width: 425px) {
   .btmWrapper{
-    padding-top: 20%;
+    padding-top: 26%;
   }
   .map {
     width: 90% !important;
@@ -951,7 +951,7 @@ agm-map {
 
 }
 
-@media screen and (max-width: 319px) {
+@media screen and (max-device-width: 319px) {
   .whiteBlock {
     width: 20vw;
   }
