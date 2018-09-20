@@ -1,6 +1,7 @@
 .topPhotos {
   height: 70vh;
   background: black;
+  padding-top: 6vh;
 }
 
 .first h2 {
@@ -28,7 +29,6 @@
 
 .first {
   width: 100%;
-  margin-top: 6.2vh;
 }
 
 .one:nth-child(2), .one:nth-child(5) {
@@ -206,7 +206,8 @@ button:hover{
   position: relative;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-device-width: 1100px) {
+
   .firsty {
     margin-right: 5%;
     flex-wrap: wrap !important;
@@ -235,7 +236,19 @@ button:hover{
   }
 }
 
-@media screen and (max-width: 795px) {
+@media screen and (max-device-width: 990px) {
+  .topPhotos{
+    padding-top: 10vh;
+  }
+}
+
+@media screen and (max-device-width: 795px) {
+
+  .topPhotos {
+    padding-top: 10vh;
+    height: auto;
+  }
+
   .firsty {
     margin: auto !important;
     margin-right: 0%;
@@ -274,16 +287,13 @@ button:hover{
     width: 100%;
   }
 
-  .topPhotos {
-    height: auto;
-  }
 
   .one:nth-child(2), .one:nth-child(5), .one:nth-child(1), .one:nth-child(4), .one:nth-child(3), .one:nth-child(6) {
     height: 25vh;
   }
 }
 
-@media screen and (max-width: 645px) {
+@media screen and (max-device-width: 645px) {
 
   .firsty {
     flex-direction: column !important;
@@ -305,14 +315,14 @@ button:hover{
   .one:nth-child(2), .one:nth-child(5), .one:nth-child(1), .one:nth-child(4), .one:nth-child(3), .one:nth-child(6) {
     height: 23.5vh;
     width: 50%;
-    align-items: flex-end;
-    flex-direction: row !important;
-    justify-content: start !important;
+    /*align-items: flex-end;*/
+    /*flex-direction: row !important;*/
+    /*justify-content: start !important;*/
   }
 
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-device-width: 375px) {
   .back1 {
     width: 100%;
     height: 176px;
@@ -324,6 +334,6 @@ button:hover{
   }
 
   .one:nth-child(2), .one:nth-child(5), .one:nth-child(1), .one:nth-child(4), .one:nth-child(3), .one:nth-child(6) {
-    height: 14.5vh;
+    height: 19.5vh
   }
 }
