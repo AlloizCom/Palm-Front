@@ -2,8 +2,7 @@
 .wrapper {
   position: relative;
   z-index: 100 !important;
-  /*top: 612px;*/
-  top: 573px;
+  top: 578px;
   display: flex;
   justify-content: center;
 }
@@ -178,6 +177,16 @@ app-top-slider {
 
 /*Vitalik*/
 
+/*!* About us *!*/
+/*.aboutUs1{*/
+/*height: 150px;*/
+/*width: 100%;*/
+/*}*/
+/*.left,.right{*/
+/*width: 30%;*/
+/*height: 30%;*/
+/*background: white;*/
+/*}*/
 .bottomAll {
   background: #F8F6F6;
   margin-top: 560px;
@@ -607,7 +616,10 @@ agm-map {
     width: 100% !important;
     align-content: center;
   }
+}
 
+@media screen and (max-width: 1020px) {
+  /* data picker */
   .dataPicker1 {
     left: 1%;
   }
@@ -640,14 +652,6 @@ agm-map {
   }
 
   /* end data picker */
-}
-
-@media screen and (max-width: 990px) {
-
-  .wrapper {
-    top: 612px;
-  }
-
 }
 
 @media screen and (max-width: 965px) {
@@ -759,8 +763,8 @@ agm-map {
     padding-top: 10%;
   }
 
-  .wrapper{
-    top: 369px;
+  .wrapper {
+    top: 515px;
     width: 100% !important;
     left: 0 !important;
   }
@@ -817,8 +821,8 @@ agm-map {
     margin-top: 339px;
   }
 
-  .wrapper{
-    top: 369px !important;
+  .wrapper {
+    top: 340px !important;
     width: 100% !important;
     left: 0 !important;
   }
@@ -892,6 +896,18 @@ agm-map {
   .whiteBlock {
     width: 18vw;
 
+  }
+  .item {
+    width: 90% !important;
+    margin: 5% auto !important;
+  }
+
+  .item2 {
+    width: 66% !important;
+  }
+
+  .numbers {
+    cursor: pointer !important;
   }
 }
 
