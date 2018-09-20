@@ -1,8 +1,8 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
-import {RoomParamsService} from "../../../../shared/service/room-params.serive";
-import {RoomsParams} from "../../../../shared/models/rooms-params";
+import {RoomParamsService} from '../../../../shared/service/room-params.serive';
+import {RoomsParams} from '../../../../shared/models/rooms-params';
 
 @Component({
   selector: 'app-main',
@@ -89,7 +89,7 @@ export class MainComponent implements OnInit {
         {
           'color': '#ffffff'
         },
-      {
+        {
           'lightness': 16
         }
       ]
@@ -196,14 +196,15 @@ export class MainComponent implements OnInit {
   ];
 
   //dataPicker
-  model1={day:0,year:0,month:0};
-  model2={day:0,year:0,month:0};
+  model1 = {day: 0, year: 0, month: 0};
+  model2 = {day: 0, year: 0, month: 0};
   mounth1: any;
   mounth2: any;
   enterDay: number;
   leaveDay: number;
-  screenWidth: number =1024;
+  screenWidth: number = 1024;
   minDate = new Date();
+  amountDaysInYour: number;
 
   //available
   adultsNumber: number = 1;
@@ -214,24 +215,24 @@ export class MainComponent implements OnInit {
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
-    this.model2.day = new Date().getUTCDate()+1;
+    this.model2.day = new Date().getUTCDate() + 1;
     this.model2.month = new Date().getUTCMonth();
     this.model2.year = new Date().getUTCFullYear();
-    this.mounth1 = this.model1?this.model1.month :'MM';
-    this.mounth2 = this.model2?this.model2.month :'MM';
+    this.mounth1 = this.model1 ? this.model1.month : 'MM';
+    this.mounth2 = this.model2 ? this.model2.month : 'MM';
   }
 
-  findRoomByParams(){
+  findRoomByParams() {
     let roomsParams = new RoomsParams();
-    roomsParams.dateFrom = this.objectDateToString(this.model1).toISOString().replace(/T.*/,'');
-    roomsParams.dateTo = this.objectDateToString(this.model2).toISOString().replace(/T.*/,'');
+    roomsParams.dateFrom = this.objectDateToString(this.model1).toISOString().replace(/T.*/, '');
+    roomsParams.dateTo = this.objectDateToString(this.model2).toISOString().replace(/T.*/, '');
     roomsParams.numbersOfRooms = this.roomsNumber;
     roomsParams.adults = this.adultsNumber;
     roomsParams.childrens = this.childrenNumber;
     this._roomsParamService.setRoomsParams(roomsParams);
   }
 
-  objectDateToString(date){
+  objectDateToString(date) {
     return new Date(date.year, date.month, date.day + 1);
   }
 
@@ -250,15 +251,39 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.screenWidth = window.innerWidth;
   }
+
 //dataPicker
-  onValueChange(e){
+  onValueChange(e) {
     this.model1.day = e[0].getUTCDate();
     this.model1.month = e[0].getUTCMonth();
     this.model1.year = e[0].getUTCFullYear();
-    e[0].getUTCDate()<e[1].getUTCDate()?this.model2.day = e[1].getUTCDate():this.model2.day = e[1].getUTCDate()+1;
-    this.model2.month = e[1].getUTCMonth();
-    this.model2.year = e[1].getUTCFullYear();
+    this.amountDaysInYour = this.daysInMonth(e[0]);
+    if (e[1].getUTCDate() == this.amountDaysInYour) {
+      this.model2.day = 1;
+      this.model2.month = e[1].getUTCMonth() + 1;
+    } else {
+      this.model2.day = e[1].getUTCDate() + 1;
+      this.model2.month = e[1].getUTCMonth() + 1;
+    }
+    if (e[1].getUTCDate() == this.amountDaysInYour && e[1].getUTCMonth() == 11) {
+      console.log("contact");
+      this.model2.year = e[1].getUTCFullYear() + 1;
+      this.model2.month = 1;
+    } else {
+      console.log("contact1");
+      this.model2.year = e[1].getUTCFullYear();
+    }
+    console.log(this.amountDaysInYour);
+    console.log(e[1].getUTCMonth(), e[1].getUTCFullYear());
   }
+
+  daysInMonth(anyDateInMonth) {
+    return new Date(anyDateInMonth.getFullYear(),
+      anyDateInMonth.getMonth() + 1,
+      0).getDate();
+  }
+
+//dataPicker
 
   roomsNumberFunc(bull) {
     if (bull) {
