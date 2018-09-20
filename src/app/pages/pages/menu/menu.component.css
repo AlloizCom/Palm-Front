@@ -4,6 +4,7 @@
 }
 
 .navbar {
+  height: 6vh;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -149,23 +150,23 @@ a:hover {
   }
 
   .navbar {
-    height: 56px;
+    height: 10vh
   }
 
-  .logo img {
-    margin-right: 10px;
-    margin-top: 8px;
-  }
+  /*.logo img {*/
+    /*margin-right: 10px;*/
+    /*margin-top: 8px;*/
+  /*}*/
 
   .nav-link {
     margin-left: 25px;
   }
 
-  .logo {
-    align-self: flex-start !important;
-  }
+  /*.logo {*/
+    /*align-self: flex-start !important;*/
+  /*}*/
 
-  .navbar-light[_ngcontent-c2] .navbar-nav[_ngcontent-c2] {
+  .navbar-light .navbar-nav {
     margin-right: 0px !important;
   }
 

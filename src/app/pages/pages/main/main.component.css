@@ -2,7 +2,8 @@
 .wrapper {
   position: relative;
   z-index: 100 !important;
-  top: 578px;
+  /*top: 612px;*/
+  top: 573px;
   display: flex;
   justify-content: center;
 }
@@ -177,16 +178,6 @@ app-top-slider {
 
 /*Vitalik*/
 
-/*!* About us *!*/
-/*.aboutUs1{*/
-/*height: 150px;*/
-/*width: 100%;*/
-/*}*/
-/*.left,.right{*/
-/*width: 30%;*/
-/*height: 30%;*/
-/*background: white;*/
-/*}*/
 .bottomAll {
   background: #F8F6F6;
   margin-top: 560px;
@@ -616,10 +607,7 @@ agm-map {
     width: 100% !important;
     align-content: center;
   }
-}
 
-@media screen and (max-width: 1020px) {
-  /* data picker */
   .dataPicker1 {
     left: 1%;
   }
@@ -652,6 +640,14 @@ agm-map {
   }
 
   /* end data picker */
+}
+
+@media screen and (max-width: 990px) {
+
+  .wrapper {
+    top: 612px;
+  }
+
 }
 
 @media screen and (max-width: 965px) {
@@ -763,8 +759,8 @@ agm-map {
     padding-top: 10%;
   }
 
-  .wrapper[_ngcontent-c4] {
-    top: 515px;
+  .wrapper{
+    top: 369px;
     width: 100% !important;
     left: 0 !important;
   }
@@ -821,8 +817,8 @@ agm-map {
     margin-top: 339px;
   }
 
-  .wrapper[_ngcontent-c4] {
-    top: 340px !important;
+  .wrapper{
+    top: 369px !important;
     width: 100% !important;
     left: 0 !important;
   }
@@ -843,7 +839,7 @@ agm-map {
     padding-bottom: 10px !important;
   }
 
-  .wrapper[_ngcontent-c4] {
+  .wrapper {
     top: 515px;
     width: 100% !important;
     left: 0 !important;
