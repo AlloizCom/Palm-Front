@@ -1,26 +1,53 @@
 <div class="room-type">
-</div>  <div class="type-name">Номер {{roomType | roomTypePipe}}</div>
-  <div class="schedule-table">
-    <div class="schedule-table-left-head">
-      <div>date</div>
-      <div>Статус номера</div>
-      <div>Номери на продаж</div>
-      <div>Активні бронювання</div>
+</div>
+<div class="type-name">Номер {{roomType | roomTypePipe}}</div>
+<div class="schedule-table">
+  <div class="schedule-table-left-head">
+    <div class="left-date">
+      <div class="p-wrapper1">
+        <p>Дата</p>
+      </div>
     </div>
-    <div class="schedule-table-body">
-        <div *ngFor="let day of schedule; let i = index" class="day-in-schedule">
-          <div class="schedule-date">
-            {{day.today | date: 'd E'}}
-          </div>
-          <div class="schedule-status">
-            st
-          </div>
-          <div class="schedule-for-sale">
-            {{day.forSale}}
-          </div>
-          <div class="schedule-booked">
-            {{day.active}}
-          </div>
-        </div>
+    <div class="left-status">
+      <div class="p-wrapper2">
+        <p>Статус номера</p>
+      </div>
+    </div>
+    <div class="left-rooms">
+      <div class="p-wrapper3">
+        <p>Номери на продаж</p>
+      </div>
+    </div>
+    <div class="left-active">
+      <div class="p-wrapper4">
+        <p>Активні бронювання</p>
+      </div>
     </div>
   </div>
+  <div class="schedule-table-body">
+    <div *ngFor="let day of schedule; let i = index" class="day-in-schedule">
+      <div class="schedule-date">
+        <p>
+          {{day.today | date: 'd E'}}
+        </p>
+
+      </div>
+      <div class="schedule-status">
+        <p>
+          st
+        </p>
+      </div>
+      <div class="schedule-for-sale">
+        <p>
+          {{day.forSale}}
+        </p>
+
+      </div>
+      <div class="schedule-booked">
+        <p>
+          {{day.active}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
