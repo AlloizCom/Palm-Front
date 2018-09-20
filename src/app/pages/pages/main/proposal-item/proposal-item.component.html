@@ -1,6 +1,6 @@
 <div class="firsty d-flex flex-row justify-content-between">
   <div *ngFor="let one of proposals"  class="item">
-    <div [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" class="back1"></div>
+    <div [routerLink]="['/proposal', one.id]"  [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" class="back1"></div>
     <h3>{{one.proposalDescriptions['current-language-index' | translate].title}}</h3>
     <h4>{{one.proposalDescriptions['current-language-index' | translate].mainText}}</h4>
     <div class="someShit2 d-flex justify-content-end">
@@ -12,5 +12,4 @@
     </div>
   </div>
 </div>
-
 
