@@ -7,7 +7,7 @@ import {RoomsComponent} from "./rooms/rooms.component";
 import {PagesComponent} from './pages.component';
 import {ServiceComponent} from "./service/service.component";
 import {RoomsBookingComponent} from "./rooms-booking/rooms-booking.component";
-import {ProposalComponent} from "../cabinet/add/proposal/proposal.component";
+import {ProposalComponent} from "./proposal/proposal.component";
 
 export const pagesRoutes: Routes = [
   {
