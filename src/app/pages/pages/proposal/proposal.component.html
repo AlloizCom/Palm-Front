@@ -1,0 +1,22 @@
+<div *ngIf="isNull(proposal)"  class="content">
+  <div class="header-text">
+    <h2>{{(proposal.proposalDescriptions['current-language-index'|translate]).title}}</h2>
+  </div>
+  <div class="main-text">
+    <p>{{(proposal.proposalDescriptions['current-language-index'|translate]).headerText}}</p>
+  </div>
+  <div class="image" [style.background-image]="'url(' + (proposal.picturePath|imagePipe) + ')'">
+  </div>
+  <div class="down-text">
+    <div class="right-text-block">
+      <p>{{proposal.proposalDescriptions['current-language-index'|translate].mainText}}</p>
+      <div class="date-and-share">
+        <div class="date">
+        </div>
+        <div class="share">
+          <img src="../../../../assets/svg/Vector.svg" >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
