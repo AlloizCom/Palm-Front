@@ -15,7 +15,6 @@ import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
 import {TopSliderComponent} from './main/top-slider/top-slider.component';
 import { ProposalItemComponent } from './main/proposal-item/proposal-item.component';
-import { ProposalComponent } from './proposal/proposal.component';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 
 @NgModule({
@@ -38,8 +37,7 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
     ServiceComponent,
     RoomsBookingComponent,
     TopSliderComponent,
-    ProposalItemComponent,
-    ProposalComponent
+    ProposalItemComponent
   ],
   exports: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
