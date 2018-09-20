@@ -26,19 +26,19 @@
    </div>
       <div class="data-picker">
         <div class="search">
-          <div class="searchItem searchItem11" (click)="d1.toggle()">
+          <div class="searchItem searchItem11" (click)="dp.toggle()">
             <p>заїзд</p>
             <div class="numbers d-flex w-100" style="cursor: pointer">
               <div class="day">{{model1?(model1.day): model1| date: 'dd'}}</div>
-              <div class="month">{{mounth1 | mounth}}</div>
+              <div class="month">{{model1.month | mounth}}</div>
               <div class="year">{{model1?model1.year : 'yy'}}</div>
             </div>
           </div>
-          <div class="searchItem searchItem11" (click)="d2.toggle()">
+          <div class="searchItem searchItem11" (click)="dp.toggle()">
             <p>виїзд</p>
             <div class="numbers d-flex w-100" style="cursor: pointer">
               <div class="day">{{model2?(model2.day): model2| date: 'dd'}}</div>
-              <div class="month">{{mounth2 | mounth}}</div>
+              <div class="month">{{model2.month | mounth}}</div>
               <div class="year">{{model2?model2.year : 'yy'}}</div>
             </div>
           </div>
@@ -102,8 +102,8 @@
               </div>
             </div>
           </div>
-          <div class="searchItem">
-            <p class="book" (click)="pay()">забронювати</p>
+          <div class="searchItem BtnBook" (click)="pay()">
+            <p>забронювати</p>
           </div>
           <!--<div  [routerLink]="['rooms']" (click)="findRoomByParams()" class="searchIcone">-->
             <!--<svg width="20" height="21" viewBox="0 0 20 21" fill="none">-->
@@ -113,36 +113,13 @@
             <!--</svg>-->
           <!--</div>-->
         </div>
-
-
-
-
-        <div class="dataPicker1">
-          <form class="form-inline">
-            <div class="form-group">
-              <div class="input-group">
-                <input class="form-control" placeholder="yyyy-mm-dd" name="d1" #c2="ngModel" [(ngModel)]="model1"
-                       (dateSelect)="chang1($event)"
-                       ngbDatepicker #d1="ngbDatepicker">
-                <div class="input-group-append">
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="dataPicker2">
-          <form class="form-inline">
-            <div class="form-group">
-              <div class="input-group">
-                <input class="form-control" placeholder="yyyy-mm-dd" name="d2" #c2="ngModel" [(ngModel)]="model2"
-                       (dateSelect)="chang2($event)"
-                       ngbDatepicker #d2="ngbDatepicker">
-                <div class="input-group-append">
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
+        <input type="text"
+               placeholder="Daterangepicker"
+               class="form-control"
+               bsDaterangepicker
+               #dp="bsDaterangepicker"
+               [minDate]="minDate"
+               (bsValueChange)="onValueChange($event)" >
       </div>
     </div>
     <div class="bottom" *ngIf="roomType">
