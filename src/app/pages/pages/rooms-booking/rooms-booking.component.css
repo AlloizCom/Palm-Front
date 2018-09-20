@@ -163,7 +163,7 @@
 
 }
 
-.price-title[_ngcontent-c4] {
+.price-title {
   text-transform: uppercase;
   font-family: Raleway, sans-serif;
   font-style: normal;
@@ -464,7 +464,7 @@
     height: 330px;
   }
 
-  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4] {
+  .searchItem:nth-child(1) .numbers, .searchItem:nth-child(2) .numbers {
     justify-content: space-around;
     width: 90%;
   }
@@ -473,7 +473,7 @@
     width: 90%;
   }
 
-  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4] {
+  .searchItem:nth-child(1) .numbers, .searchItem:nth-child(2) .numbers {
     width: 100% !important;
   }
 
@@ -483,19 +483,8 @@
 
 }
 
-@media screen and (max-width: 996px) {
-  .form-control {
-    width: 0;
-    height: 0;
-    padding: 0;
-    border: none !important;
-    position: absolute;
-    top: 0px;
-    left: -20%;
-  }
-}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 996px) {
 
   .topImage {
     height: 300px !important;
@@ -581,11 +570,11 @@
     height: 30% !important;
   }
 
-  .searchItem[_ngcontent-c10]:nth-child(1) p[_ngcontent-c10], .searchItem[_ngcontent-c10]:nth-child(2) p[_ngcontent-c10] {
+  .searchItem:nth-child(1) p, .searchItem:nth-child(2) p {
     margin-top: 3px !important;
   }
 
-  .searchItem[_ngcontent-c4]:nth-child(3), .searchItem[_ngcontent-c4]:nth-child(4), .searchItem[_ngcontent-c4]:nth-child(5) {
+  .searchItem:nth-child(3), .searchItem:nth-child(4), .searchItem:nth-child(5) {
     height: 28% !important;
     width: 33% !important;
   }
@@ -594,28 +583,28 @@
     margin-bottom: 0 !important;
   }
 
-  .searchItem[_ngcontent-c4] .month[_ngcontent-c4] {
+  .searchItem .month {
     margin: 0 !important;
   }
 
-  .searchItem[_ngcontent-c10]:nth-child(1) .numbers[_ngcontent-c10], .searchItem[_ngcontent-c10]:nth-child(2) .numbers[_ngcontent-c10] {
+  .searchItem:nth-child(1) .numbers, .searchItem:nth-child(2) .numbers {
     width: 93% !important;
   }
 
-  .searchItem[_ngcontent-c4] .roomsNumber[_ngcontent-c4] {
+  .searchItem .roomsNumber {
     margin: 0 15px 0 15px !important;
   }
 
-  .searchItem[_ngcontent-c4] .year[_ngcontent-c4] {
+  .searchItem .year {
     margin-bottom: 0px !important;
     margin-left: 3px !important;
   }
 
-  .searchItem[_ngcontent-c4] .day[_ngcontent-c4] {
+  .searchItem .day {
     font-size: 25px !important;
   }
 
-  .search[_ngcontent-c10] {
+  .search {
     align-items: flex-end !important;
   }
 }
