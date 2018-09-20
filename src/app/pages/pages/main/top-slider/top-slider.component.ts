@@ -67,5 +67,6 @@ export class TopSliderComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 }

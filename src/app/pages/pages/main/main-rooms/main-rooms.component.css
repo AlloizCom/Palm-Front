@@ -1,4 +1,4 @@
-.allIn h2{
+.allIn h2 {
   user-select: none;
   text-transform: uppercase;
   font-family: Roboto;
@@ -8,7 +8,8 @@
   color: #53D7B7;
   margin-top: 7%;
 }
-.allIn h3{
+
+.allIn h3 {
   user-select: none;
   text-transform: uppercase;
   font-family: Roboto;
@@ -19,17 +20,11 @@
   color: #5A5A5A;
 }
 
-.wrapper {
-  /*position: relative;*/
-}
-
 .topImage {
   background-position: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   position: relative;
-
-
   border: 0.5px solid #E5E5E5;
   box-sizing: border-box;
 }
@@ -40,9 +35,11 @@
   position: relative;
   width: 100%;
 }
-.relka{
+
+.relka {
   position: relative;
 }
+
 .sliderBlock {
   align-items: center;
 }
@@ -57,21 +54,17 @@
 .second {
   left: 50%;
   top: 42%;
-  /*left: 36%;*/
-  /*top: -4.5%;*/
   transform: translate(-50%, -50%);
   z-index: 2;
   position: absolute;
   width: 21vw;
   margin: auto;
-  /*width: 312px;*/
   height: 463px;
 }
 
-.lefty{
+.lefty {
   padding-left: 31%;
 }
-
 
 .swith:hover {
   opacity: 0.95;
@@ -81,20 +74,14 @@
 .greenAbs {
   left: 50%;
   top: 42%;
-  /*left: 36%;*/
-  /*top: -4.5%;*/
   transform: translate(-50%, -50%);
-  z-index:3;
+  z-index: 3;
   position: absolute;
   width: 21vw;
   margin: auto;
   height: 463px;
   background: rgba(83, 215, 183, 0.74);
 }
-
-/*.volas{*/
-  /*width: 10%;*/
-/*}*/
 
 .greenAbs h2 {
   cursor: pointer;
@@ -129,7 +116,7 @@
   font-size: 200%; /* Размер шрифта первого символа */
 }
 
-.greenAbs img{
+.greenAbs img {
   user-select: none;
   position: absolute;
   left: 50%;
@@ -137,6 +124,7 @@
   cursor: pointer;
   transform: translate(-50%, -50%);
 }
+
 @media screen and (max-width: 1230px) {
   .greenAbs p {
     top: 60% !important;

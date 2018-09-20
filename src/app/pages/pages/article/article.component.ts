@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NewsService} from '../../../../shared/service/news.service';
 import {News} from '../../../../shared/models/news';
 import {ActivatedRoute} from '@angular/router';
@@ -15,11 +15,11 @@ import {LangSort} from '../../../../shared/models/utils/lang-sort';
 })
 export class ArticleComponent implements OnInit {
 
-  news:News;
+  news: News;
   id: number;
   img: string = '';
 
-  constructor(private _newsService:NewsService, private _router: ActivatedRoute, private _imagePipe: ImagePipePipe,private _translate:TranslateService) {
+  constructor(private _newsService: NewsService, private _router: ActivatedRoute, private _imagePipe: ImagePipePipe, private _translate: TranslateService) {
     // this.lang = this._translate.currentLang;
     // this._translate.onLangChange.subscribe(next=>{
     //   this.lang = next.lang;
@@ -30,7 +30,7 @@ export class ArticleComponent implements OnInit {
         this.news.newsDescriptions = LangSort.sort(this.news.newsDescriptions);
         this.id = next['id'];
         this.img = this._imagePipe.transform(next.picturePath);
-      },error=>{
+      }, error => {
         console.log(error);
       });
     });

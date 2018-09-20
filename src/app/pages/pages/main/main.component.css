@@ -139,12 +139,15 @@ app-top-slider {
   left: 40%;
   top: -155px;
 }
-/deep/ .theme-green .bs-datepicker-head{
+
+/deep/ .theme-green .bs-datepicker-head {
   background-color: #53D7B7;
 }
-/deep/ .theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after{
+
+/deep/ .theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after {
   background-color: #53D7B7;
 }
+
 .dot {
   width: 8px;
   height: 8px;
@@ -170,6 +173,7 @@ app-top-slider {
 }
 
 /* About us */
+
 .aboutUs1 {
   height: 150px;
   width: 100%;
@@ -177,16 +181,6 @@ app-top-slider {
 
 /*Vitalik*/
 
-/*!* About us *!*/
-/*.aboutUs1{*/
-/*height: 150px;*/
-/*width: 100%;*/
-/*}*/
-/*.left,.right{*/
-/*width: 30%;*/
-/*height: 30%;*/
-/*background: white;*/
-/*}*/
 .bottomAll {
   background: #F8F6F6;
   margin-top: 560px;
@@ -672,7 +666,7 @@ agm-map {
   }
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-device-width: 765px) {
   .selected span {
     border: none;
   }
@@ -755,7 +749,7 @@ agm-map {
     margin: 5% 5% !important;
   }
 
-  .back1{
+  .back1 {
     height: 31vh;
   }
 
@@ -897,6 +891,7 @@ agm-map {
     width: 18vw;
 
   }
+
   .item {
     width: 90% !important;
     margin: 5% auto !important;
@@ -911,7 +906,7 @@ agm-map {
   }
 }
 
-@media screen and (max-width: 645px) {
+@media screen and (max-device-width: 645px) {
   agm-map {
     height: 45vh;
   }
@@ -922,16 +917,17 @@ agm-map {
 
 }
 
-@media screen and (max-width: 560px) {
-  .btmWrapper{
+@media screen and (max-device-width: 560px) {
+  .btmWrapper {
     padding-top: 15%;
   }
 }
 
-@media screen and (max-width: 425px) {
-  .btmWrapper{
-    padding-top: 20%;
+@media screen and (max-device-width: 425px) {
+  .btmWrapper {
+    padding-top: 26%;
   }
+
   .map {
     width: 90% !important;
   }
@@ -967,7 +963,7 @@ agm-map {
 
 }
 
-@media screen and (max-width: 319px) {
+@media screen and (max-device-width: 319px) {
   .whiteBlock {
     width: 20vw;
   }

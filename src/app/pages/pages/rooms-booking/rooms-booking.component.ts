@@ -50,8 +50,8 @@ export class RoomsBookingComponent implements OnInit {
         this.amenities = next.amenities;
         this.roomType = next.type;
         this.id = next['id'];
-        console.log(this.room);
-        console.log(next);
+        // console.log(this.room);
+        // console.log(next);
       });
     }, err => {
       console.log(err);
@@ -79,10 +79,6 @@ export class RoomsBookingComponent implements OnInit {
     return new Date(date.year, date.month, date.day);
   }
 
-  pay() {
-
-  }
-
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {
       return !isNullOrUndefined(object[0]);
@@ -98,7 +94,6 @@ export class RoomsBookingComponent implements OnInit {
     }, 4000);
   }
 
-//dataPicker
 //dataPicker
   onValueChange(e) {
     this.model1.day = e[0].getUTCDate();

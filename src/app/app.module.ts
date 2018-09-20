@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-
 import {AppComponent} from './app.component';
 import {PagesModule} from './pages/pages/pages.module';
 import {RouterModule} from '@angular/router';
@@ -17,7 +16,7 @@ import {PipeModule} from '../shared/pipe/pipe.module';
 import {NewsService} from '../shared/service/news.service';
 import {ServiceService} from "../shared/service/service.service";
 import {MenuComponent} from "./pages/pages/menu/menu.component";
-import { DateValueAccessorModule } from 'angular-date-value-accessor';
+import {DateValueAccessorModule} from 'angular-date-value-accessor';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 
 @NgModule({

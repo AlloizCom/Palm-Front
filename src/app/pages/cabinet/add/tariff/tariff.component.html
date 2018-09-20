@@ -2,18 +2,16 @@
   <div class="content">
     <h3>Тип тарифу:</h3>
     <select (change)="changeTariff($event.target.value)" formControlName="tariffType">
-      <!--<option value="REGULAR">Регулярний</option>-->
       <option value="SPECIAL">Спецільна пропозиція</option>
-      <!--<option value="NONE" selected>NONE</option>-->
     </select>
 
     <h3>Ціна:</h3>
     <input type="number" formControlName="price" min="1">
 
     <h3>Початок тарифу(дата):</h3>
-    <input type="date"  formControlName="dateFrom" useValueAsDate>
+    <input type="date" formControlName="dateFrom" useValueAsDate>
     <h3>Кінець тарифу(дата):</h3>
-    <input type="date"  formControlName="dateTo" useValueAsDate>
+    <input type="date" formControlName="dateTo" useValueAsDate>
 
     <h3>Тип номера:</h3>
     <select (change)="changeRoom($event.target.value)" formControlName="roomType">
@@ -24,10 +22,10 @@
       <option value="SUPERIOR_IMPROVED">Покращений Напівлюкс</option>
       <option value="NONE" selected>NONE</option>
     </select>
-<div class="button-block">
-  <button class="button" type="submit" [disabled]="!tariffForm.valid">Зберегти тариф</button>
+    <div class="button-block">
+      <button class="button" type="submit" [disabled]="!tariffForm.valid">Зберегти тариф</button>
 
-</div>
+    </div>
   </div>
 
 </form>

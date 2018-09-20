@@ -1,22 +1,26 @@
-.navbar{
+.navbar {
   display: block;
 }
-.nav-item img{
+
+.nav-item img {
   width: 30px;
   height: 30px;
   margin: auto;
 }
+
 li {
   display: flex;
   flex-direction: column;
   cursor: pointer;
 }
+
 ul {
   margin: auto;
 }
-a{
+
+a {
   display: flex;
   flex-direction: column;
-  border-top: 1px g;
+  border-top: 1px;
 }
 

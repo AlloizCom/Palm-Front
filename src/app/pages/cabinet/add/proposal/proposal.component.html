@@ -1,8 +1,6 @@
 <form action="" (submit)="addProposal(form)" #form [formGroup]="proposalForm">
   <div>
     <div class="text">
-      <!--<h3>Назва сервісу:</h3>-->
-      <!--<input type="text" formControlName="servicesName">-->
       <h3>Англійська</h3>
       <div class="row">
         <div class="col-lg-1">
@@ -43,7 +41,7 @@
         <div class="col-lg-11">
         <textarea
           formControlName="TitleUk"
-          class="w-100"  style="height: 30px"></textarea>
+          class="w-100" style="height: 30px"></textarea>
         </div>
       </div>
       <div class="row">
@@ -144,9 +142,10 @@
   <div class="row">
     <div class="button-block">
       <div class="col-lg-3"></div>
-      <div class="col-lg-3" >
-        <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*"  id="file2" type="file" class="d-none" name="multipartFile">
-        <label for="file2"  class="addImage">Додати картинку</label>
+      <div class="col-lg-3">
+        <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*" id="file2" type="file"
+               class="d-none" name="multipartFile">
+        <label for="file2" class="addImage">Додати картинку</label>
       </div>
       <div class="col-lg-1"></div>
       <div class="col-lg-3">

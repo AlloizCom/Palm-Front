@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BookService} from "../../../../shared/service/book.service";
 import {Book} from "../../../../shared/models/book";
 import {NotificationService} from "../../../../shared/service/notification.service";
@@ -7,7 +7,7 @@ import {NotificationService} from "../../../../shared/service/notification.servi
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css'],
-  providers:[BookService,NotificationService]
+  providers: [BookService, NotificationService]
 })
 export class BookingComponent implements OnInit {
 
@@ -15,8 +15,8 @@ export class BookingComponent implements OnInit {
 
   constructor(private _bookService: BookService,
               private _notificationService: NotificationService) {
-    _notificationService.resetCounter().subscribe(next =>{
-      console.log(next);
+    _notificationService.resetCounter().subscribe(next => {
+      // console.log(next);
     }, err => {
       console.log(err);
     });
@@ -25,7 +25,7 @@ export class BookingComponent implements OnInit {
   ngOnInit() {
     this._bookService.findAll().subscribe(next => {
       this.booking = next;
-      console.log(this.booking);
+      // console.log(this.booking);
     }, err => {
       console.log(err);
     });

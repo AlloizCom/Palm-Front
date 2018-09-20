@@ -25,11 +25,9 @@ export class RoomsComponent implements OnInit {
   ) {
     this.getRoomsParams();
 
-    //   NEED TO COMPLETE
-
-    if(this.roomsParams){
-      console.log("Params for rooms");
-      console.log(this.roomsParams);
+    if (this.roomsParams) {
+      // console.log("Params for rooms");
+      // console.log(this.roomsParams);
       _roomService.findRoomByParams(this.roomsParams).subscribe(next => {
         this.roomTariff = RoomTariff;
         for (let j of next) {
@@ -37,12 +35,12 @@ export class RoomsComponent implements OnInit {
             this.rooms.push(j);
           }
         }
-        console.log(this.rooms);
+        // console.log(this.rooms);
       }, err => {
         console.log(err);
       });
-    }else{
-      console.log("No params for room");
+    } else {
+      // console.log("No params for room");
       this._roomService.findAllRoomWithPrice().subscribe(next => {
         this.roomTariff = RoomTariff;
         for (let i of next) {
@@ -50,23 +48,17 @@ export class RoomsComponent implements OnInit {
             this.rooms.push(i);
           }
         }
-
-        console.log(this.rooms);
+        // console.log(this.rooms);
       }, err => {
         console.log(err);
       });
     }
-
-
-
-
   }
 
   ngOnInit() {
-
   }
 
-  getRoomsParams(){
+  getRoomsParams() {
     this.roomsParams = this._roomsParamsService.params;
     this._roomsParamsService.setRoomsParams(null);
   }

@@ -37,6 +37,11 @@ export class BookService {
       .catch(err => Observable.throw(err));
   }
 
+  changeOrderStatus(id: number, orderStatus: string): Observable<Book> {
+    return this._httpClient.get<Book>(this.controller + '/change-order-status/' + id + '/' + orderStatus)
+      .catch(err => Observable.throw(err));
+  }
+
   save(book: Book): Observable<Book> {
     return this._httpClient.post<Book>(this.controller + '/save', JSON.stringify(book))
       .catch(err => Observable.throw(err));

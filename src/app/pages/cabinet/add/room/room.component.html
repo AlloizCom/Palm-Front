@@ -35,22 +35,20 @@
       <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
         <form formGroupName="{{i}}">
           <p>{{one.get('languageO').value}}</p>
-          <!--<input type="text" disabled formControlName="language">-->
           <textarea cols="30" rows="10" formControlName="description"></textarea>
         </form>
       </div>
     </div>
 
 
-
-      <div (click)="isNull($event)" class="d-flex flex-column">
-        <label *ngFor="let one of amenity">
-          <span *ngIf="!one.amenityNames||!one.amenityNames[0]||!one.amenityNames[0].name">SOME SUKA NULL</span>
-          <span *ngIf="one.amenityNames&&one.amenityNames[0]&&one.amenityNames[0].name">{{one.amenityNames[0].name}}</span>
-          <!--<pre>{{one|json}}</pre>-->
-          <input type="checkbox" (click)="addAmenity(one)">
-        </label>
-      </div>
+    <div (click)="isNull($event)" class="d-flex flex-column">
+      <label *ngFor="let one of amenity">
+        <span *ngIf="!one.amenityNames||!one.amenityNames[0]||!one.amenityNames[0].name">SOME SUKA NULL</span>
+        <span
+          *ngIf="one.amenityNames&&one.amenityNames[0]&&one.amenityNames[0].name">{{one.amenityNames[0].name}}</span>
+        <input type="checkbox" (click)="addAmenity(one)">
+      </label>
+    </div>
 
 
     <br>
@@ -59,9 +57,10 @@
     </div>
 
 
-    <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file" class="d-none" name="multipartFiles">
-    <label (click)="toggle()" for="file" class="image-button" >Додати зображення</label>
-    <button class="button" [disabled]="!roomForm.valid" type="submit" >Зберегти кімнату</button>
+    <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file"
+           class="d-none" name="multipartFiles">
+    <label (click)="toggle()" for="file" class="image-button">Додати зображення</label>
+    <button class="button" [disabled]="!roomForm.valid" type="submit">Зберегти кімнату</button>
   </div>
 
 </form>

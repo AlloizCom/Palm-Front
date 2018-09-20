@@ -8,29 +8,29 @@ import {AmenityNameComponent} from './amenity-name/amenity-name.component';
 import {MainPageComponent} from "./main-page/main-page.component";
 import {ProposalComponent} from "./proposal/proposal.component";
 
-export const addRoutes :Routes =[
+export const addRoutes: Routes = [
   {
-    path:'add',component:AddComponent ,children :[
+    path: 'add', component: AddComponent, children: [
       {
-        path:'news',component:NewsComponent
+        path: 'news', component: NewsComponent
       },
       {
-        path:'option',component:OptionComponent
+        path: 'option', component: OptionComponent
       },
       {
-        path:'room',component:RoomComponent
+        path: 'room', component: RoomComponent
       },
       {
-        path:'tariff',component:TariffComponent
+        path: 'tariff', component: TariffComponent
       },
       {
-        path:'amenity',component: AmenityNameComponent
+        path: 'amenity', component: AmenityNameComponent
       },
       {
-        path:'main-page',component: MainPageComponent
+        path: 'main-page', component: MainPageComponent
       },
       {
-        path: 'proposal',component: ProposalComponent
+        path: 'proposal', component: ProposalComponent
       }
     ]
   }
