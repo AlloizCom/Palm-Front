@@ -1,21 +1,22 @@
-/*.invalid{*/
-  /*border: 1px solid red!important;*/
-/*}*/
 
-input.ng-valid{
+input.ng-valid {
   border-left: 5px solid green;
 }
-input.ng-invalid{
+
+input.ng-invalid {
   border-left: 5px solid red;
 }
-button:disabled{
+
+button:disabled {
   border-bottom: 3px solid red;
- }
-p{
+}
+
+p {
   margin: 2% 0 0 0;
   text-align: center;
 }
-label{
+
+label {
   margin: 2% auto;
   background: #53D7B7;
   border: 1px solid #53D7B7;
@@ -35,22 +36,26 @@ label{
   margin-bottom: 2%;
 
 }
-button{
+
+button {
   height: 50px;
   width: 30%;
   margin: auto;
   background-color: #fff;
 }
-.content{
+
+.content {
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.image{
+
+.image {
   margin-top: 2%;
 }
-.image img{
+
+.image img {
   max-width: 900px;
   min-width: 500px;
   display: flex;

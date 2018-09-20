@@ -15,19 +15,19 @@ export const pagesRoutes: Routes = [
       {
         path: '', component: MainComponent
       }
-      ,{
+      , {
         path: 'contacts', component: ContactsComponent
-      },{
+      }, {
         path: 'news', component: NewsComponent
-      },{
+      }, {
         path: 'news/:id', component: ArticleComponent
-      },{
+      }, {
         path: 'service/:id', component: ServiceComponent
-      },{
+      }, {
         path: 'rooms', component: RoomsComponent
       }, {
         path: 'rooms-booking', component: RoomsBookingComponent
-      },{
+      }, {
         path: 'rooms-booking/:id', component: RoomsBookingComponent
       },
       {

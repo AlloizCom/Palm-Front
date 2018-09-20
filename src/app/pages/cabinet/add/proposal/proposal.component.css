@@ -1,28 +1,36 @@
-textarea.ng-valid{
+textarea.ng-valid {
   border-left: 5px solid green;
 }
-textarea.ng-invalid{
+
+textarea.ng-invalid {
   border-left: 5px solid red;
 }
-input.ng-valid{
+
+input.ng-valid {
   border-left: 5px solid green;
 }
-input.ng-invalid{
+
+input.ng-invalid {
   border-left: 5px solid red;
 }
-textarea{
+
+textarea {
   resize: none;
 }
-button:disabled{
+
+button:disabled {
   border-bottom: 3px solid red;
 }
-h3{
+
+h3 {
   text-align: center;
 }
-.row{
+
+.row {
   flex-direction: column;
 }
-label{
+
+label {
   margin: auto;
   background: #53D7B7;
   border: 1px solid #53D7B7;
@@ -41,24 +49,29 @@ label{
   vertical-align: middle;
   margin-bottom: 2%;
 }
-button{
+
+button {
   height: 50px;
   width: 100%;
   margin: auto;
   background-color: #fff;
 }
+
 .button-block {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.col-lg-11{
+
+.col-lg-11 {
   max-width: 100%;
 }
-.col-lg-3{
+
+.col-lg-3 {
   min-width: 31%;
 }
-.image img{
+
+.image img {
   max-width: 900px;
   min-width: 500px;
   margin: auto;

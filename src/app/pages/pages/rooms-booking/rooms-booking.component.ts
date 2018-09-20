@@ -23,15 +23,11 @@ export class RoomsBookingComponent implements OnInit {
   roomTariff: any;
   room: Room;
   images: Image[] = [];
-  amenities: Amenity[]=[];
+  amenities: Amenity[] = [];
   roomType: string = '';
   //dataPicker
   model1 = {day: 0, year: 0, month: 0};
   model2 = {day: 0, year: 0, month: 0};
-  mounth1: any;
-  mounth2: any;
-  enterDay: number;
-  leaveDay: number;
   screenWidth: number = 1024;
   //available
   adultsNumber: number = 1;
@@ -40,6 +36,7 @@ export class RoomsBookingComponent implements OnInit {
   //slider
   autoScrol: any = 0;
   index: number = 0;
+  minDate = new Date();
 
   constructor(
     private _router: ActivatedRoute, config: NgbCarouselConfig,
@@ -50,11 +47,11 @@ export class RoomsBookingComponent implements OnInit {
         this.roomTariff = RoomTariff;
         this.room = next;
         this.images = next.images;
-        this.amenities =next.amenities
-        this.roomType =next.type;
+        this.amenities = next.amenities;
+        this.roomType = next.type;
         this.id = next['id'];
-        console.log(this.room);
-        console.log(next);
+        // console.log(this.room);
+        // console.log(next);
       });
     }, err => {
       console.log(err);
@@ -63,16 +60,12 @@ export class RoomsBookingComponent implements OnInit {
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
-    this.model2.day = new Date().getUTCDate();
+    this.model2.day = new Date().getUTCDate()+1;
     this.model2.month = new Date().getUTCMonth();
     this.model2.year = new Date().getUTCFullYear();
-    this.mounth1 = this.model1 ? this.model1.month : 'MM';
-    this.mounth2 = this.model2 ? this.model2.month : 'MM';
   }
 
   findRoomByParams() {
-    console.log(this.model1);
-    console.log(this.model2);
     let roomsParams = new RoomsParams();
     roomsParams.dateFrom = this.objectDateToString(this.model1).toString();
     roomsParams.dateTo = this.objectDateToString(this.model2).toString();
@@ -84,10 +77,6 @@ export class RoomsBookingComponent implements OnInit {
 
   objectDateToString(date) {
     return new Date(date.year, date.month, date.day);
-  }
-
-  pay(){
-
   }
 
   isNull(object: any): Boolean {
@@ -106,16 +95,13 @@ export class RoomsBookingComponent implements OnInit {
   }
 
 //dataPicker
-  chang1(e) {
-    this.enterDay = e;
-    console.log(e);
-    this.mounth1 = this.model1 ? this.model1.month : 'MM';
-  }
-
-  chang2(e) {
-    this.leaveDay = e;
-    console.log(e);
-    this.mounth2 = this.model2 ? this.model2.month : 'MM';
+  onValueChange(e) {
+    this.model1.day = e[0].getUTCDate();
+    this.model1.month = e[0].getUTCMonth();
+    this.model1.year = e[0].getUTCFullYear();
+    e[0].getUTCDate() < e[1].getUTCDate() ? this.model2.day = e[1].getUTCDate() : this.model2.day = e[1].getUTCDate() + 1;
+    this.model2.month = e[1].getUTCMonth();
+    this.model2.year = e[1].getUTCFullYear();
   }
 
   roomsNumberFunc(bull) {

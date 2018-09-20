@@ -1,104 +1,45 @@
 <div class="relka" *ngIf="rooms.length>=5">
-  <div  [routerLink]="['/rooms-booking', rooms[0].id]"  class="greenAbs">
+  <div [routerLink]="['/rooms-booking', rooms[0].id]" class="greenAbs">
     <div>
       <h2>{{roomTariff[rooms[0].type]['current-language-index' | translate]}}</h2>
       <p>look more soooqa</p>
       <img src="../../../../../assets/svg/krujki.svg" alt="">
     </div>
   </div>
-  <div >
-    <div class="topImage second"  [style.background-image]="'url(' + (rooms[0].images[0].path|imagePipe) + ')'" >
+  <div>
+    <div class="topImage second" [style.background-image]="'url(' + (rooms[0].images[0].path|imagePipe) + ')'">
     </div>
   </div>
-<div class="sliderBlock d-flex flex-row justify-content-around">
-  <div class="allIn d-flex flex-row justify-content-between">
-    <div >
-      <div  (click)="scroll(1)" class="topImage first" [style.background-image]="'url(' + (rooms[1].images[0].path|imagePipe) + ')'">
+  <div class="sliderBlock d-flex flex-row justify-content-around">
+    <div class="allIn d-flex flex-row justify-content-between">
+      <div>
+        <div (click)="scroll(1)" class="topImage first"
+             [style.background-image]="'url(' + (rooms[1].images[0].path|imagePipe) + ')'">
+        </div>
+        <h2>{{roomTariff[rooms[1].type]['current-language-index' | translate]}}</h2>
+        <h3>{{rooms[1].price}} &#8372;</h3>
       </div>
-      <h2>{{roomTariff[rooms[1].type]['current-language-index' | translate]}}</h2>
-      <h3>{{rooms[1].price}} &#8372;</h3>
-    </div>
-    <div  >
-      <div (click)="scroll(2)" class="topImage first"  [style.background-image]="'url(' + (rooms[2].images[0].path|imagePipe) + ')'">
+      <div>
+        <div (click)="scroll(2)" class="topImage first"
+             [style.background-image]="'url(' + (rooms[2].images[0].path|imagePipe) + ')'">
+        </div>
+        <h2>{{roomTariff[rooms[2].type]['current-language-index' | translate]}}</h2>
+        <h3>{{rooms[2].price}} &#8372;</h3>
       </div>
-      <h2>{{roomTariff[rooms[2].type]['current-language-index' | translate]}}</h2>
-      <h3>{{rooms[2].price}} &#8372;</h3>
-    </div>
-    <div  >
-      <div (click)="scroll(3)" class="topImage first"  [style.background-image]="'url(' + (rooms[3].images[0].path|imagePipe) + ')'">
+      <div>
+        <div (click)="scroll(3)" class="topImage first"
+             [style.background-image]="'url(' + (rooms[3].images[0].path|imagePipe) + ')'">
+        </div>
+        <h2 class="lefty">{{roomTariff[rooms[3].type]['current-language-index' | translate]}}</h2>
+        <h3 class="lefty">{{rooms[3].price}} &#8372;</h3>
       </div>
-      <h2 class="lefty">{{roomTariff[rooms[3].type]['current-language-index' | translate]}}</h2>
-      <h3 class="lefty">{{rooms[3].price}} &#8372;</h3>
-    </div>
-    <div >
-      <div (click)="scroll(4)" class="topImage first" [style.background-image]="'url(' + (rooms[4].images[0].path|imagePipe) + ')'">
+      <div>
+        <div (click)="scroll(4)" class="topImage first"
+             [style.background-image]="'url(' + (rooms[4].images[0].path|imagePipe) + ')'">
+        </div>
+        <h2>{{roomTariff[rooms[4].type]['current-language-index' | translate]}}</h2>
+        <h3>{{rooms[4].price}} &#8372;</h3>
       </div>
-      <h2>{{roomTariff[rooms[4].type]['current-language-index' | translate]}}</h2>
-      <h3>{{rooms[4].price}} &#8372;</h3>
     </div>
   </div>
 </div>
-</div>
-
-
-<!--slider-->
-
-
-
-
-
-
-
-
-
-
-<!--<div class="relka">-->
-  <!--<div class="greenAbs">-->
-    <!--<div *ngFor="let text of images; let i = index">-->
-      <!--<h2 *ngIf="i === middleIndex3">{{text.text}}</h2>-->
-      <!--<p *ngIf="i === middleIndex3"> {{text.text2}}</p>-->
-    <!--</div>-->
-  <!--</div>-->
-  <!--<div class="volas" *ngFor="let image of images; let i = index">-->
-    <!--<div class="topImage second" [style.background]="'url(' + (image.image) + ')'" *ngIf="i === middleIndex3">-->
-    <!--</div>-->
-  <!--</div>-->
-
-  <!--<div class="sliderBlock d-flex flex-row justify-content-around">-->
-    <!--<div class="swith left" (click)="scroll(true)">-->
-      <!--<svg width="15" height="27" viewBox="0 0 15 27" fill="none">-->
-        <!--<path-->
-          <!--d="M14.5009 1.43445C15.1664 2.11374 15.1664 3.19508 14.5009 3.87437L4.87985 13.4954L14.5009 23.1165C15.1664 23.7958 15.1664 24.8771 14.5009 25.5564C13.8216 26.2357 12.7403 26.2357 12.061 25.5564L0 13.4954L12.061 1.43445C12.7264 0.75515 13.8216 0.75515 14.5009 1.43445Z"-->
-          <!--fill="#C4C4C4"/>-->
-      <!--</svg>-->
-    <!--</div>-->
-    <!--<div class="allIn d-flex flex-row justify-content-between">-->
-      <!--<div class="volas" *ngFor="let image of images; let i = index">-->
-        <!--<div class="topImage first" [style.background]="'url(' + (image.image) + ')'" *ngIf="i === middleIndex1">-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="volas" *ngFor="let image of images; let i = index">-->
-        <!--<div class="topImage first" [style.background]="'url(' + (image.image) + ')'" *ngIf="i === middleIndex4">-->
-        <!--</div>-->
-      <!--</div>-->
-
-
-
-      <!--<div class="volas" *ngFor="let image of images; let i = index">-->
-        <!--<div class="topImage first" [style.background]="'url(' + (image.image) + ')'" *ngIf="i === middleIndex2">-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="volas" *ngFor="let image of images; let i = index">-->
-        <!--<div class="topImage first" [style.background]="'url(' + (image.image) + ')'" *ngIf="i === middleIndex">-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="swith right" (click)="scroll(false)">-->
-      <!--<svg width="15" height="27" viewBox="0 0 15 27" fill="none">-->
-        <!--<path-->
-          <!--d="M0.499076 25.5565C-0.166359 24.8772 -0.166359 23.7958 0.499076 23.1165L10.1201 13.4955L0.499076 3.87439C-0.166359 3.19509 -0.166359 2.11376 0.499076 1.43446C1.17837 0.755163 2.2597 0.755163 2.939 1.43446L15 13.4955L2.939 25.5565C2.27357 26.2358 1.17837 26.2358 0.499076 25.5565Z"-->
-          <!--fill="#C4C4C4"/>-->
-      <!--</svg>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->

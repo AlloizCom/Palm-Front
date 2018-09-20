@@ -21,15 +21,10 @@ export class ContactsComponent implements OnInit {
   public lat = 24.799448;
   public lng = 120.979021;
   public destination = {lat: 49.856338332302016, lng: 24.076377153396606};
-  //public origin = {lat: 49.8457735, lng: 24.0223995};
   public origin = {lat: this.defaultLatitude, lng: this.defaultLongitude};
 
 
   constructor(private  _callback: CallbackService) {
-  }
-
-  onChoseLocation(event) {
-    console.log(event)
   }
 
   changeWay(way: string) {
@@ -49,20 +44,17 @@ export class ContactsComponent implements OnInit {
   }
 
   sendMessage() {
-
     this._callback.save(this.callback).subscribe(next => {
-        console.log(next);
-        console.log(this.callback);
+        // console.log(next);
+        // console.log(this.callback);
       },
       error => {
         console.log(error);
-        console.log(this.callback);
+        // console.log(this.callback);
       }, () => {
         this.callbackForm.reset();
       }
     );
-
-
   }
 
   getAirportDirection() {
@@ -89,6 +81,5 @@ export class ContactsComponent implements OnInit {
     this.destination = {lat: 49.856338332302016, lng: 24.076377153396606}
     this.origin = {lat: 49.8514224, lng: 24.0316346}
   }
-
 
 }

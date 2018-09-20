@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProposalService} from '../../../../shared/service/proposal.service';
 import {Proposal} from '../../../../shared/models/proposal';
 import {ActivatedRoute} from '@angular/router';
@@ -11,15 +11,15 @@ import {LangSort} from '../../../../shared/models/utils/lang-sort';
   selector: 'app-proposal',
   templateUrl: './proposal.component.html',
   styleUrls: ['./proposal.component.css'],
-  providers: [ImagePipePipe,ProposalService]
+  providers: [ImagePipePipe, ProposalService]
 })
 export class ProposalComponent implements OnInit {
 
-  proposal:Proposal;
+  proposal: Proposal;
   id: number;
   img: string = '';
 
-  constructor(private _proposalService:ProposalService, private _router: ActivatedRoute, private _imagePipe: ImagePipePipe,private _translate:TranslateService) {
+  constructor(private _proposalService: ProposalService, private _router: ActivatedRoute, private _imagePipe: ImagePipePipe, private _translate: TranslateService) {
     // this.lang = this._translate.currentLang;
     // this._translate.onLangChange.subscribe(next=>{
     //   this.lang = next.lang;
@@ -30,7 +30,7 @@ export class ProposalComponent implements OnInit {
         this.proposal.proposalDescriptions = LangSort.sort(this.proposal.proposalDescriptions);
         this.id = next['id'];
         this.img = this._imagePipe.transform(next.picturePath);
-      },error=>{
+      }, error => {
         console.log(error);
       });
     });

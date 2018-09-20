@@ -222,8 +222,6 @@ export class MainComponent implements OnInit {
   }
 
   findRoomByParams(){
-    console.log(this.model1);
-    console.log(this.model2);
     let roomsParams = new RoomsParams();
     roomsParams.dateFrom = this.objectDateToString(this.model1).toISOString().replace(/T.*/,'');
     roomsParams.dateTo = this.objectDateToString(this.model2).toISOString().replace(/T.*/,'');
@@ -260,7 +258,6 @@ export class MainComponent implements OnInit {
     e[0].getUTCDate()<e[1].getUTCDate()?this.model2.day = e[1].getUTCDate():this.model2.day = e[1].getUTCDate()+1;
     this.model2.month = e[1].getUTCMonth();
     this.model2.year = e[1].getUTCFullYear();
-    console.log(this.model1.month, this.model2.month)
   }
 
   roomsNumberFunc(bull) {

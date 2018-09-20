@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {isNullOrUndefined} from "util";
 import {TariffService} from "../../../../../shared/service/tariff.service";
 import {Tariff} from "../../../../../shared/models/tariff";
@@ -8,7 +8,7 @@ import {Tariff} from "../../../../../shared/models/tariff";
   selector: 'app-tariff',
   templateUrl: './tariff.component.html',
   styleUrls: ['./tariff.component.css'],
-  providers:[TariffService]
+  providers: [TariffService]
 })
 export class TariffComponent implements OnInit {
 
@@ -47,7 +47,7 @@ export class TariffComponent implements OnInit {
 
   addTariff() {
     this._tariffService.save(this.tariff).subscribe(next => {
-        console.log(next);
+        // console.log(next);
         this.tariffForm.reset();
       },
       error => {
@@ -55,26 +55,27 @@ export class TariffComponent implements OnInit {
       });
   }
 
+  validateType(c: FormControl): { [key: string]: any } {
+    return c.value == 'NONE' || c.value == '' ? {"required": true} : null;
+  }
+
   private createTariffForm() {
     this.tariffForm = new FormGroup({
-      price: new FormControl(0, [Validators.required,Validators.min(1),Validators.max(1000000)]),
-      dateTo: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/),Validators.required]),
-      dateFrom: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/),Validators.required]),
-      tariffType: new FormControl('NONE',[Validators.required,this.validateType]),
-      roomType: new FormControl('NONE',[Validators.required,this.validateType])
+      price: new FormControl(0, [Validators.required, Validators.min(1), Validators.max(1000000)]),
+      dateTo: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/), Validators.required]),
+      dateFrom: new FormControl('', [Validators.pattern(/\d{4}-\d{2}-\d{2}/), Validators.required]),
+      tariffType: new FormControl('NONE', [Validators.required, this.validateType]),
+      roomType: new FormControl('NONE', [Validators.required, this.validateType])
     });
     this.tariffForm.valueChanges.subscribe(value => {
       this.tariff = value;
       this.tariff.roomType = this.roomType;
       this.tariff.tariffType = this.tariffType;
-      console.log('dateTo value : ',this.tariffForm.get('dateTo').value);
-      console.log('dateTo valid : ',this.tariffForm.get('dateTo').errors);
-      console.log(this.tariffForm.valid);
-      console.log('tariff : ', this.tariff);
+      // console.log('dateTo value : ', this.tariffForm.get('dateTo').value);
+      // console.log('dateTo valid : ', this.tariffForm.get('dateTo').errors);
+      // console.log(this.tariffForm.valid);
+      // console.log('tariff : ', this.tariff);
     });
-  }
-  validateType(c: FormControl): {[key: string]: any} {
-    return c.value == 'NONE' || c.value == '' ? { "required" : true} : null;
   }
 
 }

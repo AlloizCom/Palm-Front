@@ -15,7 +15,6 @@ export class MenuComponent implements OnInit {
   currentLang: Language = 'uk';
   isIn: boolean = true;
   services: Service[] = [];
-  dropdownHoverShow:boolean =false;
 
   constructor(private translate: TranslateService,
               private _serviceService: ServiceService) {
@@ -26,8 +25,7 @@ export class MenuComponent implements OnInit {
         }
       }
       this.services = next;
-      console.log('services ', this.services);
-
+      // console.log('services ', this.services);
     }, err => {
       console.log(err);
     });
@@ -38,7 +36,7 @@ export class MenuComponent implements OnInit {
 
   changeLanguage(lang: Language) {
     this.currentLang = lang;
-    console.log('now lang is : ', lang);
+    // console.log('now lang is : ', lang);
     this.translate.use(lang);
   }
 
@@ -46,7 +44,4 @@ export class MenuComponent implements OnInit {
     this.isIn = !this.isIn;
   }
 
-  mouseHover(){
-    console.log('hover');
-  }
 }

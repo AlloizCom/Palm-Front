@@ -9,7 +9,7 @@
     </div>
     <div>
       <h3>Українська</h3>
-      <input type="text"#nameUk
+      <input type="text" #nameUk
              class="w-100" style="height: 30px"
              formControlName="nameUk"
              [ngClass]="{'invalid':amenityForm.get('nameUk').invalid && amenityForm.get('nameUk').dirty}">
@@ -28,12 +28,11 @@
              formControlName="nameRu"
              [ngClass]="{'invalid':amenityForm.get('nameRu').invalid && amenityForm.get('nameRu').dirty}">
     </div>
-    <!--<input (change)="readUrl($event)" multiple id="file" type="file" class="d-none" name="multipartFile">-->
-
     <div *ngIf="image" class="image">
       <img [src]="image" alt="" class="w-100">
     </div>
-    <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*" multiple id="file1" type="file" class="d-none" name="multipartFile">
+    <input (change)="readUrl($event)" formControlName="multipartFile" accept="image/*" multiple id="file1" type="file"
+           class="d-none" name="multipartFile">
     <label for="file1" class="addImage">Додати зображення</label>
     <button class="button" type="submit" [disabled]="amenityForm.invalid">Зберегти зручності</button>
   </div>

@@ -163,7 +163,7 @@
 
 }
 
-.price-title[_ngcontent-c4] {
+.price-title {
   text-transform: uppercase;
   font-family: Raleway, sans-serif;
   font-style: normal;
@@ -172,7 +172,6 @@
   font-size: 16px;
   margin: 0 !important;
   color: #5A5A5A;
-
 }
 
 .price-description {
@@ -205,7 +204,6 @@
   font-size: 16px;
   color: #5A5A5A;
   margin-left: -0.4%;
-
 }
 
 .amenity-wrapper {
@@ -317,7 +315,6 @@
   text-transform: uppercase;
   line-height: 14px;
   margin: 0 5px 2px 5px;
-
 }
 
 .searchItem .year {
@@ -404,6 +401,17 @@
   height: 0;
   padding: 0;
   border: none !important;
+  position: absolute;
+  top: 0px;
+  left: 30%;
+}
+
+/deep/ .theme-green .bs-datepicker-head {
+  background-color: #53D7B7;
+}
+
+/deep/ .theme-green .bs-datepicker-body table td span.selected, .theme-green .bs-datepicker-body table td.selected span, .theme-green .bs-datepicker-body table td span[class*="select-"]:after, .theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+  background-color: #53D7B7;
 }
 
 .dot {
@@ -424,12 +432,17 @@
   margin-top: 5px;
 }
 
-.book {
+.searchIcone {
+  outline-color: transparent;
+}
+
+.BtnBook:hover {
+  background-color: #eeeeee;
   cursor: pointer;
 }
 
-.searchIcone {
-  outline-color: transparent;
+.BtnBook:active {
+  background-color: #e1e1e1;
 }
 
 /*enddatapicker*/
@@ -439,7 +452,8 @@
   .slider {
     height: 330px;
   }
-  .topImage{
+
+  .topImage {
     height: 330px;
   }
 
@@ -447,7 +461,7 @@
     height: 330px;
   }
 
-  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4] {
+  .searchItem:nth-child(1) .numbers, .searchItem:nth-child(2) .numbers {
     justify-content: space-around;
     width: 90%;
   }
@@ -456,7 +470,7 @@
     width: 90%;
   }
 
-  .searchItem[_ngcontent-c4]:nth-child(1) .numbers[_ngcontent-c4], .searchItem[_ngcontent-c4]:nth-child(2) .numbers[_ngcontent-c4] {
+  .searchItem:nth-child(1) .numbers, .searchItem:nth-child(2) .numbers {
     width: 100% !important;
   }
 
@@ -466,7 +480,7 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 996px) {
 
   .topImage {
     height: 300px !important;
@@ -500,14 +514,24 @@
 
   }
 
+  .form-control {
+    top: -70%;
+    left: 50%;
+  }
+
 }
 
 @media screen and (min-width: 320px) and (max-width: 576px) {
-
-  .content{
-    width: 100%!important;
+  .form-control {
+    top: -110%;
+    left: 50%;
   }
-  .bottom,.amenity-icons{
+
+  .content {
+    width: 100% !important;
+  }
+
+  .bottom, .amenity-icons {
     width: 90% !important;
     margin-right: auto;
     margin-left: auto;
@@ -542,11 +566,11 @@
     height: 30% !important;
   }
 
-  .searchItem[_ngcontent-c10]:nth-child(1) p[_ngcontent-c10], .searchItem[_ngcontent-c10]:nth-child(2) p[_ngcontent-c10] {
+  .searchItem:nth-child(1) p, .searchItem:nth-child(2) p {
     margin-top: 3px !important;
   }
 
-  .searchItem[_ngcontent-c4]:nth-child(3), .searchItem[_ngcontent-c4]:nth-child(4), .searchItem[_ngcontent-c4]:nth-child(5) {
+  .searchItem:nth-child(3), .searchItem:nth-child(4), .searchItem:nth-child(5) {
     height: 28% !important;
     width: 33% !important;
   }
@@ -555,28 +579,28 @@
     margin-bottom: 0 !important;
   }
 
-  .searchItem[_ngcontent-c4] .month[_ngcontent-c4] {
+  .searchItem .month {
     margin: 0 !important;
   }
 
-  .searchItem[_ngcontent-c10]:nth-child(1) .numbers[_ngcontent-c10], .searchItem[_ngcontent-c10]:nth-child(2) .numbers[_ngcontent-c10] {
+  .searchItem:nth-child(1) .numbers, .searchItem:nth-child(2) .numbers {
     width: 93% !important;
   }
 
-  .searchItem[_ngcontent-c4] .roomsNumber[_ngcontent-c4] {
+  .searchItem .roomsNumber {
     margin: 0 15px 0 15px !important;
   }
 
-  .searchItem[_ngcontent-c4] .year[_ngcontent-c4] {
+  .searchItem .year {
     margin-bottom: 0px !important;
     margin-left: 3px !important;
   }
 
-  .searchItem[_ngcontent-c4] .day[_ngcontent-c4] {
+  .searchItem .day {
     font-size: 25px !important;
   }
 
-  .search[_ngcontent-c10] {
+  .search {
     align-items: flex-end !important;
   }
 }

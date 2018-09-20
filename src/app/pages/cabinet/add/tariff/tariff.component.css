@@ -1,35 +1,42 @@
-input.ng-valid{
+input.ng-valid {
   border-left: 5px solid green;
 }
-input.ng-invalid{
+
+input.ng-invalid {
   border-left: 5px solid red;
 }
-button:disabled{
+
+button:disabled {
   border-bottom: 3px solid red;
 }
-button{
+
+button {
   height: 50px;
   width: 30%;
   margin: auto;
 }
-.content{
+
+.content {
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-input,select{
+
+input, select {
   width: 30%;
   margin: auto;
 }
-div:nth-child(even){
+
+div:nth-child(even) {
   margin-bottom: 4%;
 }
 
-.button-block{
-  margin:2% 0;
+.button-block {
+  margin: 2% 0;
 }
-button{
+
+button {
   height: 50px;
   width: 30%;
   margin: auto;

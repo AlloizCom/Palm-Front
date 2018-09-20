@@ -33,8 +33,8 @@ export class MainRoomsComponent implements OnInit {
   scroll(x: number) {
     let old = new RoomWithPrice();
     let _new = new RoomWithPrice();
-    Object.assign(old,this.rooms[0]);
-    Object.assign(_new,this.rooms[x]);
+    Object.assign(old, this.rooms[0]);
+    Object.assign(_new, this.rooms[x]);
     this.first = old;
     this.second = this.roomTariff[old.type];
     this.third = old.price;
