@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {TranslateService} from 'ng2-translate'
 
 @Component({
@@ -8,10 +8,11 @@ import {TranslateService} from 'ng2-translate'
 })
 export class AppComponent {
   title = 'app';
-constructor(private _translate:TranslateService){
-  _translate.addLangs(['uk', 'en', 'pl', 'ru']);
-  _translate.setDefaultLang('uk');
-  this._translate.use('uk')
-}
+
+  constructor(private _translate: TranslateService) {
+    _translate.addLangs(['uk', 'en', 'pl', 'ru']);
+    _translate.setDefaultLang('uk');
+    this._translate.use('uk')
+  }
 
 }

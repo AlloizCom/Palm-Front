@@ -19,7 +19,7 @@ export class SliderComponent implements OnInit {
   constructor(private _menuComponent: MenuComponent) {
 
     this.services = _menuComponent.services;
-    console.log(this.services);
+    // console.log(this.services);
     this.middleIndex = Math.round(this.services.length / 8);
     this.middleIndex2 = this.middleIndex + 1;
     this.middleIndex3 = this.middleIndex + 2;

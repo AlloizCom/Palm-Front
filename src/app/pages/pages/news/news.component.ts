@@ -28,7 +28,7 @@ export class NewsComponent implements OnInit {
       for (let i = 0; i < this.news.length; i++) {
         this.news[i].newsDescriptions = LangSort.sort(this.news[i].newsDescriptions);
       }
-      console.log('news', this.news);
+      // console.log('news', this.news);
     }, err => {
       console.log(err);
     });
@@ -44,7 +44,7 @@ export class NewsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.news3);
+    // console.log(this.news3);
   }
 
   showMore() {

@@ -12,7 +12,6 @@
   top: 0;
 }
 
-
 .caption {
   position: absolute;
   color: white;
@@ -44,7 +43,6 @@
   justify-content: center;
   width: 100%;
 }
-
 
 .show {
   opacity: 1;
@@ -81,19 +79,21 @@
   right: 7%;
 }
 
-
 @media screen and (max-width: 990px) {
-   .topImage {
-    margin-top: 10vh;}
+  .topImage {
+    margin-top: 10vh;
+  }
 
-    .dots {
-      margin-top: 746px;
-    }
-    .swith{
-      top: 400px;
-    }
+  .dots {
+    margin-top: 746px;
+  }
+
+  .swith {
+    top: 400px;
+  }
 
 }
+
 @media screen and (max-width: 765px) {
   .topImage {
     height: 476px;
@@ -110,7 +110,7 @@
     font-size: 30px;
   }
 
-  .dots{
+  .dots {
     margin-top: 514px;
   }
 }

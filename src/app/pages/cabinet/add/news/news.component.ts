@@ -29,23 +29,23 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this._newsService.findAll().subscribe(value => {
       this.allNews = value;
-      console.log(value);
+      // console.log(value);
     });
 
     this.newsForm = new FormGroup({
-      TitleEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      HeaderTextareaEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      textEn: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      TitleUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      HeaderTextareaUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      textUk: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      TitlePl: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      HeaderTextareaPl: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      textPl: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      TitleRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      HeaderTextareaRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      textRu: new FormControl('', [Validators.required,Validators.minLength(3)]),
-      multipartFile: new FormControl(null,[this.validateImages]),
+      TitleEn: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      HeaderTextareaEn: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      textEn: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      TitleUk: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      HeaderTextareaUk: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      textUk: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      TitlePl: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      HeaderTextareaPl: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      textPl: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      TitleRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      HeaderTextareaRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      textRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      multipartFile: new FormControl(null, [this.validateImages]),
 
     });
     this.newsForm.valueChanges.subscribe(value => {
@@ -82,7 +82,7 @@ export class NewsComponent implements OnInit {
 
   addNews(form: HTMLFormElement) {
     this._newsService.save(this.news, form).subscribe(next => {
-      console.log(next);
+      // console.log(next);
     }, error => {
       console.log(error);
     }, () => {
@@ -90,7 +90,7 @@ export class NewsComponent implements OnInit {
       form.reset();
       this.getNews();
     });
-    console.log(this.news)
+    // console.log(this.news)
   }
 
   getNews() {
@@ -100,26 +100,27 @@ export class NewsComponent implements OnInit {
   }
 
   update(form: HTMLFormElement, index) {
-    console.log(this.allNews[index]);
+    // console.log(this.allNews[index]);
     this._newsService.update(this.allNews[index], form).subscribe(next => {
       this.allNews[index] = this.allNews[index];
-      console.log(next);
+      // console.log(next);
       this.allNews[index].picturePath = this._imagePipe.transform(next.picturePath);
     }, error => {
       console.log(error);
     });
   }
 
-  deleteNews(index){
-    this._newsService.delete(index).subscribe(next=>{
-      console.log(next);
-      this.getNews();
-    },
+  deleteNews(index) {
+    this._newsService.delete(index).subscribe(next => {
+        // console.log(next);
+        this.getNews();
+      },
       error =>
-    console.log(error)
+        console.log(error)
     );
   }
-  validateImages(c: FormControl): {[key: string]: any} {
-    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
+
+  validateImages(c: FormControl): { [key: string]: any } {
+    return c.value == null || c.value.length == 0 ? {"required": true} : null;
   }
 }

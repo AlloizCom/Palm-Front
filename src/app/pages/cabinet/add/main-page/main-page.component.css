@@ -1,18 +1,22 @@
 button:disabled {
   border-bottom: 3px solid red;
 }
-.image{
+
+.image {
   margin: auto;
 }
-.image img{
+
+.image img {
   max-width: 900px;
   min-width: 500px;
 }
-form{
+
+form {
   display: flex;
   flex-direction: column;
 }
-label{
+
+label {
   margin: auto;
   background: #53D7B7;
   border: 1px solid #53D7B7;
@@ -31,13 +35,14 @@ label{
   vertical-align: middle;
   margin-bottom: 2%;
 }
-button{
-  /*width: 30%;*/
+
+button {
   height: 50px;
   width: 30%;
   margin: auto;
 }
-.buttonBlock{
+
+.buttonBlock {
   justify-content: center;
   display: flex;
   flex-direction: column;

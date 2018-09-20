@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from "util";
 import {MainPage} from "../../../../../shared/models/main-page";
 import {MainPageSevice} from "../../../../../shared/service/main-page.sevice";
@@ -8,14 +8,14 @@ import {FormControl, FormGroup} from "@angular/forms";
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css'],
-  providers:[MainPageSevice]
+  providers: [MainPageSevice]
 })
 export class MainPageComponent implements OnInit {
 
   mainPage: MainPage = new MainPage();
   image: string[] = [];
   appear: boolean = true;
-  mainPageForm:FormGroup;
+  mainPageForm: FormGroup;
 
   constructor(private _mainPageService: MainPageSevice) {
   }
@@ -24,12 +24,6 @@ export class MainPageComponent implements OnInit {
     this.createmainPageForm();
   }
 
-
-  private   createmainPageForm(){
-    this.mainPageForm = new FormGroup({
-      multipartFiles: new FormControl(null,[this.validateImages]),
-    })
-  }
   readUrl(event: any) {
     if (event.target.files) {
       this.image = [];
@@ -59,17 +53,23 @@ export class MainPageComponent implements OnInit {
 
   addImages(form: HTMLFormElement) {
     this._mainPageService.save(this.mainPage, form).subscribe(next => {
-        console.log(next);
+        // console.log(next);
         form.reset();
-        this.image=[];
+        this.image = [];
       },
       error => {
         console.log(error);
       });
   }
 
-  validateImages(c: FormControl): {[key: string]: any} {
-    return c.value == null || c.value.length == 0 ? { "required" : true} : null;
+  validateImages(c: FormControl): { [key: string]: any } {
+    return c.value == null || c.value.length == 0 ? {"required": true} : null;
+  }
+
+  private createmainPageForm() {
+    this.mainPageForm = new FormGroup({
+      multipartFiles: new FormControl(null, [this.validateImages]),
+    })
   }
 
 }

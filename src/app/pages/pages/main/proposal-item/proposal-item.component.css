@@ -10,8 +10,7 @@
 
 .firsty::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);*/
-  background-color: 	rgba(192,192,192,0.5);
+  background-color: rgba(192, 192, 192, 0.5);
 }
 
 .back1 {
@@ -26,8 +25,6 @@
 }
 
 .item {
-  /*width: 23.5%;*/
-  /*margin: 1% 1%;*/
   width: 28%;
   margin: 1% 3% 25px 3%;
   background: #FFFFFF;
@@ -44,14 +41,6 @@
   -moz-box-shadow: 0px 6px 22px -4px rgba(0, 0, 0, 0.68);
   box-shadow: 0px 6px 22px -4px rgba(0, 0, 0, 0.68);
 }
-
-/*.item:last-child{*/
-  /*margin: 1%;*/
-/*}*/
-
-/*.item:last-child{*/
-  /*margin: 1%;*/
-/*}*/
 
 .back1 {
   background-repeat: no-repeat;
@@ -133,13 +122,6 @@
   margin-right: 9%;
 }
 
-/*@media screen and (min-width: 1021px) {*/
-  /*!*.item:first-child {*!*/
-    /*!*margin: 1% 2% 1% 0;*!*/
-    /*!*padding-left: ;*!*/
-  /*!*}*!*/
-/*}*/
-
 @media screen and (max-width: 1020px) {
 
   .whiteBlock {
@@ -167,28 +149,14 @@
     margin: 5% 4% !important;
   }
 
-  /*.firsty {*/
-    /*margin: 0 0%;*/
-  /*}*/
-  /*.item {*/
-  /*width: 70% !important;*/
-  /*margin: 5% auto !important;*/
-  /*}*/
-  /*.back1 {*/
-  /*height: 31vh;*/
-  /*}*/
-
 }
 
 @media screen and (max-width: 600px) {
 
-  .firsty{
-    margin: 0px 1%  45px 1%;
+  .firsty {
+    margin: 0px 1% 45px 1%;
   }
-  /*.item {*/
-  /*width: 90% !important;*/
-  /*margin: 5% auto !important;*/
-  /*}*/
+
   .item {
     width: 76% !important;
     margin: 5% 12% !important;

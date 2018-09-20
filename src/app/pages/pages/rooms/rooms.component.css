@@ -41,7 +41,6 @@ p {
 }
 
 .room {
-  /*height: 55vh;*/
   padding-bottom: 72px;
 }
 
@@ -118,8 +117,8 @@ button:hover {
   background-color: #6eddc1;
   -webkit-transition: .5s;
   transition: .5s;
-  -webkit-box-shadow: 0px 7px 48px -14px rgba(0,0,0,0.76);
-  box-shadow: 0px 7px 48px -14px rgba(0,0,0,0.76);
+  -webkit-box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
+  box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
 }
 
 .imgs {
@@ -138,7 +137,6 @@ button:hover {
   position: absolute;
   margin-top: 29px;
 }
-
 
 @media screen and (max-width: 1100px) {
 
@@ -170,6 +168,7 @@ button:hover {
 }
 
 @media screen and (max-width: 1020px) {
+
   .room {
     padding-bottom: 8vh !important;
   }
@@ -178,18 +177,23 @@ button:hover {
     width: 70% !important;
     margin-bottom: 10% !important;
   }
+
 }
 
-@media screen and (max-width: 990px){
-  .rooms{
-     width: 70%;
-   }
+@media screen and (max-width: 990px) {
+
+  .rooms {
+    width: 70%;
+  }
+
 }
 
 @media screen and (max-width: 425px) {
+
   .photo {
     width: 100% !important;
   }
+
 }
 
 

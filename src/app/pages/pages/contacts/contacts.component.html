@@ -1,4 +1,3 @@
-
 <div class="main">
   <div class="contact-wrapper">
     <div class="contact-content">
@@ -14,7 +13,8 @@
           </div>
           <div class="text">
             <div class="address-title">Адреса</div>
-            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text an</p>
+            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text
+              an</p>
             <p class="bold-text">м. Львів, вул. Богданівська, 44</p>
           </div>
 
@@ -26,7 +26,8 @@
           </div>
           <div class="text">
             <div class="address-title">Телефон</div>
-            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text an</p>
+            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text
+              an</p>
             <div class="social">
               <p class="bold-text">+38 067 19 444 00</p>
               <div class="social-icons">
@@ -54,7 +55,8 @@
           </div>
           <div class="text">
             <div class="address-title">Пошта</div>
-            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text an</p>
+            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text
+              an</p>
             <p class="bold-text">palmalviv@gmail.com</p>
           </div>
         </div>
@@ -69,8 +71,10 @@
         <div class="feedback-small-title">Зворотній зв'язок</div>
         <div class="feedback-big-title">Напишіть Нам</div>
         <div class="feedback-text">
-          <p>You can copy and paste your own content in to see what it looks like with these font combinations. All of this text is editable. Simply click anywhere in the p</p>
-          <p>You can copy and paste your own content in to see what it looks like with these font combinations. All of this text is editable. Simply click anywhere in the p</p>
+          <p>You can copy and paste your own content in to see what it looks like with these font combinations. All of
+            this text is editable. Simply click anywhere in the p</p>
+          <p>You can copy and paste your own content in to see what it looks like with these font combinations. All of
+            this text is editable. Simply click anywhere in the p</p>
         </div>
       </div>
       <form [formGroup]="callbackForm" class="right-side" (submit)="sendMessage()">
@@ -81,12 +85,14 @@
           </div>
           <div class="right-input">
             <p>Телефон</p>
-            <input type="text" formControlName="phone" class="inputCallback" [ngClass]="{'invallid':callbackForm.get('phone').invalid && callbackForm.get('phone').dirty}">
+            <input type="text" formControlName="phone" class="inputCallback"
+                   [ngClass]="{'invallid':callbackForm.get('phone').invalid && callbackForm.get('phone').dirty}">
           </div>
         </div>
         <div class="second-inputs-block">
           <p>E-mail</p>
-          <input type="text" formControlName="email" class="inputCallback" [ngClass]="{'invallid':callbackForm.get('email').invalid && callbackForm.get('email').dirty}" >
+          <input type="text" formControlName="email" class="inputCallback"
+                 [ngClass]="{'invallid':callbackForm.get('email').invalid && callbackForm.get('email').dirty}">
 
         </div>
         <div class="textarea-block">
@@ -105,10 +111,10 @@
       </div>
       <div class="location-images-wrapper">
         <div class="location-images">
-          <div class=" images plain-image-block"  (click)="changeWay('airport');getAirportDirection();" >
-            <div class=" down-image-wrapper"  id="elem">
-              <img src="../../../../assets/svg/green-ellipse.svg" alt="" >
-              <img  class="little-image image1" src="../../../../assets/svg/airplane.svg" alt="">
+          <div class=" images plain-image-block" (click)="changeWay('airport');getAirportDirection();">
+            <div class=" down-image-wrapper" id="elem">
+              <img src="../../../../assets/svg/green-ellipse.svg" alt="">
+              <img class="little-image image1" src="../../../../assets/svg/airplane.svg" alt="">
             </div>
 
             <p [ngClass]="{'green-border':currentWay.includes('airport')}">Аеропорт</p>
@@ -124,7 +130,7 @@
           <div class="images bus-image-block" (click)="changeWay('bus');getBusDirection();">
             <div class=" down-image-wrapper">
               <img src="../../../../assets/svg/green-ellipse.svg" alt="">
-              <img  class="little-image image3" src="../../../../assets/svg/bus.svg" alt="">
+              <img class="little-image image3" src="../../../../assets/svg/bus.svg" alt="">
             </div>
 
             <p [ngClass]="{'green-border':currentWay.includes('bus')}">Автобус</p>
@@ -137,10 +143,10 @@
 
             <p [ngClass]="{'green-border':currentWay.includes('square')}">Площа Ринок</p>
           </div>
-          <div class=" images castle-image-block "  (click)="changeWay('castle');getCastleDirection();">
+          <div class=" images castle-image-block " (click)="changeWay('castle');getCastleDirection();">
             <div class=" down-image-wrapper">
               <img src="../../../../assets/svg/green-ellipse.svg" alt="">
-              <img  class="little-image image5" src="../../../../assets/svg/castle.svg" alt="">
+              <img class="little-image image5" src="../../../../assets/svg/castle.svg" alt="">
             </div>
 
             <p [ngClass]="{'green-border':currentWay.includes('castle')}">Станція “Підзамче”</p>
@@ -148,33 +154,20 @@
         </div>
 
       </div>
-      <div  class="description" >
+      <div class="description">
         <p>How to dobratusya</p>
         <p class="airportWay" id="airportWay">{{currentWay|translate}}</p>
       </div>
 
     </div>
-      <!--<div class="map-wrapper">-->
-        <!--<agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onChoseLocation($event)"[zoom]="13" lang="" >-->
-          <!--<agm-marker [latitude]="latitude" [longitude]="longitude">-->
-          <!--</agm-marker>-->
-        <!--</agm-map>-->
-      <!--</div>-->
-      <div class="test-map">
-        <!--<button type="button" (click)="getAirportDirection()">getAirportDirection</button>-->
-        <!--<button type="button" (click)="getStationDirection()">getRailwayDirection</button>-->
-        <!--<button type="button" (click)="getBusDirection()">getBusDirection</button>-->
-        <!--<button type="button" (click)="getSquareDirection()">getSquareDirection</button>-->
-        <!--<button type="button" (click)="getCastleDirection()">getStationDirection</button>-->
+    <div class="test-map">
+      <agm-map [latitude]="latitude" [longitude]="longitude">
+        <agm-direction [origin]="origin" [destination]="destination">
+        </agm-direction>
+      </agm-map>
+    </div>
 
 
-        <agm-map [latitude]="latitude" [longitude]="longitude">
-          <agm-direction [origin]="origin" [destination]="destination">
-          </agm-direction>
-        </agm-map>
   </div>
-
-
-</div>
 
 </div>

@@ -1,8 +1,9 @@
 <div *ngIf="news && news.length>5" class="topPhotos d-flex ">
   <div class="first d-flex flex-row flex-wrap">
-    <div  *ngFor="let one of news" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'" class="one d-flex justify-content-end flex-column">
+    <div *ngFor="let one of news" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"
+         class="one d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
-        <button routerLink="{{one.id}}"  class="button">Переглянути</button>
+        <button routerLink="{{one.id}}" class="button">Переглянути</button>
       </div>
       <h2>{{(one.newsDescriptions['current-language-index'|translate]).title}}</h2><!-- comment-->
       <h3>{{one.dateTime|datePipe}}</h3>  <!-- comment-->

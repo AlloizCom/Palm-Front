@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row" *ngFor="let callback of callbacks| revers; let i = index">
-      <div class="col-lg-2">
-        <p>{{callback.dateTime | datePipe}}</p>
-        <p>Переглянуто:</p>
-        <input type="checkbox" [attr.checked]=" callbacks[i].available ? null : 'checked'" (click)="changStatus(i)" >
-      </div>
-      <div class="col-lg-2">
-        <p>Ім'я: {{callback.name}}</p>
-        <p>Email: {{callback.email}}</p>
-        <p>Тел.:{{callback.phone}}</p>
-      </div>
-      <div class="col-lg-8">
-        {{callback.message}}
-      </div>
+    <div class="col-lg-2">
+      <p>{{callback.dateTime | datePipe}}</p>
+      <p>Переглянуто:</p>
+      <input type="checkbox" [attr.checked]=" callbacks[i].available ? null : 'checked'" (click)="changStatus(i)">
+    </div>
+    <div class="col-lg-2">
+      <p>Ім'я: {{callback.name}}</p>
+      <p>Email: {{callback.email}}</p>
+      <p>Тел.:{{callback.phone}}</p>
+    </div>
+    <div class="col-lg-8">
+      {{callback.message}}
+    </div>
   </div>
 </div>
 

@@ -18,7 +18,6 @@ export class AmenityNameComponent implements OnInit {
   image: string = '';
   available: boolean = true;
   appear: boolean = false;
-  allAmenities: Amenity[] = [];
 
 
   constructor(private _amenityService: AmenityService) {
@@ -62,26 +61,17 @@ export class AmenityNameComponent implements OnInit {
 
   addAmenity(form: HTMLFormElement) {
     this._amenityService.save(this.amenity, form).subscribe(next => {
-      console.log(next);
+      // console.log(next);
     }, error => {
       console.log(error);
     }, () => {
       this.image = null;
       form.reset();
-      // this.getAmenity();
     });
   }
 
-  getAmenity() {
-    this._amenityService.findAll().subscribe(next => {
-      this.allAmenities = next;
-    })
-
-
-  }
-
   validateImages(c: FormControl): { [key: string]: any } {
-    console.log(c.value);
+    // console.log(c.value);
     return c.value == null || c.value.length == 0 ? {"required": true} : null;
   }
 

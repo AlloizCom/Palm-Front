@@ -1,51 +1,62 @@
-img{
+img {
   margin-top: 10px;
 }
-textarea{
+
+textarea {
   resize: none;
   outline: none;
   width: 80%;
   height: 150px;
 }
-textarea.ng-valid{
+
+textarea.ng-valid {
   border-left: 5px solid green;
 }
-textarea.ng-invalid{
+
+textarea.ng-invalid {
   border-left: 5px solid red;
 }
-input.ng-valid{
+
+input.ng-valid {
   border-left: 5px solid green;
 }
-input.ng-invalid{
+
+input.ng-invalid {
   border-left: 5px solid red;
 }
+
 button:disabled {
   border-bottom: 3px solid red;
 }
-.content{
+
+.content {
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-input,select{
+
+input, select {
   width: 30%;
   margin: auto;
 }
-div:nth-child(n){
+
+div:nth-child(n) {
   margin-bottom: 2%;
 }
 
-.button-block{
-  margin:2% 0;
+.button-block {
+  margin: 2% 0;
 }
-button{
+
+button {
   height: 50px;
   width: 30%;
   margin: auto;
   background-color: #fff;
 }
-.image-button{
+
+.image-button {
   margin: auto;
   background: #53D7B7;
   border: 1px solid #53D7B7;
@@ -64,7 +75,8 @@ button{
   vertical-align: middle;
   margin-bottom: 2%;
 }
-.image img{
+
+.image img {
   max-width: 900px;
   min-width: 500px;
 }
