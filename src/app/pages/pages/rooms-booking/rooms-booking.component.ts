@@ -9,12 +9,14 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Amenity} from '../../../../shared/models/amenity';
+import {BookService} from "../../../../shared/service/book.service";
+import {Book} from "../../../../shared/models/book";
 
 @Component({
   selector: 'app-rooms-booking',
   templateUrl: './rooms-booking.component.html',
   styleUrls: ['./rooms-booking.component.css'],
-  providers: [RoomService, NgbCarouselConfig]
+  providers: [RoomService, NgbCarouselConfig, BookService]
 })
 export class RoomsBookingComponent implements OnInit {
 
@@ -38,9 +40,12 @@ export class RoomsBookingComponent implements OnInit {
   index: number = 0;
   minDate = new Date();
 
+  liqPayFormHtml: string = "";
+
   constructor(
     private _router: ActivatedRoute, config: NgbCarouselConfig,
     private _roomService: RoomService,
+    private _bookService: BookService,
     private _roomsParamService: RoomParamsService) {
     _router.params.subscribe(next => {
       _roomService.findOneAvailableWithPrice(next['id']).subscribe(next => {
@@ -60,7 +65,7 @@ export class RoomsBookingComponent implements OnInit {
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
-    this.model2.day = new Date().getUTCDate()+1;
+    this.model2.day = new Date().getUTCDate() + 1;
     this.model2.month = new Date().getUTCMonth();
     this.model2.year = new Date().getUTCFullYear();
   }
@@ -129,6 +134,19 @@ export class RoomsBookingComponent implements OnInit {
     if (!bull && this.childrenNumber != 0) {
       this.childrenNumber -= 1;
     }
+  }
+
+  pay() {
+    let book = new Book();
+    book.kids = this.childrenNumber;
+    book.deteIn = JSON.stringify(this.model1);
+    book.deteOut = JSON.stringify(this.model2);
+    book.adults = this.adultsNumber;
+    book.amountOfRooms = this.roomsNumber;
+    book.roomType = this.roomType;
+    this._bookService.pay(book).subscribe(next => {
+      this.liqPayFormHtml = next;
+    });
   }
 
   //slider
