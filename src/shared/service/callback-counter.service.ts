@@ -18,12 +18,12 @@ export class CallbackCounterService {
   }
 
   resetCounter(): Observable<CallbackCounter>{
-    return this._httpClient.get<CallbackCounter>(this.controller + '/reset-callback')
+    return this._httpClient.get<CallbackCounter>('/reset-callback')
       .catch(err => Observable.throw(err));
   }
 
   incrementCounter(): Observable<CallbackCounter>{
-    return this._httpClient.get<CallbackCounter>(this.controller + '/reset-callback')
+    return this._httpClient.get<CallbackCounter>( '/reset-callback')
       .catch(err => Observable.throw(err));
   }
 

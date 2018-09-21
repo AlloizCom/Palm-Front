@@ -28,7 +28,8 @@ export class CabinetComponent implements OnInit {
       this.bookingNotifications = next.numberOfBooking;
     });
     this._callBackCounterService.getCount().subscribe(next=>{
-      this.callbackNotifications = next.numberOfCallback;
+      console.log("callcount - ", next);
+      this.callbackNotifications = next.numberOfCallbacks;
     });
 
   }
@@ -50,7 +51,8 @@ export class CabinetComponent implements OnInit {
       that.stompClient.subscribe("/callback/not", (message) => {
         console.log(message.body);
         if(message.body) {
-          console.log(JSON.parse(message.body).numberOfCallbacks);
+          console.log("callback - ",JSON.parse(message.body).numberOfCallbacks);
+
           this.callbackNotifications = JSON.parse(message.body).numberOfCallbacks;
           console.log(message.body);
         }
