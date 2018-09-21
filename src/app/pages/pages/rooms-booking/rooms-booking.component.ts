@@ -30,6 +30,8 @@ export class RoomsBookingComponent implements OnInit {
   //dataPicker
   model1 = {day: 0, year: 0, month: 0};
   model2 = {day: 0, year: 0, month: 0};
+  amountDaysInYour: number;
+  minDate = new Date();
   screenWidth: number = 1024;
   //available
   adultsNumber: number = 1;
@@ -38,7 +40,6 @@ export class RoomsBookingComponent implements OnInit {
   //slider
   autoScrol: any = 0;
   index: number = 0;
-  minDate = new Date();
 
   liqPayFormHtml: string = "";
 
@@ -104,10 +105,35 @@ export class RoomsBookingComponent implements OnInit {
     this.model1.day = e[0].getUTCDate();
     this.model1.month = e[0].getUTCMonth();
     this.model1.year = e[0].getUTCFullYear();
-    e[0].getUTCDate() < e[1].getUTCDate() ? this.model2.day = e[1].getUTCDate() : this.model2.day = e[1].getUTCDate() + 1;
-    this.model2.month = e[1].getUTCMonth();
-    this.model2.year = e[1].getUTCFullYear();
+    this.amountDaysInYour = this.daysInMonth(e[0]);
+    if (e[0].getUTCDate() == this.amountDaysInYour && e[1].getUTCDate() == this.amountDaysInYour) {
+      if (e[0].getUTCMonth() == 11) {
+        this.model2.year = e[1].getUTCFullYear() + 1;
+        this.model2.month = 0;
+        this.model2.day = 1;
+      } else {
+        this.model2.month = e[1].getUTCMonth()+1;
+        this.model2.year = e[1].getUTCFullYear();
+        this.model2.day = 1;
+      }
+    } else if (e[0].getUTCDate() == e[1].getUTCDate()) {
+      this.model2.day = e[1].getUTCDate() + 1;
+      this.model2.month = e[1].getUTCMonth();
+      this.model2.year = e[1].getUTCFullYear();
+    } else {
+      this.model2.day = e[1].getUTCDate();
+      this.model2.month = e[1].getUTCMonth();
+      this.model2.year = e[1].getUTCFullYear();
+    }
   }
+
+  daysInMonth(anyDateInMonth) {
+    return new Date(anyDateInMonth.getFullYear(),
+      anyDateInMonth.getMonth() + 1,
+      0).getDate();
+  }
+
+//dataPicker
 
   roomsNumberFunc(bull) {
     if (bull) {

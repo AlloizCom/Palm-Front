@@ -7,5 +7,5 @@ export class  Callback {
   email: string;
   phone: string;
   dateTime: string;
-  
+
 }
