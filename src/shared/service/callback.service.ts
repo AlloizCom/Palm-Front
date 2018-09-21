@@ -4,6 +4,9 @@ import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
+import {Schedule} from "../models/schedule";
+import {ScheduleByPage} from "../models/schedule-by-page";
+import {CallbackByPage} from "../models/callback-by-page";
 
 @Injectable()
 export class CallbackService {
@@ -49,5 +52,16 @@ export class CallbackService {
       .catch(err => Observable.throw(err));
   }
 
+  findAllCallbacksByPage(page: number, count: number): Observable<Callback[]> {
+    return this._httpClient.get<Callback[]>
+    (this.controller + '/find-all-callbacks-by-page/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
+
+  findAllAvailableCallbacksByPage(page: number, count: number): Observable<CallbackByPage> {
+    return this._httpClient.get<CallbackByPage>
+    (this.controller + '/find-all-callbacks-by-page-available/' + page + '/' + count)
+      .catch(err => Observable.throw(err));
+  }
 
 }
