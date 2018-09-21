@@ -1,4 +1,4 @@
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {Book} from "../models/book";
 import {Injectable} from "@angular/core";
@@ -87,8 +87,8 @@ export class BookService {
    * @param {Book} book
    * @returns {Observable<Book>}
    */
-  pay(book: Book): Observable<Book> {
-    return this._httpClient.post<Book>(this.controller + '/pay', JSON.stringify(book))
+  pay(book: Book): Observable<string> {
+    return this._httpClient.post(this.controller + '/pay', JSON.stringify(book), {responseType: "text"})
       .catch(err => Observable.throw(err));
   }
 

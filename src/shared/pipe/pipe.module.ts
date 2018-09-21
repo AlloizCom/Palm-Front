@@ -6,6 +6,7 @@ import {DatePipePipe} from './pipe/date-pipe.pipe';
 import {MounthPipe} from './pipe/mounth.pipe';
 import {RoomTypePipe} from "./pipe/room-type.pipe";
 import {TariffTypePipe} from "./pipe/tariff-type.pipe";
+import {Safe} from "./pipe/safe-html.pipe";
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import {TariffTypePipe} from "./pipe/tariff-type.pipe";
     DatePipePipe,
     MounthPipe,
     RoomTypePipe,
-    TariffTypePipe
+    TariffTypePipe,
+    Safe
   ],
   exports: [
     ImagePipePipe,
@@ -25,7 +27,8 @@ import {TariffTypePipe} from "./pipe/tariff-type.pipe";
     DatePipePipe,
     MounthPipe,
     RoomTypePipe,
-    TariffTypePipe
+    TariffTypePipe,
+    Safe
   ]
 })
 export class PipeModule {

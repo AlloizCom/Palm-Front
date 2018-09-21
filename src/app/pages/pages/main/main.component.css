@@ -914,6 +914,13 @@ agm-map {
   .photoMain, .infosMain {
     width: 75% !important;
   }
+  .form-control{
+    left: 50%;
+    top: -270px;
+  }
+  .back1{
+    height: 40vh;
+  }
 
 }
 

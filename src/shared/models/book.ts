@@ -12,4 +12,6 @@ export class Book {
   adults: number;
   kids: number;
   orderStatus: string;
+  amountOfRooms: number;
+  roomType: string;
 }
