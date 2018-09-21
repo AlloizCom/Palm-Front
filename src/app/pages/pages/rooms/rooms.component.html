@@ -10,8 +10,9 @@
         <p>{{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' |
           translate].description:''}}</p>
         <div class="imgs d-flex justify-content-start">
-          <img *ngFor="let oneImage of one.amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
-          <h5>{{one.square}} кв.м</h5>
+          <div *ngFor="let oneImage of one.amenities" class="imageRoom"
+            [style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">
+            <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{one.square}} кв.м</h5></div>
         </div>
         <button [routerLink]="['/rooms-booking', one.id]">Переглянути</button>
       </div>
