@@ -258,23 +258,25 @@ export class MainComponent implements OnInit {
     this.model1.month = e[0].getUTCMonth();
     this.model1.year = e[0].getUTCFullYear();
     this.amountDaysInYour = this.daysInMonth(e[0]);
-    if (e[1].getUTCDate() == this.amountDaysInYour) {
-      this.model2.day = 1;
-      this.model2.month = e[1].getUTCMonth() + 1;
-    } else {
+    if (e[0].getUTCDate() == this.amountDaysInYour && e[1].getUTCDate() == this.amountDaysInYour) {
+      if (e[0].getUTCMonth() == 11) {
+        this.model2.year = e[1].getUTCFullYear() + 1;
+        this.model2.month = 0;
+        this.model2.day = 1;
+      } else {
+        this.model2.month = e[1].getUTCMonth()+1;
+        this.model2.year = e[1].getUTCFullYear();
+        this.model2.day = 1;
+      }
+    } else if (e[0].getUTCDate() == e[1].getUTCDate()) {
       this.model2.day = e[1].getUTCDate() + 1;
-      this.model2.month = e[1].getUTCMonth() + 1;
-    }
-    if (e[1].getUTCDate() == this.amountDaysInYour && e[1].getUTCMonth() == 11) {
-      console.log("contact");
-      this.model2.year = e[1].getUTCFullYear() + 1;
-      this.model2.month = 1;
+      this.model2.month = e[1].getUTCMonth();
+      this.model2.year = e[1].getUTCFullYear();
     } else {
-      console.log("contact1");
+      this.model2.day = e[1].getUTCDate();
+      this.model2.month = e[1].getUTCMonth();
       this.model2.year = e[1].getUTCFullYear();
     }
-    console.log(this.amountDaysInYour);
-    console.log(e[1].getUTCMonth(), e[1].getUTCFullYear());
   }
 
   daysInMonth(anyDateInMonth) {
