@@ -4,11 +4,14 @@ p {
   overflow: hidden;
 }
 
-.imgs img {
+.imageRoom {
   width: 30px;
   height: 30px;
   margin-right: 5%;
-}
+  background-size:auto!important;
+  background-repeat: no-repeat!important;
+  background-position: center!important;
+  }
 
 .allBack {
   background: #F8F6F6;

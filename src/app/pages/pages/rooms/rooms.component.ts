@@ -33,6 +33,7 @@ export class RoomsComponent implements OnInit {
         for (let j of next) {
           if (typeof (j) != 'undefined' && j != null) {
             this.rooms.push(j);
+
           }
         }
         // console.log(this.rooms);
@@ -42,10 +43,12 @@ export class RoomsComponent implements OnInit {
     } else {
       // console.log("No params for room");
       this._roomService.findAllRoomWithPrice().subscribe(next => {
+        console.log(this.rooms);
         this.roomTariff = RoomTariff;
         for (let i of next) {
           if (typeof (i) != 'undefined' && i != null) {
             this.rooms.push(i);
+            console.log(this.rooms);
           }
         }
         // console.log(this.rooms);

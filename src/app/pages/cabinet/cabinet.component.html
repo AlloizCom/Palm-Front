@@ -34,7 +34,14 @@
 
               <a class="nav-link" href="#" [routerLinkActive]="['active']"
                  routerLink="booking">
-                <img src="../../../../assets/svg/calendar.svg" alt="">Бронювання</a>
+                <img src="../../../../assets/svg/calendar.svg" alt="">
+                Бронювання
+                <div class="notification-wrapper2">
+                  <div  class="notification2">
+                    {{ bookingNotifications }}
+                  </div>
+                </div>
+              </a>
             </li>
             <li class="nav-item svg4">
 
@@ -46,13 +53,19 @@
 
               <a class="nav-link" href="#" [routerLinkActive]="['active']"
                  routerLink="callback">
-                <img src="../../../../assets/svg/feedback.svg" alt="">Відгуки</a>
+                <img src="../../../../assets/svg/feedback.svg" alt="">Відгуки
+                <div class="notification-wrapper">
+                  <div  class="notification">
+                    {{ callbackNotifications }}
+                  </div>
+                </div>
+              </a>
             </li>
           </ul>
         </div>
       </nav>
-      Бронювання : <span style="color: red;">+{{ bookingNotifications }}</span><br>
-      Відгуки : <span style="color: green;">+{{ callbackNotifications }}</span>
+
+
       <router-outlet></router-outlet>
     </div>
   </div>
