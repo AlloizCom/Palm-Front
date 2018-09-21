@@ -81,7 +81,8 @@
         <div class="first-inputs-block">
           <div class="left-input">
             <p>Ім'я</p>
-            <input type="text" formControlName="name" class="inputCallback">
+            <input type="text" formControlName="name" class="inputCallback"
+                   [ngClass]="{'invallid':callbackForm.get('name').invalid && callbackForm.get('name').dirty}">
           </div>
           <div class="right-input">
             <p>Телефон</p>
@@ -97,7 +98,8 @@
         </div>
         <div class="textarea-block">
           <p>Повідомлення</p>
-          <textarea name="" id="" cols="30" rows="10" class="inputCallbackText" formControlName="message"></textarea>
+          <textarea name="" id="" cols="30" rows="10" class="inputCallbackText" formControlName="message"
+                    [ngClass]="{'invallid':callbackForm.get('message').invalid && callbackForm.get('message').dirty}"></textarea>
         </div>
 
         <button [disabled]="callbackForm.invalid" type="submit">Надіслати</button>

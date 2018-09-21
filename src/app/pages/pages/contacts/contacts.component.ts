@@ -17,7 +17,7 @@ export class ContactsComponent implements OnInit {
   defaultLongitude = 24.026503;
   callbackForm: FormGroup;
   callback: Callback = new Callback();
-  currentWay: any = "";
+  currentWay: any = '';
   public lat = 24.799448;
   public lng = 120.979021;
   public destination = {lat: 49.856338332302016, lng: 24.076377153396606};
@@ -33,10 +33,10 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {
     this.callbackForm = new FormGroup({
-      name: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.pattern(/\d{6,12}/)])
+      phone: new FormControl('', [Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
     });
     this.callbackForm.valueChanges.subscribe(value => {
       this.callback = value;
@@ -58,28 +58,28 @@ export class ContactsComponent implements OnInit {
   }
 
   getAirportDirection() {
-    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606}
-    this.origin = {lat: 49.8134465, lng: 23.9573617}
+    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606};
+    this.origin = {lat: 49.8134465, lng: 23.9573617};
   }
 
   getStationDirection() {
-    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606}
-    this.origin = {lat: 49.8399353, lng: 23.9915774}
+    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606};
+    this.origin = {lat: 49.8399353, lng: 23.9915774};
   }
 
   getBusDirection() {
-    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606}
-    this.origin = {lat: 49.8642614, lng: 24.0491102}
+    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606};
+    this.origin = {lat: 49.8642614, lng: 24.0491102};
   }
 
   getSquareDirection() {
-    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606}
-    this.origin = {lat: 49.8413523, lng: 24.0303229}
+    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606};
+    this.origin = {lat: 49.8413523, lng: 24.0303229};
   }
 
   getCastleDirection() {
-    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606}
-    this.origin = {lat: 49.8514224, lng: 24.0316346}
+    this.destination = {lat: 49.856338332302016, lng: 24.076377153396606};
+    this.origin = {lat: 49.8514224, lng: 24.0316346};
   }
 
 }
