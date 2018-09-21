@@ -6,7 +6,7 @@ import {CallbackCounter} from "../models/callback-counter";
 @Injectable()
 export class CallbackCounterService {
 
-  controller = "/callback-gcounter";
+  controller = "/callback-counter";
 
   constructor(private _httpClient: HttpClient){
 
