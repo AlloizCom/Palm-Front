@@ -14,6 +14,7 @@ export class ScheduleTypeComponent implements OnInit {
   schedule:Schedule[] = [];
   status:string[] = [];
   constructor(private _scheduleService:ScheduleService) {
+
   }
 
   ngOnInit() {
