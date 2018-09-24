@@ -1,0 +1,17 @@
+div{
+  width: 100%;
+  height: 100vh;
+}
+.login{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 20%;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+input{
+  margin: 2vh;
+}
+

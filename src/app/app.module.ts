@@ -18,6 +18,7 @@ import {MenuComponent} from "./pages/pages/menu/menu.component";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {MyInterceptor} from "../shared/interceptors/my.interceptor";
 import {UserDetailsService} from "../shared/service/user-details.service";
+import {LoginService} from '../shared/service/login.service';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {UserDetailsService} from "../shared/service/user-details.service";
       multi: true
     },
     UserDetailsService,
+    LoginService
 
   ],
   bootstrap: [AppComponent],
