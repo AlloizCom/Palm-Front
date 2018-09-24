@@ -9,6 +9,7 @@ import {ServiceComponent} from "./service/service.component";
 import {RoomsBookingComponent} from "./rooms-booking/rooms-booking.component";
 import {ProposalComponent} from "./proposal/proposal.component";
 import {AvailableRoomsComponent} from "./available-rooms/available-rooms.component";
+import {LoginComponent} from './login/login.component';
 
 export const pagesRoutes: Routes = [
   {
@@ -37,7 +38,9 @@ export const pagesRoutes: Routes = [
       {
         path: 'available-rooms', component: AvailableRoomsComponent
       },
-
+      {
+        path: 'login', component:LoginComponent
+      }
     ]
   }
 ];

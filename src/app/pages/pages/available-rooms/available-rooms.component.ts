@@ -43,7 +43,7 @@ export class AvailableRoomsComponent implements OnInit {
 
   getRoomsParams() {
     this.roomsParams = this._roomsParamsService.params;
-    this._roomsParamsService.setRoomsParams(null);
+    // this._roomsParamsService.setRoomsParams(null);
   }
 
   ngOnInit() {

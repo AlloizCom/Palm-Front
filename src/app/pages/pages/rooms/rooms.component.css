@@ -5,14 +5,19 @@ p {
 }
 
 .imageRoom {
+  display: flex;
+  justify-content: center!important;
   width: 30px;
   height: 30px;
   margin-right: 5%;
-  background-size:auto!important;
+  background-size:30px 28px!important;
   background-repeat: no-repeat!important;
   background-position: center!important;
   }
 
+sub{
+  vertical-align: super;
+}
 .allBack {
   background: #F8F6F6;
 }

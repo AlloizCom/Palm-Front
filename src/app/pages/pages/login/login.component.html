@@ -1,0 +1,7 @@
+<div></div>
+<form [formGroup]="loginForm" (submit)="login()"  #form class="login d-flex flex-column ">
+  <input class="name" formControlName="username" placeholder="Логін" type="text">
+  <input class="password" formControlName="password" placeholder="Пароль" type="password">
+  <button class="button" [disabled]="!loginForm.valid" type="submit">Увійти</button>
+</form>
+

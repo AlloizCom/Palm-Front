@@ -1,5 +1,5 @@
 p{
-  margin: 0;
+  margin: 1px;
   padding: 0;
 }
 .schedule-table {
@@ -32,7 +32,7 @@ p{
 
 p{
   text-align: center;
-  line-height: 3;
+  line-height: 3.5;
 }
 .left-date{
   height: 39.5%;
@@ -50,6 +50,10 @@ p{
 .p-wrapper1 p{
   line-height: 6
 }
+.p-wrapper4{
+  margin-top: 4px;
+}
+
 .schedule-table-body{
   background-color: #e0e0e0;
 }

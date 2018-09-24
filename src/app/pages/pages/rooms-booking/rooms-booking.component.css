@@ -215,7 +215,20 @@
   width: 250px;
   margin-left: -0.4%;
 }
+.imageRoom {
+  display: flex;
+  justify-content: center!important;
+  width: 30px;
+  height: 30px;
+  margin-right: 5%;
+  background-size:30px 28px!important;
+  background-repeat: no-repeat!important;
+  background-position: center!important;
+  }
 
+sub{
+  vertical-align: super;
+}
 .imgs h5 {
   font-family: Raleway, sans-serif;
   font-weight: bold;
@@ -223,10 +236,8 @@
   font-size: 11px;
   text-align: center;
   color: #000000;
-  margin: 0;
   position: absolute;
-  margin-top: 25px;
-  margin-left: 5px;
+  margin-top: 30px;
 }
 
 /*SLIDER!!!*/
