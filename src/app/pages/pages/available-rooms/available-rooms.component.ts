@@ -11,7 +11,7 @@ import {TariffService} from "../../../../shared/service/tariff.service";
   selector: 'app-available-rooms',
   templateUrl: './available-rooms.component.html',
   styleUrls: ['./available-rooms.component.css'],
-  providers: [RoomService, TariffService, RoomParamsService]
+  providers: [RoomService, TariffService]
 })
 export class AvailableRoomsComponent implements OnInit {
 
@@ -26,7 +26,7 @@ export class AvailableRoomsComponent implements OnInit {
 
     if (this.roomsParams) {
       // console.log("Params for rooms");
-      // console.log(this.roomsParams);
+      console.log(this.roomsParams);
       _roomService.findRoomByParams(this.roomsParams).subscribe(next => {
         this.roomTariff = RoomTariff;
         for (let j of next) {
@@ -56,5 +56,9 @@ export class AvailableRoomsComponent implements OnInit {
       return !isNullOrUndefined(object);
     }
   }
+  //
+  // isNoParams(){
+  //   if(room)
+  // }
 
 }
