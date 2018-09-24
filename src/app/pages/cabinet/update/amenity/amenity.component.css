@@ -29,11 +29,13 @@ button:active{
   height: 200px;
   margin: 5px;
 }
-
-.img{
-  width: 80%;
-  height: 80%;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.imageRoom {
+  display: flex;
+  justify-content: center!important;
+  width: 100px;
+  height: 100px;
+  margin-right: 5%;
+  background-size:100px 90px!important;
+  background-repeat: no-repeat!important;
+  background-position: center!important;
 }
