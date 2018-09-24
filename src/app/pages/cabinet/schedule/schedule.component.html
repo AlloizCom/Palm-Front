@@ -1,4 +1,4 @@
-<app-schedule-type *ngFor="let roomType of roomTypes" [datefrom]="'2018-09-18 00:00:00'" [roomType]=roomType></app-schedule-type>
+<app-schedule-type *ngFor="let roomType of roomTypes" [datefrom]="'2018-09-17 00:00:00'" [roomType]=roomType></app-schedule-type>
 
 <div class="header d-flex flex-row justify-content-around align-items-center">
   <div class="date">Дата</div>
@@ -13,7 +13,7 @@
     <div class="itemChild date">{{one.today | datePipe}}</div>
     <div class="itemChild type">{{one.roomType | roomTypePipe}}</div>
     <div class="itemChild forSale">{{one.forSale}}</div>
-    <div class="itemChild booked">{{one.active}}</div>
+    <div class="itemChild booked" pattern="\d [0-9]	">{{one.active}}</div>
     <div class="itemChild free">{{one.free}}</div>
     <div class="change d-flex justify-content-center">
       <button type="button" class="btn btn-info" routerLink="{{one.id}}">Змінити</button>

@@ -26,7 +26,6 @@ export class ScheduleComponent implements OnInit {
       for (let one of next.shedules){
         this.schedule.push(one);
       }
-      // console.log("schedule", next.shedules);
     });
   }
 

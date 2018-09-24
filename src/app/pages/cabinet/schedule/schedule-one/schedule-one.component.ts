@@ -31,14 +31,14 @@ export class ScheduleOneComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-
+     
   }
 
   ngOnInit() {
     this.scheduleForm = new FormGroup({
       id:new FormControl(),
-      forSale: new FormControl('',[Validators.required]),
-      active:new FormControl('',[Validators.required]),
+      forSale:new FormControl('',[Validators.required,Validators.min(0),Validators.max(6)]),
+      active:new FormControl('',[Validators.required,Validators.min(0),Validators.max(6)]),
       available:new FormControl(),
       today:new FormControl(),
       roomType:new FormControl(),
