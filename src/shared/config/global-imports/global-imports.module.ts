@@ -11,6 +11,7 @@ import {AgmCoreModule} from "@agm/core";
 import { AgmDirectionModule } from 'agm-direction';
 import {RoomParamsService} from "../../service/room-params.serive";
 import {NotificationService} from "../../service/notification.service";
+import {urlFront} from '../url';
 
 // import {routes} from '../../../main.routes';
 
@@ -18,7 +19,7 @@ import {NotificationService} from "../../service/notification.service";
 //   ...routes
 // ];
 export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, '/assets/i18n', '.json');
+  return new TranslateStaticLoader(http, `${urlFront}/assets/i18n`, '.json');
 }
 
 
