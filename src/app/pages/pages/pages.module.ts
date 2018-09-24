@@ -19,6 +19,7 @@ import {ProposalComponent} from "./proposal/proposal.component";
 import {ProposalItemComponent} from "./main/proposal-item/proposal-item.component";
 import { AvailableRoomsComponent } from './available-rooms/available-rooms.component';
 import { LoginComponent } from './login/login.component';
+import {BookFormComponent} from './book-form/book-form.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { LoginComponent } from './login/login.component';
     ProposalComponent,
     ProposalItemComponent,
     AvailableRoomsComponent,
-    LoginComponent
+    LoginComponent,
+    BookFormComponent
 
   ],
   exports: [],

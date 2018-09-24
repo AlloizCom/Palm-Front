@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../../../shared/service/room.service';
 import {Room} from '../../../../shared/models/room';
 import {RoomTariff} from '../../../../shared/enum/room-tariff';
@@ -45,6 +45,7 @@ export class RoomsBookingComponent implements OnInit {
 
   constructor(
     private _router: ActivatedRoute, config: NgbCarouselConfig,
+    private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
     private _roomsParamService: RoomParamsService) {
@@ -162,16 +163,17 @@ export class RoomsBookingComponent implements OnInit {
   }
 
   pay() {
-    let book = new Book();
-    book.kids = this.childrenNumber;
-    book.deteIn = JSON.stringify(this.model1);
-    book.deteOut = JSON.stringify(this.model2);
-    book.adults = this.adultsNumber;
-    book.amountOfRooms = this.roomsNumber;
-    book.roomType = this.roomType;
-    this._bookService.pay(book).subscribe(next => {
-      this.liqPayFormHtml = next;
-    });
+    // let book = new Book();
+    // book.kids = this.childrenNumber;
+    // book.deteIn = JSON.stringify(this.model1);
+    // book.deteOut = JSON.stringify(this.model2);
+    // book.adults = this.adultsNumber;
+    // book.amountOfRooms = this.roomsNumber;
+    // book.roomType = this.roomType;
+    // this._bookService.pay(book).subscribe(next => {
+    //   this.liqPayFormHtml = next;
+    // });
+    this.router.navigate([`/rooms-booking/${this.id}/bookForm`]);
   }
 
   //slider

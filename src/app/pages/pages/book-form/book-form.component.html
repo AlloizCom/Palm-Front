@@ -1,0 +1,29 @@
+<div class="wraper">
+  <div class="form-container">
+    <form [formGroup]="bookForm" (submit)="sendBook()">
+      <div class="inputBlock">
+        <p>Ім'я</p>
+        <input type="text" formControlName="firstName" class="inputCallback"
+               [ngClass]="{'invallid':bookForm.get('firstName').invalid && bookForm.get('firstName').dirty}">
+      </div>
+      <div class="inputBlock">
+        <p>Прізвище</p>
+        <input type="text" formControlName="lastName" class="inputCallback"
+               [ngClass]="{'invallid':bookForm.get('lastName').invalid && bookForm.get('lastName').dirty}">
+      </div>
+      <div class="inputBlock">
+        <p>Телефон</p>
+        <input type="text" formControlName="phoneNumber" class="inputCallback"
+               [ngClass]="{'invallid':bookForm.get('phoneNumber').invalid && bookForm.get('phoneNumber').dirty}">
+      </div>
+      <div class="inputBlock">
+        <p>E-mail</p>
+        <input type="text" formControlName="email" class="inputCallback"
+               [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
+
+      </div>
+
+      <button [disabled]="bookForm.invalid" type="submit">Забронювати</button>
+    </form>
+  </div>
+</div>

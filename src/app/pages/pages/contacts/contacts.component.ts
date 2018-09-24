@@ -15,7 +15,7 @@ export class ContactsComponent implements OnInit {
   longitude = 24.076377153396606;
   defaultLatitude = 49.843645;
   defaultLongitude = 24.026503;
-  callbackForm: FormGroup;
+  bookForm: FormGroup;
   callback: Callback = new Callback();
   currentWay: any = '';
   public lat = 24.799448;
@@ -32,13 +32,13 @@ export class ContactsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.callbackForm = new FormGroup({
+    this.bookForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
     });
-    this.callbackForm.valueChanges.subscribe(value => {
+    this.bookForm.valueChanges.subscribe(value => {
       this.callback = value;
     });
   }
@@ -52,7 +52,7 @@ export class ContactsComponent implements OnInit {
         console.log(error);
         // console.log(this.callback);
       }, () => {
-        this.callbackForm.reset();
+        this.bookForm.reset();
       }
     );
   }

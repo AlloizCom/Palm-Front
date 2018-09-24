@@ -1,0 +1,48 @@
+.wraper {
+  position: relative;
+  width: 70%;
+  margin: auto;
+  min-height: 90vh;
+}
+
+.form-container {
+  position: absolute;
+}
+
+form {
+  margin-top: 40%;
+  margin-left: 10%;
+  width: 250px;
+}
+
+input {
+  width: 100%;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+button {
+  margin-top: 4%;
+  width: 112px;
+  height: 35px;
+  background: #53D7B7;
+  border: 1px solid #53D7B7;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 11px;
+  color: #FFFFFF;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #6eddc1;
+  transition: .5s;
+  -webkit-box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
+  -moz-box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
+  box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
+}
