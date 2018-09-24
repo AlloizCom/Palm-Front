@@ -1,30 +1,51 @@
 <div class="wrapper">
-  <div *ngFor="let one of rooms" class="allParts d-flex justify-content-between align-items-center">
-    <div class="first">
-      <img src="{{one.images[0].path|imagePipe}}" alt="photo">
+  <div *ngIf ="this.rooms.length" class="topInfo d-flex flex-column">
+    <div class="d-flex align-items-center">
+      <h3>Інформація про бронювання</h3>
+      <span [routerLink]="['/']">Змінити</span>
     </div>
-    <div class="second">
-      <h2>{{roomTariff[one.type]['current-language-index' | translate]}}</h2>
-      <p>{{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' |
-        translate].description:''}}</p>
-      <div class="imgs d-flex justify-content-start">
-        <img *ngFor="let oneImage of one.amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
-        <h5>{{one.square}} кв.м</h5>
+    <div class="d-flex align-items-center">
+      <img src="../../../../assets/svg/person.svg" alt="amenity">
+      <h4>{{roomsParams.adults}} дор. / {{roomsParams.childrens}} діт.</h4>
+    </div>
+    <div class="d-flex align-items-center">
+      <div>
+        <img src="../../../../assets/svg/calendar.svg" alt="date">
+      </div>
+      <h4>{{roomsParams.dateFrom|datePipe}} до {{roomsParams.dateTo|datePipe}}</h4>
+    </div>
+  </div>
+  <div *ngFor="let one of rooms" class="allParts d-flex justify-content-between align-items-center">
+    <div class="first  d-flex justify-content-center align-items-center">
+      <div class="img">
+        <img src="{{one.images[0].path|imagePipe}}" alt="photo">
       </div>
     </div>
-    <div class="third d-flex flex-column justify-content-center align-items-center">
+    <div class="second">
+     <div class="second_item">
+       <h2>{{roomTariff[one.type]['current-language-index' | translate]}}</h2>
+       <p>{{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' |
+         translate].description:''}}</p>
+     </div>
+    </div>
+    <div class="third d-flex flex-column justify-content-between align-items-center">
       <div>
-        <h2>{{roomTariff[one.type]['current-language-index' | translate]}}</h2>
+        <h3 class="ashka">Зручності:</h3>
+        <div class="imgs d-flex justify-content-center">
+          <img *ngFor="let oneImage of one.amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
+          <h5>{{one.square}} кв.м</h5>
+        </div>
         <h3>{{one.price}} &#8372;</h3>
       </div>
       <div>
-        <button [routerLink]="['/rooms-booking', one.id]">CLICK</button>
+        <button [routerLink]="['/rooms-booking', one.id]">Обрати Номер</button>
       </div>
     </div>
   </div>
-  <div class="noRoomsBlock" *ngIf ="!this.rooms.length">
-    <p>Lol nema house eblan,sorry
+  <div class="noRoomsBlock d-flex flex-column align-items-center m-5" *ngIf ="!this.rooms.length">
+    <p>Немає доступних номерів на заданий період. Будь ласка, спробуйте на інші дні або зв'яжіться з нами безпосередньо:+38 067 19 444 00
     </p>
+    <button [routerLink]="['/']">Назад</button>
   </div>
 </div>
 

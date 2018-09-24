@@ -1,6 +1,7 @@
 .footer {
   /*height: auto;*/
-  height: 18.5vh;
+  /*height: 18.5vh;*/
+  height: 20.5vh;
   padding-bottom: 3vh;
   background: #C4C4C4;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
@@ -62,7 +63,7 @@
   }
 
   .footer {
-    height: auto;
+    height: 20.5vh;
     padding-bottom: 2vh;
   }
 

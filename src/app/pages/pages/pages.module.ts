@@ -18,6 +18,8 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
 import {ProposalComponent} from "./proposal/proposal.component";
 import {ProposalItemComponent} from "./main/proposal-item/proposal-item.component";
 import { AvailableRoomsComponent } from './available-rooms/available-rooms.component';
+import { LoginComponent } from './login/login.component';
+import {BookFormComponent} from './book-form/book-form.component';
 
 @NgModule({
   imports: [
@@ -41,7 +43,9 @@ import { AvailableRoomsComponent } from './available-rooms/available-rooms.compo
     TopSliderComponent,
     ProposalComponent,
     ProposalItemComponent,
-    AvailableRoomsComponent
+    AvailableRoomsComponent,
+    LoginComponent,
+    BookFormComponent
 
   ],
   exports: [],

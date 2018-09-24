@@ -77,32 +77,32 @@
             this text is editable. Simply click anywhere in the p</p>
         </div>
       </div>
-      <form [formGroup]="callbackForm" class="right-side" (submit)="sendMessage()">
+      <form [formGroup]="bookForm" class="right-side" (submit)="sendMessage()">
         <div class="first-inputs-block">
           <div class="left-input">
             <p>Ім'я</p>
             <input type="text" formControlName="name" class="inputCallback"
-                   [ngClass]="{'invallid':callbackForm.get('name').invalid && callbackForm.get('name').dirty}">
+                   [ngClass]="{'invallid':bookForm.get('name').invalid && bookForm.get('name').dirty}">
           </div>
           <div class="right-input">
             <p>Телефон</p>
             <input type="text" formControlName="phone" class="inputCallback"
-                   [ngClass]="{'invallid':callbackForm.get('phone').invalid && callbackForm.get('phone').dirty}">
+                   [ngClass]="{'invallid':bookForm.get('phone').invalid && bookForm.get('phone').dirty}">
           </div>
         </div>
         <div class="second-inputs-block">
           <p>E-mail</p>
           <input type="text" formControlName="email" class="inputCallback"
-                 [ngClass]="{'invallid':callbackForm.get('email').invalid && callbackForm.get('email').dirty}">
+                 [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
 
         </div>
         <div class="textarea-block">
           <p>Повідомлення</p>
           <textarea name="" id="" cols="30" rows="10" class="inputCallbackText" formControlName="message"
-                    [ngClass]="{'invallid':callbackForm.get('message').invalid && callbackForm.get('message').dirty}"></textarea>
+                    [ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}"></textarea>
         </div>
 
-        <button [disabled]="callbackForm.invalid" type="submit">Надіслати</button>
+        <button [disabled]="bookForm.invalid" type="submit">Надіслати</button>
       </form>
     </div>
   </div>

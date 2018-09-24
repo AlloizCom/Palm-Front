@@ -1,14 +1,16 @@
-import {ArticleComponent} from "./article/article.component";
-import {Routes} from "@angular/router";
-import {ContactsComponent} from "./contacts/contacts.component";
-import {MainComponent} from "./main/main.component";
-import {NewsComponent} from "./news/news.component";
-import {RoomsComponent} from "./rooms/rooms.component";
+import {ArticleComponent} from './article/article.component';
+import {Routes} from '@angular/router';
+import {ContactsComponent} from './contacts/contacts.component';
+import {MainComponent} from './main/main.component';
+import {NewsComponent} from './news/news.component';
+import {RoomsComponent} from './rooms/rooms.component';
 import {PagesComponent} from './pages.component';
-import {ServiceComponent} from "./service/service.component";
-import {RoomsBookingComponent} from "./rooms-booking/rooms-booking.component";
-import {ProposalComponent} from "./proposal/proposal.component";
-import {AvailableRoomsComponent} from "./available-rooms/available-rooms.component";
+import {ServiceComponent} from './service/service.component';
+import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
+import {ProposalComponent} from './proposal/proposal.component';
+import {AvailableRoomsComponent} from './available-rooms/available-rooms.component';
+import {LoginComponent} from './login/login.component';
+import {BookFormComponent} from './book-form/book-form.component';
 
 export const pagesRoutes: Routes = [
   {
@@ -30,14 +32,15 @@ export const pagesRoutes: Routes = [
         path: 'rooms-booking', component: RoomsBookingComponent
       }, {
         path: 'rooms-booking/:id', component: RoomsBookingComponent
-      },
-      {
+      }, {
         path: 'proposal/:id', component: ProposalComponent
-      },
-      {
+      }, {
         path: 'available-rooms', component: AvailableRoomsComponent
-      },
-
+      }, {
+        path: 'login', component: LoginComponent
+      },{
+        path: 'rooms-booking/:id/bookForm', component: BookFormComponent
+      }
     ]
   }
 ];
