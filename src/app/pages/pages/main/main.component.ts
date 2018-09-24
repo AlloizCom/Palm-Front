@@ -3,6 +3,7 @@ import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-main',
@@ -211,7 +212,8 @@ export class MainComponent implements OnInit {
   childrenNumber: number = 0;
   roomsNumber: number = 1;
 
-  constructor(private _roomsParamService: RoomParamsService) {
+  constructor(private _roomsParamService: RoomParamsService,
+              private _router: Router) {
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
@@ -230,6 +232,7 @@ export class MainComponent implements OnInit {
     roomsParams.adults = this.adultsNumber;
     roomsParams.childrens = this.childrenNumber;
     this._roomsParamService.setRoomsParams(roomsParams);
+    this._router.navigateByUrl('available-rooms');
   }
 
   objectDateToString(date) {
