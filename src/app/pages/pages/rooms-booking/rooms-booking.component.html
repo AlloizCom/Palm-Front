@@ -129,7 +129,7 @@
       <div class="imgs d-flex justify-content-start">
         <div *ngFor="let oneImage of amenities" class="imageRoom"
              [style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">
-          <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{room.square}} кв.м</h5>
+          <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{room.square}} m<sub>2</sub></h5>
         </div>
       </div>
     </div>

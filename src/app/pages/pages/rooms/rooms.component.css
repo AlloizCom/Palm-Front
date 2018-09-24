@@ -5,6 +5,8 @@ p {
 }
 
 .imageRoom {
+  display: flex;
+  justify-content: center!important;
   width: 30px;
   height: 30px;
   margin-right: 5%;
@@ -13,6 +15,9 @@ p {
   background-position: center!important;
   }
 
+sub{
+  vertical-align: super;
+}
 .allBack {
   background: #F8F6F6;
 }
