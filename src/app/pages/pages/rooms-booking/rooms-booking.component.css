@@ -215,6 +215,14 @@
   width: 250px;
   margin-left: -0.4%;
 }
+.imageRoom {
+  width: 30px;
+  height: 30px;
+  margin-right: 5%;
+  background-size:30px 28px!important;
+  background-repeat: no-repeat!important;
+  background-position: center!important;
+}
 
 .imgs h5 {
   font-family: Raleway, sans-serif;
@@ -223,10 +231,8 @@
   font-size: 11px;
   text-align: center;
   color: #000000;
-  margin: 0;
   position: absolute;
-  margin-top: 25px;
-  margin-left: 5px;
+  margin-top: 30px;
 }
 
 /*SLIDER!!!*/

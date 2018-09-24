@@ -127,13 +127,15 @@
     <div *ngIf="amenities.length!=0" class="amenity-icons">
       <p class="amenity">зручності</p>
       <div class="imgs d-flex justify-content-start">
-        <img *ngFor="let oneImage of amenities" src="{{oneImage.imagePath|imagePipe}}" alt="">
-        <h5>{{room.square}}</h5>
+        <div *ngFor="let oneImage of amenities" class="imageRoom"
+             [style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">
+          <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{room.square}} кв.м</h5>
+        </div>
       </div>
     </div>
   </div>
   <!--<ng-content #dataContent>-->
-<!---->
+  <!---->
   <!--</ng-content>-->
   <div [innerHtml]="liqPayFormHtml|safeHtml">
   </div>

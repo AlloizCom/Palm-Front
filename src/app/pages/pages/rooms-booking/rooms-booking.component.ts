@@ -56,7 +56,6 @@ export class RoomsBookingComponent implements OnInit {
         this.amenities = next.amenities;
         this.roomType = next.type;
         this.id = next['id'];
-        // console.log(this.room);
         // console.log(next);
       });
     }, err => {
