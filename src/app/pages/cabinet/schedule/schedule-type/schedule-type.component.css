@@ -1,5 +1,5 @@
 p{
-  margin: 1px;
+  margin: 0;
   padding: 0;
 }
 .schedule-table {
@@ -7,21 +7,24 @@ p{
     display: flex;
     flex-direction: row;
     width: 100%;
-    border: 1px solid #c4c4c4;
+    border: 0.1px solid #c4c4c4;
 }
 
 .schedule-table-body div {
-    margin-left: -1px;
-    border: 1px solid white;
+    /*margin-left: -1px;*/
+  border: 0.1px solid white;
+  width: 101%;
+  height: 44px;
+  word-spacing: 12px;
 }
 
 .schedule-table-left-head {
     width: 200px;
-     border-right: 2px solid #c4c4c4;
 }
 
 .schedule-table-left-head > div {
-    margin-left: -1px;
+    /*margin-left: -1px;*/
+  height: 44px;
 }
 
 .schedule-table-body {
@@ -32,36 +35,40 @@ p{
 
 p{
   text-align: center;
-  line-height: 3.5;
+  padding-top: 14px;
 }
 .left-date{
   height: 39.5%;
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 0.1px solid #c4c4c4;
 
 }
 .left-status{
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 0.1px solid #c4c4c4;
 }
 .left-rooms{
-  border-bottom: 1px solid #c4c4c4;
+  border-bottom: 0.1px solid #c4c4c4;
 }
 .left-active{
 }
 .p-wrapper1 p{
-  line-height: 6
+  /*line-height: 6*/
 }
 .p-wrapper4{
-  margin-top: 4px;
+  /*margin-top: 4px;*/
 }
 
 .schedule-table-body{
   background-color: #e0e0e0;
 }
+.schedule-date p {
+  padding-top: 6px;
+}
 
 /*.schedule-table-body{*/
   /*background-color: whitesmoke !important;*/
 /*}*/
-.day-in-schedule:nth-child(7n-1),.day-in-schedule:nth-child(7n-2){
+.day-in-schedule:nth-child(7n-1),.day-in-schedule:nth-child(7n-2),.schedule-status:nth-child(7n-1),.schedule-status:nth-child(7n-2){
   background-color: whitesmoke;
 }
+
 
