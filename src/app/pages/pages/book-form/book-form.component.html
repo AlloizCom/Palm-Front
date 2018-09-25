@@ -1,5 +1,6 @@
 <div class="wraper">
   <div class="form-container">
+
     <form [formGroup]="bookForm" (submit)="sendBook()">
       <div class="inputBlock">
         <p>Ім'я</p>
@@ -20,10 +21,26 @@
         <p>E-mail</p>
         <input type="text" formControlName="email" class="inputCallback"
                [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
-
       </div>
-
       <button [disabled]="bookForm.invalid" type="submit">Забронювати</button>
     </form>
+
+    <div *ngIf ="this.bookHtml" class="topInfo d-flex flex-column">
+      <div class="d-flex align-items-center">
+        <h3>Інформація про бронювання</h3>
+        <span [routerLink]="['/']">Змінити</span>
+      </div>
+      <div class="d-flex align-items-center">
+        <img src="../../../../assets/svg/person.svg" alt="amenity">
+        <h4>{{bookHtml.adults}} дор. / {{bookHtml.kids}} діт.</h4>
+      </div>
+      <div class="d-flex align-items-center">
+        <div>
+          <img src="../../../../assets/svg/calendar.svg" alt="date">
+        </div>
+        <h4>{{bookHtml.dateIn|datePipe}} до {{bookHtml.dateOut|datePipe}}</h4>
+      </div>
+    </div>
+
   </div>
 </div>

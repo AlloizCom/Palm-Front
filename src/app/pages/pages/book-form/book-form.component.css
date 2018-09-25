@@ -34,7 +34,7 @@ button {
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-  font-size: 11px;
+  font-size: 14px;
   color: #FFFFFF;
 }
 
@@ -45,4 +45,8 @@ button:hover {
   -webkit-box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
   -moz-box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
   box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
+}
+
+.invallid {
+  border: 1px solid red !important;
 }

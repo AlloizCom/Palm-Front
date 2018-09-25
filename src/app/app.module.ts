@@ -19,6 +19,8 @@ import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {MyInterceptor} from "../shared/interceptors/my.interceptor";
 import {UserDetailsService} from "../shared/service/user-details.service";
 import {LoginService} from '../shared/service/login.service';
+import {BookingFormService} from '../shared/service/booking-form.service';
+import {BookService} from '../shared/service/book.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import {LoginService} from '../shared/service/login.service';
       multi: true
     },
     UserDetailsService,
-    LoginService
+    LoginService,
+    BookingFormService,
+    BookService
 
   ],
   bootstrap: [AppComponent],

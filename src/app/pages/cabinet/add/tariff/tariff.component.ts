@@ -71,7 +71,7 @@ export class TariffComponent implements OnInit {
       this.tariff = value;
       this.tariff.roomType = this.roomType;
       this.tariff.tariffType = this.tariffType;
-      // console.log('dateTo value : ', this.tariffForm.get('dateTo').value);
+      console.log('dateTo value : ', this.tariffForm);
       // console.log('dateTo valid : ', this.tariffForm.get('dateTo').errors);
       // console.log(this.tariffForm.valid);
       // console.log('tariff : ', this.tariff);
