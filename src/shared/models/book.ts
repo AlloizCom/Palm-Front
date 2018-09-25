@@ -6,8 +6,8 @@ export class Book {
   lastName: string;
   phoneNumber: string;
   email: string;
-  deteIn: string;
-  deteOut: string;
+  dateIn: string;
+  dateOut: string;
   message: string;
   adults: number;
   kids: number;

@@ -27,13 +27,13 @@ export class BookService {
       .catch(err => Observable.throw(err));
   }
 
-  findOne(): Observable<Book> {
-    return this._httpClient.get<Book>(this.controller + '/find-one/ + id')
+  findOne(id: number): Observable<Book> {
+    return this._httpClient.get<Book>(this.controller + '/find-one/' + id)
       .catch(err => Observable.throw(err));
   }
 
-  findOneAvailable(): Observable<Book> {
-    return this._httpClient.get<Book>(this.controller + '/find-one-available/ + id')
+  findOneAvailable(id: number): Observable<Book> {
+    return this._httpClient.get<Book>(this.controller + '/find-one-available/' + id)
       .catch(err => Observable.throw(err));
   }
 

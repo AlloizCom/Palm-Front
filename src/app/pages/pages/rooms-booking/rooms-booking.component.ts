@@ -11,6 +11,7 @@ import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Amenity} from '../../../../shared/models/amenity';
 import {BookService} from "../../../../shared/service/book.service";
 import {Book} from "../../../../shared/models/book";
+import {BookingFormService} from '../../../../shared/service/booking-form.service';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -48,6 +49,7 @@ export class RoomsBookingComponent implements OnInit {
     private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
+    private _bookingFormService: BookingFormService,
     private _roomsParamService: RoomParamsService) {
     _router.params.subscribe(next => {
       _roomService.findOneAvailableWithPrice(next['id']).subscribe(next => {
@@ -163,16 +165,26 @@ export class RoomsBookingComponent implements OnInit {
   }
 
   pay() {
-    // let book = new Book();
-    // book.kids = this.childrenNumber;
-    // book.deteIn = JSON.stringify(this.model1);
-    // book.deteOut = JSON.stringify(this.model2);
-    // book.adults = this.adultsNumber;
-    // book.amountOfRooms = this.roomsNumber;
-    // book.roomType = this.roomType;
+    let dateInDay;
+    let dateOutDay;
+    let dateInMonth;
+    let dateOutMonth;
+    this.model1.day<10?dateInDay = `0${this.model1.day}`:dateInDay = `${this.model1.day}`
+    this.model2.day<10?dateOutDay = `0${this.model2.day}`:dateOutDay = `${this.model2.day}`;
+    this.model1.month<10?dateInMonth = `0${this.model1.month}`:dateInMonth = `${this.model1.month}`;
+    this.model2.month<10?dateOutMonth = `0${this.model2.month}`:dateOutMonth = `${this.model2.month}`;
+
+    let book = new Book();
+    book.kids = this.childrenNumber;
+    book.dateIn = `${this.model1.year}-${dateInMonth}-${dateInDay}`;
+    book.dateOut = `${this.model2.year}-${dateOutMonth}-${dateOutDay}`;
+    book.adults = this.adultsNumber;
+    book.amountOfRooms = this.roomsNumber;
+    book.roomType = this.roomType;
     // this._bookService.pay(book).subscribe(next => {
     //   this.liqPayFormHtml = next;
     // });
+    this._bookingFormService.getData(book);
     this.router.navigate([`/rooms-booking/${this.id}/bookForm`]);
   }
 
