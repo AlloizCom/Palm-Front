@@ -16,7 +16,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let one of booking">
-    <td>{{one.bookingDay}}</td>
+    <td>{{one.bookingDay | dateTimePipe}}</td>
     <td>{{one.firstName}}</td>
     <td>{{one.lastName}}</td>
     <td>{{one.phoneNumber}}</td>

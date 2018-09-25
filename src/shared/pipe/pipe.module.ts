@@ -7,6 +7,7 @@ import {MounthPipe} from './pipe/mounth.pipe';
 import {RoomTypePipe} from "./pipe/room-type.pipe";
 import {TariffTypePipe} from "./pipe/tariff-type.pipe";
 import {Safe} from "./pipe/safe-html.pipe";
+import {DateTimePipePipe} from "./pipe/date-time-pipe.pipe";
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {Safe} from "./pipe/safe-html.pipe";
     MounthPipe,
     RoomTypePipe,
     TariffTypePipe,
-    Safe
+    Safe,
+    DateTimePipePipe
   ],
   exports: [
     ImagePipePipe,
@@ -28,7 +30,8 @@ import {Safe} from "./pipe/safe-html.pipe";
     MounthPipe,
     RoomTypePipe,
     TariffTypePipe,
-    Safe
+    Safe,
+    DateTimePipePipe
   ]
 })
 export class PipeModule {
