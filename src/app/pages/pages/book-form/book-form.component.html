@@ -1,5 +1,5 @@
 <div class="wraper">
-  <div class="form-container">
+  <div class="form-container d-flex flex-row">
 
     <form [formGroup]="bookForm" (submit)="sendBook()">
       <div class="inputBlock">
@@ -26,10 +26,7 @@
     </form>
 
     <div *ngIf ="this.bookHtml" class="topInfo d-flex flex-column">
-      <div class="d-flex align-items-center">
         <h3>Інформація про бронювання</h3>
-        <span [routerLink]="['/']">Змінити</span>
-      </div>
       <div class="d-flex align-items-center">
         <img src="../../../../assets/svg/person.svg" alt="amenity">
         <h4>{{bookHtml.adults}} дор. / {{bookHtml.kids}} діт.</h4>

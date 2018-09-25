@@ -2,17 +2,19 @@
   position: relative;
   width: 70%;
   margin: auto;
-  min-height: 90vh;
+  min-height: 79.5vh;
 }
 
 .form-container {
   position: absolute;
+  width: 100%;
+  justify-content: space-around;
 }
 
 form {
-  margin-top: 40%;
+  margin-top: 15%;
   margin-left: 10%;
-  width: 250px;
+  width: 30%;
 }
 
 input {
@@ -49,4 +51,8 @@ button:hover {
 
 .invallid {
   border: 1px solid red !important;
+}
+.topInfo{
+  margin-top: 15%;
+  width: 40%;
 }

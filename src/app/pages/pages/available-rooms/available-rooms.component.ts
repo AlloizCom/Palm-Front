@@ -6,6 +6,7 @@ import {RoomWithPrice} from "../../../../shared/models/room-with-price";
 import {isNullOrUndefined} from "util";
 import {RoomParamsService} from "../../../../shared/service/room-params.serive";
 import {TariffService} from "../../../../shared/service/tariff.service";
+import {Room} from '../../../../shared/models/room';
 
 @Component({
   selector: 'app-available-rooms',
@@ -18,6 +19,7 @@ export class AvailableRoomsComponent implements OnInit {
   roomTariff: any;
   rooms: RoomWithPrice[] = [];
   roomsParams: RoomsParams;
+  room: Room[];
 
   constructor(private _roomService: RoomService,
               private _tariffService: TariffService,
@@ -39,6 +41,9 @@ export class AvailableRoomsComponent implements OnInit {
         console.log(err);
       });
     }
+    this._roomService.findAllRoomWithPrice().subscribe(next => {
+      this.room = next;
+    });
   }
 
   getRoomsParams() {
