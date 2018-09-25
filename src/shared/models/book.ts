@@ -14,4 +14,5 @@ export class Book {
   orderStatus: string;
   amountOfRooms: number;
   roomType: string;
+  bookingDay: string;
 }
