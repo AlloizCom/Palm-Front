@@ -33,7 +33,7 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {
     this.bookForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
+      name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Zа-яА-Я]+$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
       phone: new FormControl('', [Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")])
