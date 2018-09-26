@@ -27,6 +27,9 @@ export class RoomsBookingComponent implements OnInit {
   images: Image[] = [];
   amenities: Amenity[] = [];
   roomType: string = '';
+  roomParams: RoomsParams;
+  errorMessag: boolean =false;
+
   //dataPicker
   model1 = {day: 0, year: 0, month: 0};
   model2 = {day: 0, year: 0, month: 0};
@@ -62,7 +65,7 @@ export class RoomsBookingComponent implements OnInit {
     }, err => {
       console.log(err);
     });
-
+    this.roomParams = _roomsParamService.params;
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
@@ -71,18 +74,18 @@ export class RoomsBookingComponent implements OnInit {
     this.model2.year = new Date().getUTCFullYear();
   }
 
-  findRoomByParams() {
-    let roomsParams = new RoomsParams();
-    roomsParams.dateFrom = this.objectDateToString(this.model1).toString();
-    roomsParams.dateTo = this.objectDateToString(this.model2).toString();
-    roomsParams.numbersOfRooms = this.roomsNumber;
-    roomsParams.adults = this.adultsNumber;
-    roomsParams.childrens = this.childrenNumber;
-    this._roomsParamService.setRoomsParams(roomsParams);
-  }
+  // findRoomByParams() {
+  //   let roomsParams = new RoomsParams();
+  //   roomsParams.dateFrom = this.objectDateToString(this.model1).toString();
+  //   roomsParams.dateTo = this.objectDateToString(this.model2).toString();
+  //   roomsParams.numbersOfRooms = this.roomsNumber;
+  //   roomsParams.adults = this.adultsNumber;
+  //   roomsParams.childrens = this.childrenNumber;
+  //   this._roomsParamService.setRoomsParams(roomsParams);
+  // }
 
   objectDateToString(date) {
-    return new Date(date.year, date.month, date.day);
+    return new Date(date.year, date.month, date.day + 1);
   }
 
   isNull(object: any): Boolean {
@@ -132,6 +135,29 @@ export class RoomsBookingComponent implements OnInit {
       anyDateInMonth.getMonth() + 1,
       0).getDate();
   }
+  findRoomByParams() {
+    let roomsParams = this._roomsParamService.params || new RoomsParams();
+
+    roomsParams.dateFrom = this.objectDateToString(this.model1).toISOString().replace(/T.*/, '');
+    roomsParams.dateTo = this.objectDateToString(this.model2).toISOString().replace(/T.*/, '');
+    roomsParams.numbersOfRooms = this.roomsNumber;
+    roomsParams.adults = this.adultsNumber;
+    roomsParams.childrens = this.childrenNumber;
+    roomsParams.roomType = this.room.type;
+
+    this._roomsParamService.setRoomsParams(roomsParams);
+    console.log(this.room);
+
+
+    this._roomService.findRoomByParamsWithRoomType(roomsParams).subscribe(next=>{
+      console.log(roomsParams);
+      if(next.length>0){
+        this.router.navigate([`/rooms-booking/${this.id}/bookForm`]);
+      }else {
+        this.errorMessag = true;
+      }
+    });
+  }
 
 //dataPicker
 
@@ -161,6 +187,7 @@ export class RoomsBookingComponent implements OnInit {
       this.childrenNumber -= 1;
     }
   }
+
 
   pay() {
     let dateInDay;
