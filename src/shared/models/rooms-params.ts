@@ -5,5 +5,5 @@ export class RoomsParams {
   numbersOfRooms: number;
   adults: number;
   childrens: number;
-
+  roomType: string;
 }

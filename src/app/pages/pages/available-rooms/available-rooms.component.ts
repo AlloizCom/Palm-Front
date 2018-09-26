@@ -6,6 +6,7 @@ import {RoomWithPrice} from "../../../../shared/models/room-with-price";
 import {isNullOrUndefined} from "util";
 import {RoomParamsService} from "../../../../shared/service/room-params.serive";
 import {TariffService} from "../../../../shared/service/tariff.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-available-rooms',
@@ -21,7 +22,8 @@ export class AvailableRoomsComponent implements OnInit {
 
   constructor(private _roomService: RoomService,
               private _tariffService: TariffService,
-              private _roomsParamsService: RoomParamsService) {
+              private _roomsParamsService: RoomParamsService,
+              private _router: Router) {
     this.getRoomsParams();
 
     if (this.roomsParams) {
@@ -48,6 +50,12 @@ export class AvailableRoomsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  chooseNumber(roomType: string, id: number){
+    this.roomsParams.roomType = roomType;
+    this._roomsParamsService.setRoomsParams(this.roomsParams);
+    this._router.navigateByUrl('/available-rooms/room/' + id);
   }
 
   isNull(object: any): Boolean {
