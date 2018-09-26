@@ -40,9 +40,11 @@
           </p>
       </div>
       <div class="schedule-for-sale">
-        <p>
-          {{day.forSale}}
-        </p>
+        <div class="forSale-wrapper" routerLink="{{day.id}}">
+          <p>
+            {{day.forSale}}
+          </p>
+        </div>
 
       </div>
       <div class="schedule-booked">

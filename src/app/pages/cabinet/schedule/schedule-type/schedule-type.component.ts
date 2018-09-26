@@ -13,6 +13,7 @@ export class ScheduleTypeComponent implements OnInit {
 
   schedule: Schedule[] = [];
   status: string[] = [];
+  id: number = 0;
   constructor(private _scheduleService: ScheduleService) {
 
   }

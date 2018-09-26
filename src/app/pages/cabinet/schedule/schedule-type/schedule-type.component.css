@@ -16,11 +16,14 @@ p{
     /*margin-left: -1px;*/
   width: 101%;
   height: 44px;
-  word-spacing: 12px;
+  word-spacing: 17px;
 }
 .schedule-date{
   background-color: #fff;
 }
+.schedule-booked p {
+   padding-top:5px;
+ }
 
 
 .schedule-table-left-head {
@@ -82,7 +85,17 @@ p{
   height: 30px!important;
 
 }
-
+.schedule-for-sale .forSale-wrapper{
+  height: 25px;
+  width: 85%;
+  background-color: white;
+  margin: auto;
+  margin-top: 9px;
+  cursor: pointer;
+}
+.forSale-wrapper p {
+  padding-top: 4px;
+}
 /*.schedule-table-body{*/
   /*background-color: whitesmoke !important;*/
 /*}*/
