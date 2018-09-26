@@ -1,7 +1,8 @@
 .wrapper {
   padding-top: 6vh;
   /*min-height: 79.5vh;*/
-  min-height: 74.5vh;
+  /*min-height: 55.5vh;*/
+  min-height: 96.5vh;
 }
 
 .topInfo{
@@ -144,7 +145,12 @@ button:hover {
   box-shadow: 0px 7px 48px -14px rgba(0, 0, 0, 0.76);
 }
 
+.noRoomsBlock p{
+
+  font-size: 1.2vw;
+}
 @media screen and (max-width: 1140px) {
+
   .imgs, .ashka {
     display: none !important;
   }
@@ -162,6 +168,11 @@ button:hover {
 
   .topInfo{
     width: 37vw;
+  }
+
+  .noRoomsBlock p{
+
+    font-size: 1.4vw;
   }
 }
 
@@ -183,11 +194,16 @@ button:hover {
     padding-top: 10vh;
   }
 
+  .noRoomsBlock p{
+    font-size: 1.7vw;
+  }
+
 }
 
 @media screen and (max-width: 768px) {
   .wrapper {
-    min-height: 84.5vh;
+    /*min-height: 84.5vh;*/
+    /*min-height: 55.5vh;*/
   }
 
   .allParts {
@@ -225,9 +241,24 @@ button:hover {
   span,.topInfo h4,.topInfo h3{
     font-size: 2.7vw;
   }
+
+  .noRoomsBlock p{
+    font-size: 2.2vw;
+  }
+
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 645px) {
+    .wrapper{
+      /*min-height: 34.5vh;*/
+  }
+}
+@media screen and (max-width: 465px) {
+
+  .wrapper {
+    /*min-height: 77vh;*/
+  }
+
   .allParts {
     margin: 7%;
   }
@@ -257,5 +288,13 @@ button:hover {
 
   span,.topInfo h4,.topInfo h3{
     font-size: 3.7vw;
+  }
+
+  .noRoomsBlock p{
+    font-size: 3vw;
+  }
+
+  .noRoomsBlock{
+    margin: 6%!important;
   }
 }
