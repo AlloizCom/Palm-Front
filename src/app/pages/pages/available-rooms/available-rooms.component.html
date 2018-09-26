@@ -40,7 +40,7 @@
         <h3>{{one.price}} &#8372;</h3>
       </div>
       <div>
-        <button [routerLink]="['/available-rooms/room/', one.id]">Обрати Номер</button>
+        <button  (click)="chooseNumber(one.type, one.id)">Обрати Номер</button>
       </div>
     </div>
   </div>

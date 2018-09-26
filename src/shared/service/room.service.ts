@@ -31,6 +31,11 @@ export class RoomService {
       JSON.stringify(roomParams)).catch(err => Observable.throw(err));
   }
 
+  findRoomByParamsWithRoomType(roomParams: RoomsParams): Observable<RoomWithPrice[]> {
+    return this._httpClient.post<RoomWithPrice[]>(this.controller + '/find-by-book-params-with-room-type',
+      JSON.stringify(roomParams)).catch(err => Observable.throw(err));
+  }
+
   findAllByAdultPlacesAndKidsPlacesAndAvailable(kidsPlaces: number,
                                                 adultPlaces: number):
     Observable<Room[]> {
