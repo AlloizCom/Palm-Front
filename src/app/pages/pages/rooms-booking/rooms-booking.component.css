@@ -225,7 +225,14 @@
   background-repeat: no-repeat!important;
   background-position: center!important;
   }
-
+.errorParams{
+  bottom: 74px;
+  font-weight: 600;
+  left: calc(50% - 115px);
+  position: absolute;
+  color: red;
+  margin: auto;
+}
 sub{
   vertical-align: super;
 }
