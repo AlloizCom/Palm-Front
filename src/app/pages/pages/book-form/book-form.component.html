@@ -25,17 +25,17 @@
       <button [disabled]="bookForm.invalid" type="submit">Забронювати</button>
     </form>
 
-    <div *ngIf ="this.bookHtml" class="topInfo d-flex flex-column">
+    <div  class="topInfo d-flex flex-column">
         <h3>Інформація про бронювання</h3>
       <div class="d-flex align-items-center">
         <img src="../../../../assets/svg/person.svg" alt="amenity">
-        <h4>{{bookHtml.adults}} дор. / {{bookHtml.kids}} діт.</h4>
+        <h4>{{roomParams.adults}} дор. / {{roomParams.childrens}} діт.</h4>
       </div>
       <div class="d-flex align-items-center">
         <div>
           <img src="../../../../assets/svg/calendar.svg" alt="date">
         </div>
-        <h4>{{bookHtml.dateIn|datePipe}} до {{bookHtml.dateOut|datePipe}}</h4>
+        <h4>{{roomParams.dateFrom|datePipe}} до {{roomParams.dateTo|datePipe}}</h4>
       </div>
     </div>
 

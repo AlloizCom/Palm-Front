@@ -35,7 +35,14 @@ export const pagesRoutes: Routes = [
       }, {
         path: 'proposal/:id', component: ProposalComponent
       }, {
-        path: 'available-rooms', component: AvailableRoomsComponent
+        path: 'available-rooms', children:[
+          {
+            path: '', component: AvailableRoomsComponent
+          },
+          {
+            path: 'room/:id',component: BookFormComponent
+          }
+        ],
       }, {
         path: 'login', component: LoginComponent
       },{
