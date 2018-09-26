@@ -12,6 +12,8 @@ import {NotificationService} from "../../../../shared/service/notification.servi
 export class BookingComponent implements OnInit {
 
   booking: Book[] = [];
+  page: number = 0;
+  numberOfItems: number = 5;
 
   constructor(private _bookService: BookService,
               private _notificationService: NotificationService) {
@@ -20,14 +22,33 @@ export class BookingComponent implements OnInit {
     }, err => {
       console.log(err);
     });
+    this._bookService.findAllAvailableBookByPage(this.page, this.numberOfItems).subscribe(next => {
+      for (let one of next.books) {
+        this.booking.push(one);
+      }
+    });
   }
 
   ngOnInit() {
-    this._bookService.findAll().subscribe(next => {
-      this.booking = next;
-      // console.log(this.booking);
-    }, err => {
-      console.log(err);
-    });
+    // this._bookService.findAll().subscribe(next => {
+    //   this.booking = next;
+    //   // console.log(this.booking);
+    // }, err => {
+    //   console.log(err);
+    // });
   }
+
+
+  showMore() {
+    this.page++;
+    this._bookService.findAllAvailableBookByPage(this.page, this.numberOfItems).subscribe(next => {
+        for (let one of next.books) {
+          this.booking.push(one);
+        }
+      }, err => {
+        console.log(err)
+      }
+    );
+  }
+
 }
