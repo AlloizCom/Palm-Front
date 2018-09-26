@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="140.224mm" height="114.723mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1782.66 1458.47"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="777" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Arial Black">
+		<font-face-src>
+			<font-face-name name="Arial Black"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="Е" horiz-adv-x="722" d="M73.0004 716.001l592.001 0 0 -153.002 -370.001 0 0 -114 342.999 0 0 -145.998 -342.999 0 0 -140.999 381 0 0 -162.001 -603 0 0 716.001z"/>
+   <glyph unicode="Н" horiz-adv-x="832" d="M73.9992 716.001l221.001 0 0 -250.001 242 0 0 250.001 222 0 0 -716.001 -222 0 0 289.999 -242 0 0 -289.999 -221.001 0 0 716.001z"/>
+   <glyph unicode="Ш" horiz-adv-x="1109" d="M1037 0l-963 0 0 716.001 221.001 0 0 -540.002 149 0 0 540.002 221.001 0 0 -540.002 151 0 0 540.002 220.999 0 0 -716.001z"/>
+   <glyph unicode="А" horiz-adv-x="777" d="M513.501 118l-250.668 0 -35.9983 -118 -225.836 0 269.5 716.001 242.167 0 268.332 -716.001 -231.666 0 -35.8314 118zm-46.8355 155l-78.1661 257.333 -78.4999 -257.333 156.666 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Arial Black";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .str0 {stroke:#2B2A29;stroke-width:2.54;stroke-miterlimit:22.9256}
+    .fil1 {fill:#FEFEFE}
+    .fil0 {fill:#2B2A29}
+    .fnt0 {font-weight:normal;font-size:502.79px;font-family:'Arial Black'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <rect class="fil0 str0" x="1.27" y="1.27" width="1780.12" height="1455.93" rx="218.1" ry="218.1"/>
+  <g transform="matrix(0.68982 0 0 1 -4711.98 -384.029)">
+   <text x="7011.2" y="1323.22"  class="fil1 fnt0">НАШЕ</text>
+  </g>
+  <path class="fil1 str0" d="M1269.15 795.31l94.77 0c8.76,-37.46 19.62,-74.76 32.89,-111.9 5.78,-16.17 20.46,-27.46 37.22,-23.75l0 0c16.77,3.7 29.41,21.01 23.75,37.22 -11.33,32.45 -21.08,65.26 -29.29,98.43l93.36 0c14.67,0 26.66,11.99 26.66,26.66l0 0c0,14.67 -12,26.66 -26.66,26.66l-105.2 0c-6.86,34.87 -12.1,70.11 -15.75,105.71 -1.75,17.08 -20.46,27.46 -37.22,23.75l-0 0c-16.77,-3.7 -25.48,-20.14 -23.75,-37.22 3.11,-30.83 7.37,-61.58 12.94,-92.24l-83.71 0c-14.67,0 -26.66,-11.99 -26.66,-26.66l0 0c0,-14.67 11.99,-26.66 26.66,-26.66z"/>
+  <path class="fil1 str0" d="M1253.19 459.73l73.03 0 0 68.39 -73.03 0 0 -68.39zm290.37 0.58l73.03 0 0 68.39 -69.55 0 0 67.23 -73.03 0 0 -68.39 69.55 0 0 -67.23zm-144.31 -1.74l73.03 0 0 68.39 -73.03 0 0 -68.39zm-71.87 69.55l73.03 0 0 68.39 -73.03 0 0 -68.39z"/>
+ </g>
+</svg>
