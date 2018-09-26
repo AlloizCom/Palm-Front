@@ -1,11 +1,12 @@
 .sponsors {
   height: auto;
-  background: #F8F6F6;
+  background: #C4C4C4;
+  border-top: 1px solid #fff;
 }
 
 .sponsors_items img {
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   cursor: pointer;
 }
 
@@ -15,9 +16,9 @@
 }
 
 
-h3 {
+p {
   font-family: Roboto;
-  font-size: 21px;
+  font-size: 17px;
   color: #000000;
   text-transform: uppercase;
   cursor: pointer;
