@@ -11,7 +11,6 @@ import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Amenity} from '../../../../shared/models/amenity';
 import {BookService} from "../../../../shared/service/book.service";
 import {Book} from "../../../../shared/models/book";
-import {BookingFormService} from '../../../../shared/service/booking-form.service';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -49,7 +48,6 @@ export class RoomsBookingComponent implements OnInit {
     private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
-    private _bookingFormService: BookingFormService,
     private _roomsParamService: RoomParamsService) {
     _router.params.subscribe(next => {
       _roomService.findOneAvailableWithPrice(next['id']).subscribe(next => {
@@ -184,7 +182,6 @@ export class RoomsBookingComponent implements OnInit {
     // this._bookService.pay(book).subscribe(next => {
     //   this.liqPayFormHtml = next;
     // });
-    this._bookingFormService.getData(book);
     this.router.navigate([`/rooms-booking/${this.id}/bookForm`]);
   }
 

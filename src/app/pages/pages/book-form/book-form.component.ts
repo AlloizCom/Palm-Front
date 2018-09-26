@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Book} from '../../../../shared/models/book';
-import {BookingFormService} from '../../../../shared/service/booking-form.service';
 import {BookService} from '../../../../shared/service/book.service';
+import {RoomParamsService} from "../../../../shared/service/room-params.serive";
+import {RoomsParams} from "../../../../shared/models/rooms-params";
 
 @Component({
   selector: 'app-bookForm',
@@ -11,17 +12,17 @@ import {BookService} from '../../../../shared/service/book.service';
 })
 export class BookFormComponent implements OnInit {
   bookForm: FormGroup;
-  book: Book;
-  bookHtml: Book;
-
+  book: Book = new Book();
+  roomParams: RoomsParams;
 
   constructor(
-    private _BookingFormService: BookingFormService,
+    private _roomParamsService: RoomParamsService,
     private _bookService: BookService ) {
+    this.roomParams = _roomParamsService.params;
   }
 
   ngOnInit() {
-    this.bookHtml=this._BookingFormService.returnData();
+
     this.bookForm = new FormGroup({
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]),
@@ -34,13 +35,13 @@ export class BookFormComponent implements OnInit {
   }
 
   sendBook() {
-    for(let key in this._BookingFormService.returnData()){
-      this.book[key] = this._BookingFormService.returnData()[key];
-    }
-    this._bookService.save(this.book).subscribe(next => {
-      console.log(next);
-    });
-    console.log(this.book);
+    //   for(let key in this._BookingFormService.returnData()){
+    //     this.book[key] = this._BookingFormService.returnData()[key];
+    //   }
+    //   this._bookService.save(this.book).subscribe(next => {
+    //     console.log(next);
+    //   });
+    //   console.log(this.book);
+    // }
   }
-
 }
