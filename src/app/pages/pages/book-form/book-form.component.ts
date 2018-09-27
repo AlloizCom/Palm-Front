@@ -4,6 +4,7 @@ import {Book} from '../../../../shared/models/book';
 import {BookService} from '../../../../shared/service/book.service';
 import {RoomParamsService} from "../../../../shared/service/room-params.serive";
 import {RoomsParams} from "../../../../shared/models/rooms-params";
+import {RoomTariff} from "../../../../shared/enum/room-tariff";
 
 @Component({
   selector: 'app-bookForm',
@@ -17,10 +18,12 @@ export class BookFormComponent implements OnInit {
   roomTariff: any;
   liqPayFormHtml: string = "";
 
+
   constructor(
     private _roomParamsService: RoomParamsService,
     private _bookService: BookService ) {
     this.roomParams = _roomParamsService.params;
+    this.roomTariff = RoomTariff
   }
 
   ngOnInit() {
