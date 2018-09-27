@@ -103,6 +103,33 @@ p{
   background-color: #84d7c2;
 }
 
+.point{
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-position:0 4px;
+}
 
-
-
+.bg-01 {
+  background-image: url("../../../../../assets/png/01.png");
+}
+.bg-02 {
+  background-image: url("../../../../../assets/png/02.png");
+}
+.bg-03 {
+  background-image: url("../../../../../assets/png/03.png");
+}
+.bg-04 {
+  background-image: url("../../../../../assets/png/04.png");
+}
+.bg-11 {
+  background-image: url("../../../../../assets/png/11.png");
+}
+.bg-12 {
+  background-image: url("../../../../../assets/png/12.png");
+}
+.bg-13 {
+  background-image: url("../../../../../assets/png/13.png");
+}
+.bg-14 {
+  background-image: url("../../../../../assets/png/14.png");
+}

@@ -35,9 +35,9 @@
 
       </div>
       <div class="schedule-status">
-          <p>
-            st
-          </p>
+          <div [ngClass]="['point', 'bg-'+status[i]]">
+
+          </div>
       </div>
       <div class="schedule-for-sale">
         <div class="forSale-wrapper" routerLink="{{day.id}}">

@@ -27,6 +27,7 @@ export class ScheduleTypeComponent implements OnInit {
   }
 
   calculateStatuses() {
+    console.log(this.schedule);
     for (var i = 0; i < this.schedule.length; i++) {
       if (i == 0) {
         if ((this.schedule[i].free && this.schedule[i + 1].free)
