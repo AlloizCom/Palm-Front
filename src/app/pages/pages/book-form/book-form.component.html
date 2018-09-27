@@ -23,7 +23,23 @@
         <input type="text" formControlName="email" class="inputCallback"
                [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
       </div>
-      <button [disabled]="bookForm.invalid" type="submit">Забронювати</button>
+
+      <div class="inputBlock">
+        <p>Message</p>
+        <textarea  type="text" formControlName="message" class="inputCallback message"
+                  [ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}">
+
+        </textarea>
+      </div>
+
+
+      <button [disabled]="bookForm.invalid" type="submit" (click)="pay()">Забронювати</button>
+
+      <!--<ng-content #dataContent>-->
+      <!---->
+      <!--</ng-content>-->
+      <div [innerHtml]="liqPayFormHtml|safeHtml">
+      </div>
     </form>
 
     <div class="topInfo d-flex flex-column">
