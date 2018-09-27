@@ -26,8 +26,8 @@ export class BookFormComponent implements OnInit {
   ngOnInit() {
 
     this.bookForm = new FormGroup({
-      firstName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Zа-яА-я]+$')]),
-      lastName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Zа-яА-я]+$')]),
+      firstName: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z.!@?#"$%&:;() *\\+,\\/;\\-=[\\\\\\]\\^_{|}<>\u0400-\u04FF]+$')]),
+      lastName: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z.!@?#"$%&:;() *\\+,\\/;\\-=[\\\\\\]\\^_{|}<>\u0400-\u04FF]+$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phoneNumber: new FormControl('', [Validators.pattern('^\\+(?:[0-9\\s]●?){10,15}[0-9]$')]),
       message: new FormControl('')
