@@ -189,28 +189,7 @@ export class RoomsBookingComponent implements OnInit {
   }
 
 
-  pay() {
-    let dateInDay;
-    let dateOutDay;
-    let dateInMonth;
-    let dateOutMonth;
-    this.model1.day<10?dateInDay = `0${this.model1.day}`:dateInDay = `${this.model1.day}`
-    this.model2.day<10?dateOutDay = `0${this.model2.day}`:dateOutDay = `${this.model2.day}`;
-    this.model1.month<10?dateInMonth = `0${this.model1.month}`:dateInMonth = `${this.model1.month}`;
-    this.model2.month<10?dateOutMonth = `0${this.model2.month}`:dateOutMonth = `${this.model2.month}`;
 
-    let book = new Book();
-    book.kids = this.childrenNumber;
-    book.dateIn = `${this.model1.year}-${dateInMonth}-${dateInDay}`;
-    book.dateOut = `${this.model2.year}-${dateOutMonth}-${dateOutDay}`;
-    book.adults = this.adultsNumber;
-    book.amountOfRooms = this.roomsNumber;
-    book.roomType = this.roomType;
-    // this._bookService.pay(book).subscribe(next => {
-    //   this.liqPayFormHtml = next;
-    // });
-    this.router.navigate([`/rooms-booking/${this.id}/bookForm`]);
-  }
 
   //slider
   scroll(event) {

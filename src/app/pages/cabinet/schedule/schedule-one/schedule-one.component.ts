@@ -64,7 +64,7 @@ export class ScheduleOneComponent implements OnInit {
     console.log(this.scheduleForm.getRawValue());
     this._scheduleService.update(this.scheduleForm.getRawValue()).subscribe(next => {
       this.scheduleForm.patchValue(<any>next);
-      this._router.navigateByUrl("/cabinet/update/schedule");
+      this._router.navigateByUrl("/cabinet/schedule");
     }, error => {
       console.error(error);
     });
