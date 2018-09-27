@@ -16,6 +16,7 @@ export class TopSliderComponent implements OnInit {
   mainPage: MainPage [] = [];
   allPathes: string [] = [];
   index: number = 0;
+  indexDot: number = 0;
   autoScrol: any;
 
   constructor(config: NgbCarouselConfig, private _mainPageService: MainPageSevice) {
@@ -44,14 +45,19 @@ export class TopSliderComponent implements OnInit {
   scroll(event) {
     if (this.index > 0 && this.index != this.allPathes.length - 1) {
       event ? this.index -= 1 : this.index += 1;
+      event ? this.indexDot += 1 : this.indexDot -= 1;
     } else if (this.index == 0 && event == false) {
       this.index += 1;
+      this.indexDot -= 1;
     } else if (this.index == this.allPathes.length - 1 && event == true) {
       this.index -= 1;
+      this.indexDot += 1;
     } else if (this.index == this.allPathes.length - 1 && event == false) {
       this.index = 0;
+      this.indexDot = this.allPathes.length - 1;
     } else if (this.index == 0 && event == true) {
       this.index = this.allPathes.length - 1;
+      this.indexDot = 0;
     }
     clearInterval(this.autoScrol);
     this.autoScrol = setInterval(() => {
