@@ -29,7 +29,7 @@ export class BookFormComponent implements OnInit {
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Zа-яА-я]+$')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Zа-яА-я]+$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phoneNumber: new FormControl('', [Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]),
+      phoneNumber: new FormControl('', [Validators.pattern('^\\+(?:[0-9\\s]●?){10,15}[0-9]$')]),
       message: new FormControl('')
     });
     this.bookForm.valueChanges.subscribe(value => {
