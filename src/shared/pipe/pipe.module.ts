@@ -8,6 +8,7 @@ import {RoomTypePipe} from "./pipe/room-type.pipe";
 import {TariffTypePipe} from "./pipe/tariff-type.pipe";
 import {Safe} from "./pipe/safe-html.pipe";
 import {DateTimePipePipe} from "./pipe/date-time-pipe.pipe";
+import {BookStatusPipePipe} from "./pipe/book-status-pipe.pipe";
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import {DateTimePipePipe} from "./pipe/date-time-pipe.pipe";
     RoomTypePipe,
     TariffTypePipe,
     Safe,
-    DateTimePipePipe
+    DateTimePipePipe,
+    BookStatusPipePipe
   ],
   exports: [
     ImagePipePipe,
@@ -31,7 +33,8 @@ import {DateTimePipePipe} from "./pipe/date-time-pipe.pipe";
     RoomTypePipe,
     TariffTypePipe,
     Safe,
-    DateTimePipePipe
+    DateTimePipePipe,
+    BookStatusPipePipe
   ]
 })
 export class PipeModule {
