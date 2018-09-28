@@ -13,7 +13,7 @@ export class BookingComponent implements OnInit {
 
   booking: Book[] = [];
   page: number = 0;
-  numberOfItems: number = 5;
+  numberOfItems: number = 20;
 
   constructor(private _bookService: BookService,
               private _notificationService: NotificationService) {
