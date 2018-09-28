@@ -6,6 +6,7 @@ import {CallbackComponent} from './callback/callback.component';
 import {BookingComponent} from './booking/booking.component';
 import {ScheduleComponent} from './schedule/schedule.component';
 import {ScheduleOneComponent} from './schedule/schedule-one/schedule-one.component';
+import {BookingOneComponent} from "./booking/booking-one/booking-one.component";
 
 export const cabinetRoutes: Routes = [
   {
@@ -15,7 +16,16 @@ export const cabinetRoutes: Routes = [
       ...addRoutes,
       ...updateRoutes,
       {path: 'callback', component: CallbackComponent},
-      {path: 'booking', component: BookingComponent},
+      {
+        path: 'booking', children: [
+          {
+          path: '', component: BookingComponent
+          },
+          {
+            path: ':id', component: BookingOneComponent
+          }
+        ]
+      },
       {path: 'schedule', children: [
           {
             path: '', component: ScheduleComponent

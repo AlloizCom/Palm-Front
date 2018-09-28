@@ -38,7 +38,6 @@ export class BookingComponent implements OnInit {
     // });
   }
 
-
   showMore() {
     this.page++;
     this._bookService.findAllAvailableBookByPage(this.page, this.numberOfItems).subscribe(next => {

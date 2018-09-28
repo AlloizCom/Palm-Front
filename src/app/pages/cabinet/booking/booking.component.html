@@ -12,6 +12,7 @@
     <th scope="col">К-сть дорослих</th>
     <th scope="col">К-сть дітей</th>
     <th scope="col">Статус замовлення</th>
+    <th scope="col">Змінити</th>
   </tr>
   </thead>
   <tbody>
@@ -27,6 +28,7 @@
     <td>{{one.adults}}</td>
     <td>{{one.kids}}</td>
     <td>{{one.orderStatus | bookStatusPipe}}</td>
+    <td><button type="button" class="btn btn-info" routerLink="{{one.id}}">Змінити</button></td>
   </tr>
   </tbody>
 </table>

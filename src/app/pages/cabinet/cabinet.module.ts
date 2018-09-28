@@ -10,6 +10,7 @@ import {BookingComponent} from './booking/booking.component';
 import {ScheduleComponent} from './schedule/schedule.component';
 import {ScheduleOneComponent} from './schedule/schedule-one/schedule-one.component';
 import { ScheduleTypeComponent } from './schedule/schedule-type/schedule-type.component';
+import { BookingOneComponent } from './booking/booking-one/booking-one.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ScheduleTypeComponent } from './schedule/schedule-type/schedule-type.co
     BookingComponent,
     ScheduleOneComponent,
     ScheduleComponent,
-    ScheduleTypeComponent
+    ScheduleTypeComponent,
+    BookingOneComponent
   ]
 })
 export class CabinetModule { }
