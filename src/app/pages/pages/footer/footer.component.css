@@ -1,7 +1,7 @@
 .footer {
   /*height: auto;*/
   /*height: 18.5vh;*/
-  height: 12vw;
+  height: 20vh;
   /*height: auto;*/
   padding-bottom: 3vh;
   background: #C4C4C4;
@@ -14,8 +14,8 @@
 }
 
 .footNav {
-  padding-top: 3%;
-  padding-bottom: 2%;
+  padding-top: 2%;
+  padding-bottom: 1%;
   margin: 0 4%;
 }
 
@@ -45,9 +45,10 @@
 
 .socials {
   width: 48.5%;
+  justify-content: flex-end;
 }
 
-.socials img {
+.socials img, a>img {
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -57,68 +58,51 @@
 
 }
 
-.socials img:hover {
+.socials img:hover, a>img:hover{
   -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
   filter: grayscale(0%);
   transform: scale(1.2);
   transition-duration: 0.3s;
 }
 
+.sponsors_items{
+  height: 90px;
+  width: 90px;
+  flex-wrap: wrap;
+}
+.sponsors_items>div>img{
+  width: 40px;
+  height: 40px;
+}
+
 .socials a {
   margin-left: 4%;
 }
-
-@media screen and (max-width: 1100px) {
-
-  .footer {
-    height: 16vw;
-  }
-}
-
-@media screen and (max-width: 765px) {
-
-  .footer {
-    height: 20vw;
-  }
+.sponsors_items{
+  margin-right: 2px;
 }
 
 @media screen and (max-width: 645px) {
-
   .footNav {
     padding-top: 6%;
     padding-bottom: 3%;
   }
-
-  .footer {
-    padding-bottom: 2vh;
-    height: 25vw;
-  }
-
   .info a {
     padding-bottom: 1% !important;
     padding-left: 3%;
   }
-
   .wraper {
     width: 100% !important;
-  }
-
-}
-
-@media screen and (max-width: 500px) {
-
-  .footer {
-    height: 40vw;
   }
 }
 
 @media screen and (max-width: 351px) {
-
-  .footer {
-    height: 60vw;
-  }
-
   .info a{
     padding-bottom: 5% !important;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 576px){
+  .footer{
+    height: 32vh;
   }
 }
