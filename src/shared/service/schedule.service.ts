@@ -29,6 +29,11 @@ export class ScheduleService {
       .catch(err => Observable.throw(err));
   }
 
+  findAllArchived(): Observable<Schedule[]> {
+    return this._httpClient.get<Schedule[]>(this.controller + '/find-all-archived')
+      .catch(err => Observable.throw(err));
+  }
+
   findOneAvailable(id:number): Observable<Schedule> {
     return this._httpClient.get<Schedule>(this.controller + '/find-one-available/'+ id);
   }
@@ -44,7 +49,7 @@ export class ScheduleService {
     (this.controller + '/find-all-schedule-by-page/' + page + '/' + count)
       .catch(err => Observable.throw(err));
   }
-  
+
   findAllScheduleByTypeFromDate(date: string, type: string): Observable<Schedule[]> {
     return this._httpClient.get<Schedule[]>
     (this.controller + '/find-all-schedule-by-date-type', { params: new HttpParams().set("date", date).set("type", type)})
