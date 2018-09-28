@@ -92,4 +92,9 @@ export class BookService {
       .catch(err => Observable.throw(err));
   }
 
+  cancel(book: Book): Observable<Book> {
+    return this._httpClient.post<Book>(this.controller + '/cancel', JSON.stringify(book))
+      .catch(err => Observable.throw(err));
+  }
+
 }
