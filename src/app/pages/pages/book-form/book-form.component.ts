@@ -18,6 +18,7 @@ export class BookFormComponent implements OnInit {
   roomTariff: any;
   liqPayFormHtml: string = "";
   selectPayStatus: any [];
+  errorMessag: boolean = false;
 
 
   constructor(
@@ -57,7 +58,6 @@ export class BookFormComponent implements OnInit {
   }
 
   pay() {
-
     let book = new Book();
     book.kids = this.roomParams.childrens;
     book.dateIn = this.roomParams.dateFrom;
@@ -78,6 +78,6 @@ export class BookFormComponent implements OnInit {
     this._bookService.pay(book).subscribe(next => {
       this.liqPayFormHtml = next;
       console.log(next);
-    });;
+    });
   }
 }

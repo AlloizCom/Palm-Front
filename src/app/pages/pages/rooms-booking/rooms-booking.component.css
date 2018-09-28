@@ -443,7 +443,6 @@ sub{
 .dotActive {
   background-color: rgb(255, 255, 255);
 }
-
 .dotsContainer {
   display: flex;
   justify-content: center;
@@ -535,6 +534,9 @@ sub{
   .form-control {
     top: -70%;
     left: 50%;
+  }
+  .searchItem:nth-child(6){
+    margin-top: 30px;
   }
 
 }
