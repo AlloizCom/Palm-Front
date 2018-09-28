@@ -38,7 +38,7 @@ export class BookFormComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       phoneNumber: new FormControl('', [Validators.pattern('^\\+(?:[0-9\\s]●?){10,15}[0-9]$')]),
       message: new FormControl(''),
-      orderStatus: new FormControl('')
+      orderStatus: new FormControl('', [Validators.required])
     });
     this.bookForm.valueChanges.subscribe(value => {
       this.book = value;
@@ -77,6 +77,7 @@ export class BookFormComponent implements OnInit {
     // });
     this._bookService.pay(book).subscribe(next => {
       this.liqPayFormHtml = next;
+      console.log(next);
     });;
   }
 }
