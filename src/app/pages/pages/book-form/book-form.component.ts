@@ -17,6 +17,7 @@ export class BookFormComponent implements OnInit {
   roomParams: RoomsParams;
   roomTariff: any;
   liqPayFormHtml: string = "";
+  selectPayStatus: any [];
 
 
   constructor(
@@ -27,13 +28,17 @@ export class BookFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.selectPayStatus =[
+      {id: 1, value: 'HAVE_TO_BE_PAID', lable:'Готівкою'},
+      {id: 2, value: 'PAID_BY_CARD', lable:'Visa/MC'}];
 
     this.bookForm = new FormGroup({
       firstName: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z.!@?#"$%&:;() *\\+,\\/;\\-=[\\\\\\]\\^_{|}<>\u0400-\u04FF]+$')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z.!@?#"$%&:;() *\\+,\\/;\\-=[\\\\\\]\\^_{|}<>\u0400-\u04FF]+$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phoneNumber: new FormControl('', [Validators.pattern('^\\+(?:[0-9\\s]●?){10,15}[0-9]$')]),
-      message: new FormControl('')
+      message: new FormControl(''),
+      orderStatus: new FormControl('')
     });
     this.bookForm.valueChanges.subscribe(value => {
       this.book = value;
@@ -65,8 +70,7 @@ export class BookFormComponent implements OnInit {
     book.lastName = this.bookForm.controls['lastName'].value;
     book.phoneNumber = this.bookForm.controls['phoneNumber'].value;
     book.message = this.bookForm.controls['message'].value;
-    console.log(this.bookForm);
-    console.log();
+    book.orderStatus = this.bookForm.controls['orderStatus'].value;
 
     // this._bookService.pay(book).subscribe(next => {
     //   this.liqPayFormHtml = next;

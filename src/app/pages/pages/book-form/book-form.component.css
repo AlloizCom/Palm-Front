@@ -109,7 +109,10 @@ button:hover {
 
 .topInfo .date .calendar img{
   height: 100%;
-
+}
+input[type="radio"]{
+  width: 13px;
+  height: 13px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -148,7 +151,7 @@ button:hover {
   .topInfo{
     margin-left: -30px;
   }
- 
+
 }
 
 
