@@ -292,6 +292,7 @@ a:hover {
   position: fixed;
   z-index: 100000000000000;
   width: 100%;
+  border-bottom: 2px solid #C4C4C4;
 }
 
 @media screen and (min-width: 576px) and (max-width: 645px){

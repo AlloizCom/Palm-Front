@@ -921,6 +921,28 @@ agm-map {
   .back1{
     height: 40vh;
   }
+  .searchItem{
+    width: 24.68%!important;
+    border: none;
+    border-top: 1px solid gainsboro;
+  }
+  .searchItem11{
+    width: 49.8%!important;
+    border: none;
+    border-bottom: 1px solid gainsboro;
+  }
+  .search{
+    border: 1px solid gainsboro;
+  }
+  .verticaleLine{
+    background-color: gainsboro;
+    display: block;
+    margin-bottom: 10px;
+    height: 50px;
+  }
+  .searchIcone{
+    border: 1px solid gainsboro;
+  }
 
 }
 
