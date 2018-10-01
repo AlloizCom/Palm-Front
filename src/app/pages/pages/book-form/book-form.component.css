@@ -110,6 +110,9 @@ button:hover {
 .topInfo .date .calendar img{
   height: 100%;
 }
+.errorParams{
+  color: red;
+}
 input[type="radio"]{
   width: 13px;
   height: 13px;

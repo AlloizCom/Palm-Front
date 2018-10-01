@@ -1,3 +1,45 @@
-<p>
-  booking-one works!
-</p>
+
+<!--<h4>{{booking.bookingDay | dateTimePipe}}</h4>-->
+<!--<h4>{{booking.firstName}}</h4>-->
+<!--<h4>{{booking.lastName}}</h4>-->
+<!--<h4>{{booking.phoneNumber}}</h4>-->
+<!--<h4>{{booking.email}}</h4>-->
+<!--<h4>{{booking.dateIn | datePipe}}</h4>-->
+<!--<h4>{{booking.dateOut | datePipe}}</h4>-->
+<!--<h4>{{booking.message}}</h4>-->
+
+<form action="" [formGroup]="bookingForm">
+  <section >
+
+    <!--<div class="input-wrapper">-->
+
+      <!--<input type="text" formControlName="bookingDay">-->
+      <!--<input type="text" formControlName="firstName">-->
+      <!--<input type="text" formControlName="lastName">-->
+      <!--<input type="text" formControlName="phoneNumber">-->
+      <!--<input type="text" formControlName="email">-->
+      <!--<input type="text" formControlName="dateIn">-->
+      <!--<input type="text" formControlName="dateOut">-->
+      <!--<input type="text" formControlName="message">-->
+
+
+
+
+
+
+      <h4>Кількість дорослих:</h4>
+      <input type="text" formControlName="adults" >
+
+      <h4>Кількість дітей:</h4>
+      <input type="text" formControlName="kids" >
+
+    <h4>Статус замовлення:</h4>
+      <select  formControlName="orderStatus">
+        <option value="" selected = "selected" disabled>{{booking.orderStatus | bookStatusPipe }}</option>
+        <option value="{{two}}" *ngFor="let two of orderStatuss" >{{two | bookStatusPipe}}</option>
+      </select>
+
+    <button  (click)="update()" [disabled]="!bookingForm.valid">Оновити</button>
+  </section>
+</form>
+
