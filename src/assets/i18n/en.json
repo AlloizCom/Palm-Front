@@ -24,39 +24,22 @@
   "data-picker-third-column": "",
   "data-picker-fourth-column": "",
   "data-picker-fifth-column": "",
+
   "about-us-first-title":"",
   "about-us-second-title":"",
   "about-us-text":"",
-  "review":"",
 
   "special-offers-first-title":"",
   "special-offers-second-title":"",
-  "special-offers-first-column-title":"",
-  "special-offers-second-column-title":"",
-  "special-offers-third-column-title":"",
-  "special-offers-fourth-column-title":"",
-  "special-offers-first-column-text":"",
-  "special-offers-second-column-text":"",
-  "special-offers-third-column-text":"",
-  "special-offers-fourth-column-text":"",
+
 
   "rooms-first-title":"",
   "rooms-second-title":"",
-  "rooms-standard":"",
-  "rooms-superior-standard":"",
-  "rooms-junior-suite":"",
-  "rooms-superior-junior-suite":"",
-  "rooms-suite":"",
 
   "services-and-offers-first-title":"",
   "services-and-offers-second-title":"",
   "services-and-offers-text":"",
-  "services-and-offers-first-column-title":"",
-  "services-and-offers-second-column-title":"",
-  "services-and-offers-third-column-title":"",
-  "services-and-offers-first-column-text":"",
-  "services-and-offers-second-column-text":"",
-  "services-and-offers-third-column-text":"",
+
 
   "advantages-first-title":"",
   "advantages-second-title":"",
@@ -71,58 +54,7 @@
   "contacts-third-article":"",
 
 
-
-
-  "suite-title":"",
-  "suite-description":"",
-  "suite-area":"",
-  "suite-price":"",
-
-  "junior-suite-title":"",
-  "junior-suite-description":"",
-  "junior-suite-area":"",
-  "junior-suite-price":"",
-
-  "superior-junior-suite-title":"",
-  "superior-junior-suite-description":"",
-  "superior-junior-suite-area":"",
-  "superior-junior-suite-price":"",
-
-  "standard-title":"",
-  "standard-description":"",
-  "standard-area":"",
-  "standard-price":"",
-
-  "superior-standard-title":"",
-  "superior-standard-description":"",
-  "superior-standard-area":"",
-  "superior-standard-price":"",
-
-
-
-
-  "first-top-column-title":"",
-  "first-bottom-column-title":"",
-  "second-top-column-title":"",
-  "second-bottom-column-title":"",
-  "third-top-column-title":"",
-  "third-bottom-column-title":"",
-
-  "news":"",
-  "first-article-title":"",
-  "first-article-text":"",
-  "second-article-title":"",
-  "second-article-text":"",
-  "third-article-title":"",
-  "third-article-text":"",
-  "fourth-article-title":"",
-  "fourth-article-text":"",
-  "fifth-article-title":"",
-  "fifth-article-text":"",
-  "sixth-article-title":"",
-  "sixth-article-text":"",
-
-
+  "news-button":"",
 
 
   "contacts-title":"",
@@ -147,9 +79,9 @@
   "phone-input-text":"",
   "mail-input-text":"",
   "massage-input-text":"",
-  "send":"",
+  "send-button":"",
 
-  "hot-to-get":"",
+  "hot-to-get-title":"",
   "hot-to-get-airport":"",
   "hot-to-get-airport-description":"",
   "hot-to-get-station":"",

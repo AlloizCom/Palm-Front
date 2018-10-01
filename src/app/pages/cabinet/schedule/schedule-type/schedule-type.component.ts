@@ -37,7 +37,7 @@ export class ScheduleTypeComponent implements OnInit {
           this.status[i] = "4";
         }
       } else if (i == this.schedule.length - 1) {
-        if (this.schedule[i - 1].free && this.schedule[i].free) {
+        if ((this.schedule[i - 1].free && this.schedule[i].free) || (!this.schedule[i - 1].free && !this.schedule[i].free)) {
           this.status[i] = "2";
         } else {
           this.status[i] = "4";
