@@ -16,10 +16,15 @@ import {ServiceService} from "../shared/service/service.service";
 import {NewsService} from "../shared/service/news.service";
 import {MenuComponent} from "./pages/pages/menu/menu.component";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {MyInterceptor} from "../shared/interceptors/my.interceptor";
+// import {MyInterceptor} from "../shared/interceptors/my.interceptor";
 import {UserDetailsService} from "../shared/service/user-details.service";
 import {LoginService} from '../shared/service/login.service';
 import {BookService} from '../shared/service/book.service';
+import {AuthInterceptor} from "../shared/service/interceptors/auth-interceptor";
+import {ContentInterceptor} from "../shared/service/interceptors/content-interceptor";
+import {LoginInterceptor} from "../shared/service/interceptors/login-interceptor";
+import {MultiPartInterceptor} from "../shared/service/interceptors/multi-part-interceptor";
+import {TockenActiveInterceptor} from "../shared/service/interceptors/tocken-active-interceptor";
 
 @NgModule({
   declarations: [
@@ -45,9 +50,29 @@ import {BookService} from '../shared/service/book.service';
     MenuComponent,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: MyInterceptor,
+      useClass: AuthInterceptor,
       multi: true
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ContentInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoginInterceptor,
+      multi: true
+    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: MultiPartInterceptor,
+    //   multi: true
+    // },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TockenActiveInterceptor,
+    //   multi: true
+    // },
     UserDetailsService,
     LoginService,
     BookService
