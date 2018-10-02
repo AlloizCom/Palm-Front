@@ -2,8 +2,8 @@
   <div *ngFor="let one of proposals" class="item">
     <div [routerLink]="['/proposal', one.id]" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"
          class="back1"></div>
-    <h3>{{one.proposalDescriptions['current-language-index' | translate].title}}</h3>
-    <h4>{{one.proposalDescriptions['current-language-index' | translate].mainText}}</h4>
+    <h3>{{(one.proposalDescriptions['current-language-index' | translate]|nuo).title}}</h3>
+    <h4>{{(one.proposalDescriptions['current-language-index' | translate]|nuo).mainText}}</h4>
     <div class="someShit2 d-flex justify-content-end">
       <h5 [routerLink]="['/proposal', one.id]">переглянути</h5>
       <div class="images">

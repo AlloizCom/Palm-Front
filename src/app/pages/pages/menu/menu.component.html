@@ -44,7 +44,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item nav-link"
                      (click)="toggleState()">
-                    {{one.serviceDescriptions['current-language-index'| translate].title}}
+                    {{(one.serviceDescriptions['current-language-index'| translate]|nuo).title}}
                   </a>
                 </div>
               </li>

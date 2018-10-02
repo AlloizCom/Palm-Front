@@ -16,8 +16,8 @@
       <div class="greenAbs" *ngIf="i === middleIndex2">
         <div>
           <h2 [routerLink]="['/service', one.id]">
-            {{one.serviceDescriptions['current-language-index'|translate].title}}</h2>
-          <p> {{one.serviceDescriptions['current-language-index'|translate].headerText}}</p>
+            {{(one.serviceDescriptions['current-language-index'|translate]|nuo).title}}</h2>
+          <p> {{(one.serviceDescriptions['current-language-index'|translate]|nuo).headerText}}</p>
         </div>
       </div>
       <div class="topImage second" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"

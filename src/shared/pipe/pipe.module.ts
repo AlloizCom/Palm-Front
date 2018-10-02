@@ -9,6 +9,7 @@ import {TariffTypePipe} from "./pipe/tariff-type.pipe";
 import {Safe} from "./pipe/safe-html.pipe";
 import {DateTimePipePipe} from "./pipe/date-time-pipe.pipe";
 import {BookStatusPipePipe} from "./pipe/book-status-pipe.pipe";
+import {NullOrUndefinedPipe} from "./pipe/null-or-undefined.pipe";
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import {BookStatusPipePipe} from "./pipe/book-status-pipe.pipe";
     TariffTypePipe,
     Safe,
     DateTimePipePipe,
-    BookStatusPipePipe
+    BookStatusPipePipe,NullOrUndefinedPipe
   ],
   exports: [
     ImagePipePipe,
@@ -34,7 +35,7 @@ import {BookStatusPipePipe} from "./pipe/book-status-pipe.pipe";
     TariffTypePipe,
     Safe,
     DateTimePipePipe,
-    BookStatusPipePipe
+    BookStatusPipePipe,NullOrUndefinedPipe
   ]
 })
 export class PipeModule {
