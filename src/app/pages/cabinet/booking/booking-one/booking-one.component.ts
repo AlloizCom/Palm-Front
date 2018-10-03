@@ -18,7 +18,7 @@ export class BookingOneComponent implements OnInit {
   orderStatuss: any;
 
   constructor(private _router: ActivatedRoute, private _bookService: BookService) {
-    this.orderStatuss = [OrderStatus.AVAILABLE, OrderStatus.CANCELED, OrderStatus.HAVE_TO_BE_PAID, OrderStatus.PAID_BY_CARD];
+    this.orderStatuss = [OrderStatus.AVAILABLE, OrderStatus.CANCELED];
     // this.orderStatuss = OrderStatus;
     _router.params.subscribe(next => {
       this.id = next['id'];
