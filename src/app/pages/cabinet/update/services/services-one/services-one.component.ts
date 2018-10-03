@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Service} from "../../../../../../shared/models/service";
 import {ServiceService} from "../../../../../../shared/service/service.service";
 import {ImagePipePipe} from "../../../../../../shared/pipe/pipe/image.pipe";
@@ -16,7 +16,7 @@ export class ServicesOneComponent implements OnInit {
   img: string = '';
   descriptions:FormArray;
 
-  constructor(private _router: ActivatedRoute, private _serviceService: ServiceService, private _imagePipe: ImagePipePipe) {
+  constructor(private _route: Router, private _router: ActivatedRoute, private _serviceService: ServiceService, private _imagePipe: ImagePipePipe) {
     _router.params.subscribe(next => {
       _serviceService.findOne(next['id']).subscribe(next => {
         this.service = next;
@@ -75,6 +75,8 @@ export class ServicesOneComponent implements OnInit {
     this._serviceService.update(this.service, form).subscribe(next => {
       this.service = next;
       this.serviceUpdateForm.patchValue(<any>next);
+      alert("Сервіс оновлено");
+      this._route.navigateByUrl("/cabinet/update/services");
     }, error => {
       console.log(error);
     })

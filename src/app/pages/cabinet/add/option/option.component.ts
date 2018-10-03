@@ -70,6 +70,8 @@ export class OptionComponent implements OnInit {
     }, () => {
       this.image = null;
       form.reset();
+      alert("Сервіс добавлено")
+
     });
   }
 

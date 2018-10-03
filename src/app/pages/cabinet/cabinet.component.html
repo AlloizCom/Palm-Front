@@ -19,20 +19,20 @@
           <ul class="navbar-nav ml-auto" (click)="toggleState()">
             <li class="nav-item svg1">
 
-              <a class="nav-link" href="#" [routerLinkActive]="['active']"
+              <a class="nav-link" [routerLinkActive]="['active']"
                  routerLink="add">
                 <img src="../../../../assets/svg/add.svg" alt="">Додати</a>
             </li>
             <li class="nav-item svg2">
 
-              <a class="nav-link" href="#" [routerLinkActive]="['active']"
+              <a class="nav-link" [routerLinkActive]="['active']"
                  routerLink="update">
                 <img src="../../../../assets/svg/update.svg" alt="">Змінити</a>
             </li>
             <li class="nav-item svg3">
 
 
-              <a class="nav-link" href="#" [routerLinkActive]="['active']"
+              <a class="nav-link" [routerLinkActive]="['active']"
                  routerLink="booking">
                 <img src="../../../../assets/svg/calendar.svg" alt="">
                 Бронювання
@@ -45,13 +45,13 @@
             </li>
             <li class="nav-item svg4">
 
-              <a class="nav-link" href="#" [routerLinkActive]="['active']"
+              <a class="nav-link" [routerLinkActive]="['active']"
                  routerLink="schedule">
                 <img src="../../../../assets/svg/notebook.svg" alt="">Розклад</a>
             </li>
             <li class="nav-item svg5">
 
-              <a class="nav-link" href="#" [routerLinkActive]="['active']"
+              <a class="nav-link" [routerLinkActive]="['active']"
                  routerLink="callback">
                 <img src="../../../../assets/svg/feedback.svg" alt="">Відгуки
                 <div class="notification-wrapper">
@@ -62,9 +62,8 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
-                 (click)="logOut()">
-                <img src="../../../../assets/svg/exit.svg" alt="">Вихід
+              <a class="nav-link" (click)="logOut()">
+                <img src="../../../../assets/svg/exit.svg" alt="Exit">Вихід
               </a>
             </li>
           </ul>

@@ -2,7 +2,10 @@
 <form [formGroup]="loginForm" (submit)="auth()"  #form class="login d-flex flex-column ">
   <input class="name" formControlName="login" placeholder="Логін" type="text">
   <input class="password" formControlName="password" placeholder="Пароль" type="password">
-  <input type="checkbox" #check>
+  <span>
+    <input id="name" type="checkbox" #check>
+    <label for="name">Запам'ятати мене</label>
+  </span>
   <button class="button" [disabled]="!loginForm.valid" type="submit">Увійти</button>
 </form>
 

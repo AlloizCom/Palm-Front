@@ -49,6 +49,7 @@ export class TariffComponent implements OnInit {
     this._tariffService.save(this.tariff).subscribe(next => {
         // console.log(next);
         this.tariffForm.reset();
+        alert("Тариф добавлено")
       },
       error => {
         console.log(error);

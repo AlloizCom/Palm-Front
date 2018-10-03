@@ -42,8 +42,8 @@ export class BookService {
       .catch(err => Observable.throw(err));
   }
 
-  save(book: Book): Observable<Book> {
-    return this._httpClient.post<Book>(this.controller + '/save', JSON.stringify(book))
+  save(book: Book, language: string): Observable<Book> {
+    return this._httpClient.post<Book>(this.controller + '/save/' + language.toUpperCase(), JSON.stringify(book))
       .catch(err => Observable.throw(err));
   }
 
@@ -87,8 +87,8 @@ export class BookService {
    * @param {Book} book
    * @returns {Observable<Book>}
    */
-  pay(book: Book): Observable<string> {
-    return this._httpClient.post(this.controller + '/pay', JSON.stringify(book), {responseType: "text"})
+  pay(book: Book, language: string): Observable<string> {
+    return this._httpClient.post(this.controller + '/pay/' + language.toUpperCase(), JSON.stringify(book), {responseType: "text"})
       .catch(err => Observable.throw(err));
   }
 

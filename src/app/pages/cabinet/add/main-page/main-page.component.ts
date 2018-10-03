@@ -56,6 +56,7 @@ export class MainPageComponent implements OnInit {
         // console.log(next);
         form.reset();
         this.image = [];
+        alert("Фото добавлено")
       },
       error => {
         console.log(error);

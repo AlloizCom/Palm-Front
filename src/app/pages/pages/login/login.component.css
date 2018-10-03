@@ -15,3 +15,6 @@ input{
   margin: 2vh;
 }
 
+span{
+  user-select: none;
+}

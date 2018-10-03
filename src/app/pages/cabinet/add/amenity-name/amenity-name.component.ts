@@ -61,6 +61,7 @@ export class AmenityNameComponent implements OnInit {
 
   addAmenity(form: HTMLFormElement) {
     this._amenityService.save(this.amenity, form).subscribe(next => {
+      alert("Зручність добавлено")
       // console.log(next);
     }, error => {
       console.log(error);

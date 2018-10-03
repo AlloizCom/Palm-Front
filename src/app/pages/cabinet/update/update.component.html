@@ -10,8 +10,8 @@
     </svg>
   </button>
   <div class="navbar-collapse" id="navbarNav" [ngClass]="{ 'collapse': isIn }">
-    <ul class="navbar-nav" (click)="toggleState()">
-      <li class="nav-item svg1">
+    <ul class="navbar-nav"  (click)="toggleState()">
+      <li class="nav-item svg1" *ngIf="user.role == 'ADMIN'">
 
         <a class="nav-link" href="#" [routerLinkActive]="['active']"
            routerLink="main-update">
@@ -23,36 +23,40 @@
            routerLink="tariff">
           <img src="../../../../assets/svg/checklist.svg" alt="">Тарифи</a>
       </li>
-      <li class="nav-item svg3" >
+      <li class="nav-item svg3" *ngIf="user.role == 'ADMIN'" >
 
         <a class="nav-link" href="#" [routerLinkActive]="['active']"
            routerLink="room">
           <img src="../../../../assets/svg/bed.svg" alt="">Номери</a>
       </li>
-      <li class="nav-item svg4">
+      <li class="nav-item svg4" *ngIf="user.role == 'ADMIN'">
 
         <a class="nav-link" href="#" [routerLinkActive]="['active']"
            routerLink="services">
           <img src="../../../../assets/svg/bell.svg" alt="">Послуги</a>
       </li>
-      <li class="nav-item svg5">
+      <li class="nav-item svg5" *ngIf="user.role == 'ADMIN'">
 
         <a class="nav-link" href="#" [routerLinkActive]="['active']"
            routerLink="amenity">
           <img src="../../../../assets/svg/room-service.svg" alt="">Зручності</a>
       </li>
-      <li class="nav-item svg6">
+      <li class="nav-item svg6" *ngIf="user.role == 'ADMIN'">
 
         <a class="nav-link" href="#" [routerLinkActive]="['active']"
            routerLink="news">
           <img src="../../../../assets/svg/folded-newspaper.svg" alt="">Новини</a>
       </li>
-      <li class="nav-item svg7">
-
+      <li class="nav-item svg7" *ngIf="user.role == 'ADMIN' ">
         <a class="nav-link" href="#" [routerLinkActive]="['active']"
            routerLink="proposal-update">
           <img src="../../../../assets/svg/hot.svg" alt="">Пропозиції</a>
       </li>
+      <!--<li class="nav-item svg7" [disabled]="disablings()">-->
+        <!--<a class="nav-link" href="#" [routerLinkActive]="['active']"-->
+           <!--routerLink="proposal-update">-->
+          <!--<img src="../../../../assets/svg/hot.svg" alt="">Пропозиції</a>-->
+      <!--</li>-->
     </ul>
   </div>
 </nav>
