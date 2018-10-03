@@ -72,6 +72,7 @@ export class OneNewsComponent implements OnInit {
     this._newsService.update(this.news, form).subscribe(next => {
       this.news = next;
       this.newsUpdateForm.patchValue(<any>next);
+      alert("Новину оновлено");
     }, error => {
       console.log(error);
     })

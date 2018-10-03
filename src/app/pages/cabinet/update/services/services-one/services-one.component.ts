@@ -75,6 +75,7 @@ export class ServicesOneComponent implements OnInit {
     this._serviceService.update(this.service, form).subscribe(next => {
       this.service = next;
       this.serviceUpdateForm.patchValue(<any>next);
+      alert("Сервіс оновлено");
     }, error => {
       console.log(error);
     })

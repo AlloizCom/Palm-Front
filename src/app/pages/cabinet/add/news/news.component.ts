@@ -89,6 +89,8 @@ export class NewsComponent implements OnInit {
       this.img = null;
       form.reset();
       this.getNews();
+      alert("Новина добавлена")
+
     });
     // console.log(this.news)
   }

@@ -87,6 +87,7 @@ export class RoomComponent implements OnInit {
         this.roomForm.reset(this.defaultFormValue);
         this.createFormArray();
         this.image = [];
+        alert("Кімнату добавлено")
       },
       error => {
         console.log(error);

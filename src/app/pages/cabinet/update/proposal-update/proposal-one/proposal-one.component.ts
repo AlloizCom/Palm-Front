@@ -76,6 +76,7 @@ export class ProposalOneComponent implements OnInit {
     console.log(this.proposal);
     this._proposalService.update(this.proposal, form).subscribe(next => {
       this.proposal = next;
+      alert("Послугу оновлено");
       this._route.navigateByUrl('/cabinet/update/proposal-update');
     }, error => {
       console.log(error);

@@ -43,6 +43,7 @@ export class TariffOneComponent implements OnInit {
     console.log(this.tariffForm.getRawValue());
     this._tariffService.update(this.tariffForm.getRawValue()).subscribe(next => {
       this.tariffForm.patchValue(<any>next);
+      alert("Тариф оновлено");
     }, error => {
       console.error(error);
     })

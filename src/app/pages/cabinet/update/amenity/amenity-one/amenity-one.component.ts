@@ -81,6 +81,7 @@ export class AmenityOneComponent implements OnInit {
     this._amenityService.update(this.amenity, form).subscribe(next => {
       this.amenity = next;
       console.log(next);
+      alert("Зручність оновлено");
       this.amenityUpdateForm.patchValue(<any>next);
       // this._route.navigateByUrl('/cabinet/update/amenity');
     }, error => {

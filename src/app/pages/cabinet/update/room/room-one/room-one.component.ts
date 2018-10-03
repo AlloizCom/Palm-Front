@@ -108,6 +108,7 @@ export class RoomOneComponent implements OnInit {
       //   this.image.push(this._imagePipe.transform(one.path));
       // }
       this.fileField = null;
+      alert("Кімнату оновлено");
       this._route.navigateByUrl("/cabinet/update/room");
     }, error => {
       console.log(error);
