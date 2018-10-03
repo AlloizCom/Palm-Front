@@ -14,6 +14,7 @@ export class ScheduleTypeComponent implements OnInit {
   schedule: Schedule[] = [];
   status: string[] = [];
   id: number = 0;
+  day:any;
   constructor(private _scheduleService: ScheduleService) {
 
   }
@@ -21,11 +22,17 @@ export class ScheduleTypeComponent implements OnInit {
   ngOnInit() {
     this._scheduleService.findAllScheduleByTypeFromDate(this.datefrom, this.roomType).subscribe(next => {
       this.schedule = next;
+      this.Weekends();
       this.calculateStatuses();
       console.log(this.status);
     });
   }
 
+  Weekends(){
+    console.log(this.day.today);
+    // let one = this.day.today;
+    // console.log(one)
+  }
   calculateStatuses() {
     console.log(this.schedule);
     for (var i = 0; i < this.schedule.length; i++) {

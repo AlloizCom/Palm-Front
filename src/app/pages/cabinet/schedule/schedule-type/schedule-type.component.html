@@ -27,7 +27,7 @@
     </div>
   </div>
   <div class="schedule-table-body">
-    <div *ngFor="let day of schedule; let i = index" class="day-in-schedule">
+    <div *ngFor="let day of schedule; let i = index" class="day-in-schedule" [ngClass]="'weekends'">
       <div class="schedule-date">
         <p>
           {{day.today | date: 'd E'}}
