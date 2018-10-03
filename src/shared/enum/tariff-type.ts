@@ -1,4 +1,4 @@
-export const TariffType =  {
+  export const TariffType =  {
 
   'REGULAR' : 'REGULAR',
   'SPECIAL' : 'SPECIAL',

@@ -19,12 +19,15 @@ export class AvailableRoomsComponent implements OnInit {
   roomTariff: any;
   rooms: RoomWithPrice[] = [];
   roomsParams: RoomsParams;
+  roomTypes: string[] = [];
 
   constructor(private _roomService: RoomService,
               private _tariffService: TariffService,
               private _roomsParamsService: RoomParamsService,
               private _router: Router) {
     this.getRoomsParams();
+
+
 
     if (this.roomsParams) {
       // console.log("Params for rooms");
@@ -33,16 +36,29 @@ export class AvailableRoomsComponent implements OnInit {
         this.roomTariff = RoomTariff;
         for (let j of next) {
           if (typeof (j) != 'undefined' && j != null) {
+            console.log(j.type);
             this.rooms.push(j);
           }
         }
-        // console.log(this.rooms);
+        this.sortRooms();
       }, err => {
         console.log(err);
       });
+
+
+      console.log(this.rooms);
     }
 
   }
+
+  sortRooms(){
+    this.rooms.sort(function (a, b) {
+      let roomTypes = ['STANDARD','STANDARD_IMPROVED','SUPERIOR',
+        'SUPERIOR_IMPROVED' ,'DELUXE'];
+      return roomTypes.indexOf(a.type) - roomTypes.indexOf(b.type);
+    });
+  }
+
 
   getRoomsParams() {
     this.roomsParams = this._roomsParamsService.params;
