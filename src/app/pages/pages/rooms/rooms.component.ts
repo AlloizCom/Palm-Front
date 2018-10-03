@@ -28,12 +28,21 @@ export class RoomsComponent implements OnInit {
           console.log(this.rooms);
         }
       }
+      this.sortRooms();
     }, err => {
       console.log(err);
     });
   }
 
   ngOnInit() {
+  }
+
+  sortRooms(){
+    this.rooms.sort(function (a, b) {
+      let roomTypes = ['STANDARD','STANDARD_IMPROVED','SUPERIOR',
+        'SUPERIOR_IMPROVED' ,'DELUXE'];
+      return roomTypes.indexOf(a.type) - roomTypes.indexOf(b.type);
+    });
   }
 
   isNull(object: any): Boolean {

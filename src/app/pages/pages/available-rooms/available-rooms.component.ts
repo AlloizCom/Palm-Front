@@ -27,8 +27,6 @@ export class AvailableRoomsComponent implements OnInit {
               private _router: Router) {
     this.getRoomsParams();
 
-
-
     if (this.roomsParams) {
       // console.log("Params for rooms");
       console.log(this.roomsParams);
