@@ -34,7 +34,7 @@ export class UserService {
       return this._httpClient.post<User>(this.controller + '/save', JSON.stringify(user)).catch(err => Observable.throw(err));
   }
 
-  get(): Observable<User> {
+  getU(): Observable<User> {
     console.log('get!');
     return this._httpClient.get<User>(this.controller).catch(err =>
       Observable.throw(err));
