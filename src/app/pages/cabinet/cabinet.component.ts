@@ -5,6 +5,8 @@ import * as SockJS from 'sockjs-client';
 import {NotificationService} from "../../../shared/service/notification.service";
 import {CallbackCounter} from "../../../shared/models/callback-counter";
 import {CallbackCounterService} from "../../../shared/service/callback-counter.service";
+import {Router} from "@angular/router";
+import {UserDetailsService} from "../../../shared/service/user-details.service";
 @Component({
   selector: 'app-cabinet',
   templateUrl: './cabinet.component.html',
@@ -21,7 +23,9 @@ export class CabinetComponent implements OnInit {
 
   constructor(private _translate:TranslateService,
               private _notificationService: NotificationService,
-              private _callBackCounterService: CallbackCounterService) {
+              private _callBackCounterService: CallbackCounterService,
+              private _router: Router,
+              private _userDetailsService:UserDetailsService) {
     this._translate.use('uk');
     this.initializeWebSocketConnection();
     this._notificationService.getCount().subscribe(next=>{
@@ -31,9 +35,12 @@ export class CabinetComponent implements OnInit {
       console.log("callcount - ", next);
       this.callbackNotifications = next.numberOfCallbacks;
     });
-
   }
 
+  logOut(){
+    this._userDetailsService.logout();
+    this._router.navigateByUrl('/login');
+  }
 
   initializeWebSocketConnection() {
     let ws = new SockJS(this.serverUrl);

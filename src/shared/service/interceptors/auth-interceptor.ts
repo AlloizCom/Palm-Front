@@ -21,7 +21,7 @@ export class AuthInterceptor implements HttpInterceptor {
       }
       if (err.status === 401) {
         this._userDetailsService.logout();
-        this._router.navigateByUrl('/sign-in');
+        this._router.navigateByUrl('/login');
         if (isNullOrUndefined(sessionStorage.getItem("refresh_token"))||isNullOrUndefined(localStorage.getItem("refresh_token"))) {
           return Observable.throw(err);
         }
