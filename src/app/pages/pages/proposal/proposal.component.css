@@ -4,7 +4,7 @@
 }
 
 .header-text h2 {
-  padding-top: 5vh;
+  padding-top: 11.2vh;
   text-align: center;
   font-style: normal;
   font-weight: 900;
@@ -97,6 +97,11 @@
   text-transform: uppercase;
 
   color: #5A5A5A;
+}
+
+@media screen and (max-width: 990px) {
+.header-text h2 {
+  padding-top: 15vh;}
 }
 
 @media screen and (max-width: 768px) {

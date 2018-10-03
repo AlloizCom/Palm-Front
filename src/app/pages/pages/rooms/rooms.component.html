@@ -2,7 +2,7 @@
   <div class="rooms">
     <div *ngFor="let one of rooms" class="room d-flex justify-content-between">
       <div class="photo d-flex">
-        <div class="kartinka" [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'"></div>
+        <div [routerLink]="['/rooms-booking', one.id]" class="kartinka" [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'"></div>
         <div class="block d-flex justify-content-center align-items-center">{{one.price}} &#8372;</div>
       </div>
       <div class="infos ">
