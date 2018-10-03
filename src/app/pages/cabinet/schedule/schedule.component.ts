@@ -24,7 +24,7 @@ export class ScheduleComponent implements OnInit {
 
   constructor(private _scheduleService:ScheduleService) {
     this.myDate = new Date();
-    // this.myDate = '2018-09-28';
+    this.myDate = '2018-09-28';
     console.log(this.myDate);
     this.roomTariff = RoomTariff;
     this.roomTypes = Object.keys(RoomTariff).filter((element, index, array) => {

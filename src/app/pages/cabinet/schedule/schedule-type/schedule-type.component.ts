@@ -29,7 +29,7 @@ export class ScheduleTypeComponent implements OnInit {
   }
 
   Weekends(){
-    console.log(this.day.today);
+    // console.log(this.day.today);
     // let one = this.day.today;
     // console.log(one)
   }
