@@ -212,10 +212,12 @@ app-top-slider {
   margin: auto;
   background: rgba(83, 215, 183, 0.6);
   top: 0;
+  transition: 0.3s;
 }
 
 .greenFonKartMain:hover{
   background: none;
+  transition: 0.3s;
 }
 
 .kartinkasMainDiv{

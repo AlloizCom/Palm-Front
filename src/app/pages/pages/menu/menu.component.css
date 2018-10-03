@@ -292,9 +292,9 @@ a:hover {
   position: fixed;
   z-index: 100000000000000;
   width: 100%;
-  -webkit-box-shadow: 3px 3px 36px 2px rgba(0,0,0,0.37);
-  -moz-box-shadow: 3px 3px 36px 2px rgba(0,0,0,0.37);
-  box-shadow: 3px 3px 36px 2px rgba(0,0,0,0.37);
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);;
+  -moz-box-shadow:  0 0 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow:  0 0 10px 2px rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 576px) and (max-width: 645px){

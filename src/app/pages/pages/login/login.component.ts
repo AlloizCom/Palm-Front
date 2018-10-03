@@ -41,14 +41,14 @@ export class LoginComponent implements OnInit {
       if (this.check.nativeElement.checked == true) {
         console.log('nativeElement.checked == true');
         this._userDetailsService.tokenParseInLocalStorage(next);
-        this._userService.get().subscribe(next => {
+        this._userService.getU().subscribe(next => {
           this._userDetailsService.loginWithLocal(next);
           this._router.navigateByUrl('/cabinet');
         });
       } else if (this.check.nativeElement.checked == false) {
         console.log('nativeElement.checked == false');
         this._userDetailsService.tokenParseInSessionStorage(next);
-        this._userService.get().subscribe(next => {
+        this._userService.getU().subscribe(next => {
           this._userDetailsService.loginWithSession(next);
           this._router.navigateByUrl('/cabinet');
         });

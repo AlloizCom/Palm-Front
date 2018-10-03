@@ -25,6 +25,8 @@ import {ContentInterceptor} from "../shared/service/interceptors/content-interce
 import {LoginInterceptor} from "../shared/service/interceptors/login-interceptor";
 import {MultiPartInterceptor} from "../shared/service/interceptors/multi-part-interceptor";
 import {TockenActiveInterceptor} from "../shared/service/interceptors/tocken-active-interceptor";
+import {AdminGuard} from "../shared/Guard/AdminGuard";
+import {AdminChildrenGuards} from "../shared/Guard/admin-children-guards.service";
 
 @NgModule({
   declarations: [
@@ -75,8 +77,9 @@ import {TockenActiveInterceptor} from "../shared/service/interceptors/tocken-act
     // },
     UserDetailsService,
     LoginService,
-    BookService
-
+    BookService,
+    AdminGuard,
+    AdminChildrenGuards
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
