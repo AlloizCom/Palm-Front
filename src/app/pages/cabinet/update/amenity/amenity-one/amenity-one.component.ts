@@ -83,7 +83,7 @@ export class AmenityOneComponent implements OnInit {
       console.log(next);
       alert("Зручність оновлено");
       this.amenityUpdateForm.patchValue(<any>next);
-      // this._route.navigateByUrl('/cabinet/update/amenity');
+      this._route.navigateByUrl('/cabinet/update/amenity');
     }, error => {
       console.log(error);
     });

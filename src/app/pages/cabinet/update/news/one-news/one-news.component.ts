@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {News} from '../../../../../../shared/models/news';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NewsService} from '../../../../../../shared/service/news.service';
 import {ImagePipePipe} from '../../../../../../shared/pipe/pipe/image.pipe';
@@ -17,7 +17,7 @@ export class OneNewsComponent implements OnInit {
   img: string = '';
   descriptions: FormArray;
 
-  constructor(private _router: ActivatedRoute, private _newsService: NewsService, private _imagePipe: ImagePipePipe) {
+  constructor(private _router: ActivatedRoute,private _route: Router, private _newsService: NewsService, private _imagePipe: ImagePipePipe) {
   }
 
 
@@ -73,6 +73,7 @@ export class OneNewsComponent implements OnInit {
       this.news = next;
       this.newsUpdateForm.patchValue(<any>next);
       alert("Новину оновлено");
+      this._route.navigateByUrl("/cabinet/update/news");
     }, error => {
       console.log(error);
     })

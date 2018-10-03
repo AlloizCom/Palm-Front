@@ -71,7 +71,7 @@ export class ProposalComponent implements OnInit {
     }, () => {
       this.image = null;
       form.reset();
-      alert("Послуга добавлена")
+      alert("Пропозиція добавлена")
     });
   }
 

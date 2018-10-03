@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {TariffService} from "../../../../../../shared/service/tariff.service";
 import {FormControl, FormGroup,Validators} from "@angular/forms";
 
@@ -14,7 +14,7 @@ export class TariffOneComponent implements OnInit {
   tariffForm: FormGroup;
   id: number = 0;
 
-  constructor(private _router: ActivatedRoute, private _tariffService: TariffService) {
+  constructor(private _route: Router, private _router: ActivatedRoute, private _tariffService: TariffService) {
     _router.params.subscribe(next => {
       this.id = next['id'];
     });
@@ -44,6 +44,7 @@ export class TariffOneComponent implements OnInit {
     this._tariffService.update(this.tariffForm.getRawValue()).subscribe(next => {
       this.tariffForm.patchValue(<any>next);
       alert("Тариф оновлено");
+      this._route.navigateByUrl("/cabinet/update/tariff");
     }, error => {
       console.error(error);
     })
