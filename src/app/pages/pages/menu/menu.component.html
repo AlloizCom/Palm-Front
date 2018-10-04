@@ -42,7 +42,7 @@
                   послуги
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item nav-link"
+                  <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item service"
                      (click)="toggleState()">
                     {{(one.serviceDescriptions['current-language-index'| translate]|nuo).title}}
                   </a>

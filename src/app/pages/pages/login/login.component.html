@@ -1,11 +1,14 @@
 <div></div>
 <form [formGroup]="loginForm" (submit)="auth()"  #form class="login d-flex flex-column ">
-  <input class="name" formControlName="login" placeholder="Логін" type="text">
-  <input class="password" formControlName="password" placeholder="Пароль" type="password">
+  <label for="nameId" class="lab">Login:</label>
+  <input class="name" id="nameId" formControlName="login" placeholder="Логін" type="text">
+  <label for="passwordId" class="lab">Possword:</label>
+  <input class="password" id="passwordId" formControlName="password" placeholder="Пароль" type="password">
   <span>
     <input id="name" type="checkbox" #check>
     <label for="name">Запам'ятати мене</label>
   </span>
+  <p class="error" *ngIf="badPass">Не вірні дані для входу</p>
   <button class="button" [disabled]="!loginForm.valid" type="submit">Увійти</button>
 </form>
 
