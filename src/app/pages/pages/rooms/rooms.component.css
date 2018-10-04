@@ -31,7 +31,26 @@ sub{
 .photo {
   position: relative;
   width: 50%;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
 }
+
+  .photo:hover {
+    /*-webkit-transform:rotate(360deg);*/
+    /*-moz-transform:rotate(360deg);*/
+    /*-ms-transform:rotate(360deg);*/
+    /*-o-transform:rotate(360deg);*/
+    /*transform:rotate(360deg);*/
+    -webkit-transform:translate(0px,-10px);
+    -moz-transform:translate(0px,-10px);
+    -ms-transform:translate(0px,-10px);
+    -o-transform:translate(0px,-10px);
+    transform:translate(0px,-10px);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -webkit-box-shadow: 0px 6px 22px -4px rgba(0, 0, 0, 0.68);
+    box-shadow: 0px 6px 22px -4px rgba(0, 0, 0, 0.68);
+  }
 
 .room:nth-child(even) .photo {
   position: relative;
