@@ -27,6 +27,7 @@ import {MultiPartInterceptor} from "../shared/service/interceptors/multi-part-in
 import {TockenActiveInterceptor} from "../shared/service/interceptors/tocken-active-interceptor";
 import {AdminGuard} from "../shared/Guard/AdminGuard";
 import {AdminChildrenGuards} from "../shared/Guard/admin-children-guards.service";
+import {CarrentLanguadgeService} from '../shared/service/carrent-languadge.service';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import {AdminChildrenGuards} from "../shared/Guard/admin-children-guards.service
     LoginService,
     BookService,
     AdminGuard,
-    AdminChildrenGuards
+    AdminChildrenGuards,
+    CarrentLanguadgeService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
