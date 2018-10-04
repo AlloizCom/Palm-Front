@@ -5,6 +5,7 @@ import {Schedule} from "../models/schedule";
 import {NewsByPage} from "../models/news-by-page";
 import {News} from "../models/news";
 import {ScheduleByPage} from "../models/schedule-by-page";
+import {ChangeRoomForSale} from "../models/change-room-for-sale";
 
 @Injectable()
 export class ScheduleService {
@@ -83,5 +84,9 @@ export class ScheduleService {
       .catch(err => Observable.throw(err));
   }
 
+  changeRoomForSale(params: ChangeRoomForSale): Observable<any>{
+    return this._httpClient.post<ChangeRoomForSale>(this.controller + '/change-room-for-sale', JSON.stringify(params))
+      .catch(err => Observable.throw(err));
+  }
 
 }
