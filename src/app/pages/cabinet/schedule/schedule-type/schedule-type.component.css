@@ -99,7 +99,11 @@ p{
 /*.schedule-table-body{*/
   /*background-color: whitesmoke !important;*/
 /*}*/
-.day-in-schedule:nth-child(7n),.day-in-schedule:nth-child(7n-1){
+/*.day-in-schedule:nth-child(7n),.day-in-schedule:nth-child(7n-1){*/
+  /*background-color: #84d7c2;*/
+/*}*/
+
+.weekend {
   background-color: #84d7c2;
 }
 

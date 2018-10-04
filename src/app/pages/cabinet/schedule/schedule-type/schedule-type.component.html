@@ -27,16 +27,15 @@
     </div>
   </div>
   <div class="schedule-table-body">
-    <div *ngFor="let day of schedule; let i = index" class="day-in-schedule" [ngClass]="'weekends'">
-      <div class="schedule-date">
+    <div *ngFor="let day of schedule; let i = index" class="day-in-schedule"   [ngClass]="{'weekend':((day.today|date:'d E').search('Sun')>=0||(day.today|date:'d E').search('Sat')>=0)}">
+      <div class="schedule-date"   [ngClass]="{'weekend':((day.today|date:'d E').search('Sun')>=0||(day.today|date:'d E').search('Sat')>=0)}">
         <p>
           {{day.today | date: 'd E'}}
         </p>
-
       </div>
       <div class="schedule-status">
-          <div [ngClass]="['point', 'bg-'+status[i]]">
-          </div>
+        <div [ngClass]="['point', 'bg-'+status[i]]">
+        </div>
       </div>
       <div class="schedule-for-sale">
         <div class="forSale-wrapper" routerLink="{{day.id}}">
@@ -57,27 +56,27 @@
 </div>
 
 <!--<div class="newTable">-->
-  <!--<div *ngFor="let day of schedule; let i = index" class="day-in-schedule">-->
-    <!--<div class="day">-->
-      <!--<p>-->
-        <!--{{day.today}}-->
-      <!--</p>-->
-    <!--</div>-->
-    <!--<div class="status">-->
-      <!--<p>-->
-        <!--Status-->
-      <!--</p>-->
-    <!--</div>-->
-    <!--<div class="forSale">-->
-      <!--<p>-->
-          <!--{{day.forSale}}-->
-      <!--</p>-->
-    <!--</div>-->
-    <!--<div class="active">-->
-      <!--<p>-->
-        <!--{{ day.active}}-->
-      <!--</p>-->
-    <!--</div>-->
-  <!--</div>-->
+<!--<div *ngFor="let day of schedule; let i = index" class="day-in-schedule">-->
+<!--<div class="day">-->
+<!--<p>-->
+<!--{{day.today}}-->
+<!--</p>-->
+<!--</div>-->
+<!--<div class="status">-->
+<!--<p>-->
+<!--Status-->
+<!--</p>-->
+<!--</div>-->
+<!--<div class="forSale">-->
+<!--<p>-->
+<!--{{day.forSale}}-->
+<!--</p>-->
+<!--</div>-->
+<!--<div class="active">-->
+<!--<p>-->
+<!--{{ day.active}}-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
 
 <!--</div>-->
