@@ -6,6 +6,7 @@ import {RoomParamsService} from "../../../../shared/service/room-params.serive";
 import {RoomsParams} from "../../../../shared/models/rooms-params";
 import {RoomTariff} from "../../../../shared/enum/room-tariff";
 import {TranslateService} from "ng2-translate";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-bookForm',
@@ -25,7 +26,8 @@ export class BookFormComponent implements OnInit {
   constructor(
     private _roomParamsService: RoomParamsService,
     private _bookService: BookService,
-    private _translateService: TranslateService) {
+    private _translateService: TranslateService,
+    private _router: Router) {
     this.roomParams = _roomParamsService.params;
     this.roomTariff = RoomTariff
   }
@@ -81,5 +83,6 @@ export class BookFormComponent implements OnInit {
       this.liqPayFormHtml = next;
       console.log(next);
     });
+    this._router.navigateByUrl('/');
   }
 }
