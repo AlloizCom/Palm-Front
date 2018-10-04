@@ -3,7 +3,7 @@ import {isNullOrUndefined} from 'util';
 import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -257,28 +257,19 @@ export class MainComponent implements OnInit {
 
 //dataPicker
   onValueChange(e) {
-    this.model1.day = e[0].getUTCDate();
-    this.model1.month = e[0].getUTCMonth();
-    this.model1.year = e[0].getUTCFullYear();
+    this.model1.day = e[0].getDate();
+    this.model1.month = e[0].getMonth();
+    this.model1.year = e[0].getFullYear();
     this.amountDaysInYour = this.daysInMonth(e[0]);
-    if (e[0].getUTCDate() == this.amountDaysInYour && e[1].getUTCDate() == this.amountDaysInYour) {
-      if (e[0].getUTCMonth() == 11) {
-        this.model2.year = e[1].getUTCFullYear() + 1;
-        this.model2.month = 0;
-        this.model2.day = 1;
-      } else {
-        this.model2.month = e[1].getUTCMonth()+1;
-        this.model2.year = e[1].getUTCFullYear();
-        this.model2.day = 1;
-      }
-    } else if (e[0].getUTCDate() == e[1].getUTCDate()) {
-      this.model2.day = e[1].getUTCDate() + 1;
-      this.model2.month = e[1].getUTCMonth();
-      this.model2.year = e[1].getUTCFullYear();
+    if (e[0].getDate() == e[1].getDate()) {
+      let date = new Date(e[1].getFullYear(), e[1].getMonth(), e[1].getDate() + 1);
+      this.model2.day = date.getDate();
+      this.model2.month = date.getMonth();
+      this.model2.year = date.getFullYear();
     } else {
-      this.model2.day = e[1].getUTCDate();
-      this.model2.month = e[1].getUTCMonth();
-      this.model2.year = e[1].getUTCFullYear();
+      this.model2.day = e[1].getDate();
+      this.model2.month = e[1].getMonth();
+      this.model2.year = e[1].getFullYear();
     }
   }
 
