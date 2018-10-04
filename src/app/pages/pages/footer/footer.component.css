@@ -1,7 +1,8 @@
 .footer {
   /*height: auto;*/
   /*height: 18.5vh;*/
-  height: 20vh;
+  /*height: 20vh;*/
+  height: 26vh;
   /*height: auto;*/
   padding-bottom: 3vh;
   background: #C4C4C4;
@@ -103,6 +104,7 @@
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 576px){
   .footer{
-    height: 32vh;
+    /*height: 32vh;*/
+    height: 38vh;
   }
 }
