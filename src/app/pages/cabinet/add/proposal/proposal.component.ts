@@ -41,6 +41,7 @@ export class ProposalComponent implements OnInit {
       HeaderTextareaRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
       textRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
       multipartFile: new FormControl(null, [this.validateImages]),
+      available: new FormControl(false)
     });
     this.proposalForm.valueChanges.subscribe(value => {
       this.proposal.proposalDescriptions[0].language = 'EN';
@@ -59,6 +60,7 @@ export class ProposalComponent implements OnInit {
       this.proposal.proposalDescriptions[3].title = value.TitleRu;
       this.proposal.proposalDescriptions[3].headerText = value.HeaderTextareaRu;
       this.proposal.proposalDescriptions[3].mainText = value.textRu;
+      this.proposal.available = value.available;
     });
   }
 
