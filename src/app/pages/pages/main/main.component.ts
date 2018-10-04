@@ -330,7 +330,7 @@ export class MainComponent implements OnInit{
 
   changL(){
     if(this._carrentLanguadgeService.getCarrentLanguadge() === 'uk'){
-      this.locale = 'en';
+      this.locale = 'ru';
     }else{
       this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
     }
