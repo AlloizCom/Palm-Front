@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Century';
+  src: url(./../../../../assets/fonts/8483.ttf);
+}
+
 /* data picker */
 .wrapper {
   position: relative;
@@ -245,12 +250,15 @@ app-top-slider {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Raleway;
   font-weight: 800;
   font-size: 21px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #000000;
+}
+
+.infosMain>h2>span{
+  font-family: 'Century';
 }
 
 .infosMain h4 {
