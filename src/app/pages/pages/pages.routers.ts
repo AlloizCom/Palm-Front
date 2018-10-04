@@ -46,7 +46,14 @@ export const pagesRoutes: Routes = [
       }, {
         path: 'login', component: LoginComponent
       },{
-        path: 'rooms-booking/:id/bookForm', component: BookFormComponent
+        path: 'rooms-booking/:id/bookForm', children:[
+          {
+            path: '', component:BookFormComponent
+          },
+          {
+           path: '', redirectTo: '/', pathMatch: 'full'
+          }
+        ]
       }
     ]
   }

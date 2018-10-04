@@ -28,10 +28,14 @@ export class ScheduleTypeComponent implements OnInit {
     });
   }
 
-  Weekends(){
 
-    // let one = this.day.today;
-    // console.log(one)
+  Weekends(){
+    for(let i=0; i <this.schedule.length; i++){
+      let one = this.schedule[i].today;
+      console.log(one)
+    }
+
+
   }
   calculateStatuses() {
     console.log(this.schedule);

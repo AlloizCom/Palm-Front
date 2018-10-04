@@ -1,7 +1,7 @@
 <app-top-slider></app-top-slider>
 <div class="wrapper">
 
-  <div class="search">
+  <div class="search" >
     <div class="searchItem searchItem11" (click)="dp.toggle()">
       <p>заїзд</p>
       <div class="numbers d-flex w-100" style="cursor: pointer">
@@ -97,7 +97,8 @@
          bsDaterangepicker
          #dp="bsDaterangepicker"
          [minDate]="minDate"
-         (bsValueChange)="onValueChange($event)">
+         (bsValueChange)="onValueChange($event)"
+         >
 </div>
 
 

@@ -19,11 +19,9 @@
   background-color: #f8f9fa!important;
   min-width: 5rem;
   margin: 0;
+  padding-top: 15px!important;
 }
 
-.dropdown-menu>a{
-  margin: 10px 0;
-}
 
 
 .dropdown-menu > a:active {
@@ -99,8 +97,20 @@ a:hover {
   color: #53D7B7 !important;
 }
 
+.service{
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 7px;
+}
+
+.service:hover{
+  color: white!important;
+}
+
 .dropdown-item:active, .dropdown-item:focus, .dropdown-item:hover {
-  color: #53D7B7 !important;
+  color: whitesmoke !important;
+  background-color: #53D7B7;
 }
 
 .header {
@@ -152,10 +162,6 @@ a:hover {
     margin: 8px;
     outline: none !important;
     border-radius: 0;
-  }
-
-  .navbar {
-    height: 10vh
   }
 
   .nav-link {

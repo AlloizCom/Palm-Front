@@ -12,9 +12,18 @@ div{
   border-radius: 5px;
 }
 input{
-  margin: 2vh;
+  margin:  0 2vh;
 }
 
 span{
   user-select: none;
+}
+.error{
+  color: red;
+  text-align: center;
+  font-weight: 700;
+}
+
+.lab{
+margin: 5px 5px 2px 19px;
 }

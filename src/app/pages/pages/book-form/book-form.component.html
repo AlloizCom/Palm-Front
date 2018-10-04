@@ -4,22 +4,22 @@
 
     <form [formGroup]="bookForm" (submit)="sendBook()">
       <div class="inputBlock">
-        <p>Ім'я</p>
+        <p>Ім'я <sup>&#65290;</sup></p>
         <input type="text" formControlName="firstName" class="inputCallback"
                [ngClass]="{'invallid':bookForm.get('firstName').invalid && bookForm.get('firstName').dirty}">
       </div>
       <div class="inputBlock">
-        <p>Прізвище</p>
+        <p>Прізвище <sup>&#65290;</sup></p>
         <input type="text" formControlName="lastName" class="inputCallback"
                [ngClass]="{'invallid':bookForm.get('lastName').invalid && bookForm.get('lastName').dirty}">
       </div>
       <div class="inputBlock">
-        <p>Телефон</p>
+        <p>Телефон <sup>&#65290;</sup></p>
         <input type="text" formControlName="phoneNumber" class="inputCallback" placeholder="+00 000 000 00 00"
                [ngClass]="{'invallid':bookForm.get('phoneNumber').invalid && bookForm.get('phoneNumber').dirty}">
       </div>
       <div class="inputBlock">
-        <p>E-mail</p>
+        <p>E-mail <sup>&#65290;</sup></p>
         <input type="text" formControlName="email" class="inputCallback"
                [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
       </div>
@@ -34,10 +34,13 @@
                   [ngValue]="option.value"
                   [selected]="i == 0">{{option.lable}}</option>
         </select> - Форма оплати.
+
       </div>
 
 
       <button [disabled]="bookForm.invalid" type="submit" (click)="pay()">Забронювати</button>
+      <p class="star"><sup>&#65290;</sup>- Обов'язкові поля</p>
+
 
       <!--<ng-content #dataContent>-->
       <!---->
@@ -68,4 +71,5 @@
     </div>
 
   </div>
+  <div class="clierfix"> </div>
 </div>
