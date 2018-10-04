@@ -40,6 +40,7 @@ export class OptionComponent implements OnInit {
       HeaderTextareaRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
       textRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
       multipartFile: new FormControl(null, [this.validateImages]),
+      available: new FormControl(false)
     });
     this.servicesForm.valueChanges.subscribe(value => {
       this.service.serviceDescriptions[0].language = 'EN';
@@ -58,6 +59,7 @@ export class OptionComponent implements OnInit {
       this.service.serviceDescriptions[3].title = value.TitleRu;
       this.service.serviceDescriptions[3].headerText = value.HeaderTextareaRu;
       this.service.serviceDescriptions[3].mainText = value.textRu;
+      this.service.available = value.available;
     });
   }
 
