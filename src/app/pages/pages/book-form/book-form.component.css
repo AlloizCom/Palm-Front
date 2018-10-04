@@ -1,13 +1,11 @@
 .wraper {
   position: relative;
   width: 70%;
-  padding-top: 6vh;
+  padding-top: 56px;
   margin: auto;
-  min-height: 79.5vh;
 }
 
 .form-container {
-  position: absolute;
   width: 100%;
   justify-content: space-around;
 }
@@ -16,6 +14,13 @@
   font-size: 25px;
   margin: 40px 0;
   text-align: center;
+}
+sup{
+  top: -0.8em;
+  font-size: 70%;
+}
+.star{
+  font-size: 11px;
 }
 
 form {
