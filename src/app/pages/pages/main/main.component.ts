@@ -4,15 +4,25 @@ import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Router} from '@angular/router';
+import {TranslateService} from 'ng2-translate';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';
+import {plLocale, ruLocale} from 'ngx-bootstrap/locale';
+defineLocale('pl', plLocale);
+defineLocale('ru', ruLocale);
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-  providers: [MainPageSevice]
+  providers: [MainPageSevice],
+  host: {
+    '(document:click)': 'changL()',
+  }
 })
 
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit{
 
   //grey map
 
@@ -211,9 +221,14 @@ export class MainComponent implements OnInit {
   adultsNumber: number = 1;
   childrenNumber: number = 0;
   roomsNumber: number = 1;
+  //change languadge
+  locale = 'ru';
+
 
   constructor(private _roomsParamService: RoomParamsService,
-              private _router: Router) {
+              private _router: Router,
+              private localeService: BsLocaleService,
+              private  _carrentLanguadgeService: CarrentLanguadgeService) {
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
@@ -311,6 +326,15 @@ export class MainComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event?) {
     this.screenWidth = window.innerWidth;
+  }
+
+  changL(){
+    if(this._carrentLanguadgeService.getCarrentLanguadge() === 'uk'){
+      this.locale = 'en';
+    }else{
+      this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
+    }
+    this.localeService.use(this.locale);
   }
 
 }
