@@ -11,6 +11,7 @@ import {ScheduleComponent} from './schedule/schedule.component';
 import {ScheduleOneComponent} from './schedule/schedule-one/schedule-one.component';
 import { ScheduleTypeComponent } from './schedule/schedule-type/schedule-type.component';
 import { BookingOneComponent } from './booking/booking-one/booking-one.component';
+import { ChangingRoomsForSaleComponent } from './changing-rooms-for-sale/changing-rooms-for-sale.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { BookingOneComponent } from './booking/booking-one/booking-one.component
     ScheduleOneComponent,
     ScheduleComponent,
     ScheduleTypeComponent,
-    BookingOneComponent
+    BookingOneComponent,
+    ChangingRoomsForSaleComponent
   ]
 })
 export class CabinetModule { }
