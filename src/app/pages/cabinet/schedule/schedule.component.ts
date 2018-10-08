@@ -4,6 +4,20 @@ import {Schedule} from "../../../../shared/models/schedule";
 import {RoomTariff} from "../../../../shared/enum/room-tariff";
 import {DatePipe, DeprecatedDatePipe} from "@angular/common";
 import {DatePipePipe} from "../../../../shared/pipe/pipe/date-pipe.pipe";
+import {Subject} from "rxjs/Subject";
+import {Observable} from "rxjs/Observable";
+
+export class ScheduleDateService {
+  fromDate: string;
+  private _fromDate: Subject<string> = new Subject<string>();
+  fromDate$: Observable<string> = this._fromDate.asObservable();
+
+  setDate(date: string) {
+    this.fromDate = date;
+    this._fromDate.next(date);
+  }
+}
+
 
 @Component({
   selector: 'app-schedule',
@@ -13,6 +27,11 @@ import {DatePipePipe} from "../../../../shared/pipe/pipe/date-pipe.pipe";
   ]
 })
 export class ScheduleComponent implements OnInit {
+
+  public static service: ScheduleDateService = new ScheduleDateService();
+
+  buttonsLocked = true;
+  lock = 0;
 
   schedule: Schedule[] = [];
   roomTariff: any;
@@ -40,11 +59,26 @@ export class ScheduleComponent implements OnInit {
     });
   }
 
+  block(ev: boolean) {
+    if (ev) {
+      this.lock++;
+      console.log(this.roomTypes.length);
+      console.log(this.lock);
+      if (this.lock == this.roomTypes.length) {
+        this.buttonsLocked = !ev;
+        this.lock=0;
+      }
+    } else {
+      this.buttonsLocked = !ev;
+    }
+  }
+
   setDates(date: Date) {
     this.year = date.getFullYear();
     this.month = date.getMonth() + 1;
     this.date = date.getDate();
     this.fromDate = `${this.year}-${this.month}-${this.date} 00:00:00`;
+    ScheduleComponent.service.setDate(this.fromDate);
     console.log(this.fromDate);
   }
 
