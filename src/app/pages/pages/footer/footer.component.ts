@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -12,5 +12,14 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
+  screenWidth: number = 1024;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event?) {
+    this.screenWidth = window.innerWidth;
+  }
+
 
 }

@@ -14,33 +14,33 @@
   top: 137px !important;
 }
 
-.imgs img {
-  width: 25px;
-  height: 25px;
-  margin-right: 5%;
-}
+/*.imgs img {*/
+  /*width: 25px;*/
+  /*height: 25px;*/
+  /*margin-right: 5%;*/
+/*}*/
 
-.imgs {
-  width: 75%;
-  margin-bottom: 7%;
-}
+/*.imgs {*/
+  /*width: 75%;*/
+  /*margin-bottom: 7%;*/
+/*}*/
 
 .main {
   position: absolute;
 }
 
-.imgs h5 {
-  font-family: Raleway;
-  font-weight: bold;
-  line-height: 19px;
-  font-size: 11px;
-  text-align: center;
-  color: #000000;
-  margin: 0;
-  position: absolute;
-  margin-top: 25px;
-  margin-left: -3px;
-}
+/*.imgs h5 {*/
+  /*font-family: Raleway;*/
+  /*font-weight: bold;*/
+  /*line-height: 19px;*/
+  /*font-size: 11px;*/
+  /*text-align: center;*/
+  /*color: #000000;*/
+  /*margin: 0;*/
+  /*position: absolute;*/
+  /*margin-top: 25px;*/
+  /*margin-left: -3px;*/
+/*}*/
 
 .content {
   display: flex;
@@ -49,12 +49,21 @@
   flex-direction: column;
 }
 
+/*.book{*/
+  /*font-family: 'Raleway' , sans-serif;*/
+  /*font-weight: 800;*/
+  /*line-height: 26px;*/
+  /*font-size: 22px;*/
+  /*text-align: center;*/
+  /*color: #000000;*/
+/*}*/
+
 .top {
   display: flex;
   width: 100%;
   margin: 0 auto 0 auto;
   justify-content: space-between;
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 .slider {
@@ -125,11 +134,13 @@
 .roomDesc {
   padding-top: 3%;
   text-transform: uppercase;
-  font-family: Raleway;
-  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-weight: Bold;
+  /*font-family: Roboto;*/
   line-height: 24px;
   font-size: 14px;
   color: #5A5A5A;
+
 }
 
 .selected span {
@@ -144,13 +155,21 @@
 }
 
 .room-description-title {
-  font-family: Roboto;
-  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
   line-height: 27px;
   font-size: 16px;
   color: #000000;
   padding-bottom: 5%;
 }
+
+.squareText{
+  font-family: 'Raleway', sans-serif;
+  font-weight: Bold;
+  line-height: 19px;
+  font-size: 11px;
+}
+
 
 .room-description {
   font-family: Roboto, sans-serif;
@@ -162,6 +181,7 @@
   color: #000000;
 
 }
+
 
 .price-title {
   text-transform: uppercase;
@@ -203,7 +223,10 @@
   line-height: 27px;
   font-size: 16px;
   color: #5A5A5A;
-  margin-left: -0.4%;
+  /*margin-left: -0.4%;*/
+  border-left: 4px solid #53D7B7;
+  padding-left: 0.5%;
+  margin-bottom: 3%;
 }
 
 .amenity-wrapper {
@@ -211,20 +234,58 @@
 
 }
 
-.imgs {
-  width: 250px;
-  margin-left: -0.4%;
-}
+/*.imgs {*/
+  /*width: 250px;*/
+  /*!*margin-left: -0.4%;*!*/
+  /*margin-left: 0.1%;*/
+/*}*/
+/*.imageRoom {*/
+  /*display: flex;*/
+  /*justify-content: center!important;*/
+  /*width: 30px;*/
+  /*height: 30px;*/
+  /*!*margin-right: 5%;*!*/
+  /*padding-left: 0px;*/
+  /*padding-right: 25%;*/
+  /*background-size:30px 28px!important;*/
+  /*background-repeat: no-repeat!important;*/
+  /*background-position: center!important;*/
+  /*}*/
 .imageRoom {
   display: flex;
-  justify-content: center!important;
+  justify-content: center !important;
   width: 30px;
   height: 30px;
   margin-right: 5%;
-  background-size:30px 28px!important;
-  background-repeat: no-repeat!important;
-  background-position: center!important;
-  }
+  background-size: 30px 28px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/*.imageRoom h5{*/
+  /*padding-left: 0px;*/
+  /*padding-right: 25%;*/
+/*}*/
+.imgs {
+  /*width: 75%;*/
+  width: 100%;
+  /*margin-bottom: 7%;*/
+  margin-bottom: 5%;
+  margin-left: 1%;
+}
+
+.imgs h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  line-height: 19px;
+  font-size: 10px;
+  text-align: center;
+  color: #000000;
+  /*margin: -1.8px;*/
+  margin: 1.2px;
+  position: absolute;
+  margin-top: 29px;
+}
 .errorParams{
   bottom: 74px;
   font-weight: 600;
@@ -236,16 +297,16 @@
 sub{
   vertical-align: super;
 }
-.imgs h5 {
-  font-family: Raleway, sans-serif;
-  font-weight: bold;
-  line-height: 19px;
-  font-size: 11px;
-  text-align: center;
-  color: #000000;
-  position: absolute;
-  margin-top: 30px;
-}
+/*.imgs h5 {*/
+  /*font-family: Raleway, sans-serif;*/
+  /*font-weight: bold;*/
+  /*line-height: 19px;*/
+  /*font-size: 11px;*/
+  /*text-align: center;*/
+  /*color: #000000;*/
+  /*position: absolute;*/
+  /*margin-top: 30px;*/
+/*}*/
 
 /*SLIDER!!!*/
 .topImage {
@@ -391,14 +452,19 @@ sub{
 }
 
 .searchItem:nth-child(6) p {
-  font-family: Raleway;
-  margin: 0;
+  /*font-family: Raleway;*/
+  /*margin: 0;*/
+  /*font-weight: 800;*/
+  /*font-size: 22px;*/
+  font-family: 'Raleway' , sans-serif;
   font-weight: 800;
+  line-height: 26px;
   font-size: 22px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #000000;
 }
+
 
 .searchItem .roomsNumber {
   font-family: Raleway;

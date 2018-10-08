@@ -55,6 +55,7 @@
 }
 
 .swith {
+  /*display: none;*/
   cursor: pointer;
   position: absolute;
   z-index: 10;
@@ -65,10 +66,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition:.7s ease-in-out ;
+
 }
 
 .swith:hover, .swith:active {
   background-color: #424242;
+}
+
+.main:hover .swith{
+  opacity: 1;
+  transition:.7s ease-in-out ;
 }
 
 .left {

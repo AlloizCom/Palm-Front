@@ -7,11 +7,13 @@ import {RoomsParams} from "../../../../shared/models/rooms-params";
 import {RoomTariff} from "../../../../shared/enum/room-tariff";
 import {TranslateService} from "ng2-translate";
 import {Router} from "@angular/router";
+import {TariffService} from "../../../../shared/service/tariff.service";
 
 @Component({
   selector: 'app-bookForm',
   templateUrl: './book-form.component.html',
-  styleUrls: ['./book-form.component.css']
+  styleUrls: ['./book-form.component.css'],
+  providers: [TariffService]
 })
 export class BookFormComponent implements OnInit {
   bookForm: FormGroup;
@@ -27,7 +29,8 @@ export class BookFormComponent implements OnInit {
     private _roomParamsService: RoomParamsService,
     private _bookService: BookService,
     private _translateService: TranslateService,
-    private _router: Router) {
+    private _router: Router,
+    private _tariffService: TariffService) {
     this.roomParams = _roomParamsService.params;
     this.roomTariff = RoomTariff
   }
@@ -76,13 +79,19 @@ export class BookFormComponent implements OnInit {
     book.message = this.bookForm.controls['message'].value;
     book.orderStatus = this.bookForm.controls['orderStatus'].value;
 
+    this._tariffService.findByRoomType(this.roomParams.roomType).subscribe(next => {
+      console.log();
+    });
+
+    console.log()
+
     // this._bookService.pay(book).subscribe(next => {
     //   this.liqPayFormHtml = next;
     // });
-    this._bookService.pay(book, this._translateService.currentLang).subscribe(next => {
-      this.liqPayFormHtml = next;
-      console.log(next);
-    });
-    this._router.navigateByUrl('/');
+    // this._bookService.pay(book, this._translateService.currentLang).subscribe(next => {
+    //   this.liqPayFormHtml = next;
+    //   console.log(next);
+    // });
+    // this._router.navigateByUrl('/');
   }
 }

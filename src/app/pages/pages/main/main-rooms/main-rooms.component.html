@@ -2,7 +2,7 @@
   <div [routerLink]="['/rooms-booking', rooms[0].id]" class="greenAbs">
     <div>
       <h2>{{roomTariff[rooms[0].type]['current-language-index' | translate]}}</h2>
-      <p>look more soooqa</p>
+      <p>Look more</p>
       <img src="../../../../../assets/svg/krujki.svg" alt="">
     </div>
   </div>
@@ -31,14 +31,14 @@
              [style.background-image]="'url(' + (rooms[3].images[0].path|imagePipe) + ')'">
         </div>
         <h2 class="lefty">{{roomTariff[rooms[3].type]['current-language-index' | translate]}}</h2>
-        <h3 class="lefty">{{rooms[3].price}} &#8372;</h3>
+        <h3 class="lefty">{{rooms[3].price}} UAH</h3>
       </div>
       <div>
         <div (click)="scroll(4)" class="topImage first"
              [style.background-image]="'url(' + (rooms[4].images[0].path|imagePipe) + ')'">
         </div>
         <h2>{{roomTariff[rooms[4].type]['current-language-index' | translate]}}</h2>
-        <h3>{{rooms[4].price}} &#8372;</h3>
+        <h3>{{rooms[4].price}} UAH</h3>
       </div>
     </div>
   </div>
