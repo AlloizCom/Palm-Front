@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Schedule } from "../../../../../shared/models/schedule";
-import { ScheduleService } from "../../../../../shared/service/schedule.service";
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {Schedule} from "../../../../../shared/models/schedule";
+import {ScheduleService} from "../../../../../shared/service/schedule.service";
+import {ScheduleComponent} from "../schedule.component";
 
 @Component({
   selector: 'app-schedule-type',
@@ -8,19 +9,29 @@ import { ScheduleService } from "../../../../../shared/service/schedule.service"
   styleUrls: ['./schedule-type.component.css']
 })
 export class ScheduleTypeComponent implements OnInit {
-  @Input() datefrom: string;
+  datefrom: string;
   @Input() roomType: string;
+  @Output() updated = new EventEmitter<boolean>();
 
   schedule: Schedule[] = [];
   status: string[] = [];
   id: number = 0;
-  day:any;
-  constructor(private _scheduleService: ScheduleService) {
+  day: any;
 
+  constructor(private _scheduleService: ScheduleService) {
+    this.datefrom = ScheduleComponent.service.fromDate;
+    this.updated.emit(false);
+    ScheduleComponent.service.fromDate$.subscribe(value => {
+      this.updated.emit(false);
+      this.datefrom = value;
+      this.ngOnInit();
+    })
   }
+
 
   ngOnInit() {
     this._scheduleService.findAllScheduleByTypeFromDate(this.datefrom, this.roomType).subscribe(next => {
+      this.updated.emit(true);
       this.schedule = next;
       this.Weekends();
       this.calculateStatuses();
@@ -29,20 +40,21 @@ export class ScheduleTypeComponent implements OnInit {
   }
 
 
-  Weekends(){
-    for(let i=0; i <this.schedule.length; i++){
+  Weekends() {
+    for (let i = 0; i < this.schedule.length; i++) {
       let one = this.schedule[i].today;
       console.log(one)
     }
 
 
   }
+
   calculateStatuses() {
     console.log(this.schedule);
     for (var i = 0; i < this.schedule.length; i++) {
       if (i == 0) {
         if ((this.schedule[i].free && this.schedule[i + 1].free)
-        || (!this.schedule[i].free && !this.schedule[i + 1].free)) {
+          || (!this.schedule[i].free && !this.schedule[i + 1].free)) {
           this.status[i] = "1";
         } else {
           this.status[i] = "4";
@@ -58,10 +70,10 @@ export class ScheduleTypeComponent implements OnInit {
           || (!this.schedule[i - 1].free && !this.schedule[i].free && !this.schedule[i + 1].free)) {
           this.status[i] = "3";
         } else if ((this.schedule[i - 1].free && this.schedule[i].free)
-        || (!this.schedule[i - 1].free && !this.schedule[i].free)) {
+          || (!this.schedule[i - 1].free && !this.schedule[i].free)) {
           this.status[i] = "2";
         } else if ((this.schedule[i].free && this.schedule[i + 1].free)
-        || (!this.schedule[i].free && !this.schedule[i + 1].free)) {
+          || (!this.schedule[i].free && !this.schedule[i + 1].free)) {
           this.status[i] = "1";
         } else {
           this.status[i] = "4";

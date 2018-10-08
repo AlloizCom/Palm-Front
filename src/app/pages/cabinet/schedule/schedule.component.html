@@ -1,11 +1,11 @@
-<button (click)="changeDate(1)">Add Day</button>
-<button (click)="changeYear(1)">Add Year</button>
-<button (click)="changeMonth(1)">Add Month</button>
-<button (click)="changeDate(-1)">Minus Day</button>
-<button (click)="changeYear(-1)">Minus Year</button>
-<button (click)="changeMonth(-1)">Minus Month</button>
-<app-schedule-type *ngFor="let roomType of roomTypes" [datefrom]="'2018-10-3 00:00:00'" [roomType]=roomType></app-schedule-type>
-
+<button (click)="changeDate(1)" [hidden]="buttonsLocked">Add Day</button>
+<button (click)="changeDate(-1)" [hidden]="buttonsLocked">Minus Day</button>
+<button (click)="changeMonth(1)" [hidden]="buttonsLocked">Add Month</button>
+<button (click)="changeMonth(-1)" [hidden]="buttonsLocked">Minus Month</button>
+<button (click)="changeYear(1)" [hidden]="buttonsLocked">Add Year</button>
+<button (click)="changeYear(-1)" [hidden]="buttonsLocked">Minus Year</button>
+<p>{{fromDate}}</p>
+<app-schedule-type *ngFor="let roomType of roomTypes" (updated)="block($event)" [roomType]=roomType></app-schedule-type>
 
 
 <!--<div class="header d-flex flex-row justify-content-around align-items-center">-->
