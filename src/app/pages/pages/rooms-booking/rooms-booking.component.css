@@ -216,14 +216,16 @@
 
 .imgs {
   width: 250px;
-  margin-left: -0.4%;
+  /*margin-left: -0.4%;*/
+  margin-left: 0.1%;
 }
 .imageRoom {
   display: flex;
   justify-content: center!important;
   width: 30px;
   height: 30px;
-  margin-right: 5%;
+  /*margin-right: 5%;*/
+  margin-right: 15%;
   background-size:30px 28px!important;
   background-repeat: no-repeat!important;
   background-position: center!important;
