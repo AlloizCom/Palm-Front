@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Century';
+  /*font-family: 'Century';*/
   src: url(./../../../../assets/fonts/8483.ttf);
 }
 
@@ -11,6 +11,8 @@
   display: flex;
   justify-content: center;
 }
+
+
 
 .searchIcone {
   cursor: pointer;
@@ -258,7 +260,7 @@ app-top-slider {
 }
 
 .infosMain>h2>span{
-  font-family: 'Century';
+  font-family: 'Raleway',sans-serif;
 }
 
 .infosMain h4 {
@@ -267,7 +269,7 @@ app-top-slider {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: Raleway;
+  font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.5em;
@@ -323,7 +325,7 @@ app-top-slider {
 }
 
 .together h3 {
-  font-family: Raleway;
+  font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.5em;
@@ -339,9 +341,10 @@ app-top-slider {
 }
 
 .together h2 {
-  font-family: Raleway;
+  font-family: 'Raleway' , sans-serif;
   font-weight: 800;
   font-size: 21px;
+  line-height: 25px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #000000;
@@ -362,6 +365,8 @@ app-top-slider {
   margin-top: 2%;
 }
 
+
+
 .divka {
   margin-bottom: 2%;
 }
@@ -371,7 +376,7 @@ app-top-slider {
 }
 
 .ashkas h3, .ashkas2 h3, .ashkas3 h3, .ashkas4 h3 {
-  font-family: Raleway;
+  font-family: 'Raleway' , sans-serif;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.5em;
@@ -390,9 +395,10 @@ app-top-slider {
 }
 
 .ashkas h2, .ashkas2 h2, .ashkas3 h2, .ashkas4 h2 {
-  font-family: Raleway;
+  font-family: 'Raleway' , sans-serif;
   font-weight: 800;
   font-size: 21px;
+  line-height: 25px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #000000;
@@ -700,11 +706,19 @@ agm-map {
 @media screen and (max-device-width: 765px) {
   .selected span {
     border: none;
+
   }
 
   .selected {
     border-bottom: 7px solid #53D7B7;
     padding-bottom: 5px;
+  }
+
+  .selected {
+    font-family: 'Raleway' , sans-serif;
+    font-weight: 800;
+    font-size: 21px;
+    line-height: 25px;
   }
 
   .underFooterBlock {
