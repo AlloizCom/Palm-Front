@@ -125,11 +125,13 @@
 .roomDesc {
   padding-top: 3%;
   text-transform: uppercase;
-  font-family: Raleway;
-  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  font-weight: Bold;
+  /*font-family: Roboto;*/
   line-height: 24px;
   font-size: 14px;
   color: #5A5A5A;
+
 }
 
 .selected span {
@@ -144,12 +146,20 @@
 }
 
 .room-description-title {
-  font-family: Roboto;
-  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
   line-height: 27px;
   font-size: 16px;
   color: #000000;
   padding-bottom: 5%;
+}
+
+.squareText{
+  font-family: 'Raleway', sans-serif;
+  font-weight: Bold;
+  line-height: 19px;
+  font-size: 11px;
+  text-align: center;
 }
 
 .room-description {
