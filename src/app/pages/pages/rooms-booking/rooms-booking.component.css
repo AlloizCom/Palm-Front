@@ -159,7 +159,7 @@
   font-weight: Bold;
   line-height: 19px;
   font-size: 11px;
-  text-align: center;
+  margin-left: 35px!important;
 }
 
 .room-description {
@@ -172,6 +172,7 @@
   color: #000000;
 
 }
+
 
 .price-title {
   text-transform: uppercase;
@@ -235,7 +236,7 @@
   width: 30px;
   height: 30px;
   /*margin-right: 5%;*/
-  margin-right: 15%;
+  padding-right: 15%;
   background-size:30px 28px!important;
   background-repeat: no-repeat!important;
   background-position: center!important;
