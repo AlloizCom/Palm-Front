@@ -25,7 +25,7 @@
 
 
 .dropdown-menu > a:active {
-  background-color: #F8F6F6;
+  color: #53D7B7!important;
 }
 
 .nav-link {
@@ -35,6 +35,7 @@
   font-size: 12px;
   font-family: Roboto;
   font-style: normal;
+  font-weight: 400;
   letter-spacing: 0.03em;
   color: #000000;
   margin-right: 25px;
@@ -94,7 +95,7 @@ a:hover {
 }
 
 .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .nav-link:hover {
-  color: #53D7B7 !important;
+  color: #53D7B7!important;
 }
 
 .service{
@@ -105,12 +106,16 @@ a:hover {
 }
 
 .service:hover{
-  color: white!important;
+  color: #53D7B7!important;
 }
 
 .dropdown-item:active, .dropdown-item:focus, .dropdown-item:hover {
-  color: whitesmoke !important;
-  background-color: #53D7B7;
+  background-color: white;
+  color: #53D7B7!important;
+}
+.dropdown-item{
+  color: #5a5a5a;
+  font-weight: 300;
 }
 
 .header {
@@ -302,9 +307,9 @@ a:hover {
   position: fixed;
   z-index: 100000000000000;
   width: 100%;
-  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);;
+  /* -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);;
   -moz-box-shadow:  0 0 10px 2px rgba(0, 0, 0, 0.2);
-  box-shadow:  0 0 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow:  0 0 10px 2px rgba(0, 0, 0, 0.2); */
 }
 
 @media screen and (min-width: 576px) and (max-width: 645px){
