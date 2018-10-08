@@ -159,7 +159,7 @@
   font-weight: Bold;
   line-height: 19px;
   font-size: 11px;
-  margin-left: 35px!important;
+  margin-left: 62px!important;
 }
 
 .room-description {
@@ -236,7 +236,8 @@
   width: 30px;
   height: 30px;
   /*margin-right: 5%;*/
-  padding-right: 15%;
+  padding-left: 0px;
+  padding-right: 25%;
   background-size:30px 28px!important;
   background-repeat: no-repeat!important;
   background-position: center!important;
