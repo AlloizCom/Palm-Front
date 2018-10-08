@@ -17,14 +17,14 @@
              [style.background-image]="'url(' + (rooms[1].images[0].path|imagePipe) + ')'">
         </div>
         <h2>{{roomTariff[rooms[1].type]['current-language-index' | translate]}}</h2>
-        <h3>{{rooms[1].price}} &#8372;</h3>
+        <h3>{{rooms[1].price}} UAH</h3>
       </div>
       <div>
         <div (click)="scroll(2)" class="topImage first"
              [style.background-image]="'url(' + (rooms[2].images[0].path|imagePipe) + ')'">
         </div>
         <h2>{{roomTariff[rooms[2].type]['current-language-index' | translate]}}</h2>
-        <h3>{{rooms[2].price}} &#8372;</h3>
+        <h3>{{rooms[2].price}} UAH</h3>
       </div>
       <div>
         <div (click)="scroll(3)" class="topImage first"
