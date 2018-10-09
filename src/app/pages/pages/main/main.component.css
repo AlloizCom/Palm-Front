@@ -252,7 +252,7 @@ app-top-slider {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 21px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -342,7 +342,7 @@ app-top-slider {
 
 .together h2 {
   font-family: 'Raleway' , sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 21px;
   line-height: 25px;
   letter-spacing: 0.03em;
@@ -396,7 +396,7 @@ app-top-slider {
 
 .ashkas h2, .ashkas2 h2, .ashkas3 h2, .ashkas4 h2 {
   font-family: 'Raleway' , sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 21px;
   line-height: 25px;
   letter-spacing: 0.03em;
@@ -716,7 +716,7 @@ agm-map {
 
   .selected {
     font-family: 'Raleway' , sans-serif;
-    font-weight: 800;
+    font-weight: 700;
     font-size: 21px;
     line-height: 25px;
   }
