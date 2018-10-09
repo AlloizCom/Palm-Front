@@ -1,75 +1,78 @@
-<div class="wraper">
-  <p class="fill-form">Заповніть форму, щоб забронювати кімнату</p>
-  <div class="form-container d-flex flex-row justify-content-around">
+<div class="content">
+  <div class="wraper">
+    <p class="fill-form">Заповніть форму, щоб забронювати кімнату</p>
+    <div class="form-container d-flex flex-row justify-content-around">
 
-    <form [formGroup]="bookForm" (submit)="sendBook()">
-      <div class="inputBlock">
-        <p>Ім'я <sup>&#65290;</sup></p>
-        <input type="text" formControlName="firstName" class="inputCallback"
-               [ngClass]="{'invallid':bookForm.get('firstName').invalid && bookForm.get('firstName').dirty}">
-      </div>
-      <div class="inputBlock">
-        <p>Прізвище <sup>&#65290;</sup></p>
-        <input type="text" formControlName="lastName" class="inputCallback"
-               [ngClass]="{'invallid':bookForm.get('lastName').invalid && bookForm.get('lastName').dirty}">
-      </div>
-      <div class="inputBlock">
-        <p>Телефон <sup>&#65290;</sup></p>
-        <input type="text" formControlName="phoneNumber" class="inputCallback" placeholder="+00 000 000 00 00"
-               [ngClass]="{'invallid':bookForm.get('phoneNumber').invalid && bookForm.get('phoneNumber').dirty}">
-      </div>
-      <div class="inputBlock">
-        <p>E-mail <sup>&#65290;</sup></p>
-        <input type="text" formControlName="email" class="inputCallback"
-               [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
-      </div>
+      <form [formGroup]="bookForm" (submit)="sendBook()">
+        <div class="inputBlock">
+          <p>Ім'я <sup>&#65290;</sup></p>
+          <input type="text" formControlName="firstName" class="inputCallback"
+                 [ngClass]="{'invallid':bookForm.get('firstName').invalid && bookForm.get('firstName').dirty}">
+        </div>
+        <div class="inputBlock">
+          <p>Прізвище <sup>&#65290;</sup></p>
+          <input type="text" formControlName="lastName" class="inputCallback"
+                 [ngClass]="{'invallid':bookForm.get('lastName').invalid && bookForm.get('lastName').dirty}">
+        </div>
+        <div class="inputBlock">
+          <p>Телефон <sup>&#65290;</sup></p>
+          <input type="text" formControlName="phoneNumber" class="inputCallback" placeholder="+00 000 000 00 00"
+                 [ngClass]="{'invallid':bookForm.get('phoneNumber').invalid && bookForm.get('phoneNumber').dirty}">
+        </div>
+        <div class="inputBlock">
+          <p>E-mail <sup>&#65290;</sup></p>
+          <input type="text" formControlName="email" class="inputCallback"
+                 [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
+        </div>
 
-      <div class="inputBlock">
-        <p>Message</p>
-        <textarea type="text" formControlName="message" class="inputCallback message"
-                  [ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}">
+        <div class="inputBlock">
+          <p>Message</p>
+          <textarea type="text" formControlName="message" class="inputCallback message"
+                    [ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}">
         </textarea>
-        <select formControlName="orderStatus" >
-          <option *ngFor="let option of selectPayStatus; let i = index"
-                  [ngValue]="option.value"
-                  [selected]="i == 0">{{option.lable}}</option>
-        </select> - Форма оплати.
+          <select formControlName="orderStatus" >
+            <option *ngFor="let option of selectPayStatus; let i = index"
+                    [ngValue]="option.value"
+                    [selected]="i == 0">{{option.lable}}</option>
+          </select> - Форма оплати.
 
-      </div>
-
-
-      <button [disabled]="bookForm.invalid" type="submit" (click)="pay()">Забронювати</button>
-      <p class="star"><sup>&#65290;</sup>- Обов'язкові поля</p>
+        </div>
 
 
-      <!--<ng-content #dataContent>-->
-      <!---->
-      <!--</ng-content>-->
-      <!--<div [innerHtml]="liqPayFormHtml|safeHtml">-->
-      <!--</div>-->
-    </form>
+        <button [disabled]="bookForm.invalid" type="submit" (click)="pay()">Забронювати</button>
+        <p class="star"><sup>&#65290;</sup>- Обов'язкові поля</p>
 
-    <div class="topInfo d-flex flex-column">
-      <h3>Інформація про бронювання:</h3>
-      <div class="person d-flex ">
-        <img src="../../../../assets/svg/person.svg" alt="amenity">
-        <div class="humans" *ngIf="roomParams">
-          <h5>Тип: {{roomTariff[roomParams.roomType]['current-language-index' | translate]}} </h5>
-          <h5>Дорослі: {{roomParams.adults}} </h5>
-          <h5>Діти: {{roomParams.childrens}}</h5>
+
+        <!--<ng-content #dataContent>-->
+        <!---->
+        <!--</ng-content>-->
+        <!--<div [innerHtml]="liqPayFormHtml|safeHtml">-->
+        <!--</div>-->
+      </form>
+
+      <div class="topInfo d-flex flex-column">
+        <h3>Інформація про бронювання:</h3>
+        <div class="person d-flex ">
+          <img src="../../../../assets/svg/person.svg" alt="amenity">
+          <div class="humans" *ngIf="roomParams">
+            <h5>Тип: {{roomTariff[roomParams.roomType]['current-language-index' | translate]}} </h5>
+            <h5>Дорослі: {{roomParams.adults}} </h5>
+            <h5>Діти: {{roomParams.childrens}}</h5>
+          </div>
+        </div>
+        <div class="date d-flex align-items-center">
+          <div class="calendar">
+            <img src="../../../../assets/svg/calendar.svg" alt="date">
+          </div>
+          <div *ngIf="roomParams">
+            <h5>Від: {{roomParams.dateFrom|datePipe}}</h5>
+            <h5>До: {{roomParams.dateTo|datePipe}}</h5>
+          </div>
         </div>
       </div>
-      <div class="date d-flex align-items-center">
-        <div class="calendar">
-          <img src="../../../../assets/svg/calendar.svg" alt="date">
-        </div>
-        <div *ngIf="roomParams">
-          <h5>Від: {{roomParams.dateFrom|datePipe}}</h5>
-          <h5>До: {{roomParams.dateTo|datePipe}}</h5>
-        </div>
-      </div>
+
     </div>
-
+    <div class="clierfix"> </div>
   </div>
-  <div class="clierfix"> </div>
+
 </div>

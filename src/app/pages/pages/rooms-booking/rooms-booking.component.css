@@ -450,6 +450,10 @@ sub{
   height: 71px;
   display: flex;
   justify-content: center;
+  margin-top: 1px;
+}
+img{
+  padding: 28px 28px;
 }
 
 .searchItem:nth-child(6) p {
@@ -460,6 +464,7 @@ sub{
   font-family: 'Raleway' , sans-serif;
   font-weight: 800;
   line-height: 26px;
+  margin-bottom: -2px;
   font-size: 22px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -529,6 +534,20 @@ sub{
   background-color: #e1e1e1;
 }
 
+.leftSide{
+  width: 100%;
+  text-align: center;
+}
+.leftSide P{
+  text-align: center;
+}
+
+.rightSide{
+  height: 71px;
+  width: 90px;
+  background-color: #53d7b7;
+}
+
 /*enddatapicker*/
 
 @media screen and (max-width: 1140px) {
@@ -561,7 +580,9 @@ sub{
   .bottom {
     width: 90%;
   }
-
+  .searchItem[_ngcontent-c4]:nth-child(6){
+    margin-top: -11px;
+  }
 }
 
 @media screen and (max-width: 996px) {

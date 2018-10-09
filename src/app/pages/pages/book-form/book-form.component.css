@@ -1,8 +1,13 @@
+
+.content{
+  background-color: #f8f6f6;
+}
 .wraper {
   position: relative;
   width: 70%;
   padding-top: 56px;
   margin: auto;
+
 }
 
 .form-container {
