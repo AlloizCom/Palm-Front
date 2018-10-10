@@ -64,10 +64,8 @@
   letter-spacing: 0.03em;
   color: #000000;
   padding: 0 1%;
-  padding-bottom: 1%;
   text-align: center;
   padding-top: 4%;
-  height: 4vh;
 }
 
 .item h4 {
@@ -178,7 +176,8 @@
 @media screen and (max-width: 400px) {
 
   .back1 {
-    height: 30vh;
+    height: 31vh;
   }
+
 
 }

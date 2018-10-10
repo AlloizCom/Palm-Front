@@ -193,18 +193,21 @@ a{
   }
 }
 
+
 @media screen and (max-width: 513px) {
   .services{
-    width: 70%;
+    width: 100%;
+    text-align: center;
   }
   .socials{
-    width: 30%;
+    width: 100%;
   }
   .services img{
-    width: 31px;
-    height: 31px;
+    width: 25px;
+    height: 25px;
   }
 }
+
 
 @media screen and (max-width: 483px) {
 
@@ -230,12 +233,9 @@ a{
     padding-bottom: 5% !important;
   }
   .services p {
-    font-size: 11px;
+    font-size: 14px;
   }
 
-  .info a{
-    font-size: 11px;
-  }
   .sponsors_items{
     margin-right: -4px;
   }
