@@ -12,6 +12,8 @@
 .dropdown:hover > .dropdown-menu, .dropdown:focus > .dropdown-menu {
   display: block;
   padding: 0;
+  width: 109px;
+  margin-left: -17px;
 }
 
 .dropdown-menu {
@@ -27,6 +29,10 @@
   letter-spacing: 0.03em;
 }
 
+.dropdown-menu a{
+  word-wrap: break-word;
+  white-space: unset;
+}
 
 
 .dropdown-menu > a:active {
