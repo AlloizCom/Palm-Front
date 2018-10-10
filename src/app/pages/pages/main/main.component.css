@@ -11,7 +11,9 @@
   display: flex;
   justify-content: center;
 }
-
+.ashkas4>p{
+  margin-bottom: 0px;
+}
 
 
 .searchIcone {
@@ -261,6 +263,7 @@ app-top-slider {
 
 .infosMain>h2>span{
   font-family: 'Raleway',sans-serif;
+  font-size: 21px;
 }
 
 .infosMain h4 {
@@ -358,7 +361,7 @@ app-top-slider {
 
 .ashkas, .ashkas3, .ashkas4 {
   margin-top: 10%;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
 }
 
 .ashkas3 {
@@ -801,7 +804,10 @@ agm-map {
   .btmWrapper {
     padding-top: 100px;
   }
-
+.together{
+  width: 90%;
+margin: auto;
+}
   .wrapper {
     top: 515px;
     width: 100% !important;
@@ -948,6 +954,10 @@ agm-map {
 
   .numbers {
     cursor: pointer !important;
+  }
+  .ashkas4 h2{
+    width: 90%;
+    text-align: center;
   }
 }
 
