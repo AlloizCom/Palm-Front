@@ -187,6 +187,16 @@ a:hover {
   .navbar-light .navbar-nav {
     margin-right: 0px !important;
   }
+  .dropdown[_ngcontent-c2]:hover > .dropdown-menu[_ngcontent-c2], .dropdown[_ngcontent-c2]:focus > .dropdown-menu[_ngcontent-c2] {
+    display: block;
+    padding: 0;
+    width: 105%;
+    margin-left: -17px;
+  }
+  .dropdown-menu[_ngcontent-c2] > a[_ngcontent-c2] {
+    width: 85%;
+  }
+
 
   .navbar-collapse {
     position: absolute !important;
