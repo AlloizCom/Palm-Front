@@ -41,9 +41,11 @@ sub {
   position: relative;
   /*width: 50%;*/
   width: 512px;
+  height: 340px;
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
+
 
 .photo:hover {
   /*-webkit-transform:rotate(360deg);*/
@@ -144,7 +146,7 @@ sub {
 .kartinka {
   position: relative;
   width: 100%;
-  height: 288px;
+  height: 340px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -219,7 +221,7 @@ button:hover {
 
 @media (max-width: 1200px) {
   .rooms {
-    width: 100%;
+    width: 100%!important;
   }
 }
 
@@ -328,4 +330,5 @@ button:hover {
     width: 100% !important;
   }
 }
+
 
