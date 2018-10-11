@@ -9,7 +9,8 @@
   </div>
   <div class="down-text">
     <div class="right-text-block">
-      <p>{{news.newsDescriptions['current-language-index'|translate].mainText}}</p>
+      <div [innerHTML]="news.newsDescriptions['current-language-index'|translate].mainText"></div>
+
       <div class="date-and-share">
         <div class="date">
           <p>{{news.dateTime|datePipe}}</p>

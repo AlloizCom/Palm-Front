@@ -65,7 +65,7 @@
   width: 100%;
 }
 
-.right-text-block p {
+.right-text-block div, .right-text-block div p {
   font-style: normal;
   font-weight: 500;
   line-height: 31px;
@@ -116,6 +116,6 @@
   .text-paragraph, .main-text {
     text-align: justify;
   }
-  
+
 }
 
