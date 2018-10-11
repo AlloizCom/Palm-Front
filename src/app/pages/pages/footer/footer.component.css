@@ -127,6 +127,12 @@ a{
   opacity: 0.6;
 }
 
+.sponsors_items>div>a>img{
+  width: 40px;
+  height: 40px;
+  opacity: 0.6;
+}
+
 .sponsors_items{
   margin-right: 2px;
 }
