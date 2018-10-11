@@ -181,12 +181,12 @@ a:hover {
   }
 
   .helperKostik{
-    display: block;
-    opacity: 0;
-    width: 32px;
-    height: 32px;
-    margin: 8px;
-  }
+     display: block;
+     opacity: 0;
+     width: 32px;
+     height: 32px;
+     margin: 8px;
+   }
 
   .nav-link {
     margin-left: 25px;
