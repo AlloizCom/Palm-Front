@@ -637,6 +637,10 @@ img{
     left: 50%;
   }
 
+  .imageRoom {
+    margin-top: 3%;
+  }
+
   .content {
     width: 100% !important;
   }
