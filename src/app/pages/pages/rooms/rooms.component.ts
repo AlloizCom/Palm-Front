@@ -4,6 +4,7 @@ import {RoomService} from '../../../../shared/service/room.service';
 import {TariffService} from '../../../../shared/service/tariff.service';
 import {RoomTariff} from '../../../../shared/enum/room-tariff';
 import {RoomWithPrice} from '../../../../shared/models/room-with-price';
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-rooms',
@@ -17,7 +18,8 @@ export class RoomsComponent implements OnInit {
   rooms: RoomWithPrice[] = [];
 
   constructor(private _roomService: RoomService,
-              private _tariffService: TariffService
+              private _tariffService: TariffService,
+              private _router: Router
   ) {
     this._roomService.findAllRoomWithPrice().subscribe(next => {
       console.log(this.rooms);
@@ -35,6 +37,11 @@ export class RoomsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  goToRoom(id: number){
+    this._router.navigateByUrl('/rooms-booking/' + id);
+    window.scroll(0,0);
   }
 
   sortRooms(){
