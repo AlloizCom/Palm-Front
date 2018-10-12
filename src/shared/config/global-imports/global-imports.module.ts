@@ -12,6 +12,7 @@ import { AgmDirectionModule } from 'agm-direction';
 import {RoomParamsService} from "../../service/room-params.serive";
 import {NotificationService} from "../../service/notification.service";
 import {urlFront} from '../url';
+import {RoomIdService} from "../../service/room-id.service";
 
 // import {routes} from '../../../main.routes';
 
@@ -54,7 +55,8 @@ export function createTranslateLoader(http: Http) {
   providers:[
     RoomParamsService,
     TranslateService,
-    NotificationService
+    NotificationService,
+    RoomIdService
   ]
 })
 export class GlobalImportsModule { }

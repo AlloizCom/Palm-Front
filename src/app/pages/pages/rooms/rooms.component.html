@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="rooms">
-          <div *ngFor="let one of rooms" class="room d-flex justify-content-between">
+          <div *ngFor="let one of rooms; let i = index" class="room d-flex justify-content-between" id="some{{one.id}}">
             <div class="photo d-flex">
               <div (click) = goToRoom(one.id) class="kartinka"
                    [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'"></div>
