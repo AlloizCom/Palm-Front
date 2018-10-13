@@ -1,20 +1,20 @@
-<form action="" [formGroup]="bookingForm">
-  <section >
-    <h4>З</h4>
-    <input type="date" formControlName="dateTo">
+<!-- <form action="" [formGroup]="bookingForm"> -->
+<!--   <section > -->
+<!--     <h4>З</h4> -->
+<!--     <input type="date" formControlName="dateTo"> -->
 
-    <h4>До</h4>
-    <input type="date" formControlName="dateFrom">
+<!--     <h4>До</h4> -->
+<!--     <input type="date" formControlName="dateFrom"> -->
 
-    <h4>На один або більше з цих днів</h4>
-    <input type="checkbox" name="monday" id="">
+<!--     <h4>На один або більше з цих днів</h4> -->
+<!--     <input type="checkbox" name="monday" id=""> -->
 
-    <h4>Статус замовлення:</h4>
-    <select  formControlName="orderStatus">
-      <option value="" selected = "selected" disabled>{{booking.orderStatus | bookStatusPipe }}</option>
-      <option value="{{two}}" *ngFor="let two of orderStatuss" >{{two | bookStatusPipe}}</option>
-    </select>
+<!--     <h4>Статус замовлення:</h4> -->
+<!--     <select  formControlName="orderStatus"> -->
+<!--       <option value="" selected = "selected" disabled>{{booking.orderStatus | bookStatusPipe }}</option> -->
+<!--       <option value="{{two}}" *ngFor="let two of orderStatuss" >{{two | bookStatusPipe}}</option> -->
+<!--     </select> -->
 
-    <button  (click)="update()" [disabled]="!bookingForm.valid">Оновити</button>
-  </section>
-</form>
+<!--     <button  (click)="update()" [disabled]="!bookingForm.valid">Оновити</button> -->
+<!--   </section> -->
+<!-- </form> -->
