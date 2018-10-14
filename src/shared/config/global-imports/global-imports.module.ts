@@ -1,18 +1,18 @@
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {RouterModule, Routes} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {PipeModule} from '../../pipe/pipe.module';
 import {TranslateLoader, TranslateModule, TranslateService, TranslateStaticLoader} from 'ng2-translate';
-import {Http} from "@angular/http";
-import {AgmCoreModule} from "@agm/core";
-import { AgmDirectionModule } from 'agm-direction';
-import {RoomParamsService} from "../../service/room-params.serive";
-import {NotificationService} from "../../service/notification.service";
+import {Http, HttpModule} from '@angular/http';
+import {AgmCoreModule} from '@agm/core';
+import {AgmDirectionModule} from 'agm-direction';
+import {RoomParamsService} from '../../service/room-params.serive';
+import {NotificationService} from '../../service/notification.service';
 import {urlFront} from '../url';
-import {RoomIdService} from "../../service/room-id.service";
+import {RoomIdService} from '../../service/room-id.service';
 
 // import {routes} from '../../../main.routes';
 
@@ -24,9 +24,9 @@ export function createTranslateLoader(http: Http) {
 }
 
 
-
 @NgModule({
   imports: [
+    HttpModule,
     // RouterModule.forRoot(_routes, {useHash: true})
     TranslateModule.forRoot({
       provide: TranslateLoader,
@@ -34,12 +34,13 @@ export function createTranslateLoader(http: Http) {
       deps: [Http],
     }),
     AgmCoreModule.forRoot({
-      apiKey:'AIzaSyC9oymho0KGOZ41bxj7fW_1qSqjvuVwodY'
+      apiKey: 'AIzaSyC9oymho0KGOZ41bxj7fW_1qSqjvuVwodY'
     }),
     AgmDirectionModule,
   ],
   declarations: [],
   exports: [
+    HttpModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
@@ -52,11 +53,12 @@ export function createTranslateLoader(http: Http) {
     AgmDirectionModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers:[
+  providers: [
     RoomParamsService,
     TranslateService,
     NotificationService,
     RoomIdService
   ]
 })
-export class GlobalImportsModule { }
+export class GlobalImportsModule {
+}
