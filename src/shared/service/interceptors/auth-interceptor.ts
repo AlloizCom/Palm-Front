@@ -15,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
     let ret = next.handle(req);
     ret.subscribe(value => {
     }, err => {
-      console.log(err.status);
+      console.error(err);
       if (err.status === 404) {
         this._router.navigateByUrl('/error/404');
       }
