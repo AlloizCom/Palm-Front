@@ -5,9 +5,9 @@ import {BookService} from '../../../../shared/service/book.service';
 import {RoomParamsService} from "../../../../shared/service/room-params.serive";
 import {RoomsParams} from "../../../../shared/models/rooms-params";
 import {RoomTariff} from "../../../../shared/enum/room-tariff";
-import {TranslateService} from "ng2-translate";
 import {Router} from "@angular/router";
 import {TariffService} from "../../../../shared/service/tariff.service";
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bookForm',

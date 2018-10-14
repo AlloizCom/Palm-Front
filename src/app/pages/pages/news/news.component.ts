@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {News} from '../../../../shared/models/news';
 import {NewsService} from '../../../../shared/service/news.service';
 import {isNullOrUndefined} from 'util';
-import {TranslateService} from "ng2-translate";
 import {LangSort} from '../../../../shared/models/utils/lang-sort';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-news',

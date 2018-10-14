@@ -3,9 +3,9 @@ import {ProposalService} from '../../../../shared/service/proposal.service';
 import {Proposal} from '../../../../shared/models/proposal';
 import {ActivatedRoute} from '@angular/router';
 import {ImagePipePipe} from '../../../../shared/pipe/pipe/image.pipe';
-import {isNullOrUndefined} from "util";
-import {TranslateService} from "ng2-translate";
+import {isNullOrUndefined} from 'util';
 import {LangSort} from '../../../../shared/models/utils/lang-sort';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-proposal',

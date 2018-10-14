@@ -1,4 +1,3 @@
-import {TranslatePipe} from "ng2-translate";
 import {Pipe, PipeTransform} from "@angular/core";
 
 @Pipe({

@@ -4,7 +4,6 @@ import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Router} from '@angular/router';
-import {TranslateService} from 'ng2-translate';
 import { defineLocale } from 'ngx-bootstrap/chronos';
 import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';

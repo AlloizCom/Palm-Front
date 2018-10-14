@@ -1,9 +1,9 @@
-import {Component, EventEmitter, HostListener, Injectable, OnInit, Output} from '@angular/core';
-import {TranslateService} from 'ng2-translate';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {Language} from '../../../../shared/enum/language';
 import {ServiceService} from '../../../../shared/service/service.service';
 import {Service} from '../../../../shared/models/service';
 import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-menu',
