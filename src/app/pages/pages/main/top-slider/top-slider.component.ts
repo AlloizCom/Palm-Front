@@ -19,7 +19,7 @@ export class TopSliderComponent implements OnInit {
   indexDot: number = 0;
   autoScrol: any;
 
-  constructor(config: NgbCarouselConfig, private _mainPageService: MainPageSevice) {
+  constructor(private _mainPageService: MainPageSevice) {
     this._mainPageService.findAllAvailable().subscribe(next => {
       for (let i of next) {
         if (typeof (i) != undefined && i != null) {

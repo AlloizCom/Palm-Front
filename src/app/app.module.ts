@@ -35,7 +35,7 @@ import {CarrentLanguadgeService} from '../shared/service/carrent-languadge.servi
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     PagesModule,
     CabinetModule,
     NgbModule.forRoot(),

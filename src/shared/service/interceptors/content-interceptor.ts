@@ -14,11 +14,17 @@ export class ContentInterceptor implements HttpInterceptor {
   }
 
   intercept<T>(req: HttpRequest<T>, next: HttpHandler): Observable<HttpEvent<T>> {
-    req = req.clone({url: url + req.url});
+    if (!req.url.includes('http'))
+      req = req.clone({url: url + req.url});
     if (isPlatformBrowser(this.platformId)) {
       req = req.clone({headers: this.getHeaders(req)});
     }
-    return next.handle(req);
+    let ret = next.handle(req);
+    // ret.subscribe(value => {
+    // }, err => {
+    //   console.error(req,err);
+    // });
+    return ret;
   }
 
   getHeaders(req: HttpRequest<any>): HttpHeaders {

@@ -16,7 +16,7 @@ export class MainUpdateComponent implements OnInit {
   images: Image[] = [];
   mainPage: MainPage [] = [];
 
-  constructor(config: NgbCarouselConfig, private _mainPageService: MainPageSevice) {
+  constructor(private _mainPageService: MainPageSevice) {
     this._mainPageService.findAllAvailable().subscribe(next => {
       for (let i of next) {
         if (typeof (i) != undefined && i != null) {

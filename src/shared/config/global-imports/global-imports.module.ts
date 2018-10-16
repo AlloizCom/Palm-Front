@@ -5,7 +5,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import {PipeModule} from '../../pipe/pipe.module';
-import {HttpModule} from '@angular/http';
+import {Http, HttpModule} from '@angular/http';
 import {AgmCoreModule} from '@agm/core';
 import {AgmDirectionModule} from 'agm-direction';
 import {RoomParamsService} from '../../service/room-params.serive';
@@ -14,14 +14,15 @@ import {urlFront} from '../url';
 import {RoomIdService} from '../../service/room-id.service';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, `${urlFront}/assets/i18n`, '.json');
+  return new TranslateHttpLoader(http, `${urlFront}/assets/i18n/`, '.json');
 }
 
 @NgModule({
   imports: [
-    HttpModule,
+    BrowserModule.withServerTransition({appId: 'palm-front'}),
     // RouterModule.forRoot(_routes, {useHash: true})
     TranslateModule.forRoot({
       loader: {
@@ -37,8 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   declarations: [],
   exports: [
-    HttpModule,
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
