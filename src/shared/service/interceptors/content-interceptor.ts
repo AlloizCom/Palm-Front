@@ -6,6 +6,7 @@ import {isNull} from 'util';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import {isPlatformBrowser} from '@angular/common';
+import {tap} from 'rxjs/operators';
 
 @Injectable()
 export class ContentInterceptor implements HttpInterceptor {
@@ -19,12 +20,8 @@ export class ContentInterceptor implements HttpInterceptor {
     if (isPlatformBrowser(this.platformId)) {
       req = req.clone({headers: this.getHeaders(req)});
     }
-    let ret = next.handle(req);
-    ret.subscribe(value => {
-    }, err => {
-      console.error(req,err);
-    });
-    return ret;
+    return next.handle(req).pipe(tap(x => {
+    }, e => console.error(e)));
   }
 
   getHeaders(req: HttpRequest<any>): HttpHeaders {
