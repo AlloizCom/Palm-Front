@@ -15,10 +15,10 @@ export class LoginInterceptor implements HttpInterceptor {
       req = req.clone({headers: this.getHeaders(req)});
     }
     let ret = next.handle(req);
-    // ret.subscribe(value => {
-    // }, err => {
-    //   console.error(req,err);
-    // });
+    ret.subscribe(value => {
+    }, err => {
+      console.error(req,err);
+    });
     return ret;
   }
 
