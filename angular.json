@@ -51,7 +51,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "palm-front:build"
+            "browserTarget": "palm-front:build",
+            "liveReload": true,
+            "watch": false
           },
           "configurations": {
             "production": {
@@ -108,8 +110,7 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ],
-              "bundleDependencies": "all"
+              ]
             }
           }
         }

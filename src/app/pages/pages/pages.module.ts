@@ -14,18 +14,17 @@ import {PagesComponent} from './pages.component';
 import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
 import {TopSliderComponent} from './main/top-slider/top-slider.component';
-import {BsDatepickerModule} from 'ngx-bootstrap';
-import {ProposalComponent} from "./proposal/proposal.component";
-import {ProposalItemComponent} from "./main/proposal-item/proposal-item.component";
-import { AvailableRoomsComponent } from './available-rooms/available-rooms.component';
-import { LoginComponent } from './login/login.component';
+import {ProposalComponent} from './proposal/proposal.component';
+import {ProposalItemComponent} from './main/proposal-item/proposal-item.component';
+import {AvailableRoomsComponent} from './available-rooms/available-rooms.component';
+import {LoginComponent} from './login/login.component';
 import {BookFormComponent} from './book-form/book-form.component';
+import {DatepickerRangeComponent} from '../../shared/datepicker-range/datepicker-range.component';
 
 @NgModule({
   imports: [
     NgbModule,
     GlobalImportsModule,
-    BsDatepickerModule
   ],
   declarations: [
     NewsComponent,
@@ -45,8 +44,8 @@ import {BookFormComponent} from './book-form/book-form.component';
     ProposalItemComponent,
     AvailableRoomsComponent,
     LoginComponent,
-    BookFormComponent
-
+    BookFormComponent,
+    DatepickerRangeComponent
   ],
   exports: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -9,8 +9,8 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Amenity} from '../../../../shared/models/amenity';
-import {BookService} from "../../../../shared/service/book.service";
-import {Book} from "../../../../shared/models/book";
+import {BookService} from '../../../../shared/service/book.service';
+import {RangeDate} from '../../../shared/datepicker-range/datepicker-range.component';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -28,7 +28,7 @@ export class RoomsBookingComponent implements OnInit {
   amenities: Amenity[] = [];
   roomType: string = '';
   roomParams: RoomsParams;
-  errorMessag: boolean =false;
+  errorMessag: boolean = false;
 
   //dataPicker
   model1 = {day: 0, year: 0, month: 0};
@@ -44,10 +44,10 @@ export class RoomsBookingComponent implements OnInit {
   autoScrol: any = 0;
   index: number = 0;
 
-  liqPayFormHtml: string = "";
+  liqPayFormHtml: string = '';
 
   constructor(
-    private _router: ActivatedRoute, config: NgbCarouselConfig,
+    private _router: ActivatedRoute,
     private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
@@ -73,6 +73,13 @@ export class RoomsBookingComponent implements OnInit {
     this.model2.month = new Date().getUTCMonth();
     this.model2.year = new Date().getUTCFullYear();
   }
+
+
+  onDateSelection(date: RangeDate) {
+    this.model1 = date.from;
+    this.model2 = date.to;
+  }
+
 
   // findRoomByParams() {
   //   let roomsParams = new RoomsParams();
@@ -126,6 +133,7 @@ export class RoomsBookingComponent implements OnInit {
       anyDateInMonth.getMonth() + 1,
       0).getDate();
   }
+
   findRoomByParams() {
     let roomsParams = this._roomsParamService.params || new RoomsParams();
 
@@ -140,11 +148,11 @@ export class RoomsBookingComponent implements OnInit {
     console.log(this.room);
 
 
-    this._roomService.findRoomByParamsWithRoomType(roomsParams).subscribe(next=>{
+    this._roomService.findRoomByParamsWithRoomType(roomsParams).subscribe(next => {
       console.log(roomsParams);
-      if(next.length>0){
+      if (next.length > 0) {
         this.router.navigate([`/rooms-booking/${this.id}/bookForm`]);
-      }else {
+      } else {
         this.errorMessag = true;
       }
     });
@@ -178,8 +186,6 @@ export class RoomsBookingComponent implements OnInit {
       this.childrenNumber -= 1;
     }
   }
-
-
 
 
   //slider

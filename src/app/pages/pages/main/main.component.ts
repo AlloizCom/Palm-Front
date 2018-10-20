@@ -4,12 +4,8 @@ import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Router} from '@angular/router';
-import { defineLocale } from 'ngx-bootstrap/chronos';
-import { BsLocaleService } from 'ngx-bootstrap/datepicker';
 import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';
-import {plLocale, ruLocale} from 'ngx-bootstrap/locale';
-defineLocale('pl', plLocale);
-defineLocale('ru', ruLocale);
+import {RangeDate} from '../../../shared/datepicker-range/datepicker-range.component';
 
 @Component({
   selector: 'app-main',
@@ -21,7 +17,7 @@ defineLocale('ru', ruLocale);
   }
 })
 
-export class MainComponent implements OnInit{
+export class MainComponent implements OnInit {
 
   //grey map
 
@@ -226,7 +222,6 @@ export class MainComponent implements OnInit{
 
   constructor(private _roomsParamService: RoomParamsService,
               private _router: Router,
-              private localeService: BsLocaleService,
               private  _carrentLanguadgeService: CarrentLanguadgeService) {
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
@@ -327,13 +322,20 @@ export class MainComponent implements OnInit{
     this.screenWidth = window.innerWidth;
   }
 
-  changL(){
-    if(this._carrentLanguadgeService.getCarrentLanguadge() === 'uk'){
+  changL() {
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
       this.locale = 'ru';
-    }else{
+    } else {
       this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
     }
-    this.localeService.use(this.locale);
+    // this.localeService.use(this.locale);
   }
+
+
+  onDateSelection(date: RangeDate) {
+    this.model1 = date.from;
+    this.model2 = date.to;
+  }
+
 
 }

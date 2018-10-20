@@ -1,7 +1,7 @@
 <app-top-slider></app-top-slider>
 <div class="wrapper">
   <div class="search" >
-    <div class="searchItem searchItem11" (click)="dp.toggle()">
+    <div class="searchItem searchItem11">
       <p>заїзд</p>
       <div class="numbers d-flex w-100" style="cursor: pointer">
         <div class="day">{{model1?(model1.day): model1| date: 'dd'}}</div>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="verticaleLine"></div>
-    <div class="searchItem searchItem11" (click)="dp.toggle()">
+    <div class="searchItem searchItem11">
       <p>виїзд</p>
       <div class="numbers d-flex w-100" style="cursor: pointer">
         <div class="day">{{model2?(model2.day): model2| date: 'dd'}}</div>
@@ -90,14 +90,15 @@
       </svg>
     </div>
   </div>
-  <input type="text"
-         placeholder="Daterangepicker"
-         class="form-control"
-         bsDaterangepicker
-         #dp="bsDaterangepicker"
-         [minDate]="minDate"
-         (bsValueChange)="onValueChange($event)"
-         >
+  <!--<input type="text"-->
+         <!--placeholder="Daterangepicker"-->
+         <!--class="form-control"-->
+         <!--bsDaterangepicker-->
+         <!--#dp="bsDaterangepicker"-->
+         <!--[minDate]="minDate"-->
+         <!--(bsValueChange)="onValueChange($event)"-->
+         <!--&gt;-->
+  <app-datepicker-range (dateRange)="onDateSelection($event)"></app-datepicker-range>
 </div>
 
 

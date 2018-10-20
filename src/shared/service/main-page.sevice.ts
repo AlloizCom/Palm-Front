@@ -1,12 +1,12 @@
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
-import {MainPage} from "../models/main-page";
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {MainPage} from '../models/main-page';
 
 @Injectable()
 export class MainPageSevice {
 
-  controller = "/main-page";
+  controller = '/main-page';
 
   constructor(private _httpClient: HttpClient) {
 
