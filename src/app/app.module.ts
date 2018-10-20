@@ -24,6 +24,7 @@ import {AdminGuard} from '../shared/Guard/AdminGuard';
 import {AdminChildrenGuards} from '../shared/Guard/admin-children-guards.service';
 import {CarrentLanguadgeService} from '../shared/service/carrent-languadge.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BsDatepickerModule} from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,11 +35,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     PagesModule,
     CabinetModule,
     NgbModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     FormsModule,
     GlobalImportsModule,
     PipeModule,
     RouterModule.forRoot(routes),
     DateValueAccessorModule
+
   ],
   providers: [CallbackService,
     ServiceService,
@@ -77,8 +80,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CarrentLanguadgeService
   ],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  exports: []
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }

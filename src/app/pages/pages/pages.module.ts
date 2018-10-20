@@ -20,11 +20,13 @@ import {AvailableRoomsComponent} from './available-rooms/available-rooms.compone
 import {LoginComponent} from './login/login.component';
 import {BookFormComponent} from './book-form/book-form.component';
 import {DatepickerRangeComponent} from '../../shared/datepicker-range/datepicker-range.component';
+import {BsDatepickerModule} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     NgbModule,
     GlobalImportsModule,
+    BsDatepickerModule
   ],
   declarations: [
     NewsComponent,

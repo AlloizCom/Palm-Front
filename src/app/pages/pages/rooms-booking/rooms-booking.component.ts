@@ -10,7 +10,6 @@ import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Amenity} from '../../../../shared/models/amenity';
 import {BookService} from '../../../../shared/service/book.service';
-import {RangeDate} from '../../../shared/datepicker-range/datepicker-range.component';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -47,7 +46,7 @@ export class RoomsBookingComponent implements OnInit {
   liqPayFormHtml: string = '';
 
   constructor(
-    private _router: ActivatedRoute,
+    private _router: ActivatedRoute, config: NgbCarouselConfig,
     private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
@@ -73,13 +72,6 @@ export class RoomsBookingComponent implements OnInit {
     this.model2.month = new Date().getUTCMonth();
     this.model2.year = new Date().getUTCFullYear();
   }
-
-
-  onDateSelection(date: RangeDate) {
-    this.model1 = date.from;
-    this.model2 = date.to;
-  }
-
 
   // findRoomByParams() {
   //   let roomsParams = new RoomsParams();
