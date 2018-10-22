@@ -162,7 +162,7 @@
       </div>
 
     </div>
-    <div class="test-map">
+    <div class="test-map" *ngIf="isBrowser">
       <agm-map [latitude]="latitude" [longitude]="longitude">
         <agm-direction [origin]="origin" [destination]="destination">
         </agm-direction>

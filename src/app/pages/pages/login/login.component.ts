@@ -7,6 +7,7 @@ import {User} from "../../../../shared/models/user";
 import {Subject} from "rxjs/Subject";
 import {isNullOrUndefined} from "util";
 import {UserService} from "../../../../shared/service/user.service";
+import {BrowserCheckService} from '../../../shared/service/browser-check.service';
 
 @Component({
   selector: 'app-login',
@@ -21,13 +22,18 @@ export class LoginComponent implements OnInit {
   badPass: boolean = false;
   private _canAuth = new Subject<boolean>();
   private canAuth$ = this._canAuth.asObservable();
+  isBrowser = false;
 
   constructor(private _activatedRoute: ActivatedRoute, private _router: Router,
               private _userService: UserService,
               private _loginService: LoginService,
-              private _userDetailsService: UserDetailsService) {
-    localStorage.clear();
-    sessionStorage.clear();
+              private _userDetailsService: UserDetailsService,
+              private _browserCheck: BrowserCheckService) {
+    this.isBrowser = this._browserCheck.isBrowser();
+    if(this.isBrowser) {
+      localStorage.clear();
+      sessionStorage.clear();
+    }
     this._userDetailsService.logout();
     this.withParams();
   }

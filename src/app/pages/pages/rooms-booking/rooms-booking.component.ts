@@ -10,6 +10,7 @@ import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Amenity} from '../../../../shared/models/amenity';
 import {BookService} from '../../../../shared/service/book.service';
+import {BrowserCheckService} from '../../../shared/service/browser-check.service';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -44,13 +45,15 @@ export class RoomsBookingComponent implements OnInit {
   index: number = 0;
 
   liqPayFormHtml: string = '';
+  isBrowser = false;
 
   constructor(
     private _router: ActivatedRoute, config: NgbCarouselConfig,
     private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
-    private _roomsParamService: RoomParamsService) {
+    private _roomsParamService: RoomParamsService, private _browserCheck: BrowserCheckService) {
+    this.isBrowser = this._browserCheck.isBrowser();
     _router.params.subscribe(next => {
       _roomService.findOneAvailableWithPrice(next['id']).subscribe(next => {
         this.roomTariff = RoomTariff;
@@ -96,10 +99,12 @@ export class RoomsBookingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.screenWidth = window.innerWidth;
-    this.autoScrol = setInterval(() => {
-      this.scroll(false);
-    }, 4000);
+    if (this.isBrowser) {
+      this.screenWidth = window.innerWidth;
+      this.autoScrol = setInterval(() => {
+        this.scroll(false);
+      }, 4000);
+    }
   }
 
 //dataPicker
@@ -193,9 +198,11 @@ export class RoomsBookingComponent implements OnInit {
     } else if (this.index == 0 && event == true) {
       this.index = this.room.images.length - 1;
     }
-    clearInterval(this.autoScrol);
-    this.autoScrol = setInterval(() => {
-      this.scroll(false);
-    }, 4000);
+    if (this.isBrowser) {
+      clearInterval(this.autoScrol);
+      this.autoScrol = setInterval(() => {
+        this.scroll(false);
+      }, 4000);
+    }
   }
 }

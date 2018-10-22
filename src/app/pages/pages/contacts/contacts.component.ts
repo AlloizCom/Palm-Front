@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Callback} from '../../../../shared/models/callback';
 import {CallbackService} from '../../../../shared/service/callback.service';
+import {BrowserCheckService} from '../../../shared/service/browser-check.service';
 
 @Component({
   selector: 'app-contacts',
@@ -22,9 +23,11 @@ export class ContactsComponent implements OnInit {
   public lng = 120.979021;
   public destination = {lat: 49.856338332302016, lng: 24.076377153396606};
   public origin = {lat: this.defaultLatitude, lng: this.defaultLongitude};
+  isBrowser = false;
 
 
-  constructor(private  _callback: CallbackService) {
+  constructor(private  _callback: CallbackService,private _browserCheck: BrowserCheckService) {
+    this.isBrowser = this._browserCheck.isBrowser();
   }
 
   changeWay(way: string) {

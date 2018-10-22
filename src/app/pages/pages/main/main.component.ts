@@ -4,10 +4,12 @@ import {MainPageSevice} from '../../../../shared/service/main-page.sevice';
 import {RoomParamsService} from '../../../../shared/service/room-params.serive';
 import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Router} from '@angular/router';
-import { defineLocale } from 'ngx-bootstrap/chronos';
-import { BsLocaleService } from 'ngx-bootstrap/datepicker';
+import {defineLocale} from 'ngx-bootstrap/chronos';
+import {BsLocaleService} from 'ngx-bootstrap/datepicker';
 import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';
 import {plLocale, ruLocale} from 'ngx-bootstrap/locale';
+import {BrowserCheckService} from '../../../shared/service/browser-check.service';
+
 defineLocale('pl', plLocale);
 defineLocale('ru', ruLocale);
 
@@ -21,7 +23,7 @@ defineLocale('ru', ruLocale);
   }
 })
 
-export class MainComponent implements OnInit{
+export class MainComponent implements OnInit {
 
   //grey map
 
@@ -223,11 +225,14 @@ export class MainComponent implements OnInit{
   //change languadge
   locale = 'ru';
 
+  isBrowser = false;
 
   constructor(private _roomsParamService: RoomParamsService,
               private _router: Router,
               private localeService: BsLocaleService,
-              private  _carrentLanguadgeService: CarrentLanguadgeService) {
+              private  _carrentLanguadgeService: CarrentLanguadgeService,
+              private _browserCheck: BrowserCheckService) {
+    this.isBrowser = this._browserCheck.isBrowser();
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
     this.model1.year = new Date().getUTCFullYear();
@@ -266,7 +271,8 @@ export class MainComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.screenWidth = window.innerWidth;
+    if (this.isBrowser)
+      this.screenWidth = window.innerWidth;
   }
 
 //dataPicker
@@ -327,10 +333,10 @@ export class MainComponent implements OnInit{
     this.screenWidth = window.innerWidth;
   }
 
-  changL(){
-    if(this._carrentLanguadgeService.getCarrentLanguadge() === 'uk'){
+  changL() {
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
       this.locale = 'ru';
-    }else{
+    } else {
       this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
     }
     this.localeService.use(this.locale);

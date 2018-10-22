@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MainPageSevice} from '../../../../../shared/service/main-page.sevice';
 import {isNullOrUndefined} from 'util';
 import {Image} from '../../../../../shared/models/image';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {MainPage} from '../../../../../shared/models/main-page';
+import {BrowserCheckService} from '../../../../shared/service/browser-check.service';
 
 @Component({
   selector: 'app-top-slider',
@@ -18,8 +18,10 @@ export class TopSliderComponent implements OnInit {
   index: number = 0;
   indexDot: number = 0;
   autoScrol: any;
+  isBrowser = false;
 
-  constructor(private _mainPageService: MainPageSevice) {
+  constructor(private _mainPageService: MainPageSevice, private _browserCheck: BrowserCheckService) {
+    this.isBrowser = this._browserCheck.isBrowser();
     this._mainPageService.findAllAvailable().subscribe(next => {
       for (let i of next) {
         if (typeof (i) != undefined && i != null) {
@@ -33,9 +35,10 @@ export class TopSliderComponent implements OnInit {
           this.allPathes.push(this.mainPage[i].images[j].path);
         }
       }
-      this.autoScrol = setInterval(() => {
-        this.scroll(false);
-      }, 4000);
+      if (this.isBrowser)
+        this.autoScrol = setInterval(() => {
+          this.scroll(false);
+        }, 4000);
     }, err => {
       console.log(err);
     });
@@ -59,10 +62,12 @@ export class TopSliderComponent implements OnInit {
       this.index = this.allPathes.length - 1;
       this.indexDot = 0;
     }
-    clearInterval(this.autoScrol);
-    this.autoScrol = setInterval(() => {
-      this.scroll(false);
-    }, 4000);
+    if(this.isBrowser) {
+      clearInterval(this.autoScrol);
+      this.autoScrol = setInterval(() => {
+        this.scroll(false);
+      }, 4000);
+    }
   }
 
   isNull(object: any): Boolean {

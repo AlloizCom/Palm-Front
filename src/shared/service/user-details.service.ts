@@ -2,11 +2,11 @@ import {isNullOrUndefined} from 'util';
 import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
-import {User} from "../models/user";
-import {Subject} from "rxjs/Subject";
-import {Router} from "@angular/router";
-import {isPlatformBrowser} from "@angular/common";
-import {Observable} from "rxjs/Observable";
+import {User} from '../models/user';
+import {Subject} from 'rxjs/Subject';
+import {Router} from '@angular/router';
+import {isPlatformBrowser} from '@angular/common';
+import {Observable} from 'rxjs/Observable';
 
 //
 // @Injectable()
@@ -64,6 +64,8 @@ export class UserDetailsService {
   }
 
   getAccessToken(storage?: Storage): string {
+    if (!isPlatformBrowser(this.platformId))
+      return '';
     if (storage)
       return storage.getItem('access_token');
     if (this.getAccessToken(localStorage))
@@ -91,10 +93,12 @@ export class UserDetailsService {
   }
 
   login(user: User, storage: Storage) {
-    if (this.isLocal())
-      sessionStorage.clear();
-    else
-      localStorage.clear();
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.isLocal())
+        sessionStorage.clear();
+      else
+        localStorage.clear();
+    }
     this.user = user;
     this._user.next(this.user);
     this.isAuth = !isNullOrUndefined(localStorage.getItem('access_token'));
@@ -120,9 +124,11 @@ export class UserDetailsService {
   }
 
   public logout() {
-    this.rmTokenParseInLocalStorage();
-    localStorage.clear();
-    sessionStorage.clear();
+    if (isPlatformBrowser(this.platformId)) {
+      this.rmTokenParseInLocalStorage();
+      localStorage.clear();
+      sessionStorage.clear();
+    }
     this.user = new User();
     this.isAuth = false;
     this._isAuth.next(this.isAuth);
@@ -160,6 +166,9 @@ export class UserDetailsService {
   }
 
   checkPermissionAdmin(): boolean {
+    if (!isPlatformBrowser(this.platformId))
+      return false;
+
     if (!(isNullOrUndefined(localStorage.getItem('ROLE'))) || !isNullOrUndefined(sessionStorage.getItem('ROLE'))) {
       return false;
     }
@@ -167,6 +176,8 @@ export class UserDetailsService {
   }
 
   private parseInStorage(data: any, storage: Storage) {
+    if (!isPlatformBrowser(this.platformId))
+      return;
     this.rmTokenParseInLocalStorage();
     storage.setItem('access_token', data.access_token);
     storage.setItem('token_type', data.token_type);
@@ -177,10 +188,14 @@ export class UserDetailsService {
   }
 
   private checkAuthentication(storage: Storage): boolean {
-    return !isNullOrUndefined(storage.getItem('access_token'));
+    if (isPlatformBrowser(this.platformId))
+      return !isNullOrUndefined(storage.getItem('access_token'));
+    return false;
   }
 
   private rmTokenParseInLocalStorage() {
+    if (!isPlatformBrowser(this.platformId))
+      return;
     localStorage.removeItem('access_token');
     localStorage.removeItem('token_type');
     localStorage.removeItem('expires_in');

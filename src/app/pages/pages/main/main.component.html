@@ -204,7 +204,7 @@
           <p>До готелю курсують автобуси 19, 39</p>
         </div>
       </div>
-      <div class="map">
+      <div class="map" *ngIf="isBrowser">
         <div class="map-wrapper">
           <agm-map [styles]="customStyle" [latitude]="latitude" [longitude]="longitude"
                    (mapClick)="onChoseLocation($event)" [zoom]="13" lang="">
