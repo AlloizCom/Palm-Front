@@ -32,7 +32,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyD0aSEhG-yUDTdWZSvVGhwD9p1AU-1stV0'
+      apiKey: 'AIzaSyCEbt6JRG3LVhPhdwRUq4wBKeA7yYes_gU'
     }),
     AgmDirectionModule,
   ],
