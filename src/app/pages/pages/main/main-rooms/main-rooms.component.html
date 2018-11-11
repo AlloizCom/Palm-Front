@@ -12,6 +12,13 @@
   </div>
   <div class="sliderBlock d-flex flex-row justify-content-around">
     <div class="allIn d-flex flex-row justify-content-between">
+      <div class="swith left" (click)="scroll(-2)">
+        <svg width="15" height="27" viewBox="0 0 15 27" fill="none">
+          <path
+            d="M14.5009 1.43445C15.1664 2.11374 15.1664 3.19508 14.5009 3.87437L4.87985 13.4954L14.5009 23.1165C15.1664 23.7958 15.1664 24.8771 14.5009 25.5564C13.8216 26.2357 12.7403 26.2357 12.061 25.5564L0 13.4954L12.061 1.43445C12.7264 0.75515 13.8216 0.75515 14.5009 1.43445Z"
+            fill="#C4C4C4"/>
+        </svg>
+      </div>
       <div>
         <div (click)="scroll(1)" class="topImage first"
              [style.background-image]="'url(' + (rooms[1].images[0].path|imagePipe) + ')'">
@@ -39,6 +46,13 @@
         </div>
         <h2>{{roomTariff[rooms[4].type]['current-language-index' | translate]}}</h2>
         <h3>{{rooms[4].price}} UAH</h3>
+      </div>
+      <div class="swith right" (click)="scroll(-1)">
+        <svg width="15" height="27" viewBox="0 0 15 27" fill="none">
+          <path
+            d="M0.499076 25.5565C-0.166359 24.8772 -0.166359 23.7958 0.499076 23.1165L10.1201 13.4955L0.499076 3.87439C-0.166359 3.19509 -0.166359 2.11376 0.499076 1.43446C1.17837 0.755163 2.2597 0.755163 2.939 1.43446L15 13.4955L2.939 25.5565C2.27357 26.2358 1.17837 26.2358 0.499076 25.5565Z"
+            fill="#C4C4C4"/>
+        </svg>
       </div>
     </div>
   </div>

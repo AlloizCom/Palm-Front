@@ -16,6 +16,7 @@ export class MainRoomsComponent implements OnInit {
   third;
   roomTariff: any;
   rooms: RoomWithPrice[] = [];
+  timedscroll;
 
   constructor(private _roomService: RoomService) {
     this._roomService.findAllRoomWithPrice().subscribe(next => {
@@ -25,12 +26,40 @@ export class MainRoomsComponent implements OnInit {
           this.rooms.push(i);
         }
       }
+      this.timedscroll = setTimeout(() => {
+        this.scroll(this.currentI++);
+      }, 3000);
     }, err => {
       console.log(err);
     });
   }
 
+  private _currentI = 1;
+
+  get currentI(): number {
+    return this._currentI;
+  }
+
+  set currentI(value: number) {
+    if (value > 4) {
+      this._currentI = 1;
+      return;
+    } else if (value < 1) {
+      this._currentI = 4;
+      return;
+    }
+    this._currentI = value;
+  }
+
   scroll(x: number) {
+    clearTimeout(this.timedscroll);
+    if (x < 0) {
+      if (x == -1)
+        this.scroll(this.currentI++);
+      else
+        this.scroll(this.currentI--);
+      return;
+    }
     let old = new RoomWithPrice();
     let _new = new RoomWithPrice();
     Object.assign(old, this.rooms[0]);
@@ -40,6 +69,9 @@ export class MainRoomsComponent implements OnInit {
     this.third = old.price;
     this.rooms[0] = _new;
     this.rooms[x] = old;
+    this.timedscroll = setTimeout(() => {
+      this.scroll(this.currentI++);
+    }, 3000);
   }
 
   ngOnInit() {
