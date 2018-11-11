@@ -13,6 +13,7 @@ import {AmenityOneComponent} from "./amenity/amenity-one/amenity-one.component";
 import {MainUpdateComponent} from "./main-update/main-update.component";
 import {ProposalUpdateComponent} from "./proposal-update/proposal-update.component";
 import {ProposalOneComponent} from "./proposal-update/proposal-one/proposal-one.component";
+import {UserComponent} from './user/user.component';
 
 export const updateRoutes: Routes = [
   {
@@ -61,6 +62,9 @@ export const updateRoutes: Routes = [
       },
       {
         path: 'main-update', component: MainUpdateComponent
+      },
+      {
+        path: 'user', component: UserComponent
       },
       {
         path: 'proposal-update', children: [
