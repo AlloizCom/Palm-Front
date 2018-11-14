@@ -64,6 +64,7 @@ export class RoomOneComponent implements OnInit {
       id: new FormControl(),
       type: new FormControl('', [Validators.required]),
       amount: new FormControl('', [Validators.required]),
+      price: new FormControl('', [Validators.required]),
       square: new FormControl('', [Validators.required]),
       available: new FormControl(),
       adultPlaces: new FormControl('', [Validators.required]),

@@ -14,5 +14,6 @@ export class Room {
   descriptions: RoomDescription[] = [];
   amenities: Amenity[] = [];
   images: Image[] = [];
+  price: number;
 
 }

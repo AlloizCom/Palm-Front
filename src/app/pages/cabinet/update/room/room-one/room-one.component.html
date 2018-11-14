@@ -16,6 +16,8 @@
   <input type="number"  formControlName="square" min="10">
   <h3>Кількість номерів:</h3>
   <input type="number" formControlName="amount" min="0">
+    <h3>Ціна:</h3>
+    <input type="number" formControlName="price" min="0">
 
     <div formArrayName="descriptions">
       <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
