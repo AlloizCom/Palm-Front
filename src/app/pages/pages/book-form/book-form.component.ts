@@ -4,7 +4,7 @@ import {Book} from '../../../../shared/models/book';
 import {BookService} from '../../../../shared/service/book.service';
 import {RoomParamsService} from "../../../../shared/service/room-params.serive";
 import {RoomsParams} from "../../../../shared/models/rooms-params";
-import {RoomTariff} from "../../../../shared/enum/room-tariff";
+import {roomTariff} from "../../../../shared/enum/room-tariff";
 import {Router} from "@angular/router";
 import {TariffService} from "../../../../shared/service/tariff.service";
 import {TranslateService} from '@ngx-translate/core';
@@ -32,7 +32,7 @@ export class BookFormComponent implements OnInit {
     private _router: Router,
     private _tariffService: TariffService) {
     this.roomParams = _roomParamsService.params;
-    this.roomTariff = RoomTariff
+    this.roomTariff = roomTariff
   }
 
   ngOnInit() {

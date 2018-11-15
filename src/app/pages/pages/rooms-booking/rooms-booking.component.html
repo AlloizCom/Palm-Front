@@ -123,15 +123,15 @@
       </div>
     </div>
     <div class="bottom" *ngIf="roomType">
-      <h2 class="selected"><span>{{roomTariff[roomType]['current-language-index' | translate]}}</span></h2>
+      <h2 class="selected"><span>{{roomType| translate}}</span></h2>
       <p class="roomDesc">опис номеру</p>
       <p class="room-description-title">{{room.descriptions['current-language-index' |
         translate]?room.descriptions['current-language-index' |
         translate].description:''}}</p>
       <p class="price-title">Ціна</p>
       <!--<p class="price">{{room.price}} &#8372;</p>-->
-      <!--<p class="price">{{room.price}} грн</p>-->
-      <p class="price">999 грн</p>
+      <p class="price">{{room.price?room.price:999}} грн</p>
+      <!--<p class="price">999 грн</p>-->
     </div>
     <div *ngIf="amenities.length!=0" class="amenity-icons">
       <p class="amenity">зручності</p>

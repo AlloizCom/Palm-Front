@@ -53,7 +53,7 @@
           "options": {
             "browserTarget": "palm-front:build",
             "liveReload": true,
-            "watch": false
+            "watch": true
           },
           "configurations": {
             "production": {

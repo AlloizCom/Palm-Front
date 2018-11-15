@@ -18,22 +18,22 @@ export class RoomService {
 
   findAll(): Observable<Room[]> {
     return this._httpClient.get<Room[]>(this.controller + '/find-all')
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   findAllAvailable(): Observable<Room[]> {
     return this._httpClient.get<Room[]>(this.controller + '/find-all-available')
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   findRoomByParams(roomParams: RoomsParams): Observable<RoomWithPrice[]> {
     return this._httpClient.post<RoomWithPrice[]>(this.controller + '/find-by-book-params',
-      JSON.stringify(roomParams)).catch(err => Observable.throw(err));
+      JSON.stringify(roomParams));
   }
 
   findRoomByParamsWithRoomType(roomParams: RoomsParams): Observable<RoomWithPrice[]> {
     return this._httpClient.post<RoomWithPrice[]>(this.controller + '/find-by-book-params-with-room-type',
-      JSON.stringify(roomParams)).catch(err => Observable.throw(err));
+      JSON.stringify(roomParams));
   }
 
   findAllByAdultPlacesAndKidsPlacesAndAvailable(kidsPlaces: number,
@@ -41,7 +41,7 @@ export class RoomService {
     Observable<Room[]> {
     return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult/'
       + kidsPlaces + '/' + adultPlaces)
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   // findAllByAdultPlacesAndKidsPlacesAndAmountAndAvailable(kidsPlaces: number,
@@ -50,7 +50,7 @@ export class RoomService {
   //   Observable<Room[]>{
   //   return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult-amount/'
   //     + kidsPlaces + '/' + adultPlaces + '/' + amount)
-  //     .catch(err => Observable.throw(err));
+  //     ;
   // }
 
   findAllByAdultPlacesAndKidsPlacesAndAmountAndAvailable(kidsPlaces: number,
@@ -60,27 +60,27 @@ export class RoomService {
     return this._httpClient.get<RoomWithPrice[]>
     (this.controller + '/find-all-available-kids-adult-amount/'
       + kidsPlaces + '/' + adultPlaces + '/' + amount)
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   findAllOnlyWithImages(): Observable<Room[]> {
     return this._httpClient.get<Room[]>(this.controller + '/find-all-only-with-images')
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   findAllAvailableOnlyWithImages(): Observable<Room[]> {
     return this._httpClient.get<Room[]>(this.controller + '/find-all-available-only-with-images')
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   findOne(id: number): Observable<Room> {
     return this._httpClient.get<Room>(this.controller + '/find-one/' + id)
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   findOneAvailable(id: number): Observable<Room> {
     return this._httpClient.get<Room>(this.controller + '/find-one-available/' + id)
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   /**
@@ -92,7 +92,7 @@ export class RoomService {
     console.log(id);
     return this._httpClient.get<RoomWithPrice>
     (this.controller + '/find-one-with-price/' + id)
-      .catch(err => Observable.throw(err));
+      ;
   }
 
   save(roomJson: Room, form: HTMLFormElement): Observable<Room> {
@@ -100,22 +100,22 @@ export class RoomService {
     f.append('roomJson', JSON.stringify(roomJson));
     return this._httpClient.post<Room>(this.controller + '/save', f, {
       headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
   }
 
   update(roomJson: Room, form?: HTMLFormElement): Observable<Room> {
-    let f = new FormData(form ? form : null);
+    let f = form ? new FormData(form) : new FormData();
     f.append('roomJson', JSON.stringify(roomJson));
     return this._httpClient.post<Room>(this.controller + '/update', f, {
       headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
   }
 
   addImage(roomId: number, form: HTMLFormElement): Observable<any> {
     return this._httpClient.post(this.controller + '/add-images/' + roomId,
       new FormData(form), {
         headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-      }).catch(err => Observable.throw(err));
+      });
   }
 
   changeAmount(roomType: string, amount: number): Observable<any> {
@@ -132,6 +132,6 @@ export class RoomService {
 
   findAllRoomWithPrice(): Observable<RoomWithPrice[]> {
     return this._httpClient.get<RoomWithPrice[]>(this.controller + '/find-room-with-price')
-      .catch(err => Observable.throw(err));
+      ;
   }
 }

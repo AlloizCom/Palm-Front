@@ -1,21 +1,21 @@
 <div class="align-items-center col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex flex-column">
-  <form action="" [formGroup]="roomForm" >
-  <h3>Тип номера:</h3>
-  <select formControlName="type">
-    <option value="STANDARD">STANDART</option>
-    <option value="SUPERIOR">SUPERIOR</option>
-    <option value="DELUXE">DELUXE</option>
-    <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
-    <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
-  </select>
-  <h3>кількість дитячих місць:</h3>
-  <input type="number"  formControlName="kidsPlaces" min="0">
-  <h3>кількість дорослих місць:</h3>
-  <input type="number"  formControlName="adultPlaces" min="1">
-  <h3>Площа номера:</h3>
-  <input type="number"  formControlName="square" min="10">
-  <h3>Кількість номерів:</h3>
-  <input type="number" formControlName="amount" min="0">
+  <form [formGroup]="roomForm" (submit)="update(formImage)">
+    <h3>Тип номера:</h3>
+    <select formControlName="type">
+      <option value="STANDARD">STANDART</option>
+      <option value="SUPERIOR">SUPERIOR</option>
+      <option value="DELUXE">DELUXE</option>
+      <option value="STANDARD_IMPROVED">STANDART IMPROVED</option>
+      <option value="SUPERIOR_IMPROVED">SUPERIOR IMPROVED</option>
+    </select>
+    <h3>кількість дитячих місць:</h3>
+    <input type="number" formControlName="kidsPlaces" min="0">
+    <h3>кількість дорослих місць:</h3>
+    <input type="number" formControlName="adultPlaces" min="1">
+    <h3>Площа номера:</h3>
+    <input type="number" formControlName="square" min="10">
+    <h3>Кількість номерів:</h3>
+    <input type="number" formControlName="amount" min="0">
     <h3>Ціна:</h3>
     <input type="number" formControlName="price" min="0">
 
@@ -28,34 +28,34 @@
         </form>
       </div>
     </div>
-  <div class="d-flex flex-column">
-    <h2>Зручності:</h2>
-    <div *ngFor="let one of room.amenities">
-      <div>{{one.amenityNames[0].name}}</div>
-      <div class="back" [style.background]="'url(' + (one.imagePath|imagePipe) + ')'"></div>
+    <div class="d-flex flex-column">
+      <h2>Зручності:</h2>
+      <div *ngFor="let one of room.amenities">
+        <div>{{one.amenityNames[0].name}}</div>
+        <div class="back" [style.background]="'url(' + (one.imagePath|imagePipe) + ')'"></div>
+      </div>
     </div>
-  </div>
-  <br>
+    <br>
 
 
-  <div class="image-wrapper d-flex  flex-wrap">
-    <div *ngFor="let one of room.images" class="image-one d-flex align-items-end justify-content-center"
-         [style.background]="'url(' + (one.path|imagePipe) + ')'">
-      <button (click)="delete(room.id, one.id, one)" class="image-button">Видалити</button>
-    </div>
+    <div class="image-wrapper d-flex  flex-wrap">
+      <div *ngFor="let one of room.images" class="image-one d-flex align-items-end justify-content-center"
+           [style.background]="'url(' + (one.path|imagePipe) + ')'">
+        <button (click)="delete(room.id, one.id, one)" class="image-button">Видалити</button>
+      </div>
       <div [ngClass]="{'kaka' :appear}" *ngFor="let one of image" class="image">
         <img [src]="one" alt="" *ngIf="(isNull(one))">
       </div>
-    <br>
-  </div>
+      <br>
+    </div>
 
 
-  <form action="" #form class="d-flex justify-content-center">
-    <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
-           name="multipartFiles">
-    <label  for="file" class="image-button"> AddImage</label>
-    <button class="image-button" (click)="update(form)" [disabled]="!roomForm.valid" >Оновити кімнату</button>
-  </form>
+    <form #formImage class="d-flex justify-content-center">
+      <input (change)="readUrl($event)" accept="image/*" multiple id="file" type="file" class="d-none"
+             name="multipartFiles">
+      <label for="file" class="image-button"> AddImage</label>
+    </form>
+    <button type="submit" class="image-button" [disabled]="!roomForm.valid">Оновити кімнату</button>
   </form>
 </div>
 

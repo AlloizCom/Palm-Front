@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../../../shared/service/room.service';
 import {Room} from '../../../../shared/models/room';
-import {RoomTariff} from '../../../../shared/enum/room-tariff';
+import {roomTariff} from '../../../../shared/enum/room-tariff';
 import {isNullOrUndefined} from 'util';
 import {Image} from '../../../../shared/models/image';
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
@@ -55,8 +55,8 @@ export class RoomsBookingComponent implements OnInit {
     private _roomsParamService: RoomParamsService, private _browserCheck: BrowserCheckService) {
     this.isBrowser = this._browserCheck.isBrowser();
     _router.params.subscribe(next => {
-      _roomService.findOneAvailableWithPrice(next['id']).subscribe(next => {
-        this.roomTariff = RoomTariff;
+      _roomService.findOneAvailable(next['id']).subscribe(next => {
+        this.roomTariff = roomTariff;
         this.room = next;
         this.images = next.images;
         this.amenities = next.amenities;

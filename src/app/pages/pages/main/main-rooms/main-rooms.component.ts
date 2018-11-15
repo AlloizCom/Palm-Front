@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RoomService} from '../../../../../shared/service/room.service';
 import {RoomWithPrice} from '../../../../../shared/models/room-with-price';
-import {RoomTariff} from '../../../../../shared/enum/room-tariff';
+import {roomTariff} from '../../../../../shared/enum/room-tariff';
 import {isNullOrUndefined} from 'util';
 
 @Component({
@@ -20,7 +20,7 @@ export class MainRoomsComponent implements OnInit {
 
   constructor(private _roomService: RoomService) {
     this._roomService.findAllRoomWithPrice().subscribe(next => {
-      this.roomTariff = RoomTariff;
+      this.roomTariff = roomTariff;
       for (let i of next) {
         if (typeof (i) != undefined && i != null) {
           this.rooms.push(i);

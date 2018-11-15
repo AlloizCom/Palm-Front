@@ -2,12 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
 import {RoomService} from '../../../../shared/service/room.service';
 import {TariffService} from '../../../../shared/service/tariff.service';
-import {RoomTariff} from '../../../../shared/enum/room-tariff';
-import {RoomWithPrice} from '../../../../shared/models/room-with-price';
+import {roomTariff} from '../../../../shared/enum/room-tariff';
 import {Router} from '@angular/router';
 import {ScrollToService} from 'ng2-scroll-to-el';
 import {RoomIdService} from '../../../../shared/service/room-id.service';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
+import {Room} from "../../../../shared/models/room";
 
 @Component({
   selector: 'app-rooms',
@@ -18,7 +18,8 @@ import {BrowserCheckService} from '../../../shared/service/browser-check.service
 export class RoomsComponent implements OnInit {
 
   roomTariff: any;
-  rooms: RoomWithPrice[] = [];
+  // rooms: RoomWithPrice[] = [];
+  rooms: Room [] = [];
   isBrowser = false;
 
   constructor(private _roomService: RoomService,
@@ -26,15 +27,11 @@ export class RoomsComponent implements OnInit {
               private _router: Router,
               private _roomIdService: RoomIdService, private _browserCheck: BrowserCheckService) {
     this.isBrowser = this._browserCheck.isBrowser();
-    this._roomService.findAllRoomWithPrice().subscribe(next => {
+    this.roomTariff = roomTariff;
+    // this._roomService.findAllRoomWithPrice().subscribe(next => {
+    this._roomService.findAllAvailable().subscribe(next => {
+      this.rooms = next;
       console.log(this.rooms);
-      this.roomTariff = RoomTariff;
-      for (let i of next) {
-        if (typeof (i) != 'undefined' && i != null) {
-          this.rooms.push(i);
-          console.log(this.rooms);
-        }
-      }
       this.sortRooms();
     }, err => {
       console.log(err);

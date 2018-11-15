@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ScheduleService} from "../../../../shared/service/schedule.service";
 import {Schedule} from "../../../../shared/models/schedule";
-import {RoomTariff} from "../../../../shared/enum/room-tariff";
+import {roomTariff} from "../../../../shared/enum/room-tariff";
 import {DatePipe, DeprecatedDatePipe} from "@angular/common";
 import {DatePipePipe} from "../../../../shared/pipe/pipe/date-pipe.pipe";
 import {Subject} from "rxjs/Subject";
@@ -47,8 +47,8 @@ export class ScheduleComponent implements OnInit {
 
   constructor(private _scheduleService: ScheduleService) {
     this.setDates(new Date());
-    this.roomTariff = RoomTariff;
-    this.roomTypes = Object.keys(RoomTariff).filter((element, index, array) => {
+    this.roomTariff = roomTariff;
+    this.roomTypes = Object.keys(roomTariff).filter((element, index, array) => {
       return (element != 'NONE');
     });
     this._scheduleService.findAllAvailableScheduleByPage(this.page, this.numberOfRows).subscribe(next => {

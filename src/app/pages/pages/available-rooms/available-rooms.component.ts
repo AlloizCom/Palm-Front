@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RoomTariff} from "../../../../shared/enum/room-tariff";
+import {roomTariff} from "../../../../shared/enum/room-tariff";
 import {RoomService} from "../../../../shared/service/room.service";
 import {RoomsParams} from "../../../../shared/models/rooms-params";
 import {RoomWithPrice} from "../../../../shared/models/room-with-price";
@@ -31,7 +31,7 @@ export class AvailableRoomsComponent implements OnInit {
       // console.log("Params for rooms");
       console.log(this.roomsParams);
       _roomService.findRoomByParams(this.roomsParams).subscribe(next => {
-        this.roomTariff = RoomTariff;
+        this.roomTariff = roomTariff;
         for (let j of next) {
           if (typeof (j) != 'undefined' && j != null) {
             console.log(j.type);

@@ -15,19 +15,19 @@ export class AmenityService {
   }
 
   findAll(): Observable<Amenity[]>{
-    return this._httpClient.get<Amenity[]>(this.controller + '/find-all').catch(err => Observable.throw(err));
+    return this._httpClient.get<Amenity[]>(this.controller + '/find-all');
   }
 
   findAllAvailable(): Observable<Amenity[]>{
-    return this._httpClient.get<Amenity[]>(this.controller + '/find-all-available').catch(err => Observable.throw(err));
+    return this._httpClient.get<Amenity[]>(this.controller + '/find-all-available');
   }
 
   findOne(id: number): Observable<Amenity>{
-    return this._httpClient.get<Amenity>(this.controller + '/find-one/' + id).catch(err => Observable.throw(err));
+    return this._httpClient.get<Amenity>(this.controller + '/find-one/' + id);
   }
 
   findOneAvailable(id: number): Observable<Amenity>{
-    return this._httpClient.get<Amenity>(this.controller + '/find-one-available/' + id).catch(err => Observable.throw(err));
+    return this._httpClient.get<Amenity>(this.controller + '/find-one-available/' + id);
   }
 
   save(amenityJson: Amenity, form: HTMLFormElement): Observable<Amenity>{
@@ -35,7 +35,7 @@ export class AmenityService {
     f.append('amenityJson',JSON.stringify(amenityJson));
     return this._httpClient.post<Amenity>(this.controller + '/save', f, {
       headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
   }
 
   update(amenityJson: Amenity, form: HTMLFormElement): Observable<Amenity>{
@@ -43,18 +43,18 @@ export class AmenityService {
     f.append('amenityJson',JSON.stringify(amenityJson));
     return this._httpClient.post<Amenity>(this.controller + '/update', f,{
       headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
   }
 
   updateImage(id: number, form:HTMLFormElement): Observable<Amenity>{
     return this._httpClient.post<Amenity>(this.controller + '/update-image/' + id,
         new FormData(form),{
         headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-        }).catch(err => Observable.throw(err));
+        });
   }
 
   delete(id: number): Observable<any>{
-    return this._httpClient.delete(this.controller + '/delete/' + id).catch(err => Observable.throw(err));
+    return this._httpClient.delete(this.controller + '/delete/' + id);
   }
 
 }
