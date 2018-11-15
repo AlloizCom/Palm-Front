@@ -125,9 +125,9 @@
     <div class="bottom" *ngIf="roomType">
       <h2 class="selected"><span>{{roomType| translate}}</span></h2>
       <p class="roomDesc">опис номеру</p>
-      <p class="room-description-title">{{room.descriptions['current-language-index' |
+      <p class="room-description-title"><pre class="article-text">{{room.descriptions['current-language-index' |
         translate]?room.descriptions['current-language-index' |
-        translate].description:''}}</p>
+      translate].description:''}}</pre>
       <p class="price-title">Ціна</p>
       <!--<p class="price">{{room.price}} &#8372;</p>-->
       <p class="price">{{room.price?room.price:999}} грн</p>

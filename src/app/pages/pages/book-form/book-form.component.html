@@ -30,11 +30,11 @@
           <textarea type="text" formControlName="message" class="inputCallback message"
                     [ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}">
         </textarea>
-          <select formControlName="orderStatus" >
-            <option *ngFor="let option of selectPayStatus; let i = index"
-                    [ngValue]="option.value"
-                    [selected]="i == 0">{{option.lable}}</option>
-          </select> - Форма оплати.
+          <!--<select formControlName="orderStatus" >-->
+            <!--<option *ngFor="let option of selectPayStatus; let i = index"-->
+                    <!--[ngValue]="option.value"-->
+                    <!--[selected]="i == 0">{{option.lable}}</option>-->
+          <!--</select> - Форма оплати.-->
 
         </div>
 
@@ -50,26 +50,26 @@
         <!--</div>-->
       </form>
 
-      <div class="topInfo d-flex flex-column">
-        <h3>Інформація про бронювання:</h3>
-        <div class="person d-flex ">
-          <img src="../../../../assets/svg/person.svg" alt="amenity">
-          <div class="humans" *ngIf="roomParams">
-            <h5>Тип: {{roomTariff[roomParams.roomType]['current-language-index' | translate]}} </h5>
-            <h5>Дорослі: {{roomParams.adults}} </h5>
-            <h5>Діти: {{roomParams.childrens}}</h5>
-          </div>
-        </div>
-        <div class="date d-flex align-items-center">
-          <div class="calendar">
-            <img src="../../../../assets/svg/calendar.svg" alt="date">
-          </div>
-          <div *ngIf="roomParams">
-            <h5>Від: {{roomParams.dateFrom|datePipe}}</h5>
-            <h5>До: {{roomParams.dateTo|datePipe}}</h5>
-          </div>
-        </div>
-      </div>
+      <!--<div class="topInfo d-flex flex-column">-->
+        <!--<h3>Інформація про бронювання:</h3>-->
+        <!--<div class="person d-flex ">-->
+          <!--<img src="../../../../assets/svg/person.svg" alt="amenity">-->
+          <!--<div class="humans" *ngIf="roomParams">-->
+            <!--<h5>Тип: {{roomTariff[roomParams.roomType]['current-language-index' | translate]}} </h5>-->
+            <!--<h5>Дорослі: {{roomParams.adults}} </h5>-->
+            <!--<h5>Діти: {{roomParams.childrens}}</h5>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="date d-flex align-items-center">-->
+          <!--<div class="calendar">-->
+            <!--<img src="../../../../assets/svg/calendar.svg" alt="date">-->
+          <!--</div>-->
+          <!--<div *ngIf="roomParams">-->
+            <!--<h5>Від: {{roomParams.dateFrom|datePipe}}</h5>-->
+            <!--<h5>До: {{roomParams.dateTo|datePipe}}</h5>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
     </div>
     <div class="clierfix"> </div>

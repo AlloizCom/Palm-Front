@@ -37,11 +37,11 @@ export const pagesRoutes: Routes = [
       }, {
         path: 'available-rooms', children:[
           {
-            path: '', component: AvailableRoomsComponent
+            path: '', component: BookFormComponent
           },
-          {
-            path: 'room/:id',component: BookFormComponent
-          }
+          // {
+          //   path: 'room/:id',component: BookFormComponent
+          // }
         ],
       }, {
         path: 'login', component: LoginComponent
