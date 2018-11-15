@@ -3,6 +3,7 @@ import {RoomService} from '../../../../../shared/service/room.service';
 import {RoomWithPrice} from '../../../../../shared/models/room-with-price';
 import {roomTariff} from '../../../../../shared/enum/room-tariff';
 import {isNullOrUndefined} from 'util';
+import {Room} from "../../../../../shared/models/room";
 
 @Component({
   selector: 'app-main-rooms',
@@ -15,11 +16,11 @@ export class MainRoomsComponent implements OnInit {
   second;
   third;
   roomTariff: any;
-  rooms: RoomWithPrice[] = [];
+  rooms: Room[] = [];
   timedscroll;
 
   constructor(private _roomService: RoomService) {
-    this._roomService.findAllRoomWithPrice().subscribe(next => {
+    this._roomService.findAllAvailable().subscribe(next => {
       this.roomTariff = roomTariff;
       for (let i of next) {
         if (typeof (i) != undefined && i != null) {
@@ -60,8 +61,8 @@ export class MainRoomsComponent implements OnInit {
         this.scroll(this.currentI--);
       return;
     }
-    let old = new RoomWithPrice();
-    let _new = new RoomWithPrice();
+    let old = new Room();
+    let _new = new Room();
     Object.assign(old, this.rooms[0]);
     Object.assign(_new, this.rooms[x]);
     this.first = old;
