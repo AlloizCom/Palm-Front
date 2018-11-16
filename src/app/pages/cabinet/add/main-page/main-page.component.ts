@@ -22,10 +22,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.createmainPageForm();
-    this.mainPageForm = new FormGroup({
-      description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
-      keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
-    });
   }
 
   readUrl(event: any) {
@@ -64,6 +60,8 @@ export class MainPageComponent implements OnInit {
       },
       error => {
         console.log(error);
+      },()=>{
+
       });
   }
 
@@ -74,7 +72,12 @@ export class MainPageComponent implements OnInit {
   private createmainPageForm() {
     this.mainPageForm = new FormGroup({
       multipartFiles: new FormControl(null, [this.validateImages]),
+      description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+      keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
     })
+    this.mainPageForm.valueChanges.subscribe(value => {
+      this.mainPage = value;
+    });
   }
 
 }

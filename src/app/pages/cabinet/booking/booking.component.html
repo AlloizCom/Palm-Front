@@ -17,17 +17,17 @@
   </thead>
   <tbody>
   <tr *ngFor="let one of booking">
-    <td>{{one.bookingDay | dateTimePipe}}</td>
-    <td>{{one.firstName}}</td>
-    <td>{{one.lastName}}</td>
-    <td>{{one.phoneNumber}}</td>
-    <td>{{one.email}}</td>
-    <td>{{one.dateIn | datePipe}}</td>
-    <td>{{one.dateOut | datePipe}}</td>
-    <td>{{one.message}}</td>
-    <td>{{one.adults}}</td>
-    <td>{{one.kids}}</td>
-    <td>{{one.orderStatus | bookStatusPipe}}</td>
+    <td>{{one.bookingDay?(one.bookingDay | dateTimePipe):'-'}}</td>
+    <td>{{one.firstName?one.firstName:'-'}}</td>
+    <td>{{one.lastName?one.lastName:'-'}}</td>
+    <td>{{one.phoneNumber?one.phoneNumber:'-'}}</td>
+    <td>{{one.email?one.email:'-'}}</td>
+    <td>{{one.dateIn?(one.dateIn | datePipe):'-'}}</td>
+    <td>{{one.dateOut?(one.dateOut | datePipe):'-'}}</td>
+    <td>{{one.message?one.message:'-'}}</td>
+    <td>{{one.adults?one.adults:'-'}}</td>
+    <td>{{one.kids?one.kids:'-'}}</td>
+    <td>{{one.orderStatus?(one.orderStatus| bookStatusPipe):'-'}}</td>
     <td><button type="button" class="btn btn-info" routerLink="{{one.id}}">Змінити</button></td>
   </tr>
   </tbody>
