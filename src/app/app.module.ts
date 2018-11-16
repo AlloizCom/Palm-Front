@@ -25,6 +25,7 @@ import {AdminChildrenGuards} from '../shared/Guard/admin-children-guards.service
 import {CarrentLanguadgeService} from '../shared/service/carrent-languadge.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BsDatepickerModule} from 'ngx-bootstrap';
+import {SeoService} from '../shared/service/seo.service';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
     BookService,
     AdminGuard,
     AdminChildrenGuards,
-    CarrentLanguadgeService
+    CarrentLanguadgeService,
+    SeoService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
