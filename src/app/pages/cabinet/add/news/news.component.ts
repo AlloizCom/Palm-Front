@@ -66,6 +66,8 @@ export class NewsComponent implements OnInit {
       this.news.newsDescriptions[3].title = value.TitleRu;
       this.news.newsDescriptions[3].headerText = value.HeaderTextareaRu;
       this.news.newsDescriptions[3].mainText = value.textRu;
+      this.news.description=value.description;
+      this.news.keywords=value.keywords;
     });
   }
 
