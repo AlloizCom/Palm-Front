@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
 import {RoomService} from '../../../../shared/service/room.service';
 import {TariffService} from '../../../../shared/service/tariff.service';
@@ -7,7 +7,8 @@ import {Router} from '@angular/router';
 import {ScrollToService} from 'ng2-scroll-to-el';
 import {RoomIdService} from '../../../../shared/service/room-id.service';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
-import {Room} from "../../../../shared/models/room";
+import {Room} from '../../../../shared/models/room';
+import {SeoService} from '../../../../shared/service/seo.service';
 
 @Component({
   selector: 'app-rooms',
@@ -15,7 +16,7 @@ import {Room} from "../../../../shared/models/room";
   styleUrls: ['./rooms.component.css'],
   providers: [RoomService, TariffService, ScrollToService]
 })
-export class RoomsComponent implements OnInit {
+export class RoomsComponent implements OnInit,OnDestroy {
 
   roomTariff: any;
   // rooms: RoomWithPrice[] = [];
@@ -25,19 +26,21 @@ export class RoomsComponent implements OnInit {
   constructor(private _roomService: RoomService,
               private _tariffService: TariffService,
               private _router: Router,
-              private _roomIdService: RoomIdService, private _browserCheck: BrowserCheckService) {
+              private _roomIdService: RoomIdService,
+              private _browserCheck: BrowserCheckService,
+              private _meta: SeoService
+  ) {
     this.isBrowser = this._browserCheck.isBrowser();
     this.roomTariff = roomTariff;
     // this._roomService.findAllRoomWithPrice().subscribe(next => {
     this._roomService.findAllAvailable().subscribe(next => {
       this.rooms = next;
+      this._meta.currentDescription = next[0].description;
       console.log(this.rooms);
       this.sortRooms();
     }, err => {
       console.log(err);
     });
-
-
   }
 
   ngOnInit() {
@@ -89,6 +92,10 @@ export class RoomsComponent implements OnInit {
     } else {
       return !isNullOrUndefined(object);
     }
+  }
+
+  ngOnDestroy(): void {
+    this._meta.setDefault();
   }
 
 }
