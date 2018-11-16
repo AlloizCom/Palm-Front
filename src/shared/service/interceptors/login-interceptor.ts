@@ -15,7 +15,6 @@ export class LoginInterceptor implements HttpInterceptor {
     if (isPlatformBrowser(this.platformId)) {
       req = req.clone({headers: this.getHeaders(req)});
     }
-    console.error(req);
     return next.handle(req).pipe(tap(x => {
     }, e => console.error(e)));
   }
