@@ -1,137 +1,41 @@
 <form action="" (submit)="addServices(form)" #form [formGroup]="servicesForm">
   <div>
     <div class="text">
-      <h3>Англійська</h3>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Назва послуги</h5>
-        </div>
-        <div class="col-lg-11">
+      <ng-container formArrayName="serviceDescriptions">
+        <ng-container *ngFor="let one of servicesForm.get('serviceDescriptions').controls;let i = index" formGroupName="{{i}}">
+          <h3>{{one.value.language|translate}}</h3>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Назва новини</h5>
+            </div>
+            <div class="col-lg-11">
         <textarea type="text"
-                  formControlName="TitleEn"
+                  formControlName="title"
                   class="w-100" style="height: 30px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Заголовок</h5>
-        </div>
-        <div class="col-lg-11">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Заголовок</h5>
+            </div>
+            <div class="col-lg-11">
         <textarea
-          formControlName="HeaderTextareaEn"
+          formControlName="headerText"
           class="w-100" style="height: 80px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Опис</h5>
-        </div>
-        <div class="col-lg-11">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <h5>Опис</h5>
+            </div>
+            <div class="col-lg-11">
         <textarea
-          formControlName="textEn"
+          formControlName="mainText"
           class="w-100" style="height: 150px"></textarea>
-        </div>
-      </div>
-
-      <h3>Українська</h3>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Назва послуги</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="TitleUk"
-          class="w-100" style="height: 30px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Заголовок</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="HeaderTextareaUk"
-          class="w-100" style="height: 80px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Опис</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="textUk"
-          class="w-100" style="height: 150px"></textarea>
-        </div>
-      </div>
-
-
-      <h3>Польська</h3>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Назва послуги</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="TitlePl"
-          class="w-100"
-          style="height: 30px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Заголовок</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="HeaderTextareaPl"
-          class="w-100" style="height: 80px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Опис</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="textPl"
-          class="w-100" style="height: 150px"></textarea>
-        </div>
-      </div>
-
-
-      <h3>Російська</h3>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Назва послуги</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="TitleRu"
-          class="w-100"
-          style="height: 30px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Заголовок</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="HeaderTextareaRu"
-          class="w-100" style="height: 80px"></textarea>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-1">
-          <h5>Опис</h5>
-        </div>
-        <div class="col-lg-11">
-        <textarea
-          formControlName="textRu"
-          class="w-100" style="height: 150px"></textarea>
-        </div>
-      </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
       <div class="row">
         <div class="col-lg-11">
           <input type="checkbox"
