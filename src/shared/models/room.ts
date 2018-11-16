@@ -15,5 +15,7 @@ export class Room {
   amenities: Amenity[] = [];
   images: Image[] = [];
   price: number;
+  keywords: string;
+  description: string;
 
 }

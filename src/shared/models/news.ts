@@ -7,5 +7,7 @@ export class News {
   dateTime: string;
   picturePath: string;
   newsDescriptions: NewsDescription[] = [];
+  keywords: string;
+  description: string;
 
 }
