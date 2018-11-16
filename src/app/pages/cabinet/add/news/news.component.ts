@@ -46,7 +46,8 @@ export class NewsComponent implements OnInit {
       HeaderTextareaRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
       textRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
       multipartFile: new FormControl(null, [this.validateImages]),
-
+      description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+      keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
     });
     this.newsForm.valueChanges.subscribe(value => {
       this.news.newsDescriptions[0].language = 'EN';

@@ -57,7 +57,7 @@ export class RoomService {
                                                          adultPlaces: number,
                                                          amount: number):
     Observable<Room[]> {
-    return this._httpClient.get<RoomWithPrice[]>
+    return this._httpClient.get<Room[]>
     (this.controller + '/find-all-available-kids-adult-amount/'
       + kidsPlaces + '/' + adultPlaces + '/' + amount)
       ;
@@ -90,7 +90,7 @@ export class RoomService {
    */
   findOneAvailableWithPrice(id: number): Observable<Room> {
     console.log(id);
-    return this._httpClient.get<RoomWithPrice>
+    return this._httpClient.get<Room>
     (this.controller + '/find-one-with-price/' + id)
       ;
   }

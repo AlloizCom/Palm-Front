@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from "util";
 import {MainPage} from "../../../../../shared/models/main-page";
 import {MainPageSevice} from "../../../../../shared/service/main-page.sevice";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-main-page',
@@ -22,6 +22,10 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.createmainPageForm();
+    this.mainPageForm = new FormGroup({
+      description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+      keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+    });
   }
 
   readUrl(event: any) {

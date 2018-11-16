@@ -53,3 +53,15 @@ label {
   font-size: 18px !important;
   padding-top: 10px;
 }
+
+.image-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-center{
+  padding-left: 35vw;
+}
+

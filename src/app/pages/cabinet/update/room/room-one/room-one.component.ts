@@ -71,6 +71,8 @@ export class RoomOneComponent implements OnInit {
       kidsPlaces: new FormControl('', [Validators.required]),
       amenities:new FormControl(''),
       descriptions: this.roomDescriptionForm,
+      description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+      keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
 
 
     });

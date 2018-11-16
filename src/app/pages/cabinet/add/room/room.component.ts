@@ -121,6 +121,8 @@ export class RoomComponent implements OnInit {
       square: new FormControl(20, [Validators.min(10), Validators.max(150), Validators.required]),
       amount: new FormControl(1, [Validators.min(1), Validators.max(100), Validators.required]),
       price: new FormControl(1, [Validators.min(1), Validators.max(10000), Validators.required]),
+      description: new FormControl('', [Validators.minLength(3), Validators.maxLength(255),Validators.required]),
+      keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
       amenities: new FormControl([]),
       type: new FormControl('NONE', [Validators.required, this.validateType]),
       multipartFiles: new FormControl(null, [this.validateImages]),

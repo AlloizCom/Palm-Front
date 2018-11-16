@@ -49,7 +49,9 @@ export class OneNewsComponent implements OnInit {
         newsDescriptions: this.descriptions,
         available: new FormControl(null),
         dateTime: new FormControl(''),
-        picturePath: new FormControl('')
+        picturePath: new FormControl(''),
+        description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+        keywords: new FormControl('', [Validators.minLength(3), Validators.maxLength(255),Validators.required]),
         // multipartFile:new FormControl('',Validators.required),
       });
       this.newsUpdateForm.valueChanges.subscribe(next => {

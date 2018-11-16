@@ -37,15 +37,41 @@
   </div>
   <br>
 
+    <h3>SEO</h3>
+    <div class="row">
+      <div class="col-lg-1">
+        <h5>Ключові слова (SEO):</h5>
+      </div>
+      <div class="col-lg-11">
+        <textarea
+          formControlName="keywords"
+          class="w-100" style="height: 80px"></textarea>
+      </div>
+    </div>
 
-  <form action="" #form class="">
+    <div class="row">
+      <div class="col-lg-1">
+        <h5>Опис (SEO):</h5>
+      </div>
+      <div class="col-lg-11">
+        <textarea
+          formControlName="description"
+          class="w-100" style="height: 80px"></textarea>
+      </div>
+    </div>
+    <br>
+
+    <div class="button-center">
+  <form  action="" #form class="">
     <div>
       <input (change)="readUrl($event)"  id="file" type="file" class="d-none"  name="multipartFile" >
     </div>
-
+    <br>
     <label class="image-button" for="file">AddImage</label>
+    <br>
     <button class="image-button" (click)="update(form)" [disabled]="!newsUpdateForm.valid" >Оновити news</button>
   </form>
+    </div>
   </form>
 </div>
 
