@@ -16,17 +16,15 @@ export class MenuComponent implements OnInit {
   currentLang: Language = 'uk';
   isIn: boolean = true;
   services: Service[] = [];
+  servicesToShow: Service[] = [];
 
   constructor(private translate: TranslateService,
               private _serviceService: ServiceService,
               private  _carrentLanguadgeService: CarrentLanguadgeService) {
     this._serviceService.findAllAvailable().subscribe(next => {
-      for (let i of next) {
-        if (typeof (i) != undefined && i != null) {
-          this.services.push(i);
-        }
-      }
       this.services = next;
+      console.log('menu : ',this.services);
+      this.servicesToShow = this.services.filter(value => value.showOnTop);
       // console.log('services ', this.services);
     }, err => {
       console.log(err);

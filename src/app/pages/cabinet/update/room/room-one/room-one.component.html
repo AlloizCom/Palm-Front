@@ -36,7 +36,7 @@
       <h2>Зручності:</h2>
       <div *ngFor="let one of room.amenities">
         <div>{{one.amenityNames[0].name}}</div>
-        <div class="back" [style.background]="'url(' + (one.imagePath|imagePipe) + ')'"></div>
+        <div class="back" [style.backgroundImage]="'url(' + (one.imagePath|imagePipe) + ')'"></div>
       </div>
     </div>
     <br>

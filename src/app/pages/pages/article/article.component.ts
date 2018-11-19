@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NewsService} from '../../../../shared/service/news.service';
 import {News} from '../../../../shared/models/news';
 import {ActivatedRoute} from '@angular/router';
 import {ImagePipePipe} from '../../../../shared/pipe/pipe/image.pipe';
-import {isNullOrUndefined} from "util";
+import {isNullOrUndefined} from 'util';
 import {LangSort} from '../../../../shared/models/utils/lang-sort';
-import {TranslateService} from '@ngx-translate/core';
+import {SeoService} from '../../../../shared/service/seo.service';
 
 @Component({
   selector: 'app-article',
@@ -13,13 +13,18 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./article.component.css'],
   providers: [ImagePipePipe]
 })
-export class ArticleComponent implements OnInit {
+export class ArticleComponent implements OnInit, OnDestroy {
 
   news: News;
   id: number;
   img: string = '';
 
-  constructor(private _newsService: NewsService, private _router: ActivatedRoute, private _imagePipe: ImagePipePipe, private _translate: TranslateService) {
+  constructor(
+    private _newsService: NewsService,
+    private _router: ActivatedRoute,
+    private _imagePipe: ImagePipePipe,
+    private _meta: SeoService
+  ) {
     // this.lang = this._translate.currentLang;
     // this._translate.onLangChange.subscribe(next=>{
     //   this.lang = next.lang;
@@ -28,8 +33,10 @@ export class ArticleComponent implements OnInit {
       _newsService.findOneAvailable(next['id']).subscribe(next => {
         this.news = next;
         this.news.newsDescriptions = LangSort.sort(this.news.newsDescriptions);
-        this.id = next['id'];
+        this.id = next.id;
         this.img = this._imagePipe.transform(next.picturePath);
+        this._meta.currentDescription = next.description;
+        this._meta.currentKeywords = next.keywords;
       }, error => {
         console.log(error);
       });
@@ -45,5 +52,9 @@ export class ArticleComponent implements OnInit {
     } else {
       return !isNullOrUndefined(object);
     }
+  }
+
+  ngOnDestroy(): void {
+    this._meta.setDefault();
   }
 }

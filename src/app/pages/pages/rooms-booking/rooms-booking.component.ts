@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {RoomService} from '../../../../shared/service/room.service';
 import {Room} from '../../../../shared/models/room';
@@ -11,6 +11,7 @@ import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Amenity} from '../../../../shared/models/amenity';
 import {BookService} from '../../../../shared/service/book.service';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
+import {SeoService} from '../../../../shared/service/seo.service';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -18,7 +19,7 @@ import {BrowserCheckService} from '../../../shared/service/browser-check.service
   styleUrls: ['./rooms-booking.component.css'],
   providers: [RoomService, NgbCarouselConfig, BookService]
 })
-export class RoomsBookingComponent implements OnInit {
+export class RoomsBookingComponent implements OnInit, OnDestroy {
 
   id: number;
   img: string = '';
@@ -52,7 +53,10 @@ export class RoomsBookingComponent implements OnInit {
     private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
-    private _roomsParamService: RoomParamsService, private _browserCheck: BrowserCheckService) {
+    private _roomsParamService: RoomParamsService,
+    private _browserCheck: BrowserCheckService,
+    private _meta: SeoService
+  ) {
     this.isBrowser = this._browserCheck.isBrowser();
     _router.params.subscribe(next => {
       _roomService.findOneAvailable(next['id']).subscribe(next => {
@@ -61,8 +65,10 @@ export class RoomsBookingComponent implements OnInit {
         this.images = next.images;
         this.amenities = next.amenities;
         this.roomType = next.type;
-        this.id = next['id'];
-        // console.log(next);
+        this.id = next.id;
+        this._meta.currentDescription = next.description;
+        this._meta.currentKeywords = next.keywords;
+// console.log(next);
       });
     }, err => {
       console.log(err);
@@ -204,5 +210,9 @@ export class RoomsBookingComponent implements OnInit {
         this.scroll(false);
       }, 4000);
     }
+  }
+
+  ngOnDestroy(): void {
+    this._meta.setDefault();
   }
 }

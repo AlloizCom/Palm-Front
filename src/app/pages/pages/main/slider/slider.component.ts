@@ -17,9 +17,8 @@ export class SliderComponent implements OnInit {
   services: Service[] = [];
 
   constructor(private _menuComponent: MenuComponent) {
-
     this.services = _menuComponent.services;
-    // console.log(this.services);
+    console.log(this.services);
     this.middleIndex = Math.round(this.services.length / 8);
     this.middleIndex2 = this.middleIndex + 1;
     this.middleIndex3 = this.middleIndex + 2;
@@ -66,6 +65,7 @@ export class SliderComponent implements OnInit {
 
 
   ngOnInit() {
+    setTimeout(() => this.services = this._menuComponent.services, 1000);
   }
 
 

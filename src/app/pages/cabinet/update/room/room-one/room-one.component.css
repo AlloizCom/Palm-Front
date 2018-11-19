@@ -1,6 +1,7 @@
 .back{
   width: 5vw;
   height: 5vh;
+  background-repeat: no-repeat;
 }
 
 form{

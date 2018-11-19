@@ -16,7 +16,7 @@ import {SeoService} from '../../../../shared/service/seo.service';
   styleUrls: ['./rooms.component.css'],
   providers: [RoomService, TariffService, ScrollToService]
 })
-export class RoomsComponent implements OnInit,OnDestroy {
+export class RoomsComponent implements OnInit{
 
   roomTariff: any;
   // rooms: RoomWithPrice[] = [];
@@ -28,14 +28,12 @@ export class RoomsComponent implements OnInit,OnDestroy {
               private _router: Router,
               private _roomIdService: RoomIdService,
               private _browserCheck: BrowserCheckService,
-              private _meta: SeoService
   ) {
     this.isBrowser = this._browserCheck.isBrowser();
     this.roomTariff = roomTariff;
     // this._roomService.findAllRoomWithPrice().subscribe(next => {
     this._roomService.findAllAvailable().subscribe(next => {
       this.rooms = next;
-      this._meta.currentDescription = next[0].description;
       console.log(this.rooms);
       this.sortRooms();
     }, err => {
@@ -92,10 +90,6 @@ export class RoomsComponent implements OnInit,OnDestroy {
     } else {
       return !isNullOrUndefined(object);
     }
-  }
-
-  ngOnDestroy(): void {
-    this._meta.setDefault();
   }
 
 }
