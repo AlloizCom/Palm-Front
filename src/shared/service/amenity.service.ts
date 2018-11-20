@@ -2,8 +2,6 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
 import {Amenity} from "../models/amenity";
 import {Injectable} from "@angular/core";
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AmenityService {

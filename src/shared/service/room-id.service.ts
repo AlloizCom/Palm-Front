@@ -1,17 +1,16 @@
-import {Injectable} from "@angular/core";
-import {Subject} from "rxjs/Subject";
-import {RoomsParams} from "../models/rooms-params";
+import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class RoomIdService {
 
-  constructor(){}
-
+  id: string;
   private idSource = new Subject<string>();
 
-  id: string;
+  constructor() {
+  }
 
-  setId(id: string){
+  setId(id: string) {
     this.id = id;
   }
 

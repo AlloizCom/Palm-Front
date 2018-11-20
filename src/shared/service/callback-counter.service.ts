@@ -13,18 +13,15 @@ export class CallbackCounterService {
   }
 
   getCount(): Observable<CallbackCounter>{
-    return this._httpClient.get<CallbackCounter>('/notify-callback')
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<CallbackCounter>('/notify-callback');
   }
 
   resetCounter(): Observable<CallbackCounter>{
-    return this._httpClient.get<CallbackCounter>('/reset-callback')
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<CallbackCounter>('/reset-callback');
   }
 
   incrementCounter(): Observable<CallbackCounter>{
-    return this._httpClient.get<CallbackCounter>( '/reset-callback')
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<CallbackCounter>( '/reset-callback');
   }
 
 

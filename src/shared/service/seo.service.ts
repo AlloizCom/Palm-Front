@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 
 const description = 'description';
-const defaultDescription = 'Art-Hotel Palma';
+const defaultDescription = '"Пальма" маленький арт-готель з вишуканим та оригінальним дизайном за доступними цінами. Затишно, недорого, система знижок та спецпропозицій.';
 const keywords = 'keywords';
-const defaultKeywords = 'Art-Hotel, Art-Hotel Palma, Palma';
+const defaultKeywords = 'Пальма готель, готелі Львова, отели,екскурсії, спеціальні пропозиції, гостиницы, Hotel, Hotels, Різдво, Рождество, Новий рік Львів, Новорічна вечеря, Новий рік у Львові, New Year, Новый год, palmahotel,Palma ,accommodation, prices, ціни, цены, ceny,tourism, journey,travel,Ukraine,hotels,Lviv,L\'viv,Lvov,Львiв,Львов,Lwow,Україна,Украина,готель,туризм,подорож,путешествие,turystyka';
 const content = 'content';
 
 @Injectable()

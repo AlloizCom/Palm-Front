@@ -1,29 +1,25 @@
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
-import {Room} from "../models/room";
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/catch';
-import {RoomWithPrice} from "../models/room-with-price";
-import {RoomsParams} from "../models/rooms-params";
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {Room} from '../models/room';
+import {RoomWithPrice} from '../models/room-with-price';
+import {RoomsParams} from '../models/rooms-params';
 
 @Injectable()
 export class RoomService {
 
-  controller = "/room";
+  controller = '/room';
 
   constructor(private _httpClient: HttpClient) {
 
   }
 
   findAll(): Observable<Room[]> {
-    return this._httpClient.get<Room[]>(this.controller + '/find-all')
-      ;
+    return this._httpClient.get<Room[]>(this.controller + '/find-all');
   }
 
   findAllAvailable(): Observable<Room[]> {
-    return this._httpClient.get<Room[]>(this.controller + '/find-all-available')
-      ;
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-available');
   }
 
   findRoomByParams(roomParams: RoomsParams): Observable<RoomWithPrice[]> {
@@ -40,8 +36,7 @@ export class RoomService {
                                                 adultPlaces: number):
     Observable<Room[]> {
     return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult/'
-      + kidsPlaces + '/' + adultPlaces)
-      ;
+      + kidsPlaces + '/' + adultPlaces);
   }
 
   // findAllByAdultPlacesAndKidsPlacesAndAmountAndAvailable(kidsPlaces: number,
@@ -50,7 +45,7 @@ export class RoomService {
   //   Observable<Room[]>{
   //   return this._httpClient.get<Room[]>(this.controller + '/find-all-available-kids-adult-amount/'
   //     + kidsPlaces + '/' + adultPlaces + '/' + amount)
-  //     ;
+  //    ;
   // }
 
   findAllByAdultPlacesAndKidsPlacesAndAmountAndAvailable(kidsPlaces: number,
@@ -59,28 +54,23 @@ export class RoomService {
     Observable<Room[]> {
     return this._httpClient.get<Room[]>
     (this.controller + '/find-all-available-kids-adult-amount/'
-      + kidsPlaces + '/' + adultPlaces + '/' + amount)
-      ;
+      + kidsPlaces + '/' + adultPlaces + '/' + amount);
   }
 
   findAllOnlyWithImages(): Observable<Room[]> {
-    return this._httpClient.get<Room[]>(this.controller + '/find-all-only-with-images')
-      ;
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-only-with-images');
   }
 
   findAllAvailableOnlyWithImages(): Observable<Room[]> {
-    return this._httpClient.get<Room[]>(this.controller + '/find-all-available-only-with-images')
-      ;
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-available-only-with-images');
   }
 
   findOne(id: number): Observable<Room> {
-    return this._httpClient.get<Room>(this.controller + '/find-one/' + id)
-      ;
+    return this._httpClient.get<Room>(this.controller + '/find-one/' + id);
   }
 
   findOneAvailable(id: number): Observable<Room> {
-    return this._httpClient.get<Room>(this.controller + '/find-one-available/' + id)
-      ;
+    return this._httpClient.get<Room>(this.controller + '/find-one-available/' + id);
   }
 
   /**
@@ -91,8 +81,7 @@ export class RoomService {
   findOneAvailableWithPrice(id: number): Observable<Room> {
     console.log(id);
     return this._httpClient.get<Room>
-    (this.controller + '/find-one-with-price/' + id)
-      ;
+    (this.controller + '/find-one-with-price/' + id);
   }
 
   save(roomJson: Room, form: HTMLFormElement): Observable<Room> {
@@ -131,7 +120,6 @@ export class RoomService {
   }
 
   findAllRoomWithPrice(): Observable<RoomWithPrice[]> {
-    return this._httpClient.get<RoomWithPrice[]>(this.controller + '/find-room-with-price')
-      ;
+    return this._httpClient.get<RoomWithPrice[]>(this.controller + '/find-room-with-price');
   }
 }

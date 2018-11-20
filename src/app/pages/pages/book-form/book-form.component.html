@@ -1,54 +1,59 @@
 <div class="content">
   <div class="wraper">
-    <p class="fill-form">Заповніть форму, щоб забронювати кімнату</p>
-    <div class="form-container d-flex flex-row justify-content-around">
+    <p class="fill-form">
+      Вибачте, проте на даний момент бронювання онлайн не доступне.
+      Для здійснення бронювання зверніться будь ласка за телефоном:
+    </p>
+    <p class="fill-form">+38 067 19 444 00</p>
+    <p class="fill-form">+38 093 43 444 00</p>
+    <!--<div class="form-container d-flex flex-row justify-content-around">-->
 
-      <form [formGroup]="bookForm" (submit)="sendBook()">
-        <div class="inputBlock">
-          <p>Ім'я <sup>&#65290;</sup></p>
-          <input type="text" formControlName="firstName" class="inputCallback"
-                 [ngClass]="{'invallid':bookForm.get('firstName').invalid && bookForm.get('firstName').dirty}">
-        </div>
-        <div class="inputBlock">
-          <p>Прізвище <sup>&#65290;</sup></p>
-          <input type="text" formControlName="lastName" class="inputCallback"
-                 [ngClass]="{'invallid':bookForm.get('lastName').invalid && bookForm.get('lastName').dirty}">
-        </div>
-        <div class="inputBlock">
-          <p>Телефон <sup>&#65290;</sup></p>
-          <input type="text" formControlName="phoneNumber" class="inputCallback" placeholder="+00 000 000 00 00"
-                 [ngClass]="{'invallid':bookForm.get('phoneNumber').invalid && bookForm.get('phoneNumber').dirty}">
-        </div>
-        <div class="inputBlock">
-          <p>E-mail <sup>&#65290;</sup></p>
-          <input type="text" formControlName="email" class="inputCallback"
-                 [ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">
-        </div>
-
-        <div class="inputBlock">
-          <p>Message</p>
-          <textarea type="text" formControlName="message" class="inputCallback message"
-                    [ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}">
-        </textarea>
-          <!--<select formControlName="orderStatus" >-->
-            <!--<option *ngFor="let option of selectPayStatus; let i = index"-->
-                    <!--[ngValue]="option.value"-->
-                    <!--[selected]="i == 0">{{option.lable}}</option>-->
-          <!--</select> - Форма оплати.-->
-
-        </div>
-
-
-        <button [disabled]="bookForm.invalid" type="submit" (click)="pay()">Забронювати</button>
-        <p class="star"><sup>&#65290;</sup>- Обов'язкові поля</p>
-
-
-        <!--<ng-content #dataContent>-->
-        <!---->
-        <!--</ng-content>-->
-        <!--<div [innerHtml]="liqPayFormHtml|safeHtml">-->
+      <!--<form [formGroup]="bookForm" (submit)="sendBook()">-->
+        <!--<div class="inputBlock">-->
+          <!--<p>Ім'я <sup>&#65290;</sup></p>-->
+          <!--<input type="text" formControlName="firstName" class="inputCallback"-->
+                 <!--[ngClass]="{'invallid':bookForm.get('firstName').invalid && bookForm.get('firstName').dirty}">-->
         <!--</div>-->
-      </form>
+        <!--<div class="inputBlock">-->
+          <!--<p>Прізвище <sup>&#65290;</sup></p>-->
+          <!--<input type="text" formControlName="lastName" class="inputCallback"-->
+                 <!--[ngClass]="{'invallid':bookForm.get('lastName').invalid && bookForm.get('lastName').dirty}">-->
+        <!--</div>-->
+        <!--<div class="inputBlock">-->
+          <!--<p>Телефон <sup>&#65290;</sup></p>-->
+          <!--<input type="text" formControlName="phoneNumber" class="inputCallback" placeholder="+00 000 000 00 00"-->
+                 <!--[ngClass]="{'invallid':bookForm.get('phoneNumber').invalid && bookForm.get('phoneNumber').dirty}">-->
+        <!--</div>-->
+        <!--<div class="inputBlock">-->
+          <!--<p>E-mail <sup>&#65290;</sup></p>-->
+          <!--<input type="text" formControlName="email" class="inputCallback"-->
+                 <!--[ngClass]="{'invallid':bookForm.get('email').invalid && bookForm.get('email').dirty}">-->
+        <!--</div>-->
+
+        <!--<div class="inputBlock">-->
+          <!--<p>Message</p>-->
+          <!--<textarea type="text" formControlName="message" class="inputCallback message"-->
+                    <!--[ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}">-->
+        <!--</textarea>-->
+          <!--&lt;!&ndash;<select formControlName="orderStatus" >&ndash;&gt;-->
+            <!--&lt;!&ndash;<option *ngFor="let option of selectPayStatus; let i = index"&ndash;&gt;-->
+                    <!--&lt;!&ndash;[ngValue]="option.value"&ndash;&gt;-->
+                    <!--&lt;!&ndash;[selected]="i == 0">{{option.lable}}</option>&ndash;&gt;-->
+          <!--&lt;!&ndash;</select> - Форма оплати.&ndash;&gt;-->
+
+        <!--</div>-->
+
+
+        <!--<button [disabled]="bookForm.invalid" type="submit" (click)="pay()">Забронювати</button>-->
+        <!--<p class="star"><sup>&#65290;</sup>- Обов'язкові поля</p>-->
+
+
+        <!--&lt;!&ndash;<ng-content #dataContent>&ndash;&gt;-->
+        <!--&lt;!&ndash;&ndash;&gt;-->
+        <!--&lt;!&ndash;</ng-content>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div [innerHtml]="liqPayFormHtml|safeHtml">&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--</form>-->
 
       <!--<div class="topInfo d-flex flex-column">-->
         <!--<h3>Інформація про бронювання:</h3>-->
@@ -71,8 +76,8 @@
         <!--</div>-->
       <!--</div>-->
 
-    </div>
-    <div class="clierfix"> </div>
+    <!--</div>-->
+    <!--<div class="clierfix"> </div>-->
   </div>
 
 </div>

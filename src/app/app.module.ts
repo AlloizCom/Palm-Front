@@ -40,7 +40,7 @@ import {SeoService} from '../shared/service/seo.service';
     FormsModule,
     GlobalImportsModule,
     PipeModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: false}),
     DateValueAccessorModule
 
   ],
@@ -63,16 +63,6 @@ import {SeoService} from '../shared/service/seo.service';
       useClass: LoginInterceptor,
       multi: true
     },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: MultiPartInterceptor,
-    //   multi: true
-    // },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: TockenActiveInterceptor,
-    //   multi: true
-    // },
     UserDetailsService,
     LoginService,
     BookService,

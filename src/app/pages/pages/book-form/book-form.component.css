@@ -17,7 +17,7 @@
 
 .fill-form{
   font-size: 25px;
-  margin: 40px 0;
+  margin: 40px 0 0;
   text-align: center;
 }
 sup{
@@ -29,7 +29,7 @@ sup{
 }
 
 form {
-  margin-left: 10%;
+  /*margin-left: 10%;*/
   width: 30%;
 }
 

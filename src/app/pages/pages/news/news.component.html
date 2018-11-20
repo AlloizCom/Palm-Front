@@ -5,7 +5,7 @@
       <div class="d-flex justify-content-center">
         <button routerLink="{{one.id}}" class="button">Переглянути</button>
       </div>
-      <h2>{{(one.newsDescriptions['current-language-index'|translate]).title}}</h2><!-- comment-->
+      <h2>{{(one.newsDescriptions['current-language-index'|translate])?.title}}</h2><!-- comment-->
       <h3>{{one.dateTime|datePipe}}</h3>  <!-- comment-->
     </div>
   </div>
@@ -17,7 +17,7 @@
       <div *ngIf="isNull(news3)" class="row">
         <div class="item" *ngFor="let one of news3" class="content col-lg-4 col-xl-4 col-md-6">
           <div class="back1" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"></div>
-          <h3 routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
+          <h3 routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate]?.title}}</h3>
           <p>{{one.newsDescriptions['current-language-index' | translate].headerText}}</p>
           <div class="bott d-flex justify-content-between">
             <h5>{{one.dateTime |datePipe}}</h5>

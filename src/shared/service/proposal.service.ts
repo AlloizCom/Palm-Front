@@ -13,23 +13,19 @@ export class ProposalService {
   }
 
   findAll(): Observable<Proposal[]>{
-    return this._httpClient.get<Proposal[]>(this.controller + '/find-all')
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<Proposal[]>(this.controller + '/find-all');
   }
 
   findAllAvailable(): Observable<Proposal[]>{
-    return this._httpClient.get<Proposal[]>(this.controller + '/find-all-available')
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<Proposal[]>(this.controller + '/find-all-available');
   }
 
   findOne(id: number): Observable<Proposal>{
-    return this._httpClient.get<Proposal>(this.controller + '/find-one/' + id)
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<Proposal>(this.controller + '/find-one/' + id);
   }
 
   findOneAvailable(id: number): Observable<Proposal>{
-    return this._httpClient.get<Proposal>(this.controller + '/find-one-available/' + id)
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<Proposal>(this.controller + '/find-one-available/' + id);
   }
 
  save(proposalJson: Proposal, form: HTMLFormElement): Observable<Proposal>{
@@ -38,7 +34,7 @@ export class ProposalService {
     f.append('proposalJson', JSON.stringify(proposalJson));
     return this._httpClient.post<Proposal>(this.controller + '/save', f,{
       headers: new HttpHeaders().append('enctype','multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
  }
 
   update(proposalJson: Proposal, form: HTMLFormElement): Observable<Proposal>{
@@ -46,12 +42,11 @@ export class ProposalService {
     f.append('proposalJson', JSON.stringify(proposalJson));
     return this._httpClient.post<Proposal>(this.controller + '/update', f,{
       headers: new HttpHeaders().append('enctype','multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
   }
 
   delete(id: number): Observable<any>{
-    return this._httpClient.delete(this.controller + '/delete/' + id)
-      .catch(err => Observable.throw(err));
+    return this._httpClient.delete(this.controller + '/delete/' + id);
   }
 
 }

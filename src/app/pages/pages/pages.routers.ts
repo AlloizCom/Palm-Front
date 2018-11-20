@@ -8,7 +8,6 @@ import {PagesComponent} from './pages.component';
 import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
 import {ProposalComponent} from './proposal/proposal.component';
-import {AvailableRoomsComponent} from './available-rooms/available-rooms.component';
 import {LoginComponent} from './login/login.component';
 import {BookFormComponent} from './book-form/book-form.component';
 
@@ -35,7 +34,7 @@ export const pagesRoutes: Routes = [
       }, {
         path: 'proposal/:id', component: ProposalComponent
       }, {
-        path: 'available-rooms', children:[
+        path: 'available-rooms', children: [
           {
             path: '', component: BookFormComponent
           },
@@ -45,13 +44,13 @@ export const pagesRoutes: Routes = [
         ],
       }, {
         path: 'login', component: LoginComponent
-      },{
-        path: 'rooms-booking/:id/bookForm', children:[
+      }, {
+        path: 'rooms-booking/:id/bookForm', children: [
           {
-            path: '', component:BookFormComponent
+            path: '', component: BookFormComponent
           },
           {
-           path: '', redirectTo: '/', pathMatch: 'full'
+            path: '', redirectTo: '/', pathMatch: 'full'
           }
         ]
       }

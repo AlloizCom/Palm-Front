@@ -4,6 +4,8 @@ import {RoomWithPrice} from '../../../../../shared/models/room-with-price';
 import {roomTariff} from '../../../../../shared/enum/room-tariff';
 import {isNullOrUndefined} from 'util';
 import {Room} from "../../../../../shared/models/room";
+import {MenuComponent} from '../../menu/menu.component';
+import {BrowserCheckService} from '../../../../shared/service/browser-check.service';
 
 @Component({
   selector: 'app-main-rooms',
@@ -19,7 +21,7 @@ export class MainRoomsComponent implements OnInit {
   rooms: Room[] = [];
   timedscroll;
 
-  constructor(private _roomService: RoomService) {
+  constructor(private _roomService: RoomService,private _browserCheck:BrowserCheckService) {
     this._roomService.findAllAvailable().subscribe(next => {
       this.roomTariff = roomTariff;
       for (let i of next) {
@@ -27,6 +29,7 @@ export class MainRoomsComponent implements OnInit {
           this.rooms.push(i);
         }
       }
+      if(this._browserCheck.isBrowser())
       this.timedscroll = setTimeout(() => {
         this.scroll(this.currentI++);
       }, 3000);

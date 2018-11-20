@@ -6,6 +6,7 @@ import {CallbackCounterService} from '../../../shared/service/callback-counter.s
 import {Router} from '@angular/router';
 import {UserDetailsService} from '../../../shared/service/user-details.service';
 import {TranslateService} from '@ngx-translate/core';
+import {BrowserCheckService} from '../../shared/service/browser-check.service';
 
 @Component({
   selector: 'app-cabinet',
@@ -21,13 +22,17 @@ export class CabinetComponent implements OnInit {
   private serverUrl = 'http://alloiz.hopto.org:8080/socket';
   private stompClient;
 
-  constructor(private _translate: TranslateService,
-              private _notificationService: NotificationService,
-              private _callBackCounterService: CallbackCounterService,
-              private _router: Router,
-              private _userDetailsService: UserDetailsService) {
+  constructor(
+    private _translate: TranslateService,
+    private _notificationService: NotificationService,
+    private _callBackCounterService: CallbackCounterService,
+    private _router: Router,
+    private _userDetailsService: UserDetailsService,
+    private _browserCheck: BrowserCheckService
+  ) {
     this._translate.use('uk');
-    this.initializeWebSocketConnection();
+    if (_browserCheck.isBrowser())
+      this.initializeWebSocketConnection();
     this._notificationService.getCount().subscribe(next => {
       this.bookingNotifications = next.numberOfBooking;
     });
@@ -55,15 +60,15 @@ export class CabinetComponent implements OnInit {
           console.log(message.body);
         }
       });
-      that.stompClient.subscribe('/callback/not', (message) => {
-        console.log(message.body);
-        if (message.body) {
-          console.log('callback - ', JSON.parse(message.body).numberOfCallbacks);
-
-          this.callbackNotifications = JSON.parse(message.body).numberOfCallbacks;
-          console.log(message.body);
-        }
-      });
+      // that.stompClient.subscribe('/callback/not', (message) => {
+      //   console.log(message.body);
+      //   if (message.body) {
+      //     console.log('callback - ', JSON.parse(message.body).numberOfCallbacks);
+      //
+      //     this.callbackNotifications = JSON.parse(message.body).numberOfCallbacks;
+      //     console.log(message.body);
+      //   }
+      // });
     });
 
   }

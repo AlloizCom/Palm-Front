@@ -39,6 +39,10 @@ export class NewsComponent implements OnInit {
     });
   }
 
+  get descriptionForms(){
+    return (<FormArray>this.newsForm.get('newsDescriptions')).controls;
+  }
+
   readUrl(event: any) {
     this.appear = false;
     if (event.target.files && event.target.files[0]) {

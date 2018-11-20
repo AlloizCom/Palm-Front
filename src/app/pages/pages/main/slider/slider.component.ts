@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuComponent} from '../../menu/menu.component';
 import {Service} from '../../../../../shared/models/service';
+import {BrowserCheckService} from '../../../../shared/service/browser-check.service';
 
 @Component({
   selector: 'app-slider',
@@ -16,7 +17,7 @@ export class SliderComponent implements OnInit {
 
   services: Service[] = [];
 
-  constructor(private _menuComponent: MenuComponent) {
+  constructor(private _menuComponent: MenuComponent, private _browserCheck: BrowserCheckService) {
     this.services = _menuComponent.services;
     console.log(this.services);
     this.middleIndex = Math.round(this.services.length / 8);
@@ -65,7 +66,8 @@ export class SliderComponent implements OnInit {
 
 
   ngOnInit() {
-    setTimeout(() => this.services = this._menuComponent.services, 1000);
+    if (this._browserCheck.isBrowser())
+      setTimeout(() => this.services = this._menuComponent.services, 1000);
   }
 
 

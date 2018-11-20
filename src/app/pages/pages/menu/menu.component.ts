@@ -23,7 +23,7 @@ export class MenuComponent implements OnInit {
               private  _carrentLanguadgeService: CarrentLanguadgeService) {
     this._serviceService.findAllAvailable().subscribe(next => {
       this.services = next;
-      console.log('menu : ',this.services);
+      // console.log('menu : ',this.services);
       this.servicesToShow = this.services.filter(value => value.showOnTop);
       // console.log('services ', this.services);
     }, err => {

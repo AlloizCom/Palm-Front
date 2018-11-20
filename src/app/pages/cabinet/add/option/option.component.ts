@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ServiceService} from '../../../../../shared/service/service.service';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 const languages = ['EN', 'PL', 'UK', 'RU'];
 
@@ -31,6 +31,10 @@ export class OptionComponent implements OnInit {
   });
   appear = false;
   image: string;
+
+  get descriptionForms(){
+    return (<FormArray>this.servicesForm.get('serviceDescriptions')).controls;
+  }
 
   constructor(
     private _serviceService: ServiceService,

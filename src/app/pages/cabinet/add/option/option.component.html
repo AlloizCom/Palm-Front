@@ -2,7 +2,7 @@
   <div>
     <div class="text">
       <ng-container formArrayName="serviceDescriptions">
-        <ng-container *ngFor="let one of servicesForm.get('serviceDescriptions').controls;let i = index" formGroupName="{{i}}">
+        <ng-container *ngFor="let one of descriptionForms;let i = index" formGroupName="{{i}}">
           <h3>{{one.value.language|translate}}</h3>
           <div class="row">
             <div class="col-lg-1">
