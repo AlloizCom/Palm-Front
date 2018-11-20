@@ -34,7 +34,7 @@ export class NewsComponent implements OnInit {
     });
     this._newsService.findAllAvailableNewsByPage(
       this.page, this.nuberOfNews).subscribe(next => {
-      next.news.reverse().forEach(data => this.news3.push(data));
+      next.news.forEach(data => this.news3.push(data));
       for (let i = 0; i < this.news3.length; i++) {
         this.news3[i].newsDescriptions = LangSort.sort(this.news3[i].newsDescriptions);
       }

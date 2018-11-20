@@ -5,7 +5,7 @@
         <div class="rooms">
           <div *ngFor="let one of rooms; let i = index" class="room d-flex justify-content-between" id="some{{one.id}}">
             <div class="photo d-flex">
-              <div (click)=goToRoom(one.id) class="kartinka"
+              <div [routerLink]="['rooms-booking',one.id]" class="kartinka"
                    [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'"></div>
               <div class="block d-flex justify-content-center align-items-center">{{one.price?one.price:999}} ГРН</div>
             </div>
@@ -18,7 +18,7 @@
                      [style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">
                   <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{one.square}} кв.м</h5></div>
               </div>
-              <button (click)=goToRoom(one.id)>Переглянути</button>
+              <span class="span-button"><a [routerLink]="['rooms-booking',one.id]">Переглянути</a></span>
             </div>
           </div>
         </div>
