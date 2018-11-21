@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 
+
 const description = 'description';
 const defaultDescription = '"Пальма" маленький арт-готель з вишуканим та оригінальним дизайном за доступними цінами. Затишно, недорого, система знижок та спецпропозицій.';
 const keywords = 'keywords';

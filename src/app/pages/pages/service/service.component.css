@@ -132,4 +132,10 @@
   /*display: flex;*/
   /*word-break: break-word;*/
   white-space: pre-wrap;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 31px;
+  font-size: 18px;
+  text-align: justify;
+  color: #5a5a5a;
 }
