@@ -17,7 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserCheckService} from '../../../app/shared/service/browser-check.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, `${url}/resources/`, '.json');
+  return new TranslateHttpLoader(http, `${url}/resources/assets/i18n/`, '.json');
 }
 
 @NgModule({
