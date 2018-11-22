@@ -1,8 +1,8 @@
 <app-top-slider></app-top-slider>
 <div class="wrapper">
-  <div class="search" >
+  <div class="search">
     <div class="searchItem searchItem11" (click)="dp.toggle()">
-      <p>заїзд</p>
+      <p>{{'data-picker.in'|translate}}</p>
       <div class="numbers d-flex w-100" style="cursor: pointer">
         <div class="day">{{model1?(model1.day): model1| date: 'dd'}}</div>
         <div class="month">{{model1.month| mounth}}</div>
@@ -11,7 +11,7 @@
     </div>
     <div class="verticaleLine"></div>
     <div class="searchItem searchItem11" (click)="dp.toggle()">
-      <p>виїзд</p>
+      <p>{{'data-picker.out'|translate}}</p>
       <div class="numbers d-flex w-100" style="cursor: pointer">
         <div class="day">{{model2?(model2.day): model2| date: 'dd'}}</div>
         <div class="month">{{model2.month| mounth}}</div>
@@ -20,7 +20,7 @@
     </div>
     <div class="verticaleLine"></div>
     <div class="searchItem">
-      <p>номери</p>
+      <p>{{'data-picker.rooms'|translate}}</p>
       <div class="d-flex">
         <div class="w-15 h-15 p-1" (click)="roomsNumberFunc(false)">
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
@@ -41,7 +41,7 @@
     </div>
     <div class="verticaleLine"></div>
     <div class="searchItem">
-      <p>дорослі</p>
+      <p>{{'data-picker.adults'|translate}}</p>
       <div class="d-flex">
         <div class="w-15 h-15 p-1" (click)="adultsNumberFunc(false)">
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
@@ -62,7 +62,7 @@
     </div>
     <div class="verticaleLine"></div>
     <div class="searchItem">
-      <p>діти</p>
+      <p>{{'data-picker.children'|translate}}</p>
       <div class="d-flex">
         <div class="w-15 h-15 p-1" (click)="childrenNumberFunc(false)">
           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
@@ -82,7 +82,7 @@
       </div>
     </div>
     <!--<div [routerLink]="['rooms']" (click)="findRoomByParams()" class="searchIcone">-->
-    <div  (click)="findRoomByParams()" class="searchIcone">
+    <div (click)="findRoomByParams()" class="searchIcone">
       <svg width="20" height="21" viewBox="0 0 20 21" fill="none">
         <path
           d="M19.827 18.9843L14.9656 14.1229C16.2697 12.6236 17.0592 10.6676 17.0592 8.52961C17.0592 3.82346 13.2313 0 8.52961 0C3.82346 0 0 3.8279 0 8.52961C0 13.2313 3.8279 17.0592 8.52961 17.0592C10.6676 17.0592 12.6236 16.2697 14.1229 14.9656L18.9843 19.827C19.0996 19.9423 19.2548 20.0044 19.4056 20.0044C19.5564 20.0044 19.7117 19.9468 19.827 19.827C20.0577 19.5964 20.0577 19.2149 19.827 18.9843ZM1.19317 8.52961C1.19317 4.48436 4.48436 1.1976 8.52517 1.1976C12.5704 1.1976 15.8572 4.4888 15.8572 8.52961C15.8572 12.5704 12.5704 15.866 8.52517 15.866C4.48436 15.866 1.19317 12.5749 1.19317 8.52961Z"
@@ -97,7 +97,7 @@
          #dp="bsDaterangepicker"
          [minDate]="minDate"
          (bsValueChange)="onValueChange($event)"
-         >
+  >
 </div>
 
 
@@ -111,23 +111,16 @@
         </div>
       </div>
       <div class="infosMain">
-        <h4>про нас</h4>
-        <h2 class="selected"><span>Вітаємо Вас на нашому офіційному сайті!</span></h2>
-        <p>Готель "Пальма" розташований у тихому районі Львова, у 20-ти хвилинах їзди від центру міста. До ваших послуг
-          номери з вишуканим дизайном, які відрізняються один від одного оригінальними дизайнерськими рішеннями. Для
-          зручності мешканців готелю доступно:
-          безкоштовна Wi-Fi зона;
-          безкоштовна парковка автомобіля;
-          цілодобова охорона.
-          У нас панує атмосфера затишку та привітності, яку створює для Вас колектив готелю. "Пальма" це кращий готель
-          за розумні гроші.</p>
+        <h4>{{'about_us.title'|translate}}</h4>
+        <h2 class="selected"><span>{{'about_us.bottom_title'|translate}}</span></h2>
+        <p>{{'about_us.text'|translate}}</p>
       </div>
     </div>
 
     <div class="d-flex justify-content-center w-100">
       <div class="together">
-        <h3>спеціальні пропозиції</h3>
-        <h2>Виберіть найкраще для вас</h2>
+        <h3>{{'special_offers.title'|translate}}</h3>
+        <h2>{{'special_offers.bottom_title'|translate}}</h2>
       </div>
     </div>
 
@@ -137,54 +130,54 @@
       <div class="divka filks d-flex flex-row align-items-center"><h3>номери</h3>
         <div class="grnBlock"></div>
       </div>
-      <h2>Категорії кімнат у готелі</h2>
+      <h2>{{'rooms.bottom_title'|translate}}</h2>
     </div>
 
     <app-main-rooms *ngIf="screenWidth>=990"></app-main-rooms>
 
 
     <div *ngIf="screenWidth>=990" class="ashkas4 d-flex flex-column align-items-center">
-      <div class="divka filks d-flex flex-row align-items-center"><h3>послуги та пропозиції</h3>
+      <div class="divka filks d-flex flex-row align-items-center"><h3>{{'services_and_offers.title'|translate}}</h3>
         <div class="grnBlock"></div>
       </div>
-      <h2>Сервіс та комфорт для кожного клієнта</h2>
-      <p>Ми пропонуємо сервіс європейського ринка для наших клієнтів, наші послуги завжди доступні для вас.</p>
+      <h2>{{'services_and_offers.bottom_title'|translate}}</h2>
+      <p>{{'services_and_offers.text'|translate}}</p>
     </div>
 
     <!--<div *ngIf="screenWidth>=990" class="ashkas3 d-flex flex-column">-->
-      <!--<div class="divka d-flex flex-row align-items-center"><h3>послуги та пропозиції</h3>-->
-        <!--<div class="grnBlock"></div>-->
-      <!--</div>-->
-      <!--<h2>Lorem ipsum dolor sit amet</h2>-->
-      <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You-->
-        <!--c.</p>-->
+    <!--<div class="divka d-flex flex-row align-items-center"><h3>послуги та пропозиції</h3>-->
+    <!--<div class="grnBlock"></div>-->
+    <!--</div>-->
+    <!--<h2>Lorem ipsum dolor sit amet</h2>-->
+    <!--<p>All of this text is editable. Simply click anywhere in the paragraph or heading text and start typing. You-->
+    <!--c.</p>-->
     <!--</div>-->
 
     <app-slider *ngIf="screenWidth>=990"></app-slider>
 
 
     <div class="ashkas4 d-flex flex-column align-items-center">
-      <div class="divka filks d-flex flex-row align-items-center"><h3>нАШІ ПЕРЕВАГИ</h3>
+      <div class="divka filks d-flex flex-row align-items-center"><h3>{{'advantages.title'|translate}}</h3>
         <div class="grnBlock"></div>
       </div>
-      <h2>Доступність та висока якість послуг</h2>
+      <h2>{{'advantages.bottom_title'|translate}}</h2>
     </div>
 
     <div class="secondy d-flex flex-row justify-content-between">
       <div class="item2 d-flex align-items-center flex-column">
-        <p>Безкоштовний високошвидкісний WI-FI інтернет, який покриває всю територію готелю.</p>
+        <p>{{('advantages.columns'|translate)[0]}}</p>
         <div class="whiteBlock d-flex justify-content-center">
           <img src="../../../assets/svg/mainwireless-signal.svg" alt="">
         </div>
       </div>
       <div class="item2 d-flex align-items-center flex-column">
-        <p>24 години на добу адміністратори на рецепції допоможуть гостям у вирішенні різноманітних питань</p>
+        <p>{{('advantages.columns'|translate)[1]}}</p>
         <div class="whiteBlock d-flex justify-content-center">
           <img src="../../../assets/svg/maindelivery.svg" alt="">
         </div>
       </div>
       <div class="item2 d-flex align-items-center flex-column">
-        <p>Велика відокремлена парковка для Вашого автомобіля, яка вже входить у ціну номера</p>
+        <p>{{('advantages.columns'|translate)[2]}}</p>
         <div class="whiteBlock d-flex justify-content-center">
           <img src="../../../assets/svg/mainparking-sign 2.svg" alt="">
         </div>
@@ -192,16 +185,16 @@
     </div>
     <div class="underFooterBlock d-flex justify-content-between">
       <div class="ashkas2 d-flex flex-column">
-        <div class="divka d-flex flex-row align-items-center"><h3>КОНТАКТИ</h3>
+        <div class="divka d-flex flex-row align-items-center"><h3>{{'contacts.title'|translate}}</h3>
           <div class="grnBlock"></div>
         </div>
-        <h2>Як дістатися до готелю?</h2>
+        <h2>{{'contacts.bottom_title'|translate}}</h2>
         <div class="peshkas">
-          <p>79024, Україна</p>
-          <p>м. Львів, вул. Богданівська, 44</p>
+          <p>{{'contacts.address.zip_country'|translate}}</p>
+          <p>{{'contacts.address.city_street'|translate}}</p>
           <p>+38 067 19 444 00</p>
           <p>+38 093 43 444 00</p>
-          <p>До готелю курсують автобуси 19, 39</p>
+          <p>{{'contacts.buses'|translate}}</p>
         </div>
       </div>
       <div class="map" *ngIf="isBrowser">

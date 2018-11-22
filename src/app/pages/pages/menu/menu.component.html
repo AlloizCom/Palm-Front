@@ -23,23 +23,23 @@
               <li class="nav-item">
                 <a class="nav-link" href="#" [routerLinkActive]="['active']"
                    routerLink="/" (click)="toggleState()"
-                   [routerLinkActiveOptions]="{ exact: true }">головна
+                   [routerLinkActiveOptions]="{ exact: true }">{{'header.main'|translate}}
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" [routerLinkActive]="['active']"
-                   routerLink="/rooms" (click)="toggleState()">номери
+                   routerLink="/rooms" (click)="toggleState()">{{'header.rooms'|translate}}
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" [routerLinkActive]="['active']"
-                   routerLink="/news" (click)="toggleState()">новини
+                   routerLink="/news" (click)="toggleState()">{{'header.news'|translate}}
                 </a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                  послуги
+                  {{'header.services'|translate}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a *ngFor="let one of servicesToShow" routerLink="/service/{{one.id}}" class="dropdown-item service"
@@ -50,7 +50,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#" [routerLinkActive]="['active']"
-                   routerLink="/contacts" (click)="toggleState()">контакти
+                   routerLink="/contacts" (click)="toggleState()">{{'header.contact'|translate}}
                 </a>
               </li>
             </ul>

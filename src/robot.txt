@@ -1,0 +1,4 @@
+User-agent:*
+Disallow: /cabinet
+host:palmahotel.lviv.ua
+Sitemap: http://www.palmahotel.lviv.ua/sitemap.xml
