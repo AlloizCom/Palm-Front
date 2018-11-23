@@ -3,7 +3,7 @@
     <div class="contact-content">
       <div class="title">
         <h2>
-          {{ 'test-value' | translate}}
+          {{ 'contacts.title' | translate}}
         </h2>
       </div>
       <div class="info">
@@ -12,24 +12,19 @@
             <img class="wrapper-svg" src="../../../../assets/svg/Group%202-2.svg" alt="">
           </div>
           <div class="text">
-            <div class="address-title">Адреса</div>
-            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text
-              an</p>
-            <p class="bold-text">м. Львів, вул. Богданівська, 44</p>
+            <div class="address-title">{{ 'contacts.address.title' | translate}}</div>
+            <p class="normal-text">{{ 'contacts.address.text' | translate}}</p>
+            <p class="bold-text">{{ 'contacts.address.city_street' | translate}}</p>
           </div>
-
         </div>
         <div class="phone">
           <div class="image">
             <img class="wrapper-svg" src="../../../../assets/svg/Group.svg" alt="">
-
           </div>
           <div class="text">
-            <div class="address-title">Телефон</div>
-            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text
-              an</p>
+            <div class="address-title">{{ 'contacts.phone.title' | translate}}</div>
+            <p class="normal-text">{{ 'contacts.phone.text' | translate}}</p>
             <div class="social">
-              <p class="bold-text">+38 067 19 444 00</p>
               <div class="social-icons">
                 <a href="">
                   <img src="../../../../assets/svg/viber.svg" alt="">
@@ -42,11 +37,7 @@
                 </a>
               </div>
             </div>
-
-            <p class="normal-text">All of this text is editable. Simply click </p>
-            <p class="bold-text">+38 032 291 78 74</p>
-            <p class="normal-text">All of this text is editable. Simply click </p>
-            <p class="bold-text">+38 093 43 444 00</p>
+            <p class="bold-text" *ngFor="let one of ( 'contacts.phone.numbers' | translate)">{{one}}</p>
           </div>
         </div>
         <div class="mail">
@@ -54,10 +45,9 @@
             <img class="wrapper-svg" src="../../../../assets/svg/Group%202-3.svg" alt="">
           </div>
           <div class="text">
-            <div class="address-title">Пошта</div>
-            <p class="normal-text">All of this text is editable. Simply click anywhere in the paragraph or heading text
-              an</p>
-            <p class="bold-text">palmalviv@gmail.com</p>
+            <div class="address-title">{{ 'contacts.mail.title' | translate}}</div>
+            <p class="normal-text">{{ 'contacts.mail.text' | translate}}</p>
+            <p class="bold-text">{{ 'contacts.mail.email' | translate}}</p>
           </div>
         </div>
       </div>
@@ -68,24 +58,21 @@
   <div class="feedback-wrapper">
     <div class="feedback-content">
       <div class="left-side">
-        <div class="feedback-small-title">Зворотній зв'язок</div>
-        <div class="feedback-big-title">Напишіть Нам</div>
+        <div class="feedback-small-title">{{ 'feedback.title' | translate}}</div>
+        <div class="feedback-big-title">{{ 'feedback.bottom_title' | translate}}</div>
         <div class="feedback-text">
-          <p>You can copy and paste your own content in to see what it looks like with these font combinations. All of
-            this text is editable. Simply click anywhere in the p</p>
-          <p>You can copy and paste your own content in to see what it looks like with these font combinations. All of
-            this text is editable. Simply click anywhere in the p</p>
+          <p>{{ 'feedback.text' | translate}}</p>
         </div>
       </div>
       <form [formGroup]="bookForm" class="right-side" (submit)="sendMessage()">
         <div class="first-inputs-block">
           <div class="left-input">
-            <p>Ім'я</p>
+            <p>{{ 'feedback.form.name' | translate}}</p>
             <input type="text" formControlName="name" class="inputCallback"
                    [ngClass]="{'invallid':bookForm.get('name').invalid && bookForm.get('name').dirty}">
           </div>
           <div class="right-input">
-            <p>Телефон</p>
+            <p>{{ 'feedback.form.phone' | translate}}</p>
             <input type="text" formControlName="phone" class="inputCallback"
                    [ngClass]="{'invallid':bookForm.get('phone').invalid && bookForm.get('phone').dirty}">
           </div>
@@ -97,19 +84,19 @@
 
         </div>
         <div class="textarea-block">
-          <p>Повідомлення</p>
+          <p>{{ 'feedback.form.message' | translate}}</p>
           <textarea name="" id="" cols="30" rows="10" class="inputCallbackText" formControlName="message"
                     [ngClass]="{'invallid':bookForm.get('message').invalid && bookForm.get('message').dirty}"></textarea>
         </div>
 
-        <button [disabled]="bookForm.invalid" type="submit">Надіслати</button>
+        <button [disabled]="bookForm.invalid" type="submit">{{ 'feedback.form.send' | translate}}</button>
       </form>
     </div>
   </div>
   <div class="location-wrapper">
     <div class="location-content">
       <div class="location-title">
-        <p>Як дістатися до готелю</p>
+        <p>{{ 'how-to-get.title' | translate}}</p>
       </div>
       <div class="location-images-wrapper">
         <div class="location-images">
@@ -119,7 +106,7 @@
               <img class="little-image image1" src="../../../../assets/svg/airplane.svg" alt="">
             </div>
 
-            <p [ngClass]="{'green-border':currentWay.includes('airport')}">Аеропорт</p>
+            <p [ngClass]="{'green-border':currentWay.includes('airport')}">{{ 'how-to-get.airport' | translate}}</p>
           </div>
           <div class="images station-image-block" (click)="changeWay('station');getStationDirection();">
             <div class=" down-image-wrapper">
@@ -127,7 +114,7 @@
               <img class="little-image image2" src="../../../../assets/svg/station.svg" alt="">
             </div>
 
-            <p [ngClass]="{'green-border':currentWay.includes('station')}">Головний Вокзал</p>
+            <p [ngClass]="{'green-border':currentWay.includes('station')}">{{ 'how-to-get.station' | translate}}</p>
           </div>
           <div class="images bus-image-block" (click)="changeWay('bus');getBusDirection();">
             <div class=" down-image-wrapper">
@@ -135,7 +122,7 @@
               <img class="little-image image3" src="../../../../assets/svg/bus.svg" alt="">
             </div>
 
-            <p [ngClass]="{'green-border':currentWay.includes('bus')}">Автобус</p>
+            <p [ngClass]="{'green-border':currentWay.includes('bus')}">{{ 'how-to-get.bus' | translate}}</p>
           </div>
           <div class=" images square-image-block" (click)="changeWay('square');getSquareDirection();">
             <div class=" down-image-wrapper">
@@ -143,7 +130,7 @@
               <img class="little-image image4" src="../../../../assets/svg/square.svg" alt="">
             </div>
 
-            <p [ngClass]="{'green-border':currentWay.includes('square')}">Площа Ринок</p>
+            <p [ngClass]="{'green-border':currentWay.includes('square')}">{{ 'how-to-get.square' | translate}}</p>
           </div>
           <div class=" images castle-image-block " (click)="changeWay('castle');getCastleDirection();">
             <div class=" down-image-wrapper">
@@ -151,14 +138,13 @@
               <img class="little-image image5" src="../../../../assets/svg/castle.svg" alt="">
             </div>
 
-            <p [ngClass]="{'green-border':currentWay.includes('castle')}">Станція “Підзамче”</p>
+            <p [ngClass]="{'green-border':currentWay.includes('castle')}">{{ 'how-to-get.castle' | translate}}</p>
           </div>
         </div>
 
       </div>
       <div class="description">
-        <p>How to dobratusya</p>
-        <p class="airportWay" id="airportWay">{{currentWay|translate}}</p>
+        <pre class="airportWay" id="airportWay">{{('how-to-get.'+currentWay+'-description')|translate}}</pre>
       </div>
 
     </div>

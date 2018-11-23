@@ -131,12 +131,12 @@ sub {
 }
 
 .infos p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif!important;
   font-weight: 500;
   line-height: 24px;
   font-size: 14px;
   color: #5A5A5A;
-  height: 90px;
+  /*height: 90px;*/
   overflow: hidden;
 
   /*height: auto;*/

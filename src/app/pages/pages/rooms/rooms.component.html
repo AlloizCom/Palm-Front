@@ -7,18 +7,18 @@
             <div class="photo d-flex">
               <div [routerLink]="['/','rooms-booking',one.id]" class="kartinka"
                    [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'"></div>
-              <div class="block d-flex justify-content-center align-items-center">{{one.price?one.price:999}} ГРН</div>
+              <div class="block d-flex justify-content-center align-items-center">{{one.price?one.price:999}} {{'global.uah'|translate}}</div>
             </div>
             <div class="infos ">
-              <h2>{{one.type | translate}}</h2>
+              <h2>{{('rooms.types' | translate)[one.type]}}</h2>
               <p>{{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' |
                 translate].description:''}}</p>
               <div class="imgs d-flex justify-content-start">
                 <div *ngFor="let oneImage of one.amenities" class="imageRoom"
                      [style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">
-                  <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{one.square}} кв.м</h5></div>
+                  <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{one.square}} {{'global.msq'|translate}}</h5></div>
               </div>
-              <span class="span-button"><a [routerLink]="['/','rooms-booking',one.id]">Переглянути</a></span>
+              <span class="span-button"><a [routerLink]="['/','rooms-booking',one.id]">{{'rooms.review'|translate}}</a></span>
             </div>
           </div>
         </div>

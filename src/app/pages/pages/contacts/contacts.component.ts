@@ -18,7 +18,7 @@ export class ContactsComponent implements OnInit {
   defaultLongitude = 24.026503;
   bookForm: FormGroup;
   callback: Callback = new Callback();
-  currentWay: any = '';
+  currentWay: any = 'airport';
   public lat = 24.799448;
   public lng = 120.979021;
   public destination = {lat: 49.856338332302016, lng: 24.076377153396606};
@@ -31,7 +31,7 @@ export class ContactsComponent implements OnInit {
   }
 
   changeWay(way: string) {
-    this.currentWay = `contacts-way-${way}`;
+    this.currentWay = `${way}`;
   }
 
   ngOnInit() {
@@ -39,7 +39,7 @@ export class ContactsComponent implements OnInit {
       name: new FormControl('', [Validators.required, Validators.pattern('[A-Za-z.!@?#"$%&:;() *\\+,\\/;\\-=[\\\\\\]\\^_{|}<>\u0400-\u04FF]+$')]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', [Validators.required]),
-      phone: new FormControl('', [Validators.pattern('^\\+(?:[0-9\\s]●?){10,15}[0-9]$')])
+      phone: new FormControl('', [Validators.pattern(/^\+(?:[0-9\s]●?){10,15}[0-9]$/)])
     });
     this.bookForm.valueChanges.subscribe(value => {
       this.callback = value;

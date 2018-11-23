@@ -2,7 +2,7 @@
   <div class="wraper footNav">
     <div class="blockOfBlocks d-flex justify-content-between">
       <div class="info d-flex flex-column  align-content-start">
-        <a routerLink="/contacts">Контакти</a>
+        <a routerLink="/contacts">{{'header.contact'|translate}}</a>
         <div class="outside d-flex flex-column">
           <div class="second_footer inside d-flex flex-column">
             <a class="mt-2">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="outside d-flex flex-column">
-        <a style="text-align: center">сервіси</a>
+        <a style="text-align: center">{{'footer-contact.services.title'|translate}}</a>
         <div class="second_footer inside d-flex flex-column">
           <a class="mt-2">
             <img src="../../../assets/svg/mainparking-sign 2222.svg">
@@ -40,11 +40,11 @@
           </a>
           <a class="mt-2">
             <img src="../../../assets/svg/mainwireless-signal2222.svg">
-            {{('footer-contact.services.rows[1]'|translate)[1]}}
+            {{('footer-contact.services.rows'|translate)[1]}}
           </a>
           <a class="mt-2">
             <img src="../../../assets/svg/maindelivery2222.svg">
-            {{('footer-contact.services.rows[2]'|translate)[2]}}
+            {{('footer-contact.services.rows'|translate)[2]}}
           </a>
         </div>
       </div>

@@ -127,7 +127,7 @@
     <app-proposal-item></app-proposal-item>
 
     <div *ngIf="screenWidth>=990" class="ashkas4 d-flex flex-column align-items-center">
-      <div class="divka filks d-flex flex-row align-items-center"><h3>номери</h3>
+      <div class="divka filks d-flex flex-row align-items-center"><h3>{{'rooms.title'|translate}}</h3>
         <div class="grnBlock"></div>
       </div>
       <h2>{{'rooms.bottom_title'|translate}}</h2>
@@ -192,8 +192,7 @@
         <div class="peshkas">
           <p>{{'contacts.address.zip_country'|translate}}</p>
           <p>{{'contacts.address.city_street'|translate}}</p>
-          <p>+38 067 19 444 00</p>
-          <p>+38 093 43 444 00</p>
+          <p *ngFor="let one of ('contacts.phone.numbers'|translate)">{{one}}</p>
           <p>{{'contacts.buses'|translate}}</p>
         </div>
       </div>

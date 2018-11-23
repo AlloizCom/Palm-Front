@@ -27,7 +27,7 @@
       <div class="data-picker">
         <div class="search">
           <div class="searchItem searchItem11" (click)="dp.toggle()">
-            <p>заїзд</p>
+            <p>{{'data-picker.in'|translate}}</p>
             <div class="numbers d-flex w-100" style="cursor: pointer">
               <div class="day">{{model1?(model1.day): model1| date: 'dd'}}</div>
               <div class="month">{{model1.month| mounth}}</div>
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="searchItem searchItem11" (click)="dp.toggle()">
-            <p>виїзд</p>
+            <p>{{'data-picker.out'|translate}}</p>
             <div class="numbers d-flex w-100" style="cursor: pointer">
               <div class="day">{{model2?(model2.day): model2| date: 'dd'}}</div>
               <div class="month">{{model2.month| mounth}}</div>
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="searchItem">
-            <p>номери</p>
+            <p>{{'data-picker.rooms'|translate}}</p>
             <div class="d-flex">
               <div class="w-15 h-15 p-1" (click)="roomsNumberFunc(false)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="searchItem">
-            <p>дорослі</p>
+            <p>{{'data-picker.adults'|translate}}</p>
             <div class="d-flex">
               <div class="w-15 h-15 p-1" (click)="adultsNumberFunc(false)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
@@ -83,7 +83,7 @@
             </div>
           </div>
           <div class="searchItem">
-            <p>діти</p>
+            <p>{{'data-picker.children'|translate}}</p>
             <div class="d-flex">
               <div class="w-15 h-15 p-1" (click)="childrenNumberFunc(false)">
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
@@ -104,7 +104,7 @@
           </div>
           <div class="searchItem BtnBook" (click)="findRoomByParams()">
             <div class="leftSide">
-              <p class="book">забронювати</p>
+              <p class="book">{{'rooms.book'|translate}}</p>
             </div>
             <div class="rightSide">
               <img src="../../../../assets/svg/Vector-3.svg" alt="">
@@ -119,22 +119,22 @@
                #dp="bsDaterangepicker"
                [minDate]="minDate"
                (bsValueChange)="onValueChange($event)">
-        <div class="errorParams" *ngIf="errorMessag">Не знайдено вільних номерів!!!</div>
+        <div class="errorParams" *ngIf="errorMessag">{{'rooms.not_found'|translate}}</div>
       </div>
     </div>
     <div class="bottom" *ngIf="roomType">
       <h2 class="selected"><span>{{roomType| translate}}</span></h2>
-      <p class="roomDesc">опис номеру</p>
+      <p class="roomDesc">{{'rooms.description'|translate}}</p>
       <p class="room-description-title"><pre class="article-text">{{room.descriptions['current-language-index' |
         translate]?room.descriptions['current-language-index' |
       translate].description:''}}</pre>
-      <p class="price-title">Ціна</p>
+      <p class="price-title">{{'rooms.price'|translate}}</p>
       <!--<p class="price">{{room.price}} &#8372;</p>-->
-      <p class="price">{{room.price?room.price:999}} грн</p>
+      <p class="price">{{room.price?room.price:999}} {{'global.uah'|translate}}</p>
       <!--<p class="price">999 грн</p>-->
     </div>
     <div *ngIf="amenities.length!=0" class="amenity-icons">
-      <p class="amenity">зручності</p>
+      <p class="amenity">{{'rooms.amenities'|translate}}</p>
       <!--<div class="imgs d-flex justify-content-start">-->
         <!--&lt;!&ndash;<div *ngFor="let oneImage of amenities" class="imageRoom"&ndash;&gt;-->
              <!--&lt;!&ndash;[style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">&ndash;&gt;-->
@@ -146,7 +146,7 @@
       <div class="imgs d-flex justify-content-start">
         <div *ngFor="let oneImage of amenities" class="imageRoom"
              [style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">
-          <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{room.square}} кв.м</h5></div>
+          <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{room.square}} {{'global.msq'|translate}}</h5></div>
       </div>
     </div>
   </div>
