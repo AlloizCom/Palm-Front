@@ -3,6 +3,30 @@ p {
   width: 100%;
   overflow: hidden;
 }
+.text-rings-responsively {
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em;
+  max-height: 149px;
+  text-align: justify !important;
+  padding-right: 39px;
+  padding-left: 1em;
+}
+
+.text-rings-responsively:before {
+  content: '...';
+  position: absolute;
+  bottom: -6px;
+}
+
+.text-rings-responsively:after {
+  content: '...';
+  position: absolute;
+  right: 19px;
+  width: 2em;
+  height: 2em;
+  margin-top: 0.3em;
+}
 
 .imageRoom {
   display: flex;

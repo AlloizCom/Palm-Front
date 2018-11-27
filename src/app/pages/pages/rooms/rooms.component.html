@@ -9,9 +9,9 @@
                    [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'"></div>
               <div class="block d-flex justify-content-center align-items-center cube">{{one.price?one.price:999}} {{'global.uah'|translate}}</div>
             </div>
-            <div class="infos ">
+            <div class="infos">
               <h2>{{('rooms.types' | translate)[one.type]}}</h2>
-              <p>{{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' |
+              <p class="text-rings-responsively "> {{one.descriptions['current-language-index' | translate]?one.descriptions['current-language-index' |
                 translate].description:''}}</p>
               <div class="imgs d-flex justify-content-start">
                 <div *ngFor="let oneImage of one.amenities" class="imageRoom"
