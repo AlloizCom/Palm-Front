@@ -122,7 +122,7 @@
 
 .selected {
   text-transform: uppercase;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif!important;
   font-style: normal;
   font-weight: bold;
   line-height: 41px;
@@ -134,7 +134,7 @@
 .roomDesc {
   padding-top: 3%;
   text-transform: uppercase;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-weight: Bold;
   /*font-family: Roboto;*/
   line-height: 24px;
@@ -155,7 +155,7 @@
 }
 
 .room-description-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif!important;
   font-weight: 200;
   line-height: 27px;
   font-size: 16px;
@@ -165,7 +165,7 @@
 }
 
 .squareText{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif!important;
   font-weight: Bold;
   line-height: 19px;
   font-size: 11px;
@@ -173,7 +173,7 @@
 
 
 .room-description {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif!important;
   font-style: normal;
   font-weight: 300;
   line-height: 27px;
@@ -183,10 +183,14 @@
 
 }
 
+pre{
+  font-family: 'Roboto', sans-serif!important;
+  color: #000000;
+}
 
 .price-title {
   text-transform: uppercase;
-  font-family: Raleway, sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-style: normal;
   font-weight: bold;
   line-height: 27px;
@@ -196,7 +200,7 @@
 }
 
 .price-description {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif!important;
   font-style: normal;
   font-weight: 300;
   line-height: 27px;
@@ -207,7 +211,8 @@
 }
 
 .price {
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', sans-serif!important;
+  text-transform: uppercase;
   font-style: normal;
   font-weight: bold;
   line-height: 33px;
@@ -218,7 +223,7 @@
 
 .amenity {
   text-transform: uppercase;
-  font-family: Raleway, sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-style: normal;
   font-weight: bold;
   line-height: 27px;
@@ -278,7 +283,7 @@
 }
 
 .imgs h5 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-weight: bold;
   line-height: 19px;
   font-size: 10px;
@@ -360,7 +365,7 @@ sub{
 }
 
 .searchItem p {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif!important;
   font-weight: bold;
   line-height: 27px;
   font-size: 16px;
@@ -464,7 +469,7 @@ img{
   /*margin: 0;*/
   /*font-weight: 800;*/
   /*font-size: 22px;*/
-  font-family: 'Raleway' , sans-serif;
+  font-family: 'Raleway' , sans-serif!important;
   font-weight: 800;
   line-height: 26px;
   margin-bottom: -2px;
@@ -476,7 +481,7 @@ img{
 
 
 .searchItem .roomsNumber {
-  font-family: Raleway;
+  font-family: 'Raleway', sans-serif!important;
   font-weight: 800;
   font-size: 35px;
   letter-spacing: 0.03em;
