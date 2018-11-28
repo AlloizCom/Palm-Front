@@ -61,7 +61,7 @@ app-top-slider {
   line-height: 24px;
   color: black;
   margin-top: 19px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-weight: bold;
   margin-right: 10px;
   text-align: right;
@@ -262,7 +262,7 @@ app-top-slider {
 }
 
 .infosMain>h2>span{
-  font-family: 'Raleway',sans-serif;
+  font-family: 'Raleway',sans-serif!important;
   font-size: 21px;
 }
 
@@ -272,7 +272,7 @@ app-top-slider {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.5em;
@@ -282,10 +282,10 @@ app-top-slider {
 }
 
 .infosMain p {
-  font-family: Roboto;
-  font-weight: 300;
-  line-height: 27px;
-  font-size: 16px;
+  font-family: 'Roboto' ,sans-serif!important;
+  font-weight: 300!important;
+  line-height: 27px!important;
+  font-size: 16px!important;
   color: #000000;
   text-align: justify;
 }
@@ -311,7 +311,7 @@ app-top-slider {
 }
 
 .someShit h5 {
-  font-family: Roboto;
+  font-family: 'Roboto' , sans-serif!important;
   font-weight: 500;
   line-height: 27px;
   font-size: 16px;
@@ -328,7 +328,7 @@ app-top-slider {
 }
 
 .together h3 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.5em;
@@ -344,7 +344,7 @@ app-top-slider {
 }
 
 .together h2 {
-  font-family: 'Raleway' , sans-serif;
+  font-family: 'Raleway' , sans-serif!important;
   font-weight: 700;
   font-size: 21px;
   line-height: 25px;
@@ -379,7 +379,7 @@ app-top-slider {
 }
 
 .ashkas h3, .ashkas2 h3, .ashkas3 h3, .ashkas4 h3 {
-  font-family: 'Raleway' , sans-serif;
+  font-family: 'Raleway' , sans-serif!important;
   font-weight: 300;
   font-size: 14px;
   letter-spacing: 0.5em;
@@ -398,7 +398,7 @@ app-top-slider {
 }
 
 .ashkas h2, .ashkas2 h2, .ashkas3 h2, .ashkas4 h2 {
-  font-family: 'Raleway' , sans-serif;
+  font-family: 'Raleway' , sans-serif!important;
   font-weight: 700;
   font-size: 21px;
   line-height: 25px;
@@ -442,7 +442,7 @@ app-top-slider {
 }
 
 .item2 p {
-  font-family: Roboto;
+  font-family: 'Roboto' , sans-serif!important;
   font-weight: 300;
   line-height: 27px;
   font-size: 16px;
@@ -477,7 +477,7 @@ app-top-slider {
 }
 
 .ashkas3 p {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif !important;
   font-weight: 300;
   line-height: 27px;
   font-size: 16px;
@@ -488,7 +488,7 @@ app-top-slider {
 }
 
 .ashkas2 p {
-  font-family: Roboto;
+  font-family: 'Roboto' , sans-serif!important;
   font-weight: 300;
   line-height: 24px;
   font-size: 14px;
@@ -518,6 +518,7 @@ app-top-slider {
 
 .peshkas p {
   margin-bottom: 1.5%;
+  user-select: none;
 }
 
 .ashkas2 .grnBlock {
@@ -718,7 +719,7 @@ agm-map {
   }
 
   .selected {
-    font-family: 'Raleway' , sans-serif;
+    font-family: 'Raleway' , sans-serif!important;
     font-weight: 700;
     font-size: 21px;
     line-height: 25px;

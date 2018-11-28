@@ -16,18 +16,18 @@ export class OptionComponent implements OnInit {
 
   servicesForm: FormGroup = this.formBuilder.group({
     multipartFile: this.formBuilder.control('', this.defaultValidators),
-    available: this.formBuilder.control('', this.defaultValidators),
-    showOnTop: this.formBuilder.control('', this.defaultValidators),
     serviceDescriptions: this.formBuilder.array(
       languages.map(value =>
         this.formBuilder.group({
-          language: this.formBuilder.control('', this.defaultValidators),
+          language: new FormControl(value),
           title: this.formBuilder.control('', this.defaultValidators),
           headerText: this.formBuilder.control('', this.defaultValidators),
           mainText: this.formBuilder.control('', this.defaultValidators)
         })
       )
-    )
+    ),
+    available: this.formBuilder.control(true),
+    showOnTop: this.formBuilder.control(false)
   });
   appear = false;
   image: string;

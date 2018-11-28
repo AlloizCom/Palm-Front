@@ -24,20 +24,37 @@
           <div class="text">
             <div class="address-title">{{ 'contacts.phone.title' | translate}}</div>
             <p class="normal-text">{{ 'contacts.phone.text' | translate}}</p>
-            <div class="social">
-              <div class="social-icons">
-                <a href="">
-                  <img src="../../../../assets/svg/viber.svg" alt="">
-                </a>
-                <a href="">
-                  <img src="../../../../assets/svg/telegram.svg" alt="">
-                </a>
-                <a href="">
-                  <img src="../../../../assets/svg/whatsapp.svg" alt="">
-                </a>
-              </div>
-            </div>
-            <p class="bold-text" *ngFor="let one of ( 'contacts.phone.numbers' | translate)">{{one}}</p>
+            <!--<div class="social">-->
+              <!--<div class="social-icons">-->
+                <!--<a href="">-->
+                  <!--<img src="../../../../assets/svg/viber.svg" alt="">-->
+                <!--</a>-->
+                <!--<a href="">-->
+                  <!--<img src="../../../../assets/svg/telegram.svg" alt="">-->
+                <!--</a>-->
+                <!--<a href="">-->
+                  <!--<img src="../../../../assets/svg/whatsapp.svg" alt="">-->
+                <!--</a>-->
+              <!--</div>-->
+            <!--</div>-->
+
+
+
+
+            <p class="bold-text" *ngFor="let one of ( 'contacts.phone.numbers' | translate); let i = index">{{one}}
+
+              <a *ngIf="i==0" href="" class="social-icons-one">
+              <img src="../../../../assets/svg/viber.svg" alt="">
+              </a>
+              <a *ngIf="i==0" href="" class="social-icons-one">
+              <img src="../../../../assets/svg/telegram.svg" alt="">
+              </a>
+              <a *ngIf="i==0" href="" class="social-icons-one">
+              <img src="../../../../assets/svg/whatsapp.svg" alt="">
+            </a>
+
+
+            </p>
           </div>
         </div>
         <div class="mail">
