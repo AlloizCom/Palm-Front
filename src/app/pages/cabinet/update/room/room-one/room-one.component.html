@@ -24,9 +24,9 @@
     <input type="text" formControlName="description" min="0">
 
     <div formArrayName="descriptions">
-      <div *ngFor="let one of roomDescriptionForm.controls; let i = index">
+      <div *ngFor="let one of descriptionForms; let i = index">
         <form formGroupName="{{i}}">
-          <p>{{one.get('languageO').value}}</p>
+          <p>{{one.get('language').value|translate}}</p>
           <!--<input type="text" disabled formControlName="language">-->
           <textarea cols="30" rows="10" formControlName="description"></textarea>
         </form>
@@ -34,14 +34,20 @@
     </div>
     <div class="d-flex flex-column">
       <h2>Зручності:</h2>
-      <div *ngFor="let one of room.amenities">
-        <div>{{one.amenityNames[0].name}}</div>
-        <div class="back" [style.backgroundImage]="'url(' + (one.imagePath|imagePipe) + ')'"></div>
+      <div *ngFor="let one of amenities;let i = index">
+        <div>{{one.get('id').value}}</div>
+        <div>{{getControls(one.get('amenityNames'))['0'].controls['name'].value}}</div>
+        <div class="back" [style.backgroundImage]="'url(' + (one.get('imagePath').value|imagePipe) + ')'"></div>
+        <button (click)="deleteAmenity(one.get('id').value)">Delete</button>
       </div>
     </div>
-    <br>
-
-
+    <hr>
+    <div *ngFor="let one of availableAmenities">
+      <div>{{one.id}}</div>
+      <div>{{one.amenityNames[0].name}}</div>
+      <div class="back" [style.backgroundImage]="'url(' + (one.imagePath|imagePipe) + ')'"></div>
+      <button (click)="addAmenity(one.id)">add</button>
+    </div>
     <div class="image-wrapper d-flex  flex-wrap">
       <div *ngFor="let one of room.images" class="image-one d-flex align-items-end justify-content-center"
            [style.background]="'url(' + (one.path|imagePipe) + ')'">

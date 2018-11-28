@@ -19,7 +19,7 @@ export class OptionComponent implements OnInit {
     serviceDescriptions: this.formBuilder.array(
       languages.map(value =>
         this.formBuilder.group({
-          language: new FormControl(value),
+          language: this.formBuilder.control(value),
           title: this.formBuilder.control('', this.defaultValidators),
           headerText: this.formBuilder.control('', this.defaultValidators),
           mainText: this.formBuilder.control('', this.defaultValidators)
