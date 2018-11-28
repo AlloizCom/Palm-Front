@@ -8,6 +8,15 @@
   background-color: #F8F6F6;
 }
 
+pre{
+  font-family: 'Roboto' , sans-serif !important;
+  font-weight: 300;
+  line-height: 27px;
+  font-size: 16px;
+  text-align: justify;
+  color: #000000;
+}
+
 .title h2 {
   text-align: center;
   font-style: normal;
@@ -79,7 +88,17 @@
   color: #000000;
 }
 
+.social-icons-one{
+  margin: 1px;
+}
+.social-icons-one>img{
+  vertical-align: text-top;
+}
+
 .bold-text {
+  font-family: 'Roboto' , sans-serif!important;
+  font-size: 15px;
+  color: #000000;
   margin: 0;
   padding-bottom: 1%;
   padding-top: 1%;
