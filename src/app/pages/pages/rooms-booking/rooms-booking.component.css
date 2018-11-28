@@ -558,7 +558,7 @@ img{
 
 /*enddatapicker*/
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1240px) {
 
   .slider {
     height: 330px;
@@ -591,6 +591,7 @@ img{
   .searchItem[_ngcontent-c4]:nth-child(6){
     margin-top: -11px;
   }
+
 }
 
 @media screen and (max-width: 996px) {
@@ -634,6 +635,8 @@ img{
   .searchItem:nth-child(6){
     margin-top: 30px;
   }
+
+
 
 }
 
