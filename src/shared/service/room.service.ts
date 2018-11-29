@@ -22,6 +22,10 @@ export class RoomService {
     return this._httpClient.get<Room[]>(this.controller + '/find-all-available');
   }
 
+  findAllAvailableSplit(): Observable<Room[]> {
+    return this._httpClient.get<Room[]>(this.controller + '/find-all-available-split');
+  }
+
   findRoomByParams(roomParams: RoomsParams): Observable<RoomWithPrice[]> {
     return this._httpClient.post<RoomWithPrice[]>(this.controller + '/find-by-book-params',
       JSON.stringify(roomParams));

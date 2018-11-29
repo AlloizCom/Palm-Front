@@ -32,8 +32,9 @@ export class RoomsComponent implements OnInit{
     this.isBrowser = this._browserCheck.isBrowser();
     this.roomTariff = roomTariff;
     // this._roomService.findAllRoomWithPrice().subscribe(next => {
-    this._roomService.findAllAvailable().subscribe(next => {
+    this._roomService.findAllAvailableSplit().subscribe(next => {
       this.rooms = next;
+      // this.rooms.forEach(value => value.descriptions.forEach(value1 => value1.description.substring(0,25)));
       console.log(this.rooms);
       this.sortRooms();
     }, err => {

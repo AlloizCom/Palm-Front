@@ -112,6 +112,13 @@
   transform: translate(-50%, -50%);
 }
 
+.gallery-rooms:nth-child(2){
+  display:none
+}
+.text-align-gallery h1 h2 h3 h4{
+  text-align: center;
+}
+
 .greenAbs:first-letter {
   font-size: 200%; /* Размер шрифта первого символа */
 }
