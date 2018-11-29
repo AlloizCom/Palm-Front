@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="rooms">
-          <div *ngFor="let one of rooms; let i = index" class="room d-flex justify-content-between" id="some{{one.id}}">
+          <div *ngFor="let one of rooms; let i = index" class="room d-flex justify-content-between" id="roomIdForStoring{{one.id}}">
             <div class="photo d-flex">
               <div [routerLink]="['/','rooms-booking',one.id]" class="kartinka"
                    [style.background-image]="'url(' + (one.images[0].path|imagePipe) + ')'"></div>
@@ -18,7 +18,7 @@
                      [style.background]="'url(' + (oneImage.imagePath|imagePipe) + ')'">
                   <h5 *ngIf="oneImage.amenityNames[0].name=='House'">{{one.square}} {{'global.msq'|translate}}</h5></div>
               </div>
-              <span class="span-button"><a [routerLink]="['/','rooms-booking',one.id]">{{'rooms.review'|translate}}</a></span>
+              <span class="span-button"><a [routerLink]="['/','rooms-booking',one.id]" (click)="saveRoomId(one.id)">{{'rooms.review'|translate}}</a></span>
             </div>
           </div>
         </div>

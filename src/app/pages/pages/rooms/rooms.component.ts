@@ -42,18 +42,8 @@ export class RoomsComponent implements OnInit{
   }
 
   ngOnInit() {
-    // window.scrollTo({
-    //   top: 70,
-    //   behavior: "smooth"
-    // });
-  }
 
-  // scrollPoint(element: any){
-  //   console.log(element);
-  //   document.getElementById(element).scrollIntoView({
-  //     behavior: "smooth"
-  //   });
-  // }
+  }
 
   scrollToId() {
     if (!isNullOrUndefined(this._roomIdService.id)) {
@@ -65,9 +55,8 @@ export class RoomsComponent implements OnInit{
     }
   }
 
-  goToRoom(id: number) {
-    this._router.navigateByUrl('/rooms-booking/' + id);
-    this._roomIdService.setId('some' + id);
+  saveRoomId(id: number) {
+    this._roomIdService.setId('roomIdForStoring' + id);
     if (this.isBrowser)
       window.scroll(0, 0);
   }
@@ -78,6 +67,7 @@ export class RoomsComponent implements OnInit{
         'SUPERIOR_IMPROVED', 'DELUXE'];
       return roomTypes.indexOf(a.type) - roomTypes.indexOf(b.type);
     });
+
     if (this.isBrowser)
       setTimeout(() => {
         this.scrollToId();
