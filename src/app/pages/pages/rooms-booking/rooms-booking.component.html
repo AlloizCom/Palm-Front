@@ -128,10 +128,33 @@
       <p class="room-description-title"><pre class="article-text">{{room.descriptions['current-language-index' |
         translate]?room.descriptions['current-language-index' |
       translate].description:''}}</pre>
+
+      <div *ngIf="room.priceFifthPlaces == 0 && room.priceThreePlaces ==0" >
       <p class="price-title">{{'rooms.price'|translate}}</p>
       <!--<p class="price">{{room.price}} &#8372;</p>-->
       <p class="price">{{room.price?room.price:999}} {{'global.uah'|translate}}</p>
       <!--<p class="price">999 грн</p>-->
+      </div>
+
+
+
+      <div *ngIf="room.priceFifthPlaces != 0 && room.priceThreePlaces !=0" >
+        <p class="price-title">{{'rooms.price'|translate}}</p>
+        <div class="place-price">
+          <img class="persons" src="../../../../assets/png/room-twin.png" alt="alt">
+            <p class="price">{{room.price?room.price:999}} {{'global.uah'|translate}}</p>
+        </div>
+        <div class="place-price">
+        <img class="persons" src="../../../../assets/png/room-third.png" alt="alt">
+        <p class="price">{{room.price?room.priceThreePlaces:999}} {{'global.uah'|translate}}</p>
+        </div>
+        <div class="place-price">
+        <img class="persons" src="../../../../assets/png/room-fifth.png" alt="alt">
+        <p class="price">{{room.price?room.priceFifthPlaces:999}} {{'global.uah'|translate}}</p>
+        </div>
+      </div>
+
+
     </div>
     <div *ngIf="amenities.length!=0" class="amenity-icons">
       <p class="amenity">{{'rooms.amenities'|translate}}</p>

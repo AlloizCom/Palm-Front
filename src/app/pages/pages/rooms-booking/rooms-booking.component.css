@@ -143,6 +143,17 @@
 
 }
 
+.persons{
+  /*width: 25px;*/
+  height: 25px;
+  /*width: ;*/
+  padding: 0!important;
+}
+
+.place-price{
+
+}
+
 .selected span {
   border-bottom: 7px solid #53D7B7;
   padding-bottom: 1%;

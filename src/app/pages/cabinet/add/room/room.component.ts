@@ -30,6 +30,8 @@ export class RoomComponent implements OnInit {
     type: 'NONE',
     price: 1,
     multipartFiles: null,
+    priceThreePlaces: 0,
+    priceFifthPlaces: 0
   };
 
   room: Room = new Room();
@@ -124,6 +126,8 @@ export class RoomComponent implements OnInit {
       description: new FormControl('', [Validators.minLength(3), Validators.maxLength(255),Validators.required]),
       keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
       amenities: new FormControl([]),
+      priceThreePlaces: new FormControl(0, [Validators.min(0), Validators.max(10000), Validators.required]),
+      priceFifthPlaces: new FormControl(0, [Validators.min(0), Validators.max(10000), Validators.required]),
       type: new FormControl('NONE', [Validators.required, this.validateType]),
       multipartFiles: new FormControl(null, [this.validateImages]),
       descriptions: this.roomDescriptionForm

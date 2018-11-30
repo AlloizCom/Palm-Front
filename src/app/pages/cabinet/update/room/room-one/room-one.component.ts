@@ -28,6 +28,8 @@ export class RoomOneComponent implements OnInit {
     available: this._fb.control(false),
     adultPlaces: this._fb.control('', [Validators.required]),
     kidsPlaces: this._fb.control('', [Validators.required]),
+    priceThreePlaces: this._fb.control('', [Validators.required]),
+    priceFifthPlaces: this._fb.control('', [Validators.required]),
     amenities: this._fb.array([]),
     descriptions: this._fb.array(languages.map(value => this._fb.group({
       language: this._fb.control(value),

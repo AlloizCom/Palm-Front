@@ -17,5 +17,7 @@ export class Room {
   price: number;
   keywords: string;
   description: string;
+  priceThreePlaces: number;
+  priceFifthPlaces: number;
 
 }
