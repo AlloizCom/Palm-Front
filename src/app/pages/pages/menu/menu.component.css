@@ -101,6 +101,7 @@ a:hover {
 }
 
 .logo {
+  width: 115px;
   cursor: pointer;
   outline: 0;
 }

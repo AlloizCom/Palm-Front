@@ -27,7 +27,7 @@
       <div class="data-picker">
         <div class="search">
           <div class="searchItem searchItem11" (click)="dp.toggle()">
-            <p>{{'data-picker.in'|translate}}</p>
+            <p class="helper">{{'data-picker.in'|translate}}</p>
             <div class="numbers d-flex w-100" style="cursor: pointer">
               <div class="day">{{model1?(model1.day): model1| date: 'dd'}}</div>
               <div class="month">{{model1.month| mounth}}</div>
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="searchItem searchItem11" (click)="dp.toggle()">
-            <p>{{'data-picker.out'|translate}}</p>
+            <p class="helper">{{'data-picker.out'|translate}}</p>
             <div class="numbers d-flex w-100" style="cursor: pointer">
               <div class="day">{{model2?(model2.day): model2| date: 'dd'}}</div>
               <div class="month">{{model2.month| mounth}}</div>

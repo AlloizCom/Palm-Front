@@ -145,9 +145,10 @@
 
 .persons{
   /*width: 25px;*/
-  height: 25px;
+  height: 15px;
   /*width: ;*/
   padding: 0!important;
+  margin-top: 10px;
 }
 
 .place-price{
@@ -427,7 +428,10 @@ sub{
   color: #C4C4C4;
   margin-bottom: 2px;
 }
-
+.helper{
+  display: flex;
+  justify-content: flex-end;
+}
 .searchItem:nth-child(1) .year {
   margin-right: 10px;
 }
