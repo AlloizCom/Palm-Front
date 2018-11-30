@@ -10,7 +10,6 @@ p {
   max-height: 149px;
   text-align: justify !important;
   padding-right: 39px;
-  padding-left: 1em;
 }
 
 .text-rings-responsively:before {
@@ -239,6 +238,7 @@ sub {
   width: 392px;
   /*margin-bottom: 7%;*/
   margin-bottom: 8%;
+  margin-left: 0%;
   flex-wrap: wrap;
 
 }

@@ -151,7 +151,10 @@
 }
 
 .place-price{
-
+  width: 10vw;
+display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .selected span {
@@ -290,7 +293,7 @@ pre{
   flex-wrap: wrap;
   /*margin-bottom: 7%;*/
   margin-bottom: 5%;
-  margin-left: 1%;
+  margin-left: 0%;
 }
 
 .imgs h5 {
