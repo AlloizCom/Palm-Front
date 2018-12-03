@@ -38,18 +38,18 @@ export class MainRoomsComponent implements OnInit {
     });
   }
 
-  private _currentI = 1;
+  private _currentI = 0;
 
   get currentI(): number {
     return this._currentI;
   }
 
   set currentI(value: number) {
-    if (value > 4) {
+    if (value >= 3) {
       this._currentI = 1;
       return;
     } else if (value < 1) {
-      this._currentI = 4;
+      this._currentI = 3;
       return;
     }
     this._currentI = value;
