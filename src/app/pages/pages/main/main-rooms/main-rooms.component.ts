@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RoomService} from '../../../../../shared/service/room.service';
-import {RoomWithPrice} from '../../../../../shared/models/room-with-price';
 import {roomTariff} from '../../../../../shared/enum/room-tariff';
 import {isNullOrUndefined} from 'util';
 import {Room} from "../../../../../shared/models/room";
-import {MenuComponent} from '../../menu/menu.component';
 import {BrowserCheckService} from '../../../../shared/service/browser-check.service';
 
 @Component({
@@ -21,7 +19,7 @@ export class MainRoomsComponent implements OnInit {
   rooms: Room[] = [];
   timedscroll;
 
-  constructor(private _roomService: RoomService,private _browserCheck:BrowserCheckService) {
+  constructor(private _roomService: RoomService, private _browserCheck: BrowserCheckService) {
     this._roomService.findAllAvailable().subscribe(next => {
       this.roomTariff = roomTariff;
       for (let i of next) {
@@ -29,10 +27,10 @@ export class MainRoomsComponent implements OnInit {
           this.rooms.push(i);
         }
       }
-      if(this._browserCheck.isBrowser())
-      this.timedscroll = setTimeout(() => {
-        this.scroll(this.currentI++);
-      }, 3000);
+      if (this._browserCheck.isBrowser())
+        this.timedscroll = setTimeout(() => {
+          this.scroll(this.currentI++);
+        }, 3000);
     }, err => {
       console.log(err);
     });
@@ -73,6 +71,7 @@ export class MainRoomsComponent implements OnInit {
     this.third = old.price;
     this.rooms[0] = _new;
     this.rooms[x] = old;
+    // this.currentI=x;
     this.timedscroll = setTimeout(() => {
       this.scroll(this.currentI++);
     }, 3000);
