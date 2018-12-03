@@ -175,7 +175,7 @@ display:flex;
   line-height: 27px;
   font-size: 16px;
   color: #000000;
-  padding-bottom: 5%;
+  /*padding-bottom: 5%;*/
   white-space: pre-wrap;
 }
 
@@ -277,7 +277,7 @@ pre{
   justify-content: center !important;
   width: 30px;
   height: 30px;
-  margin-right: 2.5%;
+  margin-right: 1.5%;
   margin-bottom: 6%;
   background-size: 30px 28px !important;
   background-repeat: no-repeat !important;
@@ -665,7 +665,7 @@ img{
   }
 
   .imageRoom {
-    margin-top: 3%;
+    margin-top: 2.5%;
   }
 
   .content {
