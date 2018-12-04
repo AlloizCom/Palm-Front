@@ -29,8 +29,8 @@ export class ServiceService {
   }
 
   save(serviceJson: Service, form: HTMLFormElement): Observable<Service> {
-    let f = new FormData(form)
-      .append('serviceJson', JSON.stringify(serviceJson));
+    let f = new FormData(form);
+    f.append('serviceJson', JSON.stringify(serviceJson));
     return this._httpClient.post<Service>(this.controller + '/save', f, {
       headers: new HttpHeaders().append('enctype', 'multipart/form-data')
     });

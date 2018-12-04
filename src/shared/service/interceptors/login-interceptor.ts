@@ -3,7 +3,6 @@ import {Observable} from 'rxjs/Observable';
 import {isNull, isNullOrUndefined} from 'util';
 import {isPlatformBrowser} from '@angular/common';
 import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
-import {tap} from 'rxjs/operators';
 
 @Injectable()
 export class LoginInterceptor implements HttpInterceptor {
@@ -15,12 +14,14 @@ export class LoginInterceptor implements HttpInterceptor {
     if (isPlatformBrowser(this.platformId)) {
       req = req.clone({headers: this.getHeaders(req)});
     }
-    return next.handle(req).pipe(tap(x => {
-    }, e => console.error(e)));
+    return next.handle(req)
+      // .pipe(tap(x => {
+      // }, e => console.error(e)))
+      ;
   }
 
   getHeaders(req: HttpRequest<any>): HttpHeaders {
-    let authKey = '';
+    let authKey = null;
     let headers = new HttpHeaders();
     let temp: HttpRequest<any>;
     if (isNull(req.headers)) {
@@ -29,7 +30,10 @@ export class LoginInterceptor implements HttpInterceptor {
       temp = req.clone();
     }
     headers = temp.headers;
-    if ((isNullOrUndefined(localStorage.getItem('access_token')) || localStorage.getItem('access_token') == '') && (isNullOrUndefined(sessionStorage.getItem('access_token')) || sessionStorage.getItem('access_token') == '')) {
+    if (
+      (isNullOrUndefined(localStorage.getItem('access_token')) || localStorage.getItem('access_token') == '') &&
+      (isNullOrUndefined(sessionStorage.getItem('access_token')) || sessionStorage.getItem('access_token') == '')
+    ) {
       if (req.params.get('grant_type') != null) {
         authKey = 'Basic  Y2xpZW50X3BhbG1hX2hvdGVsLmNvbTpzZWNyZXRfcGFsbWFzZXJ2ZXIuY29t';
         headers = headers.set('Content-Type', 'application/x-www-form-urlencoded;application/json');
@@ -40,7 +44,8 @@ export class LoginInterceptor implements HttpInterceptor {
       else if (!isNullOrUndefined(localStorage.getItem('access_token')))
         authKey = 'Bearer ' + localStorage.getItem('access_token');
     }
-    headers = headers.set('Authorization', authKey);
+    if (authKey)
+      headers = headers.set('Authorization', authKey);
     headers = headers.set('Accept', 'application/json');
     return headers;
   }

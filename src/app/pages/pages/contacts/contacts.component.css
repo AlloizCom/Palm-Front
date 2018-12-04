@@ -17,7 +17,12 @@ pre{
   color: #000000;
 }
 
+p{
+  font-family: 'Roboto' , sans-serif !important;
+}
+
 .title h2 {
+  font-family: 'Roboto' , sans-serif !important;
   text-align: center;
   font-style: normal;
   font-weight: normal;
@@ -28,17 +33,20 @@ pre{
 }
 
 .info {
+  font-family: 'Roboto' , sans-serif !important;
   display: flex;
   padding-bottom: 3%;
 }
 
 .address {
+  font-family: 'Roboto' , sans-serif !important;
   width: 33.3%;
   justify-content: center;
   display: block;
 }
 
 .phone {
+  font-family: 'Roboto' , sans-serif !important;
   width: 33.3%;
   justify-content: center;
   display: block;
@@ -46,6 +54,7 @@ pre{
 }
 
 .mail {
+  font-family: 'Roboto' , sans-serif !important;
   width: 33.3%;
   justify-content: center;
   display: block;
@@ -62,6 +71,7 @@ pre{
 }
 
 .address-title {
+  font-family: 'Roboto' , sans-serif !important;
   padding-top: 8%;
   padding-bottom: 8%;
   font-style: normal;
@@ -72,12 +82,14 @@ pre{
 }
 
 .text {
+  font-family: 'Roboto' , sans-serif !important;
   width: 80%;
   text-align: center;
   margin: auto;
 }
 
 .normal-text {
+  font-family: 'Roboto' , sans-serif !important;
   margin: 0;
   padding-bottom: 1%;
   padding-top: 1%;
@@ -149,6 +161,7 @@ a {
 }
 
 .feedback-small-title {
+  font-family: 'Roboto' , sans-serif !important;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -162,6 +175,7 @@ a {
 }
 
 .feedback-big-title {
+  font-family: 'Roboto' , sans-serif !important;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -170,6 +184,7 @@ a {
 }
 
 .feedback-text {
+  font-family: 'Roboto' , sans-serif !important;
   font-style: normal;
   font-weight: 300;
   line-height: 27px;
@@ -220,6 +235,7 @@ textarea {
 }
 
 .right-side p {
+  font-family: 'Roboto' , sans-serif !important;
   margin: 0;
   font-style: normal;
   font-weight: 300;
@@ -253,6 +269,7 @@ button:hover {
 }
 
 .location-title {
+  font-family: 'Roboto' , sans-serif !important;
   text-align: center;
   font-style: normal;
   font-weight: normal;
@@ -311,6 +328,7 @@ button:hover {
 }
 
 .location-images p {
+  font-family: 'Roboto' , sans-serif !important;
   text-align: center;
   font-style: normal;
   font-weight: normal;
@@ -326,6 +344,7 @@ button:hover {
 }
 
 .description p {
+  font-family: 'Roboto' , sans-serif !important;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -456,5 +475,6 @@ agm-map {
 }
 
 .inputCallbackText {
+  font-family: 'Roboto' , sans-serif !important;
   padding: 10px 10px 10px 10px;
 }
