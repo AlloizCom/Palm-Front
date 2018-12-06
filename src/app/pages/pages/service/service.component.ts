@@ -26,7 +26,8 @@ export class ServiceComponent implements OnInit {
     // this.service.serviceDescriptions = [];
     this._router.params.subscribe(next => {
       this._serviceService.findOneAvailable(next['id']).subscribe(next => {
-        this.service = LangSort.sortOne(next);
+        this.service = next;
+        this.service.serviceDescriptions = LangSort.sortOne(this.service.serviceDescriptions);
         this.id = next['id'];
         this.img = this._imagePipe.transform(next.picturePath);
         // console.log(this.service);

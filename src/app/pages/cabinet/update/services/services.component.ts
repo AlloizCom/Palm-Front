@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Service} from "../../../../../shared/models/service";
 import {ServiceService} from "../../../../../shared/service/service.service";
+import {LangSort} from "../../../../../shared/models/utils/lang-sort";
 
 @Component({
   selector: 'app-services',
@@ -15,6 +16,9 @@ export class ServicesComponent implements OnInit {
   constructor(private _serviceService: ServiceService) {
     _serviceService.findAll().subscribe(next => {
         this.service = next;
+      for (let i = 0; i < this.service.length; i++) {
+        this.service[i].serviceDescriptions = LangSort.sort(this.service[i].serviceDescriptions);
+      }
         console.log(this.service)
       }
     ), error => {

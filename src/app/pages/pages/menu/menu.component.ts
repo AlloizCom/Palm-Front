@@ -4,6 +4,7 @@ import {ServiceService} from '../../../../shared/service/service.service';
 import {Service} from '../../../../shared/models/service';
 import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';
 import {TranslateService} from '@ngx-translate/core';
+import {LangSort} from "../../../../shared/models/utils/lang-sort";
 
 @Component({
   selector: 'app-menu',
@@ -23,6 +24,9 @@ export class MenuComponent implements OnInit {
               private  _carrentLanguadgeService: CarrentLanguadgeService) {
     this._serviceService.findAllAvailable().subscribe(next => {
       this.services = next;
+      for (let i = 0; i < this.services.length; i++) {
+        this.services[i].serviceDescriptions = LangSort.sort(this.services[i].serviceDescriptions);
+      }
       console.log('menu : ',this.services);
       this.servicesToShow = this.services.filter(value => value.showOnTop);
       // console.log('services ', this.services);
