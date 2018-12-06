@@ -12,7 +12,8 @@ enableProdMode();
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./palm-front-server/main');
 const app = express();
 const PORT = 80;
-const DIST_FOLDER = join(process.cwd(), 'dist');
+const DIST_FOLDER = process.cwd();
+// const DIST_FOLDER = join(process.cwd(), 'dist');
 
 
 app.engine('html', ngExpressEngine({
