@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProposalService} from "../../../../../shared/service/proposal.service";
 import {Proposal} from "../../../../../shared/models/proposal";
+import {LangSort} from "../../../../../shared/models/utils/lang-sort";
 
 @Component({
   selector: 'app-proposal-item',
@@ -14,7 +15,7 @@ export class ProposalItemComponent implements OnInit {
 
   constructor(private _proposalService: ProposalService) {
     this._proposalService.findAllAvailable().subscribe(next => {
-      this.proposals = next;
+      this.proposals = LangSort.sort(next);
     })
   }
 
