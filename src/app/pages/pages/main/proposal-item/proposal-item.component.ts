@@ -15,7 +15,10 @@ export class ProposalItemComponent implements OnInit {
 
   constructor(private _proposalService: ProposalService) {
     this._proposalService.findAllAvailable().subscribe(next => {
-      this.proposals = LangSort.sort(next);
+      this.proposals = next;
+      for (let i = 0; i < this.proposals.length; i++) {
+        this.proposals[i].proposalDescriptions = LangSort.sort(this.proposals[i].proposalDescriptions);
+      }
     })
   }
 
