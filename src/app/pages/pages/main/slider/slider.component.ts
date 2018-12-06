@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {MenuComponent} from '../../menu/menu.component';
 import {Service} from '../../../../../shared/models/service';
 import {BrowserCheckService} from '../../../../shared/service/browser-check.service';
+import {LangSort} from "../../../../../shared/models/utils/lang-sort";
+import {ServiceService} from "../../../../../shared/service/service.service";
 
 @Component({
   selector: 'app-slider',
@@ -17,9 +19,21 @@ export class SliderComponent implements OnInit {
 
   services: Service[] = [];
 
-  constructor(private _menuComponent: MenuComponent, private _browserCheck: BrowserCheckService) {
-    this.services = _menuComponent.services;
-    console.log(this.services);
+  constructor(private _menuComponent: MenuComponent, private _browserCheck: BrowserCheckService, private _serviceService: ServiceService) {
+    // this.services = _menuComponent.services;
+    // console.log("SERVICE ---->");
+    // console.log(this.services);
+    // console.log(">---- SERVICE");
+
+    this._serviceService.findAllAvailable().subscribe(next=>{
+      this.services = next;
+      for (let i = 0; i < this.services.length; i++) {
+        this.services[i].serviceDescriptions = LangSort.sort(this.services[i].serviceDescriptions);
+      }
+      console.log("SORTED ---->");
+      console.log(this.services);
+    });
+
     this.middleIndex = Math.round(this.services.length / 8);
     this.middleIndex2 = this.middleIndex + 1;
     this.middleIndex3 = this.middleIndex + 2;
@@ -66,8 +80,8 @@ export class SliderComponent implements OnInit {
 
 
   ngOnInit() {
-    if (this._browserCheck.isBrowser())
-      setTimeout(() => this.services = this._menuComponent.services, 1000);
+    // if (this._browserCheck.isBrowser())
+    //   setTimeout(() => this.services = this._menuComponent.services, 1000);
   }
 
 
