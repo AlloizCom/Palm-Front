@@ -12,10 +12,9 @@
             </g>
           </svg>
         </button>
-        <div class="navbar-collapse" id="navbarNav" [ngClass]="{ 'collapse': isIn }">
-          <div routerLink="/" class="logo">
-            <img src="../../../assets/svg/logo.svg" alt="Hotel Palma">
-          </div>
+        <div routerLink="/" class="logo">
+          <img class="logo" src="../../../assets/png/Logo_Palma_new%202.4.png" alt="Hotel Palma">
+        </div>
           <ul class="navbar-nav ml-auto" (click)="toggleState()">
             <li class="nav-item svg1">
 
@@ -67,7 +66,6 @@
               </a>
             </li>
           </ul>
-        </div>
       </nav>
       <router-outlet></router-outlet>
     </div>

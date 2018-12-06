@@ -55,3 +55,9 @@ a{
   height: 20px;
 
 }
+
+.logo {
+  width: 115px;
+  cursor: pointer;
+  outline: 0;
+}
