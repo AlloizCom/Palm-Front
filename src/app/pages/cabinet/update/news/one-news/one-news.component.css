@@ -59,9 +59,11 @@ label {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 350px;
 }
 
 .button-center{
   padding-left: 35vw;
 }
+
 

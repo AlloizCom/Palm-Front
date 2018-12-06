@@ -3,7 +3,7 @@
     <div class="oneImg" *ngFor="let two of one.images">
          <img src="{{two.path|imagePipe}}">
          <!--[style.background-image]="'url(' + (two.path|imagePipe) + ')'" -->
-        <button (click)="delete(one.id, two.id)">DELETE!!!</button>
+        <button (click)="delete(one.id, two.id)">Видалити зображення</button>
     </div>
     <br>
   </div>

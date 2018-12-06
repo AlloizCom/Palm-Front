@@ -21,9 +21,9 @@
           <h2>{{one.get('language').value|translate}}</h2>
           <h3>Title</h3>
           <input type="text"  formControlName="title">
-          <h3>HeaderText</h3>
+          <h3>Header text</h3>
           <input type="text"  formControlName="headerText">
-          <h3>mainTExt</h3>
+          <h3>Main text</h3>
           <textarea cols="30" rows="10" formControlName="mainText"></textarea>
         </form>
       </div>
@@ -67,9 +67,9 @@
       <input (change)="readUrl($event)"  id="file" type="file" class="d-none"  name="multipartFile" >
     </div>
     <br>
-    <label class="image-button" for="file">AddImage</label>
+    <label class="image-button" for="file">Додати зображення</label>
     <br>
-    <button class="image-button" (click)="update(form)" [disabled]="!newsUpdateForm.valid" >Оновити news</button>
+    <button class="image-button" (click)="update(form)" [disabled]="!newsUpdateForm.valid" >Оновити новину</button>
   </form>
     </div>
   </form>
