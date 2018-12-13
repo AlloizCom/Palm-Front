@@ -130,9 +130,11 @@
       translate].description:''}}</pre>
 
       <div *ngIf="room.priceFifthPlaces == 0 && room.priceThreePlaces ==0" >
-      <p class="price-title">{{'rooms.price'|translate}}</p>
-      <!--<p class="price">{{room.price}} &#8372;</p>-->
-      <p class="price">{{room.price?room.price:999}} {{'global.uah'|translate}}</p>
+        <p class="price-title">{{'rooms.price'|translate}}</p>
+        <div class="place-price">
+          <img class="persons" src="../../../../assets/png/room-twin.png" alt="alt">
+          <p class="price">{{room.price?room.price:999}} {{'global.uah'|translate}}</p>
+        </div>
       <!--<p class="price">999 грн</p>-->
       </div>
 
