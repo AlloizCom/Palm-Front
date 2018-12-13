@@ -70,9 +70,11 @@ export class ContactsComponent implements OnInit {
     this.origin = {lat: 49.8399353, lng: 23.9915774};
   }
 
+  //49.786756, 24.016175
+
   getBusDirection() {
     this.destination = {lat: 49.856338332302016, lng: 24.076377153396606};
-    this.origin = {lat: 49.8642614, lng: 24.0491102};
+    this.origin = {lat: 49.7867560, lng: 24.0161750};
   }
 
   getSquareDirection() {
