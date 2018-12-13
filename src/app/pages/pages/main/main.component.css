@@ -232,7 +232,7 @@ app-top-slider {
 .kartinkasMainDiv{
   width: 100%;
   height: 100%;
-  border: 8px solid #d9d9d9;
+  /*border: 8px solid #d9d9d9;*/
   position: relative;
 }
 
