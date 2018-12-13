@@ -75,11 +75,20 @@ h2 {
 @media screen and (max-width: 1230px) {
   .greenAbs p {
     top: 60% !important;
+    margin-top: 15px;
   }
 }
 
 @media screen and (max-width: 965px) {
   .greenAbs p {
     top: 65% !important;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .greenAbs p {
+    top: 60% !important;
+    margin-top: 15px;
   }
 }
