@@ -43,7 +43,7 @@ export class MainRoomsComponent implements OnInit {
   }
 
   set currentI(value: number) {
-    if (value >= this.rooms.length - 1) {
+    if (value >= this.rooms.length) {
       this._currentI = 1;
       return;
     } else if (value < 1) {
