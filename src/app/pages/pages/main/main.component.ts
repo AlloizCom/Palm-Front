@@ -198,7 +198,7 @@ const customStyle = [
   styleUrls: ['./main.component.css'],
   providers: [MainPageSevice],
   host: {
-    '(document:click)': 'changL()',
+    '(document:click)': 'changL()'
   }
 })
 export class MainComponent implements OnInit {
@@ -247,6 +247,7 @@ export class MainComponent implements OnInit {
     this.model2.year = new Date().getUTCFullYear();
     this.mounth1 = this.model1 ? this.model1.month : 'MM';
     this.mounth2 = this.model2 ? this.model2.month : 'MM';
+
   }
 
   findRoomByParams() {
@@ -280,6 +281,8 @@ export class MainComponent implements OnInit {
     if (this.isBrowser)
       this.screenWidth = window.innerWidth;
   }
+
+
 
 //dataPicker
   onValueChange(e) {
@@ -346,6 +349,26 @@ export class MainComponent implements OnInit {
       this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
     }
     this.localeService.use(this.locale);
+    this.getCurrentLang();
+  }
+
+  getCurrentLang(){
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'en') {
+      this.model1.month = new Date().getUTCMonth()+12;
+      this.model2.month = new Date().getUTCMonth()+12;
+    }
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+      this.model1.month = new Date().getUTCMonth();
+      this.model2.month = new Date().getUTCMonth();
+    }
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'ru') {
+      this.model1.month = new Date().getUTCMonth()+24;
+      this.model2.month = new Date().getUTCMonth()+24;
+    }
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'pl') {
+      this.model1.month = new Date().getUTCMonth()+36;
+      this.model2.month = new Date().getUTCMonth()+36;
+    }
   }
 
 }

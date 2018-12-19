@@ -48,4 +48,8 @@ export class MenuComponent implements OnInit {
     this.isIn = !this.isIn;
   }
 
+  getLang(){
+    return this.currentLang;
+  }
+
 }
