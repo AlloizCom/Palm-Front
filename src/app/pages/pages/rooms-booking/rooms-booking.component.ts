@@ -12,12 +12,17 @@ import {Amenity} from '../../../../shared/models/amenity';
 import {BookService} from '../../../../shared/service/book.service';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
 import {SeoService} from '../../../../shared/service/seo.service';
+import {CarrentLanguadgeService} from "../../../../shared/service/carrent-languadge.service";
+import {BsLocaleService} from "ngx-bootstrap/datepicker";
 
 @Component({
   selector: 'app-rooms-booking',
   templateUrl: './rooms-booking.component.html',
   styleUrls: ['./rooms-booking.component.css'],
-  providers: [RoomService, NgbCarouselConfig, BookService]
+  providers: [RoomService, NgbCarouselConfig, BookService],
+  host: {
+    '(document:click)': 'changL()'
+  }
 })
 export class RoomsBookingComponent implements OnInit, OnDestroy {
 
@@ -48,13 +53,19 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
   liqPayFormHtml: string = '';
   isBrowser = false;
 
+
+  locale = 'ru';
+
+
   constructor(
     private _router: ActivatedRoute, config: NgbCarouselConfig,
     private router: Router,
     private _roomService: RoomService,
     private _bookService: BookService,
     private _roomsParamService: RoomParamsService,
+    private localeService: BsLocaleService,
     private _browserCheck: BrowserCheckService,
+    private  _carrentLanguadgeService: CarrentLanguadgeService,
     private _meta: SeoService
   ) {
     this.isBrowser = this._browserCheck.isBrowser();
@@ -214,5 +225,34 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this._meta.setDefault();
+  }
+
+  changL() {
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+      this.locale = 'ru';
+    } else {
+      this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
+    }
+    this.localeService.use(this.locale);
+    this.getCurrentLang();
+  }
+
+  getCurrentLang(){
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'en') {
+      this.model1.month = new Date().getUTCMonth()+12;
+      this.model2.month = new Date().getUTCMonth()+12;
+    }
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+      this.model1.month = new Date().getUTCMonth();
+      this.model2.month = new Date().getUTCMonth();
+    }
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'ru') {
+      this.model1.month = new Date().getUTCMonth()+24;
+      this.model2.month = new Date().getUTCMonth()+24;
+    }
+    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'pl') {
+      this.model1.month = new Date().getUTCMonth()+36;
+      this.model2.month = new Date().getUTCMonth()+36;
+    }
   }
 }
