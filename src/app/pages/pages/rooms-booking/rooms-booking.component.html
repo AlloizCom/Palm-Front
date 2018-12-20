@@ -123,7 +123,7 @@
       </div>
     </div>
     <div class="bottom" *ngIf="roomType">
-      <h2 class="selected"><span>{{('rooms.types'| translate)[roomType]}}</span></h2>
+      <h2 class="selected"><span class="selected">{{('rooms.types'| translate)[roomType]}}</span></h2>
       <p class="roomDesc">{{'rooms.description'|translate}}</p>
       <p class="room-description-title"><pre class="article-text">{{room.descriptions['current-language-index' |
         translate]?room.descriptions['current-language-index' |

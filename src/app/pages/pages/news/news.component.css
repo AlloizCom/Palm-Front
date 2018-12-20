@@ -314,6 +314,10 @@ button:hover {
   position: relative;
 }
 
+a {
+  font-family: 'Roboto',sans-serif!important;
+}
+
 @media screen and (max-device-width: 1100px) {
 
   .firsty {
