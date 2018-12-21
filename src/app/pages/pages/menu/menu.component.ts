@@ -38,6 +38,9 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  goTop(){
+    window.scrollTo(0,0);
+  }
   changeLanguage(lang: Language) {
     this.currentLang = lang;
     this.translate.use(lang);

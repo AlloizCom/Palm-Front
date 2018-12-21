@@ -52,7 +52,9 @@ export class MainRoomsComponent implements OnInit {
     }
     this._currentI = value;
   }
-
+  goTop(){
+    window.scrollTo(0,0);
+  }
   scroll(x: number) {
     clearTimeout(this.timedscroll);
     if (x < 0) {

@@ -56,7 +56,9 @@ export class NewsComponent implements OnInit {
       console.log(err);
     });
   }
-
+  goTop(){
+    window.scrollTo(0,0);
+  }
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {
       return !isNullOrUndefined(object[0]);

@@ -45,7 +45,9 @@ export class RoomsComponent implements OnInit{
   ngOnInit() {
 
   }
-
+goTop(){
+    window.scrollTo(0,0);
+}
   scrollToId() {
     if (!isNullOrUndefined(this._roomIdService.id)) {
       console.log(this._roomIdService.id);

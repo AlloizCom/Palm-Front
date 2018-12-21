@@ -1,5 +1,5 @@
 <div class="relka" *ngIf="rooms.length>=3">
-  <div [routerLink]="['/rooms-booking', rooms[0].id]" class="greenAbs">
+  <div [routerLink]="['/rooms-booking', rooms[0].id]" class="greenAbs" (click)="goTop()">
     <div>
       <h2>{{roomTariff[rooms[0].type]['current-language-index' | translate]}}</h2>
       <p>{{'rooms.review'|translate}}</p>
