@@ -29,7 +29,7 @@ export class MenuComponent implements OnInit {
   ) {
     this._router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
-        this.currentUrl = value.urlAfterRedirects.replace(/\/?(uk|en|pl|ru)\/?/, '');
+        this.currentUrl = value.urlAfterRedirects.replace(/\/?pages\/?(uk|en|pl|ru)\/?/, '');
       }
     });
     this._serviceService.findAllAvailable().subscribe(next => {

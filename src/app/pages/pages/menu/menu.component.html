@@ -56,22 +56,22 @@
             <div class="langs d-flex justify-content-between">
               <a (click)="changeLanguage('uk');toggleState()"
                 [ngClass]="{'active':currentLang=='uk'}"
-                [routerLink]="['/uk/'+currentUrl]"
+                [routerLink]="['/pages/uk/'+currentUrl]"
               >ua
               </a>
               <a (click)="changeLanguage('en');toggleState()"
                 [ngClass]="{'active':currentLang=='en'}"
-                [routerLink]="['/en/'+currentUrl]"
+                [routerLink]="['/pages/en/'+currentUrl]"
               >en
               </a>
               <a (click)="changeLanguage('pl');toggleState()"
                 [ngClass]="{'active':currentLang=='pl'}"
-                [routerLink]="['/pl/'+currentUrl]"
+                [routerLink]="['/pages/pl/'+currentUrl]"
               >pl
               </a>
               <a (click)="changeLanguage('ru');toggleState()"
                 [ngClass]="{'active':currentLang=='ru'}"
-                [routerLink]="['/ru/'+currentUrl]"
+                [routerLink]="['/pages/ru/'+currentUrl]"
               >ru
               </a>
             </div>
