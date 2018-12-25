@@ -22,7 +22,7 @@ import {ContentInterceptor} from '../shared/service/interceptors/content-interce
 import {LoginInterceptor} from '../shared/service/interceptors/login-interceptor';
 import {AdminGuard} from '../shared/Guard/AdminGuard';
 import {AdminChildrenGuards} from '../shared/Guard/admin-children-guards.service';
-import {CarrentLanguadgeService} from '../shared/service/carrent-languadge.service';
+import {CurrentLanguageService} from '../shared/service/current-language.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 import {SeoService} from '../shared/service/seo.service';
@@ -68,7 +68,7 @@ import {SeoService} from '../shared/service/seo.service';
     BookService,
     AdminGuard,
     AdminChildrenGuards,
-    CarrentLanguadgeService,
+    CurrentLanguageService,
     SeoService
   ],
   bootstrap: [AppComponent],

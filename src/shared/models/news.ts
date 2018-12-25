@@ -1,4 +1,5 @@
-import {NewsDescription} from "./news-description";
+import {NewsDescription} from './news-description';
+import {SeoModel} from './seo-model';
 
 export class News {
 
@@ -7,7 +8,6 @@ export class News {
   dateTime: string;
   picturePath: string;
   newsDescriptions: NewsDescription[] = [];
-  keywords: string;
-  description: string;
+  seos: SeoModel[];
 
 }

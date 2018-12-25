@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsService} from '../../../../../shared/service/news.service';
-import {NewsDescription} from '../../../../../shared/models/news-description';
 import {ImagePipePipe} from '../../../../../shared/pipe/pipe/image.pipe';
-import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
 const languages = ['EN', 'PL', 'UK', 'RU'];
 
@@ -18,7 +17,15 @@ export class NewsComponent implements OnInit {
   img: string;
   appear: boolean = false;
 
-  constructor(private _newsService: NewsService) {
+  constructor(private _newsService: NewsService, private _formBuilder: FormBuilder) {
+  }
+
+  get descriptionForms() {
+    return (<FormArray>this.newsForm.get('newsDescriptions')).controls;
+  }
+
+  get seoForms() {
+    return (<FormArray>this.newsForm.get('seos')).controls;
   }
 
   ngOnInit() {
@@ -34,13 +41,14 @@ export class NewsComponent implements OnInit {
     this.newsForm = new FormGroup({
       newsDescriptions: new FormArray(formArray),
       multipartFile: new FormControl(null, [this.validateImages]),
-      description: new FormControl('', [Validators.minLength(3), Validators.maxLength(255), Validators.required]),
-      keywords: new FormControl('', [Validators.minLength(3), Validators.maxLength(255), Validators.required]),
+      seos: this._formBuilder.array(languages.map(value =>
+        this._formBuilder.group({
+          language: this._formBuilder.control(value),
+          keywords: this._formBuilder.control(''),
+          description: this._formBuilder.control('')
+        })
+      ))
     });
-  }
-
-  get descriptionForms(){
-    return (<FormArray>this.newsForm.get('newsDescriptions')).controls;
   }
 
   readUrl(event: any) {

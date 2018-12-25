@@ -6,7 +6,7 @@ import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Router} from '@angular/router';
 import {defineLocale} from 'ngx-bootstrap/chronos';
 import {BsLocaleService} from 'ngx-bootstrap/datepicker';
-import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';
+import {CurrentLanguageService} from '../../../../shared/service/current-language.service';
 import {plLocale, ruLocale} from 'ngx-bootstrap/locale';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
 import {SeoService} from '../../../../shared/service/seo.service';
@@ -233,7 +233,7 @@ export class MainComponent implements OnInit {
   constructor(private _roomsParamService: RoomParamsService,
               private _router: Router,
               private localeService: BsLocaleService,
-              private  _carrentLanguadgeService: CarrentLanguadgeService,
+              private  _currentLanguageService: CurrentLanguageService,
               private _browserCheck: BrowserCheckService,
               private  _meta:SeoService
   ) {
@@ -343,29 +343,29 @@ export class MainComponent implements OnInit {
   }
 
   changL() {
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+    if (this._currentLanguageService.currentLanguage === 'uk') {
       this.locale = 'ru';
     } else {
-      this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
+      this.locale = this._currentLanguageService.currentLanguage;
     }
     this.localeService.use(this.locale);
     this.getCurrentLang();
   }
 
   getCurrentLang(){
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'en') {
+    if (this._currentLanguageService.currentLanguage === 'en') {
       this.model1.month = new Date().getUTCMonth()+12;
       this.model2.month = new Date().getUTCMonth()+12;
     }
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+    if (this._currentLanguageService.currentLanguage === 'uk') {
       this.model1.month = new Date().getUTCMonth();
       this.model2.month = new Date().getUTCMonth();
     }
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'ru') {
+    if (this._currentLanguageService.currentLanguage === 'ru') {
       this.model1.month = new Date().getUTCMonth()+24;
       this.model2.month = new Date().getUTCMonth()+24;
     }
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'pl') {
+    if (this._currentLanguageService.currentLanguage === 'pl') {
       this.model1.month = new Date().getUTCMonth()+36;
       this.model2.month = new Date().getUTCMonth()+36;
     }

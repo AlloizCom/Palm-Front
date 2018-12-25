@@ -12,8 +12,8 @@ import {Amenity} from '../../../../shared/models/amenity';
 import {BookService} from '../../../../shared/service/book.service';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
 import {SeoService} from '../../../../shared/service/seo.service';
-import {CarrentLanguadgeService} from "../../../../shared/service/carrent-languadge.service";
-import {BsLocaleService} from "ngx-bootstrap/datepicker";
+import {CurrentLanguageService} from '../../../../shared/service/current-language.service';
+import {BsLocaleService} from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-rooms-booking',
@@ -65,7 +65,7 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
     private _roomsParamService: RoomParamsService,
     private localeService: BsLocaleService,
     private _browserCheck: BrowserCheckService,
-    private  _carrentLanguadgeService: CarrentLanguadgeService,
+    private  _currentLanguageService: CurrentLanguageService,
     private _meta: SeoService
   ) {
     this.isBrowser = this._browserCheck.isBrowser();
@@ -77,8 +77,10 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
         this.amenities = next.amenities;
         this.roomType = next.type;
         this.id = next.id;
-        this._meta.currentDescription = next.description;
-        this._meta.currentKeywords = next.keywords;
+        this.getMeta(this.room);
+        this._currentLanguageService.currentLanguage$.subscribe(value => {
+          this.getMeta(this.room);
+        });
 // console.log(next);
       });
     }, err => {
@@ -93,7 +95,11 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
     this.model2.year = new Date().getUTCFullYear();
   }
 
-  // findRoomByParams() {
+  objectDateToString(date) {
+    return new Date(date.year, date.month, date.day + 1);
+  }
+
+// findRoomByParams() {
   //   let roomsParams = new RoomsParams();
   //   roomsParams.dateFrom = this.objectDateToString(this.model1).toString();
   //   roomsParams.dateTo = this.objectDateToString(this.model2).toString();
@@ -102,10 +108,6 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
   //   roomsParams.childrens = this.childrenNumber;
   //   this._roomsParamService.setRoomsParams(roomsParams);
   // }
-
-  objectDateToString(date) {
-    return new Date(date.year, date.month, date.day + 1);
-  }
 
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {
@@ -172,8 +174,6 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
     });
   }
 
-//dataPicker
-
   roomsNumberFunc(bull) {
     if (bull) {
       this.roomsNumber += 1;
@@ -182,6 +182,8 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
       this.roomsNumber -= 1;
     }
   }
+
+//dataPicker
 
   adultsNumberFunc(bull) {
     if (bull) {
@@ -200,7 +202,6 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
       this.childrenNumber -= 1;
     }
   }
-
 
   //slider
   scroll(event) {
@@ -228,31 +229,37 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
   }
 
   changL() {
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+    if (this._currentLanguageService.currentLanguage === 'uk') {
       this.locale = 'ru';
     } else {
-      this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
+      this.locale = this._currentLanguageService.currentLanguage;
     }
     this.localeService.use(this.locale);
     this.getCurrentLang();
   }
 
-  getCurrentLang(){
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'en') {
-      this.model1.month = new Date().getUTCMonth()+12;
-      this.model2.month = new Date().getUTCMonth()+12;
+  getCurrentLang() {
+    if (this._currentLanguageService.currentLanguage === 'en') {
+      this.model1.month = new Date().getUTCMonth() + 12;
+      this.model2.month = new Date().getUTCMonth() + 12;
     }
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+    if (this._currentLanguageService.currentLanguage === 'uk') {
       this.model1.month = new Date().getUTCMonth();
       this.model2.month = new Date().getUTCMonth();
     }
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'ru') {
-      this.model1.month = new Date().getUTCMonth()+24;
-      this.model2.month = new Date().getUTCMonth()+24;
+    if (this._currentLanguageService.currentLanguage === 'ru') {
+      this.model1.month = new Date().getUTCMonth() + 24;
+      this.model2.month = new Date().getUTCMonth() + 24;
     }
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'pl') {
-      this.model1.month = new Date().getUTCMonth()+36;
-      this.model2.month = new Date().getUTCMonth()+36;
+    if (this._currentLanguageService.currentLanguage === 'pl') {
+      this.model1.month = new Date().getUTCMonth() + 36;
+      this.model2.month = new Date().getUTCMonth() + 36;
     }
+  }
+
+  private getMeta(next) {
+    let seo = next.seos.find(value => value.language.toLowerCase() == this._currentLanguageService.currentLanguage.toLowerCase());
+    this._meta.currentDescription = seo.description;
+    this._meta.currentKeywords = seo.keywords;
   }
 }

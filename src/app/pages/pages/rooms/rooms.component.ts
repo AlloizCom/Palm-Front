@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
 import {RoomService} from '../../../../shared/service/room.service';
 import {TariffService} from '../../../../shared/service/tariff.service';
@@ -8,7 +8,8 @@ import {ScrollToService} from 'ng2-scroll-to-el';
 import {RoomIdService} from '../../../../shared/service/room-id.service';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
 import {Room} from '../../../../shared/models/room';
-import {SeoService} from '../../../../shared/service/seo.service';
+import {Language} from '../../../../shared/enum/language';
+import {CurrentLanguageService} from '../../../../shared/service/current-language.service';
 
 @Component({
   selector: 'app-rooms',
@@ -16,19 +17,26 @@ import {SeoService} from '../../../../shared/service/seo.service';
   styleUrls: ['./rooms.component.css'],
   providers: [RoomService, TariffService, ScrollToService]
 })
-export class RoomsComponent implements OnInit{
+export class RoomsComponent implements OnInit {
 
   roomTariff: any;
   // rooms: RoomWithPrice[] = [];
   rooms: Room [] = [];
   isBrowser = false;
+  currentLanguage: Language;
 
-  constructor(private _roomService: RoomService,
-              private _tariffService: TariffService,
-              private _router: Router,
-              private _roomIdService: RoomIdService,
-              private _browserCheck: BrowserCheckService,
+  constructor(
+    private _roomService: RoomService,
+    private _tariffService: TariffService,
+    private _router: Router,
+    private _roomIdService: RoomIdService,
+    private _browserCheck: BrowserCheckService,
+    private _currentLanguageService: CurrentLanguageService,
   ) {
+    this.currentLanguage = this._currentLanguageService.currentLanguage;
+    this._currentLanguageService.currentLanguage$.subscribe(value => {
+      this.currentLanguage = value;
+    });
     this.isBrowser = this._browserCheck.isBrowser();
     this.roomTariff = roomTariff;
     // this._roomService.findAllRoomWithPrice().subscribe(next => {
@@ -45,9 +53,11 @@ export class RoomsComponent implements OnInit{
   ngOnInit() {
 
   }
-goTop(){
-    window.scrollTo(0,0);
-}
+
+  goTop() {
+    window.scrollTo(0, 0);
+  }
+
   scrollToId() {
     if (!isNullOrUndefined(this._roomIdService.id)) {
       console.log(this._roomIdService.id);

@@ -19,7 +19,7 @@ export class NewsComponent implements OnInit {
 
 
   constructor(private _newsService: NewsService, private _translate: TranslateService) {
-    // this.lang = this._translate.currentLang;
+    // this.lang = this._translate.currentLanguage;
     // this._translate.onLangChange.subscribe(next=>{
     //   this.lang = next.lang;
     // });

@@ -1,11 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {Amenity} from '../../../../../shared/models/amenity';
 import {RoomDescription} from '../../../../../shared/models/room-description';
-import {FormArray, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Room} from '../../../../../shared/models/room';
 import {AmenityService} from '../../../../../shared/service/amenity.service';
 import {RoomService} from '../../../../../shared/service/room.service';
 import {isNullOrUndefined} from 'util';
+
+const languages = ['EN', 'PL', 'UK', 'RU'];
+
 
 @Component({
   selector: 'app-room',
@@ -43,7 +46,7 @@ export class RoomComponent implements OnInit {
   appear: boolean = true;
   type: string;
 
-  constructor(private _amenityService: AmenityService, private _roomService: RoomService) {
+  constructor(private _amenityService: AmenityService, private _roomService: RoomService, private _formBuilder: FormBuilder) {
     this.room.amenities = [];
     this._amenityService.findAll().subscribe(next => {
       this.amenity = next;
@@ -51,6 +54,10 @@ export class RoomComponent implements OnInit {
     });
     this.roomDescriptions = [new RoomDescription(), new RoomDescription(), new RoomDescription(), new RoomDescription()];
     this.type = 'none';
+  }
+
+  get seoForms() {
+    return (<FormArray>this.roomForm.get('seos')).controls;
   }
 
   ngOnInit() {
@@ -90,7 +97,7 @@ export class RoomComponent implements OnInit {
         this.roomForm.reset(this.defaultFormValue);
         this.createFormArray();
         this.image = [];
-        alert("Кімнату добавлено")
+        alert('Кімнату добавлено');
       },
       error => {
         console.log(error);
@@ -108,11 +115,11 @@ export class RoomComponent implements OnInit {
   }
 
   validateImages(c: FormControl): { [key: string]: any } {
-    return c.value == null || c.value.length == 0 ? {"required": true} : null;
+    return c.value == null || c.value.length == 0 ? {'required': true} : null;
   }
 
   validateType(c: FormControl): { [key: string]: any } {
-    return c.value == 'NONE' || c.value == '' ? {"required": true} : null;
+    return c.value == 'NONE' || c.value == '' ? {'required': true} : null;
   }
 
   private createRoomForm() {
@@ -123,8 +130,13 @@ export class RoomComponent implements OnInit {
       square: new FormControl(20, [Validators.min(10), Validators.max(150), Validators.required]),
       amount: new FormControl(1, [Validators.min(1), Validators.max(100), Validators.required]),
       price: new FormControl(1, [Validators.min(1), Validators.max(10000), Validators.required]),
-      description: new FormControl('', [Validators.minLength(3), Validators.maxLength(255),Validators.required]),
-      keywords: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+      seos: this._formBuilder.array(languages.map(value =>
+        this._formBuilder.group({
+          language: this._formBuilder.control(value),
+          keywords: this._formBuilder.control(''),
+          description: this._formBuilder.control('')
+        })
+      )),
       amenities: new FormControl([]),
       priceThreePlaces: new FormControl(0, [Validators.min(0), Validators.max(10000), Validators.required]),
       priceFifthPlaces: new FormControl(0, [Validators.min(0), Validators.max(10000), Validators.required]),

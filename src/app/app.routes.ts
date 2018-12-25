@@ -4,6 +4,7 @@ import {cabinetRoutes} from './pages/cabinet/cabinet.routes';
 
 
 export const routes: Routes = [
-  ...pagesRoutes,
-  ...cabinetRoutes
+  {path:'',pathMatch: 'full', redirectTo: 'pages'},
+  {path: 'cabinet', children: cabinetRoutes},
+  {path: 'pages', children: pagesRoutes}
 ];

@@ -13,7 +13,10 @@ import {BookFormComponent} from './book-form/book-form.component';
 
 export const pagesRoutes: Routes = [
   {
-    path: '', component: PagesComponent, children: [
+    path: '', component: PagesComponent
+  },
+  {
+    path: ':lang', component: PagesComponent, children: [
       {path: '', component: MainComponent},
       {path: 'contacts', component: ContactsComponent},
       {

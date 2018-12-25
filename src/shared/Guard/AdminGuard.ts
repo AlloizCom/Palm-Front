@@ -12,7 +12,7 @@ export class AdminGuard implements CanActivate{
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
     if (!this._userDet.checkAuth()) {
-      this.router.navigateByUrl('/login');
+      this.router.navigateByUrl('/pages/uk/login');
       return false;
     }
     return true;

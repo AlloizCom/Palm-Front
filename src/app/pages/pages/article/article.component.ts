@@ -6,6 +6,7 @@ import {ImagePipePipe} from '../../../../shared/pipe/pipe/image.pipe';
 import {isNullOrUndefined} from 'util';
 import {LangSort} from '../../../../shared/models/utils/lang-sort';
 import {SeoService} from '../../../../shared/service/seo.service';
+import {CurrentLanguageService} from '../../../../shared/service/current-language.service';
 
 @Component({
   selector: 'app-article',
@@ -23,9 +24,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
     private _newsService: NewsService,
     private _router: ActivatedRoute,
     private _imagePipe: ImagePipePipe,
-    private _meta: SeoService
+    private _meta: SeoService,
+    private _currentLanguageService: CurrentLanguageService
   ) {
-    // this.lang = this._translate.currentLang;
+    // this.lang = this._translate.currentLanguage;
     // this._translate.onLangChange.subscribe(next=>{
     //   this.lang = next.lang;
     // });
@@ -35,8 +37,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
         this.news.newsDescriptions = LangSort.sort(this.news.newsDescriptions);
         this.id = next.id;
         this.img = this._imagePipe.transform(next.picturePath);
-        this._meta.currentDescription = next.description;
-        this._meta.currentKeywords = next.keywords;
+        this.getMeta(this.news);
+        this._currentLanguageService.currentLanguage$.subscribe(value => {
+          this.getMeta(this.news);
+        });
       }, error => {
         console.log(error);
       });
@@ -57,4 +61,11 @@ export class ArticleComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this._meta.setDefault();
   }
+
+  private getMeta(next) {
+    let seo = next.seos.find(value => value.language.toLowerCase() == this._currentLanguageService.currentLanguage.toLowerCase());
+    this._meta.currentDescription = seo.description;
+    this._meta.currentKeywords = seo.keywords;
+  }
+
 }

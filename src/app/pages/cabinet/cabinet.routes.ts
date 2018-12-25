@@ -12,7 +12,7 @@ import {AdminGuard} from "../../../shared/Guard/AdminGuard";
 
 export const cabinetRoutes: Routes = [
   {
-    path: 'cabinet', component: CabinetComponent,canActivate: [AdminGuard], canActivateChild: [AdminChildrenGuards], children: [
+    path: '', component: CabinetComponent,canActivate: [AdminGuard], canActivateChild: [AdminChildrenGuards], children: [
       ...addRoutes,
       ...updateRoutes,
       {path: 'callback', component: CallbackComponent},

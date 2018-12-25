@@ -97,7 +97,7 @@ export class BookFormComponent implements OnInit {
     // this._bookService.pay(book).subscribe(next => {
     //   this.liqPayFormHtml = next;
     // });
-    // this._bookService.pay(book, this._translateService.currentLang).subscribe(next => {
+    // this._bookService.pay(book, this._translateService.currentLanguage).subscribe(next => {
     //   this.liqPayFormHtml = next;
     //   console.log(next);
     // });
