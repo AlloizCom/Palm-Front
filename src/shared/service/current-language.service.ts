@@ -12,6 +12,7 @@ export class CurrentLanguageService {
   }
 
   set currentLanguage(language: Language) {
+    this._currentLanguage$.next(language);
     this._currentLanguage = language;
   }
 

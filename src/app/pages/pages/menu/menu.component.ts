@@ -27,6 +27,8 @@ export class MenuComponent implements OnInit {
     private  _currentLanguageService: CurrentLanguageService,
     private _router: Router
   ) {
+    this.currentLang = this._currentLanguageService.currentLanguage;
+    this._currentLanguageService.currentLanguage$.subscribe(value => console.log(this.currentLang = value));
     this._router.events.subscribe(value => {
       if (value instanceof NavigationEnd) {
         this.currentUrl = value.urlAfterRedirects.replace(/\/?pages\/?(uk|en|pl|ru)\/?/, '');
@@ -54,7 +56,7 @@ export class MenuComponent implements OnInit {
 
   changeLanguage(lang: Language) {
     // this._router.navigateByUrl(this._router.url.replace(this.currentLanguage, lang));
-    this.currentLang = lang;
+    // this.currentLang = lang;
     this.translate.use(lang);
     this._currentLanguageService.currentLanguage = lang;
   }
