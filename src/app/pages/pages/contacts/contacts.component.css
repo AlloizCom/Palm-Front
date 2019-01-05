@@ -118,8 +118,13 @@ p{
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 15px;
-  color: #000000;
+}
+
+.bold-text>a{
+  text-decoration: none;
+  font-family: inherit!important;
+  font-size: inherit;
+  color: black;
 }
 
 .phone {
