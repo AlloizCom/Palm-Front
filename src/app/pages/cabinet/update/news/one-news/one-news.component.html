@@ -36,29 +36,45 @@
     <img [src]="img" alt="">
   </div>
   <br>
-
     <h3>SEO</h3>
-    <div class="row">
-      <div class="col-lg-1">
-        <h5>Ключові слова (SEO):</h5>
+    <div class="row" formArrayName="seos">
+      <div class="col-lg-2">
+        <h5>Ключові слова і опис (SEO):</h5>
       </div>
-      <div class="col-lg-11">
-        <textarea
-          formControlName="keywords"
-          class="w-100" style="height: 80px"></textarea>
+      <div class="col-lg-11" *ngFor="let one of seoForms;let i = index">
+        {{one.value.language|translate}}
+        <ng-container formGroupName="{{i}}">
+                    <textarea placeholder="keywords"
+                              formControlName="keywords"
+                              class="w-100" style="height: 80px"></textarea>
+          <textarea placeholder="description"
+                    formControlName="description"
+                    class="w-100" style="height: 80px"></textarea>
+        </ng-container>
       </div>
     </div>
+    <!--<h3>SEO</h3>-->
+    <!--<div class="row">-->
+      <!--<div class="col-lg-1">-->
+        <!--<h5>Ключові слова (SEO):</h5>-->
+      <!--</div>-->
+      <!--<div class="col-lg-11">-->
+        <!--<textarea-->
+          <!--formControlName="keywords"-->
+          <!--class="w-100" style="height: 80px"></textarea>-->
+      <!--</div>-->
+    <!--</div>-->
 
-    <div class="row">
-      <div class="col-lg-1">
-        <h5>Опис (SEO):</h5>
-      </div>
-      <div class="col-lg-11">
-        <textarea
-          formControlName="description"
-          class="w-100" style="height: 80px"></textarea>
-      </div>
-    </div>
+    <!--<div class="row">-->
+      <!--<div class="col-lg-1">-->
+        <!--<h5>Опис (SEO):</h5>-->
+      <!--</div>-->
+      <!--<div class="col-lg-11">-->
+        <!--<textarea-->
+          <!--formControlName="description"-->
+          <!--class="w-100" style="height: 80px"></textarea>-->
+      <!--</div>-->
+    <!--</div>-->
     <br>
 
     <div class="button-center">
