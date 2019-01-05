@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {News} from '../../../../../../shared/models/news';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NewsService} from '../../../../../../shared/service/news.service';
 import {ImagePipePipe} from '../../../../../../shared/pipe/pipe/image.pipe';
+const languages = ['EN', 'PL', 'UK', 'RU'];
 
 @Component({
   selector: 'app-one-news',
@@ -17,7 +18,7 @@ export class OneNewsComponent implements OnInit {
   img: string = '';
   descriptions: FormArray;
 
-  constructor(private _router: ActivatedRoute,private _route: Router, private _newsService: NewsService, private _imagePipe: ImagePipePipe) {
+  constructor(private _router: ActivatedRoute,private _route: Router, private _newsService: NewsService, private _imagePipe: ImagePipePipe, private _formBuilder: FormBuilder)  {
   }
 
 
@@ -50,18 +51,25 @@ export class OneNewsComponent implements OnInit {
         available: new FormControl(null),
         dateTime: new FormControl(''),
         picturePath: new FormControl(''),
-        description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
-        keywords: new FormControl('', [Validators.minLength(3), Validators.maxLength(255),Validators.required]),
+        // description: new FormControl('', [Validators.minLength(3),Validators.maxLength(255), Validators.required]),
+        // keywords: new FormControl('', [Validators.minLength(3), Validators.maxLength(255),Validators.required]),
         // multipartFile:new FormControl('',Validators.required),
-      });
-      this.newsUpdateForm.valueChanges.subscribe(next => {
-        this.news = next;
-        console.log('Value ', next)
+        seos: this._formBuilder.array(languages.map(value =>
+          this._formBuilder.group({
+            language: this._formBuilder.control(value),
+            keywords: this._formBuilder.control(''),
+            description: this._formBuilder.control('')
+          })
+        ))
       });
       this._newsService.findOne(next['id']).subscribe(next => {
         console.log(next);
         this.news = next;
         this.newsUpdateForm.patchValue(<any>next);
+        this.newsUpdateForm.valueChanges.subscribe(next => {
+          this.news = next;
+          console.log('Value ', next)
+        });
       }, err => {
         console.error(err);
       });
@@ -88,8 +96,12 @@ export class OneNewsComponent implements OnInit {
       headerText: new FormControl('', Validators.required),
       mainText: new FormControl('', Validators.required),
       id:new FormControl(),
-      available:new FormControl()
+      available:new FormControl(),
+
     });
+  }
+  get seoForms() {
+    return (<FormArray>this.newsUpdateForm.get('seos')).controls;
   }
 
 }
