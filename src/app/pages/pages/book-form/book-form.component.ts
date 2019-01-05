@@ -5,6 +5,7 @@ import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {roomTariff} from '../../../../shared/enum/room-tariff';
 import {TariffService} from '../../../../shared/service/tariff.service';
 import {Book} from '../../../../shared/models/payment/book';
+import {BinService} from '../../../../shared/service/payment/bin.service';
 
 @Component({
   selector: 'app-bookForm',
@@ -31,14 +32,17 @@ export class BookFormComponent implements OnInit {
   constructor(
     private _roomParamsService: RoomParamsService,
     private _formBuilder: FormBuilder,
+    private _binService:BinService,
   ) {
     this.roomParams = _roomParamsService.params;
     this.roomTariff = roomTariff;
+    this.book = this._binService.bin;
   }
 
   ngOnInit() {
     this.bookForm.valueChanges.subscribe(value => {
-      this.book = value;
+      this.book.client = value;
+      this._binService.bin = this.book;
       console.log('invalid', this.bookForm.invalid);
       console.log('firstName', this.bookForm.controls['firstName'].errors);
       console.log('lastName', this.bookForm.controls['lastName'].errors);

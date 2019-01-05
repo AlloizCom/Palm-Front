@@ -57,14 +57,16 @@
       <ng-container *ngIf="roomParams">
         <div class="topInfo d-flex flex-column">
           <h3>Інформація про бронювання:</h3>
-          <div class="person d-flex ">
-            <img src="../../../../assets/svg/person.svg" alt="amenity">
-            <div class="humans">
-              <h5 *ngIf="roomParams.roomType">Тип: {{roomTariff[roomParams.roomType]['current-language-index' | translate]}} </h5>
-              <h5>К-сть місць: {{roomParams.adults + roomParams.childrens}} </h5>
-              <!--<h5>Діти: {{roomParams.childrens}}</h5>-->
+          <ng-container *ngFor="let one of book.rooms">
+            <div class="person d-flex ">
+              <!--<img src="../../../../assets/svg/person.svg" alt="amenity">-->
+              <div class="humans">
+                <h5 *ngIf="one.roomType">Тип: {{one.roomType | translate}} </h5>
+                <h5>К-сть місць: {{one.additionalPlaces}} </h5>
+                <h5>Price: {{one.price}}</h5>
+              </div>
             </div>
-          </div>
+          </ng-container>
           <div class="date d-flex align-items-center">
             <div class="calendar">
               <img src="../../../../assets/svg/calendar.svg" alt="date">
