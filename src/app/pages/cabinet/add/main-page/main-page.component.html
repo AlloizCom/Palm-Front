@@ -11,7 +11,7 @@
       <div class="col-lg-2">
         <h5>Ключові слова і опис(SEO):</h5>
       </div>
-      <ng-container *ngFor="let one of mainPageForm.get('seos').controls;let i = index">
+      <ng-container *ngFor="let one of seos.controls;let i = index">
         <div class="col-lg-11" formGroupName="{{i}}">
           {{one.value.language|translate}}
         <textarea placeholder="keywords"

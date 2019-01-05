@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
 import {MainPage} from '../../../../../shared/models/main-page';
 import {MainPageSevice} from '../../../../../shared/service/main-page.sevice';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 const languages = ['EN', 'PL', 'UK', 'RU'];
 
@@ -32,6 +32,10 @@ export class MainPageComponent implements OnInit {
     private _mainPageService: MainPageSevice,
     private _formBuilder: FormBuilder
   ) {
+  }
+
+  get seos(): FormArray {
+    return <FormArray>this.mainPageForm.get('seos');
   }
 
   ngOnInit() {
