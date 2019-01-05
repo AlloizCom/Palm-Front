@@ -16,7 +16,7 @@ export class PagesComponent implements OnInit {
     private _router: Router,
     private _activateRouteSnapshot: ActivatedRoute,
     private _currentLanguageService: CurrentLanguageService,
-    private _isBrowserService: BrowserCheckService
+    private _isBrouserService: BrowserCheckService
   ) {
     if (_activateRouteSnapshot.snapshot.params.lang &&
       _translate.getLangs().includes(_activateRouteSnapshot.snapshot.params.lang)) {
@@ -24,9 +24,10 @@ export class PagesComponent implements OnInit {
     } else {
       this._router.navigateByUrl('pages/' + _currentLanguageService.currentLanguage);
     }
-    this._router.events.subscribe(value => {
+    this._router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        if (_isBrowserService.isBrowser()) {
+        if (_isBrouserService.isBrowser()) {
+          console.log('pizdos', event.urlAfterRedirects);
           (<any>window).ga('set', 'page', event.urlAfterRedirects);
           (<any>window).ga('send', 'pageview');
         }
