@@ -166,11 +166,11 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
 
     this._roomService.findRoomByParamsWithRoomType(roomsParams).subscribe(next => {
       console.log(roomsParams);
-      if (next.length > 0) {
-        this.router.navigate([`/rooms-booking/${this.id}/bookForm`]);
-      } else {
-        this.errorMessag = true;
-      }
+      // if (next.length > 0) {
+        this.router.navigate([`/pages/${this._currentLanguageService.currentLanguage}/search`]);
+      // } else {
+      //   this.errorMessag = true;
+      // }
     });
   }
 
@@ -259,6 +259,8 @@ export class RoomsBookingComponent implements OnInit, OnDestroy {
 
   private getMeta(next) {
     let seo = next.seos.find(value => value.language.toLowerCase() == this._currentLanguageService.currentLanguage.toLowerCase());
+    if (!seo)
+      return;
     this._meta.currentDescription = seo.description;
     this._meta.currentKeywords = seo.keywords;
   }

@@ -257,8 +257,9 @@ export class MainComponent implements OnInit {
     roomsParams.numbersOfRooms = this.roomsNumber;
     roomsParams.adults = this.adultsNumber;
     roomsParams.childrens = this.childrenNumber;
+    console.log(roomsParams);
     this._roomsParamService.setRoomsParams(roomsParams);
-    this._router.navigateByUrl('available-rooms');
+    this._router.navigateByUrl('/pages/'+this._currentLanguageService.currentLanguage+'/search');
   }
 
   objectDateToString(date) {

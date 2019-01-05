@@ -18,7 +18,7 @@
   <div *ngFor="let one of rooms" class="allParts d-flex justify-content-between align-items-center">
     <div class="first  d-flex justify-content-center align-items-center">
       <div class="img">
-        <img src="{{one.images[0].path|imagePipe}}" alt="photo">
+        <img [src]="one.images[0].path|imagePipe" alt="photo">
       </div>
     </div>
     <div class="second">

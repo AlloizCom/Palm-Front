@@ -2,12 +2,13 @@ import {RoomDescription} from './room-description';
 import {Amenity} from './amenity';
 import {Image} from './image';
 import {SeoModel} from './seo-model';
+import {RoomType} from './room-type';
 
 export class Room {
 
   id: number;
   available: boolean;
-  type: string;
+  type: RoomType;
   adultPlaces: number;
   kidsPlaces: number;
   square: number;

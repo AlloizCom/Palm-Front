@@ -21,6 +21,8 @@ import {LoginComponent} from './login/login.component';
 import {BookFormComponent} from './book-form/book-form.component';
 import {DatepickerRangeComponent} from '../../shared/datepicker-range/datepicker-range.component';
 import {BsDatepickerModule} from 'ngx-bootstrap';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import {BinService} from '../../../shared/service/payment/bin.service';
 
 @NgModule({
   imports: [
@@ -47,10 +49,12 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
     AvailableRoomsComponent,
     LoginComponent,
     BookFormComponent,
-    DatepickerRangeComponent
+    DatepickerRangeComponent,
+    SearchResultsComponent
   ],
   exports: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers:[BinService]
 })
 export class PagesModule {
 }

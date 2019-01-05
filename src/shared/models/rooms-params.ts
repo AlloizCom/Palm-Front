@@ -1,3 +1,5 @@
+import {RoomType} from './room-type';
+
 export class RoomsParams {
 
   dateFrom: string;
@@ -5,5 +7,5 @@ export class RoomsParams {
   numbersOfRooms: number;
   adults: number;
   childrens: number;
-  roomType: string;
+  roomType: RoomType;
 }

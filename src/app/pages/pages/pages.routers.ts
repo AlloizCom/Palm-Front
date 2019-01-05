@@ -10,6 +10,7 @@ import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
 import {ProposalComponent} from './proposal/proposal.component';
 import {LoginComponent} from './login/login.component';
 import {BookFormComponent} from './book-form/book-form.component';
+import {SearchResultsComponent} from './search-results/search-results.component';
 
 export const pagesRoutes: Routes = [
   {
@@ -33,12 +34,6 @@ export const pagesRoutes: Routes = [
           {
             path: ':id', children: [
               {path: '', component: RoomsBookingComponent},
-              {
-                path: 'bookForm', children: [
-                  {path: '', component: BookFormComponent},
-                  {path: '', redirectTo: '/', pathMatch: 'full'}
-                ]
-              }
             ]
           },
         ]
@@ -51,6 +46,13 @@ export const pagesRoutes: Routes = [
         ],
       },
       {path: 'login', component: LoginComponent},
+      {path: 'search', component: SearchResultsComponent},
+      {
+        path: 'bookForm', children: [
+          {path: '', component: BookFormComponent},
+          {path: '', redirectTo: '/', pathMatch: 'full'}
+        ]
+      }
     ]
   }
 ];
