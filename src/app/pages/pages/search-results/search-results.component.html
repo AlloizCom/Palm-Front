@@ -1,0 +1,50 @@
+<div class="wrapper">
+  <div *ngIf="this.rooms.length" class="topInfo d-flex flex-column">
+    <div class="d-flex align-items-center">
+      <h3>Інформація про бронювання</h3>
+      <span [routerLink]="['/']">Змінити</span>
+    </div>
+    <div class="d-flex align-items-center">
+      <img src="../../../../assets/svg/person.svg" alt="amenity">
+      <h4>{{roomsParams.adults}} дор. / {{roomsParams.childrens}} діт.</h4>
+    </div>
+    <div class="d-flex align-items-center">
+      <div>
+        <img src="../../../../assets/svg/calendar.svg" alt="date">
+      </div>
+      <h4>{{roomsParams.dateFrom|datePipe}} до {{roomsParams.dateTo|datePipe}}</h4>
+    </div>
+    <button class="finish_book" [routerLink]="['..','bookForm']">Finish</button>
+  </div>
+  <div *ngFor="let one of rooms" class="allParts d-flex justify-content-between align-items-center" [ngClass]="{'selected_room':book.rooms.includes(one)}">
+    <div class="first  d-flex justify-content-center align-items-center">
+      <div class="img">
+        <img [src]="one.image" alt="photo">
+      </div>
+    </div>
+    <div class="second">
+      <div class="second_item">
+        <h2>{{'rooms.types.' + one.roomType | translate}}</h2>
+        <h4>Places : {{one.additionalPlaces}}</h4>
+        <p>{{getDescription(one)}}</p>
+      </div>
+    </div>
+    <div class="third d-flex flex-column justify-content-between align-items-center">
+      <div>
+        <h3>{{one.price}} ГРН</h3>
+      </div>
+      <div>
+        <button *ngIf="!book.rooms.includes(one)" class="select_room" (click)="addRoom(one)">Обрати Номер</button>
+        <button *ngIf="book.rooms.includes(one)" class="select_room" (click)="removeRoom(one)">Видалити Номер
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="noRoomsBlock d-flex flex-column align-items-center m-5" *ngIf="!this.rooms.length">
+    <p>Немає доступних номерів на заданий період. Будь ласка, спробуйте на інші дні або зв'яжіться з нами
+      безпосередньо:+38 067 19 444 00
+    </p>
+    <button [routerLink]="['/']">Назад</button>
+  </div>
+</div>
+
