@@ -1,5 +1,5 @@
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif!important;
   background-color: #f6f4f4;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .title-paragraph {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif!important;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -119,3 +119,8 @@
 
 }
 
+.article-text{
+  /*display: flex;*/
+  /*word-break: break-word;*/
+  white-space: pre-wrap;
+}

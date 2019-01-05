@@ -17,7 +17,7 @@
   <div class="row">
     <div class="col-lg-11">
       <input type="checkbox"
-             formControlName="available">
+             formControlName="showOnTop">
     </div>
     <div class="col-lg-1">
       <h5>Показувати</h5>
@@ -34,8 +34,9 @@
     </div>
 
     <div>
-      <label for="file">AddImage</label>
-      <button (click)="update(form)"[disabled]="!serviceUpdateForm.valid"  >Оновити сервіси</button>
+      <label for="file">Додати зображення</label>
+      <br>
+      <button (click)="update(form)"[disabled]="!serviceUpdateForm.valid"  >Оновити послугу</button>
     </div>
   </form>
 

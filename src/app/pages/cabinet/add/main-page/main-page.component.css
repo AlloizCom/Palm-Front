@@ -48,3 +48,23 @@ button {
   flex-direction: column;
 }
 
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-lg-11 {
+  max-width: 100%;
+}
+
+h3 {
+  text-align: center;
+}
+input {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

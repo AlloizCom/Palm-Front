@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
       return;
     }
     this._userDetails.user.password = this.password;
-    this._userService.update(this._userDetails.user)
+    this._userService.updatePassword(this._userDetails.user)
       .subscribe(arg => this._userDetails.updateUser(arg));
 
   }

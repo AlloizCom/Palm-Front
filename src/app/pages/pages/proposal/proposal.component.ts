@@ -20,7 +20,7 @@ export class ProposalComponent implements OnInit {
   img: string = '';
 
   constructor(private _proposalService: ProposalService, private _router: ActivatedRoute, private _imagePipe: ImagePipePipe, private _translate: TranslateService) {
-    // this.lang = this._translate.currentLang;
+    // this.lang = this._translate.currentLanguage;
     // this._translate.onLangChange.subscribe(next=>{
     //   this.lang = next.lang;
     // });

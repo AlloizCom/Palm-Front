@@ -1,12 +1,14 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {Room} from "../../../../../../shared/models/room";
-import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {RoomService} from "../../../../../../shared/service/room.service";
-import {ImagePipePipe} from "../../../../../../shared/pipe/pipe/image.pipe";
-import {AmenityService} from "../../../../../../shared/service/amenity.service";
-import {isNullOrUndefined} from "util";
+import {ActivatedRoute, Router} from '@angular/router';
+import {Room} from '../../../../../../shared/models/room';
+import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {RoomService} from '../../../../../../shared/service/room.service';
+import {ImagePipePipe} from '../../../../../../shared/pipe/pipe/image.pipe';
+import {AmenityService} from '../../../../../../shared/service/amenity.service';
+import {isNullOrUndefined} from 'util';
+import {Amenity} from '../../../../../../shared/models/amenity';
 
+const languages = ['EN', 'PL', 'UK', 'RU'];
 
 @Component({
   selector: 'app-room-one',
@@ -17,7 +19,25 @@ import {isNullOrUndefined} from "util";
 export class RoomOneComponent implements OnInit {
 
 
-  roomForm: FormGroup;
+  roomForm: FormGroup = this._fb.group({
+    id: this._fb.control(-1),
+    type: this._fb.control('', [Validators.required]),
+    amount: this._fb.control('', [Validators.required]),
+    price: this._fb.control('', [Validators.required]),
+    square: this._fb.control('', [Validators.required]),
+    available: this._fb.control(false),
+    adultPlaces: this._fb.control('', [Validators.required]),
+    kidsPlaces: this._fb.control('', [Validators.required]),
+    priceThreePlaces: this._fb.control('', [Validators.required]),
+    priceFifthPlaces: this._fb.control('', [Validators.required]),
+    amenities: this._fb.array([]),
+    descriptions: this._fb.array(languages.map(value => this._fb.group({
+      language: this._fb.control(value),
+      description: this._fb.control('', [Validators.minLength(3), Validators.required])
+    }))),
+    description: this._fb.control('', [Validators.minLength(3), Validators.maxLength(255), Validators.required]),
+    keywords: this._fb.control('', [Validators.minLength(3), Validators.maxLength(255), Validators.required]),
+  });
   room: Room = new Room();
   img: string[] = [];
   start: boolean = false;
@@ -25,61 +45,63 @@ export class RoomOneComponent implements OnInit {
   appear: boolean = true;
   fileField: ElementRef;
   id: number = 0;
-  roomDescriptionForm: FormArray;
+  availableAmenities: Amenity[] = [];
+
+  // roomDescriptionForm: FormArray;
 
   constructor(private _router: ActivatedRoute,
               private _amenityService: AmenityService,
               private _roomService: RoomService,
-              private _route: Router) {
-    _router.params.subscribe(next => {
-      this.id = next['id'];
-    });
-  }
-
-  ngOnInit() {
-    this.roomDescriptionForm = new FormArray([
-      new FormGroup({
-        language: new FormControl('EN'),
-        languageO: new FormControl('Англійська'),
-        description: new FormControl('', [Validators.minLength(3), Validators.required])
-      }),
-      new FormGroup({
-        language: new FormControl('UK'),
-        languageO: new FormControl('Українська'),
-        description: new FormControl('', [Validators.minLength(3), Validators.required])
-      }),
-      new FormGroup({
-        language: new FormControl('PL'),
-        languageO: new FormControl('Польська'),
-        description: new FormControl('', [Validators.minLength(3), Validators.required])
-      }),
-      new FormGroup({
-        language: new FormControl('RU'),
-        languageO: new FormControl('Російська'),
-        description: new FormControl('', [Validators.minLength(3), Validators.required])
-      }),
-    ]);
-    console.log(this.fileField);
-    this.roomForm = new FormGroup({
-      id: new FormControl(),
-      type: new FormControl('', [Validators.required]),
-      amount: new FormControl('', [Validators.required]),
-      square: new FormControl('', [Validators.required]),
-      available: new FormControl(),
-      adultPlaces: new FormControl('', [Validators.required]),
-      kidsPlaces: new FormControl('', [Validators.required]),
-      amenities:new FormControl(''),
-      descriptions: this.roomDescriptionForm,
-
-
-    });
-    this._roomService.findOne(this.id).subscribe(next => {
+              private _route: Router,
+              private _fb: FormBuilder
+  ) {
+    this.id = _router.snapshot.params.id;
+    this._roomService.findOne(_router.snapshot.params.id).subscribe(next => {
       console.log(next);
       this.room = next;
+      for (let one of this.room.amenities)
+        (<FormArray>this.roomForm.get('amenities')).push(this.newAmenForm(one));
+      _amenityService.findAllAvailable().subscribe(value => {
+        this.availableAmenities = value.filter(value1 => !this.room.amenities.find(value2 => value2.id == value1.id));
+      });
       this.roomForm.patchValue(<any>next);
     }, err => {
       console.error(err);
     });
+  }
+
+  get descriptionForms() {
+    return (<FormArray>this.roomForm.get('descriptions')).controls;
+  }
+
+  get amenities() {
+    return (<FormArray>this.roomForm.get('amenities')).controls;
+  }
+
+  getControls(one: AbstractControl): AbstractControl[] {
+    // console.log((<FormArray>one).controls);
+    return (<FormArray>one).controls;
+  }
+
+  newAmenForm(amenity?: Amenity) {
+    let ret = this._fb.group({
+      id: this._fb.control(-1),
+      available: this._fb.control(false),
+      imagePath: this._fb.control(''),
+      amenityNames: this._fb.array(languages.map(value => this._fb.group({
+        id: this._fb.control(-1),
+        available: this._fb.control(false),
+        language: this._fb.control(value),
+        name: this._fb.control('')
+      })))
+    });
+    if (amenity)
+      ret.patchValue(amenity);
+    // console.log(ret, ret.getRawValue());
+    return ret;
+  }
+
+  ngOnInit() {
   }
 
   delete(roomId, imageId, image) {
@@ -100,16 +122,18 @@ export class RoomOneComponent implements OnInit {
 
   update(form) {
     console.log('form ; ', this.roomForm.getRawValue());
-    this._roomService.update(this.roomForm.getRawValue(), this.image.length>0? form:null).subscribe(next => {
+    this._roomService.update(this.roomForm.getRawValue(), form).subscribe(next => {
       this.room = next;
+      for (let one of this.room.amenities)
+        (<FormArray>this.roomForm.get('amenities')).push(this.newAmenForm(one));
       this.roomForm.patchValue(<any>next);
       console.log(next);
       // for (let one of next.images){
       //   this.image.push(this._imagePipe.transform(one.path));
       // }
       this.fileField = null;
-      alert("Кімнату оновлено");
-      this._route.navigateByUrl("/cabinet/update/room");
+      alert('Кімнату оновлено');
+      this._route.navigateByUrl('/cabinet/update/room');
     }, error => {
       console.log(error);
     });
@@ -127,6 +151,23 @@ export class RoomOneComponent implements OnInit {
           reader.readAsDataURL(event.target.files[i]);
         }
       }
+    }
+  }
+
+  addAmenity(id: number) {
+    let fg = this.availableAmenities.find(value => value.id == id);
+    this.availableAmenities = this.availableAmenities.filter(value => value.id != fg.id);
+    if (fg)
+      (<FormArray>this.roomForm.get('amenities')).push(this.newAmenForm(fg));
+  }
+
+  deleteAmenity(id: number) {
+    let fg: FormGroup = <FormGroup>this.amenities.find(value => value.get('id').value == id);
+    console.log(this.amenities.indexOf(fg));
+    (<FormArray>this.roomForm.get('amenities')).removeAt(this.amenities.indexOf(fg));
+    if (fg) {
+      this.availableAmenities.push(fg.getRawValue());
+      // (<FormArray>this.roomForm.get('amenities')).push(this.newAmenForm(fg.getRawValue()));
     }
   }
 

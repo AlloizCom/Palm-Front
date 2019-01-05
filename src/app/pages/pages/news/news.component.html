@@ -3,22 +3,22 @@
     <div *ngFor="let one of news" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"
          class="one d-flex justify-content-end flex-column">
       <div class="d-flex justify-content-center">
-        <button routerLink="{{one.id}}" class="button">Переглянути</button>
-      </div>
-      <h2>{{(one.newsDescriptions['current-language-index'|translate]).title}}</h2><!-- comment-->
+        <span class="span-button button"><a (click)="goTop()" [routerLink]="[one.id]">{{'rooms.review'|translate}}</a></span>
+    </div>
+      <h2>{{(one.newsDescriptions['current-language-index'|translate])?.title}}</h2><!-- comment-->
       <h3>{{one.dateTime|datePipe}}</h3>  <!-- comment-->
     </div>
   </div>
 </div>
 <div class="newsBack">
   <div class="news">
-    <h2>Новини</h2>
+    <h2>{{'header.news'|translate}}</h2>
     <div class="blocks d-flex flex-column">
       <div *ngIf="isNull(news3)" class="row">
         <div class="item" *ngFor="let one of news3" class="content col-lg-4 col-xl-4 col-md-6">
           <div class="back1" [style.background-image]="'url(' + (one.picturePath|imagePipe) + ')'"></div>
-          <h3 routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate].title}}</h3>
-          <p>{{one.newsDescriptions['current-language-index' | translate].headerText}}</p>
+          <h3><a (click)="goTop()" routerLink="{{one.id}}">{{one.newsDescriptions['current-language-index' | translate]?.title}}</a></h3>
+          <p>{{one.newsDescriptions['current-language-index' | translate]?.headerText}}</p>
           <div class="bott d-flex justify-content-between">
             <h5>{{one.dateTime |datePipe}}</h5>
             <div class="images">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="butt center d-flex justify-content-center">
-        <button (click)="showMore()">Більше</button>
+        <button (click)="showMore()">{{'global.more'|translate}}</button>
       </div>
     </div>
   </div>

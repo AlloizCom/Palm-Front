@@ -8,7 +8,7 @@
                   aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" *ngIf="isIn"></span>
             <svg *ngIf="!isIn" width="30" version="1.1" height="20" viewBox="0 0 64 64"
-                 enable-background="new 0 0 64 64">
+                               enable-background="new 0 0 64 64">
               <g>
                 <path fill="#1D1D1B"
                       d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>
@@ -16,64 +16,62 @@
             </svg>
           </button>
           <div routerLink="/" class="logo">
-            <img src="../../../assets/svg/logo.svg" alt="Hotel Palma">
+            <img class="logo" src="../../../../assets/png/Logo_Palma_new%202.4.png" alt="Hotel Palma">
           </div>
           <div class="navbar-collapse" id="navbarNav" [ngClass]="{ 'collapse': isIn }">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#" [routerLinkActive]="['active']"
-                   routerLink="/" (click)="toggleState()"
-                   [routerLinkActiveOptions]="{ exact: true }">головна
+              <li class="nav-item" (click)="goTop()">
+                <a class="nav-link" [routerLink]="['/pages']" (click)="toggleState()">
+                  {{'header.main'|translate}}
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" [routerLinkActive]="['active']"
-                   routerLink="/rooms" (click)="toggleState()">номери
+              <li class="nav-item" (click)="goTop()">
+                <a class="nav-link" [routerLink]="['rooms']" (click)="toggleState()">
+                  {{'header.rooms'|translate}}
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" [routerLinkActive]="['active']"
-                   routerLink="/news" (click)="toggleState()">новини
+              <li class="nav-item" (click)="goTop()">
+                <a class="nav-link" [routerLink]="['news']" (click)="toggleState()">
+                  {{'header.news'|translate}}
                 </a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown" (click)="goTop()">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                  послуги
+                  {{'header.services'|translate}}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a *ngFor="let one of services" routerLink="/service/{{one.id}}" class="dropdown-item service"
-                     (click)="toggleState()">
+                  <a *ngFor="let one of servicesToShow" [routerLink]="['service',one.id]" class="dropdown-item service"
+                    (click)="toggleState()">
                     {{(one.serviceDescriptions['current-language-index'| translate]|nuo).title}}
                   </a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" [routerLinkActive]="['active']"
-                   routerLink="/contacts" (click)="toggleState()">контакти
+              <li class="nav-item" (click)="goTop()">
+                <a class="nav-link" [routerLink]="['contacts']" (click)="toggleState()">
+                  {{'header.contact'|translate}}
                 </a>
               </li>
             </ul>
             <div class="langs d-flex justify-content-between">
-              <a (click)="changeLanguage('uk')"
-                 [ngClass]="{'active':currentLang=='uk'}"
-                 (click)="toggleState()"
-                 [routerLinkActive]="['active']"
+              <a (click)="changeLanguage('uk');toggleState()"
+                [ngClass]="{'active':currentLang=='uk'}"
+                [routerLink]="['/pages/uk/'+currentUrl]"
               >ua
               </a>
-              <a (click)="changeLanguage('en')"
-                 [ngClass]="{'active':currentLang=='en'}"
-                 (click)="toggleState()"
+              <a (click)="changeLanguage('en');toggleState()"
+                [ngClass]="{'active':currentLang=='en'}"
+                [routerLink]="['/pages/en/'+currentUrl]"
               >en
               </a>
-              <a (click)="changeLanguage('pl')"
-                 [ngClass]="{'active':currentLang=='pl'}"
-                 (click)="toggleState()"
+              <a (click)="changeLanguage('pl');toggleState()"
+                [ngClass]="{'active':currentLang=='pl'}"
+                [routerLink]="['/pages/pl/'+currentUrl]"
               >pl
               </a>
-              <a (click)="changeLanguage('ru')"
-                 [ngClass]="{'active':currentLang=='ru'}"
-                 (click)="toggleState()"
+              <a (click)="changeLanguage('ru');toggleState()"
+                [ngClass]="{'active':currentLang=='ru'}"
+                [routerLink]="['/pages/ru/'+currentUrl]"
               >ru
               </a>
             </div>
@@ -81,7 +79,7 @@
           <button class="helperKostik" type="button">
             <span class="navbar-toggler-icon"></span>
             <svg *ngIf="!isIn" width="30" version="1.1" height="20" viewBox="0 0 64 64"
-                 enable-background="new 0 0 64 64">
+                               enable-background="new 0 0 64 64">
               <g>
                 <path fill="#1D1D1B"
                       d="M28.941,31.786L0.613,60.114c-0.787,0.787-0.787,2.062,0,2.849c0.393,0.394,0.909,0.59,1.424,0.59   c0.516,0,1.031-0.196,1.424-0.59l28.541-28.541l28.541,28.541c0.394,0.394,0.909,0.59,1.424,0.59c0.515,0,1.031-0.196,1.424-0.59   c0.787-0.787,0.787-2.062,0-2.849L35.064,31.786L63.41,3.438c0.787-0.787,0.787-2.062,0-2.849c-0.787-0.786-2.062-0.786-2.848,0   L32.003,29.15L3.441,0.59c-0.787-0.786-2.061-0.786-2.848,0c-0.787,0.787-0.787,2.062,0,2.849L28.941,31.786z"/>

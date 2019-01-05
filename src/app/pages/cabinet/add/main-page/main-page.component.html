@@ -6,6 +6,24 @@
   </div>
   <br>
   <div class="buttonBlock">
+    <h3>SEO</h3>
+    <div class="row" formArrayName="seos">
+      <div class="col-lg-2">
+        <h5>Ключові слова і опис(SEO):</h5>
+      </div>
+      <ng-container *ngFor="let one of mainPageForm.get('seos').controls;let i = index">
+        <div class="col-lg-11" formGroupName="{{i}}">
+          {{one.value.language|translate}}
+        <textarea placeholder="keywords"
+          formControlName="keywords"
+          class="w-100" style="height: 80px"></textarea>
+          <textarea placeholder="description"
+            formControlName="description"
+            class="w-100" style="height: 80px"></textarea>
+        </div>
+      </ng-container>
+    </div>
+
     <input (change)="readUrl($event)" formControlName="multipartFiles" accept="image/*" multiple id="file" type="file"
            class="d-none" name="multipartFiles">
     <label (click)="toggle()" for="file">Додати зображення</label>

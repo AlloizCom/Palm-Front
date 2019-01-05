@@ -13,7 +13,7 @@
   </div>
 
   <form action="" #form class="">
-      <label for="file">Змінити картинку</label>
+      <label for="file">Додати зображення</label>
       <input (change)="readUrl($event)" id="file" type="file" class="d-none"  name="multipartFile" >
       <button (click)="update(form)" [disabled]="!amenityUpdateForm.valid" >Оновити зручність</button>
   </form>

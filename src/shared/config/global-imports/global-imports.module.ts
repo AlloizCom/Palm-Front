@@ -9,7 +9,7 @@ import {AgmCoreModule} from '@agm/core';
 import {AgmDirectionModule} from 'agm-direction';
 import {RoomParamsService} from '../../service/room-params.serive';
 import {NotificationService} from '../../service/notification.service';
-import {urlFront} from '../url';
+import {url} from '../url';
 import {RoomIdService} from '../../service/room-id.service';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
@@ -17,7 +17,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BrowserCheckService} from '../../../app/shared/service/browser-check.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, `${urlFront}/assets/i18n/`, '.json');
+  return new TranslateHttpLoader(http, `${url}/language/get-translate/`, '');
 }
 
 @NgModule({

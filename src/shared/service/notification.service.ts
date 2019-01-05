@@ -12,18 +12,15 @@ export class NotificationService {
   }
 
   getCount(): Observable<BookCounter>{
-    return this._httpClient.get<BookCounter>("/notify")
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<BookCounter>("/notify");
   }
 
   resetCounter(): Observable<BookCounter>{
-    return this._httpClient.get<BookCounter>("/reset")
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<BookCounter>("/reset");
   }
 
   incrementCounter(): Observable<BookCounter>{
-    return this._httpClient.get<BookCounter>("/increment")
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<BookCounter>("/increment");
   }
 
 }

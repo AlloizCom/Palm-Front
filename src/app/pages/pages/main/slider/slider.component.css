@@ -49,7 +49,7 @@ h2 {
 
 .greenAbs h2 {
   position: absolute;
-  font-family: 'Raleway',sans-serif;
+  font-family: 'Raleway',sans-serif!important;
   font-weight: 800;
   font-size: 21px;
   color: #FFFFFF;
@@ -61,7 +61,7 @@ h2 {
 
 .greenAbs p {
   position: absolute;
-  font-family: Roboto;
+  font-family: 'Roboto',sans-serif!important;
   font-weight: 300;
   line-height: 25px;
   font-size: 16px;
@@ -75,11 +75,20 @@ h2 {
 @media screen and (max-width: 1230px) {
   .greenAbs p {
     top: 60% !important;
+    margin-top: 15px;
   }
 }
 
 @media screen and (max-width: 965px) {
   .greenAbs p {
     top: 65% !important;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .greenAbs p {
+    top: 60% !important;
+    margin-top: 15px;
   }
 }

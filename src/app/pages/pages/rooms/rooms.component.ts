@@ -2,12 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {isNullOrUndefined} from 'util';
 import {RoomService} from '../../../../shared/service/room.service';
 import {TariffService} from '../../../../shared/service/tariff.service';
-import {RoomTariff} from '../../../../shared/enum/room-tariff';
-import {RoomWithPrice} from '../../../../shared/models/room-with-price';
+import {roomTariff} from '../../../../shared/enum/room-tariff';
 import {Router} from '@angular/router';
 import {ScrollToService} from 'ng2-scroll-to-el';
 import {RoomIdService} from '../../../../shared/service/room-id.service';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
+import {Room} from '../../../../shared/models/room';
+import {Language} from '../../../../shared/enum/language';
+import {CurrentLanguageService} from '../../../../shared/service/current-language.service';
 
 @Component({
   selector: 'app-rooms',
@@ -18,44 +20,43 @@ import {BrowserCheckService} from '../../../shared/service/browser-check.service
 export class RoomsComponent implements OnInit {
 
   roomTariff: any;
-  rooms: RoomWithPrice[] = [];
+  // rooms: RoomWithPrice[] = [];
+  rooms: Room [] = [];
   isBrowser = false;
+  currentLanguage: Language;
 
-  constructor(private _roomService: RoomService,
-              private _tariffService: TariffService,
-              private _router: Router,
-              private _roomIdService: RoomIdService, private _browserCheck: BrowserCheckService) {
+  constructor(
+    private _roomService: RoomService,
+    private _tariffService: TariffService,
+    private _router: Router,
+    private _roomIdService: RoomIdService,
+    private _browserCheck: BrowserCheckService,
+    private _currentLanguageService: CurrentLanguageService,
+  ) {
+    this.currentLanguage = this._currentLanguageService.currentLanguage;
+    this._currentLanguageService.currentLanguage$.subscribe(value => {
+      this.currentLanguage = value;
+    });
     this.isBrowser = this._browserCheck.isBrowser();
-    this._roomService.findAllRoomWithPrice().subscribe(next => {
+    this.roomTariff = roomTariff;
+    // this._roomService.findAllRoomWithPrice().subscribe(next => {
+    this._roomService.findAllAvailableSplit().subscribe(next => {
+      this.rooms = next;
+      // this.rooms.forEach(value => value.descriptions.forEach(value1 => value1.description.substring(0,25)));
       console.log(this.rooms);
-      this.roomTariff = RoomTariff;
-      for (let i of next) {
-        if (typeof (i) != 'undefined' && i != null) {
-          this.rooms.push(i);
-          console.log(this.rooms);
-        }
-      }
       this.sortRooms();
     }, err => {
       console.log(err);
     });
-
-
   }
 
   ngOnInit() {
-    // window.scrollTo({
-    //   top: 70,
-    //   behavior: "smooth"
-    // });
+
   }
 
-  // scrollPoint(element: any){
-  //   console.log(element);
-  //   document.getElementById(element).scrollIntoView({
-  //     behavior: "smooth"
-  //   });
-  // }
+  goTop() {
+    window.scrollTo(0, 0);
+  }
 
   scrollToId() {
     if (!isNullOrUndefined(this._roomIdService.id)) {
@@ -67,9 +68,8 @@ export class RoomsComponent implements OnInit {
     }
   }
 
-  goToRoom(id: number) {
-    this._router.navigateByUrl('/rooms-booking/' + id);
-    this._roomIdService.setId('some' + id);
+  saveRoomId(id: number) {
+    this._roomIdService.setId('roomIdForStoring' + id);
     if (this.isBrowser)
       window.scroll(0, 0);
   }
@@ -80,6 +80,7 @@ export class RoomsComponent implements OnInit {
         'SUPERIOR_IMPROVED', 'DELUXE'];
       return roomTypes.indexOf(a.type) - roomTypes.indexOf(b.type);
     });
+
     if (this.isBrowser)
       setTimeout(() => {
         this.scrollToId();

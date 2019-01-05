@@ -28,7 +28,18 @@
         <h3>Кількість номерів:</h3>
         <input type="number" formControlName="amount" min="0">
       </div>
-
+      <div class="room-price-block">
+        <h3>Ціна:</h3>
+        <input type="number" formControlName="price" min="0">
+      </div>
+      <div class="room-price-block">
+        <h3>Ціна (3 - місний):</h3>
+        <input type="number" formControlName="priceThreePlaces" min="0">
+      </div>
+      <div class="room-price-block">
+        <h3>Ціна (5 - місний):</h3>
+        <input type="number" formControlName="priceFifthPlaces" min="0">
+      </div>
     </div>
 
     <div formArrayName="descriptions">
@@ -48,6 +59,22 @@
           *ngIf="one.amenityNames&&one.amenityNames[0]&&one.amenityNames[0].name">{{one.amenityNames[0].name}}</span>
         <input type="checkbox" (click)="addAmenity(one)">
       </label>
+    </div>
+    <div class="row" formArrayName="seos">
+      <div class="col-lg-2">
+        <h5>Ключові слова і опис (SEO):</h5>
+      </div>
+      <div class="col-lg-11" *ngFor="let one of seoForms;let i = index">
+        {{one.value.language|translate}}
+        <ng-container formGroupName="{{i}}">
+                    <textarea placeholder="keywords"
+                              formControlName="keywords"
+                              class="w-100" style="height: 80px"></textarea>
+          <textarea placeholder="description"
+                    formControlName="description"
+                    class="w-100" style="height: 80px"></textarea>
+        </ng-container>
+      </div>
     </div>
 
 

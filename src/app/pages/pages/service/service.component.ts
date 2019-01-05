@@ -4,6 +4,7 @@ import {Service} from "../../../../shared/models/service";
 import {ServiceService} from "../../../../shared/service/service.service";
 import {ActivatedRoute} from "@angular/router";
 import {isNullOrUndefined} from "util";
+import {LangSort} from "../../../../shared/models/utils/lang-sort";
 
 @Component({
   selector: 'app-service',
@@ -18,6 +19,7 @@ export class ServiceComponent implements OnInit {
   img: string = '';
 
 
+
   constructor(private _serviceService: ServiceService,
               private _imagePipe: ImagePipePipe,
               private _router: ActivatedRoute) {
@@ -25,6 +27,7 @@ export class ServiceComponent implements OnInit {
     this._router.params.subscribe(next => {
       this._serviceService.findOneAvailable(next['id']).subscribe(next => {
         this.service = next;
+        this.service.serviceDescriptions = LangSort.sortOne(this.service.serviceDescriptions);
         this.id = next['id'];
         this.img = this._imagePipe.transform(next.picturePath);
         // console.log(this.service);

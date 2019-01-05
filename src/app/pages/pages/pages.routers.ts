@@ -8,53 +8,49 @@ import {PagesComponent} from './pages.component';
 import {ServiceComponent} from './service/service.component';
 import {RoomsBookingComponent} from './rooms-booking/rooms-booking.component';
 import {ProposalComponent} from './proposal/proposal.component';
-import {AvailableRoomsComponent} from './available-rooms/available-rooms.component';
 import {LoginComponent} from './login/login.component';
 import {BookFormComponent} from './book-form/book-form.component';
 
 export const pagesRoutes: Routes = [
   {
-    path: '', component: PagesComponent, children: [
+    path: '', component: PagesComponent
+  },
+  {
+    path: ':lang', component: PagesComponent, children: [
+      {path: '', component: MainComponent},
+      {path: 'contacts', component: ContactsComponent},
       {
-        path: '', component: MainComponent
-      }
-      , {
-        path: 'contacts', component: ContactsComponent
-      }, {
-        path: 'news', component: NewsComponent
-      }, {
-        path: 'news/:id', component: ArticleComponent
-      }, {
-        path: 'service/:id', component: ServiceComponent
-      }, {
-        path: 'rooms', component: RoomsComponent
-      }, {
-        path: 'rooms-booking', component: RoomsBookingComponent
-      }, {
-        path: 'rooms-booking/:id', component: RoomsBookingComponent
-      }, {
-        path: 'proposal/:id', component: ProposalComponent
-      }, {
-        path: 'available-rooms', children:[
-          {
-            path: '', component: AvailableRoomsComponent
-          },
-          {
-            path: 'room/:id',component: BookFormComponent
-          }
-        ],
-      }, {
-        path: 'login', component: LoginComponent
-      },{
-        path: 'rooms-booking/:id/bookForm', children:[
-          {
-            path: '', component:BookFormComponent
-          },
-          {
-           path: '', redirectTo: '/', pathMatch: 'full'
-          }
+        path: 'news', children: [
+          {path: '', component: NewsComponent},
+          {path: ':id', component: ArticleComponent},
         ]
-      }
+      },
+      {path: 'service/:id', component: ServiceComponent},
+      {path: 'rooms', component: RoomsComponent},
+      {
+        path: 'rooms-booking', children: [
+          {path: '', component: RoomsBookingComponent},
+          {
+            path: ':id', children: [
+              {path: '', component: RoomsBookingComponent},
+              {
+                path: 'bookForm', children: [
+                  {path: '', component: BookFormComponent},
+                  {path: '', redirectTo: '/', pathMatch: 'full'}
+                ]
+              }
+            ]
+          },
+        ]
+      },
+      {path: 'proposal/:id', component: ProposalComponent},
+      {
+        path: 'available-rooms', children: [
+          {path: '', component: BookFormComponent},
+          // { path: 'room/:id',component: BookFormComponent }
+        ],
+      },
+      {path: 'login', component: LoginComponent},
     ]
   }
 ];

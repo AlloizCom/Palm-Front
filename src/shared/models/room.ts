@@ -1,6 +1,7 @@
-import {RoomDescription} from "./room-description";
-import {Amenity} from "./amenity";
-import {Image} from "./image";
+import {RoomDescription} from './room-description';
+import {Amenity} from './amenity';
+import {Image} from './image';
+import {SeoModel} from './seo-model';
 
 export class Room {
 
@@ -14,5 +15,9 @@ export class Room {
   descriptions: RoomDescription[] = [];
   amenities: Amenity[] = [];
   images: Image[] = [];
+  price: number;
+  seos: SeoModel[];
+  priceThreePlaces: number;
+  priceFifthPlaces: number;
 
 }

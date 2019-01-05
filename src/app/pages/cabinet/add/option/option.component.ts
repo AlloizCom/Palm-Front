@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Service} from '../../../../../shared/models/service';
 import {ServiceService} from '../../../../../shared/service/service.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {ServiceDescription} from '../../../../../shared/models/service-description';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+
+const languages = ['EN', 'PL', 'UK', 'RU'];
 
 @Component({
   selector: 'app-option',
@@ -12,68 +12,48 @@ import {ServiceDescription} from '../../../../../shared/models/service-descripti
 })
 export class OptionComponent implements OnInit {
 
-  servicesForm: FormGroup;
-  service: Service = new Service();
-  description: ServiceDescription[] = [];
+  defaultValidators = [Validators.required, Validators.minLength(3)];
 
-
+  servicesForm: FormGroup = this.formBuilder.group({
+    multipartFile: this.formBuilder.control('', this.defaultValidators),
+    serviceDescriptions: this.formBuilder.array(
+      languages.map(value =>
+        this.formBuilder.group({
+          language: this.formBuilder.control(value),
+          title: this.formBuilder.control('', this.defaultValidators),
+          headerText: this.formBuilder.control('', this.defaultValidators),
+          mainText: this.formBuilder.control('', this.defaultValidators)
+        })
+      )
+    ),
+    available: this.formBuilder.control(true),
+    showOnTop: this.formBuilder.control(false)
+  });
   appear = false;
   image: string;
 
-  constructor(private _serviceService: ServiceService) {
-    this.description = [new ServiceDescription(), new ServiceDescription(), new ServiceDescription(), new ServiceDescription()];
-    this.service.serviceDescriptions = this.description;
+  get descriptionForms(){
+    return (<FormArray>this.servicesForm.get('serviceDescriptions')).controls;
+  }
+
+  constructor(
+    private _serviceService: ServiceService,
+    private formBuilder: FormBuilder
+  ) {
   }
 
   ngOnInit() {
-    this.servicesForm = new FormGroup({
-      TitleEn: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      HeaderTextareaEn: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      textEn: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      TitleUk: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      HeaderTextareaUk: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      textUk: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      TitlePl: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      HeaderTextareaPl: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      textPl: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      TitleRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      HeaderTextareaRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      textRu: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      multipartFile: new FormControl(null, [this.validateImages]),
-      available: new FormControl(false)
-    });
-    this.servicesForm.valueChanges.subscribe(value => {
-      this.service.serviceDescriptions[0].language = 'EN';
-      this.service.serviceDescriptions[0].title = value.TitleEn;
-      this.service.serviceDescriptions[0].headerText = value.HeaderTextareaEn;
-      this.service.serviceDescriptions[0].mainText = value.textEn;
-      this.service.serviceDescriptions[1].language = 'UK';
-      this.service.serviceDescriptions[1].title = value.TitleUk;
-      this.service.serviceDescriptions[1].headerText = value.HeaderTextareaUk;
-      this.service.serviceDescriptions[1].mainText = value.textUk;
-      this.service.serviceDescriptions[2].language = 'PL';
-      this.service.serviceDescriptions[2].title = value.TitlePl;
-      this.service.serviceDescriptions[2].headerText = value.HeaderTextareaPl;
-      this.service.serviceDescriptions[2].mainText = value.textPl;
-      this.service.serviceDescriptions[3].language = 'RU';
-      this.service.serviceDescriptions[3].title = value.TitleRu;
-      this.service.serviceDescriptions[3].headerText = value.HeaderTextareaRu;
-      this.service.serviceDescriptions[3].mainText = value.textRu;
-      this.service.available = value.available;
-    });
   }
 
   addServices(form: HTMLFormElement) {
     // console.log(this.service);
-    this._serviceService.save(this.service, form).subscribe(next => {
-      // console.log(next);
-    }, error => {
-      console.log(error);
-    }, () => {
+    this._serviceService.save(this.servicesForm.getRawValue(), form).subscribe(next => {
       this.image = null;
       form.reset();
-      alert("Сервіс добавлено")
-
+      alert('Сервіс добавлено');
+    }, error => {
+      alert('Сервіс не добавлено');
+      console.log(error);
     });
   }
 
@@ -90,7 +70,7 @@ export class OptionComponent implements OnInit {
   }
 
   validateImages(c: FormControl): { [key: string]: any } {
-    return c.value == null || c.value.length == 0 ? {"required": true} : null;
+    return c.value == null || c.value.length == 0 ? {'required': true} : null;
   }
 
 }

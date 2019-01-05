@@ -19,7 +19,7 @@ export class NewsComponent implements OnInit {
 
 
   constructor(private _newsService: NewsService, private _translate: TranslateService) {
-    // this.lang = this._translate.currentLang;
+    // this.lang = this._translate.currentLanguage;
     // this._translate.onLangChange.subscribe(next=>{
     //   this.lang = next.lang;
     // });
@@ -34,7 +34,7 @@ export class NewsComponent implements OnInit {
     });
     this._newsService.findAllAvailableNewsByPage(
       this.page, this.nuberOfNews).subscribe(next => {
-      next.news.reverse().forEach(data => this.news3.push(data));
+      next.news.forEach(data => this.news3.push(data));
       for (let i = 0; i < this.news3.length; i++) {
         this.news3[i].newsDescriptions = LangSort.sort(this.news3[i].newsDescriptions);
       }
@@ -56,7 +56,9 @@ export class NewsComponent implements OnInit {
       console.log(err);
     });
   }
-
+  goTop(){
+    window.scrollTo(0,0);
+  }
   isNull(object: any): Boolean {
     if (Array.isArray(object)) {
       return !isNullOrUndefined(object[0]);

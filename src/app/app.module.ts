@@ -22,9 +22,10 @@ import {ContentInterceptor} from '../shared/service/interceptors/content-interce
 import {LoginInterceptor} from '../shared/service/interceptors/login-interceptor';
 import {AdminGuard} from '../shared/Guard/AdminGuard';
 import {AdminChildrenGuards} from '../shared/Guard/admin-children-guards.service';
-import {CarrentLanguadgeService} from '../shared/service/carrent-languadge.service';
+import {CurrentLanguageService} from '../shared/service/current-language.service';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BsDatepickerModule} from 'ngx-bootstrap';
+import {SeoService} from '../shared/service/seo.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
     FormsModule,
     GlobalImportsModule,
     PipeModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: false}),
     DateValueAccessorModule
 
   ],
@@ -62,22 +63,13 @@ import {BsDatepickerModule} from 'ngx-bootstrap';
       useClass: LoginInterceptor,
       multi: true
     },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: MultiPartInterceptor,
-    //   multi: true
-    // },
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: TockenActiveInterceptor,
-    //   multi: true
-    // },
     UserDetailsService,
     LoginService,
     BookService,
     AdminGuard,
     AdminChildrenGuards,
-    CarrentLanguadgeService
+    CurrentLanguageService,
+    SeoService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

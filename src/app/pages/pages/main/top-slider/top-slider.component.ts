@@ -35,7 +35,7 @@ export class TopSliderComponent implements OnInit {
           this.allPathes.push(this.mainPage[i].images[j].path);
         }
       }
-      if (this.isBrowser)
+      if (this._browserCheck.isBrowser())
         this.autoScrol = setInterval(() => {
           this.scroll(false);
         }, 4000);

@@ -6,12 +6,191 @@ import {RoomsParams} from '../../../../shared/models/rooms-params';
 import {Router} from '@angular/router';
 import {defineLocale} from 'ngx-bootstrap/chronos';
 import {BsLocaleService} from 'ngx-bootstrap/datepicker';
-import {CarrentLanguadgeService} from '../../../../shared/service/carrent-languadge.service';
+import {CurrentLanguageService} from '../../../../shared/service/current-language.service';
 import {plLocale, ruLocale} from 'ngx-bootstrap/locale';
 import {BrowserCheckService} from '../../../shared/service/browser-check.service';
+import {SeoService} from '../../../../shared/service/seo.service';
 
 defineLocale('pl', plLocale);
 defineLocale('ru', ruLocale);
+
+const customStyle = [
+  {
+    'featureType': 'water',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#e9e9e9'
+      },
+      {
+        'lightness': 17
+      }
+    ]
+  },
+  {
+    'featureType': 'landscape',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#f5f5f5'
+      },
+      {
+        'lightness': 20
+      }
+    ]
+  },
+  {
+    'featureType': 'road.highway',
+    'elementType': 'geometry.fill',
+    'stylers': [
+      {
+        'color': '#ffffff'
+      },
+      {
+        'lightness': 17
+      }
+    ]
+  },
+  {
+    'featureType': 'road.highway',
+    'elementType': 'geometry.stroke',
+    'stylers': [
+      {
+        'color': '#ffffff'
+      },
+      {
+        'lightness': 29
+      },
+      {
+        'weight': 0.2
+      }
+    ]
+  },
+  {
+    'featureType': 'road.arterial',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#ffffff'
+      },
+      {
+        'lightness': 18
+      }
+    ]
+  },
+  {
+    'featureType': 'road.local',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#ffffff'
+      },
+      {
+        'lightness': 16
+      }
+    ]
+  },
+  {
+    'featureType': 'poi',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#f5f5f5'
+      },
+      {
+        'lightness': 21
+      }
+    ]
+  },
+  {
+    'featureType': 'poi.park',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#dedede'
+      },
+      {
+        'lightness': 21
+      }
+    ]
+  },
+  {
+    'elementType': 'labels.text.stroke',
+    'stylers': [
+      {
+        'visibility': 'on'
+      },
+      {
+        'color': '#ffffff'
+      },
+      {
+        'lightness': 16
+      }
+    ]
+  },
+  {
+    'elementType': 'labels.text.fill',
+    'stylers': [
+      {
+        'saturation': 36
+      },
+      {
+        'color': '#333333'
+      },
+      {
+        'lightness': 40
+      }
+    ]
+  },
+  {
+    'elementType': 'labels.icon',
+    'stylers': [
+      {
+        'visibility': 'off'
+      }
+    ]
+  },
+  {
+    'featureType': 'transit',
+    'elementType': 'geometry',
+    'stylers': [
+      {
+        'color': '#f2f2f2'
+      },
+      {
+        'lightness': 19
+      }
+    ]
+  },
+  {
+    'featureType': 'administrative',
+    'elementType': 'geometry.fill',
+    'stylers': [
+      {
+        'color': '#fefefe'
+      },
+      {
+        'lightness': 20
+      }
+    ]
+  },
+  {
+    'featureType': 'administrative',
+    'elementType': 'geometry.stroke',
+    'stylers': [
+      {
+        'color': '#fefefe'
+      },
+      {
+        'lightness': 17
+      },
+      {
+        'weight': 1.2
+      }
+    ]
+  }
+];
+
 
 @Component({
   selector: 'app-main',
@@ -19,10 +198,9 @@ defineLocale('ru', ruLocale);
   styleUrls: ['./main.component.css'],
   providers: [MainPageSevice],
   host: {
-    '(document:click)': 'changL()',
+    '(document:click)': 'changL()'
   }
 })
-
 export class MainComponent implements OnInit {
 
   //grey map
@@ -30,182 +208,6 @@ export class MainComponent implements OnInit {
   iconUrl: 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
   latitude = 49.856338332302016;
   longitude = 24.076377153396606;
-  public customStyle = [
-    {
-      'featureType': 'water',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#e9e9e9'
-        },
-        {
-          'lightness': 17
-        }
-      ]
-    },
-    {
-      'featureType': 'landscape',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#f5f5f5'
-        },
-        {
-          'lightness': 20
-        }
-      ]
-    },
-    {
-      'featureType': 'road.highway',
-      'elementType': 'geometry.fill',
-      'stylers': [
-        {
-          'color': '#ffffff'
-        },
-        {
-          'lightness': 17
-        }
-      ]
-    },
-    {
-      'featureType': 'road.highway',
-      'elementType': 'geometry.stroke',
-      'stylers': [
-        {
-          'color': '#ffffff'
-        },
-        {
-          'lightness': 29
-        },
-        {
-          'weight': 0.2
-        }
-      ]
-    },
-    {
-      'featureType': 'road.arterial',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#ffffff'
-        },
-        {
-          'lightness': 18
-        }
-      ]
-    },
-    {
-      'featureType': 'road.local',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#ffffff'
-        },
-        {
-          'lightness': 16
-        }
-      ]
-    },
-    {
-      'featureType': 'poi',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#f5f5f5'
-        },
-        {
-          'lightness': 21
-        }
-      ]
-    },
-    {
-      'featureType': 'poi.park',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#dedede'
-        },
-        {
-          'lightness': 21
-        }
-      ]
-    },
-    {
-      'elementType': 'labels.text.stroke',
-      'stylers': [
-        {
-          'visibility': 'on'
-        },
-        {
-          'color': '#ffffff'
-        },
-        {
-          'lightness': 16
-        }
-      ]
-    },
-    {
-      'elementType': 'labels.text.fill',
-      'stylers': [
-        {
-          'saturation': 36
-        },
-        {
-          'color': '#333333'
-        },
-        {
-          'lightness': 40
-        }
-      ]
-    },
-    {
-      'elementType': 'labels.icon',
-      'stylers': [
-        {
-          'visibility': 'off'
-        }
-      ]
-    },
-    {
-      'featureType': 'transit',
-      'elementType': 'geometry',
-      'stylers': [
-        {
-          'color': '#f2f2f2'
-        },
-        {
-          'lightness': 19
-        }
-      ]
-    },
-    {
-      'featureType': 'administrative',
-      'elementType': 'geometry.fill',
-      'stylers': [
-        {
-          'color': '#fefefe'
-        },
-        {
-          'lightness': 20
-        }
-      ]
-    },
-    {
-      'featureType': 'administrative',
-      'elementType': 'geometry.stroke',
-      'stylers': [
-        {
-          'color': '#fefefe'
-        },
-        {
-          'lightness': 17
-        },
-        {
-          'weight': 1.2
-        }
-      ]
-    }
-  ];
 
   //dataPicker
   model1 = {day: 0, year: 0, month: 0};
@@ -217,6 +219,7 @@ export class MainComponent implements OnInit {
   screenWidth: number = 1024;
   minDate = new Date();
   amountDaysInYour: number;
+  customStyle = customStyle;
 
   //available
   adultsNumber: number = 1;
@@ -230,8 +233,11 @@ export class MainComponent implements OnInit {
   constructor(private _roomsParamService: RoomParamsService,
               private _router: Router,
               private localeService: BsLocaleService,
-              private  _carrentLanguadgeService: CarrentLanguadgeService,
-              private _browserCheck: BrowserCheckService) {
+              private  _currentLanguageService: CurrentLanguageService,
+              private _browserCheck: BrowserCheckService,
+              private  _meta:SeoService
+  ) {
+    this._meta.setDefault();
     this.isBrowser = this._browserCheck.isBrowser();
     this.model1.day = new Date().getUTCDate();
     this.model1.month = new Date().getUTCMonth();
@@ -241,6 +247,7 @@ export class MainComponent implements OnInit {
     this.model2.year = new Date().getUTCFullYear();
     this.mounth1 = this.model1 ? this.model1.month : 'MM';
     this.mounth2 = this.model2 ? this.model2.month : 'MM';
+
   }
 
   findRoomByParams() {
@@ -274,6 +281,8 @@ export class MainComponent implements OnInit {
     if (this.isBrowser)
       this.screenWidth = window.innerWidth;
   }
+
+
 
 //dataPicker
   onValueChange(e) {
@@ -334,12 +343,32 @@ export class MainComponent implements OnInit {
   }
 
   changL() {
-    if (this._carrentLanguadgeService.getCarrentLanguadge() === 'uk') {
+    if (this._currentLanguageService.currentLanguage === 'uk') {
       this.locale = 'ru';
     } else {
-      this.locale = this._carrentLanguadgeService.getCarrentLanguadge();
+      this.locale = this._currentLanguageService.currentLanguage;
     }
     this.localeService.use(this.locale);
+    this.getCurrentLang();
+  }
+
+  getCurrentLang(){
+    if (this._currentLanguageService.currentLanguage === 'en') {
+      this.model1.month = new Date().getUTCMonth()+12;
+      this.model2.month = new Date().getUTCMonth()+12;
+    }
+    if (this._currentLanguageService.currentLanguage === 'uk') {
+      this.model1.month = new Date().getUTCMonth();
+      this.model2.month = new Date().getUTCMonth();
+    }
+    if (this._currentLanguageService.currentLanguage === 'ru') {
+      this.model1.month = new Date().getUTCMonth()+24;
+      this.model2.month = new Date().getUTCMonth()+24;
+    }
+    if (this._currentLanguageService.currentLanguage === 'pl') {
+      this.model1.month = new Date().getUTCMonth()+36;
+      this.model2.month = new Date().getUTCMonth()+36;
+    }
   }
 
 }

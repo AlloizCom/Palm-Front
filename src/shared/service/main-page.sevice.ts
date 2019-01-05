@@ -13,23 +13,19 @@ export class MainPageSevice {
   }
 
   findAll(): Observable<MainPage[]> {
-    return this._httpClient.get<MainPage[]>(this.controller + '/find-all')
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<MainPage[]>(this.controller + '/find-all');
   }
 
   findAllAvailable(): Observable<MainPage[]> {
-    return this._httpClient.get<MainPage[]>(this.controller + '/find-all-available')
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<MainPage[]>(this.controller + '/find-all-available');
   }
 
   findOne(id: number): Observable<MainPage> {
-    return this._httpClient.get<MainPage>(this.controller + '/find-one/' + id)
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<MainPage>(this.controller + '/find-one/' + id);
   }
 
   findOneAvailable(id: number): Observable<MainPage> {
-    return this._httpClient.get<MainPage>(this.controller + '/find-one-available/' + id)
-      .catch(err => Observable.throw(err));
+    return this._httpClient.get<MainPage>(this.controller + '/find-one-available/' + id);
   }
 
   save(mainPageJson: MainPage, form: HTMLFormElement): Observable<MainPage> {
@@ -37,7 +33,7 @@ export class MainPageSevice {
     f.append('mainPageJson', JSON.stringify(mainPageJson));
     return this._httpClient.post<MainPage>(this.controller + '/save', f, {
       headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
   }
 
   update(mainPageJson: MainPage, form: HTMLFormElement): Observable<MainPage> {
@@ -45,14 +41,14 @@ export class MainPageSevice {
     f.append('mainPageJson', JSON.stringify(mainPageJson));
     return this._httpClient.post<MainPage>(this.controller + '/update', f, {
       headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-    }).catch(err => Observable.throw(err));
+    });
   }
 
   addImage(mainPageId: number, form: HTMLFormElement): Observable<any> {
     return this._httpClient.post(this.controller + '/add-image/' + mainPageId,
       new FormData(form), {
         headers: new HttpHeaders().append('enctype', 'multipart/form-data')
-      }).catch(err => Observable.throw(err));
+      });
   }
 
   deleteImage(mainPageId: number, imageId: number): Observable<any> {

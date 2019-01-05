@@ -23,7 +23,7 @@
   margin: 0;
   padding-top: 15px!important;
   font-size: 12px;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto',sans-serif!important;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 0.03em;
@@ -44,7 +44,7 @@
   padding-bottom: 0;
   text-transform: uppercase;
   font-size: 12px;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif!important;
   font-style: normal;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -87,7 +87,7 @@ a:hover {
 }
 
 .langs a {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif!important;
   font-weight: 300;
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -101,6 +101,7 @@ a:hover {
 }
 
 .logo {
+  width: 115px;
   cursor: pointer;
   outline: 0;
 }
@@ -136,7 +137,7 @@ a:hover {
 }
 
 .nav a {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif!important;
   font-size: 12px;
   letter-spacing: 0.03em;
   text-transform: uppercase;

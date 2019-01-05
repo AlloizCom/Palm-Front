@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {isNullOrUndefined} from "util";
-import {MainPage} from "../../../../../shared/models/main-page";
-import {MainPageSevice} from "../../../../../shared/service/main-page.sevice";
-import {FormControl, FormGroup} from "@angular/forms";
+import {isNullOrUndefined} from 'util';
+import {MainPage} from '../../../../../shared/models/main-page';
+import {MainPageSevice} from '../../../../../shared/service/main-page.sevice';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+
+const languages = ['EN', 'PL', 'UK', 'RU'];
 
 @Component({
   selector: 'app-main-page',
@@ -15,9 +17,21 @@ export class MainPageComponent implements OnInit {
   mainPage: MainPage = new MainPage();
   image: string[] = [];
   appear: boolean = true;
-  mainPageForm: FormGroup;
+  mainPageForm: FormGroup = this._formBuilder.group({
+    multipartFiles: this._formBuilder.control(null, [this.validateImages]),
+    seos: this._formBuilder.array(languages.map(value =>
+      this._formBuilder.group({
+        language: this._formBuilder.control(value),
+        keywords: this._formBuilder.control(''),
+        description: this._formBuilder.control('')
+      })
+    ))
+  });
 
-  constructor(private _mainPageService: MainPageSevice) {
+  constructor(
+    private _mainPageService: MainPageSevice,
+    private _formBuilder: FormBuilder
+  ) {
   }
 
   ngOnInit() {
@@ -56,21 +70,23 @@ export class MainPageComponent implements OnInit {
         // console.log(next);
         form.reset();
         this.image = [];
-        alert("Фото добавлено")
+        alert('Фото добавлено');
       },
       error => {
         console.log(error);
+      }, () => {
+
       });
   }
 
   validateImages(c: FormControl): { [key: string]: any } {
-    return c.value == null || c.value.length == 0 ? {"required": true} : null;
+    return c.value == null || c.value.length == 0 ? {'required': true} : null;
   }
 
   private createmainPageForm() {
-    this.mainPageForm = new FormGroup({
-      multipartFiles: new FormControl(null, [this.validateImages]),
-    })
+    this.mainPageForm.valueChanges.subscribe(value => {
+      this.mainPage = value;
+    });
   }
 
 }

@@ -1,8 +1,8 @@
-<div class="relka" *ngIf="rooms.length>=5">
-  <div [routerLink]="['/rooms-booking', rooms[0].id]" class="greenAbs">
+<div class="relka" *ngIf="rooms.length>=3">
+  <div [routerLink]="['rooms-booking', rooms[0].id]" class="greenAbs" (click)="goTop()">
     <div>
       <h2>{{roomTariff[rooms[0].type]['current-language-index' | translate]}}</h2>
-      <p>Look more</p>
+      <p>{{'rooms.review'|translate}}</p>
       <img src="../../../../../assets/svg/krujki.svg" alt="">
     </div>
   </div>
@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="sliderBlock d-flex flex-row justify-content-around">
-    <div class="allIn d-flex flex-row justify-content-between">
+    <div class="allIn d-flex flex-row justify-content-between text-align-gallery">
       <div class="swith left" (click)="scroll(-2)">
         <svg width="15" height="27" viewBox="0 0 15 27" fill="none">
           <path
@@ -23,29 +23,29 @@
         <div (click)="scroll(1)" class="topImage first"
              [style.background-image]="'url(' + (rooms[1].images[0].path|imagePipe) + ')'">
         </div>
-        <h2>{{roomTariff[rooms[1].type]['current-language-index' | translate]}}</h2>
-        <h3>{{rooms[1].price}} UAH</h3>
+        <h2 style="text-align: center;">{{roomTariff[rooms[1].type]['current-language-index' | translate]}}</h2>
+        <h3 style="text-align: center;">{{rooms[1].price}} {{'global.uah'|translate}}</h3>
       </div>
+      <!--<div>-->
+        <!--<div (click)="scroll(2)" class="topImage first"-->
+             <!--[style.background-image]="'url(' + (rooms[2].images[0].path|imagePipe) + ')'">-->
+        <!--</div>-->
+        <!--<h2>{{roomTariff[rooms[2].type]['current-language-index' | translate]}}</h2>-->
+        <!--<h3>{{rooms[2].price}} {{'global.uah'|translate}}</h3>-->
+      <!--</div>-->
+      <!--<div style="height: 3vw">-->
+        <!--<div (click)="scroll(3)" class="topImage first"-->
+             <!--[style.background-image]="'url(' + (rooms[3].images[0].path|imagePipe) + ')'">-->
+        <!--</div>-->
+        <!--<h2 class="lefty">{{roomTariff[rooms[3].type]['current-language-index' | translate]}}</h2>-->
+        <!--<h3 class="lefty">{{rooms[3].price}} {{'global.uah'|translate}}</h3>-->
+      <!--</div>-->
       <div>
         <div (click)="scroll(2)" class="topImage first"
              [style.background-image]="'url(' + (rooms[2].images[0].path|imagePipe) + ')'">
         </div>
-        <h2>{{roomTariff[rooms[2].type]['current-language-index' | translate]}}</h2>
-        <h3>{{rooms[2].price}} UAH</h3>
-      </div>
-      <div>
-        <div (click)="scroll(3)" class="topImage first"
-             [style.background-image]="'url(' + (rooms[3].images[0].path|imagePipe) + ')'">
-        </div>
-        <h2 class="lefty">{{roomTariff[rooms[3].type]['current-language-index' | translate]}}</h2>
-        <h3 class="lefty">{{rooms[3].price}} UAH</h3>
-      </div>
-      <div>
-        <div (click)="scroll(4)" class="topImage first"
-             [style.background-image]="'url(' + (rooms[4].images[0].path|imagePipe) + ')'">
-        </div>
-        <h2>{{roomTariff[rooms[4].type]['current-language-index' | translate]}}</h2>
-        <h3>{{rooms[4].price}} UAH</h3>
+        <h2 style="text-align: center;">{{roomTariff[rooms[2].type]['current-language-index' | translate]}}</h2>
+        <h3 style="text-align: center;">{{rooms[2].price}} {{'global.uah'|translate}}</h3>
       </div>
       <div class="swith right" (click)="scroll(-1)">
         <svg width="15" height="27" viewBox="0 0 15 27" fill="none">

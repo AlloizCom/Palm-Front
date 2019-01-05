@@ -1,46 +1,10 @@
 import {isNullOrUndefined} from 'util';
 import {Inject, Injectable, PLATFORM_ID} from '@angular/core';
-import 'rxjs/add/observable/throw';
-import 'rxjs/add/operator/catch';
 import {User} from '../models/user';
 import {Subject} from 'rxjs/Subject';
 import {Router} from '@angular/router';
 import {isPlatformBrowser} from '@angular/common';
 import {Observable} from 'rxjs/Observable';
-
-//
-// @Injectable()
-// export class UserDetailsService {
-//
-//   public  user: User =new User();
-//
-//   checkAuth(): boolean {
-//     return !isNullOrUndefined(localStorage.getItem('access_token'));
-//   }
-//
-//   getAccessToken(): string {
-//     return localStorage.getItem('access_token');
-//   }
-
-// saveToken(data) {
-//     this.deleteToken();
-//     localStorage.setItem('access_token', data.access_token);
-//     localStorage.setItem('token_type', data.token_type);
-//     localStorage.setItem('expires_in', new Date().setSeconds(data.expires_in) + '');
-//     localStorage.setItem('scope', data.scope);
-//     localStorage.setItem('jti', data.jti);
-//     localStorage.setItem('refresh_token', data.refresh_token);
-//   }
-//
-//   deleteToken() {
-//     localStorage.removeItem('access_token');
-//     localStorage.removeItem('token_type');
-//     localStorage.removeItem('expires_in');
-//     localStorage.removeItem('scope');
-//     localStorage.removeItem('jti');
-//     localStorage.removeItem('refresh_token');
-//   }
-// }
 
 @Injectable()
 export class UserDetailsService {

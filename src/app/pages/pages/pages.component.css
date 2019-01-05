@@ -5,3 +5,8 @@ app-menu {
 router-outlet {
   z-index: 10;
 }
+
+.workspace-container{
+  min-height: 76vh;
+  background-color: #f8f6f6;
+}
