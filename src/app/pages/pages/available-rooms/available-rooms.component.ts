@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {roomTariff} from "../../../../shared/enum/room-tariff";
-import {RoomService} from "../../../../shared/service/room.service";
-import {RoomsParams} from "../../../../shared/models/rooms-params";
-import {RoomWithPrice} from "../../../../shared/models/room-with-price";
-import {isNullOrUndefined} from "util";
-import {RoomParamsService} from "../../../../shared/service/room-params.serive";
-import {TariffService} from "../../../../shared/service/tariff.service";
-import {Router} from "@angular/router";
+import {roomTariff} from '../../../../shared/enum/room-tariff';
+import {RoomService} from '../../../../shared/service/room.service';
+import {RoomsParams} from '../../../../shared/models/rooms-params';
+import {RoomWithPrice} from '../../../../shared/models/room-with-price';
+import {isNullOrUndefined} from 'util';
+import {RoomParamsService} from '../../../../shared/service/room-params.serive';
+import {TariffService} from '../../../../shared/service/tariff.service';
+import {Router} from '@angular/router';
+import {RoomType} from '../../../../shared/models/room-type';
 
 @Component({
   selector: 'app-available-rooms',
@@ -49,10 +50,10 @@ export class AvailableRoomsComponent implements OnInit {
 
   }
 
-  sortRooms(){
+  sortRooms() {
     this.rooms.sort(function (a, b) {
-      let roomTypes = ['STANDARD','STANDARD_IMPROVED','SUPERIOR',
-        'SUPERIOR_IMPROVED' ,'DELUXE'];
+      let roomTypes = ['STANDARD', 'STANDARD_IMPROVED', 'SUPERIOR',
+        'SUPERIOR_IMPROVED', 'DELUXE'];
       return roomTypes.indexOf(a.type) - roomTypes.indexOf(b.type);
     });
   }
@@ -66,7 +67,7 @@ export class AvailableRoomsComponent implements OnInit {
   ngOnInit() {
   }
 
-  chooseNumber(roomType: string, id: number){
+  chooseNumber(roomType: RoomType, id: number) {
     this.roomsParams.roomType = roomType;
     this._roomsParamsService.setRoomsParams(this.roomsParams);
     this._router.navigateByUrl('/available-rooms/room/' + id);
@@ -79,6 +80,7 @@ export class AvailableRoomsComponent implements OnInit {
       return !isNullOrUndefined(object);
     }
   }
+
   //
   // isNoParams(){
   //   if(room)

@@ -17,6 +17,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {UserDetailsService} from '../shared/service/user-details.service';
 import {LoginService} from '../shared/service/login.service';
 import {BookService} from '../shared/service/book.service';
+import {BookService as PaymentBookService} from '../shared/service/payment/book.service';
 import {AuthInterceptor} from '../shared/service/interceptors/auth-interceptor';
 import {ContentInterceptor} from '../shared/service/interceptors/content-interceptor';
 import {LoginInterceptor} from '../shared/service/interceptors/login-interceptor';
@@ -26,6 +27,12 @@ import {CurrentLanguageService} from '../shared/service/current-language.service
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {BsDatepickerModule} from 'ngx-bootstrap';
 import {SeoService} from '../shared/service/seo.service';
+import {BinService} from '../shared/service/payment/bin.service';
+import {ClientService} from '../shared/service/payment/client.service';
+import {DescriptionService} from '../shared/service/payment/description.service';
+import {MultiLanguageNameService} from '../shared/service/payment/multi-language-name.service';
+import {LanguageService} from '../shared/service/payment/language.service';
+import {RoomService} from '../shared/service/payment/room.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +76,14 @@ import {SeoService} from '../shared/service/seo.service';
     AdminGuard,
     AdminChildrenGuards,
     CurrentLanguageService,
-    SeoService
+    SeoService,
+    BinService,
+    ClientService,
+    DescriptionService,
+    MultiLanguageNameService,
+    LanguageService,
+    RoomService,
+    PaymentBookService
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

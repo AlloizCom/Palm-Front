@@ -5,7 +5,10 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angul
 import {Room} from '../../../../../shared/models/room';
 import {AmenityService} from '../../../../../shared/service/amenity.service';
 import {RoomService} from '../../../../../shared/service/room.service';
+import {RoomService as PaymentRoomService} from '../../../../../shared/service/payment/room.service';
 import {isNullOrUndefined} from 'util';
+import {Language} from '../../../../../shared/models/payment/language';
+import {LanguageService} from '../../../../../shared/service/payment/language.service';
 
 const languages = ['EN', 'PL', 'UK', 'RU'];
 
@@ -37,6 +40,8 @@ export class RoomComponent implements OnInit {
     priceFifthPlaces: 0
   };
 
+  paymentRoomsForm: FormGroup = this._formBuilder.group({arr: this._formBuilder.array([])});
+
   room: Room = new Room();
   amenity: Amenity[];
   roomDescriptions: RoomDescription[] = [];
@@ -45,8 +50,15 @@ export class RoomComponent implements OnInit {
   roomDescriptionForm: FormArray;
   appear: boolean = true;
   type: string;
+  _languages: Language[] = [];
 
-  constructor(private _amenityService: AmenityService, private _roomService: RoomService, private _formBuilder: FormBuilder) {
+  constructor(
+    private _amenityService: AmenityService,
+    private _roomService: RoomService,
+    private _paymentRoomService: PaymentRoomService,
+    private _formBuilder: FormBuilder,
+    private _languageService: LanguageService
+  ) {
     this.room.amenities = [];
     this._amenityService.findAll().subscribe(next => {
       this.amenity = next;
@@ -54,6 +66,11 @@ export class RoomComponent implements OnInit {
     });
     this.roomDescriptions = [new RoomDescription(), new RoomDescription(), new RoomDescription(), new RoomDescription()];
     this.type = 'none';
+    this._languageService.findAll().subscribe(value => this._languages = value);
+  }
+
+  get paymentRoomsFormArray(): FormArray {
+    return <FormArray>this.paymentRoomsForm.get('arr');
   }
 
   get seoForms() {
@@ -62,6 +79,27 @@ export class RoomComponent implements OnInit {
 
   ngOnInit() {
     this.createRoomForm();
+  }
+
+  addPaymentRoomForm() {
+    event.preventDefault();
+    this.paymentRoomsFormArray.push(this._formBuilder.group({
+      roomType: this._formBuilder.control(this.roomForm.getRawValue().type),
+      name: this._formBuilder.control(''),
+      roomNumber: this._formBuilder.control(''),
+      additionalPlaces: this._formBuilder.control(''),
+      image: this._formBuilder.control(''),
+      // descriptions: this._formBuilder.array(this._languages.map(value => this._formBuilder.group({
+      //   language: this._formBuilder.control(value),
+      //   text: this._formBuilder.control('')
+      // }))),
+      price: this._formBuilder.control('')
+    }));
+  }
+
+  removePaymentRoomForm(i: number) {
+    event.preventDefault();
+    this.paymentRoomsFormArray.removeAt(i);
   }
 
   readUrl(event: any) {
@@ -102,6 +140,9 @@ export class RoomComponent implements OnInit {
       error => {
         console.log(error);
       });
+    for (let one of <FormGroup[]>this.paymentRoomsFormArray.controls) {
+      this._paymentRoomService.save(one.getRawValue()).subscribe(value => console.log(`payment room ${value} saved`));
+    }
   }
 
   addAmenity(amenity: Amenity) {
@@ -147,6 +188,11 @@ export class RoomComponent implements OnInit {
     this.roomForm.valueChanges.subscribe(value => {
       this.room = value;
       // console.log('room : ', this.room);
+    });
+    this.roomForm.get('type').valueChanges.subscribe(value => {
+      for (let one of <FormGroup[]>this.paymentRoomsFormArray.controls) {
+        one.patchValue({roomType: value});
+      }
     });
   }
 

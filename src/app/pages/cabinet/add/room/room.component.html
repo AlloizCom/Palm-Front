@@ -1,4 +1,4 @@
-<form action="" (submit)="addRoom(form)" #form [formGroup]="roomForm">
+<form (submit)="addRoom(form)" #form [formGroup]="roomForm">
   <div class="content">
     <div class="content">
       <div class="room-type block">
@@ -51,6 +51,42 @@
       </div>
     </div>
 
+    <div>
+      <h3>Окремі номери :</h3>
+      <button (click)="addPaymentRoomForm()">Add</button>
+      <ng-container [formGroup]="paymentRoomsForm">
+        <ng-container formArrayName="arr">
+          <div *ngFor="let one of paymentRoomsFormArray.controls;let i = index">
+            <div formGroupName="{{i}}">
+              <button (click)="removePaymentRoomForm(i)">Remove</button>
+              <label>NAME
+                <input type="text" formControlName="name">
+              </label>
+              <label>ROOMNUMBER
+                <input type="number" formControlName="roomNumber">
+              </label>
+              <label>ADDITIONALPLACES
+                <input type="number" formControlName="additionalPlaces">
+              </label>
+              <label>PRICE
+                <input type="number" formControlName="price">
+              </label>
+              image: this._formBuilder.control(''),
+              <!--<ng-container *ngFor="let descrForm of one.get('descriptions').controls; let j = index">-->
+                <!--<ng-container formArrayName="descriptions">-->
+                <!--<div formGroupName="{{j}}">-->
+                  <!--<p>{{descrForm.get('language').value.languagesName}}</p>-->
+                  <!--<label>TEXT-->
+                    <!--<textarea formControlName="text"></textarea>-->
+                  <!--</label>-->
+                <!--</div>-->
+                <!--</ng-container>-->
+              <!--</ng-container>-->
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
 
     <div (click)="isNull($event)" class="d-flex flex-column">
       <label *ngFor="let one of amenity">
